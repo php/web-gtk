@@ -202,17 +202,16 @@ function makeEntry($row, $show_admin = true, $show_rating = true ) {
 	echo '<br>';
 
 	if ($show_rating) {
-		echo 'rating: ';
+#		echo 'rating: ';
+		echo '<b>';
 		if ( $row['votes'] > 3 ) {
-			printf('<b>%.02f<b> (%d votes)', $row['rate'], $row['votes'] );
+			printf('[%.02f / %d ]', $row['rate'], $row['votes'] );
 		} else {
-			echo '&lt; 3 votes';
+			printf('[ -  / %d ]', $row['rate'], $row['votes'] );
 		}
-		echo ' | rate: ';
+		echo '</b>';
 		for ($i=1; $i<=10; $i++) {
-			if ($i>1) {
-				echo ' <font color="#999999">|</font> ';
-			}
+			echo ' <font color="#999999">|</font> ';
 			print_link($PHP_SELF.'?rate_id='.$row['id'].'&rate_note='.$i, $i);
 		}
 		echo '<br>';
