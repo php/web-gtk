@@ -382,13 +382,17 @@ function sendManualHeaders($charset,$lang) {
 
 function manualHeader($title,$id="") {
 	global $HTDIG, $LANGUAGES, $LANG, $SIDEBAR_DATA;
+	manualLastModified($title,$id);
+	makeBorderTOC($title);
+	commonHeader('Manual: '.$title);
 
 	# probably a better way/place to do this, but ...
 
-	global $HTTP_GET_VARS, $SCRIPT_NAME, $HTTP_REFERER;
+	global $HTTP_GET_VARS, $HTTP_SERVER_VARS;
 	if ($HTTP_GET_VARS['rate_id'] && $HTTP_GET_VARS['rate_note']) {
-		$p = parse_url($HTTP_REFERER);
-		if ($SCRIPT_NAME==$p['path']) {		/* prevent outside scripts from voting */
+		$p = parse_url($HTTP_SERVER_VARS['HTTP_REFERER']);
+		/* prevent outside scripts from voting */
+		if ($HTTP_SERVER_VARS['SCRIPT_NAME']==$p['path']) {
 			$host = 'localhost';
 			$user = 'nobody';
 			$pass = '';
@@ -400,9 +404,9 @@ function manualHeader($title,$id="") {
 		}
 	}
 
-	manualLastModified($title,$id);
-	makeBorderTOC($title);
-	commonHeader('Manual: '.$title);
+print_r($p);
+echo $HTTP_SERVER_VARS['SCRIPT_NAME'] . '-' .$HTTP_SERVER_VARS['HTTP_REFERER'];
+
         # create links to plain html and other languages
 	if (!$HTDIG) {
 		navigationBar($title, $id, "top");
