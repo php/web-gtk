@@ -34,8 +34,9 @@ GUI applications.
 
 <h1>News</h1>
 <P>
-<a href="/download.php">PHP-GTK version 0.1</a> has been released. The list of
-changes can be found in <a href="/changelog.php">Change Log</a>.
+<a href="/download.php">PHP-GTK version 0.1.1</a> has been released on September
+24, 2001. The list of changes can be found in <a href="/changelog.php">Change
+Log</a>.
 </P>
 
 <P>

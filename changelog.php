@@ -6,6 +6,25 @@ commonHeader('PHP-GTK Changelog');
 
 <h1>PHP-GTK ChangeLog</h1>
 
+<a name="0.1.1"></a>
+<h3>Version 0.1.1 "no-holds-barred memento"</h3>
+<b>24-Sep-2001</b>
+<ul>
+<li>added GtkCList::get_selection_info() method. (Andrei)</li>
+<li>made type checking of parameters passed to PHP-GTK functions more forgiving. (Andrei)</li>
+<li>added GtkNotebook::query_tab_label_packing(), GtkBox::query_child_packing(). (Markus)</li>
+<li>added event watcher, dialog, file selection, panes, and notebook examples to gtk.php. (Markus)</li>
+<li>added Gtk::signal_(add|remove)_emission_hook(), Gtk::signal_name(), and Gtk::signal_lookup() functions. (Markus)</li>
+<li>added GtkCList::get_selection_info(). (Andrei)</li>
+<li>added GtkCList methods set_row_data(), get_row_data(). (Markus)</li>
+<li>added support for GtkScintilla, a text-editing widget. (Andrei)</li>
+<li>implemented GladeXML methods signal_connect_object() and signal_autoconnect_object(). (Andrei)</li>
+<li>fixed GDK keysym constants warnings by prefixing some of them with underscores. (Frank)</li>
+<li>changed PHP-visible extension name from 'gtk' to 'php-gtk'. (Andrei)</li>
+</ul>
+
+<?php echo hdelim(); ?>
+
 <a name="0.1"></a>
 <h3>Version 0.1 "the void which binds"</h3>
 <b>1-Aug-2001</b>

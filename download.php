@@ -8,7 +8,7 @@ commonHeader('Downloads');
 
 <P>
 <b>Note:</b> PHP-GTK requires PHP 4.0.5 or greater (latest CVS version will work
-too). Version 0.1 currently requires PHP CVS version to compile.
+too). Versions 0.1.x currently require PHP 4.0.7 or CVS version to compile.
 </P>
 <P>
 PHP-GTK currently supports GTK+ v1.2.6 or greater, 
@@ -20,14 +20,13 @@ of GTK+ v1.2.x from <?php print_link('ftp://ftp.gtk.org/pub/gtk/v1.2/'); ?>.
 <h2>Latest Stable Release</h2>
 
 <UL>
+<LI><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-0.1.1.tar.gz', 'php-gtk-0.1.1 Source'); ?> - 24-Sep-2001<br>
+
 <LI><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-0.1.tar.gz', 
 	'php-gtk-0.1 Source'); ?> - 1-Aug-2001<br>
 
 <LI><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-0.1-win32.zip', 
 	'php-gtk-0.1 Windows and PHP Binary'); ?> - 3-Aug-2001<br>
-
-<LI><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-0.0.4.tar.gz', 
-	'php-gtk-0.0.4 Source'); ?> - 5-May-2001<br>
 
 <LI><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-0.1a-win32.zip', 
 	'php-gtk-0.1a Windows and PHP Binary'); ?> - 7-Aug-2001<br>
