@@ -9,9 +9,8 @@ $mailto = 'gtk-webmaster@php.net';
 $num_entries_per_page = 50;
 
 if (isset($MAGIC_COOKIE)) {
-	list($cookie_user, $cookie_pass) = explode(":", base64_decode($MAGIC_COOKIE));
-}
-if($save && $user && $pass) {
+	list($user, $pass) = explode(":", base64_decode($MAGIC_COOKIE));
+} else if ($save && $user && $pass && verify_password($user,$pass)) {
 	SetCookie("MAGIC_COOKIE", base64_encode("$user:$pass"), time()+3600*24*12, '/');
 }
 
@@ -32,21 +31,20 @@ mysql_select_db("gtk");
 
 if ($action != '') {
 
-	if (!verify_password($user,$pass) && !verify_password($cookie_user, $cookie_pass) ) {
+	if (!verify_password($user,$pass)) {
 		echo "<P><B>Authorization failed.</P>";
 		commonFooter();
 		exit;
 	}
 
 	list ($action, $id) = explode(' ', $action);
-	$u = ($user) ? $user : $cookie_user;
 
 	switch($action) {
 	case 'delete':
 		$query = 'SELECT *,UNIX_TIMESTAMP(ts) AS xwhen FROM note WHERE id='.$id;
 		if ($result = mysql_query($query)) {
 			$row = mysql_fetch_array($result);
-			mail($mailto, "note ".$row['id']." deleted from ".$row['sect']." by $u",stripslashes($row['note']),"From: ".$u."@php.net");
+			mail($mailto, "note ".$row['id']." deleted from ".$row['sect']." by $user",stripslashes($row['note']),"From: ".$user."@php.net");
 			$query = 'DELETE FROM note WHERE id=' . $id;
 			if (mysql_query($query)) {
 				echo '<P><B>Note deleted.</B></P>';
@@ -84,10 +82,10 @@ if ($action != '') {
 			$submitter = clean_AntiSPAM($row['user']);
 			echo "<P>Note ".$row['id']." by: ".$row['user']." ($submitter) ";
 			if (is_emailable_address($submitter)) {
-				mail($submitter,"note ".$row['id']." rejected and deleted from ".$row['sect']." by notes editor $u",$reject_text."----- Copy of your note below -----\n\n".stripslashes($row['note']),"From: ".$u."@php.net");
+				mail($submitter,"note ".$row['id']." rejected and deleted from ".$row['sect']." by notes editor $user",$reject_text."----- Copy of your note below -----\n\n".stripslashes($row['note']),"From: ".$user."@php.net");
 			}
 			// email to the list
-			mail($mailto, "note ".$row['id']." rejected and deleted from ".$row['sect']." by $u",stripslashes($row['note']),"From: ".$u."@php.net");
+			mail($mailto, "note ".$row['id']." rejected and deleted from ".$row['sect']." by $user",stripslashes($row['note']),"From: ".$user."@php.net");
 			$query = 'DELETE FROM note WHERE id=' . $id;
 			if (mysql_query($query)) {
 				echo '<B>rejected and deleted.</B></P>';
@@ -104,16 +102,20 @@ if ($action != '') {
 			$row = mysql_fetch_array($result);
 			echo '<FORM method="POST" action="/manual/admin-notes.php">';
 			echo '<TABLE BORDER="0" CELLPADDING="5" CELLSPACING="0" BGCOLOR="#e0e0e0">';
-			echo '<TR valign="top"><TD align="right">E-mail:</TD>' .
+			echo '<TR valign="top"><TD align="right"><small>E-mail:<br></small></TD>' .
 				'<TD><INPUT type="text" size="40" name="nuser" value="',$row['user'], '"><BR></TD></TR>';
-			echo '<TR valign="top"><TD align="right">Note: </TD>' .
+			echo '<TR valign="top"><TD align="right"><small>Note:<br></small></TD>' .
 				'<TD><TEXTAREA name="note" rows="8" cols="50">', $row['note'],'</TEXTAREA><BR></TD></TR>';
 
-			echo '<TR valign="top"><TD align="right">Your CVS username:<BR></TD>' .
+			echo '<tr bgcolor="#cccccc"><td colspan="2">';
+			spacer(1,1);
+			echo '<br></td></tr>';
+
+			echo '<TR valign="top"><TD align="right"><small>Your CVS username:<br></small></TD>' .
 				'<TD><INPUT type="text" size="8" name="user" value="' . $user . '"><BR></TD></TR>';
-			echo '<TR valign="top"><TD align="right">Your CVS password:<BR></TD>' .
+			echo '<TR valign="top"><TD align="right"><small>Your CVS password:<br></small></TD>' .
 				'<TD><INPUT type="password" size="8" name="pass" value="' . $pass . '"><BR></TD></TR>';
-			echo '<TR valign="top"><TD align="right">Remember me:<BR></TD>' .
+			echo '<TR valign="top"><TD align="right"><small>Remember me:<br></small></TD>' .
 				'<TD><INPUT type="checkbox" name="saved" checked value="1"><BR></TD></TR>';
 
 			echo '<TR><TD colspan="2"><INPUT type="submit" name="action" value="modify ' .  $id . '"></TD></TR>';
@@ -134,7 +136,7 @@ if ($action != '') {
 		$query = "UPDATE note SET user='$nuser',note='$note' WHERE id=$id";
 		if (mysql_query($query)) {
 			echo "<P><B>Record modified.</B>";
-			mail($mailto, "note ".$row['id']." modified in ".$row['sect']." by $u",stripslashes($note).$add_url,"From: ".$u."@php.net");
+			mail($mailto, "note ".$row['id']." modified in ".$row['sect']." by $user",stripslashes($note).$add_url,"From: ".$user."@php.net");
 		} else {
 			echo "<P><B>Record not modified (query failed).</B></P>";
 		}

@@ -165,7 +165,7 @@ function makeTitle($title) {
 
 
 function makeEntry($date,$name,$blurb,$id=0) {
-	global $MAGIC_COOKIE, $NOTE_ADMIN_MODE;
+	global $MAGIC_COOKIE;
 
 	echo '<tr valign="top">';
 	echo '<td bgcolor="#e0e0e0" colspan="2">';
@@ -184,37 +184,20 @@ function makeEntry($date,$name,$blurb,$id=0) {
 	echo '<td align="right">';
 	if (isset($MAGIC_COOKIE) && $id) {
 
-		if ($NOTE_ADMIN_MODE=='submit') {
-
-			$button = make_submit('notes-edit.gif', 'edit note '.$id);
-			echo substr($button, 0, -1) . ' NAME="action" VALUE="edit ' . $id . '">';
-			echo '&nbsp;';
-
-			$button = make_submit('notes-reject.gif', 'reject note '.$id);
-			echo substr($button, 0, -1) . ' NAME="action" VALUE="reject ' . $id . '">';
-			echo '&nbsp;';
-
-			$button = make_submit('notes-delete.gif', 'delete note '.$id);
-			echo substr($button, 0, -1) . ' NAME="action" VALUE="delete ' . $id . '">';
-			echo '&nbsp;';
-
-		} else {
-
-			print_link('/manual/admin-notes.php?action=edit+' . $id . '&brief=1',
-				make_image('notes-edit.gif', 'edit note'),
-				'admin'
-			);
-			echo '&nbsp';
-			print_link('/manual/admin-notes.php?action=reject+' . $id . '&brief=1&popup=1',
-				make_image('notes-reject.gif', 'reject note'),
-				'admin'
-			);
-			echo '&nbsp';
-			print_link('/manual/admin-notes.php?action=delete+' . $id . '&brief=1&popup=1',
-				make_image('notes-delete.gif', 'delete note'),
-				'admin'
-			);
-		}
+		print_link('/manual/admin-notes.php?action=edit+' . $id . '&brief=1',
+			make_image('notes-edit.gif', 'edit note'),
+			'admin'
+		);
+		echo '&nbsp';
+		print_link('/manual/admin-notes.php?action=reject+' . $id . '&brief=1&popup=1',
+			make_image('notes-reject.gif', 'reject note'),
+			'admin'
+		);
+		echo '&nbsp';
+		print_link('/manual/admin-notes.php?action=delete+' . $id . '&brief=1&popup=1',
+			make_image('notes-delete.gif', 'delete note'),
+			'admin'
+		);
 	}
 
 	echo '<br></td>';
