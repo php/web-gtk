@@ -393,3 +393,5 @@ function dehtmlspecialchars($str) {
 	$str = str_replace("&amp;","&",$str);
 	return $str;
 }
+
+?>

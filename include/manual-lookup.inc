@@ -44,8 +44,9 @@ $realname = $classes[$pos];
 				$hit[] = $try;
 				}
 			else {
-				$try = "/manual/${lang}/${prefix}enum.${realname}php";
+				$try = "/manual/${lang}/${prefix}enum.${func}.php";
 				if (file_exists("$_SERVER[DOCUMENT_ROOT]$try")) {
+					$try = "/manual/${lang}/${prefix}enum.${realname}php";
 					$full_match++;
 					$hit[] = $try;
 					}

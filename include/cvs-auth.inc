@@ -31,4 +31,4 @@ function verify_password($user, $pass) {
 	return false;
 }
 
-
+?>

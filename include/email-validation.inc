@@ -22,3 +22,4 @@ function is_emailable_address( $email) {
 	}
 }
 
+?>
