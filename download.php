@@ -57,7 +57,7 @@ cd php-gtk
 <LI>
 Configure and install:
 <PRE>
-phpize
+./buildconf
 ./configure
 make
 make install
