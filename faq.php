@@ -14,6 +14,7 @@
 <li><a href="#1">What is PHP-GTK?</a>
 <li><a href="#2">Why is it not working with the browser/web server?</a>
 <li><a href="#3">How do I install PHP-GTK on Win32?</a>
+<li><a href="#4">How do I use the buttons in GtkFileSelection?</a>
 </ul>
 
 <a name="1"><b>What is PHP-GTK?</b></a><br>
@@ -38,7 +39,7 @@ On Windows 98/NT/2000 you will need these files<br>
 <dd>php4ts.dll<br>
 <dd>php_gtk.dll<br>
 <br>
-[Windows directory] (c:\winnt or c:windows)<br>
+[Windows directory] (c:\winnt or c:\windows)<br>
 <dd>php.ini<br>
 <br>
 [System32 directory] (c:\winnt\system32 or c:\windows\system32)<br>
@@ -50,6 +51,25 @@ On Windows 98/NT/2000 you will need these files<br>
 <dd>gnu-intl.dll<br>
 <br>
 php-gtk has NOT been tested on Windows 95/98<br>
+<br><br>
+
+<a name="4"><b>How do I use the buttons in GtkFileSelection?</b></a><br>
+<blockquote>
+<code>
+$fs = &new GtkFileSelection("Save file");					// Create the dialog window<br>
+$ok_button = $fs->ok_button;								// Get a handle to the Ok button<br>
+$ok_button->connect("clicked", "enddialog");				// Connect a function<br>
+$ok_button->connect_object("clicked", "destroy", $fs);		// Connect the destroy action on the dialog window<br>
+</code><br>
+It is not currently possible to do it this way.<br><br>
+<code>
+$fs = &new GtkFileSelection("Save file");					// Create the dialog window<br>
+$fs->ok_button->connect("clicked", "enddialog");			// Connect a function<br>
+$fs->ok_button->connect_object("clicked", "destroy", $fs);	// Connect the destroy action on the dialog window<br>
+</code>
+</blockquote>
+
+<br><br>
 
 
 </body>
