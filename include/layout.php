@@ -159,7 +159,7 @@ function print_email($email, $linktext=false) {
 #
 
 function commonHeader($title=false, $padding=true) {
-	global $SIDEBAR_DATA;
+	global $SIDEBAR_DATA, $MAGIC_COOKIE;
 
 ?><html>
 <head>
@@ -203,6 +203,10 @@ function commonHeader($title=false, $padding=true) {
 	print_link('/changelog.php', 'changelog', false, 'class="menuBlack"');
 	echo delim();
 	print_link('/resources.php', 'resources', false, 'class="menuBlack"');
+	if( isset($MAGIC_COOKIE) ) {
+		echo delim();
+		print_link('/admin-logout.php', 'logout', false, 'class="menuBlack"');
+	}
       ?>&nbsp;<br>
       <?php spacer(2,2); ?><br>
     </td>
