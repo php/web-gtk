@@ -147,6 +147,7 @@ function commonHeader($title=false, $padding=true) {
  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
  <title>PHP-GTK<?php if ($title) { echo ':'.$title; } ?></title>
  <link rel="stylesheet" href="/style.css" />
+ <link rel="stylesheet" href="/style-highlight.css" />
 <!-- ALTER FOR LOCAL  "../../php-gtk-web/style.css" -->
  <link rel="shortcut icon" href="/gifs/favicon.ico" />
 </head>
