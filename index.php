@@ -30,11 +30,11 @@ common_header();
             </p>
             <p class="mtext">This extension is still in early beta phase to not 
               expect everything to work right now. If you have problems then your 
-              first port of call should be the manual and the mailing list. Any 
-              php-gtk related questions should be sent to <a href="mailto:andrei@php.net">andrei@php.net</a> 
+              first port of call should be the manual and the mailing list. Any
+			  serious php-gtk related questions should be sent to <a href="mailto:andrei@php.net">andrei@php.net</a> 
               unless they are related to the manual where they should be sent 
               to <a href="mailto:jmoore@php.net">jmoore@php.net</a>. If you have 
-              a question or suggestion for the website you should contact <a href="mailto:miester@php.net">miester@php.net</a></p>
+              a question or suggestion for the website you should contact <a href="mailto:jmoore@php.net">jmoore@php.net</a>.</p>
           </td>
         </tr>
       </table>
