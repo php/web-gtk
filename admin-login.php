@@ -7,15 +7,9 @@
 
 //require_once 'cvs-auth.inc';
 
-if (isset($MAGIC_COOKIE)) {
-	list($user, $pass) = explode(":", base64_decode($MAGIC_COOKIE));
-}
-if ($user && $pass) {
-	if( $saveme ) {
-		SetCookie("MAGIC_COOKIE", base64_encode("$user:$pass"), time()+(86400*7), '/' );
-	}else {
-		SetCookie("MAGIC_COOKIE", base64_encode("$user:$pass"));
-	}
+if (!isset($MAGIC_COOKIE)) {
+	Header("Location: http://master.php.net/manage/users.php");
+	exit;
 }
 
 commonHeader("Administration Login");
@@ -31,9 +25,6 @@ if (isset($MAGIC_COOKIE)) {
 			<li><a href='/manual/admin-notes.php'>Notes Administration</a>
 		</ul>
 	");
-}else {
-	Header("Location: http://master.php.net/manage/users.php");
-	exit;
 }
 
 commonFooter();
