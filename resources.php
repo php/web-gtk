@@ -26,7 +26,8 @@ The GTK+ manual with a list of all widgets and their corresponding functions/att
 
 </UL>
 
-
+<h2>Presentations</h2>
+<a href="http://conf.php.net/sd-gtk">2001 O'Reilly Open Source Conference PHP-GTK talk</a>.
 
 <h2>Mailing Lists</h2>
 
