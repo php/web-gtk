@@ -7,8 +7,6 @@ mysql_connect("rack1.php.net","nobody","");
 mysql_select_db("gtk");
 // 
 // Change this to whomever you want the administrator emails to go to.
-// The commented out values are for phallstrom@php.net's server. Easier
-// to leave them commented out than to change them all the time.
 // 
 $mailto = 'gtk-webmaster@lists.php.net';
 //$mailto = 'philip+gtk-webmaster@eilio.com';
@@ -16,11 +14,8 @@ $mailto = 'gtk-webmaster@lists.php.net';
 
 // 
 // this directory must exist and must be writable by the user the webserver runs as
-// The commented out values are for phallstrom@php.net's server. Easier
-// to leave them commented out than to change them all the time.
 // 
-define("APP_SCREENSHOT_DIR", "/local/Web/sites/php-gtk-web/apps/screenshots");
-//define("APP_SCREENSHOT_DIR", "/local/www/sites/gtkphp/screenshots");
+define("APP_SCREENSHOT_DIR", "screenshots");
 
 // 
 // this is the structure that defines the categories.  Just be sure that all of the id numbers are unique
