@@ -1,5 +1,12 @@
 <?php // -*- C++ -*-
 
+define(NAV_NONE, 0);
+define(NAV_CLASSENTRY, 1);
+define(NAV_CONSTRUCTOR, 2);
+define(NAV_METHOD, 3);
+define(NAV_SIGNAL, 4);
+
+
 $NEXT = $PREV = $UP = $HOME = array(false, false);
 $TOC = array();
 
@@ -23,7 +30,6 @@ function makeBorderTOC($this) {
 	global $NEXT, $PREV, $UP, $HOME, $TOC, $PHP_SELF, $DOCUMENT_ROOT;
 	global $SIDEBAR_DATA, $LANG;
 
-	$SIDEBAR_DATA = '<form method="GET" action="/manual-lookup.php">' .
 	$SIDEBAR_DATA.= '<table border="0" CELLPADDING="4" CELLSPACING="0" WIDTH="160">';
 
 	$SIDEBAR_DATA.= '<tr valign="top"><td>' . 
@@ -41,14 +47,32 @@ function makeBorderTOC($this) {
 	$SIDEBAR_DATA.= '<tr valign="top"><td><small>';
 
 	for ($i = 0; $i < count($TOC); $i++) {
-		list($url, $title) = $TOC[$i];
+		list($url, $title, $type) = $TOC[$i];
 		if (!$url || !$title) {
 			continue;
 		}
-		$img = 'box-0.gif';
+		$end = '0.gif';
 		if ($title == $this) {
-			$img = 'box-1.gif';
+			$end = '1.gif';
 		}
+
+        switch($type) {
+            case NAV_CLASSENTRY:
+                $img = "icon-o".$end;
+                break;
+            case NAV_CONSTRUCTOR:
+                $img = "icon-c".$end;
+                break;
+            case NAV_METHOD:
+                $img = "icon-m".$end;
+                break;
+            case NAV_SIGNAL:
+                $img = "icon-s".$end;
+                break;
+            default:
+                $img = "box-".$end;
+        }
+
 		if ($UP[0] == 'funcref.php') {
 			$title = eregi_replace(" functions\$", "", $title);
 		}
@@ -58,7 +82,7 @@ function makeBorderTOC($this) {
 	}
 
 	$SIDEBAR_DATA.= '</small></td></tr>';
-	$SIDEBAR_DATA.= '</table></form>';
+	$SIDEBAR_DATA.= '</table>';
 
 }
 
