@@ -10,9 +10,6 @@ $num_entries_per_page = 50;
 if (isset($MAGIC_COOKIE)) {
 	list($user, $pass) = explode(":", base64_decode($MAGIC_COOKIE));
 }
-if ($saveme && $user && $pass && isset($MAGIC_COOKIE)) {
-	SetCookie("MAGIC_COOKIE", base64_encode("$user:$pass"), time()+(86400*7), '/' );
-}
 
 /*
 if(!strstr($MYSITE,"www.php.net")) {

@@ -8,18 +8,14 @@
 require_once("email-validation.inc");
 require_once("apps.inc");
 
-
-if( isset($MAGIC_COOKIE) ) {
-	list($user, $pass) = explode(":", base64_decode($MAGIC_COOKIE));
-}
-
 if( !isset($MAGIC_COOKIE) ) {
 	Header("Location: http://master.php.net/manage/users.php");
 	exit;
 }
 
-$MAGIC_COOKIE = 'temp';
+list($user, $pass) = explode(":", base64_decode($MAGIC_COOKIE));
 
+$MAGIC_COOKIE = 'temp';
 
 commonHeader("Applications Administration");
 appHeader($the_cat, $the_subcat);
@@ -36,13 +32,6 @@ print("
 // or find the app in question we bail out.
 // 
 if( !empty($action) && !empty($app_id) ) {
-
-	if( !isset($MAGIC_COOKIE) ) {
-		echo "<P><B>Authorization failed.</B></P>";
-		appFooter();
-		commonFooter();
-		exit;
-	}
 
 	$res = mysql_query("SELECT * FROM app WHERE id = $app_id");
 	if( $res ) {
@@ -241,8 +230,6 @@ if( !empty($action) && !empty($app_id) ) {
 		}
 	}
 }
-
-
 
 if( empty($the_cat) && empty($the_subcat) && empty($key) ) {
 	include("pending.php");

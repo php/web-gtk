@@ -14,18 +14,16 @@ if (!isset($MAGIC_COOKIE)) {
 
 commonHeader("Administration Login");
 
-if (isset($MAGIC_COOKIE)) {
-	print("
-		<h1>You're logged in</h1>
-		Where do you really want to go today?
-		<br>
-		<br>
-		<ul>
-			<li><a href='/apps/admin-apps.php'>Application Administration</a><br><br>
-			<li><a href='/manual/admin-notes.php'>Notes Administration</a>
-		</ul>
-	");
-}
+print("
+	<h1>You're logged in</h1>
+	Where do you really want to go today?
+	<br>
+	<br>
+	<ul>
+		<li><a href='/apps/admin-apps.php'>Application Administration</a><br><br>
+		<li><a href='/manual/admin-notes.php'>Notes Administration</a>
+	</ul>
+");
 
 commonFooter();
 
