@@ -382,26 +382,6 @@ function manualUserNotes($title, $id) {
 
 
 
-function manualLastModified($title, $id) {
-	global $MYSITE, $SCRIPT_FILENAME;
-#	if (is_primary_site()) {
-	if ( true ) {
-		$query = "SELECT UNIX_TIMESTAMP(ts) AS stamp FROM note WHERE sect = '$title' OR sect = '$id' ORDER BY ts DESC limit 1";
-		$result_id = @mysql_query($query);
-		if($result_id && mysql_num_rows($result_id)) {
-			$t = mysql_fetch_row($result_id);
-			Header("Last-Modified: ".gmdate("D, d M Y H:i:s",$t[0])." GMT");
-		} else {
-			Header("Last-Modified: ".gmdate("D, d M Y H:i:s",getlastmod())." GMT");
-		}
-		if ($result_id) {
-			mysql_free_result($result_id);
-		}
-	}
-}
-
-
-
 function sendManualHeaders($charset,$lang) {
 	global $LANG;
 	$LANG = $lang;
@@ -414,9 +394,6 @@ function sendManualHeaders($charset,$lang) {
 function manualHeader($title,$id="") {
 	global $HTDIG, $LANGUAGES, $LANG, $SIDEBAR_DATA;
 	global $HTTP_GET_VARS, $HTTP_SERVER_VARS;
-	if (!$HTTP_GET_VARS['rate_id'] && !$HTTP_GET_VARS['rate_note']) {
-		manualLastModified($title,$id);
-	}
 	makeBorderTOC($title);
 	commonHeader('Manual: '.$title);
         # create links to plain html and other languages
