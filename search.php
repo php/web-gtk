@@ -1,7 +1,6 @@
-<?
-
+<?php
 if(isset($_POST['pattern'])) {
-	$pattern = $_POST['pattern'];
+    $pattern = $_POST['pattern'];
 	}
 elseif(isset($_GET['function'])) {
 	$pattern = $_GET['function'];
@@ -20,6 +19,13 @@ if(isset($pattern) && ($pattern) && isset($show) && ($show == "whole-site")) {
     $pattern .= ' site:gtk.php.net -site:wiki.gtk.php.net';
     $query = urlencode($pattern);
     $location = 'http://www.google.com/search?hl=en&lr=&ie=UTF-8&q=' . $query . '&btnG=Search';
+	Header("Location: ".$location);
+	exit;
+}
+
+if(isset($pattern) && ($pattern) && isset($show) && ($show == "wiki")) {
+    $query = urlencode($pattern);
+    $location = '/wiki/index.php/Main/SearchWiki?text=' . $query;
 	Header("Location: ".$location);
 	exit;
 }

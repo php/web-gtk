@@ -204,6 +204,7 @@ function commonHeader($title=false, $padding=true) {
 <SELECT NAME="show" CLASS="small">
 <OPTION VALUE="manual">manual</OPTION>
 <OPTION VALUE="whole-site">whole site</OPTION>
+<!-- <OPTION VALUE="wiki">wiki</OPTION> -->
 <OPTION VALUE="php-gtk-general-list">general mailing list</OPTION>
 <OPTION VALUE="php-gtk-dev-list">development mailing list</OPTION>
 <OPTION VALUE="php-gtk-doc-list">documentation mailing list</OPTION>
