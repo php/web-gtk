@@ -236,7 +236,7 @@ function makeEntry($row, $show_admin = true, $show_rating = true ) {
 }
 
 
-updateNotesVoting() {
+function updateNotesVoting() {
 	global $HTTP_GET_VARS, $HTTP_SERVER_VARS;
 
 	# probably a better way/place to do this, but ...
