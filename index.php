@@ -34,6 +34,10 @@ GUI applications.
 <h1>News</h1>
 
 <p>
+Andrei Zmievski gave a presentation and a workshop on PHP-GTK at the Fórum Internacional Software Livre 2002 in Porto Alegre, Brazil. The presentation is available online at <?print_link('http://conf.php.net/br-gtk')?>.
+</p>
+
+<p>
 <a href="/download.php">PHP-GTK Version 0.5.1</a> has been released today, April
 26, 2002. The main goal was to adapt to the new PHP build system while
 preserving compatibility for the old one. Of course, some bug fixes and
