@@ -3,7 +3,7 @@
 // 
 // change this to whatever the correct connection parameters are
 // 
-mysql_pconnect("localhost","nobody","");
+mysql_pconnect("rack1.php.net","nobody","");
 mysql_select_db("gtk");
 
 // 

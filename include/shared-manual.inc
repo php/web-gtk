@@ -8,12 +8,12 @@ define(NAV_SIGNAL, 4);
 define(NAV_ENUM, 5);
 
 
-$host = 'localhost';
+$host = 'rack1.php.net';
 $user = 'nobody';
 $pass = '';
 
 
-mysql_pconnect("localhost","nobody","");
+mysql_pconnect("rack1.php.net","nobody","");
 mysql_select_db("gtk");
 
 
