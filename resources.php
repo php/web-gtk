@@ -34,6 +34,15 @@ PHP-GTK list has no information about.<BR>
 
 </UL>
 
+<h2>Articles</h2>
+
+<UL>
+
+<LI><? print_link('http://www.goldweb.com.au/~davidj/articles/html/1.html',
+				  'Introductory PHP-GTK article by David Jorm'); ?><br>
+
+</UL>
+
 <h2>Presentations</h2>
 <a href="http://conf.php.net/sd-gtk">2001 O'Reilly Open Source Conference PHP-GTK talk</a>.
 
