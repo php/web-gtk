@@ -71,5 +71,3 @@ if ($numrows > 10 ) {
 	echo $jumpbar;
 }
 
-
-

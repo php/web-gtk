@@ -3,11 +3,10 @@ require_once 'prepend.php';
 
 
 function make404() {
-	global $REQUEST_URI;
 	header('HTTP/1.0 404 Not Found');
 	commonHeader('404 Not Found');
 	echo "<H1>Not Found</H1>\n";
-	echo "<P>The page <B>" . $REQUEST_URI . "</B> could not be found.</P>\n";
+	echo "<P>The page <B>" . $_SERVER['REQUEST_URI'] . "</B> could not be found.</P>\n";
 	commonFooter();
 }
 
@@ -16,21 +15,21 @@ if (file_exists("../configuration.inc")) {
   include_once "../configuration.inc";
 }
 
-if (preg_match('/\.(pdf|gif|jpg)$/', $REQUEST_URI)) {
+if (preg_match('/\.(pdf|gif|jpg)$/', $_SERVER['REQUEST_URI'])) {
   make404();
   exit;
 }
 
 $lang = "en";
-if (!is_dir("$DOCUMENT_ROOT/manual/$lang")) {
+if (!is_dir("$_SERVER['DOCUMENT_ROOT']/manual/$lang")) {
 	$lang = "en"; // fall back to English
 }
 # handle .php3 files that were renamed to .php
-if (preg_match("/(.*\.php)3$/", $REQUEST_URI, $array)) {
-	if($SERVER_PORT!=80) {
-		$url = "http://".$SERVER_NAME.":".$SERVER_PORT.$array[1];
+if (preg_match("/(.*\.php)3$/", $_SERVER['REQUEST_URI'], $array)) {
+	if($_SERVER['SERVER_PORT']!=80) {
+		$url = "http://".$_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT'].$array[1];
 	} else {
-		$url = "http://".$SERVER_NAME.$array[1];
+		$url = "http://".$_SERVER['SERVER_NAME'].$array[1];
 	}
 	$urle = htmlspecialchars($url);
 	
@@ -43,11 +42,11 @@ if (preg_match("/(.*\.php)3$/", $REQUEST_URI, $array)) {
 }
 
 # handle moving english manual down into its own directory
-if (eregi("^(.*)/manual/((html/)?[^/]+)$", $REQUEST_URI, $array)) {
-	if($SERVER_PORT!=80) {
-		$url = "http://".$SERVER_NAME.":".$SERVER_PORT."$array[1]/manual/$lang/".$array[2];
+if (eregi("^(.*)/manual/((html/)?[^/]+)$", $_SERVER['REQUEST_URI'], $array)) {
+	if($_SERVER['SERVER_PORT']!=80) {
+		$url = "http://".$_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']."$array[1]/manual/$lang/".$array[2];
 	} else {
-		$url = "http://".$SERVER_NAME."$array[1]/manual/$lang/".$array[2];
+		$url = "http://".$_SERVER['SERVER_NAME']."$array[1]/manual/$lang/".$array[2];
 	}
 	$urle = htmlspecialchars($url);
 	
@@ -59,14 +58,13 @@ if (eregi("^(.*)/manual/((html/)?[^/]+)$", $REQUEST_URI, $array)) {
 	exit;
 }
 
-$uri=substr($REDIRECT_REDIRECT_ERROR_NOTES,strpos($REDIRECT_REDIRECT_ERROR_NOTES,$DOCUMENT_ROOT)+strlen($DOCUMENT_ROOT)+1);
-
+$uri = substr($REDIRECT_REDIRECT_ERROR_NOTES, strpos($REDIRECT_REDIRECT_ERROR_NOTES, $_SERVER['DOCUMENT_ROOT'])+strlen($_SERVER['DOCUMENT_ROOT'])+1);
 
 # try to find the uri as a manual entry
 
 require "manual-lookup.inc";
-if(strchr($uri,'/')) {
-	list($lang,$function) = explode('/',$uri,2);
+if(strchr($uri, '/')) {
+	list($lang, $function) = explode('/', $uri, 2);
 	$function = strtolower($function);
 	$lang = strtolower($lang);
 } else {
@@ -74,18 +72,18 @@ if(strchr($uri,'/')) {
 }
 
 $try = find_manual_page($lang, $function);
-if ($try) {
+if($try) {
 	header("HTTP/1.0 302 Redirect");
 	header("Location: $try");
 	exit;
 }
 
 
-# If all else fails ... redirect to the search page with the pattern set to $REQUEST_URI
+# If all else fails ... redirect to the search page with the pattern set to $_SERVER['REQUEST_URI']
 
-#if ($REQUEST_URI) {
+#if ($_SERVER['REQUEST_URI']) {
 #	header('HTTP/1.0 302 Redirect');
-#	header('Location: /search.php?show=nosource&pattern='.urlencode($REQUEST_URI) );
+#	header('Location: /search.php?show=nosource&pattern='.urlencode($_SERVER['REQUEST_URI']) );
 #	exit;
 #}
 

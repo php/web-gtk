@@ -1,15 +1,19 @@
 <?
 
-if(isset($pattern) && ($pattern) && isset($show) && ($show == "manual"))
-{
+if(isset($_POST['pattern'])) {
+	$pattern = $_POST['pattern'];
+	}
+elseif(isset($_GET['function'])) {
+	$pattern = $_GET['function'];
+	}
+$show = $_POST['show'];
+
+if(isset($pattern) && ($pattern) && isset($show) && ($show == "manual")) {
+	/* ALTER FOR LOCAL $location = "manual-lookup.php"; */
 	$location = "/manual-lookup.php";
-	$query = "lang=en&function=".urlencode($pattern);
+	$query = "function=".urlencode($pattern);
 	Header("Location: ".$location."?".$query);
 	exit;
-}
-
-if (isset($pattern) && ($pattern)) {
-	SetCookie("prevsearch",$pattern,0,"",".php.net");
 }
 
 if (isset($pattern) && ($pattern)) {

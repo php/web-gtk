@@ -48,7 +48,7 @@ if ($action != '') {
 			$query = 'DELETE FROM note WHERE id=' . $id;
 			if (mysql_query($query)) {
 				echo '<P><B>Note deleted.</B></P>';
-                                if ($popup) {
+				if ($popup) {
 					echo '<script language="javascript">window.close();</script>';
 				}
 			}

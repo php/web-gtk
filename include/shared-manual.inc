@@ -1,4 +1,4 @@
-<?php // -*- C++ -*-
+<?php
 
 define(NAV_NONE, 0);
 define(NAV_CLASSENTRY, 1);
@@ -7,21 +7,17 @@ define(NAV_METHOD, 3);
 define(NAV_SIGNAL, 4);
 define(NAV_ENUM, 5);
 
-
-$host = 'rack1.php.net';
+$host = 'localhost';
 $user = 'nobody';
 $pass = '';
 
-
-mysql_pconnect("rack1.php.net","nobody","");
+mysql_connect("localhost","nobody","");
 mysql_select_db("gtk");
-
 
 $NEXT = $PREV = $UP = $HOME = array(false, false);
 $TOC = array();
 
 $SIDEBAR_DATA = '';
-
 
 function recursive_trim(&$s, $k) {
 	if (is_array($s)) {
@@ -31,9 +27,9 @@ function recursive_trim(&$s, $k) {
 	}
 }
 
-
 function setupNavigation($data) {
 	global $NEXT, $PREV, $UP, $HOME, $TOC, $tstamp;
+
 	@array_walk($data, 'recursive_trim');
 	$HOME = @$data["home"];
 	$HOME[0] = "./";
@@ -44,27 +40,26 @@ function setupNavigation($data) {
 	$tstamp = gmdate("D, d M Y",getlastmod());
 }
 
-
-
 function makeBorderTOC($this) {
-	global $NEXT, $PREV, $UP, $HOME, $TOC, $PHP_SELF, $DOCUMENT_ROOT;
-	global $SIDEBAR_DATA, $LANG;
+	global $NEXT, $PREV, $UP, $HOME, $TOC;
+	global $SIDEBAR_DATA;
 
 	$SIDEBAR_DATA = '<form method="get" action="/manual-lookup.php">';
+	/* ALTER FOR LOCAL "../../php-gtk-web/manual-lookup.php" */
 	$SIDEBAR_DATA.= '<table border="0" CELLPADDING="4" CELLSPACING="0" WIDTH="160">';
 
+	if(sizeof($TOC) > 1) {
 	$SIDEBAR_DATA.= '<tr valign="top"><td><small>' .
-		'<input type="hidden" name="lang" value="' . $LANG . '">' .
 		'lookup: <input type="text" class="small" name="function" size="10"> ' .
 		make_submit('small_submit.gif', 'lookup', 'bottom') .
 		'<br></small></td></tr>';
-		
+
 	$SIDEBAR_DATA.= '<tr bgcolor="#cccccc"><td></td></tr>';
 
 	$SIDEBAR_DATA.= '<tr valign="top"><td>' . 
-		make_link('./', make_image('caret-t.gif', $HOME[1]) . $HOME[1] ) . 
-		'<br></td></tr>';
-		
+	make_link('./', make_image('caret-t.gif', $HOME[1]) . $HOME[1] ) . 
+	'<br></td></tr>';
+
 	$SIDEBAR_DATA.= '<tr bgcolor="#cccccc"><td></td></tr>';
 
 	if (($HOME[1] != $UP[1]) && $UP[1]) {
@@ -85,25 +80,25 @@ function makeBorderTOC($this) {
 			$end = '1.gif';
 		}
 
-        switch($type) {
-            case NAV_CLASSENTRY:
-                $img = "icon-o".$end;
-                break;
-            case NAV_CONSTRUCTOR:
-                $img = "icon-c".$end;
-                break;
-            case NAV_METHOD:
-                $img = "icon-m".$end;
-                break;
-            case NAV_SIGNAL:
-                $img = "icon-s".$end;
-                break;
-            case NAV_ENUM:
-                $img = "icon-e".$end;
-                break;
-            default:
-                $img = "box-".$end;
-        }
+		switch($type) {
+			case NAV_CLASSENTRY:
+				$img = "icon-o".$end;
+				break;
+			case NAV_CONSTRUCTOR:
+				$img = "icon-c".$end;
+				break;
+			case NAV_METHOD:
+				$img = "icon-m".$end;
+				break;
+			case NAV_SIGNAL:
+				$img = "icon-s".$end;
+				break;
+			case NAV_ENUM:
+				$img = "icon-e".$end;
+				break;
+			default:
+				$img = "box-".$end;
+		}
 
 		if ($UP[0] == 'funcref.php') {
 			$title = eregi_replace(" functions\$", "", $title);
@@ -111,15 +106,14 @@ function makeBorderTOC($this) {
 		$SIDEBAR_DATA .= '&nbsp;' . 
 			make_link($url, make_image($img, $title) . $title ) . 
 			'<br>';
+		}
+		$SIDEBAR_DATA.= '</small></td></tr>';
 	}
-
-	$SIDEBAR_DATA.= '</small></td></tr>';
 	$SIDEBAR_DATA.= '</table></form>';
-
 }
 
-function navigationBar($title,$id,$loc) {
-	global $NEXT, $PREV, $tstamp, $SERVER_NAME,$SERVER_PORT,$PHP_SELF;
+function navigationBar($title, $id, $loc) {
+	global $NEXT, $PREV, $tstamp;
 
 	echo '<table border="0" width="580" bgcolor="#e0e0e0" cellpadding="0" cellspacing="4">';
 
@@ -143,37 +137,33 @@ function navigationBar($title,$id,$loc) {
 	echo '<tr>';
 	echo '<td align="right" colspan="2"><small>Last updated: '.$tstamp.'<br>';
 
-	if ($loc == 'bottom') {
+#	if ($loc == 'bottom') {
 
-#		$back_url = 'http://' . $SERVER_NAME . 
-#			(($SERVER_PORT==80) ? '' : ':'.$SERVER_PORT ) . 
-#			$PHP_SELF;
+#		$back_url = 'http://' . $_SERVER['SERVER_NAME'] . 
+#			(($_SERVER['SERVER_PORT']==80) ? '' : ':'.$_SERVER['SERVER_PORT'] ) . 
+#			$_SERVER['PHP_SELF'];
 
-	} else {
+#	} else {
 
 		global $LANGUAGES;
 		$links = array();
-	        if($LANGUAGES){
-	     		foreach($LANGUAGES as $code=>$name) {
-		    		if (file_exists("../$code/$id")) {
-			    		$links[] = make_link("../$code/$id", $name);
-				    }
-		    	}
-	        }
+		if($LANGUAGES){
+			foreach($LANGUAGES as $code=>$name) {
+				if (file_exists("../$code/$id")) {
+					$links[] = make_link("../$code/$id", $name);
+					}
+				}
+			}
 		$file = substr($id,0,-4);
 		if (file_exists("html/$file.html")) {
 			$links[] = make_link("html/$file.html", 'Plain HTML');
 		}
 		if (count($links)) {
 			echo 'view this page in ' . join (delim(), $links);
+			echo '<br></small></td></tr>';
 		}
-	}
-
-	echo '<br></small></td></tr>';
 	echo "</table>\n";
-
 }
-
 
 function makeTitle($title) {
 	echo '<tr bgcolor="#d0d0d0" valign="top">';
@@ -181,10 +171,8 @@ function makeTitle($title) {
 	echo "</tr>\n";
 }
 
-
-
 function makeEntry($row, $show_admin = true, $show_rating = true ) {
-	global $MAGIC_COOKIE, $PHP_SELF;
+	global $MAGIC_COOKIE;
 
 	echo '<tr valign="top">';
 	echo '<td bgcolor="#e0e0e0" colspan="2">';
@@ -231,7 +219,7 @@ function makeEntry($row, $show_admin = true, $show_rating = true ) {
 			if ($i>1) {
 				echo ' <font color="#999999">|</font> ';
 			}
-			print_link($PHP_SELF.'?rate_id='.$row['id'].'&rate_note='.$i, $i);
+			print_link($_SERVER['PHP_SELF'].'?rate_id='.$row['id'].'&rate_note='.$i, $i);
 		}
 		echo '<br>';
 	}
@@ -244,28 +232,24 @@ function makeEntry($row, $show_admin = true, $show_rating = true ) {
 	echo '</td></tr>';
 }
 
-
 function updateNotesVoting() {
-	global $HTTP_GET_VARS, $HTTP_SERVER_VARS;
 
 	# probably a better way/place to do this, but ...
 
-	if ($HTTP_GET_VARS['rate_id'] && $HTTP_GET_VARS['rate_note']) {
-		$p = parse_url($HTTP_SERVER_VARS['HTTP_REFERER']);
+	if ($_GET['rate_id'] && $_GET['rate_note']) {
+		$p = parse_url($_SERVER['HTTP_REFERER']);
 
-echo "\n\n<!-- " . $p['path'] . " :: " . $HTTP_SERVER_VARS['SCRIPT_NAME'] . " -->\n\n";
+echo "\n\n<!-- " . $p['path'] . " :: " . $_SERVER['SCRIPT_NAME'] . " -->\n\n";
 
 		/* prevent outside scripts from voting */
-		if ($HTTP_SERVER_VARS['SCRIPT_NAME']==$p['path']) {
+		if ($_SERVER['SCRIPT_NAME']==$p['path']) {
 			$query = 'UPDATE note SET votes=votes+1, rating=rating+' . 
-				min(5, $HTTP_GET_VARS['rate_note']) .
-				' WHERE id=' . $HTTP_GET_VARS['rate_id'];
+				min(5, $_GET['rate_note']) .
+				' WHERE id=' . $_GET['rate_id'];
 			$result_id = @mysql_query($query);
 		}
 	}
 }
-
-
 
 function manualGetUserNotes($title, $id) {
 	// if we're gtk.php.net, get it from the local DB
@@ -308,12 +292,10 @@ echo "\n\n<!-- DEBUG: err=" . @mysql_error($result_id) . " -->\n\n";
 	return $notes;
 }
 
-
-
 function manualUserNotes($title, $id) {
-	global $PHP_SELF, $SERVER_NAME, $SERVER_PORT, $LANG, $MYSITE;
+	global $LANG, $MYSITE;
 
-	$cur = substr(dirname($PHP_SELF), -2);
+	$cur = substr(dirname($_SERVER['PHP_SELF']), -2);
 	if($cur=='al') {
 		$cur='en';
 	}
@@ -324,16 +306,16 @@ function manualUserNotes($title, $id) {
 
 	$notes = manualGetUserNotes($title, $id);
 
-	$back_url = 'http://' . $SERVER_NAME . 
-		(($SERVER_PORT==80) ? '' : ':'.$SERVER_PORT ) . 
-		$PHP_SELF;
+	$back_url = 'http://' . $_SERVER['SERVER_NAME'] . 
+		(($SERVER_PORT==80) ? '' : ':'.$_SERVER['SERVER_PORT'] ) . 
+		$_SERVER['PHP_SELF'];
 
 	echo '<tr bgcolor="#d0d0d0" valign="top">';
 	echo '<td><small>User Contributed Notes<br></small><b>' . $title . '</b><br></td>';
 	echo '<td align="right">';
 	print_link('/manual/add-note.php?sect='.$id.'&redirect='.$back_url,
 		make_image('notes-add.gif','add a note')
-	);      
+	);
 	echo "&nbsp;";
 	print_link('/manual/about-notes.php',
 		make_image('notes-about.gif', 'about notes')
@@ -343,7 +325,6 @@ function manualUserNotes($title, $id) {
 
 	if ( sizeof($notes) == 0 ) {
 
-#		if ( !strstr($MYSITE,"gtk.php.net") ) {
 		if ( false ) {
 			echo '<tr valign="top">';
 			echo '<td bgcolor="#e0e0e0" colspan="2">';
@@ -363,74 +344,52 @@ function manualUserNotes($title, $id) {
 			makeEntry($note);
 		}
 
-                echo "<tr bgcolor=\"#d0d0d0\" valign=\"top\">\n";
+		echo "<tr bgcolor=\"#d0d0d0\" valign=\"top\">\n";
 		echo "<td colspan=\"2\" align=\"right\">\n";
-                print_link('/manual/add-note.php?sect='.$id.'&redirect='.$back_url,
-                        make_image('notes-add.gif','add a note')
-                );      
+		print_link('/manual/add-note.php?sect='.$id.'&redirect='.$back_url,
+			make_image('notes-add.gif','add a note')
+			);
 		echo "&nbsp;";
-                print_link('/manual/about-notes.php',
-                        make_image('notes-about.gif', 'about notes')
-                );
+		print_link('/manual/about-notes.php',
+			make_image('notes-about.gif', 'about notes')
+			);
 		echo "<br></td>\n";
 		echo "</tr>\n";
-
 	}
-
 	echo "</table><br><br>\n";
 }
 
-
-
-function sendManualHeaders($charset,$lang) {
+function sendManualHeaders($charset, $LANG) {
 	global $LANG;
-    global $PHP_SELF;
-	$LANG = $lang;
-    /* HACK */
-    if(stristr($PHP_SELF, "/de/") !== FALSE)
-    {
-        Header("Content-type: text/html;charset=UTF-8");
-	    Header("Content-language: de");
-    }
-    else
-    {
-        Header("Content-type: text/html;charset=$charset");
-	    Header("Content-language: $lang");
-    }    
+	Header("Content-type: text/html;charset=UTF-8");
+	Header("Content-language: $LANG");
 }
 
+function manualHeader($title, $id="") {
+	global $HTDIG;
 
-
-function manualHeader($title,$id="") {
-	global $HTDIG, $LANGUAGES, $LANG, $SIDEBAR_DATA;
-	global $HTTP_GET_VARS, $HTTP_SERVER_VARS;
 	makeBorderTOC($title);
 	commonHeader('Manual: '.$title);
-        # create links to plain html and other languages
+	# create links to plain html and other languages
 	if (!$HTDIG) {
 		navigationBar($title, $id, "top");
 	}
-    
 }
 
-function manualFooter($title,$id="") {
+function manualFooter($title, $id="") {
 	global $HTDIG;
 	if (!$HTDIG) {
 		manualUserNotes($title,$id);
 		navigationBar($title, $id, "bottom");
 	}
 	commonFooter();
-
 }
 
-function dehtmlspecialchars($str)
-{
+function dehtmlspecialchars($str) {
 
-        $str = str_replace("&gt;",">",$str);
-        $str = str_replace("&lt;","<",$str);
-        $str = str_replace("&quot;","\"",$str);
-        $str = str_replace("&amp;","&",$str);
-        
-        return $str;
-        
+	$str = str_replace("&gt;",">",$str);
+	$str = str_replace("&lt;","<",$str);
+	$str = str_replace("&quot;","\"",$str);
+	$str = str_replace("&amp;","&",$str);
+	return $str;
 }

@@ -3,15 +3,14 @@
 // 
 // change this to whatever the correct connection parameters are
 // 
-mysql_pconnect("rack1.php.net","nobody","");
+mysql_connect("rack1.php.net","nobody","");
 mysql_select_db("gtk");
-
 // 
 // Change this to whomever you want the administrator emails to go to.
 // The commented out values are for phallstrom@php.net's server. Easier
 // to leave them commented out than to change them all the time.
 // 
-$mailto = 'gtk-webmaster@lists.php.net';
+$mailto = 'gtk-webmaster@php.net';
 //$mailto = 'philip+gtk-webmaster@eilio.com';
 
 
@@ -94,7 +93,6 @@ function appHeader($the_cat = false, $the_subcat = false) {
 		}
 	}
 
-
 ?>
 <table cellpadding="0" cellspacing="0" border="0">
  <tr valign="top">
@@ -129,7 +127,8 @@ function appHeader($the_cat = false, $the_subcat = false) {
 // 
 foreach( $appCats as $cat_id => $catObj ) {
 	print("<tr valign=\"top\">");
-	if( $the_cat == $cat_id ) {
+
+	if( $_GET['the_cat'] == $cat_id ) {
 		$img = "/gifs/box-1.gif";
 	}else {
 		$img = "/gifs/box-0.gif";
@@ -137,11 +136,11 @@ foreach( $appCats as $cat_id => $catObj ) {
 	print("<td nowrap><a href=\"$script?the_cat=$cat_id\"><img src=\"$img\" border=\"0\" width=\"11\" height=\"7\" ALT=\"$catObj->name\" >$catObj->name</a><br></td>");
 	print("</tr>");
 	
-	if( $the_cat == $cat_id && is_array($catObj->sub) )  {
+	if( $_GET['the_cat'] == $cat_id && is_array($catObj->sub) )  {
 		print("<tr valign=\"top\">");
 		print("<td nowrap><small>");
 		foreach( $catObj->sub as $subcat_id => $subcatObj ) {
-			if( $the_subcat == $subcat_id ) {
+			if( $_GET['the_subcat'] == $subcat_id ) {
 				$img = "/gifs/box-1.gif";
 			}else {
 				$img = "/gifs/box-0.gif";
@@ -231,15 +230,15 @@ function displayApp($app, $the_cat, $the_subcat, $offset, $user_edit_mode = fals
 			<small>
 				rating: <b>$rating</b> |
 				rate: 
-				<a href='rate.php?app_id=$app->id&rate=1&the_cat=$the_cat&the_subcat=$the_subcat&offset=$offset'>1</a> 
+				<a href='rate.php?app_id=$app->id&rate=1&the_cat=$_GET['the_cat']&the_subcat=$_GET['the_subcat']&offset=$offset'>1</a> 
 				<font color='#999999'>|</font> 
-				<a href='rate.php?app_id=$app->id&rate=2&the_cat=$the_cat&the_subcat=$the_subcat&offset=$offset'>2</a> 
+				<a href='rate.php?app_id=$app->id&rate=2&the_cat=$_GET['the_cat']&the_subcat=$_GET['the_subcat']&offset=$offset'>2</a> 
 				<font color='#999999'>|</font> 
-				<a href='rate.php?app_id=$app->id&rate=3&the_cat=$the_cat&the_subcat=$the_subcat&offset=$offset'>3</a> 
+				<a href='rate.php?app_id=$app->id&rate=3&the_cat=$_GET['the_cat']&the_subcat=$_GET['the_subcat']&offset=$offset'>3</a> 
 				<font color='#999999'>|</font> 
-				<a href='rate.php?app_id=$app->id&rate=4&the_cat=$the_cat&the_subcat=$the_subcat&offset=$offset'>4</a> 
+				<a href='rate.php?app_id=$app->id&rate=4&the_cat=$_GET['the_cat']&the_subcat=$_GET['the_subcat']&offset=$offset'>4</a> 
 				<font color='#999999'>|</font> 
-				<a href='rate.php?app_id=$app->id&rate=5&the_cat=$the_cat&the_subcat=$the_subcat&offset=$offset'>5</a>
+				<a href='rate.php?app_id=$app->id&rate=5&the_cat=$_GET['the_cat']&the_subcat=$_GET['the_subcat']&offset=$offset'>5</a>
 			</small>
 		");
 	}

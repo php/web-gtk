@@ -8,35 +8,35 @@
 require_once("apps.inc");
 
 $limit = 10;
-if( empty($offset) ) {
+if( empty($GET['offset']) ) {
 	$offset = 0;
 }
 
-if( !empty($the_cat) )  {
-	$title = " : " . $appCats[$the_cat]->name;
-	$this_cat = $the_cat;
-	if( !empty($the_subcat) ) {
-		$title .= " : " . $appCats[$the_cat]->sub[$the_subcat]->name;
-		$this_cat = $the_subcat;
+if( !empty($_GET['the_cat']) )  {
+	$title = " : " . $appCats[$_GET['the_cat']]->name;
+	$this_cat = $_GET['the_cat'];
+	if( !empty($_GET['the_subcat']) ) {
+		$title .= " : " . $appCats[$_GET['the_cat']]->sub[$_GET['the_subcat']]->name;
+		$this_cat = $_GET['the_subcat'];
 	}
 }
 
 if( !empty($this_cat) )  {
+
 	if( is_array($appCats[$this_cat]->sub) )  {
 		$these_cats = $this_cat . "," . join(",", array_keys($appCats[$this_cat]->sub));
 		$res = mysql_query("SELECT * FROM app WHERE status = 'A' AND cat_id IN ($these_cats) ORDER BY name LIMIT $offset,$limit");
 	}else {
 		$res = mysql_query("SELECT * FROM app WHERE status = 'A' AND cat_id = $this_cat ORDER BY name LIMIT $offset,$limit");
 	}
-
 	print("<h1>Applications $title</h1>");
 
-}else if( $key == "new" ) {
+}else if( $_GET['key'] == "new" ) {
 	$res = mysql_query("SELECT * FROM app WHERE status = 'A' ORDER BY date_added DESC LIMIT $offset,$limit");
 
 	print("<h1>Applications : New</h1>");
 
-}else if( $key == "rating" ) {
+}else if( $_GET['key'] == "rating" ) {
 	$res = mysql_query("SELECT * FROM app WHERE status = 'A' ORDER BY rating DESC LIMIT $offset,$limit");
 
 	print("<h1>Applications : Highest Rating</h1>");
@@ -62,7 +62,7 @@ $num_rows = mysql_num_rows($res);
 if( $res && $num_rows > 0 ) {
 	print("<table border=0 cellpadding=2 cellspacing=0 width=100%>");
 	while( $row = mysql_fetch_object($res) )  {
-		displayApp($row, $the_cat, $the_subcat, $offset);
+		displayApp($row, $_GET['the_cat'], $_GET['the_subcat'], $_GET['offset']);
 	}
 	print("</table>");
 
@@ -72,9 +72,9 @@ if( $res && $num_rows > 0 ) {
 		print("<small>");
 
 		if( !empty($this_cat) )  {
-			print("<a href='index.php?the_cat=$the_cat&the_subcat=$the_subcat&offset=" . ($offset + $limit) . "'>see more applications...</a>&nbsp;&nbsp;");
-		}else if( !empty($key) ) {
-			print("<a href='index.php?key=$key&offset=" . ($offset + $limit) . "'>see more applications...</a>&nbsp;&nbsp;");
+			print("<a href='index.php?the_cat=$_GET['the_cat']&the_subcat=$_GET['the_subcat']&offset=" . ($_GET['offset'] + $limit) . "'>see more applications...</a>&nbsp;&nbsp;");
+		}else if( !empty($_GET['key']) ) {
+			print("<a href='index.php?key=$_GET['key']&offset=" . ($_GET['offset'] + $limit) . "'>see more applications...</a>&nbsp;&nbsp;");
 		}else {
 			print("<a href='index.php?key=new'>see more new applications...</a>&nbsp;&nbsp;");
 		}

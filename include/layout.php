@@ -15,8 +15,6 @@ function spacer($width=1, $height=1, $align=false, $extras=false) {
 	);
 }
 
-
-
 # resize_image()
 # tag the output of make_image() and resize it manually
 #
@@ -28,18 +26,16 @@ function resize_image($img, $width=1, $height=1) {
 	return $str;
 }
 
-
-
 # make_image()
 # return an IMG tag for a given file (relative to the images dir)
 #
 
 function make_image($file, $alt=false, $align=false, $extras=false, $dir=false, $border=0) {
-	global $HTTP_SERVER_VARS;
 	if (!$dir) {
-		$dir = '/gifs';
+	//ALTER FOR LOCAL $dir = '../../php-gtk-web/gifs';
+		$dir = "/gifs";
 	}
-	if ($size = @getimagesize($HTTP_SERVER_VARS['DOCUMENT_ROOT'].$dir.'/'.$file)) {
+	if ($size = @getimagesize($_SERVER['DOCUMENT_ROOT'].$dir.'/'.$file)) {
 		$image = sprintf('<img src="%s/%s" border="%d" %s ALT="%s" %s%s>',
 			$dir,
 			$file,
@@ -62,8 +58,6 @@ function make_image($file, $alt=false, $align=false, $extras=false, $dir=false, 
 	return $image;
 }
 
-
-
 # print_image()
 # print an IMG tag for a given file
 #
@@ -72,14 +66,13 @@ function print_image($file, $alt=false, $align=false, $extras=false, $dir=false,
 	print make_image($file, $alt, $align, $extras, $dir);
 }
 
-
-
 # make_submit()
 #  - make a submit button image
 #
 function make_submit($file, $alt=false, $align=false, $extras=false, $dir=false, $border=0) {
 	if (!$dir) {
-		$dir = '/gifs';
+	//ALTER FOR LOCAL $dir = '../../php-gtk-web/gifs';
+		$dir = "/gifs";
 	}
 	$return = make_image($file, $alt, $align, $extras, $dir, $border);
 	if ($return != "<img>") {
@@ -89,8 +82,6 @@ function make_submit($file, $alt=false, $align=false, $extras=false, $dir=false,
 	}
 	return $return;
 }
-
-
 
 # delim()
 # print a pipe delimiter
@@ -103,8 +94,6 @@ function delim($color=false) {
 	return sprintf('<font color="%s">&nbsp;|&nbsp;</font>', $color );
 }
 
-
-
 # hdelim()
 # print a horizontal delimiter (just a wide line);
 #
@@ -116,7 +105,6 @@ function hdelim($color="#000000") {
 	</table>
 <?
 }
-
 
 # make_link()
 # return a hyperlink to something, within the site
@@ -131,8 +119,6 @@ function make_link ($url, $linktext=false, $target=false, $extras=false) {
 	);
 }
 
-
-
 # print_link()
 # echo a hyperlink to something, within the site
 #
@@ -140,8 +126,6 @@ function make_link ($url, $linktext=false, $target=false, $extras=false) {
 function print_link($url, $linktext=false, $target=false, $extras=false) {
 	echo make_link($url, $linktext, $target, $extras);
 }
-
-
 
 function make_email($email, $linktext=false) {
 	return sprintf("<a href=\"mailto:%s\">%s</a>",
@@ -160,11 +144,11 @@ function print_email($email, $linktext=false) {
 
 function commonHeader($title=false, $padding=true) {
 	global $SIDEBAR_DATA, $MAGIC_COOKIE;
-
 ?><html>
 <head>
  <title>PHP-GTK<?php if ($title) { echo ':'.$title; } ?></title>
  <link rel="stylesheet" href="/style.css" />
+<!-- ALTER FOR LOCAL  "../../php-gtk-web/style.css" -->
  <link rel="shortcut icon" href="/gifs/favicon.ico" />
 </head>
 
@@ -196,6 +180,7 @@ function commonHeader($title=false, $padding=true) {
 	print_link('/download.php', 'download', false, 'class="menuBlack"');
 	echo delim();
 	print_link('/docs.php', 'documentation', false, 'class="menuBlack"');
+	/*ALTER FOR LOCAL docs.php*/
 	echo delim();
 	print_link('http://wiki.gtk.php.net/', 'Wiki', false, 'class="menuBlack"');
 	echo delim();
@@ -218,24 +203,25 @@ function commonHeader($title=false, $padding=true) {
   <tr bgcolor="#000033"><td colspan="2"><?php spacer(1,1);?><br></td></tr>
 
   <tr bgcolor="#006699">
-    <form method="POST" action="/search.php">
-      <td align="right" valign="top" colspan="2" nowrap><font color="#ffffff">
-        <small>search for</small>
+	<form method="POST" action="/search.php">
+	<!-- CHANGE! need "../../php-gtk-web/search.php" -->
+	<td align="right" valign="top" colspan="2" nowrap><font color="#ffffff">
+	<small>search for</small>
 <INPUT CLASS="small" TYPE="text" NAME="pattern" VALUE="<?php echo htmlspecialchars($prevsearch) ?>" SIZE="30">
 <small>in the</small>
 <SELECT NAME="show" CLASS="small">
-<OPTION VALUE="php-gtk-general-list">general mailing list
-<OPTION VALUE="php-gtk-dev-list">development mailing list
-<OPTION VALUE="php-gtk-doc-list">documentation mailing list
-<OPTION VALUE="manual">manual
+<OPTION VALUE="php-gtk-general-list">general mailing list</OPTION>
+<OPTION VALUE="php-gtk-dev-list">development mailing list</OPTION>
+<OPTION VALUE="php-gtk-doc-list">documentation mailing list</OPTION>
+<OPTION VALUE="manual">manual</OPTION>
 </SELECT>
-<?	echo make_submit('small_submit_white.gif', 'search', 'bottom');
-      ?>&nbsp;<br>
-     </font></td>
-    </form>
-  </tr>
+<? echo make_submit('small_submit_white.gif', 'search', 'bottom');
+?>&nbsp;<br>
+</font></td>
+</form>
+</tr>
 
-  <tr bgcolor="#000033"><td colspan="2"><?php spacer(1,1);?><br></td></tr>
+<tr bgcolor="#000033"><td colspan="2"><?php spacer(1,1);?><br></td></tr>
 </table>
 
 
@@ -258,16 +244,11 @@ function commonHeader($title=false, $padding=true) {
 <?php
 }
 
-
-
-
 # commonfooter()
 #
 #
 
 function commonFooter($padding = true) {
-#	global $LAST_UPDATED, $MIRRORS, $MYSITE, $COUNTRIES;
-	global $HTTP_SERVER_VARS;
 
 	if( $padding ) {
 		print("<br>");
@@ -284,7 +265,7 @@ function commonFooter($padding = true) {
   <tr bgcolor="#000033"><td><?php spacer(1,1);?><br></td></tr>
   <tr bgcolor="#006699">
     <td align="right" valign="bottom"><?
-      print_link('/source.php?url='.$HTTP_SERVER_VARS['SCRIPT_NAME'], 'show source', false, 'class="menuWhite"');
+      print_link('/source.php?url='.$_SERVER['SCRIPT_NAME'], 'show source', false, 'class="menuWhite"');
       echo delim();
       print_link('/credits.php', 'credits', false, 'class="menuWhite"');
       ?>&nbsp;<br>
@@ -314,7 +295,6 @@ function commonFooter($padding = true) {
 
 }
 
-
 function clean_note($text) {
 	$text = htmlspecialchars($text);
 	$fixes = array('<br>','<p>','</p>');
@@ -325,7 +305,6 @@ function clean_note($text) {
 	$text = "<tt>".nl2br($text)."</tt>";
 	return $text;
 }
-
 
 function sect_to_file($string) {
         $string = strtolower($string);

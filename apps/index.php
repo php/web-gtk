@@ -7,7 +7,7 @@
 require_once("apps.inc");
 
 commonHeader('Applications' . $title, false);
-appHeader($the_cat, $the_subcat);
+appHeader($_GET['the_cat'], $_GET['the_subcat']);
 
 include("apps.php");
 

@@ -21,7 +21,7 @@ $legal_dirs = array(
 
 $dir = dirname($url);
 if ($dir && $legal_dirs[$dir]) {
-    $page_name = $DOCUMENT_ROOT . $url;
+    $page_name = $_SERVER['DOCUMENT_ROOT'] . $url;
 } else {
     $page_name = basename($url);
 }
@@ -49,4 +49,3 @@ And, of course, if you want to see the source of this page, have a look
 
 commonFooter();
 ?>
-
