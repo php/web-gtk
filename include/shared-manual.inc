@@ -433,10 +433,10 @@ function manualFooter($title,$id="") {
 function dehtmlspecialchars($str)
 {
 
-        $str = preg_replace("%&gt;%",">",$str);
-        $str = preg_replace("%&lt;%","<",$str);
-        $str = preg_replace("%&quot;%","\"",$str);
-        $str = preg_replace("%&amp;%","&",$str);
+        $str = str_replace("&gt;",">",$str);
+        $str = str_replace("&lt;","<",$str);
+        $str = str_replace("&quot;","\"",$str);
+        $str = str_replace("&amp;","&",$str);
         
         return $str;
         
