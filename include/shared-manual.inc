@@ -209,8 +209,8 @@ function makeEntry($row, $show_admin = true, $show_rating = true ) {
 			echo '&lt; 3 votes';
 		}
 		echo ' | rate: ';
-		for ($i=0; $i<=10; $i++) {
-			if ($i) {
+		for ($i=1; $i<=10; $i++) {
+			if ($i>1) {
 				echo ' <font color="#999999">|</font> ';
 			}
 			print_link($PHP_SELF.'?rate_id='.$row['id'].'&rate_note='.$i, $i);
