@@ -23,8 +23,6 @@ This site provides current news, some basic tutorials and example applications.<
 
 <LI><? print_link('http://www.phpgtk.de', 'PHP-GTK Windows installer'); ?><br>
 
-<LI><? print_link('http://conf.php.net/sd-gtk', 'OSCon 2001 PHP-GTK Presentation'); ?><br>
-
 <LI><? print_link('http://developer.gnome.org/doc/API/gtk/gtkobjects.html', 'GTK+ Reference Manual'); ?><br>
 The GTK+ manual with a list of all widgets and their corresponding functions/attributes.<br>
 
@@ -38,8 +36,14 @@ PHP-GTK list has no information about.<BR>
 
 <UL>
 
+<LI><? print_link('http://guru.josefine.at/~mfischer/articles/article-php-gtk.html',
+				   'Article by Markus Fischer'); ?><br>
+
 <LI><? print_link('http://www.goldweb.com.au/~davidj/articles/html/1.html',
 				  'Introductory PHP-GTK article by David Jorm'); ?><br>
+
+<LI><? print_link('http://www.webmasterbase.com/article/697',
+				  'Build Cross-Platform Windowed Apps with PHP by Mitchell Harper'); ?><br>
 
 </UL>
 
