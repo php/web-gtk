@@ -101,6 +101,7 @@ There are a number of sources popping up around the net for PHP-GTK. Here is a s
   <li><a href="http://www.phpgtk.com">http://www.phpgtk.com</a> - A windows installer and news about PHP-GTK
   <li><a href="http://developer.gnome.org/doc/API/gtk/gtkobjects.html">GTK+ Reference Manual</a> - The GTK+ manual with a list of all widgets and their corresponding functions/attributes
   <li><a href="http://www.phpuk.org/gtk/">PHP-GTK Manual</a> - The beginnings of the PHP-GTK official manual. Keep checking back for updates!
+  <li>#php-gtk IRC channel on EFNet has a few regulars who can most likely answer the questions you have.
 </ul>
 
 More will be added to the list as they become available. Also, this page will soon be getting a makeover. 
