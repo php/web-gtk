@@ -16,6 +16,7 @@
 <li><a href="#3">How do I install PHP-GTK on Win32?</a>
 <li><a href="#4">How do I use the buttons in GtkFileSelection?</a>
 <li><a href="#5">How do I know which GTK Classes are supported?<a>
+<li><a href="#6">Can I use Themes under Win32?<a>
 </ul>
 
 <a name="1"><b>What is PHP-GTK?</b></a><br>
@@ -86,6 +87,11 @@ See the
 <a href="http://www.php.net/manual/en/ref.classobj.php">Class/Object</a>
 functions in the PHP Manual for other useful functions.
 <br><br>
+
+<a name="6"><b>Can I use Themes under Win32?</b></a><br>
+No, The Win32 GTK port does not currently support this.
+<br> <br>
+
 </body>
 
 </html>
