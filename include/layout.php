@@ -229,7 +229,7 @@ function commonHeader($title=false, $padding=true) {
     </tr>
    </table>
   </td>
-  <td bgcolor="#cccccc" background="/gifs/checkerboard.gif"><?php spacer(1,1);?><br></td>
+  <td bgcolor="#cccccc" background="/gifs/checkerboard.gif"><?php spacer(1,1);?><br /></td>
 <?php endif; ?>
   <td>
    <table width="570" cellpadding="<?php if( $padding ) { print("10"); }else { print("0"); } ?>" cellspacing="0">
@@ -252,6 +252,16 @@ function commonFooter($padding = true) {
     </tr>
    </table>
   </td>
+<?php if (isset($RIGHT_SIDEBAR_DATA)):?>
+  <td bgcolor="#cccccc" background="/gifs/checkerboard.gif"><?php spacer(1,1);?><br /></td>
+  <td width="185" bgcolor="#f0f0f0">
+   <table width="100%" cellpadding="4" cellspacing="0">
+    <tr valign="top">
+     <td class="sidebar"><?php echo $RIGHT_SIDEBAR_DATA?></td>
+    </tr>
+   </table>
+  </td>
+<?php endif; ?>
  </tr>
 </table>
 
