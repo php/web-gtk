@@ -41,7 +41,7 @@ for($i=ord('a'); $i<=ord('z'); $i++ ) {
 
 echo '<table border="0" cellpadding="4" cellspacing="0" width="100%">';
 echo '<tr bgcolor="#d0d0d0" valign="top">';
-echo '<td colspan="2">Jump to: ' . join (' | ', $links ) . '<br></td>';
+echo '<td align="right" colspan="2"><small>Jump to: ' . join (' <font color="#cccccc">|</font> ', $links ) . '<br></small></td>';
 echo "</tr>\n";
 
 if(!$let) {
