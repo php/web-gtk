@@ -1,128 +1,18 @@
-/* Let no border around the body appear, and set
-   it to display on a white background */
-body, html {
-    margin: 0px;
-    padding: 0px;
-    background-color: #FFFFFF;
-}
+body, ul, td, th { font-size: 14px; }
+.sidebar { font-size: 12px; }
+a.menuWhite { font-size: 10px; }
+a.menuBlack { font-size: 10px; }
+pre, code, tt { font-size: 8px; }
+h1 { font-size: 18px; }
+h2 { font-size: 16px; }
+h3, dt { font-size: 14px; }
+h4 { font-size: 12px; }
+small { font-size: 8px; }
+a.small { font-size: 8px; }
+.tableExtras { font-size: 10px; }
+input.small, select.small { font-size: 8px; }
+textarea.small { font-size: 8px; }
 
-/* Font settings for page elements */
-body, ul, td, th, p, h1, h2, h3, h4, dt, small, .small,
-.tableTitle, .tableExtras, input, textarea, select {
-    font-family: Verdana, Arial, Helvetica, sans-serif;
-}
-code, pre, tt {
-    font-family: Courier, "Courier New", monospace;
-}
-
-/* Default font size for elements */
-body, ul, td, th {
-    font-size: 100%;
-}
-
-li {
-    padding-top: 3px;
-    padding-bottom: 3px;
-}
-
-em {
-    font-weight: bold;
-    font-style: italic;
-}
-
-acronym {
-    border-bottom: 1px dashed #00cc00;
-    cursor: help;
-}
-
-.newsDate {
-    font-size: 75%;
-    font-style: italic;
-    color: #6666CC;
-}
-
-.sidebar {
-	font-size: 68%;
-	padding: 5px;
-}
-
-.sidebar p {
-	text-align: left !important;
-}
-
-a.menuWhite {
-    font-size: 64%;
-    color: #FFFFFF;
-    text-decoration: none;
-}
-
-a.menuBlack {
-    font-size: 64%;
-    color: #000000;
-    text-decoration: none;
-}
-
-pre, code, tt {
-    font-size: 68%;
-}
-
-pre.code {
-    background-color: #F0F0F0;
-}
-
-/* General header styles */
-h1, h2, h3, h4, dt {
-    font-weight: bold;
-    color: #000066;
-}
-h1 { font-size: 110%; }
-h2 { font-size: 106%; }
-h3, dt { font-size: 94%; }
-h4 {
-    font-size: 77%;
-    padding-top: 0px;
-    padding-bottom: 0px;
-}
-
-blockquote {
-    margin-left: 12px;
-}
-
-small {
-    font-size: 64%;
-}
-
-a.small {
-    font-size: 64%;
-    text-decoration: none;
-}
-
-.tableTitle {
-    font-weight: bold;
-}
-
-.tableExtras {
-    font-size: 72%;
-    color: #FFFFFF;
-}
-
-input.small, select.small {
-    font-size: 64%;
-}
-
-textarea.small {
-    font-size: 64%;
-}
-
-.programlisting {
-    display: block;
-    width: 100%;
-    background-color: #E0E0E0
-}
-
-hr {
-    border: 0px;
-    color: black;
-    background-color: black;
-    height: 1px;
-}
+.wikilink {}
+.urllink {}
+#wikitext {}
