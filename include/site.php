@@ -37,4 +37,3 @@ $LANGUAGES = array(
 $man_languages = array('cs', 'en', 'de', 'fr', 'it', 'ja', 'pt_BR');
 
 ?>
-
