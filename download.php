@@ -20,8 +20,8 @@ of GTK+ v1.2.x from <?php print_link('ftp://ftp.gtk.org/pub/gtk/v1.2/'); ?>.
 <h2>Latest Stable Release</h2>
 
 <UL>
-<LI><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-0.0.3.tar.gz', 
-	'php-gtk-0.0.3 Source'); ?> - 20-Mar-2001<br>
+<LI><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-0.0.4.tar.gz', 
+	'php-gtk-0.0.4 Source'); ?> - 5-May-2001<br>
 
 <LI><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-0.0.3-win32.zip', 
 	'php-gtk-0.0.3 Windows and PHP Binary'); ?> - 20-Mar-2001<br>
