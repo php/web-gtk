@@ -233,6 +233,7 @@ function manualGetUserNotes($title, $id) {
 		$user = 'nobody';
 		$pass = '';
 		$db_id = @mysql_pconnect($host, $user, $pass);
+
 		$query = "SELECT *, UNIX_TIMESTAMP(ts) AS xwhen, IF(votes=0, 0, rating/votes) AS rate FROM note " .
 				"WHERE sect='$title' OR sect='$id' ORDER BY rate DESC, id";
 
