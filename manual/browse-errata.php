@@ -1,5 +1,7 @@
 <?
 
+require_once 'shared-manual.inc';
+
 $mailto = 'gtk-webmaster@php.net';
 
 /*

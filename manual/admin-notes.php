@@ -2,6 +2,7 @@
 
 require_once 'cvs-auth.inc';
 require_once 'email-validation.inc';
+require_once 'shared-manual.inc';
 
 
 $mailto = 'gtk-webmaster@php.net';
