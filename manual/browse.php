@@ -39,7 +39,7 @@ if(!$let) {
 
 echo '<table border="0" cellpadding="4" cellspacing="0" width="100%">';
 
-$query = "SELECT *, UNIX_TIMESTAMP(ts) AS xwhen, IF(votes=0, 0, rating/votes) AS rate FROM note " .
+$query = "SELECT *, UNIX_TIMESTAMP(ts) AS xwhen, IF(votes=0, 10, rating/votes) AS rate FROM note " .
 	"WHERE sect LIKE '$let%' ORDER BY sect, rate DESC, id";
 
 
