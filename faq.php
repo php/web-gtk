@@ -76,10 +76,10 @@ The following code will show the defined classes. All the php-gtk classes
 will be listed along with one or two others.
 <blockquote>
 <code>
-$array = get_declared_classes();
-while(list(,$classname) = each($array)) {
-		echo $classname."\n";
-}
+$array = get_declared_classes();<br>
+while(list(,$classname) = each($array)) {<br>
+		echo $classname."\n";<br>
+}<br>
 </code>
 </blockquote>
 See the 
