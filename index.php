@@ -96,6 +96,11 @@ contact me at <a href="mailto: andrei@php.net">andrei@php.net</a> or ask on the
 mailing list.
 </p>
 
+<p>
+If you find any oddities on the website, please don't email Andrei, instead contact me at <a href="mailto: miester@php.net">miester@php.net</a> or Jared at <a href="mailto: jskinner@emphaticmedia.com">jskinner@emphaticmedia.com</a>. 
+</p>
+
+
 <hr>
 <font size=-1><i>Last updated: <?php echo strftime('%d-%B-%Y', getlastmod()); ?></font>
 
