@@ -7,8 +7,7 @@ commonHeader('Downloads');
 <h1>Download</h1>
 
 <P>
-<b>Note:</b> PHP-GTK currently requires the latest 
-PHP version from CVS and will work with 4.0.5 when it comes out.
+<b>Note:</b> PHP-GTK currently requires PHP version 4.0.5 or later.
 </P>
 <P>
 PHP-GTK currently supports GTK+ v1.2.6 or greater, 
