@@ -28,8 +28,9 @@ if(!$let) {
 	$let = 'a';
 }
 
-$query = "SELECT *,UNIX_TIMESTAMP(ts) AS my_when FROM note where sect like '$let%' ORDER BY sect, ts ";
-if (($result = mysql_query($query)) && mysql_num_rows($result) > 0) {
+$query = "SELECT *, UNIX_TIMESTAMP(ts) AS my_when FROM note where sect like '$let%' ORDER BY sect, ts";
+$result = mysql_query($query) or die(mysql_error());
+if ( mysql_num_rows($result) > 0) {
 	$last = '';
 	while ($row = mysql_fetch_array($result)) {
 		if ($row['sect'] != $last)  {
@@ -41,7 +42,7 @@ if (($result = mysql_query($query)) && mysql_num_rows($result) > 0) {
 
 } else {
 
-	echo '<TR><TD COLSPAN="2"><B>No entries.</B><BR></TD></TR>';
+	echo '<TR><TD COLSPAN="2">No entries for <B>'.$let.'</B>.<BR></TD></TR>';
 
 }
 
