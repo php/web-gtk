@@ -28,7 +28,7 @@ and may not be copied or imitated in whole or in part.
 </UL>
 
 <P>
-You can contact the webmaster at <? print_email('mailto:miester@php.net'); ?></a>
+You can contact the webmaster at <? print_email('mailto:webmaster@php.net'); ?></a>
 </P>
 
 <P>
