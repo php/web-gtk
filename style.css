@@ -29,9 +29,14 @@ A.menuBlack {
 	font-size: 75%;
 }
 
-pre,code,tt {
+pre,code {
 	font-family: "andale mono", "monotype.com", "courier new", monospace;
 	font-size: 85%;
+}
+
+tt {
+	font-family: "andale mono", "monotype.com", "courier new", monospace;
+	font-size: 75%;
 }
 
 pre.code {
