@@ -37,7 +37,7 @@ print("
 // 
 if( !empty($action) && !empty($app_id) ) {
 
-	if( !verify_password($user,$pass) ) {
+	if( !isset($MAGIC_COOKIE) ) {
 		echo "<P><B>Authorization failed.</B></P>";
 		appFooter();
 		commonFooter();
