@@ -430,3 +430,14 @@ function manualFooter($title,$id="") {
 
 }
 
+function dehtmlspecialchars($str)
+{
+
+        $str = preg_replace("%&gt;%",">",$str);
+        $str = preg_replace("%&lt;%","<",$str);
+        $str = preg_replace("%&quot;%","\"",$str);
+        $str = preg_replace("%&amp;%","&",$str);
+        
+        return $str;
+        
+}
