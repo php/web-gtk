@@ -32,8 +32,14 @@ obtain the latest stable release of GTK+ v1.2.x from
 </p>
 
 <p>
-You can get the latest and greatest version of PHP-GTK directly from the PHP CVS
-server. Downloadable files will be forthcoming.
+Latest stable release:
+<blockquote>
+	<a href="do_download.php?download_file=php-gtk-0.0.1.tar.gz">php-gtk-0.0.1</a> (1-Mar-2001)
+</blockquote>
+
+<p>
+Alternatively, you can get the latest and greatest version of PHP-GTK directly
+from the PHP CVS server.
 </p>
 
 <blockquote>
