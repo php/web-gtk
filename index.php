@@ -59,7 +59,7 @@ know what you are interested in.
 
 <p>
 If you have any questions, please contact me at
-<a href="andrei@php.net">andrei@php.net</a> or ask on the mailing list.
+<a href="mailto: andrei@php.net">andrei@php.net</a> or ask on the mailing list.
 </p>
 
 <hr>
