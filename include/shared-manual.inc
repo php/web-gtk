@@ -280,11 +280,16 @@ function manualGetUserNotes($title, $id) {
 		$query = "SELECT *, UNIX_TIMESTAMP(ts) AS xwhen, IF(votes=0, 10, rating/votes) AS rate FROM note " .
 				"WHERE sect='$title' OR sect='$id' ORDER BY rate DESC, id";
 
+echo "\n\n<!-- DEBUG: $query -->\n\n";
+
 		$result_id = @mysql_query($query);
 		if ($result_id && mysql_num_rows($result_id) > 0) {
+echo "\n\n<!-- DEBUG: numrows=" . mysql_num_rows($result_id) . " -->\n\n";
 			while ($row = mysql_fetch_array($result_id)) {
 				$notes[] = $row;
 			}
+		} else {
+echo "\n\n<!-- DEBUG: err=" . mysql_error($result_id) . " -->\n\n";
 		}
 	} else {
 		$notes_file = "../usernotes/" . urlencode( $title ) . ".txt";
