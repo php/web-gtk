@@ -147,9 +147,15 @@ function navigationBar($title,$id,$loc) {
 }
 
 
+function makeTitle($title) {
+	echo '<tr bgcolor="#d0d0d0" valign="top">';
+	echo '<td colspan="2"><b>' . $title . '</b><br></td>';
+	echo "</tr>\n";
+}
+
 
 function makeEntry($date,$name,$blurb,$id=0) {
-	global $MAGIC_COOKIE;
+	global $MAGIC_COOKIE, $NOTE_ADMIN_MODE;
 
 	echo '<tr valign="top">';
 	echo '<td bgcolor="#e0e0e0" colspan="2">';
@@ -167,20 +173,38 @@ function makeEntry($date,$name,$blurb,$id=0) {
 	echo '<br></td>';
 	echo '<td align="right">';
 	if (isset($MAGIC_COOKIE) && $id) {
-		print_link('/manual/admin-notes.php?action=edit+' . $id . '&brief=1',
-			make_image('notes-edit.gif', 'edit note'),
-			'admin'
-		);
-		echo '&nbsp';
-		print_link('/manual/admin-notes.php?action=reject+' . $id . '&brief=1&popup=1',
-			make_image('notes-reject.gif', 'reject note'),
-			'admin'
-		);
-		echo '&nbsp';
-		print_link('/manual/admin-notes.php?action=delete+' . $id . '&brief=1&popup=1',
-			make_image('notes-delete.gif', 'delete note'),
-			'admin'
-		);
+
+		if ($NOTE_ADMIN_MODE=='submit') {
+
+			$button = make_submit('notes-edit.gif', 'edit note '.$id);
+			echo substr($button, 0, -1) . ' NAME="action" VALUE="edit ' . $id . '">';
+			echo '&nbsp;';
+
+			$button = make_submit('notes-reject.gif', 'reject note '.$id);
+			echo substr($button, 0, -1) . ' NAME="action" VALUE="reject ' . $id . '">';
+			echo '&nbsp;';
+
+			$button = make_submit('notes-delete.gif', 'delete note '.$id);
+			echo substr($button, 0, -1) . ' NAME="action" VALUE="delete ' . $id . '">';
+			echo '&nbsp;';
+
+		} else {
+
+			print_link('/manual/admin-notes.php?action=edit+' . $id . '&brief=1',
+				make_image('notes-edit.gif', 'edit note'),
+				'admin'
+			);
+			echo '&nbsp';
+			print_link('/manual/admin-notes.php?action=reject+' . $id . '&brief=1&popup=1',
+				make_image('notes-reject.gif', 'reject note'),
+				'admin'
+			);
+			echo '&nbsp';
+			print_link('/manual/admin-notes.php?action=delete+' . $id . '&brief=1&popup=1',
+				make_image('notes-delete.gif', 'delete note'),
+				'admin'
+			);
+		}
 	}
 
 	echo '<br></td>';

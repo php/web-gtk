@@ -2,4 +2,4 @@
 
 require_once 'layout.php';
 
-?>
+
