@@ -2,17 +2,16 @@
 
 commonHeader("Documentation");
 
-$man_languages = array('en', 'de');
+$man_languages = array('en', 'de', 'pt_BR');
 
 ?>
 
 <h1>Documentation</h1>
 
 <p>
-The PHP-GTK manual is available online, currently in English only.
-You can choose between the printer friendly and graphically
-designed versions. Please pick a language and format from
-the table below.
+The PHP-GTK manual is available online. You can choose between the printer
+friendly and graphically designed versions. Please pick a language and format
+from the table below.
 </p>
 
 <table border="0" cellpadding="3" cellspacing="2" width="100%">

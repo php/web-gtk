@@ -215,7 +215,9 @@ function commonHeader($title=false) {
 <INPUT CLASS="small" TYPE="text" NAME="pattern" VALUE="<?php echo htmlspecialchars($prevsearch) ?>" SIZE="30">
 <small>in the</small>
 <SELECT NAME="show" CLASS="small">
-<OPTION VALUE="maillist">general mailing list
+<OPTION VALUE="php-gtk-general-list">general mailing list
+<OPTION VALUE="php-gtk-dev-list">development mailing list
+<OPTION VALUE="php-gtk-doc-list">documentation mailing list
 <OPTION VALUE="manual">manual
 </SELECT>
 <?	echo make_submit('small_submit_white.gif', 'search', 'bottom');

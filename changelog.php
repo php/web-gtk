@@ -6,6 +6,25 @@ commonHeader('PHP-GTK Changelog');
 
 <h1>PHP-GTK ChangeLog</h1>
 
+<a name="0.5.0"></a>
+<h3>Version 0.5.0 "monday starts on saturday"</h3>
+<b>24-Jan-2002</b>
+<ul>
+<li>added new widgets with samples: GtkComboButton, GtkSPaned, GtkScrollPane and GtkPieMenu. (Markus)</li>
+<li>implemented GtkFontSelection::set_filter(), GtkFontSelectionDialog::set_filter(), Gtk::button_box_get_child_ipadding_default(), Gtk::button_box_get_child_size_default() and GtkWidget::get_pointer(). (Markus)</li>
+<li>implemented gdkpixbuf extension (loading and displaying images). (Andrei)</li>
+<li>added GtkCTree methods find_by_row_data, find_all_by_row_data. (Andrei)</li>
+<li>added gtkhtml extension which provides support for GtkHTML, an HTML rendering widget. (Alan Knowles)</li>
+<li>added GtkClist methods find_row_from_data(), get_pixmap(). (Andrei)</li>
+<li>added GtkList::remove_items() method. (Andrei)</li>
+<li>added ability to build extensions as shared libraries and load them selectively. (Andrei)</li>
+<li>made libglade work on Win32 platforms. (Frank)</li>
+<li>added support for GtkSQPane widget. (Markus)</li>
+<li>added GtkCList::get_pixtext(). (Andrei, Rich Payne)</li>
+</ul>
+
+<?php echo hdelim(); ?>
+
 <a name="0.1.1"></a>
 <h3>Version 0.1.1 "no-holds-barred memento"</h3>
 <b>24-Sep-2001</b>

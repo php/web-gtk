@@ -19,10 +19,11 @@ please <? print_email('gtk-webmaster@php.net', 'email the webmaster'); ?>.
 <LI><? print_link('http://gtk.miester.org/', 'GTK at Miester.org'); ?><BR>
 This site provides current news, some basic tutorials and example applications.<br>
 
-
 <LI><? print_link('http://www.adapower.net/gtkada/', 'Glade UI builder for Windows'); ?><br>
 
 <LI><? print_link('http://www.phpgtk.de', 'PHP-GTK Windows installer'); ?><br>
+
+<LI><? print_link('http://conf.php.net/sd-gtk', 'OSCon 2001 PHP-GTK Presentation'); ?><br>
 
 <LI><? print_link('http://developer.gnome.org/doc/API/gtk/gtkobjects.html', 'GTK+ Reference Manual'); ?><br>
 The GTK+ manual with a list of all widgets and their corresponding functions/attributes.<br>
