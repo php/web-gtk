@@ -202,16 +202,17 @@ function makeEntry($row, $show_admin = true, $show_rating = true ) {
 	echo '<br>';
 
 	if ($show_rating) {
-#		echo 'rating: ';
-		echo '<b>';
+		echo 'rating: ';
 		if ( $row['votes'] > 3 ) {
-			printf('[%.02f / %d ]', $row['rate'], $row['votes'] );
+			printf('<b>%.02f</b>', $row['rate'] );
 		} else {
-			printf('[ -  / %d ]', $row['rate'], $row['votes'] );
+			printf('%d vote%s', $row['votes'], $row['votes']==1 ? '' : 's' );
 		}
-		echo '</b>';
+		echo 'rate: ';
 		for ($i=1; $i<=10; $i++) {
-			echo ' <font color="#999999">|</font> ';
+			if ($i>1) {
+				echo ' <font color="#999999">|</font> ';
+			}
 			print_link($PHP_SELF.'?rate_id='.$row['id'].'&rate_note='.$i, $i);
 		}
 		echo '<br>';
@@ -242,8 +243,6 @@ function manualGetUserNotes($title, $id) {
 
 		$query = "SELECT *, UNIX_TIMESTAMP(ts) AS xwhen, IF(votes=0, 0, rating/votes) AS rate FROM note " .
 				"WHERE sect='$title' OR sect='$id' ORDER BY rate DESC, id";
-
-		echo "<!-- $query -->\n";
 
 		if ($db_id) {
 			$result_id = mysql_db_query("gtk", $query, $db_id);
@@ -383,6 +382,24 @@ function sendManualHeaders($charset,$lang) {
 
 function manualHeader($title,$id="") {
 	global $HTDIG, $LANGUAGES, $LANG, $SIDEBAR_DATA;
+
+	# probably a better way/place to do this, but ...
+
+	global $HTTP_GET_VARS, $SCRIPT_NAME, $HTTP_REFERER;
+	if ($HTTP_GET_VARS['rate_id'] && $HTTP_GET_VARS['rate_note']) {
+		$p = parse_url($HTTP_REFERER) {
+		if ($SCRIPT_NAME==$p['path']) {		/* prevent outside scripts from voting */
+			$host = 'localhost';
+			$user = 'nobody';
+			$pass = '';
+			$db_id = @mysql_pconnect($host, $user, $pass);
+
+			$query = 'UPDATE note SET vote=vote+1, rating=rating+' . $HTTP_GET_VARS['rate_note'] .
+				' WHERE id=' . $HTTP_GET_VARS['rate_id'];
+			$res = @mysql_db_query("gtk", $query, $db_id);
+		}
+	}
+
 	manualLastModified($title,$id);
 	makeBorderTOC($title);
 	commonHeader('Manual: '.$title);
