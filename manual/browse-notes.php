@@ -6,12 +6,12 @@ $mailto = 'gtk-webmaster@php.net';
 
 /*
 if(!strstr($MYSITE,"www.php.net")) {
-	Header("Location: http://www.php.net/manual/browse-errata.php");
+	Header("Location: http://www.php.net/manual/browse-notes.php");
 	exit;
 }
 */
 
-commonHeader("Manual Errata");
+commonHeader("Browse Manual Notes");
 
 mysql_connect("localhost");
 mysql_select_db("gtk");
@@ -41,7 +41,7 @@ for($i=ord('a'); $i<=ord('z'); $i++ ) {
 
 echo '<table border="0" cellpadding="4" cellspacing="0" width="100%">';
 echo '<tr bgcolor="#d0d0d0" valign="top">';
-echo '<td colspan="2"><small>Jump to: ' . join (' | ', $links ) . '<br></td>';
+echo '<td colspan="2">Jump to: ' . join (' | ', $links ) . '<br></td>';
 echo "</tr>\n";
 
 if(!$let) {

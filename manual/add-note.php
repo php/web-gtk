@@ -9,7 +9,7 @@ if ($HTTP_SERVER_VARS["HTTP_HOST"]!='gtk.php.net') {
 */
 
 
-$mailto = 'cmv@php.net';
+$mailto = 'gtk-webmaster@php.net';
 
 require_once 'shared-manual.inc';
 commonHeader('Manual Notes');

@@ -22,9 +22,10 @@ if(!strstr($MYSITE,"www.php.net")) {
 }
 */
 
-commonHeader("Manual Errata Admin");
+commonHeader("Manual Notes Administration");
 
-echo "<P>If you just want to browse the errata, you're better off <A href=\"http://gtk.php.net/manual/browse-errata.php\">here</A>.\n";
+echo "<P>If you just want to browse the manual notes, you're better off " .
+	"<A href=\"http://gtk.php.net/manual/browse-notes.php\">here</A>.\n";
 
 mysql_pconnect("localhost","nobody","");
 mysql_select_db("gtk");
