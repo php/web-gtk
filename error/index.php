@@ -21,7 +21,7 @@ if (preg_match('/\.(pdf|gif|jpg)$/', $REQUEST_URI)) {
   exit;
 }
 
-$lang = default_language();
+$lang = "en";
 if (!is_dir("$DOCUMENT_ROOT/manual/$lang")) {
 	$lang = "en"; // fall back to English
 }
