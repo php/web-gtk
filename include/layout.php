@@ -212,7 +212,7 @@ function commonHeader($title=false) {
     <form method="POST" action="/search.php">
       <td align="right" valign="top" colspan="2" nowrap><font color="#ffffff">
         <small>search for</small>
-<INPUT CLASS="small" TYPE="text" NAME="pattern" VALUE="<? echo htmlspecialchars($prevsearch) ?>" SIZE="30">
+<INPUT CLASS="small" TYPE="text" NAME="pattern" VALUE="<?php echo htmlspecialchars($prevsearch) ?>" SIZE="30">
 <small>in the</small>
 <SELECT NAME="show" CLASS="small">
 <OPTION VALUE="maillist">general mailing list
