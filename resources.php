@@ -32,7 +32,7 @@ The GTK+ manual with a list of all widgets and their corresponding functions/att
 <h2>Mailing Lists</h2>
 
 <P>
-There is a mailing list for PHP-GTK. To subsribe,
+There is a mailing list for PHP-GTK. To subscribe,
 send blank email to <?php print_email('php-gtk-subscribe@lists.php.net'); ?>.
 The address of the list itself is <?php print_email('php-gtk@lists.php.net'); ?>.
 The list is archived at <?php print_link('http://marc.theaimsgroup.com/?l=php-gtk&r=1&w=2', 'MARC'); ?>.
