@@ -8,16 +8,21 @@ if (!isset($download_file)
 	exit("Invalid file requested for download!");
 }
 
-if (!isset($source_site)) {
-	$source_site="gtk.php.net";
+header("Location: http://$SERVER_NAME/distributions/$download_file");
+
+$remote_addr = $HTTP_X_FORWARDED_FOR ? $HTTP_X_FORWARDED_FOR : $REMOTE_ADDR;
+
+$remote_log =
+    @fopen("http://gtk.php.net/log_download.php".
+        "?download_file=" . urlencode($download_file).
+        "&mirror=" . urlencode($SERVER_NAME).
+        "&user_referer=" . urlencode($HTTP_REFERER).
+        "&user_ip=" . urlencode($remote_addr),
+    'r');
+
+if ($remote_log) {
+    fread($remote_log, 1024);
+    fclose($remote_log);
 }
 
-header("Location:  http://$source_site/distributions/$download_file");
-
-$log = @fopen("logs/download.log", "a");
-if ($log) {
-	$log_line = sprintf("%s %s %s %s %s", date("H:i:s d-M-Y"), $HTTP_REFERER, $download_file, gethostbyaddr($REMOTE_ADDR), $source_site);
-	fputs($log, "$log_line\n");
-	fclose($log);
-}
 ?>
