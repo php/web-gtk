@@ -7,7 +7,14 @@
 // CVS updates file (that is echoed when included) and save to a variable
 // instead of echoing it right away.
 ob_start();
+?>
+<div id="docsupdates">
+<h4>Docs Updates</h4>
+<?php
 include_once 'manual/en/updates.php';
+?>
+</div>
+<?php
 $RIGHT_SIDEBAR_DATA = ob_get_clean();
 
 
