@@ -14,31 +14,33 @@ please <? print_email('gtk-webmaster@php.net', 'email the webmaster'); ?>.
 
 <h2>Sites</h2>
 
-<UL>
+<ul>
 
 <li><? print_link('http://wiki.gtk.php.net/', 'PHP-GTK Wiki') ?><br>
 This site allows the PHP-GTK community to help contribute documentation to the
 PHP-GTK project.<br>
 
-<LI><? print_link('http://gtk.miester.org/', 'GTK at Miester.org'); ?><BR>
+<li><? print_link('http://binary.gamer.net.nz/', 'tutorials, news and downloads for PHP-GTK'); ?><br>
+
+<li><? print_link('http://gtk.miester.org/', 'GTK at Miester.org'); ?><br />
 This site provides current news, some basic tutorials and example applications.<br>
 
-<LI><? print_link('http://www.adapower.net/gtkada/', 'Glade UI builder for Windows'); ?><br>
+<li><? print_link('http://www.adapower.net/gtkada/', 'Glade UI builder for Windows'); ?><br>
 
-<LI><? print_link('http://www.phpgtk.de', 'PHP-GTK Windows installer'); ?><br>
+<li><? print_link('http://www.phpgtk.de', 'PHP-GTK Windows installer'); ?><br>
 
-<LI><? print_link('http://developer.gnome.org/doc/API/gtk/gtkobjects.html', 'GTK+ Reference Manual'); ?><br>
+<li><? print_link('http://developer.gnome.org/doc/API/gtk/gtkobjects.html', 'GTK+ Reference Manual'); ?><br>
 The GTK+ manual with a list of all widgets and their corresponding functions/attributes.<br>
 
-<LI><? print_link('http://mail.gnome.org/mailman/listinfo/gtk-list', 'GTK+ mailing list archives'); ?><BR>
+<li><? print_link('http://mail.gnome.org/mailman/listinfo/gtk-list', 'GTK+ mailing list archives'); ?><br />
 This list might be useful if you have a certain GTK+ question or problem that
-PHP-GTK list has no information about.<BR>
+PHP-GTK list has no information about.<br />
 
-</UL>
+</ul>
 
 <h2>Articles</h2>
 
-<UL>
+<ul>
 
 <li><? print_link('http://guru.josefine.at/~mfischer/articles/article-php-gtk.html',
 				   'Article by Markus Fischer'); ?><br>
@@ -51,7 +53,7 @@ PHP-GTK list has no information about.<BR>
 <li><?  print_link('http://products.magnet-i.com/phpgale/php-gtk_endliess_possibilities.pdf',
 				   'PHP-GTK: Endless Possibilities') ?><br>
 
-</UL>
+</ul>
 
 <h2>Presentations</h2>
 <a href="http://conf.php.net/sd-gtk">2001 O'Reilly Open Source Conference PHP-GTK talk</a>.
@@ -94,7 +96,7 @@ The <B>#php-gtk</B> IRC channel on EFNet has a few regulars who can most
 likely answer the questions you have.
 </P>
 
-</UL>
+</ul>
 
 <?php
 
