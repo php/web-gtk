@@ -233,9 +233,11 @@ function manualGetUserNotes($title, $id) {
 		$user = 'nobody';
 		$pass = '';
 		$db_id = @mysql_pconnect($host, $user, $pass);
-#		$query = "SELECT *, UNIX_TIMESTAMP(ts) AS xwhen FROM note WHERE sect = '$title' OR sect = '$id' ORDER BY id";
-		$query = "SELECT *, UNIX_TIMESTAMP(ts) AS xwhen, if(votes=0, 0, rating/votes) AS rate FROM note " .
+		$query = "SELECT *, UNIX_TIMESTAMP(ts) AS xwhen, IF(votes=0, 0, rating/votes) AS rate FROM note " .
 				"WHERE sect='$title' OR sect='$id' ORDER BY rate DESC, id";
+
+		echo "<!-- $query -->\n";
+
 		if ($db_id) {
 			$result_id = mysql_db_query("gtk", $query, $db_id);
 		}

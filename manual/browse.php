@@ -51,7 +51,7 @@ if ( $numrows > 0) {
 			makeTitle( $row['sect'] );
 			$last = $row['sect'];
 		}
-		makeEntry($row['xwhen'], $row['user'], $row['note'], $row['rate'], $row['id'] );
+		makeEntry($row);
 	}
 
 } else if (!$fl) {
