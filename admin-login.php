@@ -10,7 +10,7 @@
 if (isset($MAGIC_COOKIE)) {
 	list($user, $pass) = explode(":", base64_decode($MAGIC_COOKIE));
 }
-if ($user && $pass /*&& verify_password($user,$pass)*/) {
+if ($user && $pass) {
 	if( $saveme ) {
 		SetCookie("MAGIC_COOKIE", base64_encode("$user:$pass"), time()+(86400*7), '/' );
 	}else {
@@ -20,7 +20,7 @@ if ($user && $pass /*&& verify_password($user,$pass)*/) {
 
 commonHeader("Administration Login");
 
-if (verify_password($user,$pass)) {
+if (isset($MAGIC_COOKIE)) {
 	print("
 		<h1>You're logged in</h1>
 		Where do you really want to go today?
