@@ -1,3 +1,5 @@
+<!--
+Uncomment this if we ever get cvs-auth access again.
 <?
 if (isset($user) && isset($pass)) {
 	$MAGIC_COOKIE = base64_encode("$user:$pass");
@@ -27,3 +29,11 @@ Pass: <input type=password name=pass value="<?echo $pass;?>">
 <?
 
 commonFooter();
+
+-->
+<?php
+
+Header("Location: http://master.php.net/manage/users.php");
+exit;
+
+?>
