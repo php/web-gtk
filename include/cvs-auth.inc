@@ -2,7 +2,7 @@
 /* $Id$ */
 
 $ignore_password = false;
-$passwd_file = "/repository/CVSROOT/passwd";
+$passwd_file = "/local/repository/CVSROOT/passwd";
 
 function find_password($user) {
 	global $passwd_file, $ignore_password;
