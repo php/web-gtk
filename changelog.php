@@ -7,6 +7,24 @@ commonHeader('PHP-GTK Changelog');
 <h1>PHP-GTK ChangeLog</h1>
 
 <a name="1.0.0"></a>
+<h3>Version 1.0.1 "you thought we were done?"</h3>
+<b>09-Aug-2004</b>
+<ul>
+<li>buildconf script now takes an optional --with-phpize=<path> option to specify the location of phpize script. (Andrei)</li>
+<li>removed support for old build system. PHP 4.3.x is now required to build PHP-GTK. (Andrei)</li>
+<li>implemented append_element(), prepend_element(), insert_element(), append_item(), prepend_item(), and insert_item() methods of GtkToolbar class. (Andrei)</li>
+<li>exposed the following (read-only) GtkToolbar properties: (Andrei)
+	<ul style="list-style-type: square">
+	<li>style</li>
+	<li>space_style</li>
+	<li>space_size</li>
+	<li>orientation</li>
+	</ul>
+</li>
+<li>reimplemented Gdk::cursor_new_from_pixmap() so it actually works. (Tom Rogers <trogers@kwikin.com>, Andrei)</li>
+</ul>
+
+<a name="1.0.0"></a>
 <h3>Version 1.0.0 "mountain view special"</h3>
 <b>23-Oct-2003</b>
 <ul>
