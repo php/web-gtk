@@ -194,7 +194,7 @@ function commonHeader($title=false) {
       <?php
 	print_link('/download.php', 'download', false, 'class="menuBlack"');
 	echo delim();
-	print_link('/manual.php', 'documentation', false, 'class="menuBlack"');
+	print_link('/manual/en/', 'documentation', false, 'class="menuBlack"');
 	echo delim();
 	print_link('/faq.php', 'faq', false, 'class="menuBlack"');
 	echo delim();
