@@ -6,9 +6,18 @@
 
 <body bgcolor="#ffffff">
 
-<font face="sans-serif" size=+1>
-<b>PHP-GTK: PHP language bindings for GTK+</b>
-</font>
+<table border=0 width=100%>
+	<tr>
+		<td>
+			<font face="sans-serif" size=+1>
+			<b>PHP-GTK: PHP language bindings for GTK+</b>
+			</font>
+		</td>
+		<td align=right>
+			<img src="images/php-gtk-logo.png" width=128 height=67 border=0>
+		</td>
+	</tr>
+</table>
 
 <p>
 Too often PHP is thought of as only an HTML-embedded Web scripting language. But
