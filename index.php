@@ -35,6 +35,13 @@ GUI applications.
 <h1>News</h1>
 
 <P>
+With the help of Philip Hallstrom, we now have a Freshmeat-like index of
+applications. It still needs to be populated, so if you have written a useful
+piece of software using PHP-GTK, point your browser to
+<? print_link('/apps/', 'Applications'); ?> area and add it to the list.
+</P>
+
+<P>
 <a href="/download.php">PHP-GTK version 0.5.0</a> has been released on January
 24, 2002. The big jump in version number is meant to indicate that PHP-GTK is
 now a stable and proven tool and that with this release its functionality is
@@ -48,12 +55,6 @@ href="http://www.akbkhome.com/Projects/Phpmole%2DIDE/">PHPMole</a>. Check out
 this amazing project.
 </P>
 
-<P>
-Rich Payne just announced version 0.10 of 
-<a href="http://teak.sourceforge.net/">Teak</a>, an IMAP client 
-written using PHP-GTK. The site has a nice set of screenshots and is well worth
-taking a look at.
-</P>
 
 <h1>Resources</h1>
 

@@ -198,9 +198,9 @@ function commonHeader($title=false, $padding=true) {
 	echo delim();
 	print_link('/faq.php', 'faq', false, 'class="menuBlack"');
 	echo delim();
+	print_link('/apps/', 'applications', false, 'class="menuBlack"');
+	echo delim();
 	print_link('/changelog.php', 'changelog', false, 'class="menuBlack"');
-	//echo delim();
-	//print_link('/apps/', 'applications', false, 'class="menuBlack"');
 	echo delim();
 	print_link('/resources.php', 'resources', false, 'class="menuBlack"');
       ?>&nbsp;<br>
