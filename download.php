@@ -23,11 +23,11 @@ of GTK+ v1.2.x from <?php print_link('ftp://ftp.gtk.org/pub/gtk/v1.2/'); ?>.
 
 <LI><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-0.5.2.tar.gz', 'php-gtk-0.5.2 Source'); ?> - 01-Nov-2002<br>
 
+<LI><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-1.0.0-win32.zip', 
+	'php-gtk-1.0.0 Windows and PHP Binary including ComboButton, Extra, libGlade, Scintilla, Spaned, SQPane'); ?> - 23-Oct-2003<br>
+
 <LI><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-0.5.2a-win32.zip', 
 	'php-gtk-0.5.2a Windows and PHP Binary including libGlade-0.17, SQPane and ComboButton'); ?> - 26-Nov-2002<br>
-
-<LI><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-0.5.2-win32.zip', 
-	'php-gtk-0.5.2 Windows and PHP Binary including libGlade, SQPane and ComboButton'); ?> - 03-Nov-2002<br>
 
 </UL>
 
