@@ -72,7 +72,7 @@ In your System32 directory (e.g., c:\winnt\system32 or c:\windows\system32):
 <B>For Windows 95:</B>
 </P></DD>
 <DD><P>
-php-gtk has <b>not</b> been tested on Windows 95 ... sorry.
+PHP-GTK has <b>not</b> been tested on Windows 95 ... sorry.
 </P></DD>
 
 
@@ -112,7 +112,7 @@ It is <B>not</B> currently possible to do it this way:
 <a name="5"><b>How do I know which GTK Classes are supported?</b></a>
 </DT>
 <DD><P>
-The following code will show the defined classes. All the php-gtk 
+The following code will show the defined classes. All the PHP-GTK 
 classes will be listed along with one or two others.
 <PRE CLASS="code">
 $array = get_declared_classes()) {
