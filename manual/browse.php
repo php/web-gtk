@@ -39,7 +39,9 @@ if(!$let) {
 
 echo '<table border="0" cellpadding="4" cellspacing="0" width="100%">';
 
-$query = "SELECT *, UNIX_TIMESTAMP(ts) AS my_when FROM note where sect like '$let%' ORDER BY sect, ts";
+$query = "SELECT *, UNIX_TIMESTAMP(ts) AS xwhen, if(votes=0, 0, rating/votes) AS rate FROM note " .
+	"WHERE sect='$title' OR sect='$id' ORDER BY rate DESC, id";
+
 $result = mysql_query($query) or die(mysql_error());
 $numrows = mysql_num_rows($result);
 if ( $numrows > 0) {
@@ -49,7 +51,7 @@ if ( $numrows > 0) {
 			makeTitle( $row['sect'] );
 			$last = $row['sect'];
 		}
-		makeEntry($row['my_when'], $row['user'], $row['note'], $row['id'] );
+		makeEntry($row['xwhen'], $row['user'], $row['note'], $row['rate'], $row['id'] );
 	}
 
 } else if (!$fl) {

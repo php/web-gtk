@@ -164,7 +164,7 @@ function makeTitle($title) {
 }
 
 
-function makeEntry($date,$name,$blurb,$rating=0,$id=0,) {
+function makeEntry($date,$name,$blurb,$rating=0,$id=0) {
 	global $MAGIC_COOKIE;
 
 	echo '<tr valign="top">';
@@ -304,7 +304,7 @@ function manualUserNotes($title, $id) {
 	} else {
 
 		foreach($notes as $note) {
-			makeEntry($note['xwhen'], $note['user'], $note['note'], $note['id'] );
+			makeEntry($note['xwhen'], $note['user'], $note['note'], $note['rate'], $note['id'] );
 		}
 
                 echo "<tr bgcolor=\"#d0d0d0\" valign=\"top\">\n";
