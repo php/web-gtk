@@ -384,9 +384,10 @@ function manualUserNotes($title, $id) {
 
 function sendManualHeaders($charset,$lang) {
 	global $LANG;
+    global $PHP_SELF;
 	$LANG = $lang;
     /* HACK */
-    if(stristr($PATH_INFO, "/de/") === TRUE)
+    if(stristr($PHP_SELF, "/de/") !== FALSE)
     {
         Header("Content-type: text/html;charset=UTF-8");
 	    Header("Content-language: de");
@@ -409,6 +410,7 @@ function manualHeader($title,$id="") {
 	if (!$HTDIG) {
 		navigationBar($title, $id, "top");
 	}
+    
 }
 
 function manualFooter($title,$id="") {
