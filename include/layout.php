@@ -146,6 +146,7 @@ function commonHeader($title=false, $padding=true) {
 	global $SIDEBAR_DATA, $MAGIC_COOKIE;
 ?><html>
 <head>
+ <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
  <title>PHP-GTK<?php if ($title) { echo ':'.$title; } ?></title>
  <link rel="stylesheet" href="/style.css" />
 <!-- ALTER FOR LOCAL  "../../php-gtk-web/style.css" -->
