@@ -17,12 +17,12 @@ $mailto = 'gtk-webmaster@php.net';
 commonHeader('Manual Notes');
 
 /* clean off leading and trailing whitespace */
-$user = trim($user);
+$user = trim($user_email);
 $note = trim($note);
 
 /* don't pass through example username */
-if ($user == 'user@example.com') {
-    $user = '';
+if ($user_email == 'user@example.com') {
+    $user_email = '';
 }
 
 if ($note == '') {
@@ -42,17 +42,17 @@ if (isset($note) && isset($action) && strtolower($action) != "preview") {
 	$now = date("Y-m-d H:i:s");
 	$query = "INSERT INTO note (user, note, sect, ts, lang) VALUES ";
         # no need to call htmlspecialchars() -- we handle it on output
-        $query .= "('$user','$note','$sect','$now','$lang')";
+        $query .= "('$user_email','$note','$sect','$now','$lang')";
 	if (mysql_query($query)) {
 		echo "<P>Your submission was successful -- thanks for contributing!</P>";
 		$new_id = mysql_insert_id();	
 		$msg = stripslashes($note);
 		$msg .= "\n\n $redirect \n";
                 # make sure we have a return address.
-                if (!$user) {
-			$user = "php-gtk@lists.php.net";
+                if (!$user_email) {
+			$user_email = "php-gtk@lists.php.net";
 		}
-		mail("gtk-webmaster@php.net", "note $new_id added to $sect", $msg, "From: $user");
+		mail("gtk-webmaster@php.net", "note $new_id added to $sect", $msg, "From: $user_email");
 	} else {
 		# mail it.
 		mail($mailto, "failed manual note query", $query);
@@ -70,7 +70,7 @@ if (isset($note) && isset($action) && strtolower($action) != "preview") {
 		echo '<P>This is what your entry will look like, roughly:</P>';
                 echo '<table border="0" cellpadding="0" cellspacing="0" width="100%">';
 		$temp = array(
-			'user' => stripslashes($user),
+			'user' => stripslashes($user_email),
 			'note' => stripslashes($note),
 			'xwhen' => time()
 		);
@@ -128,8 +128,8 @@ to submit a bug report or request a feature</a>.
 </P>
 <?      
 	}
-	if (!$user) {
-		$user = "user@example.com";
+	if (!$user_email) {
+		$user_email = "user@example.com";
 	}
         if (!isset($sect)) {
 		echo "<P><b>To add a note, you must click on the 'Add Note' button " .
@@ -144,7 +144,7 @@ to submit a bug report or request a feature</a>.
 <table border="0" cellpadding="5" cellspacing="0" bgcolor="#e0e0e0">
 <TR VALIGN="top">
 <TD ALIGN="right">Your email address:<BR></TD>
-<td><input type="text" name="user" size="40" maxlength="40" value="<?echo htmlspecialchars(stripslashes($user))?>"></td>
+<td><input type="text" name="user_email" size="40" maxlength="40" value="<?echo htmlspecialchars(stripslashes($user_email))?>"></td>
 </TR>
 <TR VALIGN="top">
 <TD ALIGN="right">Your note:<BR></TD>
