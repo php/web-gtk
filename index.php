@@ -13,12 +13,8 @@ GUI applications.
 
 <h2>Resources</h2>
 <P>
-EOF;
-
-$SIDEBAR_DATA .= 'Check out our ' . print_link('/resources.php', 'Resources page');
-
-$SIDEBAR_DATA .= <<< EOF
-for links to PHP-GTK related sites, instructions on the PHP-GTK mailing lists, 
+Check out our <a href="/resources.php">Resources page</a> for links to 
+PHP-GTK related sites, instructions on the PHP-GTK mailing lists, 
 and other PHP-GTK resources. Also, please try to use the 
 <strong>#php-gtk</strong> channel on Freenode IRC - the more people there, the 
 better for the community.
@@ -32,15 +28,14 @@ manual and the <strong>php-gtk-general</strong> mailing list.
 
 <P>
 Any serious PHP-GTK related questions should be sent to 
+<a href="mailto:andrei at php dot net">andrei at php dot net</a>, unless they 
+are related to the manual, in which case they should be sent to 
+<a href="mailto:jmoore at php dot net">jmoore at php dot net</a>. If you have 
+a question or suggestion for the website, you should contact 
+<a href="mailto:php-gtk-webmaster at lists dot php dot net">php-gtk-webmaster 
+at lists dot php dot net</a>.
+</P>
 EOF;
-
-$SIDEBAR_DATA .= print_email('andrei at php dot net');
-$SIDEBAR_DATA .= ', unless they are related to the manual, in which case they';
-$SIDEBAR_DATA .= ' should be sent to ' . print_email('jmoore at php dot net');
-$SIDEBAR_DATA .= ' If you have a question or suggestion for the website, you';
-$SIDEBAR_DATA .= ' should contact ';
-$SIDEBAR_DATA .= print_email('php-gtk-webmaster at lists dot php dot net');
-$SIDEBAR_DATA .= '.</P>';
 
 commonHeader();
 
