@@ -8,7 +8,7 @@ mysql_select_db("gtk");
 // 
 // Change this to whomever you want the administrator emails to go to.
 // 
-$mailto = 'gtk-webmaster@lists.php.net';
+$mailto = 'php-gtk-webmaster@lists.php.net';
 //$mailto = 'philip+gtk-webmaster@eilio.com';
 
 

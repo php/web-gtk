@@ -49,7 +49,7 @@ and may not be copied or imitated in whole or in part.
 
 <P>
 You can contact the webmaster at 
-<?php print_email('gtk-webmaster@lists.php.net'); ?>.
+<?php print_email('php-gtk-webmaster@lists.php.net'); ?>.
 </P>
 
 <P>

@@ -4,7 +4,7 @@ require_once 'cvs-auth.inc';
 require_once 'email-validation.inc';
 require_once 'shared-manual.inc';
 
-$mailto = 'gtk-webmaster@lists.php.net';
+$mailto = 'php-gtk-webmaster@lists.php.net';
 $num_entries_per_page = 50;
 
 if (isset($MAGIC_COOKIE)) {
