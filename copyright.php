@@ -13,7 +13,7 @@ commonHeader("Copyright and License");
 <h2>PHP License</h2>
 
 <p>For information on the PHP License (i.e. using the PHP language),
-    <?php print_link('http:/www.php.net/license/', 'click here'); ?>.
+    <?php print_link('http://www.php.net/license/', 'click here'); ?>.
     </p>
 
 <h2>PHP-GTK License</h2>
