@@ -10,6 +10,7 @@
     <description>The PHP-GTK extension Web site</description>
     <items>
         <rdf:Seq>
+            <rdf:li rdf:resource="http://gtk.php.net/about/news-2004-11-12" />
             <rdf:li rdf:resource="http://gtk.php.net/download.php" />
             <rdf:li rdf:resource="http://gtk.php.net/docs-rss.php" />
             <rdf:li rdf:resource="http://marc.theaimsgroup.com/?l=php-gtk-dev&amp;m=109104992017688&amp;w=2" />
@@ -22,6 +23,13 @@
         </rdf:Seq>
     </items>
 </channel>
+
+<item rdf:about="http://gtk.php.net/about/news-2004-11-12">
+    <title>Small steps into a better world</title>
+    <link>http://gtk.php.net/</link>
+    <description>While work continues on PHP-GTK 2, there has been some big news with PHP-GTK 1. The continuing documentation efforts have produced two new tutorials and lots of new doc pages. To go along with all of the new documentation, Christian Weiske has released manualBrowser, a PHP-GTK application to make it easier to read and search the docs offline. The folks over at PEAR have even jumped on the PHP-GTK bandwagon. There are two new gtk classes and a new PHP-GTK interface for PHPUnit.</description>
+    <dc:date>2004-11-12</dc:date>
+</item>
 
 <item rdf:about="http://gtk.php.net/download.php">
     <title>PHP-GTK 1.0.1 released</title>

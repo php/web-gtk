@@ -55,6 +55,22 @@ EOF;
 commonHeader();
 
 ?>
+<h1>Small steps into a better world</h1>
+
+<p><span class="newsdate">[12-Nov-2004]</span> While work continues on 
+    <a href="http://gtk.php.net/wiki/PhpGtk/Php-Gtk2">PHP-GTK 2</a>, there
+    has been some big news with PHP-GTK 1. The continuing documentation 
+    efforts have produced 
+    <a href="http://gtk.php.net/manual/en/tutorials.php">two new tutorials</a>
+    and lots of new doc pages. To go along with all of the new documentation, 
+    Christian Weiske has released 
+    <a href="http://www.cweiske.de/phpgtk_coders.htm#manualbrowser">manualBrowser</a>, 
+    a PHP-GTK application to make it easier to read and search the docs offline. 
+    The folks over at PEAR have even jumped on the PHP-GTK bandwagon. There are 
+    two new 
+    <a href="http://pear.php.net/packages.php?catpid=34&amp;catname=Gtk+Components">gtk classes</a> 
+    and a new PHP-GTK interface for PHPUnit.</p>
+
 <h1>PHP-GTK 1.0.1 released</h1>
 
 <p><span class="newsdate">[09-Aug-2004]</span> <a href="/download.php">PHP-GTK 
