@@ -16,11 +16,15 @@ print("<h1>Add a PHPGTK Application</h1>");
 // 
 if( $action == "add" ) {
 
-	if( !empty($_FILES[screenshot][name]) && ereg("^image/", $_FILES[screenshot][type]) )  {
+	if( !empty($_FILES[screenshot][name]) 
+		&& ereg("^image/", $_FILES[screenshot][type]) 
+		&& !ereg("gif", $_FILES[screenshot][type]) 
+	)  {
 		$has_screenshot = 'Y';
 	}else {
 		$has_screenshot = 'N';
 	}
+
 
 	$res = mysql_query("
 			INSERT INTO app

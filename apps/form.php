@@ -115,12 +115,12 @@ if( $MAGIC_COOKIE ) {
 	</tr>
 	<tr valign=top>
 		<td align=right nowrap>New Screen Shot:</td>
-		<td><input type=file name='screenshot'></td>
+		<td><input type=file name='screenshot'><br><small>(JPEG or PNG only, please)</small></td>
 	</tr>
 <?php }else { ?>
 	<tr valign=top>
 		<td align=right nowrap>Screen Shot:</td>
-		<td><input type=file name='screenshot'></td>
+		<td><input type=file name='screenshot'><br><small>(JPEG or PNG only, please)</small></td>
 	</tr>
 <?php } ?>
 <tr valign=top>

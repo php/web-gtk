@@ -158,7 +158,10 @@ if( !empty($action) && !empty($app_id) ) {
 	case 'modify':
 		$app_old = $app;
 
-		if( !empty($_FILES[screenshot][name]) && ereg("^image/", $_FILES[screenshot][type]) )  {
+		if( !empty($_FILES[screenshot][name]) 
+			&& ereg("^image/", $_FILES[screenshot][type]) 
+			&& !ereg("gif", $_FILES[screenshot][type]) 
+		)  {
 			$has_new_screenshot = 'Y';
 		}else {
 			$has_screenshot = 'N';
