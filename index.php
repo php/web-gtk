@@ -46,13 +46,13 @@ obtain the latest stable release of GTK+ v1.2.x from
 </p>
 
 <p>
-<b>Warning!</b> This code is a highly experimental adaptation of the
+<b>Warning!</b><i> This code is a highly experimental adaptation of the
 instructions beamed to us by the friendly aliens of Tau Ceti. The API can and
-<i>will</i> be changing, evolving, and unpredictably morphing into little furry
+</i>will<i> be changing, evolving, and unpredictably morphing into little furry
 Ewoks, fluorescent killer bunny rabbits, and the knights who say 'Nee'. Use the
 code at your own risk, as it may cause flooding, polydactism, frogs falling from
 the sky, and the return of the Inca empire. And it will definitely warp
-space-time continuum in your local area.
+space-time continuum in your local area.</i>
 </p>
 
 <p>
