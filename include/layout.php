@@ -244,6 +244,8 @@ function commonHeader($title=false, $padding=true) {
 
 function commonFooter($padding = true) {
 
+    global $RIGHT_SIDEBAR_DATA;
+
 	if( $padding ) {
 		print("<br>");
 	}
