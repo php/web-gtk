@@ -164,7 +164,7 @@ function makeTitle($title) {
 }
 
 
-function makeEntry($date,$name,$blurb,$id=0) {
+function makeEntry($date,$name,$blurb,$rating=0,$id=0,) {
 	global $MAGIC_COOKIE;
 
 	echo '<tr valign="top">';
@@ -181,7 +181,7 @@ function makeEntry($date,$name,$blurb,$id=0) {
 	}
 	echo date("d-M-Y h:i", $date);
 	echo '<br></td>';
-	echo '<td align="right">';
+	echo '<td align="right"><small>';
 	if (isset($MAGIC_COOKIE) && $id) {
 
 		print_link('/manual/admin-notes.php?action=edit+' . $id . '&brief=1',
@@ -198,9 +198,11 @@ function makeEntry($date,$name,$blurb,$id=0) {
 			'admin'
 		);
 	}
+	echo '<br>';
 
-	echo '<br></td>';
-	echo '</tr>';
+	printf('rating: <B>%.02f<B>', $rating );
+
+	echo '<br></small></td></tr>';
 	echo '<tr bgcolor="#f0f0f0"><td colspan="2">';
 	echo clean_note($blurb). '<br>';
 	echo '</td></tr>';
@@ -222,7 +224,9 @@ function manualGetUserNotes($title, $id) {
 		$user = 'nobody';
 		$pass = '';
 		$db_id = @mysql_pconnect($host, $user, $pass);
-		$query = "SELECT *, UNIX_TIMESTAMP(ts) AS xwhen FROM note WHERE sect = '$title' OR sect = '$id' ORDER BY id";
+#		$query = "SELECT *, UNIX_TIMESTAMP(ts) AS xwhen FROM note WHERE sect = '$title' OR sect = '$id' ORDER BY id";
+		$query = "SELECT *, UNIX_TIMESTAMP(ts) AS xwhen, if(votes=0, 0, rating/votes) AS rate FROM note " .
+				"WHERE sect='$title' OR sect='$id' ORDER BY rate DESC, id";
 		if ($db_id) {
 			$result_id = mysql_db_query("gtk", $query, $db_id);
 		}
