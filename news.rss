@@ -26,7 +26,7 @@
 <item rdf:about="http://gtk.php.net/docs-rss.php">
     <title>Documentation updates listed on PHP-GTK Web site</title>
     <link>http://gtk.php.net/docs-rss.php</link>
-    <description>The PHP-GTK Web site now features a regularly updated listing of documentation updates. The listing is displayed on the home page and is updated every night when the manual is updated from CVS. Any pages in the manual found with changes are listed. In addition, a documentation update feed is available in RSS format.</description>
+    <description>The PHP-GTK Web site now features a regularly updated listing of documentation updates. The listing is displayed on the home page and is updated every night when the manual is updated from CVS. The updates are listed in reverse chronological order (the newest at the top), and the latest fifteen updates are shown at any given time. In addition, a documentation update feed is available in RSS format.</description>
     <dc:date>2004-08-05</dc:date>
 </item>
 

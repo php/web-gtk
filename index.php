@@ -60,9 +60,10 @@ commonHeader();
 <p><span class="newsdate">[05-Aug-2004]</span> The PHP-GTK Web site now features 
     a regularly updated listing of documentation updates. The listing is 
     displayed on the home page and is updated every night when the manual is 
-    updated from CVS. Any pages in the manual found with changes are listed. 
-    In addition, a <a href="docs-rss.php">documentation update feed</a> is 
-    available in RSS format.</p>
+    updated from CVS. The updates are listed in reverse chronological order 
+    (the newest at the top), and the latest fifteen updates are shown at any 
+    given time. In addition, a <a href="docs-rss.php">documentation update 
+    feed</a> is available in RSS format.</p>
 
 <?php hdelim(); ?>
 
