@@ -23,4 +23,6 @@ These notes are <B>not</B> the place to report <A href="http://gtk.php.net/bugs"
 </P>
 -->
 
-<?commonFooter();?>
+<?
+commonFooter();
+

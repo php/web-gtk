@@ -1,5 +1,8 @@
 <?
 
+require_once 'shared-manual.inc';
+
+
 /*
 # Notes only available at main mirror site for now
 if ($HTTP_SERVER_VARS["HTTP_HOST"]!='gtk.php.net') {
@@ -11,7 +14,6 @@ if ($HTTP_SERVER_VARS["HTTP_HOST"]!='gtk.php.net') {
 
 $mailto = 'gtk-webmaster@php.net';
 
-require_once 'shared-manual.inc';
 commonHeader('Manual Notes');
 
 /* clean off leading and trailing whitespace */
@@ -36,16 +38,11 @@ if(!strstr($MYSITE,"gtk.php.net")) {
 }
 */
 
-
-mysql_pconnect("localhost", "nobody", "");
-mysql_select_db("gtk");
-
 if (isset($note) && isset($action) && strtolower($action) != "preview") {
 	$now = date("Y-m-d H:i:s");
 	$query = "INSERT INTO note (user, note, sect, ts, lang) VALUES ";
         # no need to call htmlspecialchars() -- we handle it on output
         $query .= "('$user','$note','$sect','$now','$lang')";
-	//echo "<!--$query-->\n";
 	if (mysql_query($query)) {
 		echo "<P>Your submission was successful -- thanks for contributing!</P>";
 		$new_id = mysql_insert_id();	
@@ -167,4 +164,4 @@ to submit a bug report or request a feature</a>.
 }
 
 commonFooter();
-?>
+

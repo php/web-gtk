@@ -8,6 +8,15 @@ define(NAV_SIGNAL, 4);
 define(NAV_ENUM, 5);
 
 
+$host = 'localhost';
+$user = 'nobody';
+$pass = '';
+
+
+mysql_pconnect("localhost","nobody","");
+mysql_select_db("gtk");
+
+
 $NEXT = $PREV = $UP = $HOME = array(false, false);
 $TOC = array();
 
@@ -227,44 +236,42 @@ function makeEntry($row, $show_admin = true, $show_rating = true ) {
 }
 
 
+updateNotesVoting() {
+	global $HTTP_GET_VARS, $HTTP_SERVER_VARS;
+
+	# probably a better way/place to do this, but ...
+
+	if ($HTTP_GET_VARS['rate_id'] && $HTTP_GET_VARS['rate_note']) {
+		$p = parse_url($HTTP_SERVER_VARS['HTTP_REFERER']);
+
+echo "\n\n<!-- " . $p['path'] . " :: " . $HTTP_SERVER_VARS['SCRIPT_NAME'] . " -->\n\n";
+
+		/* prevent outside scripts from voting */
+		if ($HTTP_SERVER_VARS['SCRIPT_NAME']==$p['path']) {
+			$query = 'UPDATE note SET votes=votes+1, rating=rating+' . 
+				min(5, $HTTP_GET_VARS['rate_note']) .
+				' WHERE id=' . $HTTP_GET_VARS['rate_id'];
+			$result_id = @mysql_query($query);
+		}
+	}
+}
+
+
 
 function manualGetUserNotes($title, $id) {
 	// if we're gtk.php.net, get it from the local DB
 	// otherwise look in "/manual/usernotes/$title.txt" (if present)
 	$notes = array();
-	if ( true ) {
 #	if(is_primary_site() || strstr($MYSITE,"localhost")) {
-#		$host = '127.0.0.1';
 
-		$host = 'localhost';
-		$user = 'nobody';
-		$pass = '';
-		$db_id = @mysql_pconnect($host, $user, $pass);
+	if ( true ) {
 
-		# handle voting first
-		# probably a better way/place to do this, but ...
-
-		global $HTTP_GET_VARS, $HTTP_SERVER_VARS;
-		if ($HTTP_GET_VARS['rate_id'] && $HTTP_GET_VARS['rate_note']) {
-			$p = parse_url($HTTP_SERVER_VARS['HTTP_REFERER']);
-
-echo "\n\n<!-- " . $p['path'] . " :: " . $HTTP_SERVER_VARS['SCRIPT_NAME'] . " -->\n\n";
-
-			/* prevent outside scripts from voting */
-			if ($HTTP_SERVER_VARS['SCRIPT_NAME']==$p['path']) {
-				$query = 'UPDATE note SET votes=votes+1, rating=rating+' . 
-					min(5, $HTTP_GET_VARS['rate_note']) .
-					' WHERE id=' . $HTTP_GET_VARS['rate_id'];
-				$result_id = mysql_db_query("gtk", $query, $db_id);
-			}
-		}
+		updateNotesVoting();
 
 		$query = "SELECT *, UNIX_TIMESTAMP(ts) AS xwhen, IF(votes=0, 10, rating/votes) AS rate FROM note " .
 				"WHERE sect='$title' OR sect='$id' ORDER BY rate DESC, id";
 
-		if ($db_id) {
-			$result_id = mysql_db_query("gtk", $query, $db_id);
-		}
+		$result_id = @mysql_query($query);
 		if ($result_id && mysql_num_rows($result_id) > 0) {
 			while ($row = mysql_fetch_array($result_id)) {
 				$notes[] = $row;
@@ -365,16 +372,8 @@ function manualLastModified($title, $id) {
 	global $MYSITE, $SCRIPT_FILENAME;
 #	if (is_primary_site()) {
 	if ( true ) {
-		$host = 'localhost';
-		$user = 'nobody';
-		$pass = '';
-		$db_id = @mysql_pconnect($host, $user, $pass);
 		$query = "SELECT UNIX_TIMESTAMP(ts) AS stamp FROM note WHERE sect = '$title' OR sect = '$id' ORDER BY ts DESC limit 1";
-		if ($db_id) {
-			$result_id = @mysql_db_query("gtk", $query, $db_id);
-		} else {
-			$result_id = 0;
-		}
+		$result_id = @mysql_query($query);
 		if($result_id && mysql_num_rows($result_id)) {
 			$t = mysql_fetch_row($result_id);
 			Header("Last-Modified: ".gmdate("D, d M Y H:i:s",$t[0])." GMT");

@@ -28,4 +28,4 @@ Pass: <input type=password name=pass value="<?echo $pass;?>">
 
 commonFooter();
 
-?>
+

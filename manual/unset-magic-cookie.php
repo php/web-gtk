@@ -9,4 +9,4 @@ echo '<P><b>Cookie unset</b>.</P>';
 
 commonFooter();
 
-?>
+

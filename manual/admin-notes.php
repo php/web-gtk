@@ -4,7 +4,6 @@ require_once 'cvs-auth.inc';
 require_once 'email-validation.inc';
 require_once 'shared-manual.inc';
 
-
 $mailto = 'gtk-webmaster@php.net';
 $num_entries_per_page = 50;
 
@@ -22,14 +21,13 @@ if(!strstr($MYSITE,"www.php.net")) {
 }
 */
 
+updateNotesVoting();
+
 commonHeader("Manual Notes Administration");
 echo "<h1>Manual Notes Administration</h1>\n\n";
 
 echo "<P>If you just want to browse the manual notes, you're better off " .
 	"<A href=\"http://gtk.php.net/manual/browse-notes.php\">here</A>.</P>\n";
-
-mysql_pconnect("localhost","nobody","");
-mysql_select_db("gtk");
 
 if ($action != '') {
 

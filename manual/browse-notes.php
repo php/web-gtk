@@ -12,13 +12,10 @@ if(!strstr($MYSITE,"www.php.net")) {
 commonHeader("Browse Manual Notes");
 echo '<h1>Browse Manual Notes</h1>';
 
-
-mysql_connect("localhost");
-mysql_select_db("gtk");
-
+updateNotesVoting();
 
 include 'browse.php';
 
 commonFooter();
 
-?>
+
