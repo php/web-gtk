@@ -110,7 +110,7 @@ change</a>, you're in the wrong place.  If you are just commenting on the fact
 that something is not documented, save your breath. This is where <B>you</B>
 add to the documentation, not where you ask <B>us</B> to add the
 documentation. This is also not the correct place to <A
-href="/support.php">ask questions</A> (even if you see others have done that
+href="http://www.php.net/support.php">ask questions</A> (even if you see others have done that
 before, we are editing the notes slowly but surely).  If you post a note in
 any of the categories above, it will edited and/or removed.
 </P>
@@ -125,7 +125,7 @@ and add it here!).
 </P>
 
 <P>
-That said, you can change your mind and <a href="/support.php">click here to 
+That said, you can change your mind and <a href="http://www.php.net/support.php">click here to 
 go to the support pages</a> or <a href="http://gtk.php.net/bugs">click here 
 to submit a bug report or request a feature</a>.
 </P>
