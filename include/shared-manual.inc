@@ -204,12 +204,12 @@ function makeEntry($row, $show_admin = true, $show_rating = true ) {
 	if ($show_rating) {
 		echo 'rating: ';
 		if ( $row['votes'] > 3 ) {
-			printf('<b>%.02f</b>', $row['rate'] );
+			printf('<b>%.01f</b>', $row['rate'] );
 		} else {
 			printf('%d vote%s', $row['votes'], $row['votes']==1 ? '' : 's' );
 		}
 		echo ' | rate: ';
-		for ($i=1; $i<=10; $i++) {
+		for ($i=1; $i<=5; $i++) {
 			if ($i>1) {
 				echo ' <font color="#999999">|</font> ';
 			}
@@ -249,7 +249,8 @@ function manualGetUserNotes($title, $id) {
 			$p = parse_url($HTTP_SERVER_VARS['HTTP_REFERER']);
 			/* prevent outside scripts from voting */
 			if ($HTTP_SERVER_VARS['SCRIPT_NAME']==$p['path']) {
-				$query = 'UPDATE note SET votes=votes+1, rating=rating+' . $HTTP_GET_VARS['rate_note'] .
+				$query = 'UPDATE note SET votes=votes+1, rating=rating+' . 
+					min(5, $HTTP_GET_VARS['rate_note']) .
 					' WHERE id=' . $HTTP_GET_VARS['rate_id'];
 				$result_id = mysql_db_query("gtk", $query, $db_id);
 			}
