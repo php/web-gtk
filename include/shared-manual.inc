@@ -14,15 +14,25 @@ $TOC = array();
 $SIDEBAR_DATA = '';
 
 
+function recursive_trim(&$s, $k) {
+	if (is_array($s)) {
+		array_walk($s, 'recursive_trim');
+	} else {
+		$s = trim($s);
+	}
+}
+
+
 function setupNavigation($data) {
-    global $NEXT, $PREV, $UP, $HOME, $TOC, $tstamp;
-    $HOME = @$data["home"];
-    $HOME[0] = "./";
-    $NEXT = @$data["next"];
-    $PREV = @$data["prev"];
-    $UP   = @$data["up"];
-    $TOC =  @$data["toc"];
-    $tstamp = gmdate("D, d M Y",getlastmod());
+	global $NEXT, $PREV, $UP, $HOME, $TOC, $tstamp;
+	@array_walk($data, 'recursive_trim');
+	$HOME = @$data["home"];
+	$HOME[0] = "./";
+	$NEXT = @$data["next"];
+	$PREV = @$data["prev"];
+	$TOC =  @$data["toc"];
+	$UP = @$data["up"];
+	$tstamp = gmdate("D, d M Y",getlastmod());
 }
 
 
