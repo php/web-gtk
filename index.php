@@ -56,6 +56,18 @@ commonHeader();
 
 ?>
 
+<h1>PHP-GTK 2 Making Progress</h1>
+
+<p><span class="newsdate">[21-Mar-2005]</span> PHP-GTK 2 is making great strides
+   toward a working release. Andrei's relentless work has lead to a current CVS
+   version that can run non-trivial scripts. See this 
+   <a href="http://marc.theaimsgroup.com/?l=php-gtk-general&m=111006182204075&w=2">posting</a>
+   to the general mailing list for an example. Take a look at the
+   <a href="http://cvs.php.net/co.php/php-gtk/ChangeLog">change log</a> for the
+   latest updates.</p>
+
+<?php hdelim(); ?>
+
 <h1>February News</h1>
 
 <p><span class="newsdate">[22-Feb-2005]</span> It's getting close to

@@ -26,6 +26,16 @@
     </items>
 </channel>
 
+<item rdf:about="http://gtk.php.net/about/news-2005-03-21">
+    <title>PHP-GTK 2 Making Progress</title>
+    <link>http://gtk.php.net/</link>
+    <description>PHP-GTK 2 is making great strides toward a working release.
+    Andrei's relentless work has lead to a current CVS version that can run
+    non-trivial scripts. See the general mailing list archives for an example.
+    Take a look at the change log for the latest updates.</description>
+    <dc:date>2005-03-22</dc:date>
+</item>
+
 <item rdf:about="http://gtk.php.net/about/news-2005-02-22">
     <title>February News</title>
     <link>http://gtk.php.net/</link>
@@ -123,13 +133,14 @@
     <dc:date>2004-07-28</dc:date>
 </item>
 
+<!-- Shift old items off list.
 <item rdf:about="http://gtk.php.net/wiki/">
     <title>New PHP-GTK wiki</title>
     <link>http://gtk.php.net/wiki/</link>
     <description>We have set up a new wiki that is faster and more easily manageable than our previous wiki. In addition, the new wiki is now internally a part of the PHP-GTK Web site. Special thanks go to Manuel Kiessling who contributed server resources to host the PHP-GTK Wiki up until the present. In other news, International PHP Magazine's PHP Barnstormer made special mention of the increased activity here at PHP-GTK in this week's issue.</description>
     <dc:date>2004-07-27</dc:date>
 </item>
-<!-- Shift old items off list.
+
 <item rdf:about="http://gtk.php.net/docs.php">
     <title>Documentation updates</title>
     <link>http://gtk.php.net/docs.php</link>
