@@ -18,29 +18,23 @@ please <? print_email('php-gtk-webmaster@lists.php.net', 'email the webmaster');
 
 <li><? print_link('http://wiki.gtk.php.net/', 'PHP-GTK Wiki') ?><br />
 This site allows the PHP-GTK community to help contribute documentation to the
-PHP-GTK project.<br />
+PHP-GTK project.</li>
 
-<li><? print_link('http://www.cweiske.de/phpgtk.htm', 'PHP-GTK Application Downloads at cweiske.de') ?><br />
-This site provides several PHP-GTK freeware applications for download, as well as some reusable code for PHP-GTK programmers<br />
+<!-- <li><? print_link('http://www.cweiske.de/phpgtk.htm', 'PHP-GTK Application Downloads at cweiske.de') ?><br />
+This site provides several PHP-GTK freeware applications for download, as well as some reusable code for PHP-GTK programmers</li> -->
 
-<li><? print_link('http://binary.gamer.net.nz/', 'tutorials, news and downloads for PHP-GTK'); ?><br />
+<li><? print_link('http://www.php-gtk.org.br/', 'Brazilian PHP-GTK Community Portal'); ?></li>
 
-<li><? print_link('http://www.php-gtk.org.br/', 'Brazilian PHP-GTK Community Portal'); ?><br />
+<li><? print_link('http://www.phpgtk.de', 'German PHP-GTK Portal'); ?></li>
 
-<li><? print_link('http://gtk.miester.org/', 'GTK at Miester.org'); ?><br />
-This site provides current news, some basic tutorials and example applications.<br />
-
-<li><? print_link('http://www.adapower.net/gtkada/', 'Glade UI builder for Windows'); ?><br />
-
-<li><? print_link('http://www.phpgtk.de', 'PHP-GTK Windows installer'); ?><br />
-<li><? print_link('http://michel.weimerskirch.net/software.php', 'Another PHP-GTK Windows installer'); ?><br />
+<li><? print_link('http://michel.weimerskirch.net/software.php', 'PHP-GTK Windows installer'); ?></li>
 
 <li><? print_link('http://developer.gnome.org/doc/API/gtk/gtkobjects.html', 'GTK+ Reference Manual'); ?><br />
-The GTK+ manual with a list of all widgets and their corresponding functions/attributes.<br />
+The GTK+ manual with a list of all widgets and their corresponding functions/attributes.</li>
 
-<li><? print_link('http://mail.gnome.org/mailman/listinfo/gtk-list', 'GTK+ mailing list archives'); ?><br />
+<li><? print_link('http://mail.gnome.org/archives/gtk-list/', 'GTK+ mailing list archives'); ?><br />
 This list might be useful if you have a certain GTK+ question or problem that
-PHP-GTK list has no information about.<br />
+PHP-GTK list has no information about.</li>
 
 </ul>
 
@@ -48,16 +42,14 @@ PHP-GTK list has no information about.<br />
 
 <ul>
 
-<li><? print_link('http://guru.josefine.at/~mfischer/articles/article-php-gtk.html',
-				   'Article by Markus Fischer'); ?><br />
-
 <li><? print_link('http://www.goldweb.com.au/~davidj/articles/html/1.html',
-				  'Introductory PHP-GTK article by David Jorm'); ?><br />
+				  'Introductory PHP-GTK article by David Jorm'); ?></li>
 
 <li><? print_link('http://www.webmasterbase.com/article/697',
-				  'Build Cross-Platform Windowed Apps with PHP by Mitchell Harper'); ?><br />
+				  'Build Cross-Platform Windowed Apps with PHP by Mitchell Harper'); ?></li>
+
 <li><?  print_link('http://products.magnet-i.com/phpgale/php-gtk_endliess_possibilities.pdf',
-				   'PHP-GTK: Endless Possibilities') ?><br />
+				   'PHP-GTK: Endless Possibilities') ?></li>
 
 </ul>
 
