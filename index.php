@@ -5,10 +5,12 @@
 
 $SIDEBAR_DATA = <<< EOF
 <h3>What is PHP-GTK?</h3>
-<p>PHP-GTK is an extension for PHP programming language that implements 
-    language bindings for GTK+ toolkit. It provides an object-oriented 
+<p>PHP-GTK is an extension for the <acronym 
+    title="recursive acronym for PHP: Hypertext Preprocessor">PHP</a> 
+    programming language that implements language bindings for 
+    <acronym title="The GIMP Toolkit">GTK+</a>. It provides an object-oriented 
     interface to GTK+ classes and functions and greatly simplifies writing 
-    client side cross-platform GUI applications.</p>
+    client-side cross-platform GUI applications.</p>
 
 <h3>Resources</h3>
 <p>Check out our <a href="/resources.php">Resources page</a> for links to 
@@ -68,9 +70,9 @@ commonHeader();
 <p><span class="newsdate">[23-Oct-2003]</span> 
     <a href="/download.php">PHP-GTK Version 1.0.0</a> is finally out after 
     almost a year of being in stasis. This is probably the last major version 
-    that will work with PHP 4 and Gtk+ 1.x. There might be more bugfixes, but 
+    that will work with PHP 4 and GTK+ 1.x. There might be more bugfixes, but 
     no new features or upgrades will be implemented. PHP-GTK 2 is under 
-    development and will focus on PHP 5 and Gtk+ 2.x.</p>
+    development and will focus on PHP 5 and GTK+ 2.x.</p>
 
 <?php hdelim(); ?>
 
@@ -89,14 +91,14 @@ commonHeader();
 <p><?php print_link('http://wiki.gtk.php.net/'); ?> The general idea is that 
     the PHP-GTK community (including members of this list) can use the Wiki to 
     help provide better documentation for PHP-GTK. Be it HOWTOs, tips, FAQs, 
-    case studies or anything else that may be useful, if you want to write it 
-    the Wiki is there to accept it. Best of all because adding to the Wiki is 
-    as simple as clicking the "edit this document" button there is hardly any 
+    case studies, or anything else that may be useful, if you want to write it, 
+    the Wiki is there to accept it. Best of all, because adding to the Wiki is 
+    as simple as clicking the "edit this document" button, there is hardly any 
     barrier between thinking of something and recording it.</p>
 
 <p>There is practically no content up there right now, but the Wiki really 
     needs to be a community effort. If you have anything PHP-GTK related that 
-    you think will be useful, add it in. Good content can then be rolled in to 
+    you think will be useful, add it in. Good content can then be rolled into 
     official PHP-GTK documentation later on.</p>
 
 <?php hdelim(); ?>
@@ -125,7 +127,7 @@ commonHeader();
 
 <p>With the help of Philip Hallstrom, we now have a Freshmeat-like index of
     applications. It still needs to be populated, so if you have written a 
-    useful piece of software using PHP-GTK, point your browser to
+    useful piece of software using PHP-GTK, point your browser to the 
     <?php print_link('/apps/', 'Applications'); ?> area and add it to the 
     list.</p>
 
