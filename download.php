@@ -26,11 +26,11 @@ of GTK+ v1.2.x from <?php print_link('ftp://ftp.gtk.org/pub/gtk/v1.2/'); ?>.
 <LI><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-0.5.0.tar.gz',
 	'php-gtk-0.5.0 Source'); ?> - 24-Jan-2002<br>
 
+<LI><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-0.5.1-win32.zip', 
+	'php-gtk-0.5.1 Windows and PHP Binary including libGlade'); ?> - 26-Apr-2002<br>
+
 <LI><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-0.5.0-win32.zip', 
 	'php-gtk-0.5.0 Windows and PHP Binary including libGlade'); ?> - 24-Jan-2002<br>
-
-<LI><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-0.1.1a-win32.zip', 
-	'php-gtk-0.1.1a Windows and PHP Binary including libGlade'); ?> - 12-Oct-2001<br>
 
 </UL>
 
