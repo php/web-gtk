@@ -170,6 +170,7 @@ if (!$brief && mysql_num_rows($result) > 0) {
 	$last = '';
 	while ($row = mysql_fetch_array($result)) {
 		if ($row['sect'] != $last)  {
+			makeTitle('');
 			makeTitle($row['sect']);
 			$last = $row['sect'];
 		}
@@ -188,3 +189,4 @@ if (!$brief && mysql_num_rows($result) > 0) {
 commonFooter();
 
 ?>
+v
