@@ -38,6 +38,21 @@ EOF;
 commonHeader();
 
 ?>
+<h1>PHP-GTK 2 is go for GTK+ 2.4</h1>
+
+<p><span class="newsdate">[29-Jul-2004]</span> In a thread on 
+    <strong>php-gtk-dev</strong> entitled "<a href="http://marc.theaimsgroup.com/?t=109090764000001&r=1&w=2">Gtk+
+    2.2 or 2.4?</a>", developers discussed whether to base PHP-GTK 2 on GTK+ 
+    2.2 or 2.4. The decision was quickly made, with no opposition or argument, 
+    to <a href="http://marc.theaimsgroup.com/?l=php-gtk-dev&m=109104992017688&w=2">proceed 
+    with using GTK+ 2.4</a>.</p>
+
+<p>For more information on GTK+ 2.4, read <a href="http://mail.gnome.org/archives/gtk-app-devel-list/2004-March/msg00178.html">this 
+    post</a> and <a href="http://mail.gnome.org/archives/gtk-list/2004-March/msg00111.html">this 
+    post</a>.</p>
+
+<?php hdelim(); ?>
+
 <h1>PHP-GTK RSS feed added</h1>
 
 <p><span class="newsdate">[28-Jul-2004]</span> The addition of an 

@@ -10,6 +10,7 @@
     <description>The PHP-GTK extension Web site</description>
     <items>
         <rdf:Seq>
+            <rdf:li rdf:resource="http://marc.theaimsgroup.com/?l=php-gtk-dev&m=109104992017688&w=2" />
             <rdf:li rdf:resource="http://gtk.php.net/news.rss" />
             <rdf:li rdf:resource="http://gtk.php.net/" />
             <rdf:li rdf:resource="http://gtk.php.net/wiki/" />
@@ -20,6 +21,13 @@
         </rdf:Seq>
     </items>
 </channel>
+
+<item rdf:about="http://marc.theaimsgroup.com/?l=php-gtk-dev&m=109104992017688&w=2">
+    <title>PHP-GTK 2 is go for GTK+ 2.4</title>
+    <link>http://marc.theaimsgroup.com/?l=php-gtk-dev&m=109104992017688&w=2</link>
+    <description>In a thread on php-gtk-dev entitled "Gtk+ 2.2 or 2.4?", developers discussed whether to base PHP-GTK 2 on GTK+ 2.2 or 2.4. The decision was quickly made, with no opposition or argument, to proceed with using GTK+ 2.4. For more information on GTK+ 2.4, read this post and this post.</description>
+    <dc:date>2004-07-29</dc:date>
+</item>
 
 <item rdf:about="http://gtk.php.net/news.rss">
     <title>PHP-GTK RSS feed added</title>
