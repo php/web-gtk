@@ -55,6 +55,33 @@ EOF;
 commonHeader();
 
 ?>
+
+
+<h1>PHP-GTK in business</h1>
+
+<p><span class="newsdate">[20-Dec-2004]</span>There has been a lot of 
+    discusson lately about the role PHP-GTK can and is playing in the 
+    business world. Several people have <a
+    href="http://marc.theaimsgroup.com/?l=php-gtk-general&m=109903609804913&w=2">commented</a>
+    on the <a href="http://gtk.php.net/resources.php">php-gtk-general
+    mailing list</a> about how they have developed secure, cross-platform
+    applications for use in business with PHP-GTK. Using tools such as
+    Roadsend's <a
+    href="http://www.roadsend.com/home/index.php?pageID=compiler">PHP
+    Compiler</a>, developers are able to create and distribute PHP-GTK
+    applications that don't require the user to have a working installation
+    first.</p>
+
+<p>On the international level, PHP-GTK documentation is being translated
+    into <a href="http://gtk.php.net/manual/ru/">Russian</a> thanks to the
+    work of Andrew Krasnyansky. Also, the organizers of the International
+    PHP Conference have put out a <a
+    href="http://www.phpconference.com/konferenzen/divers/psecom,id,191,nodeid,240.html">call
+    for papers</a>. One of the requested topics is PHP-GTK.</p>
+
+<?php hdelim(); ?>
+
+
 <h1>Small steps into a better world</h1>
 
 <p><span class="newsdate">[12-Nov-2004]</span> While work continues on 
@@ -72,6 +99,7 @@ commonHeader();
     and a new PHP-GTK interface for PHPUnit.</p>
 
 <?php hdelim(); ?>
+
 
 <h1>PHP-GTK 1.0.1 released</h1>
 
@@ -91,6 +119,7 @@ commonHeader();
    include syntax highlighting (coloring) in the code examples.</p>
 
 <?php hdelim(); ?>
+
 
 <h1>Documentation updates listed on PHP-GTK Web site</h1>
 
