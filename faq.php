@@ -29,7 +29,7 @@ creation of standalone applications (run via command-line, user's desktop, etc.)
 <br><br>
 
 <a name="3"><b>How do I install PHP-GTK on Win32?</b></a><br>
-Download the latest <a href="http://gtk.php.net/do_download.php?download_file=php-gtk-0.0.1-win32.zip">binaries</a> from gtk.php.net<br>
+Download the latest <a href="http://gtk.php.net/do_download.php?download_file=php-gtk-0.0.2-win32.zip">binaries</a> from gtk.php.net<br>
 The zip file contains all binaries needed to run PHP-GTK. Copy the files to the following locations:<br>
 <br>
 On Windows 98/NT/2000 you will need these files<br>
