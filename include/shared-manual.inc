@@ -387,7 +387,7 @@ function manualHeader($title,$id="") {
 
 	global $HTTP_GET_VARS, $SCRIPT_NAME, $HTTP_REFERER;
 	if ($HTTP_GET_VARS['rate_id'] && $HTTP_GET_VARS['rate_note']) {
-		$p = parse_url($HTTP_REFERER) {
+		$p = parse_url($HTTP_REFERER);
 		if ($SCRIPT_NAME==$p['path']) {		/* prevent outside scripts from voting */
 			$host = 'localhost';
 			$user = 'nobody';
