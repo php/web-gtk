@@ -6,11 +6,11 @@
 $SIDEBAR_DATA = <<< EOF
 <h3>What is PHP-GTK?</h3>
 <p>PHP-GTK is an extension for the <acronym 
-    title="recursive acronym for PHP: Hypertext Preprocessor">PHP</a> 
+    title="recursive acronym for PHP: Hypertext Preprocessor">PHP</acronym> 
     programming language that implements language bindings for 
-    <acronym title="The GIMP Toolkit">GTK+</a>. It provides an object-oriented 
-    interface to GTK+ classes and functions and greatly simplifies writing 
-    client-side cross-platform GUI applications.</p>
+    <acronym title="The GIMP Toolkit">GTK+</acronym>. It provides an 
+    object-oriented interface to GTK+ classes and functions and greatly 
+    simplifies writing client-side cross-platform GUI applications.</p>
 
 <h3>Resources</h3>
 <p>Check out our <a href="/resources.php">Resources page</a> for links to 
