@@ -11,7 +11,7 @@ commonHeader("Copyright and License");
 
 <P>
 For information on the PHP License (i.e. using the PHP language),
-<?php echo make_link('http:/www.php.net/license/', 'click here'); ?>.
+<?php print_link('http:/www.php.net/license/', 'click here'); ?>.
 </P>
 
 
@@ -42,12 +42,17 @@ and may not be copied or imitated in whole or in part.
 
 <P>
 You can contact the webmaster at 
-<?php echo make_link('mailto:webmaster@php.net', 'webmaster@php.net'); ?>.
+<?php print_email('webmaster@php.net'); ?>.
 </P>
 
 <P>
 For more information on the PHP Group and the PHP project, please see 
-<?php echo make_link('http://www.php.net/', 'http://www.php.net/'); ?>.
+<?php print_link('http://www.php.net/'); ?>.
+</P>
+
+<P>
+For more information on the PHP-GTK project, please see 
+<?php print_link('http://gtk.php.net/'); ?>.
 </P>
 
 <BR>
