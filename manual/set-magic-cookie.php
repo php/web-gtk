@@ -6,10 +6,11 @@ if (isset($user) && isset($pass)) {
 	commonHeader('Magic Cookie');
 	echo '<h1>Magic Cookie</h1>';
 	echo "<P><b>Cookie set</b>.</P>";
-}
-if (isset($MAGIC_COOKIE)) {
+} else {
 	commonHeader('Magic Cookie');
 	echo '<h1>Magic Cookie</h1>';
+}
+if (isset($MAGIC_COOKIE)) {
 	list($user,$pass) = explode(":", base64_decode($MAGIC_COOKIE));
 }
 
