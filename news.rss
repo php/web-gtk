@@ -26,7 +26,7 @@
 <item rdf:about="http://gtk.php.net/download.php">
     <title>PHP-GTK 1.0.1 released</title>
     <link>http://gtk.php.net/download.php</link>
-    <description>PHP-GTK version 1.0.1 is the first release in nine months. However, this release is also proof that activity in the PHP-GTK camp has indeed increased and is rapidly moving along toward a stable PHP-GTK 2. PHP-GTK 1.0.1, affectionately termed the "you thought we were done?" version, implemented and exposed some new methods for GtkToolbar, reimplemened Gdk::cursor_new_from_pixmap() "so it actually works," and updated the build system. See the changelog for full details. In other news, the manual has been updated to include syntax highlighting (coloring) in the code examples.</description>
+    <description>PHP-GTK version 1.0.1 is the first release in nine months. However, this release is also proof that activity in the PHP-GTK camp has indeed increased and is rapidly moving along toward a stable PHP-GTK 2. PHP-GTK 1.0.1, affectionately termed the "you thought we were done?" version, implemented and exposed some new methods for GtkToolbar, reimplemented Gdk::cursor_new_from_pixmap() "so it actually works," and updated the build system. See the changelog for full details. In other news, the manual has been updated to include syntax highlighting (coloring) in the code examples.</description>
     <dc:date>2004-08-09</dc:date>
 </item>
 

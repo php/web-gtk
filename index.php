@@ -64,7 +64,7 @@ commonHeader();
 
 <p>PHP-GTK 1.0.1, affectionately termed the "you thought we were done?" version, 
     implemented and exposed some new methods for 
-    <a href="/manual/en/gtk.gtktoolbar.php">GtkToolbar</a>,reimplemened 
+    <a href="/manual/en/gtk.gtktoolbar.php">GtkToolbar</a>,reimplemented 
     Gdk::cursor_new_from_pixmap() "so it actually works," and updated the 
     build system. See the <a href="/changelog.php#1.0.1">changelog</a> for 
     full details.</a>
