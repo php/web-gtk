@@ -205,7 +205,7 @@ function makeEntry($row, $show_admin = true, $show_rating = true ) {
 		echo 'rating: ';
 		if ( $row['votes'] > 3 ) {
 			printf('<b>%.01f</b>', $row['rate'] );
-		if ( $row['votes'] == 0 ) {
+		} else if ( $row['votes'] == 0 ) {
 			echo '<b><font color="#cc0000">new</font></b>';
 		} else {
 			printf('%d vote%s', $row['votes'], $row['votes']==1 ? '' : 's' );
