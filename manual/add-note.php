@@ -40,7 +40,7 @@ if(!strstr($MYSITE,"gtk.php.net")) {
 mysql_pconnect("localhost", "nobody", "");
 mysql_select_db("gtk");
 
-if (isset($note) && isset($action) && strtolower($action) != "preview"):
+if (isset($note) && isset($action) && strtolower($action) != "preview") {
 	$now = date("Y-m-d H:i:s");
 	$query = "INSERT INTO note (user, note, sect, ts, lang) VALUES ";
         # no need to call htmlspecialchars() -- we handle it on output
