@@ -1,0 +1,6 @@
+User-agent: Googlebot
+Disallow: */main/allrecentchanges$
+Disallow: */pmwiki*
+Disallow: */search*
+Disallow: *recentchanges*
+Disallow: *action=*
