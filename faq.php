@@ -16,13 +16,13 @@
 <li><a href="#3">How do I install PHP-GTK on Win32?</a>
 </ul>
 
-<a name="1"><b>What is PHP-GTK?</b></a>
+<a name="1"><b>What is PHP-GTK?</b></a><br>
 PHP-GTK is a PHP extension that implements language bindings for GTK+. It
 provides an object-oriented interface to GTK+ classes and functions and greatly
 simplifies writing client side cross-platform GUI applications.
 <br> <br>
 
-<a name="2"><b>Why is it not working with the browser/web server?</b></a>
+<a name="2"><b>Why is it not working with the browser/web server?</b></a><br>
 PHP-GTK is not meant to be used in the Web environment. It is intended for
 creation of standalone applications (run via command-line, user's desktop, etc.).
 <br><br>
