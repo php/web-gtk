@@ -216,6 +216,7 @@ function commonHeader($title=false) {
 <small>in the</small>
 <SELECT NAME="show" CLASS="small">
 <OPTION VALUE="maillist">general mailing list
+<OPTION VALUE="manual">manual
 </SELECT>
 <?	echo make_submit('small_submit_white.gif', 'search', 'bottom');
       ?>&nbsp;<br>

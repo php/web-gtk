@@ -1,5 +1,13 @@
 <?
 
+if(isset($pattern) && ($pattern) && isset($show) && ($show == "manual"))
+{
+	$location = "/manual-lookup.php";
+	$query = "lang=en&function=".urlencode($pattern);
+	Header("Location: ".$location."?".$query);
+	exit;
+}
+
 if (isset($pattern) && ($pattern)) {
 	SetCookie("prevsearch",$pattern,0,"",".php.net");
 }
@@ -12,6 +20,5 @@ if (isset($pattern) && ($pattern)) {
 		exit;
 	}
 }
-
 
 ?>
