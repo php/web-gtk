@@ -164,7 +164,8 @@ function commonHeader($title=false, $padding=true) {
 ?><html>
 <head>
  <title>PHP-GTK<?php if ($title) { echo ':'.$title; } ?></title>
- <link rel="stylesheet" href="/style.css">
+ <link rel="stylesheet" href="/style.css" />
+ <link rel="shortcut icon" href="/gifs/favicon.ico" />
 </head>
 
 <body
