@@ -289,7 +289,7 @@ echo "\n\n<!-- DEBUG: numrows=" . mysql_num_rows($result_id) . " -->\n\n";
 				$notes[] = $row;
 			}
 		} else {
-echo "\n\n<!-- DEBUG: err=" . mysql_error($result_id) . " -->\n\n";
+echo "\n\n<!-- DEBUG: err=" . @mysql_error($result_id) . " -->\n\n";
 		}
 	} else {
 		$notes_file = "../usernotes/" . urlencode( $title ) . ".txt";
