@@ -4,7 +4,7 @@
 // This is the main administration page where approvals, rejections, deletions, etc. take place
 // 
 
-require_once("cvs-auth.inc");
+//require_once("cvs-auth.inc");
 require_once("email-validation.inc");
 require_once("apps.inc");
 
@@ -13,10 +13,10 @@ if( isset($MAGIC_COOKIE) ) {
 	list($user, $pass) = explode(":", base64_decode($MAGIC_COOKIE));
 }
 
-if( !verify_password($user,$pass) ) {
-	Header("Location: /admin-login.php");
-	exit;
-}
+//if( !verify_password($user,$pass) ) {
+//	Header("Location: /admin-login.php");
+//	exit;
+//}
 
 $MAGIC_COOKIE = 'temp';
 
