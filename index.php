@@ -69,7 +69,7 @@ If you have any questions, please contact me at
 </p>
 
 <hr>
-<font size=-1><i>Last updated: <?php echo strftime('%d-%B-%Y', filemtime($SCRIPT_FILENAME)); ?></font>
+<font size=-1><i>Last updated: <?php echo strftime('%d-%B-%Y', getlastmod()); ?></font>
 
 </body>
 
