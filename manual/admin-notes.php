@@ -11,7 +11,7 @@ $num_entries_per_page = 50;
 if (isset($MAGIC_COOKIE)) {
 	list($user, $pass) = explode(":", base64_decode($MAGIC_COOKIE));
 }
-if ($save && $user && $pass && verify_password($user,$pass)) {
+if ($saveme && $user && $pass && verify_password($user,$pass)) {
 	SetCookie("MAGIC_COOKIE", base64_encode("$user:$pass"), time()+(86400*7), '/' );
 }
 
@@ -118,7 +118,7 @@ if ($action != '') {
 			echo '<TR valign="top"><TD align="right"><small>Your CVS password:<br></small></TD>' .
 				'<TD><INPUT type="password" size="8" name="pass" value="' . $pass . '"><BR></TD></TR>';
 			echo '<TR valign="top"><TD align="right"><small>Remember me:<br></small></TD>' .
-				'<TD><INPUT type="checkbox" name="saved" checked value="1"><BR></TD></TR>';
+				'<TD><INPUT type="checkbox" name="saveme" checked value="1"><BR></TD></TR>';
 
 			echo '<TR><TD colspan="2"><INPUT type="submit" name="action" value="modify ' .  $id . '"></TD></TR>';
 			echo "</TABLE></FORM>\n";
