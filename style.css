@@ -29,9 +29,13 @@ A.menuBlack {
 	font-size: 75%;
 }
 
-pre,code {
+pre,code,tt {
 	font-family: "andale mono", "monotype.com", "courier new", monospace;
-	font-size: 90%;
+	font-size: 85%;
+}
+
+pre.code {
+	background-color: #f0f0f0;
 }
 
 h1 {
@@ -109,10 +113,3 @@ textarea.small {
 	font-size: 75%;
 }
 
-PRE {
-	font-size: 85%;
-}
-
-PRE.code {
-	background-color: #f0f0f0;
-}

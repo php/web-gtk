@@ -397,7 +397,10 @@ function sendManualHeaders($charset,$lang) {
 
 function manualHeader($title,$id="") {
 	global $HTDIG, $LANGUAGES, $LANG, $SIDEBAR_DATA;
-	manualLastModified($title,$id);
+	global $HTTP_GET_VARS, $HTTP_SERVER_VARS;
+	if (!$HTTP_GET_VARS['rate_id'] && !$HTTP_GET_VARS['rate_note']) {
+		manualLastModified($title,$id);
+	}
 	makeBorderTOC($title);
 	commonHeader('Manual: '.$title);
         # create links to plain html and other languages
