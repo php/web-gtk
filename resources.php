@@ -36,14 +36,16 @@ PHP-GTK list has no information about.<BR>
 
 <UL>
 
-<LI><? print_link('http://guru.josefine.at/~mfischer/articles/article-php-gtk.html',
+<li><? print_link('http://guru.josefine.at/~mfischer/articles/article-php-gtk.html',
 				   'Article by Markus Fischer'); ?><br>
 
-<LI><? print_link('http://www.goldweb.com.au/~davidj/articles/html/1.html',
+<li><? print_link('http://www.goldweb.com.au/~davidj/articles/html/1.html',
 				  'Introductory PHP-GTK article by David Jorm'); ?><br>
 
-<LI><? print_link('http://www.webmasterbase.com/article/697',
+<li><? print_link('http://www.webmasterbase.com/article/697',
 				  'Build Cross-Platform Windowed Apps with PHP by Mitchell Harper'); ?><br>
+<li><?  print_link('http://products.magnet-i.com/phpgale/php-gtk_endliess_possibilities.pdf',
+				   'PHP-GTK: Endless Possibilities') ?><br>
 
 </UL>
 
