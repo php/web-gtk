@@ -25,7 +25,7 @@ if(isset($pattern) && ($pattern) && isset($show) && ($show == "whole-site")) {
 
 if(isset($pattern) && ($pattern) && isset($show) && ($show == "wiki")) {
     $query = urlencode($pattern);
-    $location = '/wiki/index.php/Main/SearchWiki?text=' . $query;
+    $location = '/wiki/Main/SearchWiki?text=' . $query;
 	Header("Location: ".$location);
 	exit;
 }

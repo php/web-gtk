@@ -12,12 +12,14 @@ $WikiTitle = 'PHP-GTK:Wiki';
 
 ##  $ScriptUrl is your preferred URL for accessing wiki pages
 ##  $PubDirUrl is the URL for the pub directory.
-$ScriptUrl = 'http://gtk.php.net/wiki/index.php';
+$ScriptUrl = 'http://gtk.php.net/wiki';
 $PubDirUrl = 'http://gtk.php.net/wiki/pub';
+$PageUrlFmt = 'http://gtk.php.net/wiki/$Group/$Title_';
+$UploadUrlFmt = 'http://gtk.php.net/wiki/uploads';
 
 ##  If your system is able to display the home page but gives
 ##  "404 Not Found" errors for all others, try setting the following:
-# $EnablePathInfo = 0;
+$EnablePathInfo = 1;
 
 ##  $PageLogoUrlFmt is the URL for a logo image--you can change this to
 ##  your own logo if you wish.
