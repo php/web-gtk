@@ -57,6 +57,31 @@ commonHeader();
 ?>
 
 
+<h1>Expanding Horizons</h1>
+
+<p><span class="newsdate">[18-Jan-2005]</span> PHP-GTK development is
+   growing in several directions. A recent <a 
+   href="http://cvs.php.net/co.php/php-gtk/ChangeLog?r=1.259">barrage
+   of commits</a> by Andrei shows that PHP-GTK 2 is moving ever closer
+   towards a working release. At the same time, Ivan Rodriguez has been
+   helping to add some GtkExtra classes to the <a 
+   href="http://gtk.php.net/download.php">CVS versions</a> of both PHP-GTK
+   1 and PHP-GTK 2.</p>
+
+<p>Other PHP communities are contributing to PHP-GTK development in their 
+   own way. PEAR has released another class, <a 
+   href="http://pear.php.net/packages.php?catpid=34&catname=Gtk+Components">Gtk_Styled</a>, 
+   to help PHP-GTK developers write cleaner, more stable code. The folks 
+   over at Zend have recognized everyone who has contributed to PHP-GTK 
+   development, documentation or the web site by adding them to the "<a 
+   href="http://www.zend.com/pear/whoiswho.php">Zend Who's Who of PHP</a>".<p>
+
+<p>In other news, the GDK section of the manual has been completely 
+   translated into <a href="http://gtk.php.net/manual/ru/">Russian</a>.</p>
+
+<?php hdelim(); ?>
+
+
 <h1>PHP-GTK in business</h1>
 
 <p><span class="newsdate">[20-Dec-2004]</span> There has been a lot of 
@@ -204,6 +229,7 @@ commonHeader();
     on Slashdot</a>. Thanks to <a href="http://blog.peoplesdns.com/blog/1">Joel 
     De Gan</a> for posting to Slashdot.</p>
 
+<!-- Old news items.
 <?php hdelim(); ?>
 
 <h1>PHP 5 release sparks renewed interest in PHP-GTK</h1>
@@ -227,7 +253,6 @@ commonHeader();
 <p>The forthcoming PHP-GTK version 2.0 will bind GTK+ 2 to PHP 5.  Until then, 
     PHP-GTK 1.0.0 works only with PHP 4.</p>
 
-<!--
 
 <?php hdelim(); ?>
 
