@@ -12,7 +12,7 @@ if (isset($MAGIC_COOKIE)) {
 	list($cookie_user, $cookie_pass) = explode(":", base64_decode($MAGIC_COOKIE));
 }
 if($save && $user && $pass) {
-	SetCookie("MAGIC_COOKIE",base64_encode("$user:$pass"),time()+3600*24*12,'/');
+	SetCookie("MAGIC_COOKIE", base64_encode("$user:$pass"), time()+3600*24*12, '/');
 }
 
 /*
@@ -103,11 +103,19 @@ if ($action != '') {
 		if ($result = mysql_query($query)) {
 			$row = mysql_fetch_array($result);
 			echo '<FORM method="POST" action="/manual/admin-notes.php">';
-			echo '<INPUT type="hidden" name="user" value="'.$user.'">';
-			echo '<INPUT type="hidden" name="pass" value="'.$pass.'">';
-			echo '<TABLE BORDER="0" CELLPADDING="5" CELLSPACING="0" BGCOLOR="#D0D0D0">';
-			echo '<TR valign="top"><TD><B>E-mail:</B></TD><TD><INPUT type="text" size="40" name="nuser" value="',$row['user'], '"></TD></TR>';
-			echo '<TR valign="top"><TD><B>Note:</B></TD><TD><TEXTAREA name="note" rows="8" cols="50">', $row['note'],'</TEXTAREA></TD></TR>';
+			echo '<TABLE BORDER="0" CELLPADDING="5" CELLSPACING="0" BGCOLOR="#e0e0e0">';
+			echo '<TR valign="top"><TD align="right">E-mail:</TD>' .
+				'<TD><INPUT type="text" size="40" name="nuser" value="',$row['user'], '"><BR></TD></TR>';
+			echo '<TR valign="top"><TD align="right">Note: </TD>' .
+				'<TD><TEXTAREA name="note" rows="8" cols="50">', $row['note'],'</TEXTAREA><BR></TD></TR>';
+
+			echo '<TR valign="top"><TD align="right">Your CVS username:<BR></TD>' .
+				'<TD><INPUT type="text" size="8" name="user" value="' . $user . '"><BR></TD></TR>';
+			echo '<TR valign="top"><TD align="right">Your CVS password:<BR></TD>' .
+				'<TD><INPUT type="password" size="8" name="pass" value="' . $pass . '"><BR></TD></TR>';
+			echo '<TR valign="top"><TD align="right">Remember me:<BR></TD>' .
+				'<TD><INPUT type="checkbox" name="saved" checked value="1"><BR></TD></TR>';
+
 			echo '<TR><TD colspan="2"><INPUT type="submit" name="action" value="modify ' .  $id . '"></TD></TR>';
 			echo "</TABLE></FORM>\n";
 			commonFooter();
@@ -140,53 +148,9 @@ if ($action != '') {
 
 } // end of if($action != "")
 
-if(!$last_entry) {
-	$limit = " LIMIT $num_entries_per_page";
-	$last_entry = $num_entries_per_page;
-} else {
-	$limit = " LIMIT $last_entry,$num_entries_per_page";
-	$last_entry += $num_entries_per_page;
-}
 
-// Aparently using "xwhen" does not contend w/ the MySQL namespace
-// I could not find docs in which there was a "WHEN" keyword for MySQL
+include 'browse.php';
 
-$query = 'SELECT *,UNIX_TIMESTAMP(ts) AS xwhen FROM note ORDER BY sect,ts'.$limit;
-$result = mysql_query($query);
-if ($error = mysql_error()) {
-	echo "<br>ERROR in MySQL: ".mysql_error()."<br>";
-	echo "$query<br>";
-}
-if (!$brief && mysql_num_rows($result) > 0) {
-	echo "<P><a href=\"/manual/admin-notes.php?last_entry=$last_entry\">Next $num_entries_per_page entries</a><P>\n";
-	echo '<FORM method="POST" action="/manual/admin-notes.php">';
-	echo '<INPUT type=hidden name="last_entry" value="'.($last_entry-$num_entries_per_page).'">';
-	echo '<TABLE><TR><TD>CVS user:</TD><TD><INPUT type=text name="user" size=8 value="'.$cookie_user.'"></TD>';
-	echo '<TD>CVS password:</TD><TD><INPUT type=password name="pass" size=8 value="'.$cookie_pass.'"></TD>';
-	echo '<TD>Remember my login/password:</TD><TD><input type=checkbox name=save '.($MAGIC_COOKIE?'CHECKED':'').'></TD></TR>';
-	echo '</TABLE>';
-
-	echo '<table border="0" cellpadding="4" cellspacing="0" width="100%">';
-	$last = '';
-	while ($row = mysql_fetch_array($result)) {
-		if ($row['sect'] != $last)  {
-			makeTitle('');
-			makeTitle($row['sect']);
-			$last = $row['sect'];
-		}
-		makeEntry($row['xwhen'], $row['user'], htmlspecialchars($row['note']), $row['id']);
-	}
-	echo '</TABLE>';
-	echo '</FORM>';
-	echo "<a href=\"/manual/admin-notes.php?last_entry=$last_entry\">Next $num_entries_per_page entries</a><P>\n";
-
-} else if (!$brief) {
-
-	echo "<P><B>There are no notes in the system.</B></P>";
-
-}
 
 commonFooter();
 
-?>
-v
