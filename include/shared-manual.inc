@@ -5,6 +5,7 @@ define(NAV_CLASSENTRY, 1);
 define(NAV_CONSTRUCTOR, 2);
 define(NAV_METHOD, 3);
 define(NAV_SIGNAL, 4);
+define(NAV_ENUM, 5);
 
 
 $NEXT = $PREV = $UP = $HOME = array(false, false);
@@ -68,6 +69,9 @@ function makeBorderTOC($this) {
                 break;
             case NAV_SIGNAL:
                 $img = "icon-s".$end;
+                break;
+            case NAV_ENUM:
+                $img = "icon-e".$end;
                 break;
             default:
                 $img = "box-".$end;
