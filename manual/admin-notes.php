@@ -110,6 +110,12 @@ if ($action != '') {
 				'<TD><INPUT type="text" size="40" name="nuser" value="',$row['user'], '"><BR></TD></TR>';
 			echo '<TR valign="top"><TD align="right"><small>Note:<br></small></TD>' .
 				'<TD><TEXTAREA name="note" rows="8" cols="50">', $row['note'],'</TEXTAREA><BR></TD></TR>';
+			echo '<TR valign="top"><TD align="right"><small>Reset rating:<br></small></TD>' .
+				'<TD><SELECT name="rating"><OPTION VALUE="0">leave unchanged';
+			for ($i=1; $i<=5; $i++) {
+				echo '<OPTION>'.$i;
+			}
+			echo '</SELECT><BR></TD></TR>';
 
 			echo '<tr bgcolor="#cccccc"><td colspan="2"></td></tr>';
 
@@ -135,7 +141,11 @@ if ($action != '') {
 			$row = mysql_fetch_array($result);
 		}
 		$add_url = "\n\nhttp://gtk.php.net/manual/en/".$row['sect']."\n";
-		$query = "UPDATE note SET user='$nuser',note='$note' WHERE id=$id";
+		$query = "UPDATE note SET user='$nuser',note='$note'"
+		if ($rating) {
+			$query.=",rating=votes*".(int)$rating;
+		}
+		$query .= " WHERE id=$id";
 		if (mysql_query($query)) {
 			echo "<P><B>Record modified.</B></P>";
 			mail($mailto, "note ".$row['id']." modified in ".$row['sect']." by $user",stripslashes($note).$add_url,"From: ".$user."@php.net");
