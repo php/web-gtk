@@ -2,16 +2,16 @@ body, ul, td, th { font-size: 14px; }
 .sidebar { font-size: 12px; }
 a.menuWhite { font-size: 10px; }
 a.menuBlack { font-size: 10px; }
-pre, code, tt { font-size: 8px; }
+pre, code, tt { font-size: 10px; }
 h1 { font-size: 18px; }
 h2 { font-size: 16px; }
 h3, dt { font-size: 14px; }
 h4 { font-size: 12px; }
-small { font-size: 8px; }
-a.small { font-size: 8px; }
+small { font-size: 10px; }
+a.small { font-size: 10px; }
 .tableExtras { font-size: 10px; }
-input.small, select.small { font-size: 8px; }
-textarea.small { font-size: 8px; }
+input.small, select.small { font-size: 10px; }
+textarea.small { font-size: 10px; }
 
 .wikilink {}
 .urllink {}
