@@ -110,8 +110,8 @@ if ($action != '') {
 				'<TD><TEXTAREA name="note" rows="8" cols="50">' . $row['note'] . '</TEXTAREA><BR></TD></TR>';
 			echo '<TR valign="top"><TD align="right"><small>Reset rating:<br></small></TD>' .
 				'<TD><SELECT name="rating">';
-			echo '<OPTION VALUE="-1">leave unchanged';
-			echo '<OPTION VALUE="0">clear all votes';
+			echo '<OPTION VALUE="0">leave unchanged';
+			echo '<OPTION VALUE="-1">clear all votes';
 			for ($i=1; $i<=5; $i++) {
 				echo '<OPTION VALUE="' . $i . '">set to '.$i. "\n";
 			}
