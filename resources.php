@@ -52,6 +52,7 @@ PHP-GTK list has no information about.<BR>
 <h2>Presentations</h2>
 <a href="http://conf.php.net/sd-gtk">2001 O'Reilly Open Source Conference PHP-GTK talk</a>.
 
+<a name="#lists"></a>
 <h2>Mailing Lists</h2>
 
 <P>
