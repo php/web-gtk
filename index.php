@@ -47,7 +47,9 @@ $SIDEBAR_DATA = <<< EOF
     php-gtk-webmaster at lists dot php dot net</a>.</p>
 
 <h3>Syndication</h3>
-<p>Our news is available as an <a href="/news.rss">RSS feed</a>.</p>
+<p>Our news is available as an <a href="/news.rss">RSS feed</a>. Also, a 
+    <a href="/docs-rss.php">documentation feed</a> that lists recently updated 
+    manual pages is available in RSS format.</p>
 EOF;
 
 commonHeader();
