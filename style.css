@@ -119,5 +119,7 @@ textarea.small {
 }
 
 .programlisting {
-        background-color: #E0E0E0
+	display: block;
+	width: 100%;
+	background-color: #E0E0E0
 }
