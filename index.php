@@ -34,6 +34,11 @@ GUI applications.
 
 <h1>News</h1>
 <P>
+Alan Knowles has written a modular development environment in PHP-GTK, called <a
+href="http://www.akbkhome.com/Projects/Phpmole%2DIDE/">PHPMole</a>. Check out
+this amazing project.
+</P>
+<P>
 Rich Payne just announced version 0.10 of 
 <a href="http://teak.sourceforge.net/">Teak</a>, an IMAP client 
 written using PHP-GTK. The site has a nice set of screenshots and is well worth
