@@ -385,8 +385,17 @@ function manualUserNotes($title, $id) {
 function sendManualHeaders($charset,$lang) {
 	global $LANG;
 	$LANG = $lang;
-	Header("Content-type: text/html;charset=$charset");
-	Header("Content-language: $lang");
+    /* HACK */
+    if(stristr($PATH_INFO, "/de/") === TRUE)
+    {
+        Header("Content-type: text/html;charset=UTF-8");
+	    Header("Content-language: de");
+    }
+    else
+    {
+        Header("Content-type: text/html;charset=$charset");
+	    Header("Content-language: $lang");
+    }    
 }
 
 
