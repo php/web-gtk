@@ -32,10 +32,30 @@ The GTK+ manual with a list of all widgets and their corresponding functions/att
 <h2>Mailing Lists</h2>
 
 <P>
-There is a mailing list for PHP-GTK. To subscribe,
-send blank email to <?php print_email('php-gtk-subscribe@lists.php.net'); ?>.
-The address of the list itself is <?php print_email('php-gtk@lists.php.net'); ?>.
-The list is archived at <?php print_link('http://marc.theaimsgroup.com/?l=php-gtk&r=1&w=2', 'MARC'); ?>.
+There are various mailing lists for PHP-GTK.
+</p>
+<p>
+The <b>php-gtk-general</b> list is used for general discussion about using PHP-GTK. To subscribe,
+send blank email to <?php print_email('php-gtk-general-subscribe@lists.php.net'); ?>.
+The address of the list itself is <?php print_email('php-gtk-general@lists.php.net'); ?>.
+The list is archived at <?php print_link('http://marc.theaimsgroup.com/?l=php-gtk-general&r=1&w=2', 'MARC'); ?>.
+</P>
+<p>
+The <b>php-gtk-dev</b> list is used for discussion about the development of PHP-GTK itself. To subscribe,
+send blank email to <?php print_email('php-gtk-dev-subscribe@lists.php.net'); ?>.
+The address of the list itself is <?php print_email('php-gtk-dev@lists.php.net'); ?>.
+The list is archived at <?php print_link('http://marc.theaimsgroup.com/?l=php-gtk-dev&r=1&w=2', 'MARC'); ?>.
+</P>
+<p>
+The <b>php-gtk-cvs</b> list is sent all cvs commits to PHP-GTK and related projects. To subscribe,
+send blank email to <?php print_email('php-gtk-cvs-subscribe@lists.php.net'); ?>.
+The address of the list itself is <?php print_email('php-gtk-cvs@lists.php.net'); ?>.
+The list is archived at <?php print_link('http://marc.theaimsgroup.com/?l=php-gtk-cvs&r=1&w=2', 'MARC'); ?>.
+</P>
+<p>
+The old <b>php-gtk</b> list is still archived at <?php print_link('http://marc.theaimsgroup.com/?l=php-gtk&r=1&w=2', 'MARC'); ?>.
+These archives will be moved to the php-gtk-general list archives at <?php print_link('http://marc.theaimsgroup.com/', 'MARC');?> 
+in the next few days.
 </P>
 
 
