@@ -3,6 +3,9 @@
  * $Id$
  */
 
+// Send the appropriate header
+header('Content-type: application/rss+xml');
+
 // Start output buffering in order to grab the data from the documentation
 // CVS updates file (that is echoed when included) and save to a variable
 // instead of echoing it right away.
