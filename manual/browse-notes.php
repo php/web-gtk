@@ -33,7 +33,7 @@ $links = array();
 for($i=ord('a'); $i<=ord('z'); $i++ ) {
 	$l = chr($i);
 	if (isset($used[$l])) {
-		$links[] = make_link($PHP_SELF.'?let='.$l, $l );
+		$links[] = make_link($PHP_SELF.'?let='.$l, '<b>'.$l.'</b>' );
 	} else {
 		$links[] = $l;
 	}

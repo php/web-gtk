@@ -25,12 +25,13 @@ if(!strstr($MYSITE,"www.php.net")) {
 commonHeader("Manual Notes Administration");
 
 echo "<P>If you just want to browse the manual notes, you're better off " .
-	"<A href=\"http://gtk.php.net/manual/browse-notes.php\">here</A>.\n";
+	"<A href=\"http://gtk.php.net/manual/browse-notes.php\">here</A>.</P>\n";
 
 mysql_pconnect("localhost","nobody","");
 mysql_select_db("gtk");
 
 if ($action != '') {
+
 	if (!verify_password($user,$pass) && !verify_password($cookie_user, $cookie_pass) ) {
 		echo "<P><B>Authorization failed.</P>";
 		commonFooter();
@@ -38,7 +39,7 @@ if ($action != '') {
 	}
 
 	list ($action, $id) = explode(' ', $action);
-	$u = ($user) ? $user:$cookie_user;
+	$u = ($user) ? $user : $cookie_user;
 
 	switch($action) {
 	case 'delete':
@@ -107,7 +108,7 @@ if ($action != '') {
 			echo '<TABLE BORDER="0" CELLPADDING="5" CELLSPACING="0" BGCOLOR="#D0D0D0">';
 			echo '<TR valign="top"><TD><B>E-mail:</B></TD><TD><INPUT type="text" size="40" name="nuser" value="',$row['user'], '"></TD></TR>';
 			echo '<TR valign="top"><TD><B>Note:</B></TD><TD><TEXTAREA name="note" rows="8" cols="50">', $row['note'],'</TEXTAREA></TD></TR>';
-			echo '<TR><TD colspan="2"><FONT SIZE="-1"><INPUT type="submit" name="action" value="modify ', $id, '"></TD></TR>';
+			echo '<TR><TD colspan="2"><INPUT type="submit" name="action" value="modify ' .  $id . '"></TD></TR>';
 			echo "</TABLE></FORM>\n";
 			commonFooter();
 			exit;
@@ -121,7 +122,7 @@ if ($action != '') {
 		if ($result = mysql_query($query)) {
 			$row = mysql_fetch_array($result);
 		}
-		$add_url = "\n\nhttp://gtk.php.net/manual/en/".sect_to_file($row['sect'])."\n";
+		$add_url = "\n\nhttp://gtk.php.net/manual/en/".$row['sect']."\n";
 		$query = "UPDATE note SET user='$nuser',note='$note' WHERE id=$id";
 		if (mysql_query($query)) {
 			echo "<P><B>Record modified.</B>";
@@ -180,7 +181,7 @@ if (!$brief && mysql_num_rows($result) > 0) {
 
 } else if (!$brief) {
 
-	echo "<P><B>There are no notes in the system.";
+	echo "<P><B>There are no notes in the system.</B></P>";
 
 }
 
