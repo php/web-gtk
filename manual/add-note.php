@@ -72,7 +72,12 @@ if (isset($note) && isset($action) && strtolower($action) != "preview") {
 
 		echo '<P>This is what your entry will look like, roughly:</P>';
                 echo '<table border="0" cellpadding="0" cellspacing="0" width="100%">';
-                makeEntry(time(),stripslashes($user),stripslashes($note));
+		$temp = array(
+			'user' => stripslashes($user),
+			'note' => stripslashes($note),
+			'xwhen' => time()
+		);
+                makeEntry($temp, false, false);
                 echo "</table>";
 
         } else {

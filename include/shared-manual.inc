@@ -164,14 +164,15 @@ function makeTitle($title) {
 }
 
 
-function makeEntry($date,$name,$blurb,$rating=0,$id=0) {
+
+function makeEntry($row, $show_admin = true, $show_rating = true ) {
 	global $MAGIC_COOKIE;
 
 	echo '<tr valign="top">';
 	echo '<td bgcolor="#e0e0e0" colspan="2">';
 	echo '<table border="0" cellpadding="2" cellspacing="0" width="100%">';
 	echo '<tr valign="top"><td>';
-	$name = htmlspecialchars($name);
+	$name = htmlspecialchars($row['user']);
 	if ($name && $name != "php-gtk@lists.php.net" && $name != "user@example.com") {
 		if (ereg("(.+)@(.+)\.(.+)",$name)) {
 			echo '<a href="mailto:'.$name.'">'.$name.'</a><br>';
@@ -179,32 +180,40 @@ function makeEntry($date,$name,$blurb,$rating=0,$id=0) {
 			echo '<b>'.$name.'</b><br>';
 		}
 	}
-	echo date("d-M-Y h:i", $date);
+	echo date("d-M-Y h:i", $row['xwhen']);
 	echo '<br></td>';
 	echo '<td align="right"><small>';
-	if (isset($MAGIC_COOKIE) && $id) {
+	if (isset($MAGIC_COOKIE) && $show_admin) {
 
-		print_link('/manual/admin-notes.php?action=edit+' . $id . '&brief=1',
+		print_link('/manual/admin-notes.php?action=edit+' . $row['id'] . '&brief=1',
 			make_image('notes-edit.gif', 'edit note')
 		);
 		echo '&nbsp';
-		print_link('/manual/admin-notes.php?action=reject+' . $id . '&brief=1&popup=1',
+		print_link('/manual/admin-notes.php?action=reject+' . $row['id'] . '&brief=1&popup=1',
 			make_image('notes-reject.gif', 'reject note'),
 			'admin'
 		);
 		echo '&nbsp';
-		print_link('/manual/admin-notes.php?action=delete+' . $id . '&brief=1&popup=1',
+		print_link('/manual/admin-notes.php?action=delete+' . $row['id'] . '&brief=1&popup=1',
 			make_image('notes-delete.gif', 'delete note'),
 			'admin'
 		);
 	}
 	echo '<br>';
 
-	printf('rating: <B>%.02f<B>', $rating );
+	if ($show_rating) {
+		echo 'rating: ';
+		if ( $row['votes'] > 3 ) {
+			printf('<b>%.02f<b> (%d votes)', $row['rate'], $row['votes'] );
+		} else {
+			echo '&lt; 3 votes';
+		}
+		echo '<br>';
+	}
 
-	echo '<br></small></td></tr>';
+	echo '</small></td></tr>';
 	echo '<tr bgcolor="#f0f0f0"><td colspan="2">';
-	echo clean_note($blurb). '<br>';
+	echo clean_note($row['note']). '<br>';
 	echo '</td></tr>';
 	echo '</table>';
 	echo '</td></tr>';
@@ -304,7 +313,7 @@ function manualUserNotes($title, $id) {
 	} else {
 
 		foreach($notes as $note) {
-			makeEntry($note['xwhen'], $note['user'], $note['note'], $note['rate'], $note['id'] );
+			makeEntry($note);
 		}
 
                 echo "<tr bgcolor=\"#d0d0d0\" valign=\"top\">\n";
