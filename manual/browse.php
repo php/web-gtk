@@ -23,13 +23,15 @@ for($i=ord('a'); $i<=ord('z'); $i++ ) {
 	}
 }
 
-echo '<table border="0" cellpadding="4" cellspacing="0" width="100%">';
-echo '<tr bgcolor="#d0d0d0" valign="top">';
-echo '<td align="right" colspan="2"><small>Jump to: ' . 
+$jumpbar = '<table border="0" cellpadding="4" cellspacing="0" width="100%">' . 
+	'<tr bgcolor="#d0d0d0" valign="top">' .
+	'<td align="right" colspan="2"><small>Jump to: ' . 
 	join (' <font color="#999999">|</font> ', $links ) . 
-	'<br></small></td>';
-echo "</tr>\n";
-echo "</table><BR>\n\n";
+	'<br></small></td>' .
+	"</tr>\n" .
+	"</table><BR>\n\n";
+
+echo $jumpbar;
 
 if(!$let) {
 	$let = $fl ? $fl : 'a';
@@ -39,14 +41,15 @@ echo '<table border="0" cellpadding="4" cellspacing="0" width="100%">';
 
 $query = "SELECT *, UNIX_TIMESTAMP(ts) AS my_when FROM note where sect like '$let%' ORDER BY sect, ts";
 $result = mysql_query($query) or die(mysql_error());
-if ( mysql_num_rows($result) > 0) {
+$numrows = mysql_num_rows($result);
+if ( $numrows > 0) {
 	$last = '';
 	while ($row = mysql_fetch_array($result)) {
 		if ($row['sect'] != $last)  {
 			makeTitle( $row['sect'] );
 			$last = $row['sect'];
 		}
-		makeEntry($row['my_when'], $row['user'], $row['note'] );
+		makeEntry($row['my_when'], $row['user'], $row['note'], $row['id'] );
 	}
 
 } else {
@@ -56,5 +59,10 @@ if ( mysql_num_rows($result) > 0) {
 }
 
 echo '</table>';
+
+if ($numrows > 10 ) {
+	echo $jumpbar;
+}
+
 
 
