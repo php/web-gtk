@@ -141,7 +141,7 @@ function print_email($email, $linktext=false) {
 #
 
 function commonHeader($title=false, $padding=true) {
-	global $SIDEBAR_DATA, $MAGIC_COOKIE;
+	global $SIDEBAR_DATA, $RIGHT_SIDEBAR_DATA, $MAGIC_COOKIE;
 ?><html>
 <head>
  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
@@ -219,7 +219,7 @@ function commonHeader($title=false, $padding=true) {
 </table>
 
 
-<table cellpadding="0" cellspacing="0">
+<table border="0" cellpadding="0" cellspacing="0">
  <tr valign="top">
 <?php if (isset($SIDEBAR_DATA)):?>
   <td width="200" bgcolor="#f0f0f0">
@@ -232,7 +232,7 @@ function commonHeader($title=false, $padding=true) {
   <td bgcolor="#cccccc" background="/gifs/checkerboard.gif"><?php spacer(1,1);?><br /></td>
 <?php endif; ?>
   <td>
-   <table width="570" cellpadding="<?php if( $padding ) { print("10"); }else { print("0"); } ?>" cellspacing="0">
+   <table width="100%" cellpadding="<?php if( $padding ) { print("10"); } else { print("0"); } ?>" cellspacing="0">
     <tr>
      <td valign="top">
 <?php
