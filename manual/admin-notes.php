@@ -35,7 +35,7 @@ if ($action != '') {
 	list ($action, $id) = explode(' ', $action);
 
 	if ($action!='edit' && !verify_password($user,$pass)) {
-		echo "<P><B>Authorization failed.</P>";
+		echo "<P><B>Authorization failed.</B></P>";
 		commonFooter();
 		exit;
 	}
@@ -136,7 +136,7 @@ if ($action != '') {
 		$add_url = "\n\nhttp://gtk.php.net/manual/en/".$row['sect']."\n";
 		$query = "UPDATE note SET user='$nuser',note='$note' WHERE id=$id";
 		if (mysql_query($query)) {
-			echo "<P><B>Record modified.</B>";
+			echo "<P><B>Record modified.</B></P>";
 			mail($mailto, "note ".$row['id']." modified in ".$row['sect']." by $user",stripslashes($note).$add_url,"From: ".$user."@php.net");
 		} else {
 			echo "<P><B>Record not modified (query failed).</B></P>";
