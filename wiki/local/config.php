@@ -25,7 +25,7 @@ $PubDirUrl = 'http://gtk.php.net/wiki/pub';
 
 ##  Set $SpaceWikiWords if you want WikiWords to automatically have
 ##  spaces before each sequence of capital letters
-# $SpaceWikiWords = 1;			   # turns on WikiWord spacing
+$SpaceWikiWords = 1;			   # turns on WikiWord spacing
 
 ##  If you want uploads enabled on your system, set $EnableUpload=1.
 ##  You'll also need to set a default upload password, or else set
