@@ -67,4 +67,3 @@ For more information on the PHP-GTK project, please see
 <?php
 commonFooter();
 ?>
-
