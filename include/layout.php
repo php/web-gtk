@@ -178,10 +178,10 @@ function commonHeader($title=false) {
 ><a name="TOP"></a>
 <table border="0" cellspacing="0" cellpadding="0" height="48" width="100%">
   <tr bgcolor="#0099cc">
-    <td align="left" rowspan="2" width="120">
+    <td align="left" rowspan="2">
 <?php print_link('/', make_image('php-gtk.gif', 'PHP-GTK', false, 'vspace="2" hspace="2"') ); ?><br>
     </td>
-    <td align="right" valign="top">
+    <td align="right" valign="top" nowrap>
       <font color="#ffffff"><b>
         <?php echo strftime("%A, %B %d, %Y"); ?>
       </b>&nbsp;<br>
@@ -190,7 +190,7 @@ function commonHeader($title=false) {
   </tr>
 
   <tr bgcolor="#0099cc">
-    <td align="right" valign="bottom">
+    <td align="right" valign="bottom" nowrap>
       <?php
 	print_link('/download.php', 'download', false, 'class="menuBlack"');
 	echo delim();
@@ -208,7 +208,7 @@ function commonHeader($title=false) {
 
   <tr bgcolor="#006699">
     <form method="POST" action="/search.php">
-      <td align="right" valign="top" colspan="2"><font color="#ffffff">
+      <td align="right" valign="top" colspan="2" nowrap><font color="#ffffff">
         <small>search for</small>
 <INPUT CLASS="small" TYPE="text" NAME="pattern" VALUE="<? echo htmlspecialchars($prevsearch) ?>" SIZE="30">
 <small>in the</small>
