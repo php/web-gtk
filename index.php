@@ -56,6 +56,27 @@ commonHeader();
 
 ?>
 
+<h1>February News</h1>
+
+<p><span class="newsdate">[22-Feb-2005]</span> It's getting close to
+   conference season and with that comes a few talks about PHP-GTK. At
+   the <a href="http://phpconference.com">International PHP Conference</a>, 
+   <a href="http://gtk.php.net/wiki/Profiles/Ramsey?from=People.BenRamsey">Ben
+   Ramsey</a> will be holding a talk titled "PHP in a Whole New World: Desktop
+   Applications Built in PHP-GTK." At the same conference 
+   <a href="http://gtk.php.net/wiki/Profiles/Andrei?from=People.AndreiZmievski">Andrei
+   Zmievski</a> will be giving a much anticipated talk called, "Say Hello
+   To PHP-GTK 2." The latest issue of the 
+   <a href="http://php-mag.net">International PHP Magazine</a> has an 
+   article by David Heath called "Free You CMS" which talks about "building
+   an offline desktop client tool that is a synthesis of several exciting
+   technologies: PHP-GTK, SQLite, and XML-RPC."</p>
+
+<p>PECL developers, Alan Knowles and Val Khokhlov have release a new
+   version of <a href="http://pecl.php.net/package/bcompiler">bcompiler</a>.
+   bcompiler lets you "create a exe file of a PHP-GTK application."</p>
+
+<?php hdelim(); ?>
 
 <h1>Expanding Horizons</h1>
 
@@ -207,6 +228,7 @@ commonHeader();
     <a href="http://www.php-mag.net/itr/kolumnen/psecom,id,8,nodeid,207.html">this 
     week's issue</a>.</p>
 
+<!-- Old news items.
 <?php hdelim(); ?>
     
 <h1>Documentation updates</h1>
@@ -229,7 +251,6 @@ commonHeader();
     on Slashdot</a>. Thanks to <a href="http://blog.peoplesdns.com/blog/1">Joel 
     De Gan</a> for posting to Slashdot.</p>
 
-<!-- Old news items.
 <?php hdelim(); ?>
 
 <h1>PHP 5 release sparks renewed interest in PHP-GTK</h1>

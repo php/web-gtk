@@ -26,6 +26,24 @@
     </items>
 </channel>
 
+<item rdf:about="http://gtk.php.net/about/news-2005-02-22">
+    <title>February News</title>
+    <link>http://gtk.php.net/</link>
+    <descpiption>It's getting close to conference season and with that comes
+    a few talks about PHP-GTK. At the International PHP Conference, Ben
+    Ramsey will be holding a talk titled "PHP in a Whole New World: Desktop
+    Applications Built in PHP-GTK." At the same conference Andrei Zmievski
+    will be giving a much anticipated talk called, "Say Hello To PHP-GTK 2."
+    The latest issue of the International PHP Magazine has an article by
+    David Heath called "Free You CMS" which talks about "building an offline
+    desktop client tool that is a synthesis of several exciting technologies:
+    PHP-GTK, SQLite, and XML-RPC."
+    PECL developers, Alan Knowles and Val Khokhlov have release a new version
+    of bcompiler. bcompiler lets you "create a exe file of a PHP-GTK
+    application."</description>
+    <dc:date>2005-02-22</dc:date>
+</item>
+
 <item rdf:about="http://gtk.php.net/about/news-2005-01-18">
     <title>Expanding Horizons</title>
     <link>http://gtk.php.net/</link>
@@ -111,7 +129,7 @@
     <description>We have set up a new wiki that is faster and more easily manageable than our previous wiki. In addition, the new wiki is now internally a part of the PHP-GTK Web site. Special thanks go to Manuel Kiessling who contributed server resources to host the PHP-GTK Wiki up until the present. In other news, International PHP Magazine's PHP Barnstormer made special mention of the increased activity here at PHP-GTK in this week's issue.</description>
     <dc:date>2004-07-27</dc:date>
 </item>
-
+<!-- Shift old items off list.
 <item rdf:about="http://gtk.php.net/docs.php">
     <title>Documentation updates</title>
     <link>http://gtk.php.net/docs.php</link>
@@ -125,5 +143,5 @@
     <description>The increase in PHP-GTK community activity and interest in PHP-GTK 2 has afforded this site a mention on Slashdot. Thanks to Joel De Gan for posting to Slashdot.</description>
     <dc:date>2004-07-22</dc:date>
 </item>
-
+-->
 </rdf:RDF>
