@@ -247,6 +247,9 @@ function manualGetUserNotes($title, $id) {
 		global $HTTP_GET_VARS, $HTTP_SERVER_VARS;
 		if ($HTTP_GET_VARS['rate_id'] && $HTTP_GET_VARS['rate_note']) {
 			$p = parse_url($HTTP_SERVER_VARS['HTTP_REFERER']);
+
+echo "\n\n<!-- " . $p['path'] . " :: " . $HTTP_SERVER_VARS['SCRIPT_NAME'] . " -->\n\n";
+
 			/* prevent outside scripts from voting */
 			if ($HTTP_SERVER_VARS['SCRIPT_NAME']==$p['path']) {
 				$query = 'UPDATE note SET votes=votes+1, rating=rating+' . 
