@@ -10,7 +10,7 @@ mysql_select_db("gtk");
 // The commented out values are for phallstrom@php.net's server. Easier
 // to leave them commented out than to change them all the time.
 // 
-$mailto = 'gtk-webmaster@php.net';
+$mailto = 'gtk-webmaster@lists.php.net';
 //$mailto = 'philip+gtk-webmaster@eilio.com';
 
 
