@@ -34,9 +34,11 @@ GUI applications.
 
 <h1>News</h1>
 <P>
-<a href="download.php">PHP-GTK version 0.1</a> has been released. Win32 binary
-version should be available a little later.<br><br>
-<hr noshade size="1" color="#000000"><br>
+<a href="download.php">PHP-GTK version 0.1</a> has been released. Win32
+binary version should be available a little later.
+</P>
+
+<P>
 A talk on PHP-GTK was presented by Andrei Zmievski and Frank Kromann at the 2001
 O'Reilly Open Source Conference in San Diego. The slides from the talk can be
 viewed <a href="http://conf.php.net/sd-gtk">online</a>.
