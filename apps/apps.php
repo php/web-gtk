@@ -8,7 +8,7 @@
 require_once("apps.inc");
 
 $limit = 10;
-if( empty($GET['offset']) ) {
+if( empty($_GET['offset']) ) {
 	$offset = 0;
 }
 
