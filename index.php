@@ -34,8 +34,32 @@ GUI applications.
 <h1>News</h1>
 
 <p>
+<?print_link('http://wiki.gtk.php.net/')?>
+</p>
+
+<p>
+The general idea is that the PHP-GTK community (including members of this list)
+can use the Wiki to help provide better documentation for PHP-GTK. Be it
+HOWTOs, tips, FAQs, case studies or anything else that may be useful, if you
+want to write it the Wiki is there to accept it. Best of all because adding
+to the Wiki is as simple as clicking the "edit this document" button there
+is hardly any barrier between thinking of something and recording it.
+</p>
+
+<p>
+There is practically no content up there right now, but the Wiki really needs to
+be a community effort. If you have anything PHP-GTK related that you think will
+be useful, add it in. Good content can then be rolled in to official PHP-GTK
+documentation later on. 
+</p>
+
+<hr noshade size="1">
+
+<p>
 Andrei Zmievski gave a presentation and a workshop on PHP-GTK at the Fórum Internacional Software Livre 2002 in Porto Alegre, Brazil. The presentation is available online at <?print_link('http://conf.php.net/br-gtk')?>.
 </p>
+
+<hr noshade size="1">
 
 <p>
 <a href="/download.php">PHP-GTK Version 0.5.1</a> has been released today, April
@@ -45,17 +69,13 @@ improvements are included as well. See <a href="/changelog.php">Change Log</a>
 for full list of changes.
 </p>
 
+<hr noshade size="1">
+
 <p>
 With the help of Philip Hallstrom, we now have a Freshmeat-like index of
 applications. It still needs to be populated, so if you have written a useful
 piece of software using PHP-GTK, point your browser to
 <? print_link('/apps/', 'Applications'); ?> area and add it to the list.
-</p>
-
-<p>
-Alan Knowles is working on a modular development environment written in PHP-GTK,
-called <a href="http://www.akbkhome.com/Projects/Phpmole%2DIDE/">PHPMole</a>. Check
-out this very cool project.
 </p>
 
 
