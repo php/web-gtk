@@ -15,8 +15,10 @@ please <? print_email('gtk-webmaster@php.net', 'email the webmaster'); ?>.
 <h2>Sites</h2>
 
 <UL>
+<!--
 <LI><? print_link('http://gtk.php-coder.net/', 'GTK at PHP-Coder'); ?><BR>
 This site provides current news, some basic tutorials and example applications.<br>
+-->
 
 <LI><? print_link('http://developer.gnome.org/doc/API/gtk/gtkobjects.html', 'GTK+ Reference Manual'); ?><BR>
 The GTK+ manual with a list of all widgets and their corresponding functions/attributes.<BR>
