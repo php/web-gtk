@@ -9,7 +9,7 @@
 ob_start();
 ?>
 <div id="docsupdates">
-<h4>Docs Updates</h4>
+<h3>Docs Updates</h3>
 <?php
 include_once 'manual/en/updates.php';
 ?>
