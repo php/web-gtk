@@ -20,6 +20,9 @@ please <? print_email('php-gtk-webmaster@lists.php.net', 'email the webmaster');
 This site allows the PHP-GTK community to help contribute documentation to the
 PHP-GTK project.<br />
 
+<li><? print_link('http://www.cweiske.de/phpgtk.htm', 'PHP-GTK Application Downloads at cweiske.de') ?><br />
+This site provides several PHP-GTK freeware applications for download, as well as some reusable code for PHP-GTK programmers<br />
+
 <li><? print_link('http://binary.gamer.net.nz/', 'tutorials, news and downloads for PHP-GTK'); ?><br />
 
 <li><? print_link('http://www.php-gtk.org.br/', 'Brazilian PHP-GTK Community Portal'); ?><br />
