@@ -115,6 +115,7 @@ function hdelim($color="#000000") {
 		<tr bgcolor="<?=$color?>"><td><?php spacer(1,1);?></td></tr>
 	</table>
 <?
+}
 
 
 # make_link()
