@@ -12,8 +12,8 @@ $WikiTitle = 'PHP-GTK:Wiki';
 
 ##  $ScriptUrl is your preferred URL for accessing wiki pages
 ##  $PubDirUrl is the URL for the pub directory.
-# $ScriptUrl = 'http://www.mydomain.com/path/to/pmwiki.php';
-# $PubDirUrl = 'http://www.mydomain.com/path/to/pub';
+$ScriptUrl = 'http://gtk.php.net/wiki/index.php';
+$PubDirUrl = 'http://gtk.php.net/wiki/pub';
 
 ##  If your system is able to display the home page but gives
 ##  "404 Not Found" errors for all others, try setting the following:
