@@ -12,7 +12,7 @@ Source of: <? echo $url; ?><BR>
 
 <?
 
-echo hdelim(); 
+hdelim(); 
 
 $legal_dirs = array(
     "/manual" => 1,

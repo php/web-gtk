@@ -110,12 +110,11 @@ function delim($color=false) {
 #
 
 function hdelim($color="#000000") {
-	if (!$color) {
-		return '<hr noshade size="1">';
-	}
-	return sprintf('<hr noshade size="1" color="%s">', $color );
-}
-
+?>
+	<table border="0" cellspacing="5" cellpadding="0" width="100%">
+		<tr bgcolor="<?=$color?>"><td><?php spacer(1,1);?></td></tr>
+	</table>
+<?
 
 
 # make_link()
