@@ -4,10 +4,10 @@
 
 .phpcode {
 font-family: 'Courier New', Courier, monospace;
-font-size: 85%;
+font-size: 90%;
 }
 .phpcode .kw1 {
-color: #b1b100;color: #907000; font-weight: bold
+color: #b1b100;color: #aa3333; font-weight: bold
 }
 .phpcode .kw2 {
 color: #000000; font-weight: bold;
@@ -25,7 +25,7 @@ color: #808080; font-style: italic;
 color: #808080; font-style: italic;
 }
 .phpcode .es0 {
-color: #000099; font-weight: bold;
+color: green; font-weight: bold;
 }
 .phpcode .br0 {
 color: #66cc66;color: #404040
@@ -34,7 +34,7 @@ color: #66cc66;color: #404040
 color: #ff0000;color: green
 }
 .phpcode .nu0 {
-color: #cc66cc;color: #aa0000; font-weight: bold
+color: #cc66cc;color: #6600cc
 }
 .phpcode .me0 {
 color: #006600;color: black; font-style: italic
