@@ -285,7 +285,7 @@ function commonFooter() {
       </small>
     </td>
     <td align="right"><small>
-	  Last updated: <?php echo strftime("%c %Z", $LAST_UPDATED); ?><BR>
+	  Last updated: <?php echo strftime("%c %Z", getlastmod()); ?><BR>
       </small><br>
     </td>
   </tr>
