@@ -6,6 +6,19 @@ commonHeader('PHP-GTK Changelog');
 
 <h1>PHP-GTK ChangeLog</h1>
 
+<a name="1.0.0"></a>
+<h3>Version 1.0.0 "mountain view special"</h3>
+<b>23-Oct-2003</b>
+<ul>
+<li>added support for GtkCanvas widget (Alan)</li>
+<li>added support for GdkImLib toolkit - experimental (Alan)</li>
+<li>added support for GtkExtra widgets, GtkPlot, GtkSheet and many others (Angel Maza, Alan)</li>
+<li>added get_wrap_mode, set_wrap_mode to GtkScintilla (Benjamin Smith)</li>
+<li>fixed segfault when providing GtkCtree::insert_node wrong parameters</li>
+<li>added GtkScintilla, GtkComboButton, GtkSpaned, GtkScrollpane to Win32 distribution (Frank)</li>
+<li>fixed warning on GtkNotebook::switch-page signal (Alan)</li>
+</ul>
+
 <a name="0.5.2"></a>
 <h3>Version 0.5.2 "Bass does a body good"</h3>
 <b>01-Nov-2002</b>

@@ -11,18 +11,17 @@ commonHeader('Downloads');
 too). Versions 0.1.x currently require PHP 4.1.0 or CVS version to compile.
 </P>
 <P>
-PHP-GTK currently supports GTK+ v1.2.6 or greater, 
-but not GTK+ v2.0 (which is still under development and won't be 
-widely used for a while). You can obtain the latest stable release 
+PHP-GTK currently supports GTK+ v1.2.6 or greater, but not GTK+ v2.x. You can
+obtain the latest stable release 
 of GTK+ v1.2.x from <?php print_link('ftp://ftp.gtk.org/pub/gtk/v1.2/'); ?>.
 </P>
 
 <h2>Latest Stable Release</h2>
 
 <UL>
-<LI><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-0.5.2.tar.gz', 'php-gtk-0.5.2 Source'); ?> - 01-Nov-2002<br>
+<LI><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-1.0.0.tar.gz', 'php-gtk-1.0.0 Source'); ?> - 23-Oct-2003<br>
 
-<LI><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-0.5.1.tar.gz', 'php-gtk-0.5.1 Source'); ?> - 26-Apr-2002<br>
+<LI><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-0.5.2.tar.gz', 'php-gtk-0.5.2 Source'); ?> - 01-Nov-2002<br>
 
 <LI><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-0.5.2a-win32.zip', 
 	'php-gtk-0.5.2a Windows and PHP Binary including libGlade-0.17, SQPane and ComboButton'); ?> - 26-Nov-2002<br>
@@ -50,7 +49,7 @@ cvs -d :pserver:cvsread@cvs.php.net:/repository login
 <LI>
 Obtain the PHP-GTK tree:
 <PRE>
-cvs -d :pserver:cvsread@cvs.php.net:/repository co php-gtk
+cvs -d :pserver:cvsread@cvs.php.net:/repository co -r PHP_GTK_1 php-gtk
 </PRE>
 
 <LI>

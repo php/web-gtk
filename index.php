@@ -12,7 +12,7 @@ and the knights who say 'Ni'.  Use the code at your own risk,
 as it may cause flooding, polydactism, frogs falling from the 
 sky, and the return of the Inca empire.
 </P>
-<P>
+
 It will definitely warp space-time continuum in your local area.
 <P>
 EOF;
@@ -32,6 +32,16 @@ GUI applications.
 </P>
 
 <h1>News</h1>
+
+<p>
+<a href="/download.php">PHP-GTK Version 1.0.0</a> is finally out after almost a
+year of being in stasis. This is probably the last major version that will work
+with PHP 4 and Gtk+ 1.x. There might be more bugfixes, but no new features or
+upgrades will be implemented. PHP-GTK 2 is under development and will focus on
+PHP 5 and Gtk+ 2.x.
+</p>
+
+<?hdelim()?>
 
 <p>
 <a href="/download.php">PHP-GTK Version 0.5.2</a> is out. After a long break, we
