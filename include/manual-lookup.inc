@@ -51,7 +51,7 @@ function find_manual_page($lang, $function) {
     {
       $sections2 = array(".",".method.",".signal.");
       list($funcpre,$funcpost) = split("::",$function);
-      while(list$t,$section) = each($sections))
+      while(list($t,$section) = each($sections))
       {
       	while(list($t,$second) = each($sections2))
 	{
