@@ -1,127 +1,111 @@
+/* 
+ * $Id$
+ */
+
 body, td, th {
-	font-family: arial,helvetica,sans-serif;
-	font-size: 95%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 95%;
 }
 
 em {
-	font-weight: bold;
-	font-style: italic;
+    font-weight: bold;
+    font-style: italic;
 }
 
 .newsDate {
-	font-size: 85%;
-	font-style: italic;
-	color: #6666cc;
+    font-size: 75%;
+    font-style: italic;
+    color: #6666CC;
 }
 
-A.menuWhite {
-	font-family: arial,helvetica,sans-serif;
-	font-size: 75%;
-	color: #ffffff;
+a.menuWhite {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 75%;
+    color: #FFFFFF;
 }
-A.menuBlack {
-	font-family: arial,helvetica,sans-serif;
-	font-size: 75%;
-	color: #000000;
+
+a.menuBlack {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 75%;
+    color: #000000;
 }
 
 .sidebar {
-	font-size: 75%;
+    font-size: 75%;
 }
 
-pre,code {
-	font-family: "andale mono", "monotype.com", "courier new", monospace;
-	font-size: 85%;
-}
-
-tt {
-	font-family: "andale mono", "monotype.com", "courier new", monospace;
-	font-size: 80%;
+pre, code, tt {
+    font-family: Courier, "Courier New", monospace;
+    font-size: 80%;
 }
 
 pre.code {
-	background-color: #f0f0f0;
+    background-color: #F0F0F0;
 }
 
-h1 {
-	font-family: arial,helvetica,sans-serif;
-	font-size: 140%;
-	font-weight: bold;
-	color: #000066;
+/* General header styles */
+h1, h2, h3, h4, dt {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #000066;
 }
-
-h2 {
-	font-family: arial,helvetica,sans-serif;
-	font-size: 120%;
-	font-weight: bold;
-	color: #000066;
-}
-
-dt, h3 {
-	font-family: arial,helvetica,sans-serif;
-	font-size: 110%;
-	font-weight: bold;
-	color: #000066;
-}
-
+h1 { font-size: 130%; }
+h2 { font-size: 125%; }
+h3, dt { font-size: 110%; }
 h4 {
-	font-family: arial,helvetica,sans-serif;
-	font-size: 90%;
-	font-weight: bold;
-	color: #000066;
-	padding-top: 0px;
-	padding-bottom: 0px;
+    font-size: 90%;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 blockquote {
-	margin-left: 12px;
+    margin-left: 12px;
 }
 
 small {
-	font-family: arial,helvetica,sans-serif;
-	font-size: 75%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 75%;
 }
 
 a.small {
-	font-family: arial,helvetica,sans-serif;
-	font-size: 75%;
-	text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 75%;
+    text-decoration: none;
 }
 
 .tableTitle {
-	font-family: arial,helvetica,sans-serif;
-	font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
 }
 
 .tableExtras {
-	font-family: arial,helvetica,sans-serif;
-	font-size: 85%;
-	color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 85%;
+    color: #FFFFFF;
 }
 
-
 input {
-	font-family: arial,helvetica,sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 textarea {
-	font-family: "andale mono", "monotype.com", "courier new", monospace;
+    font-family: Courier, "Courier New", monospace;
 }
 
 input.small, select.small {
-	font-family: arial,helvetica,sans-serif;
-	font-size: 75%;
+    font-family: arial,helvetica,sans-serif;
+    font-size: 75%;
 }
 
 textarea.small {
-	font-family: "andale mono", "monotype.com", "courier new", monospace;
-	font-size: 75%;
+    font-family: Courier, "Courier New", monospace;
+    font-size: 75%;
 }
 
 .programlisting {
-	display: block;
-	width: 100%;
-	background-color: #E0E0E0
+    display: block;
+    width: 100%;
+    background-color: #E0E0E0
 }
 
 hr {
@@ -130,3 +114,11 @@ hr {
     background-color: black;
     height: 1px;
 }
+
+/*
+ * Local variables:
+ * tab-width: 4
+ * c-basic-offset: 4
+ * End:
+ * vim: expandtab sw=4 ts=4 fdm=marker
+ */
