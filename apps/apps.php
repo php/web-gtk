@@ -72,7 +72,7 @@ if( $res && $num_rows > 0 ) {
 		print("<small>");
 
 		if( !empty($this_cat) )  {
-			print("<a href='index.php?the_cat=$_GET['the_cat']&the_subcat=$_GET['the_subcat']&offset=" . ($_GET['offset'] + $limit) . "'>see more applications...</a>&nbsp;&nbsp;");
+			print("<a href='index.php?the_cat=$_GET['the_cat']&the_subcat=$_GET['the_subcat']&offset=".($_GET['offset'] + $limit)."'>see more applications...</a>&nbsp;&nbsp;");
 		}else if( !empty($_GET['key']) ) {
 			print("<a href='index.php?key=$_GET['key']&offset=" . ($_GET['offset'] + $limit) . "'>see more applications...</a>&nbsp;&nbsp;");
 		}else {
