@@ -11,7 +11,7 @@ $num_entries_per_page = 50;
 if (isset($MAGIC_COOKIE)) {
 	list($user, $pass) = explode(":", base64_decode($MAGIC_COOKIE));
 } else if ($save && $user && $pass && verify_password($user,$pass)) {
-	SetCookie("MAGIC_COOKIE", base64_encode("$user:$pass"), time()+3600*24*12, '/');
+	SetCookie("MAGIC_COOKIE", base64_encode("$user:$pass"), time()+(86400*7), '/' );
 }
 
 /*
