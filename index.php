@@ -53,6 +53,17 @@ EOF;
 commonHeader();
 
 ?>
+<h1>Documentation updates listed on PHP-GTK Web site</h1>
+
+<p><span class="newsdate">[05-Aug-2004]</span> The PHP-GTK Web site now features 
+    a regularly updated listing of documentation updates. The listing is 
+    displayed on the home page and is updated every night when the manual is 
+    updated from CVS. Any pages in the manual found with changes are listed. 
+    In addition, a <a href="docs-rss.php">documentation update feed</a> is 
+    available in RSS format.</p>
+
+<?php hdelim(); ?>
+
 <h1>PHP-GTK 2 is go for GTK+ 2.4</h1>
 
 <p><span class="newsdate">[29-Jul-2004]</span> In a thread on 
