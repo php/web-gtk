@@ -256,7 +256,7 @@ function commonFooter($padding = true) {
   </td>
 <?php if (isset($RIGHT_SIDEBAR_DATA)):?>
   <td bgcolor="#cccccc" background="/gifs/checkerboard.gif"><?php spacer(1,1);?><br /></td>
-  <td width="185" bgcolor="#f0f0f0">
+  <td width="170" bgcolor="#f0f0f0">
    <table width="100%" cellpadding="4" cellspacing="0">
     <tr valign="top">
      <td class="sidebar"><?php echo $RIGHT_SIDEBAR_DATA?></td>
