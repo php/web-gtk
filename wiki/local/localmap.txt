@@ -1,12 +1,4 @@
 ManPHP          http://www.php.net/
-ManGTK          http://developer.gnome.org/doc/API/gtk/$1.html
-ManGTK2         http://developer.gnome.org/doc/API/2.0/gtk/$1.html
-ManGDK          http://developer.gnome.org/doc/API/gdk/$1.html
-ManGKK2         http://developer.gnome.org/doc/API/2.0/gdk/$1.html
-ManPHPGTK       http://gtk.php.net/manual/en/gtk.$1.php
-ManPHPGDK       http://gtk.php.net/manual/en/gdk.$1.php
-ManPHPGTKEnum   http://gtk.php.net/manual/en/gtk.enum.$1.php
-ManPHPGDKEnum   http://gtk.php.net/manual/en/gdk.enum.$1.php
-ManPHPGlade     http://gtk.php.net/manual/en/glade.$1.php
-ManPHPScn       http://gtk.php.net/manual/en/scn.$1.php
-ManPHPSqp       http://gtk.php.net/manual/en/sqp.$1.php
+ManGTK          http://developer.gnome.org/doc/API/$1.html
+ManGTK2         http://developer.gnome.org/doc/API/2.0/$1.html
+ManPHPGTK       http://gtk.php.net/manual/en/$1.php
