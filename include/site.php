@@ -34,7 +34,7 @@ $LANGUAGES = array(
     'uk' => 'Ukranian',
 );
 
-$man_languages = array('cs', 'en', 'es', 'de', 'fr', 'it', 'ja', 'pt_BR');
+$man_languages = array('cs', 'en', 'de', 'fr', 'it', 'ja', 'pt_BR');
 
 ?>
 

@@ -303,14 +303,14 @@ function handleAppImage($filename, $app_id) {
 
 	$dst = ImageCreateTrueColor($dstWidth, $dstHeight);
 	ImageCopyResampled($dst, $src, 0, 0, 0, 0, $dstWidth, $dstHeight, $srcWidth, $srcHeight);
-	ImageJPEG($dst, APP_SCREENSHOT_DIR . "/$app_id.jpg", 75);
+	ImageJPEG($dst, APP_SCREENSHOT_DIR."/$app_id.jpg", 75);
 
 	$thumbWidth = 120;
 	$thumbHeight = floor($dstHeight * $thumbWidth/$dstWidth + .5);
 
 	$thumb = ImageCreateTrueColor($thumbWidth, $thumbHeight);
 	ImageCopyResampled($thumb, $dst, 0, 0, 0, 0, $thumbWidth, $thumbHeight, $dstWidth, $dstHeight);
-	ImageJPEG($thumb, APP_SCREENSHOT_DIR . "/$app_id-thumb.jpg", 75);
+	ImageJPEG($thumb, APP_SCREENSHOT_DIR."/$app_id-thumb.jpg", 75);
 }
 
 ?>
