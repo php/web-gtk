@@ -7,10 +7,6 @@ define(NAV_METHOD, 3);
 define(NAV_SIGNAL, 4);
 define(NAV_ENUM, 5);
 
-$host = 'localhost';
-$user = 'nobody';
-$pass = '';
-
 mysql_connect("rack1.php.net","nobody","");
 mysql_select_db("gtk");
 
@@ -262,7 +258,7 @@ function manualGetUserNotes($title, $id) {
 		updateNotesVoting();
 
 		$query = "SELECT *, UNIX_TIMESTAMP(ts) AS xwhen, IF(votes=0, 10, rating/votes) AS rate FROM note " .
-				"WHERE sect='$title' OR sect='$id' ORDER BY rate DESC, id";
+				"WHERE sect='$title' OR sect='$id' ORDER BY xwhen DESC, id";
 
 echo "\n\n<!-- DEBUG: $query -->\n\n";
 
