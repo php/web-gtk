@@ -430,6 +430,75 @@ function splitIntoSections( $arFiles)
 
 
 /**
+*	returns the file title for the given file
+*	for efficient working, the category has to be given
+*
+*	The function tries to get the file title with some algorithms,
+*	NOT from the direct html files.
+*	
+*	@param	string	The file name, e.g. gtk.gtkcolorselection.method.get_color.php
+*	@param	string	The category of the file, e.g. class/enum/constructor/...
+*
+*	@return	string	The file title, can be used for link titles
+*/
+function getFileTitle( $strFilename, $strCategory)
+{
+	$arParts	= explode( '.', $strFilename);
+    
+    switch( $strCategory)
+    {
+    	case 'class':
+        	return niceClassName( $arParts[1]);
+        case 'constructor':
+        	return niceClassName( $arParts[1]) . ' constructor';
+        case 'method':
+        	if( count( $arParts) == 5) {//class with method
+        		return niceClassName( $arParts[1]) . '::' . $arParts[3] . '()';
+            } else {//gtk/gdk method
+        		return niceClassName( $arParts[0]) . '::' . $arParts[2] . '()';
+            }
+        case 'property':
+        	if( count( $arParts) == 5) {//class property
+        		return niceClassName( $arParts[1]) . '::' . $arParts[3];
+            } else {//gtk/gdk property
+        		return niceClassName( $arParts[0]) . '::' . $arParts[2];
+            }
+        case 'signal':
+        	if( count( $arParts) == 5) {//class signal
+        		return niceClassName( $arParts[1]) . ': ' . $arParts[3];
+            } else {//gtk/gdk signal
+        		return niceClassName( $arParts[0]) . ': ' . $arParts[2];
+            }
+    	default:
+        	return $strFilename;
+    }
+}//function getFileTitle( $strFilename, $strCategory)
+
+
+
+/**
+*	makes a nice class name from a lowercase name
+*	given "gdkcolor" it returns "GdkColor"
+*
+*	@param	string	The lowercase class name
+*	@return	string	The nice cased class name
+*/
+function niceClassName( $strLowercaseClass)
+{
+	$strPrefix	= substr( $strLowercaseClass, 0, 3);
+    if( $strPrefix == 'gdk' || $strPrefix == 'gtk')
+    {
+    	$strNice	= ucfirst( $strPrefix) . ucfirst( substr( $strLowercaseClass, 3));
+    } else {
+    	$strNice	= ucfirst( $strLowercaseClass);
+    }
+
+    return $strNice;
+}//function niceClassName( $strLowercaseClass)
+
+
+
+/**
 *   Looks up a given word in the index
 *   useful for debugging
 */

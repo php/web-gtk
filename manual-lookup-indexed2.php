@@ -32,7 +32,7 @@ if( $strLang == 'BR') {
 
 if( $function == '') {
     commonHeader( 'no search string');
-    echo '<br/>&nbsp;<h1>No search string given</h1><br/>';
+    echo '<h1>No search string given</h1><br/>';
 
     commonFooter();
     die();
@@ -55,8 +55,8 @@ if( $nCount == 0)
 {
     //nothing found
     commonHeader( '404 Not Found');
-    echo '<br/>&nbsp;<h1>Not Found</h1><br/>';
-    echo '&nbsp;No class/signal/method containing <strong>"' . $function . '"</strong> could be found.';
+    echo '<h1>Not Found</h1><br/>';
+    echo 'No class/signal/method containing <strong>"' . $function . '"</strong> could be found.';
     
     if( isset( $_SERVER['HTTP_REFERER'])) {
         echo '<br/><a href="' . $_SERVER['HTTP_REFERER'] . '">Try again</a><br/><br/><br/><br/><br/><br/><br/>';
@@ -102,7 +102,7 @@ else
                 echo '<h3>' . $strSectionName . ' ' . count( $arSections[$strSection]) . 'x</h3>';
                 echo '<ul>';
                 foreach( $arSections[$strSection] as $strFile) {
-                    echo '<li><a href="' . getManualLocation( $strLang, $strFile) . '">' . $strFile . '</a></li>';
+                    echo '<li><a href="' . getManualLocation( $strLang, $strFile) . '">' . getFileTitle( $strFile, $strSection) . '</a></li>';
                 }
                 echo '</ul>';
             }
