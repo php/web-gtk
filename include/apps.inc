@@ -128,7 +128,7 @@ function appHeader($the_cat = false, $the_subcat = false) {
 foreach( $appCats as $cat_id => $catObj ) {
 	print("<tr valign=\"top\">");
 
-	if( $_GET['the_cat'] == $cat_id ) {
+	if( {$_GET['the_cat']} == $cat_id ) {
 		$img = "/gifs/box-1.gif";
 	}else {
 		$img = "/gifs/box-0.gif";
@@ -136,11 +136,11 @@ foreach( $appCats as $cat_id => $catObj ) {
 	print("<td nowrap><a href=\"$script?the_cat=$cat_id\"><img src=\"$img\" border=\"0\" width=\"11\" height=\"7\" ALT=\"$catObj->name\" >$catObj->name</a><br></td>");
 	print("</tr>");
 	
-	if( $_GET['the_cat'] == $cat_id && is_array($catObj->sub) )  {
+	if( {$_GET['the_cat']} == $cat_id && is_array($catObj->sub) )  {
 		print("<tr valign=\"top\">");
 		print("<td nowrap><small>");
 		foreach( $catObj->sub as $subcat_id => $subcatObj ) {
-			if( $_GET['the_subcat'] == $subcat_id ) {
+			if( {$_GET['the_subcat']} == $subcat_id ) {
 				$img = "/gifs/box-1.gif";
 			}else {
 				$img = "/gifs/box-0.gif";
@@ -230,15 +230,15 @@ function displayApp($app, $the_cat, $the_subcat, $offset, $user_edit_mode = fals
 			<small>
 				rating: <b>$rating</b> |
 				rate: 
-				<a href='rate.php?app_id=$app->id&rate=1&the_cat=$_GET['the_cat']&the_subcat=$_GET['the_subcat']&offset=$offset'>1</a> 
+				<a href='rate.php?app_id=$app->id&rate=1&the_cat={$_GET['the_cat']}&the_subcat={$_GET['the_subcat']}&offset=$offset'>1</a> 
 				<font color='#999999'>|</font> 
-				<a href='rate.php?app_id=$app->id&rate=2&the_cat=$_GET['the_cat']&the_subcat=$_GET['the_subcat']&offset=$offset'>2</a> 
+				<a href='rate.php?app_id=$app->id&rate=2&the_cat={$_GET['the_cat']}&the_subcat={$_GET['the_subcat']}&offset=$offset'>2</a> 
 				<font color='#999999'>|</font> 
-				<a href='rate.php?app_id=$app->id&rate=3&the_cat=$_GET['the_cat']&the_subcat=$_GET['the_subcat']&offset=$offset'>3</a> 
+				<a href='rate.php?app_id=$app->id&rate=3&the_cat={$_GET['the_cat']}&the_subcat={$_GET['the_subcat']}&offset=$offset'>3</a> 
 				<font color='#999999'>|</font> 
-				<a href='rate.php?app_id=$app->id&rate=4&the_cat=$_GET['the_cat']&the_subcat=$_GET['the_subcat']&offset=$offset'>4</a> 
+				<a href='rate.php?app_id=$app->id&rate=4&the_cat={$_GET['the_cat']}&the_subcat={$_GET['the_subcat']}&offset=$offset'>4</a> 
 				<font color='#999999'>|</font> 
-				<a href='rate.php?app_id=$app->id&rate=5&the_cat=$_GET['the_cat']&the_subcat=$_GET['the_subcat']&offset=$offset'>5</a>
+				<a href='rate.php?app_id=$app->id&rate=5&the_cat={$_GET['the_cat']}&the_subcat={$_GET['the_subcat']}&offset=$offset'>5</a>
 			</small>
 		");
 	}
