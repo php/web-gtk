@@ -34,8 +34,9 @@ GUI applications.
 
 <h1>News</h1>
 <P>
-<a href="download.php">PHP-GTK version 0.1</a> has been released. Win32
-binary version should be available a little later.
+<a href="/download.php">PHP-GTK version 0.1</a> has been released. Win32
+binary version should be available a little later. The list of changes can be
+found in <a href="/changelog.php">Change Log</a>.
 </P>
 
 <P>
@@ -57,9 +58,9 @@ and other PHP-GTK resources.
 <h1>Caveat</h1>
 
 <P>
-This extension is still in early beta phase, so not all the features may work
-right now.  If you have problems then your 
-first port of call should be the manual and the mailing list.
+This extension is under development, so not all the features present in Gtk+
+toolkit may work right now.  If you have problems or questions then your first
+port of call should be the manual and the mailing list.
 </P>
 <P>
 Any serious php-gtk related questions should be sent to 

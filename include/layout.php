@@ -198,6 +198,8 @@ function commonHeader($title=false) {
 	echo delim();
 	print_link('/faq.php', 'faq', false, 'class="menuBlack"');
 	echo delim();
+	print_link('/changelog.php', 'changelog', false, 'class="menuBlack"');
+	echo delim();
 	print_link('/resources.php', 'resources', false, 'class="menuBlack"');
       ?>&nbsp;<br>
       <?php spacer(2,2); ?><br>
