@@ -15,6 +15,7 @@
 <li><a href="#2">Why is it not working with the browser/web server?</a>
 <li><a href="#3">How do I install PHP-GTK on Win32?</a>
 <li><a href="#4">How do I use the buttons in GtkFileSelection?</a>
+<li><a href="#5">How do I know which GTK Classes are supported?<a>
 </ul>
 
 <a name="1"><b>What is PHP-GTK?</b></a><br>
@@ -70,8 +71,21 @@ $fs->ok_button->connect_object("clicked", "destroy", $fs);	// Connect the destro
 </blockquote>
 
 <br><br>
-
-
+<a name="5"><b>How do I know which GTK Classes are supported?</b></a><br>
+The following code will show the defined classes. All the php-gtk classes 
+will be listed along with one or two others.
+<blockquote>
+<code>
+$array = get_declared_classes();
+while(list(,$classname) = each($array)) {
+		echo $classname."\n";
+}
+</code>
+</blockquote>
+See the 
+<a href="http://www.php.net/manual/en/ref.classobj.php">Class/Object</a>
+functions in the PHP Manual for other useful functions.
+<br><br>
 </body>
 
 </html>
