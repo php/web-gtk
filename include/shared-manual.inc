@@ -24,7 +24,7 @@ function makeBorderTOC($this) {
 	global $SIDEBAR_DATA, $LANG;
 
 	$SIDEBAR_DATA = '<form method="GET" action="/manual-lookup.php">' .
-	$SIDEBAR_DATA.= '<table border="0" CELLPADDING="4" CELLSPACING="0">';
+	$SIDEBAR_DATA.= '<table border="0" CELLPADDING="4" CELLSPACING="0" WIDTH="160">';
 
 	$SIDEBAR_DATA.= '<tr valign="top"><td>' . 
 		make_link('./', make_image('caret-t.gif', $HOME[1]) . $HOME[1] ) . 
