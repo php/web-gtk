@@ -109,7 +109,7 @@ if ($action != '') {
 			echo '<TR valign="top"><TD align="right"><small>E-mail:<br></small></TD>' .
 				'<TD><INPUT type="text" size="40" name="nuser" value="',$row['user'], '"><BR></TD></TR>';
 			echo '<TR valign="top"><TD align="right"><small>Note:<br></small></TD>' .
-				'<TD><TEXTAREA name="note" rows="8" cols="50">', $row['note'],'</TEXTAREA><BR></TD></TR>';
+				'<TD><TEXTAREA name="note" rows="8" cols="50">' . $row['note'] . '</TEXTAREA><BR></TD></TR>';
 			echo '<TR valign="top"><TD align="right"><small>Reset rating:<br></small></TD>' .
 				'<TD><SELECT name="rating">';
 			echo '<OPTION VALUE="-1">leave unchanged';
@@ -144,12 +144,11 @@ if ($action != '') {
 		}
 		$add_url = "\n\nhttp://gtk.php.net/manual/en/".$row['sect']."\n";
 		$query = "UPDATE note SET user='$nuser',note='$note'";
-		if ($rating) {
-			if ($rating==-1) {
-				$query .= ",rating=0,votes=0";
-			} else {
-				$query .= ",rating=votes*".(int)$rating;
-			}
+		$rating = (int)$rating;
+		if ($rating==-1) {
+			$query .= ",rating=0,votes=0";
+		} else if ($rating > 0) {
+			$query .= ",rating=votes*".(int)$rating;
 		}
 		$query .= " WHERE id=$id";
 		if (mysql_query($query)) {
