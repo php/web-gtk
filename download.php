@@ -15,16 +15,6 @@ common_header();
               widely used for a while). You can obtain the latest stable release 
               of GTK+ v1.2.x from <a href="ftp://ftp.gtk.org/pub/gtk/v1.2/">ftp://ftp.gtk.org/pub/gtk/v1.2/</a>. 
             </p>
-            <blockquote> 
-              <p><b>Warning!</b> This code is a highly experimental adaptation 
-                of the instructions beamed to us by the friendly aliens of Tau 
-                Ceti. The API can and will be changing, evolving, and unpredictably 
-                morphing into little furry Ewoks, fluorescent killer bunny rabbits, 
-                and the knights who say 'Nee'. Use the code at your own risk, 
-                as it may cause flooding, polydactism, frogs falling from the 
-                sky, and the return of the Inca empire. And it will definitely 
-                warp space-time continuum in your local area. </p>
-            </blockquote>
             <p class="mtext"><b>Latest stable release: </b></p>
             <p class="mtext"><a href="http://gtk.php.net/do_download.php?download_file=php-gtk-0.0.3.tar.gz">php-gtk-0.0.3 
               (Source)</a> (20-Mar-2001) <br>

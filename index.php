@@ -13,6 +13,16 @@ common_header();
               purpose language that can be used for much more. One of the goals 
               behind this project was to prove that PHP can be used to write client-side 
               GUI applications. </p>
+            <blockquote> 
+              <p><b>Warning!</b> This code is a highly experimental adaptation 
+                of the instructions beamed to us by the friendly aliens of Tau 
+                Ceti. The API can and will be changing, evolving, and unpredictably 
+                morphing into little furry Ewoks, fluorescent killer bunny rabbits, 
+                and the knights who say 'Nee'. Use the code at your own risk, 
+                as it may cause flooding, polydactism, frogs falling from the 
+                sky, and the return of the Inca empire. And it will definitely 
+                warp space-time continuum in your local area. </p>
+            </blockquote>
             <p class="mtext">There is a mailing list for PHP-GTK. To subsribe, 
               send blank email to <a href="mailto:php-gtk-subscribe@lists.php.net">php-gtk-subscribe@lists.php.net</a>. 
               The address of the list itself is <a href="mailto:php-gtk@lists.php.net">php-gtk@lists.php.net</a>. 
