@@ -178,29 +178,32 @@ global $classes, $full_match;
 
 function find_manual_page($lang, $function) {
 
-$tried = 0;
-$hit = array();
+	$tried = 0;
+	$hit = array();
 
-/* fast track, single return :) */
+	/* fast track, single return :) */
 	if(strstr($function, "::")) {
 		list($funcpre, $funcpost) = split("::", $function);
 		$try = tryprefix($lang, $funcpost, "$funcpre.method.");
 		if($try) return $try;
-		}
+	}
 	elseif(strtolower(substr($function, 0, 3)) == "gtk" || 
-			strtolower(substr($function, 0, 3 == "gdk"))) {
+	strtolower(substr($function, 0, 3 == "gdk"))) {
 		$prefix = strtolower(substr($function, 0, 3));
 		$try = tryprefix($lang, $function, "$prefix.");
 		if($try) return $try;
-		}
+	}
 	else {
-/* if there's no :: or gtk in there we could be looking for anything */
+		/* if there's no :: or gtk in there we could be looking for anything */
 		$try = wildcard($lang, $function, $hit);
-		if($try) $result = array_merge($try, $result);
-		}
+		/* if($try) $result = array_merge($try, $result); */
+		if ($try) return $try;
+	}
+	/*
 	if($result) {
 		return $result;
 	}
+	*/
 	return "";
 }
 
