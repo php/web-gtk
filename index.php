@@ -30,12 +30,15 @@ $SIDEBAR_DATA = <<< EOF
     a question or suggestion for the website, you should contact 
     <a href="mailto:php-gtk-webmaster at lists dot php dot net">
     php-gtk-webmaster at lists dot php dot net</a>.</p>
+
+<h3>Syndication</h3>
+<p>Our news is available as an <a href="/news.rss">RSS feed</a>.</p>
 EOF;
 
 commonHeader();
 
 ?>
-<h1>Manual Search Bug Fixed</h1>
+<h1>Manual search bug fixed</h1>
 
 <p><span class="newsdate">[28-Jul-2004]</span> A bug has been fixed in the 
     search functionality of the PHP-GTK Web site that caused problems when 
@@ -47,7 +50,7 @@ commonHeader();
 
 <?php hdelim(); ?>
 
-<h1>New PHP-GTK Wiki</h1>
+<h1>New PHP-GTK wiki</h1>
 
 <p><span class="newsdate">[27-Jul-2004]</span> We have set up a new 
     <a href="/wiki/Main/HomePage">wiki</a> that is faster and more easily
@@ -120,7 +123,7 @@ commonHeader();
 
 <?php hdelim(); ?>
 
-<h1>PHP-GTK 1.0.0 Released!</h1>
+<h1>PHP-GTK 1.0.0 released</h1>
 
 <p><span class="newsdate">[23-Oct-2003]</span> 
     <a href="/download.php">PHP-GTK Version 1.0.0</a> is finally out after 
