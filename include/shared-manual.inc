@@ -117,20 +117,21 @@ function navigationBar($title,$id,$loc) {
 
 	if ($loc == 'bottom') {
 
-		$back_url = 'http://' . $SERVER_NAME . 
-			(($SERVER_PORT==80) ? '' : ':'.$SERVER_PORT ) . 
-			$PHP_SELF;
+#		$back_url = 'http://' . $SERVER_NAME . 
+#			(($SERVER_PORT==80) ? '' : ':'.$SERVER_PORT ) . 
+#			$PHP_SELF;
+
 	} else {
 
 		global $LANGUAGES;
 		$links = array();
-        if($LANGUAGES){
-     		foreach($LANGUAGES as $code=>$name) {
-	    		if (file_exists("../$code/$id")) {
-		    		$links[] = make_link("../$code/$id", $name);
-			    }
-	    	}
-        }
+	        if($LANGUAGES){
+	     		foreach($LANGUAGES as $code=>$name) {
+		    		if (file_exists("../$code/$id")) {
+			    		$links[] = make_link("../$code/$id", $name);
+				    }
+		    	}
+	        }
 		$file = substr($id,0,-4);
 		if (file_exists("html/$file.html")) {
 			$links[] = make_link("html/$file.html", 'Plain HTML');
@@ -146,15 +147,202 @@ function navigationBar($title,$id,$loc) {
 }
 
 
+
+function makeEntry($date,$name,$blurb,$id=0) {
+	global $MAGIC_COOKIE;
+
+	echo '<tr valign="top">';
+	echo '<td bgcolor="#e0e0e0" colspan="2">';
+	echo '<table border="0" cellpadding="2" cellspacing="0" width="100%">';
+	echo '<tr valign="top"><td>';
+	$name = htmlspecialchars($name);
+	if ($name && $name != "php-gtk@lists.php.net" && $name != "user@example.com") {
+		if (ereg("(.+)@(.+)\.(.+)",$name)) {
+			echo '<a href="mailto:'.$name.'">'.$name.'</a><br>';
+		} else {
+			echo '<b>'.$name.'</b><br>';
+		}
+	}
+	echo date("d-M-Y h:i", $date);
+	echo '<br></td>';
+	echo '<td align="right">';
+	if (isset($MAGIC_COOKIE) && $id) {
+		print_link('/manual/admin-notes.php?action=edit+' . $id . '&brief=1',
+			make_image('notes-edit.gif', 'edit note'),
+			'admin'
+		);
+		echo '&nbsp';
+		print_link('/manual/admin-notes.php?action=reject+' . $id . '&brief=1&popup=1',
+			make_image('notes-reject.gif', 'reject note'),
+			'admin'
+		);
+		echo '&nbsp';
+		print_link('/manual/admin-notes.php?action=delete+' . $id . '&brief=1&popup=1',
+			make_image('notes-delete.gif', 'delete note'),
+			'admin'
+		);
+	}
+
+	echo '<br></td>';
+	echo '</tr>';
+	echo '<tr bgcolor="#f0f0f0"><td colspan="2">';
+	echo clean_note($blurb). '<br>';
+	echo '</td></tr>';
+	echo '</table>';
+	echo '</td></tr>';
+}
+
+
+
+function manualGetUserNotes($title, $id) {
+	// if we're gtk.php.net, get it from the local DB
+	// otherwise look in "/manual/usernotes/$title.txt" (if present)
+	$notes = array();
+	if ( true ) {
+#	if(is_primary_site() || strstr($MYSITE,"localhost")) {
+#		$host = '127.0.0.1';
+
+		$host = 'localhost';
+		$user = 'nobody';
+		$pass = '';
+		$db_id = @mysql_pconnect($host, $user, $pass);
+		$query = "SELECT *, UNIX_TIMESTAMP(ts) AS xwhen FROM note WHERE sect = '$title' OR sect = '$id' ORDER BY id";
+		if ($db_id) {
+			$result_id = mysql_db_query("gtk", $query, $db_id);
+		}
+		if ($result_id && mysql_num_rows($result_id) > 0) {
+			while ($row = mysql_fetch_array($result_id)) {
+				$notes[] = $row;
+			}
+		}
+	} else {
+		$notes_file = "../usernotes/" . urlencode( $title ) . ".txt";
+		if ( @file_exists( $notes_file ) )
+		{
+			$fp = @fopen($notes_file,"r");
+			if ($fp) {
+				$body = fread($fp,filesize($notes_file));
+				if (strlen($body)) {
+					$notes = @unserialize($body);
+				}
+				fclose($fp);
+			}
+		}
+	}
+	return $notes;
+}
+
+
+
+function manualUserNotes($title, $id) {
+	global $PHP_SELF, $SERVER_NAME, $SERVER_PORT, $LANG, $MYSITE;
+
+	$cur = substr(dirname($PHP_SELF), -2);
+	if($cur=='al') {
+		$cur='en';
+	}
+
+	echo '<table border="0" cellpadding="4" cellspacing="0" width="100%">';
+
+	$notes = manualGetUserNotes($title, $id);
+
+	$back_url = 'http://' . $SERVER_NAME . 
+		(($SERVER_PORT==80) ? '' : ':'.$SERVER_PORT ) . 
+		$PHP_SELF;
+
+	echo '<tr bgcolor="#d0d0d0" valign="top">';
+	echo '<td><small>User Contributed Notes<br></small><b>' . $title . '</b><br></td>';
+	echo '<td align="right">';
+	print_link('/manual/add-note.php?sect='.$id.'&redirect='.$back_url,
+		make_image('notes-add.gif','add a note')
+	);      
+	echo "&nbsp;";
+	print_link('/manual/about-notes.php',
+		make_image('notes-about.gif', 'about notes')
+	);
+	echo "<br></td>\n";
+	echo "</tr>\n";
+
+	if ( sizeof($notes) == 0 ) {
+
+#		if ( !strstr($MYSITE,"gtk.php.net") ) {
+		if ( false ) {
+			echo '<tr valign="top">';
+			echo '<td bgcolor="#e0e0e0" colspan="2">';
+			echo 'User contributed notes are not available on this mirror site; try ';
+			print_link('http://www.php.net/manual/'.$LANG.'/'.$id, 'here');
+			echo '.<br></td></tr>';
+		} else {
+			echo '<tr valign="top">';
+			echo '<td bgcolor="#e0e0e0" colspan="2">';
+			echo 'There are no user contributed notes for this page.';
+			echo '<br></td></tr>';
+		}
+
+	} else {
+
+		foreach($notes as $note) {
+			makeEntry($note['xwhen'], $note['user'], $note['note'], $note['id'] );
+		}
+
+                echo "<tr bgcolor=\"#d0d0d0\" valign=\"top\">\n";
+		echo "<td colspan=\"2\" align=\"right\">\n";
+                print_link('/manual/add-note.php?sect='.$id.'&redirect='.$back_url,
+                        make_image('notes-add.gif','add a note')
+                );      
+		echo "&nbsp;";
+                print_link('/manual/about-notes.php',
+                        make_image('notes-about.gif', 'about notes')
+                );
+		echo "<br></td>\n";
+		echo "</tr>\n";
+
+	}
+
+	echo "</table><br><br>\n";
+}
+
+
+
+function manualLastModified($title, $id) {
+	global $MYSITE, $SCRIPT_FILENAME;
+#	if (is_primary_site()) {
+	if ( true ) {
+		$host = 'localhost';
+		$user = 'nobody';
+		$pass = '';
+		$db_id = @mysql_pconnect($host, $user, $pass);
+		$query = "SELECT UNIX_TIMESTAMP(ts) AS stamp FROM note WHERE sect = '$title' OR sect = '$id' ORDER BY ts DESC limit 1";
+		if ($db_id) {
+			$result_id = @mysql_db_query("gtk", $query, $db_id);
+		} else {
+			$result_id = 0;
+		}
+		if($result_id && mysql_num_rows($result_id)) {
+			$t = mysql_fetch_row($result_id);
+			Header("Last-Modified: ".gmdate("D, d M Y H:i:s",$t[0])." GMT");
+		} else {
+			Header("Last-Modified: ".gmdate("D, d M Y H:i:s",getlastmod())." GMT");
+		}
+		if ($result_id) {
+			mysql_free_result($result_id);
+		}
+}
+
+
+
 function sendManualHeaders($charset,$lang) {
-        global $LANG;
-        $LANG = $lang;
+	global $LANG;
+	$LANG = $lang;
 	Header("Content-type: text/html;charset=$charset");
 	Header("Content-language: $lang");
 }
 
+
+
 function manualHeader($title,$id="") {
 	global $HTDIG, $LANGUAGES, $LANG, $SIDEBAR_DATA;
+	manualLastModified($title,$id);
 	makeBorderTOC($title);
 	commonHeader('Manual: '.$title);
         # create links to plain html and other languages
@@ -166,9 +354,10 @@ function manualHeader($title,$id="") {
 function manualFooter($title,$id="") {
 	global $HTDIG;
 	if (!$HTDIG) {
+		manualUserNotes($title,$id);
 		navigationBar($title, $id, "bottom");
 	}
 	commonFooter();
 
 }
-?>
+
