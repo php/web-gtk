@@ -241,6 +241,20 @@ function manualGetUserNotes($title, $id) {
 		$pass = '';
 		$db_id = @mysql_pconnect($host, $user, $pass);
 
+		# handle voting first
+		# probably a better way/place to do this, but ...
+
+		global $HTTP_GET_VARS, $HTTP_SERVER_VARS;
+		if ($HTTP_GET_VARS['rate_id'] && $HTTP_GET_VARS['rate_note']) {
+			$p = parse_url($HTTP_SERVER_VARS['HTTP_REFERER']);
+			/* prevent outside scripts from voting */
+			if ($HTTP_SERVER_VARS['SCRIPT_NAME']==$p['path']) {
+				$query = 'UPDATE note SET votes=votes+1, rating=rating+' . $HTTP_GET_VARS['rate_note'] .
+					' WHERE id=' . $HTTP_GET_VARS['rate_id'];
+				$result_id = mysql_db_query("gtk", $query, $db_id);
+			}
+		}
+
 		$query = "SELECT *, UNIX_TIMESTAMP(ts) AS xwhen, IF(votes=0, 0, rating/votes) AS rate FROM note " .
 				"WHERE sect='$title' OR sect='$id' ORDER BY rate DESC, id";
 
@@ -385,26 +399,6 @@ function manualHeader($title,$id="") {
 	manualLastModified($title,$id);
 	makeBorderTOC($title);
 	commonHeader('Manual: '.$title);
-
-	# probably a better way/place to do this, but ...
-
-	global $HTTP_GET_VARS, $HTTP_SERVER_VARS;
-	if ($HTTP_GET_VARS['rate_id'] && $HTTP_GET_VARS['rate_note']) {
-		$p = parse_url($HTTP_SERVER_VARS['HTTP_REFERER']);
-		/* prevent outside scripts from voting */
-		if ($HTTP_SERVER_VARS['SCRIPT_NAME']==$p['path']) {
-			$host = 'localhost';
-			$user = 'nobody';
-			$pass = '';
-			$db_id = @mysql_pconnect($host, $user, $pass);
-
-			$query = 'UPDATE note SET votes=votes+1, rating=rating+' . $HTTP_GET_VARS['rate_note'] .
-				' WHERE id=' . $HTTP_GET_VARS['rate_id'];
-			$res = @mysql_db_query("gtk", $query, $db_id);
-
-		}
-	}
-
         # create links to plain html and other languages
 	if (!$HTDIG) {
 		navigationBar($title, $id, "top");
