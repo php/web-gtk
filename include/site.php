@@ -23,6 +23,7 @@ $LANGUAGES = array(
     'no' => 'Norwegian',
     'pl' => 'Polish',
     'pt' => 'Portuguese',
+    'pt_BR' => 'Brazilian',
     'ro' => 'Romanian',
     'ru' => 'Russian',
     'sk' => 'Slovak',
