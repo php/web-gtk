@@ -33,7 +33,7 @@ if ($action != '') {
 
 	list ($action, $id) = explode(' ', $action);
 
-	if ($action!='edit' && !verify_password($user,$pass)) {
+	if ($action!='edit'/* && !verify_password($user,$pass)*/) {
 		echo "<P><B>Authorization failed.</B></P>";
 		commonFooter();
 		exit;
