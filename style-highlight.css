@@ -3,7 +3,7 @@
  */
 
 .phpcode {
-font-family: 'Courier New', Courier, monospace;
+font-family: monospace, 'Courier New', Courier;
 font-size: 90%;
 }
 .phpcode .kw1 {
