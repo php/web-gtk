@@ -38,6 +38,13 @@ EOF;
 commonHeader();
 
 ?>
+<h1>PHP-GTK RSS feed added</h1>
+
+<p><span class="newsdate">[28-Jul-2004]</span> The addition of an 
+    <a href="/news.rss">RSS feed</a> allows the PHP-GTK Web site to 
+    disseminate its news content throughout many different channels. Other 
+    sites may now use the feed to aggregate news content from this site.</p>
+
 <h1>Manual search bug fixed</h1>
 
 <p><span class="newsdate">[28-Jul-2004]</span> A bug has been fixed in the 
