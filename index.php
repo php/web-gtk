@@ -57,6 +57,7 @@ CVS password: phpfi<br><br>
 cvs -d :pserver:cvsread@cvs.php.net:/repository co php-gtk<br><br>
 
 cd php-gtk<br>
+phpize<br>
 ./configure<br>
 make<br>
 make install<br>
