@@ -107,12 +107,16 @@ commonHeader();
 <p>The forthcoming PHP-GTK version 2.0 will bind GTK+ 2 to PHP 5.  Until then, 
     PHP-GTK 1.0.0 works only with PHP 4.</p>
 
+<!--
+
 <?php hdelim(); ?>
 
 <h1>PHP-GTK Brasil</h1>
 
 <p>Brazilian PHP-GTK community has a new portal 
     <?php print_link('http://www.php-gtk.org.br/', 'site'); ?>.</p>
+
+-->
 
 <?php hdelim(); ?>
 
@@ -126,6 +130,8 @@ commonHeader();
     development and will focus on PHP 5 and GTK+ 2.x.</p>
 
 <?php hdelim(); ?>
+
+<!--
 
 <h1>PHP-GTK 0.5.2 Released!</h1>
 
@@ -183,6 +189,8 @@ commonHeader();
     list.</p>
 
 <?php hdelim(); ?>
+
+-->
 
 <?php
 
