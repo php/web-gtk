@@ -25,6 +25,11 @@ The list is archived at <a href="http://marc.theaimsgroup.com/?l=php-gtk&r=1&w=2
 </p>
 
 <p>
+<b>Note:</b> PHP-GTK currently requires the latest PHP version from CVS and will
+work with 4.0.5 when it comes out.
+</p>
+
+<p>
 PHP-GTK currently supports GTK+ v1.2.6 or greater, but not GTK+ v2.0
 (which is still under development and won't be widely used for a while). You can
 obtain the latest stable release of GTK+ v1.2.x from
