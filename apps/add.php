@@ -6,6 +6,11 @@
 
 require_once("apps.inc");
 
+// 
+// Change this to whomever you want the administrator emails to go to.
+// 
+$mailto = 'gtk-webmaster@php.net';
+
 commonHeader('Add an Application', false);
 appHeader();
 
@@ -38,6 +43,14 @@ if( $action == "add" ) {
 			
 		}
 		
+		mail($mailto, "app '$name' submitted for approval.",
+			"The following application was submitted for approval:\n\n" .
+			"Name       : $name\n" .
+			"URL        : $homepage_url\n" .
+			"Category   : " . $appCats[$cat_id]->name . "\n" .
+			"Submitter  : $submitter\n" .
+			"Description: $blurb\n",
+			"From: $user@php.net");
 
 		print("Thank you for the submission.  Someone will review it shortly.");
 	}else {
