@@ -229,8 +229,8 @@ function commonHeader($title=false, $padding=true) {
 <table cellpadding="0" cellspacing="0">
  <tr valign="top">
 <?php if (isset($SIDEBAR_DATA)):?>
-  <td bgcolor="#f0f0f0">
-   <table width="170" cellpadding="4" cellspacing="0">
+  <td width="200" bgcolor="#f0f0f0">
+   <table width="100%" cellpadding="4" cellspacing="0">
     <tr valign="top">
      <td class="sidebar"><?php echo $SIDEBAR_DATA?></td>
     </tr>
@@ -239,7 +239,7 @@ function commonHeader($title=false, $padding=true) {
   <td bgcolor="#cccccc" background="/gifs/checkerboard.gif"><?php spacer(1,1);?><br></td>
 <?php endif; ?>
   <td>
-   <table width="600" cellpadding="<?php if( $padding ) { print("10"); }else { print("0"); } ?>" cellspacing="0">
+   <table width="570" cellpadding="<?php if( $padding ) { print("10"); }else { print("0"); } ?>" cellspacing="0">
     <tr>
      <td valign="top">
 <?php
