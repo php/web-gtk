@@ -3,7 +3,7 @@
 // 
 // change this to whatever the correct connection parameters are
 // 
-mysql_connect("rack1.php.net","nobody","");
+mysql_connect("localhost","nobody","");
 mysql_select_db("gtk");
 // 
 // Change this to whomever you want the administrator emails to go to.

@@ -7,7 +7,7 @@ define(NAV_METHOD, 3);
 define(NAV_SIGNAL, 4);
 define(NAV_ENUM, 5);
 
-mysql_connect("rack1.php.net","nobody","");
+mysql_connect("localhost","nobody","");
 mysql_select_db("gtk");
 
 $NEXT = $PREV = $UP = $HOME = array(false, false);
