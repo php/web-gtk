@@ -70,7 +70,7 @@ if( !empty($action) && !empty($app_id) ) {
 		}else {
 			$msg = "Unable to approve application #$app_id.";
 		}
-		print("<script language='JavaScript'> alert('$msg'); document.location.href = '$_SERVER[HTTP_REFERER]';</script>");
+		print("<script language='JavaScript'> alert('$msg'); document.location.href = 'admin-apps.php';</script>");
 		break;
 
 	case 'delete':
@@ -93,7 +93,7 @@ if( !empty($action) && !empty($app_id) ) {
 			$msg = "Unable to delete application #$app_id.";
 		}
 
-		print("<script language='JavaScript'> alert('$msg'); document.location.href = '$_SERVER[HTTP_REFERER]';</script>");
+		print("<script language='JavaScript'> alert('$msg'); document.location.href = 'admin-apps.php';</script>");
 		break;
 
 	
@@ -137,7 +137,7 @@ if( !empty($action) && !empty($app_id) ) {
 			$msg = "Unable to reject application #$app_id.";
 		}
 
-		print("<script language='JavaScript'> alert('$msg'); document.location.href = '$_SERVER[HTTP_REFERER]';</script>");
+		print("<script language='JavaScript'> alert('$msg'); document.location.href = 'admin-apps.php';</script>");
 
  		break;
 
