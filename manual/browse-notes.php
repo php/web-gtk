@@ -22,7 +22,7 @@ $used = array();
 $fl = '';
 if ( mysql_num_rows($result) > 0) {
 	while ($row = mysql_fetch_array($result)) {
-		if (!fl) {
+		if (!$fl) {
 			$fl = $row['first'];
 		}
 		$used[ $row['first'] ] = true;
@@ -41,12 +41,17 @@ for($i=ord('a'); $i<=ord('z'); $i++ ) {
 
 echo '<table border="0" cellpadding="4" cellspacing="0" width="100%">';
 echo '<tr bgcolor="#d0d0d0" valign="top">';
-echo '<td align="right" colspan="2"><small>Jump to: ' . join (' <font color="#cccccc">|</font> ', $links ) . '<br></small></td>';
+echo '<td align="right" colspan="2"><small>Jump to: ' . 
+	join (' <font color="#999999">|</font> ', $links ) . 
+	'<br></small></td>';
 echo "</tr>\n";
+echo "</table><BR>\n\n";
 
 if(!$let) {
-	$let = $fl;
+	$let = $fl ? $fl : 'a';
 }
+
+echo '<table border="0" cellpadding="4" cellspacing="0" width="100%">';
 
 $query = "SELECT *, UNIX_TIMESTAMP(ts) AS my_when FROM note where sect like '$let%' ORDER BY sect, ts";
 $result = mysql_query($query) or die(mysql_error());
