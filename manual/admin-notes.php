@@ -111,9 +111,11 @@ if ($action != '') {
 			echo '<TR valign="top"><TD align="right"><small>Note:<br></small></TD>' .
 				'<TD><TEXTAREA name="note" rows="8" cols="50">', $row['note'],'</TEXTAREA><BR></TD></TR>';
 			echo '<TR valign="top"><TD align="right"><small>Reset rating:<br></small></TD>' .
-				'<TD><SELECT name="rating"><OPTION VALUE="0">leave unchanged';
+				'<TD><SELECT name="rating">';
+			echo '<OPTION VALUE="-1">leave unchanged';
+			echo '<OPTION VALUE="0">clear all votes';
 			for ($i=1; $i<=5; $i++) {
-				echo '<OPTION>'.$i;
+				echo '<OPTION VALUE="' . $i . '">set to '.$i;
 			}
 			echo '</SELECT><BR></TD></TR>';
 
@@ -143,7 +145,11 @@ if ($action != '') {
 		$add_url = "\n\nhttp://gtk.php.net/manual/en/".$row['sect']."\n";
 		$query = "UPDATE note SET user='$nuser',note='$note'"
 		if ($rating) {
-			$query.=",rating=votes*".(int)$rating;
+			if ($rating==-1) {
+				$query .= ",rating=0,votes=0";
+			} else {
+				$query .= ",rating=votes*".(int)$rating;
+			}
 		}
 		$query .= " WHERE id=$id";
 		if (mysql_query($query)) {
