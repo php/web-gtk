@@ -2,9 +2,6 @@
 /* $Id$ */
 
 
-require_once 'site.php';
-
-
 # spacer()
 # print a IMG tag for a sized spacer GIF
 #
@@ -237,7 +234,7 @@ function commonHeader($title=false) {
  <tr valign="top">
 <?php if (isset($SIDEBAR_DATA)):?>
   <td bgcolor="#f0f0f0">
-   <table width="149" cellpadding="4" cellspacing="0">
+   <table width="170" cellpadding="4" cellspacing="0">
     <tr valign="top">
      <td class="sidebar"><?php echo $SIDEBAR_DATA?></td>
     </tr>
@@ -246,7 +243,7 @@ function commonHeader($title=false) {
   <td bgcolor="#cccccc" background="/gifs/checkerboard.gif"><?php spacer(1,1);?><br></td>
 <?php endif; ?>
   <td>
-   <table width="625" cellpadding="10" cellspacing="0">
+   <table width="600" cellpadding="10" cellspacing="0">
     <tr>
      <td valign="top">
 <?php
@@ -260,7 +257,7 @@ function commonHeader($title=false) {
 #
 
 function commonFooter() {
-	global $LAST_UPDATED, $MIRRORS, $MYSITE, $COUNTRIES;
+#	global $LAST_UPDATED, $MIRRORS, $MYSITE, $COUNTRIES;
 ?>
       <br>
      </td>
@@ -273,46 +270,12 @@ function commonFooter() {
 <table border="0" cellspacing="0" cellpadding="0" width="100%">
   <tr bgcolor="#000033"><td><?php spacer(1,1);?><br></td></tr>
   <tr bgcolor="#006699">
-    <form method="GET" action="/mirrors.php" onsubmit="return gotomirror(this);">
-      <td align="right" valign="bottom">
-      <script language="javascript">
-      <!--
-        function gotomirror(form) {
-          url = form.country.options[form.country.selectedIndex].value;
-          if (url != '<? echo $MYSITE; ?>') {
-            window.location.href = url;
-          }
-	  return false;
-        }
-      //-->
-      </script>
-      <input type="hidden" name="REDIRECT" value="1">
-      <?php
-	# TODO: should send current url above, so we can redirect to
-	# the same page on the mirror, and do the same in our javascript.
-	print_link('/source.php?url='.$SCRIPT_NAME, 'show source', false, 'class="menuWhite"');
-	echo delim();
-	print_link('/credits.php', 'credits', false, 'class="menuWhite"');
-	echo delim();
-	print_link('/mirrors.php', 'mirror sites:', false, 'class="menuWhite"');
-	echo "&nbsp;<select class=\"small\" name=\"country\" onchange=\"gotomirror(this.form)\">\n";
-
-	foreach($MIRRORS as $url=>$mirror) {
-          if ($mirror[4] == 1) { /* only list full mirrors here */
-	    if ($url==$MYSITE) {
-              echo '<option value="' . $url . '" SELECTED>' . $COUNTRIES[$mirror[0]] . 
-		' (' . $mirror[1] . ") *\n";
-	    } else {
-              echo '<option value="' . $url . '">' . $COUNTRIES[$mirror[0]] . 
-		' (' . $mirror[1] . ")\n";
-	    }
-          }
-	}
-	echo "</select> ";
-	echo make_submit('small_submit_white.gif', 'go', 'bottom' );
+    <td align="right" valign="bottom">
+      print_link('/source.php?url='.$SCRIPT_NAME, 'show source', false, 'class="menuWhite"');
+      echo delim();
+      print_link('/credits.php', 'credits', false, 'class="menuWhite"');
       ?>&nbsp;<br>
-      </td>
-    </form>
+    </td>
   </tr>
   <tr bgcolor="#000033"><td><?php spacer(1,1); ?><br></td></tr>
 </table>
@@ -321,7 +284,7 @@ function commonFooter() {
   <tr valign="top" bgcolor="#cccccc">
     <td><small>
       <?php print_link('http://www.php.net/', make_image('php-logo.gif', 'PHP', 'left') ); ?>
-      <?php print_link('/copyright.php', 'Copyright &copy; 2001 The PHP Group'); ?><BR>
+      <?php print_link('/license.php', 'Copyright &copy; 2001 The PHP-GTK Group'); ?><BR>
       All rights reserved.<BR>
       </small>
     </td>

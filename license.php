@@ -6,9 +6,8 @@ common_header('Copyright and License');
 <h2>Website Copyright</h2>
 
 <P>
-The code, text, PHP logo, and graphical elements on this website 
-and the mirror websites (the "Site") are Copyright &copy; 2001 
-The PHP-GTK Team.  All rights reserved.
+The code, text, PHP-GTK logo, and graphical elements on this website 
+(the "Site") are Copyright &copy; 2001 The PHP-GTK Team.  All rights reserved.
 </P>
 
 <P>
@@ -29,12 +28,12 @@ and may not be copied or imitated in whole or in part.
 </UL>
 
 <P>
-You can contact the webmaster at <a href="mailto:miester@php.net">miester@php.net</a>
+You can contact the webmaster at <? print_email('mailto:miester@php.net'); ?></a>
 </P>
 
 <P>
 For more information on the PHP-GTK Team and the PHP-GTK project, please see 
-<a href="http://gtk.php.net/">http://gtk.php.net/</a>.
+<? print_link('http://gtk.php.net/');?>.
 </P>
 
 <?php
