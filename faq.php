@@ -17,6 +17,7 @@
 <li><a href="#4">How do I use the buttons in GtkFileSelection?</a>
 <li><a href="#5">How do I know which GTK Classes are supported?<a>
 <li><a href="#6">Can I use Themes under Win32?<a>
+<li><a href="#7">Where do I go from here?</a>
 </ul>
 
 <a name="1"><b>What is PHP-GTK?</b></a><br>
@@ -91,6 +92,20 @@ functions in the PHP Manual for other useful functions.
 <a name="6"><b>Can I use Themes under Win32?</b></a><br>
 No, The Win32 GTK port does not currently support this.
 <br> <br>
+
+<a name="7"><b>Where do I go from here?</b></a><br>
+There are a number of sources popping up around the net for PHP-GTK. Here is a small list of the ones we know of:
+
+<ul>
+  <li><a href="http://gtk.php-coder.net">http://gtk.php-coder.net</a> - Current news, example applications, and some tutorials on how to use PHP-GTK.
+  <li><a href="http://www.phpgtk.com">http://www.phpgtk.com</a> - A windows installer and news about PHP-GTK
+  <li><a href="http://developer.gnome.org/doc/API/gtk/gtkobjects.html">GTK+ Reference Manual</a> - The GTK+ manual with a list of all widgets and their corresponding functions/attributes
+  <li><a href="http://www.phpuk.org/gtk/">PHP-GTK Manual</a> - The beginnings of the PHP-GTK official manual. Keep checking back for updates!
+</ul>
+
+More will be added to the list as they become available. Also, this page will soon be getting a makeover. 
+<br><br>
+
 
 </body>
 
