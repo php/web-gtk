@@ -3,7 +3,6 @@
 # http://www.unicode.org/unicode/onlinedat/languages.html
 $LANGUAGES = array(
     'en' => 'English',
-    'pt_BR' => 'Brazilian Portuguese',
     'bg' => 'Bulgarian',
     'ca' => 'Catalan',
     'zh' => 'Chinese',
