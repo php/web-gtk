@@ -33,17 +33,34 @@ function tryprefix($cc, $func, $prefix) {
 
 function find_manual_page($lang, $function) {
     $sections = array("", "gtk.", "gtk.enum.");
-    while (list($t,$section) = each($sections)) {
-      $try = tryprefix($lang, $function, $section);
-      if ($try) return $try;
-    }
-    if ($lang != "en") {
+    if(!strstr($function, "::"))
+    {
       while (list($t,$section) = each($sections)) {
-        $try = tryprefix("en", $function, $section);
+        $try = tryprefix($lang, $function, $section);
         if ($try) return $try;
       }
+      if ($lang != "en") {
+        while (list($t,$section) = each($sections)) {
+          $try = tryprefix("en", $function, $section);
+          if ($try) return $try;
+        }
+      }
+      return "";
     }
-    return "";
+    else
+    {
+      $sections2 = array(".",".method.",".signal.");
+      list($funcpre,$funcpost) = split("::",$function);
+      while(list$t,$section) = each($sections))
+      {
+      	while(list($t,$second) = each($sections2))
+	{
+	  $try = tryprefix("$lang", $second.$funcpost, $section.$funcpre);
+	  if($try) return $try;
+        }
+      }
+      return "";
+    }
 }
 
 ?>
