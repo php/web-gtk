@@ -14,17 +14,10 @@
 
 function checkForm(f) {
 
-	if( f.submit_name.value.length == 0 )  {
+	if( f.submitter.value.length == 0 )  {
 		alert("You must provide your name.");
-		f.submit_name.focus();
-		f.submit_name.select();
-		return(false);
-	}
-
-	if( f.submit_email.value.length == 0 )  {
-		alert("You must provide your email.");
-		f.submit_email.focus();
-		f.submit_email.select();
+		f.submitter.focus();
+		f.submitter.select();
 		return(false);
 	}
 
