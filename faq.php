@@ -41,7 +41,7 @@ creation of standalone applications (run via command-line, user's desktop, etc.)
 <a name="3"><b>How do I install PHP-GTK on Win32?</b></a>
 </DT>
 <DD><P>
-Download the latest binaries from <? print_link('/downloads.php', 'gtk.php.net'); ?>.
+Download the latest binaries from <? print_link('/download.php', 'gtk.php.net'); ?>.
 The zip file contains all binaries needed to run PHP-GTK. Copy the files to the following locations:
 </P></DD>
 <DD><P>
