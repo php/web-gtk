@@ -123,3 +123,11 @@ textarea.small {
 	width: 100%;
 	background-color: #E0E0E0
 }
+
+hr {
+    height: 1px;
+    width: 100%;
+    border: 1px 0px 0px 0px;
+    border-style: solid;
+    border-color: #000000;
+}

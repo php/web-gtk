@@ -40,7 +40,7 @@ EOF;
 commonHeader();
 
 ?>
-<h1>News</h1>
+<h1>PHP-GTK Brasil</h1>
 
 <p>
 Brazilian PHP-GTK community has a new portal <?php print_link('http://www.php-gtk.org.br/', 'site'); ?>.
@@ -48,8 +48,10 @@ Brazilian PHP-GTK community has a new portal <?php print_link('http://www.php-gt
 
 <?hdelim()?>
 
+<h1>PHP-GTK 1.0.0 Released!</h1>
+
 <p>
-<a href="/download.php">PHP-GTK Version 1.0.0</a> is finally out after almost a
+<span class="newsdate">[23-Oct-2003]</span> <a href="/download.php">PHP-GTK Version 1.0.0</a> is finally out after almost a
 year of being in stasis. This is probably the last major version that will work
 with PHP 4 and Gtk+ 1.x. There might be more bugfixes, but no new features or
 upgrades will be implemented. PHP-GTK 2 is under development and will focus on
@@ -58,20 +60,20 @@ PHP 5 and Gtk+ 2.x.
 
 <?hdelim()?>
 
+<h1>PHP-GTK 0.5.2 Released!</h1>
+
 <p>
-<a href="/download.php">PHP-GTK Version 0.5.2</a> is out. After a long break, we
+<span class="newsdate">[01-Nov-2002]</span> <a href="/download.php">PHP-GTK Version 0.5.2</a> is out. After a long break, we
 have fixed some bugs and improved gdk-pixbuf functionality. See
 <a href="/changelog.php">Change Log</a> for the full list of changes.
 </p>
 
 <?hdelim()?>
 
-<p>
-<?print_link('http://wiki.gtk.php.net/')?>
-</p>
+<h1>PHP-GTK Wiki</h1>
 
 <p>
-The general idea is that the PHP-GTK community (including members of this list)
+<?print_link('http://wiki.gtk.php.net/')?> The general idea is that the PHP-GTK community (including members of this list)
 can use the Wiki to help provide better documentation for PHP-GTK. Be it
 HOWTOs, tips, FAQs, case studies or anything else that may be useful, if you
 want to write it the Wiki is there to accept it. Best of all because adding
@@ -88,14 +90,18 @@ documentation later on.
 
 <?hdelim()?>
 
+<h1>Presentation on PHP-GTK</h1>
+
 <p>
 Andrei Zmievski gave a presentation and a workshop on PHP-GTK at the Fórum Internacional Software Livre 2002 in Porto Alegre, Brazil. The presentation is available online at <?print_link('http://conf.php.net/br-gtk')?>.
 </p>
 
 <?hdelim()?>
 
+<h1>PHP-GTK 0.5.1 Released!</h1>
+
 <p>
-<a href="/download.php">PHP-GTK Version 0.5.1</a> has been released today, April
+<span class="newsdate">[26-Apr-2002]</span> <a href="/download.php">PHP-GTK Version 0.5.1</a> has been released today, April
 26, 2002. The main goal was to adapt to the new PHP build system while
 preserving compatibility for the old one. Of course, some bug fixes and
 improvements are included as well. See <a href="/changelog.php">Change Log</a>
@@ -103,6 +109,8 @@ for full list of changes.
 </p>
 
 <?hdelim()?>
+
+<h1>Application Index Available</h1>
 
 <p>
 With the help of Philip Hallstrom, we now have a Freshmeat-like index of

@@ -98,12 +98,8 @@ function delim($color=false) {
 # print a horizontal delimiter (just a wide line);
 #
 
-function hdelim($color="#000000") {
-?>
-	<table border="0" cellspacing="5" cellpadding="0" width="100%">
-		<tr bgcolor="<?=$color?>"><td><?php spacer(1,1);?></td></tr>
-	</table>
-<?
+function hdelim($color = '#000000') {
+    echo '<hr />';
 }
 
 # make_link()
