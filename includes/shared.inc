@@ -98,7 +98,7 @@ function common_footer()
         <p><font size="1" face="Arial, Helvetica, sans-serif">This site is subject 
           to the following<font color="#0080e5"> <a href="license.php"><font color="#5B69A6">license</font></a></font><br>
           Questions about PHP-GTK should be sent <font color="#5B69A6"><a href="mailto:php-gtk@lists.php.net">here</a></font><br>
-          Questions about the website shoud be sent to<font color="#5B69A6"> <a href="mailto:miester@php.net">miester@php.net</a></font><br>
+          Questions about the website shoud be sent to<font color="#5B69A6"> <a href="mailto:webmaster@php.net">webmaster@php.net</a></font><br>
           </font></p>
 						</div>
 					</td>
