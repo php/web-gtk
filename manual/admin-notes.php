@@ -67,14 +67,14 @@ if ($action != '') {
 		$reject_text .= "those issues.\n\n";
 		$reject_text .= "The user contributed notes are not an appropriate place to\n";
 		$reject_text .= "ask questions, report bugs or suggest new features; please\n";
-		$reject_text .= "use the resources listed in <http://gtk.php.net/support.php>\n";
+		$reject_text .= "use the resources listed in <http://www.php.net/support.php>\n";
 		$reject_text .= "for those purposes. This was clearly stated in the page\n";
 		$reject_text .= "you used to submit your note, please carefully re-read\n";
 		$reject_text .= "those instructions before submitting future contributions.\n\n";
 		$reject_text .= "Bug Submissions should be entered at <http://gtk.php.net/bugs/>\n";
 		$reject_text .= "Feature Requests should also be entered at <http://gtk.php.net/bugs/>\n";
 		$reject_text .= "Support and ways to find answers to your guestions can be found\n";
-		$reject_text .= "at <http://gtk.php.net/support.php>\n\n";
+		$reject_text .= "at <http://www.php.net/support.php>\n\n";
 		$reject_text .= "Your note has been removed from the on-line manual.\n\n";
 		$query = 'SELECT *,UNIX_TIMESTAMP(ts) AS xwhen FROM note WHERE id='.$id;
 		if ($result = mysql_query($query)) {
