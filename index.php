@@ -34,9 +34,8 @@ GUI applications.
 
 <h1>News</h1>
 <P>
-<a href="/download.php">PHP-GTK version 0.1</a> has been released. Win32
-binary version should be available a little later. The list of changes can be
-found in <a href="/changelog.php">Change Log</a>.
+<a href="/download.php">PHP-GTK version 0.1</a> has been released. The list of
+changes can be found in <a href="/changelog.php">Change Log</a>.
 </P>
 
 <P>
