@@ -166,7 +166,7 @@ function makeTitle($title) {
 
 
 function makeEntry($row, $show_admin = true, $show_rating = true ) {
-	global $MAGIC_COOKIE;
+	global $MAGIC_COOKIE, $PHP_SELF;
 
 	echo '<tr valign="top">';
 	echo '<td bgcolor="#e0e0e0" colspan="2">';
