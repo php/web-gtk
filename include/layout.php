@@ -280,15 +280,12 @@ function commonFooter() {
   <tr valign="top" bgcolor="#cccccc">
     <td><small>
       <?php print_link('http://www.php.net/', make_image('php-logo.gif', 'PHP', 'left') ); ?>
-      <?php print_link('/license.php', 'Copyright &copy; 2001 The PHP-GTK Group'); ?><BR>
+      <?php print_link('/copyright.php', 'Copyright &copy; 2001 The PHP Group'); ?><BR>
       All rights reserved.<BR>
       </small>
     </td>
     <td align="right"><small>
-      This mirror generously provided by:
-      <?php print_link($MIRRORS[$MYSITE][3], $MIRRORS[$MYSITE][1] ); ?><BR>
-      Last updated: <?php echo strftime("%c %Z", $LAST_UPDATED); ?><BR>
-      </small>
+      </small><br>
     </td>
   </tr>
 </table>

@@ -1,13 +1,26 @@
 <?php
 
-commonHeader('Copyright and License');
-
+commonHeader("Copyright and License");
+  
 ?>
+
+<h1>Copyright and Licence</h1>
+
+
+<h2>PHP License</h2>
+
+<P>
+For information on the PHP License (i.e. using the PHP language),
+<?php echo make_link('http:/www.php.net/license/', 'click here'); ?>.
+</P>
+
+
 <h2>Website Copyright</h2>
 
 <P>
-The code, text, PHP-GTK logo, and graphical elements on this website 
-(the "Site") are Copyright &copy; 2001 The PHP-GTK Team.  All rights reserved.
+The code, text, PHP logo, and graphical elements on this website 
+and the mirror websites (the "Site") are Copyright &copy; 2001 
+The PHP Group.  All rights reserved.
 </P>
 
 <P>
@@ -28,14 +41,18 @@ and may not be copied or imitated in whole or in part.
 </UL>
 
 <P>
-You can contact the webmaster at <? print_email('mailto:webmaster@php.net'); ?></a>
+You can contact the webmaster at 
+<?php echo make_link('mailto:webmaster@php.net', 'webmaster@php.net'); ?>.
 </P>
 
 <P>
-For more information on the PHP-GTK Team and the PHP-GTK project, please see 
-<? print_link('http://gtk.php.net/');?>.
+For more information on the PHP Group and the PHP project, please see 
+<?php echo make_link('http://www.php.net/', 'http://www.php.net/'); ?>.
 </P>
+
+<BR>
 
 <?php
 commonFooter();
 ?>
+
