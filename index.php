@@ -35,6 +35,28 @@ EOF;
 commonHeader();
 
 ?>
+<h1>Documentation updates</h1>
+
+<p><span class="newsdate">[22-Jul-2004]</span> Thanks to Christian Weiske, 
+    <a href="http://gtk.php.net/manual/en/gtk.gtkctree.php">GtkCTree</a> and 
+    <a href="http://gtk.php.net/manual/en/gtk.gtkclist.php">GtkCList</a> have 
+    both received some much-needed documentation. Andrei Zmievski has also 
+    implemented a <a href="http://marc.theaimsgroup.com/?l=php-gtk-doc&m=109045054632510&w=2">nightly 
+    build system</a> so the documentation can be updated regularly on the site 
+    as content is added/updated by our documentation team. Also, notice that a 
+    "whole site" search selection has been added to the search drop-down box. 
+    This feature uses Google to search the PHP-GTK Web site.</p>
+
+<h1>Slashdot mention</h1>
+
+<p><span class="newsdate">[22-Jul-2004]</span> The increase in PHP-GTK 
+    community activity and interest in PHP-GTK 2 has afforded this site a 
+    <a href="http://developers.slashdot.org/developers/04/07/21/2328224.shtml">mention
+    on Slashdot</a>. Thanks to <a href="http://blog.peoplesdns.com/blog/1">Joel 
+    De Gan</a> for posting to Slashdot.</p>
+
+<?php hdelim(); ?>
+
 <h1>PHP 5 release sparks renewed interest in PHP-GTK</h1>
 
 <p><span class="newsdate">[20-Jul-2004]</span> Since the release of PHP 5.0.0 
