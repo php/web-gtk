@@ -208,7 +208,7 @@ function makeEntry($row, $show_admin = true, $show_rating = true ) {
 		} else {
 			printf('%d vote%s', $row['votes'], $row['votes']==1 ? '' : 's' );
 		}
-		echo 'rate: ';
+		echo ' | rate: ';
 		for ($i=1; $i<=10; $i++) {
 			if ($i>1) {
 				echo ' <font color="#999999">|</font> ';
