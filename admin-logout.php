@@ -1,6 +1,6 @@
 <?php
 
-SetCookie('MAGIC_COOKIE', '', 0, '/');
+setcookie('MAGIC_COOKIE', '', time() - 3600, '/');
 unset($MAGIC_COOKIE);
 
 commonHeader('Administration Logout');
