@@ -174,7 +174,7 @@ function commonHeader($title=false, $padding=true) {
 	print_link('/docs.php', 'documentation', false, 'class="menuBlack"');
 	/*ALTER FOR LOCAL docs.php*/
 	echo delim();
-	print_link('http://wiki.gtk.php.net/', 'Wiki', false, 'class="menuBlack"');
+	print_link('/wiki/Main/HomePage', 'wiki', false, 'class="menuBlack"');
 	echo delim();
 	print_link('/apps/', 'applications', false, 'class="menuBlack"');
 	echo delim();

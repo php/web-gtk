@@ -35,6 +35,23 @@ EOF;
 commonHeader();
 
 ?>
+<h1>New PHP-GTK Wiki</h1>
+
+<p><span class="newsdate">[27-Jul-2004]</span> We have set up a new 
+    <a href="/wiki/Main/HomePage">wiki</a> that is faster and more easily
+    manageable than our previous wiki. In addition, the new wiki is now 
+    internally a part of the PHP-GTK Web site. Special thanks go to 
+    <a href="http://manuel.kiessling.net/">Manuel Kiessling</a> who contributed 
+    server resources to host the PHP-GTK Wiki up until the present.</p>
+
+<p>In other news, <a href="http://www.php-mag.net">International PHP 
+    Magazine's</a> <a href="http://www.php-mag.net/itr/psecom,id,207,nodeid,207.html">PHP 
+    Barnstormer</a> made special mention of the increased activity here at PHP-GTK in
+    <a href="http://www.php-mag.net/itr/kolumnen/psecom,id,8,nodeid,207.html">this 
+    week's issue</a>.</p>
+
+<?php hdelim(); ?>
+    
 <h1>Documentation updates</h1>
 
 <p><span class="newsdate">[22-Jul-2004]</span> Thanks to Christian Weiske, 
