@@ -1,5 +1,9 @@
 <?php
 
+/* NOTE: If there is documentation for a new extension, the extension's
+   classes, enums and flags will need to be added to the $classes array
+   before this search script will work with it!! */
+
 /* set up the tools for the job - this array tests class and enum names
 in order to capitalize them correctly, throughout the search routines */
 $classes = array('GtkAccelGroup.', 'GtkAccelLabel.', 'GtkAdjustment.', 'GtkAlignment.', 'GtkArrow.', 'GtkAspectFrame.', 'GtkBin.', 'GtkBox.', 'GtkBoxChild.', 'GtkButton.', 'GtkButtonBox.', 'GtkCalendar.', 'GtkCheckButton.', 'GtkCheckMenuItem.', 'GtkCList.', 'GtkCListRow.', 'GtkColorSelection.', 'GtkColorSelectionDialog.', 'GtkCombo.', 'GtkContainer.', 'GtkCTree.', 'GtkCTreeNode.', 'GtkCurve.', 'GtkData.', 'GtkDialog.', 'GtkDrawingArea.', 'GtkEditable.', 'GtkEntry.', 'GtkEventBox.', 'GtkFileSelection.', 'GtkFixed.', 'GtkFixedChild.', 'GtkFontSelection.', 'GtkFontSelectionDialog.', 'GtkFrame.', 'GtkGammaCurve.', 'GtkHandleBox.', 'GtkHBox.', 'GtkHButtonBox.', 'GtkHPaned.', 'GtkHRuler.', 'GtkHScale.', 'GtkHScrollbar.', 'GtkHSeparator.', 'GtkImage.', 'GtkInputDialog.', 'GtkInvisible.', 'GtkItem.', 'GtkItemFactory.', 'GtkLabel.', 'GtkLayout.', 'GtkList.', 'GtkListItem.', 'GtkMenu.', 'GtkMenuBar.', 'GtkMenuItem.', 'GtkMenuShell.', 'GtkMisc.', 'GtkNotebook.', 'GtkObject.', 'GtkOptionMenu.', 'GtkPacker.', 'GtkPaned.', 'GtkPixmap.', 'GtkPlug.', 'GtkPreview.', 'GtkProgress.', 'GtkProgressbar.', 'GtkRadioButton.', 'GtkRadioMenuItem.', 'GtkRange.', 'GtkRuler.', 'GtkScale.', 'GtkScrollbar.', 'GtkScrolledWindow.', 'GtkSelectionData.', 'GtkSeparator.', 'GtkSocket.', 'GtkSpinButton.', 'GtkStatusBar.', 'GtkStyle.', 'GtkTable.', 'GtkTableChild.', 'GtkTearoffMenuItem.', 'GtkText.', 'GtkTipsQuery.', 'GtkToggleButton.', 'GtkToolBar.', 'GtkToolTips.', 'GtkTree.', 'GtkTreeItem.', 'GtkVBox.', 'GtkVButtonBox.', 'GtkViewport.', 'GtkVPaned.', 'GtkVRuler.', 'GtkVScale.', 'GtkVScrollbar.', 'GtkVSeparator.', 'GtkWidget.', 'GtkWindow.', 'GdkAtom.', 'GdkBitmap.', 'GdkColor.', 'GdkColormap.', 'GdkCursor.', 'GdkDragContext.', 'GdkEvent.', 'GdkEventAny.', 'GdkEventExpose.', 'GdkFont.', 'GdkGC.', 'GdkPixmap.', 'GdkVisual.', 'GdkWindow.', 'GdkCapStyle.', 'GdkCursorType.', 'GdkDragAction.', 'GdkEventMask.', 'GdkEventType.', 'GdkFill.', 'GdkFontType.', 'GdkFunction.', 'GdkInputCondition.', 'GdkJoinStyle.', 'GdkLineStyle.', 'GdkModifierType.', 'GdkRgbDither.', 'GdkSubwindowMode.', 'GdkVisualType.', 'GtkAccelFlags.', 'GtkAnchorType.', 'GtkArrowType.', 'GtkAttachOptions.', 'GtkButtonAction.', 'GtkButtonBoxStyle.', 'GtkCalendarDisplayOptions.', 'GtkCellType.', 'GtkCornerStyle.', 'GtkCTreeExpanderStyle.', 'GtkCTreeExpansionType.', 'GtkCTreeLineStyle.', 'GtkCurveType.', 'GtkDestDefaults.', 'GtkDirectionType.', 'GtkFontFilterType.', 'GtkFontType.', 'GtkJustification.', 'GtkObjectFlags.', 'GtkOrientation.', 'GtkPackerOptions.', 'GtkPackType.', 'GtkPolicyType.', 'GtkPositionType.', 'GtkPreviewType.', 'GtkProgressBarOrientation.', 'GtkProgressBarStyle.', 'GtkReliefStyle.', 'GtkResizeMode.', 'GtkScrollType.', 'GtkSelectionMode.', 'GtkShadowType.', 'GtkSideType.', 'GtkSortType.', 'GtkSpinButtonUpdatePolicy.', 'GtkSpinType.', 'GtkStateType.', 'GtkSubmenuPlacement.', 'GtkToolbarChildType.', 'GtkToolbarSpaceStyle.', 'GtkToolbarStyle.', 'GtkTreeViewMode.', 'GtkUpdateType.', 'GtkVisibility.', 'GtkWidgetFlags.', 'GtkWindowPosition.', 'GtkWindowType.', 'GtkScintilla.', 'GtkSQPane.', 'GladeXML.');
@@ -12,6 +16,7 @@ $types = array('method.', 'signal.', 'property.');
 $hit = array();
 $part = array();
 
+/* get the 'ext' element of gtk/gdk filenames */
 $first = substr($prefix, 0, 3);
 
 /* get the 'ext' element of non-gtk/gdk filenames */
@@ -32,9 +37,9 @@ for($i = 0; $i < sizeof($classes); $i++) {
 	}
 $realname = $classes[$pos];
 
-/* checking for classes, enums and static functions */
+/* check for classes, enums and static functions */
 if(strstr($func, "gdk") || strstr($func, "gtk") || strstr($prefix, "method")) {
-/* checking for full gtk/gdk function name (e.g. 'gtkwindow::set_title') */
+/* check for full gtk/gdk function name (e.g. 'gtkwindow::set_title') */
 	if(strstr($prefix, "method") && strlen($prefix) > 11) {
 		$try = "/manual/${lang}/${first}.${prefix}${func}.php";
 		if (file_exists("$_SERVER[DOCUMENT_ROOT]$try")) {
@@ -42,7 +47,7 @@ if(strstr($func, "gdk") || strstr($func, "gtk") || strstr($prefix, "method")) {
 			$hit[] = $try;
 			}
 		else {
-		/* checking for same under other extensions */
+		/* check for the same under other extensions */
 			foreach($ext as $first) {
 				$try = "/manual/${lang}/${first}.${prefix}${func}.php";
 				if (file_exists("$_SERVER[DOCUMENT_ROOT]$try")) {
