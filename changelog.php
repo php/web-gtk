@@ -21,7 +21,7 @@ commonHeader('PHP-GTK Changelog');
 	<li>orientation</li>
 	</ul>
 </li>
-<li>reimplemented Gdk::cursor_new_from_pixmap() so it actually works. (Tom Rogers <trogers@kwikin.com>, Andrei)</li>
+<li>reimplemented Gdk::cursor_new_from_pixmap() so it actually works. (Tom Rogers, Andrei)</li>
 </ul>
 
 <a name="1.0.0"></a>
