@@ -1,15 +1,15 @@
 <?
-commonHeader('Magic Cookie');
-
-echo '<h1>Magic Cookie</h1>';
-
 if (isset($user) && isset($pass)) {
 	$MAGIC_COOKIE = base64_encode("$user:$pass");
 	# we set a cookie good for five years
 	SetCookie("MAGIC_COOKIE", base64_encode("$user:$pass"), time()+157248000);
+	commonHeader('Magic Cookie');
+	echo '<h1>Magic Cookie</h1>';
 	echo "<P><b>Cookie set</b>.</P>";
 }
 if (isset($MAGIC_COOKIE)) {
+	commonHeader('Magic Cookie');
+	echo '<h1>Magic Cookie</h1>';
 	list($user,$pass) = explode(":", base64_decode($MAGIC_COOKIE));
 }
 
