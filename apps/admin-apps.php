@@ -8,11 +8,6 @@ require_once("cvs-auth.inc");
 require_once("email-validation.inc");
 require_once("apps.inc");
 
-// 
-// Change this to whomever you want the administrator emails to go to.
-// 
-$mailto = 'gtk-webmaster@php.net';
-
 
 if( isset($MAGIC_COOKIE) ) {
 	list($user, $pass) = explode(":", base64_decode($MAGIC_COOKIE));

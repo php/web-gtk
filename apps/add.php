@@ -6,11 +6,6 @@
 
 require_once("apps.inc");
 
-// 
-// Change this to whomever you want the administrator emails to go to.
-// 
-$mailto = 'gtk-webmaster@php.net';
-
 commonHeader('Add an Application', false);
 appHeader();
 
@@ -36,10 +31,14 @@ if( $action == "add" ) {
 
 	if( $res == true ) {
 
+		$app_id = mysql_insert_id();
+
 		if( $has_screenshot == 'Y' ) {
 			$app_id = mysql_insert_id();
 
 			handleAppImage($_FILES[screenshot][tmp_name], $app_id);
+
+			$screen_shot_link = "Screenshot : http://$_SERVER[SERVER_NAME]/apps/screenshot.php/$app_id.jpg\n";
 			
 		}
 		
@@ -49,8 +48,17 @@ if( $action == "add" ) {
 			"URL        : $homepage_url\n" .
 			"Category   : " . $appCats[$cat_id]->name . "\n" .
 			"Submitter  : $submitter\n" .
-			"Description: $blurb\n",
-			"From: $user@php.net");
+			$screen_shot_link .
+			"Description: $blurb\n" .
+			"\n" .
+			"Administrative Actions\n" .
+			"----------------------\n" .
+			"Approve: http://$_SERVER[SERVER_NAME]/apps/admin-apps.php?action=approve&app_id=$app_id\n" .
+			"Edit: http://$_SERVER[SERVER_NAME]/apps/admin-apps.php?action=edit&app_id=$app_id\n" .
+			"Reject: http://$_SERVER[SERVER_NAME]/apps/admin-apps.php?action=reject&app_id=$app_id\n" .
+			"Delete: http://$_SERVER[SERVER_NAME]/apps/admin-apps.php?action=delete&app_id=$app_id\n" .
+			"",
+			"From: $mailto");
 
 		print("Thank you for the submission.  Someone will review it shortly.");
 	}else {
