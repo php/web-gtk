@@ -25,21 +25,14 @@
     </tr>
     <tr bgcolor="#006699">
         <form method="POST" action="/search.php">
-            <td valign='top' style='color: #FFFFFF;' nowrap='nowrap'>
-                &nbsp;<a href='/wiki/' class='menuWhite'>WIKI:</a> &nbsp; 
-                <a href='$ScriptUrl/$[$Group/RecentChanges]' class='menuWhite'>$[Recent Changes]</a>&nbsp;| 
-                <a href='$PageUrl?action=print' target='_blank' class='menuWhite'>$[Printable View]</a>&nbsp;| 
-                <a href='$PageUrl?action=diff' class='menuWhite'>$[Page History]</a>&nbsp;| 
-                <a href='$PageUrl?action=edit' class='menuWhite'>$[Edit Page]</a>
-            </td>
-            <td align='right' valign='top' style='color: #FFFFFF;' nowrap='nowrap'>
+            <td align='right' colspan='2' valign='top' style='color: #FFFFFF;' nowrap='nowrap'>
                 <small>search for</small>
                 <input class="small" type="text" name="pattern" value="" size="30" />
                 <small>in the</small>
                 <select name="show" class="small">
                     <option value="manual">manual</option>
                     <option value="whole-site">whole site</option>
-                    <option value="wiki">wiki</option>
+                    <option value="wiki" selected='selected'>wiki</option>
                     <option value="php-gtk-general-list">general mailing list</option>
                     <option value="php-gtk-dev-list">development mailing list</option>
                     <option value="php-gtk-doc-list">documentation mailing list</option>
