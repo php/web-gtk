@@ -10,7 +10,6 @@ commonHeader('PHP-GTK Changelog');
 <h3>Version 0.1.1 "no-holds-barred memento"</h3>
 <b>24-Sep-2001</b>
 <ul>
-<li>added GtkCList::get_selection_info() method. (Andrei)</li>
 <li>made type checking of parameters passed to PHP-GTK functions more forgiving. (Andrei)</li>
 <li>added GtkNotebook::query_tab_label_packing(), GtkBox::query_child_packing(). (Markus)</li>
 <li>added event watcher, dialog, file selection, panes, and notebook examples to gtk.php. (Markus)</li>
