@@ -81,7 +81,7 @@ if (isset($note) && isset($action) && strtolower($action) != "preview") {
 ?>
 
 <P>
-You can contribute to the PHP manual from the comfort of your browser!
+You can contribute to the PHP-GTK manual from the comfort of your browser!
 Just add your comment in the big field below, and, optionally, your email
 address in the little one (usual anti-spam practices are OK, e.g. 
 johnNOSPAM@doe.NO_SPAM.com).
