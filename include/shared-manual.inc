@@ -203,7 +203,7 @@ function makeEntry($row, $show_admin = true, $show_rating = true ) {
 
 	if ($show_rating) {
 		echo 'rating: ';
-		if ( $row['votes'] > 3 ) {
+		if ( $row['votes'] > 2 ) {
 			printf('<b>%.01f</b>', $row['rate'] );
 		} else {
 			echo '<b><font color="#cc0000">new</font></b>';

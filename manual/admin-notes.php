@@ -143,7 +143,7 @@ if ($action != '') {
 			$row = mysql_fetch_array($result);
 		}
 		$add_url = "\n\nhttp://gtk.php.net/manual/en/".$row['sect']."\n";
-		$query = "UPDATE note SET user='$nuser',note='$note'"
+		$query = "UPDATE note SET user='$nuser',note='$note'";
 		if ($rating) {
 			if ($rating==-1) {
 				$query .= ",rating=0,votes=0";
