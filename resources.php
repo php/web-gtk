@@ -22,6 +22,8 @@ PHP-GTK project.<br />
 
 <li><? print_link('http://binary.gamer.net.nz/', 'tutorials, news and downloads for PHP-GTK'); ?><br />
 
+<li><? print_link('http://www.php-gtk.org.br/', 'Brazilian PHP-GTK Community Portal'); ?><br />
+
 <li><? print_link('http://gtk.miester.org/', 'GTK at Miester.org'); ?><br />
 This site provides current news, some basic tutorials and example applications.<br />
 

@@ -34,6 +34,12 @@ GUI applications.
 <h1>News</h1>
 
 <p>
+Brazilian PHP-GTK community has a new portal <?php print_link('http://www.php-gtk.org.br/', 'site'); ?>.
+</p>
+
+<?hdelim()?>
+
+<p>
 <a href="/download.php">PHP-GTK Version 1.0.0</a> is finally out after almost a
 year of being in stasis. This is probably the last major version that will work
 with PHP 4 and Gtk+ 1.x. There might be more bugfixes, but no new features or
