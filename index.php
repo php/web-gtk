@@ -85,7 +85,7 @@ commonHeader();
 <h1>PHP-GTK in business</h1>
 
 <p><span class="newsdate">[20-Dec-2004]</span> There has been a lot of 
-    discusson lately about the role PHP-GTK can and is playing in the 
+    discussion lately about the role PHP-GTK can and is playing in the 
     business world. Several people have <a
     href="http://marc.theaimsgroup.com/?l=php-gtk-general&m=109903609804913&w=2">commented</a>
     on the <a href="http://gtk.php.net/resources.php">php-gtk-general

@@ -10,6 +10,8 @@
     <description>The PHP-GTK extension Web site</description>
     <items>
         <rdf:Seq>
+            <rdf:li rdf:resource="http://gtk.php.net/about/news-2005-01-18" />
+            <rdf:li rdf:resource="http://gtk.php.net/about/news-2004-12-20" />
             <rdf:li rdf:resource="http://gtk.php.net/about/news-2004-11-12" />
             <rdf:li rdf:resource="http://gtk.php.net/download.php" />
             <rdf:li rdf:resource="http://gtk.php.net/docs-rss.php" />
