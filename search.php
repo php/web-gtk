@@ -15,7 +15,7 @@ if (isset($pattern) && ($pattern)) {
 if (isset($pattern) && ($pattern)) {
 	$location = "http://marc.theaimsgroup.com/";
 	if ($show=="maillist") {
-		$query = "l=php-gtk&w=2&r=1&q=b&s=".urlencode($pattern);
+		$query = "l=php-gtk-general&w=2&r=1&q=b&s=".urlencode($pattern);
 		Header("Location: ".$location."?".$query);
 		exit;
 	}
