@@ -115,7 +115,7 @@ It is <B>not</B> currently possible to do it this way:
 The following code will show the defined classes. All the PHP-GTK 
 classes will be listed along with one or two others.
 <PRE CLASS="code">
-$array = get_declared_classes());
+$array = get_declared_classes();
 while(list(,$classname) = each($array)) {
     echo $classname."\n";
 }
