@@ -32,19 +32,8 @@ if (isset($MAGIC_COOKIE)) {
 		</ul>
 	");
 }else {
-	echo "<h1>Administration Login</h1>\n\n";
-
-	echo '<FORM method="POST" action="/admin-login.php">';
-	echo '<TABLE BORDER="0" CELLPADDING="5" CELLSPACING="0" BGCOLOR="#e0e0e0">';
-	echo '<TR valign="top"><TD align="right"><small>Your CVS username:<br></small></TD>' .
-		'<TD><INPUT type="text" size="8" name="user" value="' . $user . '"><BR></TD></TR>';
-	echo '<TR valign="top"><TD align="right"><small>Your CVS password:<br></small></TD>' .
-		'<TD><INPUT type="password" size="8" name="pass" value="' . $pass . '"><BR></TD></TR>';
-	echo '<TR valign="top"><TD align="right"><small>Remember me:<br></small></TD>' .
-		'<TD><INPUT type="checkbox" name="saveme" checked value="1"><BR></TD></TR>';
-
-	echo '<TR><TD colspan="2"><INPUT type="submit" name="action" value="login"></TD></TR>';
-	echo "</TABLE></FORM>\n";
+	Header("Location: http://master.php.net/manage/users.php");
+	exit;
 }
 
 commonFooter();
