@@ -180,9 +180,9 @@ function makeEntry($row, $show_admin = true, $show_rating = true ) {
 			echo '<b>'.$name.'</b><br>';
 		}
 	}
-	echo date("d-M-Y h:i", $row['xwhen']);
+	echo '<small> . date("d-M-Y h:i", $row['xwhen']) . '</small>';
 	echo '<br></td>';
-	echo '<td align="right"><small>';
+	echo '<td align="right" nowrap><small>';
 	if (isset($MAGIC_COOKIE) && $show_admin) {
 
 		print_link('/manual/admin-notes.php?action=edit+' . $row['id'] . '&brief=1',
@@ -207,6 +207,13 @@ function makeEntry($row, $show_admin = true, $show_rating = true ) {
 			printf('<b>%.02f<b> (%d votes)', $row['rate'], $row['votes'] );
 		} else {
 			echo '&lt; 3 votes';
+		}
+		echo ' | rate: ';
+		for ($i=0; $i<=10; $i++) {
+			if ($i) {
+				echo ' <font color="#999999">|</font> ';
+			}
+			print_link($PHP_SELF.'?rate_id='.$row['id'].'&rate_note='.$i, $i);
 		}
 		echo '<br>';
 	}
