@@ -12,7 +12,7 @@ if ($HTTP_SERVER_VARS["HTTP_HOST"]!='gtk.php.net') {
 */
 
 
-$mailto = 'gtk-webmaster@php.net';
+$mailto = 'gtk-webmaster@lists.php.net';
 
 commonHeader('Manual Notes');
 
@@ -52,7 +52,7 @@ if (isset($note) && isset($action) && strtolower($action) != "preview") {
                 if (!$user_email) {
 			$user_email = "php-gtk@lists.php.net";
 		}
-		mail("gtk-webmaster@php.net", "note $new_id added to $sect", $msg, "From: $user_email");
+		mail("gtk-webmaster@lists.php.net", "note $new_id added to $sect", $msg, "From: $user_email");
 	} else {
 		# mail it.
 		mail($mailto, "failed manual note query", $query);

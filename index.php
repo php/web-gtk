@@ -110,7 +110,7 @@ Any serious PHP-GTK related questions should be sent to
 they are related to the manual, in which case they should be sent 
 to <?php print_email('jmoore at php dot net'); ?>.  If you have 
 a question or suggestion for the website, you should contact 
-<?php print_email('gtk-webmaster at php dot net'); ?>.
+<?php print_email('gtk-webmaster at lists dot php dot net'); ?>.
 </P>
 
 
