@@ -64,8 +64,7 @@ if (isset($note) && isset($action) && strtolower($action) != "preview") {
 	}
 
 	echo '<P>You can <A href="' . $redirect. '">go back</A> from whence you came,' .
-		'or you can <A href="http://www.php.net/manual/">browse the manual with the ' .
-		'on-line notes</A>.</P>';
+		'or you can <A href="http://gtk.php.net/manual/">go to the front of the manual</A>.</P>';
 
 } else {
 
@@ -140,13 +139,13 @@ to submit a bug report or request a feature</a>.
 <input type="hidden" name="sect" value="<?echo $sect;?>">
 <input type="hidden" name="redirect" value="<?echo $redirect;?>">
 <input type="hidden" name="lang" value="<?echo $lang;?>">
-<table border="0" cellpadding="5" cellspacing="0" bgcolor="#d0d0d0">
-<TR VALIGN=top>
-<TD><B>Your email address:</B></TD>
+<table border="0" cellpadding="5" cellspacing="0" bgcolor="#e0e0e0">
+<TR VALIGN="top">
+<TD ALIGN="right">Your email address:<BR></TD>
 <td><input type="text" name="user" size="40" maxlength="40" value="<?echo htmlspecialchars(stripslashes($user))?>"></td>
 </TR>
-<TR VALIGN=top>
-<TD><B>Your notes:</B></TD>
+<TR VALIGN="top">
+<TD ALIGN="right">Your note:<BR></TD>
 <td><textarea name="note" rows="6" cols="40" wrap="virtual"><?echo htmlspecialchars(stripslashes($note))?></textarea><br>
 </TD>
 </TR>

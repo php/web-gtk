@@ -258,6 +258,8 @@ function manualUserNotes($title, $id) {
 		$cur='en';
 	}
 
+	echo "<BR>\n\n";
+
 	echo '<table border="0" cellpadding="4" cellspacing="0" width="100%">';
 
 	$notes = manualGetUserNotes($title, $id);

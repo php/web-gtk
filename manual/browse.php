@@ -34,7 +34,7 @@ $jumpbar = '<table border="0" cellpadding="4" cellspacing="0" width="100%">' .
 echo $jumpbar;
 
 if(!$let) {
-	$let = $fl ? $fl : 'a';
+	$let = $fl;
 }
 
 echo '<table border="0" cellpadding="4" cellspacing="0" width="100%">';
@@ -51,6 +51,10 @@ if ( $numrows > 0) {
 		}
 		makeEntry($row['my_when'], $row['user'], $row['note'], $row['id'] );
 	}
+
+} else if (!$fl) {
+
+	echo '<TR><TD COLSPAN="2">No entries for any section</B>.<BR></TD></TR>';
 
 } else {
 
