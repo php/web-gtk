@@ -1,5 +1,6 @@
 <?php
 
+/*
 $SIDEBAR_DATA = <<< EOF
 <h3>Warning!</h3>
 <P>
@@ -15,6 +16,7 @@ sky, and the return of the Inca empire.
 It will definitely warp space-time continuum in your local area.
 <P>
 EOF;
+*/
 
 commonHeader();
 
