@@ -107,8 +107,7 @@ On Windows 98/NT/2000 you will need these files<br>
                 <li>#php-gtk IRC channel on EFNet has a few regulars who can most 
                   likely answer the questions you have. 
               </ul>
-              More will be added to the list as they become available. Also, this 
-              page will soon be getting a makeover. <br>
+              More will be added to the list as they become available.<br>
               <br>
           </td>
         </tr>
