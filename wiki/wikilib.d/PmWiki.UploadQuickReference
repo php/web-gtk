@@ -1,0 +1,6 @@
+version=pmwiki-0.5.2
+text=[[table width='100%']]²[[cell bgcolor='#ffeedd' style='font-family:Arial; font-size:12px']]²'''PmWiki/{{Uploads}}'''²[[<<]]1. Use the "Browse" button above to find the file on your local computer that you wish to upload as an attachment, then press "Upload".  You can also specify a different name to be used by the attachment.²[[<<]]2. To refer to an attachment within a wiki page, simply enter @@[=Attach:=]''filename.ext''@@ in the page text.²[[<<]]3. After uploading, you can go back to [[ThisPage:?action=browse view this page]] or [[ThisPage:?action=edit edit this page]].²[[tableend]]²²----²²!!Existing attachments²²[[$Attachlist]]
+time=1055792417
+host=217.162.231.48
+agent=Mozilla/4.0 (compatible; MSIE 6.0; Windows 98)
+rev=26

@@ -1,0 +1,10 @@
+version=pmwiki-0.6.15
+newline=²
+text=This page lists various problems encountered when using PmWiki.²²* ResettingPagePermissions²* Setting up PmWiki with php SAFE MODE: PhpSafeMode²* Getting revisions to work on windows: DiffAndPatchForWindows²* If you have problems extracting the installation file on Windows. Try one of the following Zip management tools.²** [=WinZip=] from http://www.winzip.com/ - The venerable de-facto windows standard zip file tool.  Costs $29.00.  Unfortunately, it usually cannot handle .gz and .tar files.  [=WinRAR=], below, can.²** [=WinRAR=] from http://www.rarlab.com/ - Alternative, focuses on .rar file type, but supports zip too. Costs $29.00²** [=PKZip=] from http://www.pkware.com/ - The original.  Costs $29.95 ²** 7-Zip from http://www.7-zip.org/ - Open Source alternative.  Supports ZIP, CAB, RAR, ARJ, GZIP, [=BZIP2=], TAR, CPIO, RPM, DEB and it's own high-compression format called 7z.  Costs $0.00.²** Info-ZIP from http://www.info-zip.org/pub/infozip/ - Another Open Source alternative that uses a BSD-like (very liberal) license.  Costs $0.00²* If you browse to the front page of your PmWiki installation (pmwiki.php) and you do not see any output then probably PHP is failing to execute because of an error and your error reporting for PHP may be turned off. Recently system administrators have taken to turning off all error message reporting to discourage potential site hackers. You'll want to create your own copy of php.ini and turn on error reporting to find out what is wrong. In my case the installation on my server did not support PHP's posix_ functions. However, until I turned back on PHP's error reporting, I had no way of knowing that this was the reason.²* If you receive an error message stating that functions starting with posix_ are not found, see {{IRC/PosixFix}} for ways around the problem.²²%trail%<<|PmWiki.DocumentationIndex|>>
+time=1082153015
+host=24.163.63.135
+agent=Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.4.2) Gecko/20040308
+rev=19
+post= Save
+name=PmWiki.TroubleShooting
+author=Theta

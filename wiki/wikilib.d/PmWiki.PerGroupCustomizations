@@ -1,0 +1,10 @@
+version=pmwiki-0.6.21
+newline=²
+text=One of the purposes of {{WikiGroup}}s is to allow a WikiAdministrator to customize the features of PmWiki on a per-group basis.  Here is where PerGroupCustomizations come into play.²²The @@local/@@ subdirectory (in the same directory that holds @@pmwiki.php@@) is used to hold local configuration files.  To perform LocalCustomizations for a particular WikiGroup, place the customizations in a file called "@@Group.php@@" (where @@Group@@ is the actual name of the page group in question) in the @@local/@@ subdirectory.  This file will be automatically processed after processing any LocalCustomizations in the @@config.php@@ file.²²For example, to change the image displayed in the upper-left corner of pages in the "Chess" WikiGroup, one could create @@local/Chess.php@@ containing²²    <?php²      $PageLogoUrl = "/myimages/chess.gif";²    ?>²²This would cause all pages in the Chess WikiGroup to use "/myimages/chess.gif" as the logo image instead of the default.²²Almost any customization that would be placed in @@config.php@@ can be used as a {{PerGroupCustomization|s}}.²²[[#PerPage]] PmWiki also allows per-page customizations, simply use the full name of the page to be customized instead of the group.  For example, one can use the file @@[=local/Chess.HomePage.php=]@@ to set local customizations for [=Chess.HomePage=].²²For all LocalCustomizations, PmWiki first processes the @@local/config.php@@ file, and then looks for a per-page customization file in the @@local/@@ subdirectory to process.  If there is no per-page customization file then PmWiki looks for a per-group customization, and if that doesn't exist it looks for a per-group customization file for the group given by the $DefaultGroup (usually "Main").²²{{WikiGroup}}s can also be used to host multiple sites in a single PmWiki installation, see MultiHostWiki.²²%trail% <<|PmWiki.DocumentationIndex|>>
+time=1086319459
+host=24.1.52.58
+agent=Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.6) Gecko/20040206 Firefox/0.8
+rev=22
+post= Save
+author=Pm
+name=PmWiki.PerGroupCustomizations

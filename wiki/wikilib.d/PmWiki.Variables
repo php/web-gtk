@@ -1,0 +1,10 @@
+version=pmwiki-0.6.21
+newline=²
+text=This page documents the variables available in PmWiki for LocalCustomizations.  Much of this documentation is still incomplete but people are working on it now.  Feel free to add placeholders for variables you want to have documented if you don't know what the variable does.²²The variables documentation is divided into several pages²* BasicVariables - core variables²* LayoutVariables - variables that control page layout²* LinkVariables - variables that control the display of links in pages²* EditVariables - variables used when editing pages²* UploadVariables - variables used for uploads/attachments²* OtherVariables - variables not yet classified²* MailPosts²²A complete [[#index index]] of documented variables is given below.²²In general, variables with names ending in 'Fmt' (such as $PageLayoutFmt) have their values processed for global $-variable substitutions prior to being output.  Thus strings such as @@$Title@@ and @@$PageUrl@@ are replaced with the title and URL of the page when the string is printed.²²%trail%<<|PmWiki.DocumentationIndex|>>²²----²%comment% It whould be nice if someone explained here in an comment exactly where that "$Varindex" variable comes from?²%comment% $Varindex comes from scripts/vardoc.php. --Pm²²[[#index]]²[[$Varindex]]²²²
+time=1085764756
+host=208.54.141.106
+agent=Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.6) Gecko/20040206 Firefox/0.8
+rev=39
+post= Save
+name=PmWiki.Variables
+author=Pm

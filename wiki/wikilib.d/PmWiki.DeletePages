@@ -1,0 +1,6 @@
+version=pmwiki-0.4.25
+text=In order to delete a page you have to change the contents of the page to be the word "delete", with no spaces or extra newlines.  This will "delete" the page from the site. The page itself is not actually deleted, however--it's still on disk. Only the WikiAdministrator can physically delete them (see FilesAndDirectories).²²Note that often it's not a good idea to delete a page, however, as others may have created bookmarks or links to the page.  Instead of deleting the page, consider providing a link to the new location of the information, or an explanation of why the page no longer exists.²²%trail%<<|PmWiki.DocumentationIndex|>>
+time=1053282039
+host=24.155.25.197
+agent=Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)
+rev=5

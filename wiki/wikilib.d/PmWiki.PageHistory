@@ -1,0 +1,9 @@
+version=pmwiki-0.6.beta17
+newline=²
+text=Page''''History displays a summary of past edits on a page. Each past edit is shown in a box which shows lines added, changed or deleted during that edit in a before & after format.²²Below each box is a "Restore" link. Clicking the link will open an edit box with the page as it was ''before'' that edit.  You can make changes or simply click Save to restore the text.²²There are two additional options specific to Page''''History:²* '''Hide minor edits''' - hides any edit that the author marked as 'minor'.²* '''Show changes to markup'''- shows changes to the markup (as opposed to the normal display which shows changes to the output).²²A page's history is kept for the number of days given by the $DiffKeepDays variable (set by the site's WikiAdministrator).  When a page is edited, any page history information older than this value is automatically discarded.²²%trail% <<|PmWiki.DocumentationIndex|>>
+time=1077120765
+author=Pm
+name=PmWiki.PageHistory
+host=24.1.44.14
+agent=Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)
+rev=4

@@ -1,0 +1,11 @@
+version=pmwiki-1.0.1
+newline=²
+text=The InterMap is a system for defining links between WikiWikiWeb sites that was first developed by UseMod:UseModWiki and Meatball:MeatballWiki.  InterMap links have the form [=HostPrefix:Page=], where the host prefix is converted to a partial URL based on entries in the site's @@intermap.txt@@ and @@localmap.txt@@ files.²²The default @@intermap.txt@@ distributed with PmWiki includes the following InterMap entries:²    [=²    PmWiki          http://www.pmichaud.com/wiki/PmWiki/²    Wiki            http://c2.com/cgi/wiki?²    Meatball        http://www.usemod.com/cgi-bin/mb.pl?²    UseMod          http://www.usemod.com/cgi-bin/wiki.pl?²    ISBN            http://www.amazon.com/exec/obidos/tg/detail/-/²    Wikipedia       http://www.wikipedia.com/wiki/²    Cookbook        http://www.pmwiki.org/wiki/Cookbook/$1=]²²Thus, PmWiki:Variables becomes a link to the PmWiki.{{Variables}} page on the official PmWiki web site, Wiki:FrontPage is a link to the front page of the first WikiWikiWeb, and Wikipedia:Stonehenge takes you to the Wikipedia article about the famous megaliths in England.²²InterMap links can be used to link to non-wiki pages: %newwin% ISBN:020171499X  %% is a link to Amazon.com's entry for ''The Wiki Way'' by Bo Leuf and Ward Cunningham (an excellent book about {{WikiWikiWeb}}s in general).²²In addition, PmWiki provides four special InterMap links called @@[=ThisPage=]@@, @@[=ThisGroup=]@@, @@[=ThisWiki=]@@, and @@[=ThisSite=]@@.  These provide URI-shortcuts to the current (wiki) page, WikiGroup, wiki site, or site root URI respectively.  Some examples of each:²²  ThisPage:?action=edit                  edits the current page²  ThisGroup:GroupAttributes?action=attr  link to set group passwords²  ThisWiki:?action=crypt                 builds an encrypted password²  ThisSite:/index.php                    link to /index.php on the current site²²The actual set of InterMap links at any site is defined by the site administrator; for more details, see PmWiki.{{CustomInterMap}}s.²²%trail%<<|PmWiki.DocumentationIndex|>>²
+time=1087836414
+host=155.33.152.205
+agent=Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.6) Gecko/20040614 Firefox/0.8
+rev=55
+post= Save
+name=PmWiki.InterMap
+PHPSESSID=1c9375cd96cc06b9926d1c852c8dddc9
+author=Ari

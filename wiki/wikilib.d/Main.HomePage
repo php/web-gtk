@@ -1,0 +1,9 @@
+version=pmwiki-1.0.4
+newline=²
+text=This is the default HomePage for a new PmWiki/PmWiki ²installation.  If you're reading this screen, then ²the PmWiki/PmWiki software is probably set up correctly.²²----²²Here are some useful default pages installed along with the PmWiki/PmWiki software:²* PmWiki/PmWiki documentation is available at PmWiki.DocumentationIndex.²* What is the PmWiki/WikiWikiWeb?²* PmWiki/TipsForEditing and PmWiki/TextFormattingRules describe how to create pages in PmWiki/PmWiki.²* Practice editing pages in the WikiSandbox.²²More information about PmWiki/PmWiki can be found at http://www.pmwiki.org.²
+time=1089128647
+host=129.188.33.221
+agent=Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7) Gecko/20040626 Firefox/0.9.1
+rev=113
+author=
+name=Main.HomePage

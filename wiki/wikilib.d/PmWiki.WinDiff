@@ -1,0 +1,9 @@
+version=pmwiki-1.0.1
+newline=²
+text=PmWiki uses the external programs ''diff'' and ''patch'' to store and restore previous versions of pages.  While these programs are commonly available on most Unix systems, they are generally not available under Windows.²²WinDiff (http://www.pmichaud.com/pub/windiff/windiff.zip) is a special package containing Windows versions of the  ''diff'' and ''patch'' programs from the [[http://www.sourceforge.net/projects/gnuwin32 Gnuwin32 project]].  To use this package, simply create a ''windiff/'' subdirectory in the directory that holds your ''pmwiki.php'' script and copy the files from the [[http://www.pmichaud.com/pub/windiff/windiff.zip zip archive]] into that directory.  Then, add the following lines to your ''local/config.php'' file:²²    $SysDiffCmd = 'windiff\\diff';²    $SysPatchCmd = 'windiff\\patch --silent';²²    ²That should be all there is to it!  Questions and comments can be sent to mailto:pmwiki-users@pmichaud.com.²²----²²Those with [=MSys=] already installed may find the following config lines helpful:²²    $SysDiffCmd = 'C:/msys/1.0/bin/diff.exe';²    $SysPatchCmd = 'C:/msys/1.0/bin/patch.exe';²²----²Thx! I also make my copy of Tavi on Win32 works with Diff now!²(i.e. Tavi works with the Diff from PmWiki's but not from [[http://unxutils.sourceforge.net/ GNU utilities for Win32]] nor [[http://gnuwin32.sourceforge.net/packages/diffutils.htm Gnuwin32 project]])²-- AaronLaw , 2004-06-26 10:50²²
+time=1088218239
+author=
+name=PmWiki.WinDiff
+host=219.76.64.2
+agent=Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-TW; rv:1.6) Gecko/20040206 Firefox/0.8
+rev=6

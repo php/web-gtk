@@ -1,0 +1,202 @@
+#!/usr/bin/perl 
+#   pmwe  (pmwikiedit)
+#   Copyright 2002-2004 Jonathan Scott Duff 
+#   duff@pobox.com
+#
+#   This program is free software; you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License as published by
+#   the Free Software Foundation; either version 2 of the License, or
+#   (at your option) any later version.
+#
+#   This program is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#   along with this program; if not, write to the Free Software
+#   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+#
+#   HISTORY
+#   April  5, 2004	Added improvements suggested by Tom Hoover
+#   April 10, 2004	Added some documentation and other improvements
+#   May 8, 2004		Fixed a couple of small bugs
+
+=pod
+
+=head1 NAME
+
+	pmwe - PmWiki Edit - Edit wiki pages using your favorite editor
+
+=head1 SYNPOSIS
+
+	pmwe [options] [Abbr:][WikiGroup/]WikiPage		-or-
+	pmwe [options] URL	
+	
+=head1 DESCRIPTION
+
+Edit wiki pages using your favorite editor. Currently only works
+with pmwiki.
+
+=head2 OPTIONS
+
+	-a AUTHOR	Specify the author of the wiki page
+
+        -c FILENAME	Name of cookie file to use. Defaults to
+        		$HOME/.pmwe.cookies
+
+        -e EDITOR	Full path to the editor you wish to use. If
+                        unspecified, uses the value in the EDITOR
+                        environment variable otherwise uses "vi" 
+
+        -g		Grabs the passwords as they are entered and
+                        writes them to the filename specified by the -p
+                        option. This option has no effect if -p is not
+                        specified.
+
+	-m FILENAME	A file for mapping Intermap-like abbreviations to URLs
+                        The format for this file is "abbreviation URL"
+                        where the space can be any number of whitespace
+                        characters. The URL must be such that adding
+                        "Group/WikiPage" to the end will access the
+                        wiki page.
+
+        -p FILENAME     File for keeping the passwords for your realms.  
+                        The format of the file is "realm:user:password".
+                        When used in conjunction with the -g option,
+                        realms and passwords will be written to the
+                        password file as used.
+
+	-u URL		Specify a URL for accessing the wiki. The URL
+                        must be such that adding "Group/WikiPage" to the
+                        end will access the wikipage.
+
+=head1 AUTHOR
+
+Jonathan Scott Duff duff@pobox.com
+
+=cut
+
+use strict;
+use warnings;
+
+use Getopt::Std;
+my %opt; getopts('m:a:e:u:c:p:g', \%opt);
+
+my %passwords;
+if ($opt{'p'} && open(P,$opt{'p'})) {
+   while (<P>) { 
+      chomp; my($realm,$user,$pass) = split /:/,$_,2; 
+      $passwords{$realm}= [ $user, $pass ]; 
+   }
+   close P;
+}
+
+package PmWikiAgent;
+
+use base qw(LWP::UserAgent);
+use Term::ReadKey;
+
+our $Author;
+sub set_author { shift; $Author = shift; }
+
+sub new {
+   my $self = LWP::UserAgent::new(@_);
+   $self->agent("pmwikiedit");
+   return $self;
+}
+
+our $Password;
+sub get_basic_credentials
+{
+   my($self, $realm) = @_;
+   return ($passwords{$realm}[0],$passwords{$realm}[1]) if $passwords{$realm};
+   print "Enter username/password for $realm\n";
+   print "Username [$Author]: "; chomp(my $author = <STDIN>);
+   $author = $Author if $author eq '';
+   if ($Password) { print "Press ENTER to use the same password as before\n"; }
+   print "Password: ";
+   ReadMode('noecho'); chomp(my $password = <STDIN>); ReadMode('restore');
+   print "\n";  # because we disabled echo
+   if ($password eq '') { $password = $Password; }
+   else { $Password = $password; }
+   savepass($realm,$author,$password) if $opt{'g'};
+   return ($author, $password);
+}
+
+use Fcntl ':flock';
+sub savepass {
+   return unless $opt{'p'};
+   my ($realm,$user,$pass) = @_;
+   $passwords{$realm} = [ $user, $pass ];
+   return unless open(P,">",$opt{'p'});
+   flock(P,LOCK_EX);
+   for (sort keys %passwords) { print P join(":",$_,@{$passwords{$_}}),"\n"; }
+   close P;
+}
+
+package main;
+
+use HTTP::Cookies;
+use File::Temp qw(tempfile);
+
+my $DefaultWikiUrl = 'http://www.pmichaud.com/wiki/';
+my $DefaultWikiPage = 'Main/WikiSandbox';
+my $DefaultWikiEditor = 'vi';
+my $DefaultWikiAuthor = 'pmwikieditor';
+
+my %urlmap;
+my $mapfile = $opt{'m'} || "$ENV{'HOME'}/.pmwe.map";
+if (open(MAP, $mapfile)) {
+   while (<MAP>) { my ($n,$url) = split; $urlmap{$n} = $url; }
+   close MAP;
+}
+
+my $cookiefile	= $opt{'c'} || "$ENV{'HOME'}/.pmwe.cookies";
+my $jar = HTTP::Cookies->new(file => $cookiefile, autosave => 1);
+$jar->scan(sub { $DefaultWikiAuthor = $_[2] if $_[1] eq 'author'; });
+
+my $wikipage	= shift || $DefaultWikiPage;
+my $editor	= $opt{'e'} || $ENV{'EDITOR'} || $DefaultWikiEditor;
+my $author	= $opt{'a'} || $ENV{'WikiAuthor'} || $DefaultWikiAuthor;
+my $wikiurl	= $opt{'u'} || shift || $DefaultWikiUrl;
+
+my $pageurl;
+if ($wikipage =~ /^http/) { 
+   $pageurl = $wikipage;
+   if ($wikipage =~ /pagename/) 
+      { ($wikipage) = $pageurl =~ /pagename=([^&]+)/; }
+   else { ($wikipage) = $pageurl =~ m!(\w+/\w+)$!; }
+} else {
+   $wikiurl = $urlmap{$1} if $wikipage=~s/^(\w+):// && $urlmap{$1};
+   if (not exists $urlmap{$1}) { die "There exists no map for $1\n"; }
+
+   $wikipage =~ tr!/!.!;
+   $wikipage .= ".$wikipage" unless $wikipage =~ /\./;
+
+   $wikiurl ||= $DefaultWikiUrl;
+   $wikiurl .= '/' unless $wikiurl =~ m!/$!;
+   $pageurl = "$wikiurl$wikipage";
+}
+
+my $sep = ($pageurl =~ /\?/) ? '&' : '?';
+my $ua = PmWikiAgent->new; $ua->set_author($author); $ua->cookie_jar($jar);
+my $req = HTTP::Request->new('GET', "$pageurl${sep}action=source");
+my $outfile = (tempfile(UNLINK => 1))[1];
+my $res = $ua->request($req,$outfile);
+
+my $mtime0 = (stat($outfile))[9];
+system("$editor $outfile");
+my $mtime1 = (stat($outfile))[9];
+$mtime0 == $mtime1 && die "content unchanged.\n"; 
+
+open(OUTFILE, $outfile) or die;
+$res = $ua->post($pageurl, [
+   action	=> 'post',
+   pagename	=> $wikipage,
+   text		=> do { local $/; <OUTFILE> },
+   author	=> $author
+]);
+close OUTFILE;
+$res->is_error && die "Unable to save content!\n".$res->as_string."\n";
+

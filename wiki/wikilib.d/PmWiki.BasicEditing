@@ -1,0 +1,6 @@
+version=pmwiki-0.5.beta1
+text=The pages on this site are WikiWikiWeb pages, which means that pages can be created and edited by multiple authors.  To edit a page, simply click on the '''Edit Page''' link that exists somewhere on the page (usually in the header or footer somewhere).  Some pages may be {{password|s}}-protected, depending on how others have configured the security on the system, but many WikiWikiWeb systems allow open editing of all pages.²²The rules for basic page editing are fairly simple--start each line without spaces and put a blank line between paragraphs.  Four or more hyphens at the beginning of a line produces a horizontal line on the page.  Asterisks at the beginning of lines produce bullet lists.  There are more TextFormattingRules for lists and other specialized text, if you want to do that. ²²If you want to experiment with editing a page, try the Main/WikiSandbox.  You can edit the Main/WikiSandbox without affecting anything important on this site.²²%trail%<<|PmWiki.DocumentationIndex|>>
+time=1054717213
+host=24.155.25.197
+agent=Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)
+rev=5

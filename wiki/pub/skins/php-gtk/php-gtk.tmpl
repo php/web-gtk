@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>$WikiTitle:$HTMLTitle</title>
+<link rel='stylesheet' href='/wiki/pub/skins/php-gtk/php-gtk.css' type='text/css' />
+<link rel='shortcut icon' href='http://gtk.php.net/gifs/favicon.ico' />
+<!--HeaderText-->
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#000099" alink="#0000FF" vlink="#000099">
+<!--PageHeaderFmt-->
+<table border="0" cellspacing="0" cellpadding="0" height="48" width="100%">
+    <tr bgcolor="#0099cc">
+        <td align="left" rowspan="2">
+            <a href="/"><img src="http://gtk.php.net/gifs/php-gtk.gif" border="0" width="165" height="68" alt="PHP-GTK Wiki" vspace="2" hspace="2" /></a><br />
+        </td>
+        <td align="right" valign="top" nowrap>
+            <strong style="color: #FFFFFF; font-size: 85%;"><!--function:showDate--></strong>&nbsp;<br />
+        </td>
+    </tr>
+    <tr bgcolor="#0099cc">
+        <td align="right" valign="bottom" nowrap="nowrap"><a href="/download.php" class="menuBlack">download</a>&nbsp;|&nbsp;<a href="/docs.php" class="menuBlack">documentation</a>&nbsp;|&nbsp;<a href="/wiki/" class="menuBlack">wiki</a>&nbsp;|&nbsp;<a href="/apps/" class="menuBlack">applications</a>&nbsp;|&nbsp;<a href="/faq.php" class="menuBlack">faq</a>&nbsp;|&nbsp;<a href="/changelog.php" class="menuBlack">changelog</a>&nbsp;|&nbsp;<a href="/resources.php" class="menuBlack">resources</a>&nbsp;<br /><img src="http://gtk.php.net/gifs/spacer.gif" width="2" height="2" border="0" alt="" /><br /></td>
+    </tr>
+    <tr bgcolor="#000033">
+        <td colspan="2"><img src="http://gtk.php.net/gifs/spacer.gif" width="1" height="1" border="0" alt="" /><br /></td>
+    </tr>
+    <tr bgcolor="#006699">
+        <form method="POST" action="/search.php">
+            <td valign='top' style='color: #FFFFFF;' nowrap='nowrap'>
+                &nbsp;<small><strong>WIKI:</strong></small> &nbsp; 
+                <a href='$ScriptUrl/$[$Group/RecentChanges]' class='menuWhite'>$[Recent Changes]</a>&nbsp;| 
+                <a href='$PageUrl?action=print' target='_blank' class='menuWhite'>$[Printable View]</a>&nbsp;| 
+                <a href='$PageUrl?action=diff' class='menuWhite'>$[Page History]</a>&nbsp;| 
+                <a href='$PageUrl?action=edit' class='menuWhite'>$[Edit Page]</a>
+            </td>
+            <td align='right' valign='top' style='color: #FFFFFF;' nowrap='nowrap'>
+                <small>search for</small>
+                <input class="small" type="text" name="pattern" value="" size="30" />
+                <small>in the</small>
+                <select name="show" class="small">
+                    <option value="manual">manual</option>
+                    <option value="whole-site">whole site</option>
+                    <option value="wiki">wiki</option>
+                    <option value="php-gtk-general-list">general mailing list</option>
+                    <option value="php-gtk-dev-list">development mailing list</option>
+                    <option value="php-gtk-doc-list">documentation mailing list</option>
+                </select>
+                <input type="image" src="http://gtk.php.net/gifs/small_submit_white.gif" border="0" width="11" height="11" alt="search" align="middle" />&nbsp;<br />
+            </td>
+        </form>
+<!--
+        <form action='$ScriptUrl/$[Main/SearchWiki]'>
+            <input type='hidden' name='pagename' value='$[Main/SearchWiki]' />
+            <td align='right' valign='top' colspan='2' style='color: #FFFFFF;' nowrap='nowrap'>
+                <a href='$ScriptUrl/$[$Group/RecentChanges]' class='menuWhite'>$[Recent Changes]</a>&nbsp;| 
+                <a href='$PageUrl?action=print' target='_blank' class='menuWhite'>$[Printable View]</a>&nbsp;| 
+                <a href='$PageUrl?action=diff' class='menuWhite'>$[Page History]</a>&nbsp;| 
+                <a href='$PageUrl?action=edit' class='menuWhite'>$[Edit Page]</a>&nbsp; 
+                &nbsp; &nbsp; &nbsp; 
+                <a href='$ScriptUrl/$[Main/SearchWiki]' class='menuWhite'>$[SearchWiki]</a>: <input class='small' type='text' name='text' value='' size='30' /> 
+                <input type='image' src='http://gtk.php.net/gifs/small_submit_white.gif' border='0' width='11' height='11' alt='search' align='bottom' value='$[Go]' />&nbsp;
+                <br />
+            </td>
+        </form>
+-->
+    </tr>
+    <tr bgcolor="#000033">
+        <td colspan="2">
+            <img src="http://gtk.php.net/gifs/spacer.gif" width="1" height="1" border="0" alt="" /><br />
+        </td>
+    </tr>
+</table>
+<!--PageLeftFmt-->
+<table cellpadding="0" cellspacing="0">
+    <tr valign="top">
+        <td width="200" bgcolor="#f0f0f0">
+            <table width="100%" cellpadding="4" cellspacing="0">
+                <tr valign="top">
+                    <td class="sidebar">
+                        <!--wiki:$Group.SideBar Main.SideBar-->
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td bgcolor="#cccccc" background="http://gtk.php.net/gifs/checkerboard.gif"><img src="/gifs/spacer.gif" width="1" height="1" border="0" alt="" /><br /></td>
+        <td>
+            <table width="570" cellpadding="10" cellspacing="0">
+                <tr>
+                    <td valign="top">
+<!--PageTitleFmt-->
+                        <h4><a href='$ScriptUrl/$Group'>$Group</a> /</h4>
+                        <h1><a href='$PageUrl'>$Title</a></h1>
+<!--PageText-->
+                    <br />
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<!--PageRightFmt-->
+<!--PageFooterFmt-->
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr bgcolor="#000033">
+        <td>
+            <img src="http://gtk.php.net/gifs/spacer.gif" width="1" height="1" border="0" alt="" /><br />
+        </td>
+    </tr>
+    <tr bgcolor="#006699">
+        <td align="right" valign="bottom">
+            <a href='$PageUrl?action=edit' class='menuWhite'>$[Edit Page]</a>&nbsp;| 
+            <a href='$PageUrl?action=diff' class='menuWhite'>$[Page History]</a>&nbsp;| 
+            <a href='$PageUrl?action=print' target='_blank' class='menuWhite'>$[Printable View]</a>&nbsp;| 
+            <a href='$ScriptUrl/$[$Group/RecentChanges]' class='menuWhite'>$[Recent Changes]</a>&nbsp;| 
+            <a href='$ScriptUrl/$[PmWiki/WikiHelp]' class='menuWhite'>$[WikiHelp]</a>&nbsp;| 
+            <a href='$ScriptUrl/$[Main/SearchWiki]' class='menuWhite'>$[SearchWiki]</a>&nbsp;
+            <br />
+        </td>
+    </tr>
+    <tr bgcolor="#000033">
+        <td>
+            <img src="http://gtk.php.net/gifs/spacer.gif" width="1" height="1" border="0" alt="" /><br />
+        </td>
+    </tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="6" width="100%">
+    <tr valign="top" bgcolor="#cccccc">
+        <td>
+            <small>
+                <a href="http://www.php.net/"><img src="http://gtk.php.net/gifs/php-logo.gif" border="0" width="69" height="36" alt="PHP" align="left"></a>
+                <a href="/copyright.php">Copyright &copy; 2001-<!--function:showYear--> The PHP Group</a><br />
+                All rights reserved.<br />
+            </small>
+        </td>
+        <td align="right">
+            <small>$[Last updated: $LastModified]<br /></small><br />
+        </td>
+    </tr>
+</table>
+<!--/PageFooterFmt-->
+</body>
+</html>

@@ -1,0 +1,10 @@
+version=pmwiki-0.6.beta17
+newline=²
+text=Here's a list of contributors to PmWiki development and improvement.  My apologies if I've forgotten anyone -- feel free to add your name if you've²been left out, feel free to remove your name if you don't want to be associated with these people.  :-)²²* Glenn Blalock - WikiStyles suggestions, testing, documentation²* James Davis - WikiStyles markup, testing²* Scott Duff - pmwe, simple-journal.php, all-around Pm sanity checker ²* Dawn Green - WikiStyles suggestions, {{uploads}}, documentation²* Janice Heinold - early PmWiki testing and suggestions, documentation²* Ross Kowalski - {{uploads}} and printable page research²* Isabelle Michaud - floating images markup, {{WikiGroup}}s, {{uploads}}/attachments²* John Rankin - WikiTrails, FreeLinks, EditQuickReference, notify.php, documentation, debugging²* Carlo Strozzi - Internationalization, PmWiki on Boa, HTML redirection²* Jessica Tishmack - uploads, testing²* Robert Abitbol - Customization; suggestions for various features or modifications²* Christian Ridderström - [[Cookbook:EmacsPmWikiMode pmwiki-mode for Emacs]] and some other hacks/modifications.²*Jean-Claude Gorichon - http://www.pmichaud.com/wiki/Development/DevelopmentPriority²²%trail%<<|PmWiki.DocumentationIndex|>>²²²
+time=1077033194
+host=24.1.44.14
+agent=Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)
+rev=22
+post= Save
+author=Pm
+name=PmWiki.Contributors

@@ -1,0 +1,9 @@
+version=pmwiki-0.6.5
+newline=²
+text=!Main.SideBar [-[[ThisWiki:?pagename=Main.SideBar&action=edit (edit)]]-]²* Main/HomePage²* Main/WikiSandbox²²!PmWiki/PmWiki²* [[PmWiki/{{Installation}} Download and Install]]²* PmWiki/TipsForEditing²* PmWiki/DocumentationIndex²* PmWiki/{{FAQ}}²* PmWiki/PmWikiPhilosophy²* PmWiki/ReleaseNotes²²![[http://www.pmwiki.org pmwiki.org]]²* [[Cookbook:HomePage Cookbook]]²* [[http://www.pmichaud.com/wiki/Development Development]]²* [[PmWiki:PmWikiUsers PmWikiUsers]]²* [[PmWiki:SuccessStories SuccessStories]]²
+time=1077769004
+author=Pm
+name=Main.SideBar
+host=24.1.44.14
+agent=Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)
+rev=81

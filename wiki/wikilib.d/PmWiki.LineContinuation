@@ -1,0 +1,9 @@
+version=pmwiki-0.6.19
+newline=²
+text=!!About line continuation²²This page illustrates how you can continue lines using @@\@@ and²@@\\@@. The instructions on PmWiki/TextFormattingRules say:²²*Use blank lines as separators ²*Use \ (backslash) at the end of a line to join the next line to the current one ²*Use \\ (two backslashes) at the end of a line to force a line break²²Let us now give a few examples (the text in the left column shows the markup, and the right column shows how it is rendered).²²!!!!Example of using [@\@]²²In this example we pretend that you are writing a list item with a lot of text. Here's what you will get if you don't use line continuation:²[[table width=100%]]²[[cellnr width=50%]] [=* This list item has so²much text that you wrote it²on several lines=]²[[cell width=50%]]* This list item has so²much text that you wrote it²on several lines²[[tableend]]²²This is how it should be done:²[[table width=100%]]²[[cellnr width=50%]] [=* This list item has so \²much text that you wrote it \²on several lines=]²[[cell width=50%]]* This list item has so \²much text that you wrote it \²on several lines²[[tableend]]²²²!!!!Example of using [@\\@]²²In this example you want to have a newline without leaving the list item. Here's what you will get if you use [@\@]:²²[[table width=100%]]²[[cellnr width=50%]] [=* The next sentence should \²be on a line of its own. \²On a line of its own.=]²[[cell width=50%]]* The next sentence should \²be on a line of its own. \²On a line of its own.²[[tableend]]²²This is how it should be done:²[[table width=100%]]²[[cellnr width=50%]] [=* The next sentence should \²be on a line of its own. \\²On a line of its own.=]²[[cell width=50%]]* The next sentence should \²be on a line of its own. \\²On a line of its own.²[[tableend]]²²
+time=1085306088
+author=chr
+name=PmWiki.LineContinuation
+host=213.132.111.229
+agent=
+rev=16

@@ -1,0 +1,9 @@
+version=pmwiki-0.6.15
+newline=²
+text=!!! Organization of PmWiki files²²* @@pmwiki.php@@ is the main script that runs this wiki system.²* @@local@@ (directory) is a good place to store PerGroupCustomizations and other LocalCustomizations.²** @@local/config.php@@ contains site-wide configuration settings²** @@local/localmap.txt@@ contains locally-defined CustomInterMap shortcuts.²* @@pub@@ (directory) contains files to be made available to browsers, such as images and .css files²* @@wiki.d@@ (directory) contains wiki pages created by users, stored as individual text files. It is created automatically the first time pmwiki.php is run. Filenames consist of Groupname.Pagename.  Deleted pages are Groupname.Pagename,time. You can physically remove deleted files from this directory only via a shell or FTP command.²²* @@wikilib.d@@ (directory) contains default wiki pages supplied with the PmWiki distribution.  The files in this directory are used whenever a page of the same name doesn't exist in the @@wiki.d@@ directory.²* @@scripts@@ (directory) contains add-on scripts including:²** @@intermap.txt@@ defines default InterMap "shortcuts" for certain [=URLs=].²** faq.php²** includeurl.php²** pgcust.php²** pmwe²** simple-journal.php²** trails.php²* @@COPYING@@ is a copy of the GNU General Public License.²²²%trail%<<|PmWiki.DocumentationIndex|>>²
+time=1081134724
+host=68.91.20.11
+agent=Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.2.1) Gecko/20030225
+rev=25
+author=jerry p
+name=PmWiki.FilesAndDirectories

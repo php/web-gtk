@@ -1,0 +1,11 @@
+version=pmwiki-0.6.15
+newline=²
+text=This page contains the GroupAttributes for the [[$Group]] group.  At present it is primarily used to set the group @@read@@, @@edit@@, and @@attr@@ passwords for the [[$Group]] group.  ²²See PmWiki.{{Passwords}} for more information about page and group passwords, or use ThisGroup:GroupAttributes?action=attr to change the attributes for this group.²
+time=1082192578
+host=66.82.9.29
+agent=Mozilla/5.0 (Macintosh; U; PPC Mac OS X; en-us) AppleWebKit/85.7 (KHTML, like Gecko) Safari/85.7
+rev=11
+passwdattr=*
+post= Save
+author=
+name=PmWiki.GroupAttributes

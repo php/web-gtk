@@ -1,0 +1,10 @@
+version=pmwiki-0.6.7
+newline=²
+text=[[$Search]]²²[[$Searchresults]]²²Enter the text you would like to search for above.  The results page will give you all pages that contain all of the words you enter.  To search for phrases, enclose the entire phrase in quotation marks.²²To limit the search to a single group, enter the group name followed by²a slash at the beginning of the search string (e.g., "[=PmWiki/=]" or "Main/").  To list all pages, enter a slash for the search.²²!!!Search examples²  ²||border='0' cellspacing='0' width='100%' cellpadding='0' ²||'''Enter'''    ||'''To find pages containing''' ||²||apple pie      ||both 'apple' and 'pie' ||²||"apple pie"    ||the phrase 'apple pie' ||²||pmwiki/apple   ||'apple' in the [=PmWiki=] group ||²||"pmwiki/apple" ||the phrase 'pmwiki/apple' in all groups ||²||apple -pie     ||'apple', omitting those containing 'pie' ||²||ninja -"apple pie" ||'ninja', omitting those containing 'apple pie' ||²||apple "-pie"   ||the words 'apple' and '-pie' ||²||apple - pie    ||'apple', '-', and 'pie' ||²
+time=1078381605
+host=24.1.44.14
+agent=Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)
+rev=42
+post= Save
+name=Main.SearchWiki
+author=Pm

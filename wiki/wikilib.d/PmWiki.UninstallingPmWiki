@@ -1,0 +1,9 @@
+version=pmwiki-0.6.1
+newline=²
+text=Most of the files created and/or used by PmWiki can be deleted by the account holder outright. However, a certain system file, created when the @@wiki.d@@ directory is created, cannot be removed this way. To remove @@wiki.d@@, create a PHP file containing the following line:²²@@ [= <?php system ('/bin/rm -rf wiki.d') ?> =] @@²²Place the file in your PmWiki directory and call it up in your browser. No output will be produced, but the @@wiki.d@@ directory and all of the pages within it will be gone. '''*Forever*'''.  So, make sure you want to do this before you try.²²Once this has been completed, the account holder should be able to delete the PmWiki directory with no further complaints from the server.²²%trail%<<|PmWiki.DocumentationIndex|>>
+time=1077506181
+host=24.1.44.14
+agent=Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)
+rev=8
+author=Pm
+name=PmWiki.UninstallingPmWiki

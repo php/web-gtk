@@ -1,0 +1,9 @@
+version=pmwiki-0.6.beta17
+newline=²
+text=WikiStyles can be predefined in ''config.php'' by the WikiAdministrator.²²The general format for defining WikiStyles is:²    [=²    $WikiStyle['stylename']['attribute'] = 'value';=]²²So the line:²²    $WikiStyle['darkgreen']['color'] = '#006400';²²defines a style [=%darkgreen%=] that changes the text color attribute to #006400, %darkgreen% like this.²²The standard WikiStyles are automatically included via the stdconfig.php script unless disabled by ²²    $EnableStdWikiStyles = 0;²²To restrict wiki page authors to the styles you define, ²add the following statement in ''config.php'':²²    $WikiStylePattern = '%[-\\w]*%';²²To turn off WikiStyles completely, execute:²²    unset($WikiStylePattern);²²The remainder of this page shows examples defining WikiStyles for use in PmWiki pages. These examples are taken verbatim from ''scripts/wikistyles.php'':²    [=²²# the %newwin% pattern causes links to open in a new window²$WikiStyle['newwin']['target'] = '_blank';		²²# the %comment% style creates a comment in the markup²$WikiStyleTags['display'] = array('style' => 'display:$value; ');²$WikiStyle['comment']['display'] = 'none';²²# define colored text styles as %black%, %white%, %red%,²# from CSS color names²foreach (array('black','white','red','yellow','blue','gray',²  'silver', 'maroon', 'green', 'navy', 'purple') as $c) ²    $WikiStyle[$c]['color'] = $c;²²# define %darkgreen% from a CSS #RRGGBB color specification²$WikiStyle['darkgreen']['color'] = '#006400';²²# example defining %highlight% with multiple attributes²# $WikiStyle['highlight']['color'] = 'black';²# $WikiStyle['highlight']['bgcolor'] = 'yellow';²=]²²<<|PmWiki.DocumentationIndex|>>²
+time=1077125205
+author=Pm
+name=PmWiki.WikiStylesAdmin
+host=24.1.44.14
+agent=Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)
+rev=5

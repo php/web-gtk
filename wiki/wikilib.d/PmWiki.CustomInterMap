@@ -1,0 +1,10 @@
+version=pmwiki-0.6.beta15
+newline=²
+text=This page describes how a WikiAdministrator can create additional InterMap links.²²The file @@intermap.txt@@ in the scripts directory specifies the default InterMap links that are distributed with PmWiki.  Each line of @@intermap.txt@@ has the following format:²²    [=HostPrefix       http://www.somehost.com/partial/url/=]²²For example, @@intermap.txt@@ has the following entries:²    [=²    ISBN            http://www.amazon.com/exec/obidos/ASIN/²    IMDB            http://www.imdb.com/find?q=²    Meatball        http://www.usemod.com/cgi-bin/mb.pl?²    PmWiki          http://www.pmichaud.com/wiki/PmWiki/²    UseMod          http://www.usemod.com/cgi-bin/wiki.pl?²    Wiki            http://c2.com/cgi/wiki?²    Wikipedia       http://www.wikipedia.com/wiki/=]²²To create your own InterMap links, ''do not edit the @@intermap.txt@@ file directly!''  You'll lose your changes when you do a PmWiki.{{Upgrade|s}}.  Instead, create a file called @@localmap.txt@@ in the @@local/@@ subdirectory containing your InterMap links in the format described above.  PmWiki will automatically read your links after loading the @@intermap.txt@@ entries.²²You can also define InterMap entries where the text of the entry is substituted into the middle of the URL.  Just include '$1' in the URL where you want the substitution to take place.  For example:²    [=²    Jargon          http://www.catb.org/~esr/jargon/html/$1.html²    =]²would cause @@Jargon:F/feature-creep@@ to be converted to http://www.catb.org/~esr/jargon/html/F/feature-creep.html. ²²%trail%<<|PmWiki.DocumentationIndex|>>
+time=1076953984
+host=24.1.44.14
+agent=Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)
+rev=11
+post= Save
+author=Pm
+name=PmWiki.CustomInterMap

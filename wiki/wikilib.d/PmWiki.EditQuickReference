@@ -1,0 +1,10 @@
+version=pmwiki-0.6.14
+newline=²
+text=[[table width='100%' cellspacing='0' cellpadding='0']]²[[cell style='font-size:12px; font-family:Arial;' bgcolor='#ffeedd' colspan='2']]²%target=_blank%PmWiki/TextFormattingRules - PmWiki/TipsForEditing²[[<<]]'''Paragraphs:''' for a new paragraph, press the ''return'' key twice; use [=->=] to indent text²[[<<]]'''Lists:''' * for bullet lists, # for numbered lists, :term:definition for definition lists²[[<<]]'''Emphasis:''' [=''italics''=], [='''bold'''=], [='''''bold italics'''''=], [=@@typewriter@@=] (monospaced)²[[<<]]'''References:''' [=JoinCapitalizedWords=], use a URL [=(http://www.example.com)=] or a [={{free link}}=]²[[<<]]'''Bracketed links:''' [=[[reference]] (number), [[reference text]] (text), or [[reference graphic]] (graphic link)=]²[[<<]]'''Groups:''' [=Group/Page=] displays Page, [=Group.Page=] displays Group.Page²[[cellnr style='font-size:12px; font-family:Arial;' bgcolor='#ffeedd']]²'''Separators:''' !, !!, !!! for headings, [=----=] for horizontal line²[[<<]]'''Change size:''' [=[+...+]=] is bigger, [=[-...-]=] is smaller²[[cell style='font-size:12px; font-family:Arial;' bgcolor='#ffeedd' ]]²'''Prevent formatting:''' [=[=...=]=]²[[<<]]'''Line break:''' [=\\=] or [=[[<<]]=]
+time=1080165356
+host=212.147.44.63
+agent=Mozilla/5.0 (000000000; 0; 000 000 00 0; 00000) AppleWebKit/124 (KHTML, like Gecko) Safari/125
+rev=53
+post= Save
+name=PmWiki.EditQuickReference
+author=

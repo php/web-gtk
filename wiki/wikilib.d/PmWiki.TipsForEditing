@@ -1,0 +1,9 @@
+version=pmwiki-0.6.beta13
+newline=�
+text=This site is a WikiWikiWeb -- a collaborative authoring system that allows multiple people to edit a common set of pages via the World Wide Web.께To edit a page, simply click the '''Edit Page''' link in the header or footer, and then modify the text in any way you want. Yes, you can even edit pages others have created--that's part of WikiNature.께The rules for basic page editing are fairly simple--start each line without spaces and put a blank line between paragraphs.  There are more TextFormattingRules for lists and other specialized text, if you want to do that.  You can edit the Main/WikiSandbox page if you want to try things out in a way that won't affect any of the pages on this site.께To create references to other pages, run capitalized words together to make a WikiWord page title. This automatically creates a hyperlink. Make titles for NewSubjects, even if you don't have anything to say about them. Maybe someone will come along and fill out a page for the new link.께After you '''Save''' a page, you may need to click '''Reload''' to make your browser do a refresh. This will let you see the changes you just made. Click the '''?''' after any new {{WikiWord}}s to edit them and add text.께A page's full name is ''[=GroupName.PageTitle=]'', such as Main.HomePage. To refer to a page in the current group, write its ''[=PageTitle=]''. To refer to a page in another group, write its full name.께If the page you want to make has no natural WikiWord title (for example it might be one word) use a PmWiki/{{free link|s}}.께Not sure how best to organize a collection of wiki pages? The WikiStructure guide describes the options.께Not sure how to write for wiki? The GoodStyle guide describes wiki writing conventions.께%trail%<<|PmWiki.DocumentationIndex|>>
+time=1076871797
+host=24.1.44.14
+agent=Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)
+rev=19
+author=Pm
+name=PmWiki.TipsForEditing

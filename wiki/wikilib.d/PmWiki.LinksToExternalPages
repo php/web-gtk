@@ -1,0 +1,6 @@
+version=pmwiki-0.4.beta8
+text=To create a link to a site that is not part of this WikiWikiWeb, just place the full address (URL) of the page into the text of a page, like this:  http://www.pmichaud.com/toast .  There's no need to put any fancy formatting or characters around the address--just type the address directly into the page text and it will be rendered as a link in the output.²²If you want to create a link to another page with some alternate text, then use double square-brackets to specify the URL and the alternate text, as in @@[=[[http://www.pmichaud.com/toast Strawberry Pop-Tart Blow-Torches]]=]@@.  This will still be a link to the URL address but will display with the text you provide instead of the address, as in [[http://www.pmichaud.com/toast Strawberry Pop-Tart Blow-Torches]].²²%trail%<<|PmWiki.DocumentationIndex|>>²
+time=1046837776
+host=24.155.25.186
+agent=Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)
+rev=2

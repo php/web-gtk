@@ -1,0 +1,9 @@
+version=pmwiki-0.6.beta15
+newline=²
+text=The administrator can configure non-existent free links to display as (alternate text)? for greater clarity.²²In the ''config.php'' file, add the line²²  [=$WikiPageCreateSpaceFmt = ²    "(\$LinkText)<a href='\$PageUrl?action=edit'>?</a>";=]²²If you want all pages to display as (newpage)?, then also add the line²²  [=$WikiPageCreateFmt =²    "(\$LinkText)<a href='\$PageUrl?action=edit'>?</a>";=]²²%trail%<<|PmWiki.DocumentationIndex|>>
+time=1076997636
+host=24.1.44.14
+agent=Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)
+rev=3
+author=Pm
+name=PmWiki.CustomFreeLinks

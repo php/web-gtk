@@ -1,0 +1,9 @@
+version=pmwiki-0.6.21
+newline=²
+text=<<|{{Variables}}|>>²²:$EnableUpload:²: :Used to enable/disable {{Uploads}} (as normally called from ''scripts/stdconfig.php'').  Note that one may still need to set an upload password before users can upload (see UploadsAdmin).²        # enable uploads w/o passwords²        $EnableUpload = 1;²        $DefaultPasswords['upload'] = '';²²
+time=1085704781
+author=Pm
+name=PmWiki.UploadVariables
+host=24.1.44.14
+agent=Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.6) Gecko/20040206 Firefox/0.8
+rev=4

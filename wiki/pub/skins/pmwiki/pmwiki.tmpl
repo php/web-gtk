@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+  <title>$WikiTitle - $HTMLTitle</title>
+  <link rel='stylesheet' href='$PubDirUrl/css/stdlayout.css' type='text/css' />
+  <link rel='stylesheet' href='$PubDirUrl/skins/pmwiki/pmwiki.css' type='text/css' />
+<!--HeaderText-->
+</head>
+<body>
+<!--PageHeaderFmt-->
+  $PageLogoFmt
+  <div id='wikihead'>
+  <form action='$ScriptUrl/$[Main/SearchWiki]'>
+    <input type='hidden' name='pagename' value='$[Main/SearchWiki]' />
+    <a href='$ScriptUrl/$[Main/SearchWiki]'>$[SearchWiki]</a>:
+    <input class='searchbox' type='text' name='text' value='' />
+    <input class='searchbutton' type='submit' value='$[Go]' /></form></div>
+<!--PageLeftFmt-->
+  <table id='wikimid' width='100%' cellspacing='0' cellpadding='0'>
+    <tr><td id='wikileft'>
+        <!--wiki:$Group.SideBar Main.SideBar--></td>
+      <td id='wikibody'>
+<!--PageTitleFmt-->
+       <table width='100%' cellspacing='0' cellpadding='0' border='0'><tr>
+       <td id='wikititle'>
+         <div class='pagegroup'><a href='$ScriptUrl/$Group'>$Group</a> /</div>
+         <div class='pagetitle'><a href='$PageUrl'>$Title</a></div></td>
+       <td id='wikicmds'>
+         <a href='$ScriptUrl/$[$Group/RecentChanges]'>$[Recent Changes]</a>
+         <a href='$PageUrl?action=print' target='_blank'>$[Printable View]</a>
+         <a href='$PageUrl?action=diff'>$[Page History]</a>
+         <a href='$PageUrl?action=edit'>$[Edit Page]</a></td></tr></table>
+<!--PageText-->
+<!--PageRightFmt-->
+       </td></tr></table>
+<!--PageFooterFmt-->
+  <div id='wikifoot'>
+    <div class='footnav'>
+      <a href='$PageUrl?action=edit'>$[Edit Page]</a> -
+      <a href='$PageUrl?action=diff'>$[Page History]</a> -
+      <a href='$PageUrl?action=print' target='_blank'>$[Printable View]</a> -
+      <a href='$ScriptUrl/$[$Group/RecentChanges]'>$[Recent Changes]</a> -
+      <a href='$ScriptUrl/$[PmWiki/WikiHelp]'>$[WikiHelp]</a> -
+      <a href='$ScriptUrl/$[Main/SearchWiki]'>$[SearchWiki]</a></div>
+    <div class='lastmod'>$[Page last modified on $LastModified]</div></div>
+<!--/PageFooterFmt-->
+</body>
+</html>

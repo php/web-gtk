@@ -1,0 +1,12 @@
+This directory contains the files to display pages in PmWiki according
+to the default layout.  
+
+==>Don't edit these files directly, as you may lose your edits the
+next time you upgrade PmWiki!
+
+Instead, copy the files to another directory in pub/skins/ and edit
+them there.  You can then configure PmWiki to use your modified layout
+files by setting
+   $PageTemplateFmt = 'pub/skins/yourdir/yourfile.tmpl';
+in local/config.php.  See PmWiki.LayoutBasics for more details.
+

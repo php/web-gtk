@@ -1,0 +1,10 @@
+version=pmwiki-0.6.7
+newline=²
+text=%define=note color=green font-style:italic%²%define=trail bgcolor=#eeeeee%²
+time=1078071371
+host=24.1.44.14
+agent=Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)
+rev=24
+post= Save
+author=Pm
+name=PmWiki.GroupHeader

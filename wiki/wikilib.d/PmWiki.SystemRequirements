@@ -1,0 +1,10 @@
+version=pmwiki-0.6.16
+newline=²
+text=One of the nicest features of PmWiki is its low system requirements.  PmWiki requires a web server that is capable of running PHP 4.1 or later.²²PmWiki '''does not''' require:²* a SQL or other database²* CGI access or the ability to run CGI scripts²²%trail%<<|PmWiki.DocumentationIndex|>>
+time=1083199627
+host=67.35.14.226
+agent=Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1) Opera 7.23  [en]
+rev=10
+post= Save
+author=
+name=PmWiki.SystemRequirements

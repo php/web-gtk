@@ -1,0 +1,7 @@
+version=pmwiki-0.5.11
+newline=²
+text=For web developers who host several clients on a single server, PerGroupCustomizations allow a single PmWiki installation to handle all sites with customization handled at the @@group.php@@ level.  In order to view new PmWiki sites, the following steps must be taken:²*Define the new @@Group.php@@ customizations²*Set the index.php file for the group to point to the @@Group.php@@ file.²**@@<?php header("Location: http://www.domainname.com/path/to/wiki/Groupname/pagename"); ?>@@²*Create @@wiki@@ file to point to the @@pmwiki.php@@ file.²**@@<?php chdir("../pmwiki"); include("pmwiki.php"); ?>@@²*Create .htaccess file:²**@@<Files wiki>@@²**  @@[=SetHandler=] application/x-httpd-php@@²**@@</Files>@@²²
+time=1058999154
+host=24.155.25.197
+agent=Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)
+rev=2
