@@ -35,6 +35,18 @@ EOF;
 commonHeader();
 
 ?>
+<h1>Manual Search Bug Fixed</h1>
+
+<p><span class="newsdate">[28-Jul-2004]</span> A bug has been fixed in the 
+    search functionality of the PHP-GTK Web site that caused problems when 
+    searching on the manual. Now, searches on <code>connect</code>, 
+    <code>window</code>, <code>child</code>, <code>beep</code>, etc. return 
+    actual results instead of "cannot be found" messages.</p>
+
+<p>Other upgrades to the manual search functionality are likely to follow.</p>
+
+<?php hdelim(); ?>
+
 <h1>New PHP-GTK Wiki</h1>
 
 <p><span class="newsdate">[27-Jul-2004]</span> We have set up a new 
