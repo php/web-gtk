@@ -58,9 +58,10 @@ taking a look at.
 <h1>Resources</h1>
 
 <P>
-Check out our <? print_link('/resources.php', 'Resources page'); ?> for 
-links to PHP-GTK related sites, instructions on the PHP-GTK mailing lists,
-and other PHP-GTK resources.
+Check out our <? print_link('/resources.php', 'Resources page'); ?> for links to
+PHP-GTK related sites, instructions on the PHP-GTK mailing lists, and other
+PHP-GTK resources. Please try to use <strong>#php-gtk</strong> channel on EFNet
+or irc.openprojects.net - the more people are there, the better for community.
 </P>
 
 
@@ -72,12 +73,12 @@ If you have problems or questions then your first point of contact should be the
 manual and the mailing list.
 </P>
 <P>
-Any serious php-gtk related questions should be sent to 
-<?php print_email('andrei@php.net'); ?> ... unless
+Any serious PHP-GTK related questions should be sent to 
+<?php print_email('andrei at php dot net'); ?> ... unless
 they are related to the manual, in which case they should be sent 
-to <?php print_email('jmoore@php.net'); ?>.  If you have 
+to <?php print_email('jmoore at php dot net'); ?>.  If you have 
 a question or suggestion for the website, you should contact 
-<?php print_email('gtk-webmaster@php.net'); ?>.
+<?php print_email('gtk-webmaster at php dot net'); ?>.
 </P>
 
 
