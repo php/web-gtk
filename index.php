@@ -70,9 +70,11 @@ non-existent at the moment, so if you want to help out, join the list and let us
 know what you are interested in.
 </p>
 
+
 <p>
-If you have any questions, please contact me at
-<a href="mailto: andrei@php.net">andrei@php.net</a> or ask on the mailing list.
+If you have any questions, please read the <a href="faq.php">FAQ</a> and then
+contact me at <a href="mailto: andrei@php.net">andrei@php.net</a> or ask on the
+mailing list.
 </p>
 
 <hr>
