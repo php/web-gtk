@@ -1,5 +1,5 @@
 <?php
-require_once 'prepend.inc';
+require_once 'prepend.php';
 
 
 function make404() {
