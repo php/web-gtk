@@ -61,12 +61,11 @@ and other PHP-GTK resources.
 
 
 
-<h1>Caveat</h1>
+<h1>Contact</h1>
 
 <P>
-This extension is under development, so not all the features present in Gtk+
-toolkit may work right now.  If you have problems or questions then your first
-port of call should be the manual and the mailing list.
+If you have problems or questions then your first point of contact should be the
+manual and the mailing list.
 </P>
 <P>
 Any serious php-gtk related questions should be sent to 
