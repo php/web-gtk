@@ -296,5 +296,19 @@ function commonFooter() {
 </body>
 </html>
 <?php
+
+
+function clean_note($text) {
+    $text = htmlspecialchars($text);
+    $fixes = array('<br>','<p>','</p>');
+    reset($fixes);  
+    while (list(,$f)=each($fixes)) {
+        $text=str_replace(htmlspecialchars($f), $f, $text);
+        $text=str_replace(htmlspecialchars(strtoupper($f)), $f, $text);
+    }
+    $text = "<tt>".nl2br($text)."</tt>";
+    return $text;
+}
+
 }
 
