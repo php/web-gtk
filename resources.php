@@ -62,15 +62,19 @@ PHP-GTK list has no information about.</li>
 
 <h2>Magazine Articles</h2>
 
+<ul>
 <li>&quot;<a href="http://www.phpmag.net/itr/ausgaben/psecom,id,212,nodeid,112.html">
     Making a GUI Mess of PHP: Building 'Stand-alone' GUI Applications with 
     PHP-GTK</a>&quot; by Ben Ramsey<br />
     <em>International PHP Magazine</em>, 05.2004</li>
+</ul>
 
 <h2>Presentations</h2>
 
+<ul>
 <li><a href="http://conf.php.net/sd-gtk">
     2001 O'Reilly Open Source Conference PHP-GTK talk</a></li>
+</ul>
 
 <a name="#lists"></a>
 <h2>Mailing Lists</h2>
