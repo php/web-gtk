@@ -2,7 +2,7 @@
 
 commonHeader("Documentation");
 
-$man_languages = array('en');
+$man_languages = array('en', 'de');
 
 ?>
 
