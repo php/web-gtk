@@ -11,7 +11,7 @@ if ($HTTP_SERVER_VARS["HTTP_HOST"]!='gtk.php.net') {
 
 $mailto = 'cmv@php.net';
 
-require_once 'shared-manual.php';
+require_once 'shared-manual.inc';
 commonHeader('Manual Notes');
 
 /* clean off leading and trailing whitespace */
