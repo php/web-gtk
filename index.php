@@ -48,7 +48,7 @@ obtain the latest stable release of GTK+ v1.2.x from
 <p>
 Latest stable release:
 <blockquote>
-	<a href="do_download.php?download_file=php-gtk-0.0.1.tar.gz">php-gtk-0.0.1 (Source)</a> (1-Mar-2001)<br>
+	<a href="do_download.php?download_file=php-gtk-0.0.2.tar.gz">php-gtk-0.0.2 (Source)</a> (7-Mar-2001)<br>
 	<a href="do_download.php?download_file=php-gtk-0.0.1-win32.zip">php-gtk-0.0.1 (Windows and php binary)</a> (1-Mar-2001)
 </blockquote>
 
@@ -74,8 +74,8 @@ make install<br>
 </blockquote>
 
 <p>
-Look inside <b>test/</b> subdirectory for usage examples. Documentation is
-non-existent at the moment, so if you want to help out, join the list and let us
+Look inside <b>test/</b> subdirectory for usage examples. Documentation is being
+worked on at the moment, so if you want to help out, join the list and let us
 know what you are interested in.
 </p>
 
