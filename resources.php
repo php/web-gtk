@@ -24,9 +24,6 @@ A Windows install and PHP-GTK news site.<br>
 <LI><? print_link('http://developer.gnome.org/doc/API/gtk/gtkobjects.html', 'GTK+ Reference Manual'); ?><BR>
 The GTK+ manual with a list of all widgets and their corresponding functions/attributes.<BR>
 
-<LI><? print_link('http://www.phpuk.org/gtk/', 'PHP-GTK Manual'); ?><BR>
-The beginnings of the PHP-GTK official manual. Keep checking back for updates!
-
 </UL>
 
 
