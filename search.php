@@ -16,9 +16,9 @@ if(isset($pattern) && ($pattern) && isset($show) && ($show == "manual")) {
 }
 
 if(isset($pattern) && ($pattern) && isset($show) && ($show == "whole-site")) {
-    $pattern .= ' site:gtk.php.net -site:wiki.gtk.php.net';
+    $pattern .= ' site:gtk.php.net ';
     $query = urlencode($pattern);
-    $location = 'http://www.google.com/search?hl=en&lr=&ie=UTF-8&q=' . $query . '&btnG=Search';
+    $location = 'http://search.yahoo.com/search?ei=UTF-8&p=' . $query;
 	Header("Location: ".$location);
 	exit;
 }
