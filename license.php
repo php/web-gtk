@@ -1,6 +1,6 @@
 <?php
 
-common_header('Copyright and License');
+commonHeader('Copyright and License');
 
 ?>
 <h2>Website Copyright</h2>
