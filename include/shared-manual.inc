@@ -11,7 +11,7 @@ $host = 'localhost';
 $user = 'nobody';
 $pass = '';
 
-mysql_connect("localhost","nobody","");
+mysql_connect("rack1.php.net","nobody","");
 mysql_select_db("gtk");
 
 $NEXT = $PREV = $UP = $HOME = array(false, false);
