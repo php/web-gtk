@@ -17,9 +17,10 @@ if(isset($pattern) && ($pattern) && isset($show) && ($show == "manual")) {
 }
 
 if(isset($pattern) && ($pattern) && isset($show) && ($show == "whole-site")) {
-	$location = "http://www.google.com/search?as_sitesearch=gtk.php.net&as_q=";
-	$query = urlencode($pattern);
-	Header("Location: ".$location.$query);
+    $pattern .= ' site:gtk.php.net -site:wiki.gtk.php.net';
+    $query = urlencode($pattern);
+    $location = 'http://www.google.com/search?hl=en&lr=&ie=UTF-8&q=' . $query . '&btnG=Search';
+	Header("Location: ".$location);
 	exit;
 }
 
