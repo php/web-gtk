@@ -202,10 +202,11 @@ function commonHeader($title=false, $padding=true) {
 <INPUT CLASS="small" TYPE="text" NAME="pattern" VALUE="<?php echo htmlspecialchars($prevsearch) ?>" SIZE="30">
 <small>in the</small>
 <SELECT NAME="show" CLASS="small">
+<OPTION VALUE="manual">manual</OPTION>
+<OPTION VALUE="whole-site">whole site</OPTION>
 <OPTION VALUE="php-gtk-general-list">general mailing list</OPTION>
 <OPTION VALUE="php-gtk-dev-list">development mailing list</OPTION>
 <OPTION VALUE="php-gtk-doc-list">documentation mailing list</OPTION>
-<OPTION VALUE="manual">manual</OPTION>
 </SELECT>
 <? echo make_submit('small_submit_white.gif', 'search', 'bottom');
 ?>&nbsp;<br>

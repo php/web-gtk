@@ -16,6 +16,13 @@ if(isset($pattern) && ($pattern) && isset($show) && ($show == "manual")) {
 	exit;
 }
 
+if(isset($pattern) && ($pattern) && isset($show) && ($show == "whole-site")) {
+	$location = "http://www.google.com/search?as_sitesearch=gtk.php.net&as_q=";
+	$query = urlencode($pattern);
+	Header("Location: ".$location.$query);
+	exit;
+}
+
 if (isset($pattern) && ($pattern)) {
 	$location = "http://marc.theaimsgroup.com/";
 	if (substr($show, -5) == "-list") {
