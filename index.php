@@ -7,7 +7,7 @@ This code is a highly experimental adaptation
 of the instructions beamed to us by the friendly aliens of Tau 
 Ceti. The API can and will be changing, evolving, and unpredictably 
 morphing into little furry Ewoks, fluorescent killer bunny rabbits, 
-and the knights who say 'Nee'. Use the code at your own risk, 
+and the knights who say 'Ni'. Use the code at your own risk, 
 as it may cause flooding, polydactism, frogs falling from the 
 sky, and the return of the Inca empire. And it will definitely 
 warp space-time continuum in your local area.
@@ -43,8 +43,8 @@ and other PHP-GTK resources.
 <h1>Caveat</h1>
 
 <P>
-This extension is still in early beta phase to not 
-expect everything to work right now. If you have problems then your 
+This extension is still in early beta phase, so not all the features may work
+right now. If you have problems then your 
 first port of call should be the manual and the mailing list. Any
 serious php-gtk related questions should be sent to 
 <?php print_email('andrei@php.net'); ?> ... unless
