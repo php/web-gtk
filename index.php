@@ -33,6 +33,29 @@ EOF;
 commonHeader();
 
 ?>
+<h1>PHP 5 release sparks renewed interest in PHP-GTK</h1>
+
+<p><span class="newsdate">[20-Jul-2004]</span> Since the release of PHP 5.0.0 
+    last week, the PHP-GTK mailing lists have seen a sharp spike in activity 
+    due mostly to interest in PHP-GTK 2.0, the release of which is still in 
+    the future.  This activity has brought about a massive call for updates 
+    to the current PHP-GTK documentation and Web site, with the effort geared 
+    toward promoting the extension and making the site and documentation more 
+    thorough and user friendly.</p>
+
+<p>This progress is now underway.  Already, much-needed updates are being made 
+    to the documentation, and the Web site is undergoing new development to 
+    provide better resources to visitors.  For more information regarding the 
+    recent developments in the PHP-GTK community and the status of PHP-GTK, 
+    please read Andrei Zmievski's "<a href="http://marc.theaimsgroup.com/?l=php-gtk-general&m=109029957326705&w=2">Letter 
+    to the Community</a>" post and join the <strong>php-gtk-general</strong> 
+    mailing list to follow along with the activity.</p>
+
+<p>The forthcoming PHP-GTK version 2.0 will bind GTK+ 2 to PHP 5.  Until then, 
+    PHP-GTK 1.0.0 works only with PHP 4.</p>
+
+<?php hdelim(); ?>
+
 <h1>PHP-GTK Brasil</h1>
 
 <p>Brazilian PHP-GTK community has a new portal 

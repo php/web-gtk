@@ -2,6 +2,14 @@
  * $Id$
  */
 
+/* Let no border around the body appear, and set
+   it to display on a white background */
+body, html {
+    margin: 0px;
+    padding: 0px;
+    background-color: #FFFFFF;
+}
+
 /* Font settings for page elements */
 body, ul, td, th, p, h1, h2, h3, h4, dt, small, .small,
 .tableTitle, .tableExtras, input, textarea, select {
@@ -12,7 +20,7 @@ code, pre, tt {
 }
 
 /* Default font size for elements */
-body, ul, td, th, p {
+body, ul, td, th {
     font-size: 85%;
 }
 
@@ -37,18 +45,25 @@ acronym {
     color: #6666CC;
 }
 
+.sidebar {
+	font-size: 80%;
+	padding: 5px;
+}
+
+.sidebar p {
+	text-align: left !important;
+}
+
 a.menuWhite {
     font-size: 75%;
     color: #FFFFFF;
+    text-decoration: none;
 }
 
 a.menuBlack {
     font-size: 75%;
     color: #000000;
-}
-
-.sidebar {
-    font-size: 75%;
+    text-decoration: none;
 }
 
 pre, code, tt {

@@ -95,7 +95,7 @@ The old <b>php-gtk</b> list is still archived at <?php print_link('http://marc.t
 <h2>IRC</h2>
 
 <P>
-The <B>#php-gtk</B> IRC channel on EFNet has a few regulars who can most
+The <B>#php-gtk</B> IRC channel on Freenode has a few regulars who can most
 likely answer the questions you have.
 </P>
 

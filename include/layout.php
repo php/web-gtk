@@ -1,5 +1,7 @@
 <?php
-/* $Id$ */
+/*
+ * $Id$ 
+ */
 
 
 # spacer()
@@ -149,15 +151,8 @@ function commonHeader($title=false, $padding=true) {
  <link rel="shortcut icon" href="/gifs/favicon.ico" />
 </head>
 
-<body
-	topmargin="0" leftmargin="0"
-	marginheight="0" marginwidth="0"
-        bgcolor="#ffffff"
-        text="#000000"
-        link="#000033"
-        alink="#0099ff"
-        vlink="#000033"
-><a name="TOP"></a>
+<body bgcolor="#FFFFFF" text="#000000" link="#000099" alink="#0000FF" vlink="#000099">
+<a name="TOP"></a>
 <table border="0" cellspacing="0" cellpadding="0" height="48" width="100%">
   <tr bgcolor="#0099cc">
     <td align="left" rowspan="2">
@@ -275,7 +270,7 @@ function commonFooter($padding = true) {
   <tr valign="top" bgcolor="#cccccc">
     <td><small>
       <?php print_link('http://www.php.net/', make_image('php-logo.gif', 'PHP', 'left') ); ?>
-      <?php print_link('/copyright.php', 'Copyright &copy; 2001,2002 The PHP Group'); ?><BR>
+      <?php print_link('/copyright.php', 'Copyright &copy; 2001-2004 The PHP Group'); ?><BR>
       All rights reserved.<BR>
       </small>
     </td>
@@ -318,4 +313,11 @@ function sect_to_file($string) {
         else return "$string.php";
 }
 
+/*
+ * Local variables:
+ * tab-width: 4
+ * c-basic-offset: 4
+ * End:
+ * vim: expandtab sw=4 ts=4 fdm=marker
+ */
 ?>
