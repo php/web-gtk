@@ -92,7 +92,7 @@ if( $MAGIC_COOKIE ) {
 	<td><input type=text name='name' value='<?php print($form_app->name) ?>' size=50></td>
 </tr>
 <tr valign=top>
-	<td align=right nowrap>Homepage Url:</td>
+	<td align=right nowrap>Homepage URL:</td>
 	<td><input type=text name='homepage_url' value='<?php print($form_app->homepage_url) ?>' size=50></td>
 </tr>
 <tr valign=top>

@@ -4,13 +4,13 @@
 // change this to whatever the correct connection parameters are
 // 
 mysql_pconnect("localhost","nobody","");
-mysql_select_db("test_apps");
+mysql_select_db("gtk");
 
 
 // 
 // this directory must exist and must be writable by the user the webserver runs as
 // 
-define("APP_SCREENSHOT_DIR", "/local/www/sites/gtkphp/screenshots");
+define("APP_SCREENSHOT_DIR", "/local/Web/sites/php-gtk-web/apps/screenshots");
 
 // 
 // this is the structure that defines the categories.  Just be sure that all of the id numbers are unique
