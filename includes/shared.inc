@@ -22,7 +22,10 @@ a { text-decoration:none }
 <body bgcolor="#FFFFFF" text="#000000" link="#5B69A6" vlink="#5B69A6" alink="#FF0000" leftmargin="0" rightmargin="0" topmargin="0" marginwidth="0" marginheight="0">
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr bgcolor="#0080e5"> 
-    <td width="132" bgcolor="#0080e5" height="74"><img src="images/php_gtk_logo.gif" width="128" height="67"></td>
+    <td width="132" bgcolor="#0080e5" height="74">
+    <a href="http://gtk.php.net/">
+     <img src="images/php_gtk_logo.gif" border="0" width="128" height="67"></td>
+    </a>
     <td width="622" height="74" bgcolor="#0080e5"> 
       <h1>
        <font face="Arial, Helvetica, sans-serif" class="title" size="+6">

@@ -4,7 +4,7 @@ require_once("includes/shared.inc");
 common_header();
 
 ?>
-<table width="80%" border="0" cellpadding="0" cellspacing="0" height="100%">
+<table width="80%" border="0" cellpadding="5" cellspacing="0" height="100%">
         <tr>
           <td>
            <div class="title">PHP-GTK</div>
