@@ -15,10 +15,10 @@ please <? print_email('gtk-webmaster@php.net', 'email the webmaster'); ?>.
 <h2>Sites</h2>
 
 <UL>
-<!--
-<LI><? print_link('http://gtk.php-coder.net/', 'GTK at PHP-Coder'); ?><BR>
+
+<LI><? print_link('http://gtk.miester.org/', 'GTK at Miester.org'); ?><BR>
 This site provides current news, some basic tutorials and example applications.<br>
--->
+
 
 <LI><? print_link('http://www.adapower.net/gtkada/', 'Glade UI builder for Windows'); ?><br>
 
