@@ -2,7 +2,7 @@
 if (isset($user) && isset($pass)) {
 	$MAGIC_COOKIE = base64_encode("$user:$pass");
 	# we set a cookie good for five years
-	SetCookie('MAGIC_COOKIE', base64_encode("$user:$pass"), time()+157248000);
+	SetCookie('MAGIC_COOKIE', base64_encode("$user:$pass"), time()+(86400*365*5), '/' );
 	commonHeader('Magic Cookie');
 	echo '<h1>Magic Cookie</h1>';
 	echo "<P><b>Cookie set</b>.</P>";
