@@ -113,7 +113,7 @@ if ($action != '') {
 			echo '<OPTION VALUE="-1">leave unchanged';
 			echo '<OPTION VALUE="0">clear all votes';
 			for ($i=1; $i<=5; $i++) {
-				echo '<OPTION VALUE="' . $i . '">set to '.$i;
+				echo '<OPTION VALUE="' . $i . '">set to '.$i. "\n";
 			}
 			echo '</SELECT><BR></TD></TR>';
 
@@ -144,13 +144,14 @@ if ($action != '') {
 		$query = "UPDATE note SET user='$nuser',note='$note'";
 		$rating = (int)$rating;
 		if ($rating==-1) {
-			$query .= ",rating=0,votes=0";
+			$query .= ",votes=0,rating=0";
 		} else if ($rating > 0) {
-			$query .= ",rating=votes*".(int)$rating;
+			$query .= ",votes=10,rating=(10*".$rating.")";
 		}
 		$query .= " WHERE id=$id";
 		if (mysql_query($query)) {
 			echo "<P><B>Record modified.</B></P>";
+echo $rating;
 			mail($mailto, "note ".$row['id']." modified in ".$row['sect']." by $user",stripslashes($note).$add_url,"From: ".$user."@php.net");
 		} else {
 			echo "<P><B>Record not modified (query failed).</B></P>";
