@@ -55,6 +55,19 @@ dt,h3 {
 	color: #000066;
 }
 
+h4 {
+	font-family: arial,helvetica,sans-serif;
+	font-size: 90%;
+	font-weight: bold;
+	color: #000066;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+blockquote {
+	margin-left: 12px;
+}
+
 small {
 	font-family: arial,helvetica,sans-serif;
 	font-size: 75%;
