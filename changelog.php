@@ -6,7 +6,7 @@ commonHeader('PHP-GTK Changelog');
 
 <h1>PHP-GTK ChangeLog</h1>
 
-<a name="1.0.0"></a>
+<a name="1.0.1"></a>
 <h3>Version 1.0.1 "you thought we were done?"</h3>
 <b>09-Aug-2004</b>
 <ul>
