@@ -32,13 +32,13 @@ mysql_select_db("gtk");
 
 if ($action != '') {
 
-	if (!verify_password($user,$pass)) {
+	list ($action, $id) = explode(' ', $action);
+
+	if ($action!='edit' && !verify_password($user,$pass)) {
 		echo "<P><B>Authorization failed.</P>";
 		commonFooter();
 		exit;
 	}
-
-	list ($action, $id) = explode(' ', $action);
 
 	switch($action) {
 	case 'delete':
@@ -98,6 +98,8 @@ if ($action != '') {
 		break;
 
 	case 'edit':
+		echo "<P>Only people with " . make_link('http://www.php.net/cvs-php.php', 'CVS accounts') . 
+			" are able to edit the manual notes, so please don't email us asking when this doesn't work for you.</P>";
 		$query = 'SELECT *,UNIX_TIMESTAMP(ts) AS xwhen FROM note WHERE id='.$id;
 		if ($result = mysql_query($query)) {
 			$row = mysql_fetch_array($result);

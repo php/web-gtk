@@ -185,8 +185,7 @@ function makeEntry($date,$name,$blurb,$id=0) {
 	if (isset($MAGIC_COOKIE) && $id) {
 
 		print_link('/manual/admin-notes.php?action=edit+' . $id . '&brief=1',
-			make_image('notes-edit.gif', 'edit note'),
-			'admin'
+			make_image('notes-edit.gif', 'edit note')
 		);
 		echo '&nbsp';
 		print_link('/manual/admin-notes.php?action=reject+' . $id . '&brief=1&popup=1',
