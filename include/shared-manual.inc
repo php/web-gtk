@@ -398,11 +398,9 @@ function manualHeader($title,$id="") {
 			$pass = '';
 			$db_id = @mysql_pconnect($host, $user, $pass);
 
-			$query = 'UPDATE note SET vote=vote+1, rating=rating+' . $HTTP_GET_VARS['rate_note'] .
+			$query = 'UPDATE note SET votes=votes+1, rating=rating+' . $HTTP_GET_VARS['rate_note'] .
 				' WHERE id=' . $HTTP_GET_VARS['rate_id'];
 			$res = @mysql_db_query("gtk", $query, $db_id);
-
-echo "\n\n<!-- $query :: $res -->\n\n";
 
 		}
 	}
