@@ -25,10 +25,9 @@ commonHeader();
 <h1>PHP-GTK</h1>
 
 <P>
-Too often PHP is thought of as only an HTML-embedded 
-web scripting language.  However, it is also a very full-featured general 
-purpose language that can be used for much more.  One of the goals 
-behind this project was to prove that PHP can be used to write client-side 
+PHP-GTK is an extension for PHP programming language that implements language
+bindings for GTK+ toolkit. It provides an object-oriented interface to GTK+
+classes and functions and greatly simplifies writing client side cross-platform
 GUI applications.
 </P>
 
