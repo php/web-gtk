@@ -8,7 +8,7 @@ commonHeader('Downloads');
 
 <P>
 <b>Note:</b> PHP-GTK requires PHP 4.0.5 or greater (latest CVS version will work
-too). Versions 0.1.x currently require PHP 4.1.0 or CVS version to compile.
+too). Versions 1.0.1 and later require PHP 4.3.x to build.
 </P>
 <P>
 PHP-GTK currently supports GTK+ v1.2.6 or greater, but not GTK+ v2.x. You can
@@ -19,9 +19,9 @@ of GTK+ v1.2.x from <?php print_link('ftp://ftp.gtk.org/pub/gtk/v1.2/'); ?>.
 <h2>Latest Stable Release</h2>
 
 <UL>
-<LI><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-1.0.0.tar.gz', 'php-gtk-1.0.0 Source'); ?> - 23-Oct-2003<br>
+<LI><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-1.0.1.tar.gz', 'php-gtk-1.0.1 Source'); ?> - 09-Aug-2004<br>
 
-<LI><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-0.5.2.tar.gz', 'php-gtk-0.5.2 Source'); ?> - 01-Nov-2002<br>
+<LI><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-1.0.0.tar.gz', 'php-gtk-1.0.0 Source'); ?> - 23-Oct-2003<br>
 
 <LI><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-1.0.0-win32.zip', 
 	'php-gtk-1.0.0 Windows and PHP Binary including ComboButton, Extra, libGlade, Scintilla, Spaned, SQPane'); ?> - 23-Oct-2003<br>
