@@ -7,6 +7,19 @@ commonHeader('PHP-GTK Changelog');
 <h1>PHP-GTK ChangeLog</h1>
 
 <a name="0.5.0"></a>
+<h3>Version 0.5.1 "hardboiled wonderland"</h3>
+<b>26-Apr-2002</b>
+<ul>
+<li>changed gdkwindow::set_cursor() to allow reverting the cursor to default one. (Andrei)</li>
+<li>fixed gtk::input_add() for pre-streams PHP versions. (Andrei)</li>
+<li>adapted build system to work with the new PHP build system. (Andrei)</li>
+<li>made gtk::input_add() work with PHP streams. (Andrei)</li>
+<li>fixed gtkscintilla::marker_add return type. (Alan)</li>
+<li>fixed property and method access on GdkBitmap. (Andrei)</li>
+<li>fixed a crash bug in gtkclist::append() when size of input was greater than the number of columns. (Markus)</li>
+</ul>
+
+<a name="0.5.0"></a>
 <h3>Version 0.5.0 "monday starts on saturday"</h3>
 <b>24-Jan-2002</b>
 <ul>

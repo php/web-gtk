@@ -33,26 +33,26 @@ GUI applications.
 
 <h1>News</h1>
 
-<P>
+<p>
+<a href="/download.php">PHP-GTK Version 0.5.1</a> has been released today, April
+26, 2002. The main goal was to adapt to the new PHP build system while
+preserving compatibility for the old one. Of course, some bug fixes and
+improvements are included as well. See <a href="/changelog.php">Change Log</a>
+for full list of changes.
+</p>
+
+<p>
 With the help of Philip Hallstrom, we now have a Freshmeat-like index of
 applications. It still needs to be populated, so if you have written a useful
 piece of software using PHP-GTK, point your browser to
 <? print_link('/apps/', 'Applications'); ?> area and add it to the list.
-</P>
+</p>
 
-<P>
-<a href="/download.php">PHP-GTK version 0.5.0</a> has been released on January
-24, 2002. The big jump in version number is meant to indicate that PHP-GTK is
-now a stable and proven tool and that with this release its functionality is
-greatly expanded. The list of changes can be found in
-<a href="/changelog.php">Change Log</a>.
-</P>
-
-<P>
-Alan Knowles has written a modular development environment in PHP-GTK, called <a
-href="http://www.akbkhome.com/Projects/Phpmole%2DIDE/">PHPMole</a>. Check out
-this amazing project.
-</P>
+<p>
+Alan Knowles is working on a modular development environment written in PHP-GTK,
+called <a href="http://www.akbkhome.com/Projects/Phpmole%2DIDE/">PHPMole</a>. Check
+out this very cool project.
+</p>
 
 
 <h1>Resources</h1>
