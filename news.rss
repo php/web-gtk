@@ -10,6 +10,7 @@
     <description>The PHP-GTK extension Web site</description>
     <items>
         <rdf:Seq>
+            <rdf:li rdf:resource="http://gtk.php.net/download.php" />
             <rdf:li rdf:resource="http://gtk.php.net/docs-rss.php" />
             <rdf:li rdf:resource="http://marc.theaimsgroup.com/?l=php-gtk-dev&amp;m=109104992017688&amp;w=2" />
             <rdf:li rdf:resource="http://gtk.php.net/news.rss" />
@@ -18,10 +19,16 @@
             <rdf:li rdf:resource="http://gtk.php.net/docs.php" />
             <rdf:li rdf:resource="http://developers.slashdot.org/developers/04/07/21/2328224.shtml" />
             <rdf:li rdf:resource="http://marc.theaimsgroup.com/?l=php-gtk-general&amp;m=109029957326705&amp;w=2" />
-            <rdf:li rdf:resource="http://gtk.php.net/download.php" />
         </rdf:Seq>
     </items>
 </channel>
+
+<item rdf:about="http://gtk.php.net/download.php">
+    <title>PHP-GTK 1.0.1 released</title>
+    <link>http://gtk.php.net/download.php</link>
+    <description>PHP-GTK version 1.0.1 is the first release in nine months. However, this release is also proof that activity in the PHP-GTK camp has indeed increased and is rapidly moving along toward a stable PHP-GTK 2. PHP-GTK 1.0.1, affectionately termed the "you thought we were done?" version, implemented and exposed some new methods for GtkToolbar, reimplemened Gdk::cursor_new_from_pixmap() "so it actually works," and updated the build system. See the changelog for full details. In other news, the manual has been updated to include syntax highlighting (coloring) in the code examples.</description>
+    <dc:date>2004-08-09</dc:date>
+</item>
 
 <item rdf:about="http://gtk.php.net/docs-rss.php">
     <title>Documentation updates listed on PHP-GTK Web site</title>
@@ -77,13 +84,6 @@
     <link>http://marc.theaimsgroup.com/?l=php-gtk-general&amp;m=109029957326705&amp;w=2</link>
     <description>Since the release of PHP 5.0.0 last week, the PHP-GTK mailing lists have seen a sharp spike in activity due mostly to interest in PHP-GTK 2.0, the release of which is still in the future. This activity has brought about a massive call for updates to the current PHP-GTK documentation and Web site, with the effort geared toward promoting the extension and making the site and documentation more thorough and user friendly. This progress is now underway. Already, much-needed updates are being made to the documentation, and the Web site is undergoing new development to provide better resources to visitors. For more information regarding the recent developments in the PHP-GTK community and the status of PHP-GTK, please read Andrei Zmievski's "Letter to the Community" post and join the php-gtk-general mailing list to follow along with the activity. The forthcoming PHP-GTK version 2.0 will bind GTK+ 2 to PHP 5. Until then, PHP-GTK 1.0.0 works only with PHP 4.</description>
     <dc:date>2004-07-20</dc:date>
-</item>
-
-<item rdf:about="http://gtk.php.net/download.php">
-    <title>PHP-GTK 1.0.0 released</title>
-    <link>http://gtk.php.net/download.php</link>
-    <description>PHP-GTK Version 1.0.0 is finally out after almost a year of being in stasis. This is probably the last major version that will work with PHP 4 and GTK+ 1.x. There might be more bugfixes, but no new features or upgrades will be implemented. PHP-GTK 2 is under development and will focus on PHP 5 and GTK+ 2.x.</description>
-    <dc:date>2003-10-23</dc:date>
 </item>
 
 </rdf:RDF>

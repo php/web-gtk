@@ -55,6 +55,25 @@ EOF;
 commonHeader();
 
 ?>
+<h1>PHP-GTK 1.0.1 released</h1>
+
+<p><span class="newsdate">[09-Aug-2004]</span> <a href="/download.php">PHP-GTK 
+    version 1.0.1</a> is the first release in nine months. However, this 
+    release is also proof that activity in the PHP-GTK camp has indeed 
+    increased and is rapidly moving along toward a stable PHP-GTK 2.</p>
+
+<p>PHP-GTK 1.0.1, affectionately termed the "you thought we were done?" version, 
+    implemented and exposed some new methods for 
+    <a href="/manual/en/gtk.gtktoolbar.php">GtkToolbar</a>,reimplemened 
+    Gdk::cursor_new_from_pixmap() "so it actually works," and updated the 
+    build system. See the <a href="/changelog.php#1.0.1">changelog</a> for 
+    full details.</a>
+
+<p>In other news, the <a href="/manual/">manual</a> has been updated to 
+    include syntax highlighting (coloring) in the code examples.</p>
+
+<?php hdelim(); ?>
+
 <h1>Documentation updates listed on PHP-GTK Web site</h1>
 
 <p><span class="newsdate">[05-Aug-2004]</span> The PHP-GTK Web site now features 
@@ -170,8 +189,6 @@ commonHeader();
 <p>Brazilian PHP-GTK community has a new portal 
     <?php print_link('http://www.php-gtk.org.br/', 'site'); ?>.</p>
 
--->
-
 <?php hdelim(); ?>
 
 <h1>PHP-GTK 1.0.0 released</h1>
@@ -184,8 +201,6 @@ commonHeader();
     development and will focus on PHP 5 and GTK+ 2.x.</p>
 
 <?php hdelim(); ?>
-
-<!--
 
 <h1>PHP-GTK 0.5.2 Released!</h1>
 
