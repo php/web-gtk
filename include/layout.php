@@ -213,12 +213,7 @@ function commonHeader($title=false) {
 <INPUT CLASS="small" TYPE="text" NAME="pattern" VALUE="<? echo htmlspecialchars($prevsearch) ?>" SIZE="30">
 <small>in the</small>
 <SELECT NAME="show" CLASS="small">
-<OPTION VALUE="nosource">whole site
-<OPTION VALUE="manual">online documentation
-<OPTION VALUE="bugdb">bug database
 <OPTION VALUE="maillist">general mailing list
-<OPTION VALUE="devlist">developer mailing list
-<OPTION VALUE="source">website source code    
 </SELECT>
 <?	echo make_submit('small_submit_white.gif', 'search', 'bottom');
       ?>&nbsp;<br>
@@ -258,6 +253,7 @@ function commonHeader($title=false) {
 
 function commonFooter() {
 #	global $LAST_UPDATED, $MIRRORS, $MYSITE, $COUNTRIES;
+	global $HTTP_SERVER_VARS;
 ?>
       <br>
      </td>
@@ -270,8 +266,8 @@ function commonFooter() {
 <table border="0" cellspacing="0" cellpadding="0" width="100%">
   <tr bgcolor="#000033"><td><?php spacer(1,1);?><br></td></tr>
   <tr bgcolor="#006699">
-    <td align="right" valign="bottom">
-      print_link('/source.php?url='.$SCRIPT_NAME, 'show source', false, 'class="menuWhite"');
+    <td align="right" valign="bottom"><?
+      print_link('/source.php?url='.$HTTP_SERVER_VARS['SCRIPT_NAME'], 'show source', false, 'class="menuWhite"');
       echo delim();
       print_link('/credits.php', 'credits', false, 'class="menuWhite"');
       ?>&nbsp;<br>

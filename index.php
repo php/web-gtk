@@ -28,12 +28,19 @@ behind this project was to prove that PHP can be used to write client-side
 GUI applications.
 </P>
 
+
+<h1>Resources</h1>
+
+
 <P>
-There is a mailing list for PHP-GTK. To subsribe, 
-send blank email to <?php print_email('php-gtk-subscribe@lists.php.net'); ?>.
-The address of the list itself is <?php print_email('php-gtk@lists.php.net'); ?>. 
-The list is archived at <?php print_link('http://marc.theaimsgroup.com/?l=php-gtk&r=1&w=2', 'MARC'); ?>. 
+Check out our <? print_link('/resources.php', 'Resources page'); ?> for 
+links to PHP-GTK related sites, instructions on the PHP-GTK mailing lists,
+and other PHP-GTK resources.
 </P>
+
+
+
+<h1>Caveat</h1>
 
 <P>
 This extension is still in early beta phase to not 
