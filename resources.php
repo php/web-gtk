@@ -1,29 +1,45 @@
 <?php
-require_once("includes/shared.inc");
 
-common_header();
+commonHeader('Resources');
 
 ?>
-<table width="80%" border="0" cellpadding="5" cellspacing="0" height="100%">
-        <tr> 
-          <td> 
-            <div class="title">Resources</div>
-            <p class="mtext">There are various resources for PHP-GTK appearing, 
-              below are listed the ones that we are aware of, if you know of others 
-              please email the webmaster at <a href="mailto:miester@php.net">miester@php.net</a></p>
-            <p class="title2">Sites</p>
-            <p class="mtext"><a href="http://gtk.php-coder.net/"><b>http://gtk.php-coder.net/</b></a><br>
-             This site provides some basic howto's and news about PHP-GTK. 
-            </p>
-            <p class="mtext"><a href="http://www.phpgtk.com/"><b>http://www.phpgtk.com/</b></a><br>
-             A Windows install and PHP-GTK news site. 
-            </p>
-            <blockquote>&nbsp;</blockquote>
-          </td>
-        </tr>
-      </table>
+
+<h1>Resources</h1>
+
+<P>
+There are various resources for PHP-GTK.  Below are 
+listed the ones that we are aware of.  If you know of others 
+please <? print_email('miester@php.net', 'email the webmaster'); ?>.
+</P>
+
+<h2>Sites</h2>
+
+<UL>
+<LI><? print_link('http://gtk.php-coder.net/', 'GTK at PHP-Coder'); ?><BR>
+This site provides current news, some basic tutorials and example applications.<br>
+
+<LI><? print_link('http://www.phpgtk.com/', 'PHPGTK.com'); ?><BR>
+A Windows install and PHP-GTK news site.<br>
+
+<LI><? print_link('http://developer.gnome.org/doc/API/gtk/gtkobjects.html', 'GTK+ Reference Manual'); ?><BR>
+The GTK+ manual with a list of all widgets and their corresponding functions/attributes.<BR>
+
+<LI><? print_link('http://www.phpuk.org/gtk/', 'PHP-GTK Manual'); ?><BR>
+The beginnings of the PHP-GTK official manual. Keep checking back for updates!
+
+</UL>
+
+<h2>IRC</h2>
+
+<P>
+The <B>#php-gtk</B> IRC channel on EFNet has a few regulars who can most
+likely answer the questions you have.
+</P>
+
+</UL>
+
 <?php
 
-common_footer();
+commonFooter();
 
 ?>

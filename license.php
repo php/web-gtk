@@ -1,13 +1,8 @@
 <?php
-require_once("includes/shared.inc");
 
-common_header();
+common_header('Copyright and License');
 
 ?>
-<table width="80%" border="0" cellpadding="5" cellspacing="0" height="100%">
-        <tr>
-          <td>
-           <div class="title">Copyright and Licence</div>
 <h2>Website Copyright</h2>
 
 <P>
@@ -42,11 +37,6 @@ For more information on the PHP-GTK Team and the PHP-GTK project, please see
 <a href="http://gtk.php.net/">http://gtk.php.net/</a>.
 </P>
 
-<BR>
-          </td>
-        </tr>
-      </table>
-
 <?php
-common_footer();
+commonFooter();
 ?>

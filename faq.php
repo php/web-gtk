@@ -1,14 +1,11 @@
 <?php
-require_once("includes/shared.inc");
 
-common_header();
+commonHeader('Frequently Asked Questions');
 
 ?>
-<table width="80%" border="0" cellpadding="5" cellspacing="0" height="100%">
-        <tr> 
-          <td> 
-            <div class="title">FAQ</div>
-            <p class="mtext">
+
+<h1>Frequently Asked Questions</h1>
+
 
 <ul>
 <li><a href="#1">What is PHP-GTK?</a>
@@ -20,101 +17,131 @@ common_header();
 <li><a href="#7">Where do I go from here?</a>
 </ul>
 
-<a name="1"><b>What is PHP-GTK?</b></a><br>
+<DL>
+
+<DT>
+<a name="1"><b>What is PHP-GTK?</b></a>
+</DT>
+<DD><P>
 PHP-GTK is a PHP extension that implements language bindings for GTK+. It
 provides an object-oriented interface to GTK+ classes and functions and greatly
 simplifies writing client side cross-platform GUI applications.
-<br> <br>
+</P></DD>
 
-<a name="2"><b>Why is it not working with the browser/web server?</b></a><br>
+
+<DT>
+<a name="2"><b>Why is it not working with the browser/web server?</b></a>
+</DT>
+<DD><P>
 PHP-GTK is not meant to be used in the Web environment. It is intended for
 creation of standalone applications (run via command-line, user's desktop, etc.).
-<br><br>
+</P></DD>
 
-<a name="3"><b>How do I install PHP-GTK on Win32?</b></a><br>
-Download the latest <a href="http://gtk.php.net/do_download.php?download_file=php-gtk-0.0.2-win32.zip">binaries</a> from gtk.php.net<br>
-The zip file contains all binaries needed to run PHP-GTK. Copy the files to the following locations:<br>
-<br>
-On Windows 98/NT/2000 you will need these files<br>
-<br>
-[php-directory] (c:\php4)<br>
-<dd>php.exe<br>
-<dd>php4ts.dll<br>
-<dd>php_gtk.dll<br>
-<br>
-[Windows directory] (c:\winnt or c:\windows)<br>
-<dd>php.ini<br>
-<br>
-[System32 directory] (c:\winnt\system32 or c:\windows\system32)<br>
-<dd>gtk-1.3.dll<br>
-<dd>gdk-1.3.dll<br>
-<dd>gmodule-1.3.dll<br>
-<dd>glib-1.3.dll<br>
-<dd>iconv-1.3.dll<br>
-            <dd>gnu-intl.dll<br>
-              <br>
-              php-gtk has NOT been tested on Windows 95/98<br>
-              <br>
-              <br>
-              <a name="4"><b>How do I use the buttons in GtkFileSelection?</b></a><br>
-              <blockquote> <code> $fs = &new GtkFileSelection("Save file"); // 
-                Create the dialog window<br>
-                $ok_button = $fs->ok_button; // Get a handle to the Ok button<br>
-                $ok_button->connect("clicked", "enddialog"); // Connect a function<br>
-                $ok_button->connect_object("clicked", "destroy", $fs); // Connect 
-                the destroy action on the dialog window<br>
-                </code><br>
-                It is not currently possible to do it this way.<br>
-                <br>
-                <code> $fs = &new GtkFileSelection("Save file"); // Create the 
-                dialog window<br>
-                $fs->ok_button->connect("clicked", "enddialog"); // Connect a 
-                function<br>
-                $fs->ok_button->connect_object("clicked", "destroy", $fs); // 
-                Connect the destroy action on the dialog window<br>
-                </code> </blockquote>
-              <br>
-              <br>
-              <a name="5"><b>How do I know which GTK Classes are supported?</b></a><br>
-              The following code will show the defined classes. All the php-gtk 
-              classes will be listed along with one or two others. 
-              <blockquote> <code> $array = get_declared_classes();<br>
-                while(list(,$classname) = each($array)) {<br>
-                echo $classname."\n";<br>
-                }<br>
-                </code> </blockquote>
-              See the <a href="http://www.php.net/manual/en/ref.classobj.php">Class/Object</a> 
-              functions in the PHP Manual for other useful functions. <br>
-              <br>
-              <a name="6"><b>Can I use Themes under Win32?</b></a><br>
-              No, The Win32 GTK port does not currently support this. <br>
-              <br>
-              <a name="7"><b>Where do I go from here?</b></a><br>
-              There are a number of sources popping up around the net for PHP-GTK. 
-              Here is a small list of the ones we know of: 
-              <ul>
-                <li><a href="http://gtk.php-coder.net">http://gtk.php-coder.net</a> 
-                  - Current news, example applications, and some tutorials on 
-                  how to use PHP-GTK. 
-                <li><a href="http://www.phpgtk.com">http://www.phpgtk.com</a> 
-                  - A windows installer and news about PHP-GTK 
-                <li><a href="http://developer.gnome.org/doc/API/gtk/gtkobjects.html">GTK+ 
-                  Reference Manual</a> - The GTK+ manual with a list of all widgets 
-                  and their corresponding functions/attributes 
-                <li><a href="http://www.phpuk.org/gtk/">PHP-GTK Manual</a> - The 
-                  beginnings of the PHP-GTK official manual. Keep checking back 
-                  for updates! 
-                <li>#php-gtk IRC channel on EFNet has a few regulars who can most 
-                  likely answer the questions you have. 
-              </ul>
-              More will be added to the list as they become available.<br>
-              <br>
-          </td>
-        </tr>
-      </table>
-      
+<DT>
+<a name="3"><b>How do I install PHP-GTK on Win32?</b></a>
+</DT>
+<DD><P>
+Download the latest binaries from <? print_link('/downloads.php', 'gtk.php.net'); ?>.
+The zip file contains all binaries needed to run PHP-GTK. Copy the files to the following locations:
+</P></DD>
+<DD><P>
+<B>For Windows 98/NT/2000:</B>
+</P></DD>
+<DD><P>
+In your PHP directory (e.g., c:\php4):
+<UL>
+  <LI>php.exe
+  <LI>php4ts.dll
+  <LI>php_gtk.dll
+</UL>
+In your Windows directory (e.g., c:\winnt or c:\windows):
+<UL>
+  <LI>php.ini
+</UL>
+In your System32 directory (e.g., c:\winnt\system32 or c:\windows\system32):
+<UL>
+  <LI>gtk-1.3.dll
+  <LI>gdk-1.3.dll
+  <LI>gmodule-1.3.dll
+  <LI>glib-1.3.dll
+  <LI>iconv-1.3.dll
+  <LI>gnu-intl.dll
+</UL>
+</P></DD>
+<DD><P>
+<B>For Windows 95:</B>
+</P></DD>
+<DD><P>
+php-gtk has <b>not</b> been tested on Windows 95 ... sorry.
+</P></DD>
+
+
+<DT>
+<a name="4"><b>How do I use the buttons in GtkFileSelection?</b></a>
+</DT>
+<DD><P>
+<PRE CLASS="code">
+// Create the dialog window:
+    $fs = &new GtkFileSelection("Save file");
+
+// Get a handle to the Ok button:
+    $ok_button = $fs->ok_button;
+
+// Connect a function:
+    $ok_button->connect("clicked", "enddialog");
+
+// Connect the destroy action on the dialog window:
+    $ok_button->connect_object("clicked", "destroy", $fs);
+</PRE>
+</P></DD>
+<DD><P>
+It is <B>not</B> currently possible to do it this way:
+<PRE CLASS="code">
+// Create the dialog window
+    $fs = &new GtkFileSelection("Save file");
+
+// Connect a function
+    $fs->ok_button->connect("clicked", "enddialog");
+
+// Connect the destroy action on the dialog window
+    $fs->ok_button->connect_object("clicked", "destroy", $fs); 
+</PRE>
+</P></DD>
+
+<DT>
+<a name="5"><b>How do I know which GTK Classes are supported?</b></a>
+</DT>
+<DD><P>
+The following code will show the defined classes. All the php-gtk 
+classes will be listed along with one or two others.
+<PRE CLASS="code">
+$array = get_declared_classes()) {
+while(list(,$classname) = each($array)) {
+    echo $classname."\n";
+}
+</PRE>
+See the <?php print_link('http://www.php.net/manual/en/ref.classobj.php', 'Class/Object functions'); ?>
+in the PHP Manual for other useful functions.
+</P></DD>
+
+<DT>
+<a name="6"><b>Can I use Themes under Win32?</b></a>
+</DT>
+<DD><P>
+No, The Win32 GTK port does not currently support this.
+</P></DD>
+
+<DT>
+<a name="7"><b>Where do I go from here?</b></a>
+</DT>
+<DD><P>
+Check out the <?php print_link('/resources.php', 'Resources page'); ?>.
+</P></DD>
+
+</DL>
+
 <?php
 
-common_footer();
+commonFooter();
 
 ?>
