@@ -16,9 +16,27 @@ commonHeader("Manual Errata");
 mysql_connect("localhost");
 mysql_select_db("gtk");
 
+$query = "SELECT DISTINCT(LEFT(sect,1)) AS first FROM note ORDER BY first";
+$result = mysql_query($query) or die(mysql_error());
+$used = array();
+$fl = '';
+if ( mysql_num_rows($result) > 0) {
+	while ($row = mysql_fetch_array($result)) {
+		if (!fl) {
+			$fl = $row['first'];
+		}
+		$used[ $row['first'] ] = true;
+	}
+}
+
 $links = array();
 for($i=ord('a'); $i<=ord('z'); $i++ ) {
-	$links[] = make_link($PHP_SELF.'?let='.chr($i), chr($i) );
+	$l = chr($i);
+	if (isset($used[$l])) {
+		$links[] = make_link($PHP_SELF.'?let='.$l, $l );
+	} else {
+		$links[] = $l;
+	}
 }
 
 echo '<table border="0" cellpadding="4" cellspacing="0" width="100%">';
@@ -27,7 +45,7 @@ echo '<td colspan="2"><small>Jump to: ' . join (' | ', $links ) . '<br></td>';
 echo "</tr>\n";
 
 if(!$let) {
-	$let = 'a';
+	$let = $fl;
 }
 
 $query = "SELECT *, UNIX_TIMESTAMP(ts) AS my_when FROM note where sect like '$let%' ORDER BY sect, ts";
