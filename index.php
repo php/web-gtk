@@ -71,6 +71,8 @@ commonHeader();
     <a href="http://pear.php.net/packages.php?catpid=34&amp;catname=Gtk+Components">gtk classes</a> 
     and a new PHP-GTK interface for PHPUnit.</p>
 
+<?php hdelim(); ?>
+
 <h1>PHP-GTK 1.0.1 released</h1>
 
 <p><span class="newsdate">[09-Aug-2004]</span> <a href="/download.php">PHP-GTK 
