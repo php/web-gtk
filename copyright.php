@@ -14,6 +14,13 @@ For information on the PHP License (i.e. using the PHP language),
 <?php print_link('http:/www.php.net/license/', 'click here'); ?>.
 </P>
 
+<h2>PHP-GTK License</h2>
+
+<P>
+PHP-GTK is released under the LGPL.  
+<?php print_link('http://www.gnu.org/copyleft/lesser.html#SEC1', 'Click here'); ?> for
+more info on the LGPL.
+</P>
 
 <h2>Website Copyright</h2>
 
