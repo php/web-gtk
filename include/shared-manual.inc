@@ -401,11 +401,11 @@ function manualHeader($title,$id="") {
 			$query = 'UPDATE note SET vote=vote+1, rating=rating+' . $HTTP_GET_VARS['rate_note'] .
 				' WHERE id=' . $HTTP_GET_VARS['rate_id'];
 			$res = @mysql_db_query("gtk", $query, $db_id);
+
+echo "\n\n<!-- $query :: $res -->\n\n";
+
 		}
 	}
-
-print_r($p);
-echo $HTTP_SERVER_VARS['SCRIPT_NAME'] . '-' .$HTTP_SERVER_VARS['HTTP_REFERER'];
 
         # create links to plain html and other languages
 	if (!$HTDIG) {
