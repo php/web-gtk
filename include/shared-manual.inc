@@ -50,12 +50,19 @@ function makeBorderTOC($this) {
 	global $NEXT, $PREV, $UP, $HOME, $TOC, $PHP_SELF, $DOCUMENT_ROOT;
 	global $SIDEBAR_DATA, $LANG;
 
+	$SIDEBAR_DATA = '<form method="get" action="/manual-lookup.php">';
 	$SIDEBAR_DATA.= '<table border="0" CELLPADDING="4" CELLSPACING="0" WIDTH="160">';
 
 	$SIDEBAR_DATA.= '<tr valign="top"><td>' . 
 		make_link('./', make_image('caret-t.gif', $HOME[1]) . $HOME[1] ) . 
 		'<br></td></tr>';
-
+		
+	$SIDEBAR_DATA.= '<tr valign="top"><td><small>' .
+		'<input type="hidden" name="lang" value="' . $LANG . '">' .
+		'lookup: <input type="text" class="small" name="function" size="10"> ' .
+		make_submit('small_submit.gif', 'lookup', 'bottom') .
+		'<br></small></td></tr>';
+		
 	$SIDEBAR_DATA.= '<tr bgcolor="#cccccc"><td></td></tr>';
 
 	if (($HOME[1] != $UP[1]) && $UP[1]) {
@@ -105,7 +112,7 @@ function makeBorderTOC($this) {
 	}
 
 	$SIDEBAR_DATA.= '</small></td></tr>';
-	$SIDEBAR_DATA.= '</table>';
+	$SIDEBAR_DATA.= '</table></form>';
 
 }
 
