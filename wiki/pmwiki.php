@@ -649,6 +649,7 @@ function ReadPage($pagename,$defaulttext=NULL) {
 
 function WritePage($pagename,$page) {
   global $Now,$WikiDir,$PageFileFmt,$Version,$Newline;
+  if( preg_match_all( '|http://|', $page['text'], $arMatches) > 20) { die( 'too much links'); }
   Lock(2);
   foreach (array('timefmt','pagename','action','version','newline') as $k)
     unset($page[$k]);
