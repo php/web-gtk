@@ -53,13 +53,13 @@ be useful, add it in. Good content can then be rolled in to official PHP-GTK
 documentation later on. 
 </p>
 
-<hr noshade size="1">
+hdelim();
 
 <p>
 Andrei Zmievski gave a presentation and a workshop on PHP-GTK at the Fórum Internacional Software Livre 2002 in Porto Alegre, Brazil. The presentation is available online at <?print_link('http://conf.php.net/br-gtk')?>.
 </p>
 
-<hr noshade size="1">
+hdelim();
 
 <p>
 <a href="/download.php">PHP-GTK Version 0.5.1</a> has been released today, April
@@ -69,7 +69,7 @@ improvements are included as well. See <a href="/changelog.php">Change Log</a>
 for full list of changes.
 </p>
 
-<hr noshade size="1">
+hdelim();
 
 <p>
 With the help of Philip Hallstrom, we now have a Freshmeat-like index of
