@@ -110,7 +110,7 @@ if ($action != '') {
 			echo '<TR valign="top"><TD align="right"><small>Note:<br></small></TD>' .
 				'<TD><TEXTAREA name="note" rows="8" cols="50">', $row['note'],'</TEXTAREA><BR></TD></TR>';
 
-			echo '<tr bgcolor="#cccccc"><td colspan="2"><br></td></tr>';
+			echo '<tr bgcolor="#cccccc"><td colspan="2"></td></tr>';
 
 			echo '<TR valign="top"><TD align="right"><small>Your CVS username:<br></small></TD>' .
 				'<TD><INPUT type="text" size="8" name="user" value="' . $user . '"><BR></TD></TR>';
