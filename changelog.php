@@ -6,7 +6,24 @@ commonHeader('PHP-GTK Changelog');
 
 <h1>PHP-GTK ChangeLog</h1>
 
-<a name="0.5.0"></a>
+<a name="0.5.2"></a>
+<h3>Version 0.5.2 "Bass does a body good"</h3>
+<b>01-Nov-2002</b>
+<ul>
+<li>simplified GdkPixbuf constructor parameters. (Andrei)</li>
+<li>fixed setting of tile/stipple/clip_mask/bg_pixmap properties of GdkGC.  (Andrei)</li>
+<li>implemented GdkPixbuf::fill(). (Andrei)</li>
+<li>changed failure to allocate color to output only a notice instead of a warning. (Andrei)</li>
+<li>made depth parameter of GdkPixmap constructor optional. (Andrei)</li>
+<li>added copy_area() method for drawables. (Andrei)</li>
+<li>added group() and set_group() methods for GtkRadioButton/GtkRadioMenuItem.  (Andrei)</li>
+<li>added GDK functions pointer_grab(), pointer_ungrab(), keyboard_grab(), keyboard_ungrab(). (Andrei)</li>
+<li>added utf8 support to GtkRadioButton, GtkToggleButton, GtkCheckMenuItem, and GtkCheckButton. (Frank)</li>
+<li>fixed a crash bug when using non-string variables to access overloaded object's properties. (Andrei)</li>
+<li>fixed a crash bug in GtkCheckButton constructor. (Andrei)</li>
+</ul>
+
+<a name="0.5.1"></a>
 <h3>Version 0.5.1 "hardboiled wonderland"</h3>
 <b>26-Apr-2002</b>
 <ul>

@@ -34,6 +34,14 @@ GUI applications.
 <h1>News</h1>
 
 <p>
+<a href="/download.php">PHP-GTK Version 0.5.2</a> is out. After a long break, we
+have fixed some bugs and improved gdk-pixbuf functionality. See
+<a href="/changelog.php">Change Log</a> for the full list of changes.
+</p>
+
+<?hdelim()?>
+
+<p>
 <?print_link('http://wiki.gtk.php.net/')?>
 </p>
 
