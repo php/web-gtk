@@ -158,7 +158,7 @@ function print_email($email, $linktext=false) {
 #
 #
 
-function commonHeader($title=false) {
+function commonHeader($title=false, $padding=true) {
 	global $SIDEBAR_DATA;
 
 ?><html>
@@ -199,6 +199,8 @@ function commonHeader($title=false) {
 	print_link('/faq.php', 'faq', false, 'class="menuBlack"');
 	echo delim();
 	print_link('/changelog.php', 'changelog', false, 'class="menuBlack"');
+	//echo delim();
+	//print_link('/apps/', 'applications', false, 'class="menuBlack"');
 	echo delim();
 	print_link('/resources.php', 'resources', false, 'class="menuBlack"');
       ?>&nbsp;<br>
@@ -243,7 +245,7 @@ function commonHeader($title=false) {
   <td bgcolor="#cccccc" background="/gifs/checkerboard.gif"><?php spacer(1,1);?><br></td>
 <?php endif; ?>
   <td>
-   <table width="600" cellpadding="10" cellspacing="0">
+   <table width="600" cellpadding="<?php if( $padding ) { print("10"); }else { print("0"); } ?>" cellspacing="0">
     <tr>
      <td valign="top">
 <?php
@@ -256,11 +258,14 @@ function commonHeader($title=false) {
 #
 #
 
-function commonFooter() {
+function commonFooter($padding = true) {
 #	global $LAST_UPDATED, $MIRRORS, $MYSITE, $COUNTRIES;
 	global $HTTP_SERVER_VARS;
+
+	if( $padding ) {
+		print("<br>");
+	}
 ?>
-      <br>
      </td>
     </tr>
    </table>
