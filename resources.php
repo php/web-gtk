@@ -38,23 +38,39 @@ PHP-GTK list has no information about.</li>
 
 </ul>
 
-<h2>Articles</h2>
+<h2>On-line Articles</h2>
 
 <ul>
 
-<li><? print_link('http://www.goldweb.com.au/~davidj/articles/html/1.html',
-				  'Introductory PHP-GTK article by David Jorm'); ?></li>
+<li>"<? print_link('http://www.devx.com/opensource/Article/21235/0',
+                   'Develop Desktop GUI Apps with PHP-GTK, the Standalone PHP'); ?>"
+    by Gregory L. Magnusson</li>
 
-<li><? print_link('http://www.webmasterbase.com/article/697',
-				  'Build Cross-Platform Windowed Apps with PHP by Mitchell Harper'); ?></li>
+<li>"<? print_link('http://www.goldweb.com.au/~davidj/articles/html/1.html',
+                   'Introductory PHP-GTK'); ?>" 
+    by David Jorm</li>
 
-<li><?  print_link('http://products.magnet-i.com/phpgale/php-gtk_endliess_possibilities.pdf',
-				   'PHP-GTK: Endless Possibilities') ?></li>
+<li>"<? print_link('http://www.webmasterbase.com/article/697',
+                   'Build Cross-Platform Windowed Apps with PHP'); ?>"
+    by Mitchell Harper</li>
+
+<li>"<? print_link('http://products.magnet-i.com/phpgale/php-gtk_endliess_possibilities.pdf',
+                   'PHP-GTK: Endless Possibilities') ?>"
+    by Nirav Mehta, Vaishali Master, and Piyush Shah</li>
 
 </ul>
 
+<h2>Magazine Articles</h2>
+
+<li>&quot;<a href="http://www.phpmag.net/itr/ausgaben/psecom,id,212,nodeid,112.html">
+    Making a GUI Mess of PHP: Building 'Stand-alone' GUI Applications with 
+    PHP-GTK</a>&quot; by Ben Ramsey<br />
+    <em>International PHP Magazine</em>, 05.2004</li>
+
 <h2>Presentations</h2>
-<a href="http://conf.php.net/sd-gtk">2001 O'Reilly Open Source Conference PHP-GTK talk</a>.
+
+<li><a href="http://conf.php.net/sd-gtk">
+    2001 O'Reilly Open Source Conference PHP-GTK talk</a></li>
 
 <a name="#lists"></a>
 <h2>Mailing Lists</h2>
