@@ -9,7 +9,7 @@ commonHeader('Resources');
 <P>
 There are various resources for PHP-GTK.  Below are 
 listed the ones that we are aware of.  If you know of others 
-please <? print_email('webmaster@php.net', 'email the webmaster'); ?>.
+please <? print_email('gtk-webmaster@php.net', 'email the webmaster'); ?>.
 </P>
 
 <h2>Sites</h2>

@@ -54,7 +54,7 @@ Any serious php-gtk related questions should be sent to
 they are related to the manual, in which case they should be sent 
 to <?php print_email('jmoore@php.net'); ?>.  If you have 
 a question or suggestion for the website, you should contact 
-<?php print_email('webmaster@php.net'); ?>.
+<?php print_email('gtk-webmaster@php.net'); ?>.
 </P>
 
 
