@@ -34,6 +34,12 @@ GUI applications.
 
 <h1>News</h1>
 <P>
+Rich Payne just announced version 0.10 of 
+<a href="http://teak.sourceforge.net/">Teak</a>, an IMAP client 
+written using PHP-GTK. The site has a nice set of screenshots and is well worth
+taking a look at.
+</P>
+<P>
 <a href="/download.php">PHP-GTK version 0.1.1</a> has been released on September
 24, 2001. The list of changes can be found in <a href="/changelog.php">Change
 Log</a>.
