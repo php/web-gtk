@@ -58,8 +58,8 @@ space-time continuum in your local area.</i>
 <p>
 Latest stable release:
 <blockquote>
-	<a href="do_download.php?download_file=php-gtk-0.0.2.tar.gz">php-gtk-0.0.2 (Source)</a> (7-Mar-2001)<br>
-	<a href="do_download.php?download_file=php-gtk-0.0.2-win32.zip">php-gtk-0.0.2 (Windows and php binary)</a> (7-Mar-2001)
+	<a href="do_download.php?download_file=php-gtk-0.0.3.tar.gz">php-gtk-0.0.3 (Source)</a> (7-Mar-2001)<br>
+	<a href="do_download.php?download_file=php-gtk-0.0.3-win32.zip">php-gtk-0.0.3 (Windows and php binary)</a> (7-Mar-2001)
 </blockquote>
 
 <p>
