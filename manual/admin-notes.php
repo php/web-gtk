@@ -151,6 +151,7 @@ if ($action != '') {
 } // end of if($action != "")
 
 
+$MAGIC_COOKIE = 'temp';
 include 'browse.php';
 
 
