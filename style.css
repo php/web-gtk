@@ -131,6 +131,10 @@ hr {
     height: 1px;
 }
 
+#docsupdates h3 {
+    margin-top: 0px;
+}
+
 /*
  * Local variables:
  * tab-width: 4
