@@ -180,7 +180,7 @@ function makeEntry($row, $show_admin = true, $show_rating = true ) {
 			echo '<b>'.$name.'</b><br>';
 		}
 	}
-	echo '<small> . date("d-M-Y h:i", $row['xwhen']) . '</small>';
+	echo '<small>' . date("d-M-Y h:i", $row['xwhen']) . '</small>';
 	echo '<br></td>';
 	echo '<td align="right" nowrap><small>';
 	if (isset($MAGIC_COOKIE) && $show_admin) {
