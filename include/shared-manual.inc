@@ -327,6 +327,7 @@ function manualLastModified($title, $id) {
 		if ($result_id) {
 			mysql_free_result($result_id);
 		}
+	}
 }
 
 
