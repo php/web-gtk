@@ -151,7 +151,6 @@ if ($action != '') {
 		$query .= " WHERE id=$id";
 		if (mysql_query($query)) {
 			echo "<P><B>Record modified.</B></P>";
-echo $rating;
 			mail($mailto, "note ".$row['id']." modified in ".$row['sect']." by $user",stripslashes($note).$add_url,"From: ".$user."@php.net");
 		} else {
 			echo "<P><B>Record not modified (query failed).</B></P>";
