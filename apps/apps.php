@@ -50,8 +50,14 @@ if( !empty($this_cat) )  {
 		Here you will find PHP-GTK applications.  If you know of an application that
 		isn't in this database you can add it via the link on the left.  If there is a category
 		that you think should be added to this database please
-		<a href='mailto:php-gtk-webmaster@lists.php.net'>email the webmaster</a>.	
-		
+		<a href='mailto:php-gtk-webmaster@lists.php.net'>email the webmaster</a>
+
+		<h3>Rating applications</h3>
+
+		If you like - or dislike - an application that you find on this
+		site, please rate it to give others an idea of its usefulness. 
+		Ratings run from 1 (not good) through to 5 (brilliant).
+
 		<h3>Newest Applications</h3>
 	");
 
