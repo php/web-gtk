@@ -46,7 +46,7 @@ $GLOBALS['index.file']              = '/data/cvs/php-gtk/scripts/searchindex.dat
 $GLOBALS['base.dir']                = dirname( __FILE__) . '/../manual/';
 
 
-$GLOBALS['sections']                = array( 'gtk', 'gdk', 'extra', 'scn');
+$GLOBALS['sections']                = array( 'gdk', 'glade', 'gtk', 'extra', 'scn');
 //the following 2 arrays are currently not used, but keep them here
 $GLOBALS['reserved']                = array( 'gtk', 'gdk', 'scn', 'method', 'property', 'prop', 'enum', 'signal', 'constructor');
 $GLOBALS['reserved_method']         = array( 'get', 'set');
@@ -396,6 +396,8 @@ function splitIntoSections( $arFiles)
 {
     $arSected   = array();
     
+    $arRegexs['tutorials']	= '/^tutorials\\./';//has to be before class and method
+    
     $arRegexs['class']      = '/^[a-zA-Z0-9]+\\.[a-zA-Z0-9]+\\.[a-zA-Z0-9]+$/';
     $arRegexs['constructor']= '/\\.constructor\\.[a-zA-Z0-9]+$/';
     $arRegexs['enum']       = '/^[a-zA-Z0-9]+\\.[a-zA-Z0-9]+\\.enum\\./';
@@ -444,30 +446,45 @@ function splitIntoSections( $arFiles)
 function getFileTitle( $strFilename, $strCategory)
 {
 	$arParts	= explode( '.', $strFilename);
+    $nParts		= count( $arParts);
     
     switch( $strCategory)
     {
     	case 'class':
-        	return niceClassName( $arParts[1]);
+        	if( $arParts[1] == 'functions') {
+            	//function list gtk.functions.php
+                return niceClassName( $arParts[0]) . ' functions';
+            } else {
+            	//normal class name gtk.gtkentry.php
+        		return niceClassName( $arParts[1]);
+            }
         case 'constructor':
         	return niceClassName( $arParts[1]) . ' constructor';
         case 'method':
-        	if( count( $arParts) == 5) {//class with method
+        	if( $nParts == 5) {//class with method
         		return niceClassName( $arParts[1]) . '::' . $arParts[3] . '()';
             } else {//gtk/gdk method
         		return niceClassName( $arParts[0]) . '::' . $arParts[2] . '()';
             }
         case 'property':
-        	if( count( $arParts) == 5) {//class property
+        	if( $nParts == 5) {//class property
         		return niceClassName( $arParts[1]) . '::' . $arParts[3];
             } else {//gtk/gdk property
         		return niceClassName( $arParts[0]) . '::' . $arParts[2];
             }
         case 'signal':
-        	if( count( $arParts) == 5) {//class signal
+        	if( $nParts == 5) {//class signal
         		return niceClassName( $arParts[1]) . ': ' . $arParts[3];
             } else {//gtk/gdk signal
         		return niceClassName( $arParts[0]) . ': ' . $arParts[2];
+            }
+        case 'tutorials':
+        	if( $nParts == 2) {
+            	return 'Tutorial list';
+            } else if( $nParts == 3) {
+            	return ucfirst( $arParts[1])  . ' tutorial';
+            } else {
+            	return ucfirst( $arParts[1])  . ' tutorial: ' . $arParts[2];
             }
     	default:
         	return $strFilename;

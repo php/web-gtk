@@ -85,6 +85,7 @@ else
         'property'      => 'Properties', 
         'signal'        => 'Signals', 
         'enum'          => 'Enumerators',
+        'tutorials'		=> 'Tutorials',
         'unknown'       => 'Other files'
     );
     $arIdNames      = array( 1 => 'classes', 2 => 'direct functions', 3 => 'in the class name');
