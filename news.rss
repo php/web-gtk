@@ -29,7 +29,7 @@
 <item rdf:about="http://gtk.php.net/about/news-2005-02-22">
     <title>February News</title>
     <link>http://gtk.php.net/</link>
-    <descpiption>It's getting close to conference season and with that comes
+    <description>It's getting close to conference season and with that comes
     a few talks about PHP-GTK. At the International PHP Conference, Ben
     Ramsey will be holding a talk titled "PHP in a Whole New World: Desktop
     Applications Built in PHP-GTK." At the same conference Andrei Zmievski
