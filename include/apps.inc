@@ -128,7 +128,7 @@ function appHeader($the_cat = false, $the_subcat = false) {
 foreach( $appCats as $cat_id => $catObj ) {
 	print("<tr valign=\"top\">");
 
-	if( {$_GET['the_cat']} == $cat_id ) {
+	if( $_GET['the_cat'] == $cat_id ) {
 		$img = "/gifs/box-1.gif";
 	}else {
 		$img = "/gifs/box-0.gif";
@@ -136,11 +136,11 @@ foreach( $appCats as $cat_id => $catObj ) {
 	print("<td nowrap><a href=\"$script?the_cat=$cat_id\"><img src=\"$img\" border=\"0\" width=\"11\" height=\"7\" ALT=\"$catObj->name\" >$catObj->name</a><br></td>");
 	print("</tr>");
 	
-	if( {$_GET['the_cat']} == $cat_id && is_array($catObj->sub) )  {
+	if( $_GET['the_cat'] == $cat_id && is_array($catObj->sub) )  {
 		print("<tr valign=\"top\">");
 		print("<td nowrap><small>");
 		foreach( $catObj->sub as $subcat_id => $subcatObj ) {
-			if( {$_GET['the_subcat']} == $subcat_id ) {
+			if( $_GET['the_subcat'] == $subcat_id ) {
 				$img = "/gifs/box-1.gif";
 			}else {
 				$img = "/gifs/box-0.gif";

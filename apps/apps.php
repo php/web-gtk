@@ -12,12 +12,12 @@ if( empty($GET['offset']) ) {
 	$offset = 0;
 }
 
-if( !empty({$_GET['the_cat']}) )  {
-	$title = " : " . $appCats[{$_GET['the_cat']}]->name;
-	$this_cat = {$_GET['the_cat']};
-	if( !empty({$_GET['the_subcat']}) ) {
-		$title .= " : " . $appCats[{$_GET['the_cat']}]->sub[{$_GET['the_subcat']}]->name;
-		$this_cat = {$_GET['the_subcat']};
+if( !empty($_GET['the_cat']) )  {
+	$title = " : " . $appCats[$_GET['the_cat']]->name;
+	$this_cat = $_GET['the_cat'];
+	if( !empty($_GET['the_subcat']) ) {
+		$title .= " : " . $appCats[$_GET['the_cat']]->sub[$_GET['the_subcat']]->name;
+		$this_cat = $_GET['the_subcat'];
 	}
 }
 
@@ -62,7 +62,7 @@ $num_rows = mysql_num_rows($res);
 if( $res && $num_rows > 0 ) {
 	print("<table border=0 cellpadding=2 cellspacing=0 width=100%>");
 	while( $row = mysql_fetch_object($res) )  {
-		displayApp($row, {$_GET['the_cat']}, {$_GET['the_subcat']}, {$_GET['offset']});
+		displayApp($row, $_GET['the_cat'], $_GET['the_subcat'], $_GET['offset']);
 	}
 	print("</table>");
 
@@ -74,7 +74,7 @@ if( $res && $num_rows > 0 ) {
 		if( !empty($this_cat) )  {
 			print("<a href='index.php?the_cat={$_GET['the_cat']}&the_subcat={$_GET['the_subcat']}&offset=".({$_GET['offset']} + $limit)."'>see more applications...</a>&nbsp;&nbsp;");
 		}else if( !empty($_GET['key']) ) {
-			print("<a href='index.php?key=$_GET['key']&offset=" . ({$_GET['offset']} + $limit) . "'>see more applications...</a>&nbsp;&nbsp;");
+			print("<a href='index.php?key={$_GET['key']}&offset=" . ({$_GET['offset']} + $limit) . "'>see more applications...</a>&nbsp;&nbsp;");
 		}else {
 			print("<a href='index.php?key=new'>see more new applications...</a>&nbsp;&nbsp;");
 		}
