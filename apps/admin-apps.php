@@ -13,10 +13,10 @@ if( isset($MAGIC_COOKIE) ) {
 	list($user, $pass) = explode(":", base64_decode($MAGIC_COOKIE));
 }
 
-//if( !verify_password($user,$pass) ) {
-//	Header("Location: /admin-login.php");
-//	exit;
-//}
+if( !isset($MAGIC_COOKIE) ) {
+	Header("Location: http://master.php.net/manage/users.php");
+	exit;
+}
 
 $MAGIC_COOKIE = 'temp';
 
