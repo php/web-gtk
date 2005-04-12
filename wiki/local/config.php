@@ -12,9 +12,9 @@ $WikiTitle = 'PHP-GTK:Wiki';
 
 ##  $ScriptUrl is your preferred URL for accessing wiki pages
 ##  $PubDirUrl is the URL for the pub directory.
-$ScriptUrl = 'http://php-web.cweiske/wiki';
-$PubDirUrl = 'http://php-web.cweiske/wiki/pub';
-$PageUrlFmt = 'http://php-web.cweiske/wiki/$Group/$Title_';
+$ScriptUrl = 'http://gtk.php.net/wiki';
+$PubDirUrl = 'http://gtk.php.net/wiki/pub';
+$PageUrlFmt = 'http://gtk.php.net/wiki/$Group/$Title_';
 $UploadUrlFmt = 'http://gtk.php.net/wiki/uploads';
 
 ##  If your system is able to display the home page but gives
