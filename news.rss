@@ -37,7 +37,11 @@
     -Andrei
     Any tester or developers interested in helping (Especially to port old
     override files so that CList and CTree work) please contact the PHP-GTK
-    Dev mailing list.</description>
+    Dev mailing list.
+    In other news, Christian Weiske is making steady progress on the
+    documentation system. Docs skeletons can now be automatically generated
+    for all of the classes that have been implemented so far. Read his post
+    to the documentation mailing list for more details.</description>
     <dc:date>2005-04-22</dc:date>
 </item>
 

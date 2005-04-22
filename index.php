@@ -72,6 +72,12 @@ commonHeader();
     override files so that CList and CTree work) please contact the 
     <a href="http://gtk.php.net/resources.php">PHP-GTK Dev mailing list</a>.
    </p>
+   <p>In other news, Christian Weiske is making steady progress on the 
+    documentation system. Docs skeletons can now be automatically generated
+    for all of the classes that have been implemented so far. Read his 
+    <a href="http://marc.theaimsgroup.com/?l=php-gtk-doc&m=111316563116664&w=2">post</a>
+    to the documentation mailing list for more details.
+   </p>
 
 <?php hdelim(); ?>
 
