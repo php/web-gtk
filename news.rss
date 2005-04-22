@@ -26,6 +26,21 @@
     </items>
 </channel>
 
+<item rdf:about="http://gtk.php.net/about/news-2005-04-22">
+    <title>A Message From Andrei</title>
+    <link>http://gtk.php.net/</link>
+    <description>I finished porting the first demo from PyGTK, the stock
+    item browser. It's in demos/stock-browser.php and in the process I've
+    implemented a fair amount of new GtkTreeView/GtkListStore functions.
+    PHP-GTK 2 is coming along!
+    Maybe a very early alpha release is due...
+    -Andrei
+    Any tester or developers interested in helping (Especially to port old
+    override files so that CList and CTree work) please contact the PHP-GTK
+    Dev mailing list.</description>
+    <dc:date>2005-04-22</dc:date>
+</item>
+
 <item rdf:about="http://gtk.php.net/about/news-2005-03-21">
     <title>PHP-GTK 2 Making Progress</title>
     <link>http://gtk.php.net/</link>

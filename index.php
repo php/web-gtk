@@ -56,6 +56,25 @@ commonHeader();
 
 ?>
 
+<h1>A Message from Andrei</h1>
+
+<p><span class="newsdate">[22-Apr-2005]</span> I finished porting the first
+    demo from PyGTK, the stock item browser. It's in 
+    <a href="http://cvs.php.net/co.php/php-gtk/demos/stock-browser.php">demos/stock-browser.php</a>
+    and in the process I've implemented a fair amount of new
+    GtkTreeView/GtkListStore functions. PHP-GTK 2 is coming along!
+   </p>
+   <p>Maybe a very early alpha release is due...
+   </p>
+   <p>-Andrei
+   </p>
+   <p>Any tester or developers interested in helping (Especially to port old
+    override files so that CList and CTree work) please contact the 
+    <a href="http://gtk.php.net/resources.php">PHP-GTK Dev mailing list</a>.
+   </p>
+
+<?php hdelim(); ?>
+
 <h1>PHP-GTK 2 Making Progress</h1>
 
 <p><span class="newsdate">[21-Mar-2005]</span> PHP-GTK 2 is making great strides
