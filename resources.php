@@ -96,6 +96,11 @@ The address of the list itself is <?php print_email('php-gtk-dev@lists.php.net')
 The list is archived at <?php print_link('http://marc.theaimsgroup.com/?l=php-gtk-dev', 'MARC'); ?>.
 </p>
 <p>
+The <b>php-gtk-doc</b> list is used to discuss the writing of PHP-GTK documentation. To subscribe, send a blank email to <?php print_email('php-gtk-doc-subscribe@lists.php.net'); ?>.
+The address of the list itself is <?php print_email('php-gtk-doc@lists.php.net'); ?>.
+The list is archived at <?php print_link('http://marc.theaimsgroup.com/?l=php-gtk-doc', 'MARC');?>
+</p>
+<p>
 The <b>php-gtk-cvs</b> list has all the CVS commits to PHP-GTK and related projects posted to it automatically. To subscribe,
 send blank email to <?php print_email('php-gtk-cvs-subscribe@lists.php.net'); ?>.
 The address of the list itself is <?php print_email('php-gtk-cvs@lists.php.net'); ?>.
