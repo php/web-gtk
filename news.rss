@@ -27,6 +27,22 @@
 </channel>
 
 <item rdf:about="http://gtk.php.net/about/news-2005-04-22">
+    <title>Getting Ready for PHP-GTK 2</title>
+    <link>http://gtk.php.net/</link>
+    <description>
+     PHP-GTK 2 is getting closer and closer to a first release every day.
+     At the International PHP Conference, Andrei gave a talk about the 
+     current status of PHP-GTK 2 and the direction it is heading. Since then,
+     excellent progress has been made with trees and editable cells. Parameter
+     reflection has also been added thanks to Christian. The lastest efforts
+     have led to the first set of practical applications written with PHP-GTK
+     2. Christian's reflection browser makes it easy to take a look at the
+     inner workings of PHP-GTK 2 classes and can be used as simple documentation.
+    </description>
+    <dc:date>2005-05-18</dc:date>
+</item>
+
+<item rdf:about="http://gtk.php.net/about/news-2005-04-22">
     <title>A Message From Andrei</title>
     <link>http://gtk.php.net/</link>
     <description>I finished porting the first demo from PyGTK, the stock
@@ -145,33 +161,4 @@
     <dc:date>2004-07-28</dc:date>
 </item>
 
-<item rdf:about="http://gtk.php.net/">
-    <title>Manual search bug fixed</title>
-    <link>http://gtk.php.net/</link>
-    <description>A bug has been fixed in the search functionality of the PHP-GTK Web site that caused problems when searching on the manual. Now, searches on connect, window, child, beep, etc. return actual results instead of "cannot be found" messages. Other upgrades to the manual search functionality are likely to follow.</description>
-    <dc:date>2004-07-28</dc:date>
-</item>
-
-<!-- Shift old items off list.
-<item rdf:about="http://gtk.php.net/wiki/">
-    <title>New PHP-GTK wiki</title>
-    <link>http://gtk.php.net/wiki/</link>
-    <description>We have set up a new wiki that is faster and more easily manageable than our previous wiki. In addition, the new wiki is now internally a part of the PHP-GTK Web site. Special thanks go to Manuel Kiessling who contributed server resources to host the PHP-GTK Wiki up until the present. In other news, International PHP Magazine's PHP Barnstormer made special mention of the increased activity here at PHP-GTK in this week's issue.</description>
-    <dc:date>2004-07-27</dc:date>
-</item>
-
-<item rdf:about="http://gtk.php.net/docs.php">
-    <title>Documentation updates</title>
-    <link>http://gtk.php.net/docs.php</link>
-    <description>Thanks to Christian Weiske, GtkCTree and GtkCList have both received some much-needed documentation. Andrei Zmievski has also implemented a nightly build system so the documentation can be updated regularly on the site as content is added/updated by our documentation team. Also, notice that a "whole site" search selection has been added to the search drop-down box. This feature uses Google to search the PHP-GTK Web site.</description>
-    <dc:date>2004-07-22</dc:date>
-</item>
-
-<item rdf:about="http://developers.slashdot.org/developers/04/07/21/2328224.shtml">
-    <title>Slashdot mention</title>
-    <link>http://developers.slashdot.org/developers/04/07/21/2328224.shtml</link>
-    <description>The increase in PHP-GTK community activity and interest in PHP-GTK 2 has afforded this site a mention on Slashdot. Thanks to Joel De Gan for posting to Slashdot.</description>
-    <dc:date>2004-07-22</dc:date>
-</item>
--->
 </rdf:RDF>
