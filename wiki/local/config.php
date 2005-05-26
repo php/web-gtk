@@ -62,6 +62,10 @@ $EnablePathInfo = 1;
 ## revision history.  The default is 3650 (approx 10 years).
 # $DiffKeepDays=30;                        # keep page history at least 30 days
 
+## Adding this config option to slow down spammers just a little.
+## I realize it won't prevent all spam but it may make maintaining the
+## Wiki a little easier.
+$EnablePostAuthorRequired = 1;
 
 /* Custom Functions */
 function showDate()
