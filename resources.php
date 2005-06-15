@@ -16,7 +16,7 @@ please <? print_email('php-gtk-webmaster@lists.php.net', 'email the webmaster');
 
 <ul>
 
-<li><? print_link('http://wiki.gtk.php.net/', 'PHP-GTK Wiki') ?><br />
+<li><? print_link('http://gtk.php.net/wiki/', 'PHP-GTK Wiki') ?><br />
 This site allows the PHP-GTK community to help contribute documentation to the
 PHP-GTK project.</li>
 
