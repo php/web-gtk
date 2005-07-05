@@ -41,40 +41,95 @@ creation of standalone applications (run via command-line, user's desktop, etc.)
 <a name="3"><b>How do I install PHP-GTK on Win32?</b></a>
 </DT>
 <DD><P>
-Download the latest binaries from <? print_link('/download.php', 'gtk.php.net'); ?>.
-The zip file contains all binaries needed to run PHP-GTK. Copy the files to the following locations:
-</P></DD>
+
+Download the latest binaries from <a href="http://gtk.php.net/download.php">gtk.php.net</a>.
+The zip file contains all binaries needed to run core PHP-GTK, as well as extra features such as Glade/XML and Scintilla. 
+Extract the files to a temporary directory and then copy them into the following locations:
+</P>
 <DD><P>
-<B>For Windows 98/NT/2000:</B>
-</P></DD>
-<DD><P>
-In your PHP directory (e.g., c:\php4):
+<B>For Windows 98/NT/2000/XP:</B>
+</P>
+<DD><P>In your PHP directory (e.g., c:\php4):  
 <UL>
-  <LI>php.exe
-  <LI>php4ts.dll
-  <LI>php_gtk.dll
+  <li>php.exe
+  <li>php_win.exe
+  <li>php-cgi.exe
+  <li>php.ini
+  <li>php.ini-gtk
+  <li>all .dll files
 </UL>
-In your Windows directory (e.g., c:\winnt or c:\windows):
+In a test directory (e.g., c:\php4\test):
 <UL>
-  <LI>php.ini
-</UL>
-In your System32 directory (e.g., c:\winnt\system32 or c:\windows\system32):
-<UL>
-  <LI>gtk-1.3.dll
-  <LI>gdk-1.3.dll
-  <LI>gmodule-1.3.dll
-  <LI>glib-1.3.dll
-  <LI>iconv-1.3.dll
-  <LI>gnu-intl.dll
-</UL>
-</P></DD>
+  <li>all .php files
+  <li>testgtkrc
+  <li>testgtkrc2
+  <li>window.xpm
+</UL><br>
+NOTE: You can install the php.ini into your Windows 
+directory (i.e., c:\winnt or c:\windows) as indicated by the zip file, but it is often not a good option,
+depending on the installation.
+It is also no longer required; the php.exe (CLI version as of PHP 4.3.0) will search the working directory, e.g., c:\php4,
+as well as the Windows directory. Or you can specify your php.ini location in your command line statement with '-c' option, 
+as given in the php_win example below. 
+</P>
 <DD><P>
 <B>For Windows 95:</B>
-</P></DD>
+
+</P>
 <DD><P>
 PHP-GTK has <b>not</b> been tested on Windows 95 ... sorry.
-</P></DD>
+</P><br>
 
+<DD><P>
+<B>Testing the installation:</B>
+</P>
+<dd><p><dl>When the PHP-GTK files are installed, you can verify your setup using a DOS command line. 
+A typical example would be:</p>
+<dd><p>c:\php4\php c:\php4\test\hello.php</p></dl>
+<p></p>
+<dd><p><dl>To avoid the DOS box, you can use the php_win executable, provided in the install file:</p>
+<dd><p>c:\php4\php_win c:\php4\test\hello.php</p>
+<dd><p>or:</p>
+<dd><p>start c:\php4\php_win c:\php4\test\hello.php</p>
+<dd><p>or:</p>
+<dd><p>c:\php4\php_win -c \php4\php.ini -f c:\php4\test\hello.php</p></dl>
+<dd><p>(If you have installed your php.ini file in your windows directory, the -c option can be dropped.  For more
+information on command line options, see <a href="http://us3.php.net/manual/en/features.commandline.php">'Using PHP from the command line'</a> 
+on the main PHP site.)</p>
+<DD><P>
+<B>Troubleshooting:</B>
+</P>
+<dd><p>If you can't produce the hello window, try the following:</p>
+<UL>
+  <li>Verify the hello.php location, i.e., [drive:]\php4\test
+  <li>Open hello.php in Notepad, and make sure there is no obvious corruption to the code.
+  <li>Modify your php.ini file, to log any errors, as detailed below.
+  <li>Review the postings at the <a href="http://marc.theaimsgroup.com/?l=php-gtk-general">PHP-GTK discussion list archive</a> for possible solutions. 
+  <li>If you still have a problem, subscribe to the <a href="mailto:php-gtk-general-subscribe@lists.php.net">PHP-GTK general discussion list</a> and post your question there.
+</UL>
+
+<DD><P>
+<B>Tips/Tricks:</B>
+</P>
+<UL>
+  <li>To debug your scripts, modify the php.ini file as follows: 
+  <UL>
+     <li>Find the line for 'log_errors'.  Set it to 'On'.
+     <li>Find the line for 'error_log'.  Remove the beginning semicolon (uncomment) and replace 'filename' with an actual file location.
+         <br>Example: error_log=c:\php4\error_log.txt. 
+     <li>If the error file does not exist, php will create it on the next run.  Open the file and review. 
+  </UL>
+  <li>If you are planning to launch on an association, decide which extension you want to use for your scripts.  
+  Be aware that other applications register .php, so something like .php-gtk might be a better option. 
+  <li>Check out the Code Snippets and Code Hints on the <a href="http://gtk.php.net/wiki/">PHP-GTK Wiki page</a>.
+  <li>You can set your scripts to use Win32 themes, courtesy of Christian Weiske.  Check out the info page at:
+				     <br><a href="http://www.cweiske.de/phpgtk_themes.htm ">http://www.cweiske.de/phpgtk_themes.htm </a>
+  <li>Install the <a href="http://www.cweiske.de/phpgtk_apps.htm#phpgtklauncher">php-gtk launcher</a>. It 
+  handles many of the Windows directory issues and provides a series of PHP-GTK icons.  Also from Christian.
+  <li>Consider using Glade/XML for setting up your screens and reducing maintenance time.   
+				     <dl><dd>- Start with the info page at: <a href="http://gtk.php.net/manual/en/glade.gladexml.php">http://gtk.php.net/manual/en/glade.gladexml.php</a>.</dl>   
+  <br>
+</UL>
 
 <DT>
 <a name="4"><b>How do I use the buttons in GtkFileSelection?</b></a>
