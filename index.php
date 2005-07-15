@@ -56,6 +56,16 @@ commonHeader();
 
 ?>
 
+<h1>PHP-GTK 1.0.2 Released</h1>
+
+<p><span class="newsdate">[15-Jul-2005]</span>
+ <a href="/download.php">PHP-GTK 1.0.2</a> is a minor release that fixes
+ a bug in the build process that prevented PHP-GTK from being installed
+ with the newly released PHP 4.4.x branch.
+</p>
+
+<?php hdelim(); ?>
+
 <h1>Getting Ready for PHP-GTK 2</h1>
 
 <p><span class="newsdate">[18-May-2005]</span>
@@ -245,25 +255,6 @@ commonHeader();
 <p>For more information on GTK+ 2.4, read <a href="http://mail.gnome.org/archives/gtk-app-devel-list/2004-March/msg00178.html">this 
     post</a> and <a href="http://mail.gnome.org/archives/gtk-list/2004-March/msg00111.html">this 
     post</a>.</p>
-
-<?php hdelim(); ?>
-
-<h1>PHP-GTK RSS feed added</h1>
-
-<p><span class="newsdate">[28-Jul-2004]</span> The addition of an 
-    <a href="/news.rss">RSS feed</a> allows the PHP-GTK Web site to 
-    disseminate its news content throughout many different channels. Other 
-    sites may now use the feed to aggregate news content from this site.</p>
-
-<h1>Manual search bug fixed</h1>
-
-<p><span class="newsdate">[28-Jul-2004]</span> A bug has been fixed in the 
-    search functionality of the PHP-GTK Web site that caused problems when 
-    searching on the manual. Now, searches on <code>connect</code>, 
-    <code>window</code>, <code>child</code>, <code>beep</code>, etc. return 
-    actual results instead of "cannot be found" messages.</p>
-
-<p>Other upgrades to the manual search functionality are likely to follow.</p>
 
 <?php
 

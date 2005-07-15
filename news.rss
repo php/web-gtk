@@ -27,6 +27,17 @@
 </channel>
 
 <item rdf:about="http://gtk.php.net/about/news-2005-04-22">
+    <title>PHP-GTK 1.0.2 Released</title>
+    <link>http://gtk.php.net/</link>
+    <description>
+     PHP-GTK 1.0.2 is a minor release that fixes a bug in the build process
+     that prevented PHP-GTK from being installed with the newly released PHP
+     4.4.x branch.
+    </description>
+    <dc:date>2005-07-15</dc:date>
+</item>
+
+<item rdf:about="http://gtk.php.net/about/news-2005-04-22">
     <title>Getting Ready for PHP-GTK 2</title>
     <link>http://gtk.php.net/</link>
     <description>
@@ -152,13 +163,6 @@
     <link>http://marc.theaimsgroup.com/?l=php-gtk-dev&amp;m=109104992017688&amp;w=2</link>
     <description>In a thread on php-gtk-dev entitled "Gtk+ 2.2 or 2.4?", developers discussed whether to base PHP-GTK 2 on GTK+ 2.2 or 2.4. The decision was quickly made, with no opposition or argument, to proceed with using GTK+ 2.4. For more information on GTK+ 2.4, read this post and this post.</description>
     <dc:date>2004-07-29</dc:date>
-</item>
-
-<item rdf:about="http://gtk.php.net/news.rss">
-    <title>PHP-GTK RSS feed added</title>
-    <link>http://gtk.php.net/news.rss</link>
-    <description>The addition of an RSS feed allows the PHP-GTK Web site to disseminate its news content throughout many different channels. Other sites may now use the feed to aggregate news content from this site.</description>
-    <dc:date>2004-07-28</dc:date>
 </item>
 
 </rdf:RDF>
