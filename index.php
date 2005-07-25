@@ -56,6 +56,36 @@ commonHeader();
 
 ?>
 
+<h1>PHP-GTK 2 at the International PHP Conference</h1>
+
+<p><span class="newsdate">[25-Jul-2005]</span>
+ <a href="http://www.jeremyjohnstone.com/blog">Jeremy Johnstone</a> will be
+ presenting a talk titled
+ <a href="http://www.phpconference.com/konferenzen/psecom,id,343,nodeid,,_language,uk.html">"GUI
+ Development in PHP-GTK2"</a> at the International PHP Conference in November.
+ Anyone going to the conference should be sure to check out his talk. The
+ discussion includes "in depth coverage of developing a GUI application in
+ PHP-GTK2 including tools you can use to allow you to rapidly develop new
+ applications."
+</p>
+
+<?php hdelim(); ?>
+
+<h1>Win9x Support in PHP 5.1</h1>
+
+<p><span class="newsdate">[25-Jul-2005]</span>
+ There is talk on the
+ <a href="http://marc.theaimsgroup.com/?l=php-dev&m=112142925911670&w=2">PHP
+ Internals mailing list</a> about removing support for Win9x (95/98/2000/ME)
+ from PHP 5.1. For most PHP developers this isn't much of a big deal but for 
+ PHP-GTK 2 developers it may have a much more significant impact. If you have
+ reasons to keep Win9x support in PHP 5, make sure to
+ <a href="http://netevil.org/node.php?uuid=42d7a64c-ffb7-0029-3508-2d7a64c62bef">voice
+ your opinion</a>!
+</p>
+
+<?php hdelim(); ?>
+
 <h1>PHP-GTK 1.0.2 Released</h1>
 
 <p><span class="newsdate">[15-Jul-2005]</span>

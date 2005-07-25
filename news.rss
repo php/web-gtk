@@ -27,6 +27,32 @@
 </channel>
 
 <item rdf:about="http://gtk.php.net/about/news-2005-04-22">
+    <title>PHP-GTK 2 at the International PHP Conference</title>
+    <link>http://gtk.php.net/</link>
+    <description>
+     Jeremy Johnstone will be presenting a talk titled "GUI Development in
+     PHP-GTK2" at the International PHP Conference in November. Anyone going
+     to the conference should be sure to check out his talk. The discussion
+     includes "in depth coverage of developing a GUI application in PHP-GTK2
+     including tools you can use to allow you to rapidly develop new applications." 
+    </description>
+    <dc:date>2005-07-25</dc:date>
+</item>
+
+<item rdf:about="http://gtk.php.net/about/news-2005-04-22">
+    <title>Win9x Support in PHP 5.1</title>
+    <link>http://gtk.php.net/</link>
+    <description>
+     There is talk on the PHP Internals mailing list about removing support for
+     Win9x (95/98/2000/ME) from PHP 5.1. For most PHP developers this isn't much
+     of a big deal but for PHP-GTK 2 developers it may have a much more significant
+     impact. If you have reasons to keep Win9x support in PHP 5, make sure to voice
+     your opinion!
+    </description>
+    <dc:date>2005-07-25</dc:date>
+</item>
+
+<item rdf:about="http://gtk.php.net/about/news-2005-04-22">
     <title>PHP-GTK 1.0.2 Released</title>
     <link>http://gtk.php.net/</link>
     <description>
