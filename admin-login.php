@@ -7,7 +7,7 @@
 
 //require_once 'cvs-auth.inc';
 
-if (!isset($MAGIC_COOKIE)) {
+if (!isset($_COOKIE['MAGIC_COOKIE'])) {
 	Header("Location: http://master.php.net/manage/users.php");
 	exit;
 }
