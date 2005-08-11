@@ -16,6 +16,7 @@ print("<h1>Add a PHPGTK Application</h1>");
 // 
 if( $action == "add" ) {
 
+/*
 	if( !empty($_FILES[screenshot][name]) 
 		&& ereg("^image/", $_FILES[screenshot][type]) 
 		&& !ereg("gif", $_FILES[screenshot][type]) 
@@ -70,7 +71,8 @@ if( $action == "add" ) {
 		print("<br>");
 		print("Error: (" . mysql_errno() . ") " . mysql_error() );
 	}
-	
+*/
+    print('Submissions have been disabled until the form is safe from spammers.');
 }else {
 	$form_app = (object) 0;
 	if( !empty($cat_id) ) { 

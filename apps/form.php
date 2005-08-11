@@ -8,6 +8,10 @@
 	// $form_action - what the hidden field "action" should have its value set to.
 	// $form_submit - what the submit button should say
 	// 
+
+print('The submission form has been turned off until we modify the form to prevent spammers.');
+
+/*
 ?>
 <script language='JavaScript'>
 <!--
@@ -124,3 +128,6 @@ if( $MAGIC_COOKIE ) {
 </tr>
 </table>
 </form>
+<?
+/* */
+?>
