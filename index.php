@@ -56,6 +56,22 @@ commonHeader();
 
 ?>
 
+<h1>October News</h1>
+
+<p><span class="newsdate">[21-Oct-2005]</span>
+<a href="http://cweiske.de">Christian Weiske</a> has written an
+<a href="http://www.phpmagazin.de/itr/ausgaben/psecom,id,287,nodeid,60.html">article</a>
+for PHP Magazin titled "Rapit Application Development Mit PHP-GTK" which
+discusses creating applications using PHP-GTK and Glade.
+</p>
+<p>An unofficial version of PHP-GTK 2 for Windows can be found at
+<a href="http://ftp.emini.dk/pub/php/win32/gtk2/">http://ftp.emini.dk/pub/php/win32/gtk2/</a>.
+If you are interested in helping test PHP-GTK 2 on Windows, please send your comments to the <a href="http://gtk.php.net/resources.php"dev mailing list</a>.
+</p>
+
+<?php hdelim(); ?>
+
+
 <h1>PHP-GTK 2 at the International PHP Conference</h1>
 
 <p><span class="newsdate">[25-Jul-2005]</span>
