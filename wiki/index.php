@@ -119,7 +119,7 @@ $WikiPageCreateFmt =
   "<span class='createlink'>\$LinkText</span><a class='createlink' href='\$PageUrl?action=edit'>?</a>";
 $WikiWordCountMax = 1000000;
 $WikiWordCount['PmWiki'] = 1;
-$UrlLinkFmt = "<a class='urllink' href='\$Url'>\$LinkText</a>";
+$UrlLinkFmt = "<a class='urllink' href='\$Url' rel='nofollow'>\$LinkText</a>";
 $UrlImgFmt = "<img src='\$Url' border='0' alt='' img>";
 $GroupNamePattern="[[:upper:]][[:alnum:]]+";
 $WikiWordPattern="[[:upper:]][[:alnum:]]*(?:[[:upper:]][[:lower:]0-9]|[[:lower:]0-9][[:upper:]])[[:alnum:]]*";
