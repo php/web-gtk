@@ -215,7 +215,7 @@ function makeEntry($row, $show_admin = true, $show_rating = true ) {
 			if ($i>1) {
 				echo ' <font color="#999999">|</font> ';
 			}
-			print_link($_SERVER['PHP_SELF'].'?rate_id='.$row['id'].'&rate_note='.$i, $i);
+			print_link(htmlspecialchars($_SERVER['PHP_SELF']).'?rate_id='.$row['id'].'&rate_note='.$i, $i);
 		}
 		echo '<br>';
 	}
@@ -304,7 +304,7 @@ function manualUserNotes($title, $id) {
 
 	$back_url = 'http://' . $_SERVER['SERVER_NAME'] . 
 		(($SERVER_PORT==80) ? '' : ':'.$_SERVER['SERVER_PORT'] ) . 
-		$_SERVER['PHP_SELF'];
+		htmlspecialchars($_SERVER['PHP_SELF']);
 
 	echo '<tr bgcolor="#d0d0d0" valign="top">';
 	echo '<td><small>User Contributed Notes<br></small><b>' . $title . '</b><br></td>';

@@ -20,7 +20,7 @@ if($lang == "BR") $lang = "pt_BR";
 
 function make404($lang) {
 	commonHeader("404 Not Found");
-	$no_path = str_replace("/php-gtk-web/manual-lookup.php?lang=$lang&function=", "", $_SERVER[REQUEST_URI]);
+	$no_path = str_replace("/php-gtk-web/manual-lookup.php?lang=$lang&function=", "", htmlspecialchars($_SERVER[REQUEST_URI]));
 	$no_path = ereg_replace('&[x]=[0-9]&[y]=[0-9]', '', $no_path);
 	echo "<br>&nbsp;<H1>Not Found</H1><br>";
 	if(strlen($no_path) < 3)

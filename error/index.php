@@ -6,7 +6,7 @@ function make404() {
 	header('HTTP/1.0 404 Not Found');
 	commonHeader('404 Not Found');
 	echo "<H1>Not Found</H1>\n";
-	echo "<P>The page <B>" . $_SERVER['REQUEST_URI'] . "</B> could not be found.</P>\n";
+	echo "<P>The page <B>" . htmlspecialchars($_SERVER['REQUEST_URI']) . "</B> could not be found.</P>\n";
 	commonFooter();
 }
 
@@ -14,6 +14,8 @@ function make404() {
 if (file_exists("../configuration.inc")) {
   include_once "../configuration.inc";
 }
+
+$ri = htmlspecialchars($_SERVER['REQUEST_URI']);
 
 if (preg_match('/\.(pdf|gif|jpg)$/', $_SERVER['REQUEST_URI'])) {
   make404();
@@ -25,7 +27,7 @@ if (!is_dir("{$_SERVER['DOCUMENT_ROOT']}/manual/$lang")) {
 	$lang = "en"; // fall back to English
 }
 # handle .php3 files that were renamed to .php
-if (preg_match("/(.*\.php)3$/", $_SERVER['REQUEST_URI'], $array)) {
+if (preg_match("/(.*\.php)3$/", $ri, $array)) {
 	if($_SERVER['SERVER_PORT']!=80) {
 		$url = "http://".$_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT'].$array[1];
 	} else {
@@ -42,7 +44,7 @@ if (preg_match("/(.*\.php)3$/", $_SERVER['REQUEST_URI'], $array)) {
 }
 
 # handle moving english manual down into its own directory
-if (eregi("^(.*)/manual/((html/)?[^/]+)$", $_SERVER['REQUEST_URI'], $array)) {
+if (eregi("^(.*)/manual/((html/)?[^/]+)$", $ri, $array)) {
 	if($_SERVER['SERVER_PORT']!=80) {
 		$url = "http://".$_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']."$array[1]/manual/$lang/".$array[2];
 	} else {

@@ -29,8 +29,8 @@ define('PmWiki',1);
 $WikiTitle = "PmWiki";
 $DefaultGroup = "Main";
 $DefaultTitle = "HomePage";
-$ScriptUrl = 'http://'.$_SERVER['HTTP_HOST'];
-$ScriptUrl .= $_SERVER['SCRIPT_NAME'];
+$ScriptUrl = 'http://'.htmlspecialchars($_SERVER['HTTP_HOST']);
+$ScriptUrl .= htmlspecialchars($_SERVER['SCRIPT_NAME']);
 $PubDirUrl = preg_replace("#/[^/]*\$#","/pub",$ScriptUrl,1);
 $DiffKeepDays = 3650;
 $WikiDir = "wiki.d";
@@ -221,7 +221,7 @@ foreach($gvars as $v) {
 
 SDV($EnablePathInfo,!preg_match("/^cgi/",php_sapi_name()));
 if ($pagename=='' && $EnablePathInfo)
-  $pagename = @substr($_SERVER['PATH_INFO'],1);
+  $pagename = @substr(htmlspecialchars($_SERVER['PATH_INFO']),1);
 if (preg_match('/[\\x80-\\xbf]/',$pagename)) $pagename=utf8_decode($pagename);
 if ($action=='') $action='browse';
 
