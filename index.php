@@ -56,6 +56,17 @@ commonHeader();
 
 ?>
 
+<h1>Gnope Installer Released</h1>
+
+<p><span class="newsdate">[11-Dec-2005]</span>
+Version 1.0 of the <a href="http://www.gnope.org">Gnope Installer</a> has
+been released. The Gnope installer helps to set up a full featured PHP-GTK2
+installation on a Windows system with just a few clicks. It is designed to
+make installation of PHP-GTK2 and PHP-GTK2 applications quick and easy. For
+more information or to download Gnope visit 
+<a href="http://www.gnope.org">http://www.gnope.org</a>.
+<?php hdelim(); ?>
+
 <h1>October News</h1>
 
 <p><span class="newsdate">[21-Oct-2005]</span>
@@ -288,19 +299,6 @@ If you are interested in helping test PHP-GTK 2 on Windows, please send your com
     feed</a> is available in RSS format.</p>
 
 <?php hdelim(); ?>
-
-<h1>PHP-GTK 2 is go for GTK+ 2.4</h1>
-
-<p><span class="newsdate">[29-Jul-2004]</span> In a thread on 
-    <strong>php-gtk-dev</strong> entitled "<a href="http://marc.theaimsgroup.com/?t=109090764000001&r=1&w=2">Gtk+
-    2.2 or 2.4?</a>", developers discussed whether to base PHP-GTK 2 on GTK+ 
-    2.2 or 2.4. The decision was quickly made, with no opposition or argument, 
-    to <a href="http://marc.theaimsgroup.com/?l=php-gtk-dev&m=109104992017688&w=2">proceed 
-    with using GTK+ 2.4</a>.</p>
-
-<p>For more information on GTK+ 2.4, read <a href="http://mail.gnome.org/archives/gtk-app-devel-list/2004-March/msg00178.html">this 
-    post</a> and <a href="http://mail.gnome.org/archives/gtk-list/2004-March/msg00111.html">this 
-    post</a>.</p>
 
 <?php
 

@@ -26,6 +26,20 @@
     </items>
 </channel>
 
+<item rdf:about="http://gtk.php.net/about/news-2005-12-11">
+ <title>Gnope 1.0 Released</title>
+ <link>http://gtk.php.net</link>
+ <description>
+  Version 1.0 of the Gnope Installer has
+  been released. The Gnope installer helps to set up a full featured PHP-GTK2
+  installation on a Windows system with just a few clicks. It is designed to
+  make installation of PHP-GTK2 and PHP-GTK2 applications quick and easy. For
+  more information or to download Gnope visit 
+  http://www.gnope.org.
+ </description>
+ <dc:date>2005-12-11</dc:date>
+</item>
+
 <item rdf:about="http://gtk.php.net/about/news-2005-10-19">
  <title>October News</title>
  <link>http://gtk.php.net</link>
@@ -190,20 +204,6 @@
     <link>http://gtk.php.net/download.php</link>
     <description>PHP-GTK version 1.0.1 is the first release in nine months. However, this release is also proof that activity in the PHP-GTK camp has indeed increased and is rapidly moving along toward a stable PHP-GTK 2. PHP-GTK 1.0.1, affectionately termed the "you thought we were done?" version, implemented and exposed some new methods for GtkToolbar, reimplemented Gdk::cursor_new_from_pixmap() "so it actually works," and updated the build system. See the changelog for full details. In other news, the manual has been updated to include syntax highlighting (coloring) in the code examples.</description>
     <dc:date>2004-08-09</dc:date>
-</item>
-
-<item rdf:about="http://gtk.php.net/docs-rss.php">
-    <title>Documentation updates listed on PHP-GTK Web site</title>
-    <link>http://gtk.php.net/docs-rss.php</link>
-    <description>The PHP-GTK Web site now features a regularly updated listing of documentation updates. The listing is displayed on the home page and is updated every night when the manual is updated from CVS. The updates are listed in reverse chronological order (the newest at the top), and the latest fifteen updates are shown at any given time. In addition, a documentation update feed is available in RSS format.</description>
-    <dc:date>2004-08-05</dc:date>
-</item>
-
-<item rdf:about="http://marc.theaimsgroup.com/?l=php-gtk-dev&amp;m=109104992017688&amp;w=2">
-    <title>PHP-GTK 2 is go for GTK+ 2.4</title>
-    <link>http://marc.theaimsgroup.com/?l=php-gtk-dev&amp;m=109104992017688&amp;w=2</link>
-    <description>In a thread on php-gtk-dev entitled "Gtk+ 2.2 or 2.4?", developers discussed whether to base PHP-GTK 2 on GTK+ 2.2 or 2.4. The decision was quickly made, with no opposition or argument, to proceed with using GTK+ 2.4. For more information on GTK+ 2.4, read this post and this post.</description>
-    <dc:date>2004-07-29</dc:date>
 </item>
 
 </rdf:RDF>
