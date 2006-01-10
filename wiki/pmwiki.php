@@ -19,44 +19,6 @@
     along with this program; if not, write to the Free Software
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
-?>
-
-<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
-<!--
-function check_post() {
-
-	var namevalue = document.editform.author.value;
-	var textvalue = document.editform.text.value;
-	var uc = /[A-Z]/;
-	var i, x = 0;
-
-	/* 'Describe ' opens an unedited page. Nobody should be leaving that in
-		place if they're performing a genuine page edit... */
-	if (textvalue.substr(0, 9) == 'Describe ') {
-		window.alert('No editing appears to have taken place');
-		return false;
-	}
-	/* Randomly generated names are more likely to end in a capital letter */
-	if (uc.test(namevalue.substring(namevalue.length - 1))) {
-		return window.confirm('Please confirm that the name given is valid');
-	}
-
-	/* Randomly generated names often exceed genuine use of capitalization */
-	for (i = 0; i < namevalue.length; i++) {
-		if (uc.test(namevalue.substring(i))) {
-			x++;
-			if (x > 3) {
-				return window.confirm('Please confirm that the name given is valid');
-			}
-		}
-	}
-
-	return true;
-}
-//-->
-</SCRIPT>
-
-<?php
 
 if (ini_get('register_globals')) {
   foreach($_REQUEST as $k=>$v) { unset(${$k}); }
@@ -1213,3 +1175,38 @@ function HandlePostAttr($pagename) {
 }
 
 ?>
+
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+<!--
+function check_post() {
+
+	var namevalue = document.editform.author.value;
+	var textvalue = document.editform.text.value;
+	var uc = /[A-Z]/;
+	var i, x = 0;
+
+	/* 'Describe ' opens an unedited page. Nobody should be leaving that in
+		place if they're performing a genuine page edit... */
+	if (textvalue.substr(0, 9) == 'Describe ') {
+		window.alert('No editing appears to have taken place');
+		return false;
+	}
+	/* Randomly generated names are more likely to end in a capital letter */
+	if (uc.test(namevalue.substring(namevalue.length - 1))) {
+		return window.confirm('Please confirm that the name given is valid');
+	}
+
+	/* Randomly generated names often exceed genuine use of capitalization */
+	for (i = 0; i < namevalue.length; i++) {
+		if (uc.test(namevalue.substring(i))) {
+			x++;
+			if (x > 3) {
+				return window.confirm('Please confirm that the name given is valid');
+			}
+		}
+	}
+
+	return true;
+}
+//-->
+</SCRIPT>
