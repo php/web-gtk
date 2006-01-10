@@ -99,7 +99,42 @@ $HTMLDoctypeFmt =
     \"http://www.w3.org/TR/html40/loose.dtd\">
 <html><head>\n";
 $HTMLTitleFmt = "  <title>\$WikiTitle - \$HTMLTitle</title>\n";
-$HTMLHeaders = '';
+$HTMLHeaders = <<<EOT
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+<!--
+function check_post() {
+
+	var namevalue = document.editform.author.value;
+	var textvalue = document.editform.text.value;
+	var uc = /[A-Z]/;
+	var i, x = 0;
+
+	/* 'Describe ' opens an unedited page. Nobody should be leaving that in
+		place if they're performing a genuine page edit... */
+	if (textvalue.substr(0, 9) == 'Describe ') {
+		window.alert('No editing appears to have taken place');
+		return false;
+	}
+	/* Randomly generated names are more likely to end in a capital letter */
+	if (uc.test(namevalue.substring(namevalue.length - 1))) {
+		return window.confirm('Please confirm that the name given is valid');
+	}
+
+	/* Randomly generated names often exceed genuine use of capitalization */
+	for (i = 0; i < namevalue.length; i++) {
+		if (uc.test(namevalue.substring(i))) {
+			x++;
+			if (x > 3) {
+				return window.confirm('Please confirm that the name given is valid');
+			}
+		}
+	}
+
+	return true;
+}
+//-->
+</SCRIPT>
+EOT;
 $HTMLHeaderFmt = array(&$HTMLHeaders);
 $HTMLBodyFmt = "</head>\n<body>";
 $HTMLStartFmt = array('headers:',&$HTMLDoctypeFmt,&$HTMLHeaderFmt,
@@ -1174,38 +1209,3 @@ function HandlePostAttr($pagename) {
 }
 
 ?>
-
-<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
-<!--
-function check_post() {
-
-	var namevalue = document.editform.author.value;
-	var textvalue = document.editform.text.value;
-	var uc = /[A-Z]/;
-	var i, x = 0;
-
-	/* 'Describe ' opens an unedited page. Nobody should be leaving that in
-		place if they're performing a genuine page edit... */
-	if (textvalue.substr(0, 9) == 'Describe ') {
-		window.alert('No editing appears to have taken place');
-		return false;
-	}
-	/* Randomly generated names are more likely to end in a capital letter */
-	if (uc.test(namevalue.substring(namevalue.length - 1))) {
-		return window.confirm('Please confirm that the name given is valid');
-	}
-
-	/* Randomly generated names often exceed genuine use of capitalization */
-	for (i = 0; i < namevalue.length; i++) {
-		if (uc.test(namevalue.substring(i))) {
-			x++;
-			if (x > 3) {
-				return window.confirm('Please confirm that the name given is valid');
-			}
-		}
-	}
-
-	return true;
-}
-//-->
-</SCRIPT>
