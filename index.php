@@ -76,7 +76,7 @@ plenty of activity not only in commits to CVS but in other parts of the PHP-GTK
      lower than those above)</li>
  <li>The <a href="http://www.gnope.org">Gnope installer</a> has been downloaded
      over 8000 times since its release last month.</li>
- <li><a href="http://xml.cweiske.de/php-gtk2%20coverage.xhtml">Gtk2_PHPConfig</a>,
+ <li><a href="http://pear.php.net/pepr/pepr-proposal-show.php?id=346">Gtk2_PHPConfig</a>,
      an application that makes it easy to modify php.ini files, has been
      proposed on <a href="http://pear.php.net">PEAR</a> by Anant Narayanan.</li>
 </ul>
