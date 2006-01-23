@@ -26,6 +26,30 @@
     </items>
 </channel>
 
+<item rdf:about="http://gtk.php.net/about/news-2006-01-23">
+ <title>PHP-GTK 2 Progress</title>
+ <link>http://gtk.php.net</link>
+ <description>
+Development of PHP-GTK 2 is steadily picking up pace. The last month has seen
+plenty of activity not only in commits to CVS but in other parts of the PHP-GTK
+2 community also:
+ - The PHP-GTK 2 documentation is filling out. More classes have been
+   documented and given examples (especially the GtkTree* classes).
+ - Source code highlighting has been added to the PHP-GTK 2 manual.
+ - Most of the get_size* methods have been implemented.
+ - 85% of all methods and properties have been implemented. The other 15% need
+   to be written by hand, and more are being added every week. (Some
+   automatically generated methods may not be implemented correctly and will
+   have to be re-written by hand. Therefore, the actual coverage figures may be
+   slightly lower than those above)
+ - The Gnope installer has been downloaded over 8000 times since its release
+   last month.
+ - Gtk2_PHPConfig an application that makes it easy to modify php.ini files,
+   has been proposed on PEAR by Anant Narayanan.
+ </description>
+ <dc:date>2006-01-23</dc:date>
+</item>
+
 <item rdf:about="http://gtk.php.net/about/news-2005-12-11">
  <title>Gnope 1.0 Released</title>
  <link>http://gtk.php.net</link>
@@ -197,13 +221,6 @@
     <link>http://gtk.php.net/</link>
     <description>While work continues on PHP-GTK 2, there has been some big news with PHP-GTK 1. The continuing documentation efforts have produced two new tutorials and lots of new doc pages. To go along with all of the new documentation, Christian Weiske has released manualBrowser, a PHP-GTK application to make it easier to read and search the docs offline. The folks over at PEAR have even jumped on the PHP-GTK bandwagon. There are two new gtk classes and a new PHP-GTK interface for PHPUnit.</description>
     <dc:date>2004-11-12</dc:date>
-</item>
-
-<item rdf:about="http://gtk.php.net/download.php">
-    <title>PHP-GTK 1.0.1 released</title>
-    <link>http://gtk.php.net/download.php</link>
-    <description>PHP-GTK version 1.0.1 is the first release in nine months. However, this release is also proof that activity in the PHP-GTK camp has indeed increased and is rapidly moving along toward a stable PHP-GTK 2. PHP-GTK 1.0.1, affectionately termed the "you thought we were done?" version, implemented and exposed some new methods for GtkToolbar, reimplemented Gdk::cursor_new_from_pixmap() "so it actually works," and updated the build system. See the changelog for full details. In other news, the manual has been updated to include syntax highlighting (coloring) in the code examples.</description>
-    <dc:date>2004-08-09</dc:date>
 </item>
 
 </rdf:RDF>

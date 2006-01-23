@@ -56,6 +56,34 @@ commonHeader();
 
 ?>
 
+<h1>PHP-GTK 2 Progress</h1>
+
+<p><span class="newsdate">[23-Jan-2006]</span>
+Development of PHP-GTK 2 is steadily picking up pace. The last month has seen
+plenty of activity not only in commits to CVS but in other parts of the PHP-GTK
+2 community also:
+<ul>
+ <li>The PHP-GTK 2 documentation is filling out. More classes have been
+     documented and given examples (especially the GtkTree* classes).</li>
+ <li>Source code highlighting has been added to the
+     <a href="http://php-gtk2.de/manual/en/html/">PHP-GTK 2 manual</a>.</li>
+ <li>Most of the get_size* methods have been implemented.</li>
+ <li><a href="http://xml.cweiske.de/php-gtk2%20coverage.xhtml">85% of all
+     methods and properties have been implemented</a>. The other 15% need to be
+     written by hand, and more are being added every week. (Some automatically
+     generated methods may not be implemented correctly and will have to be
+     re-written by hand. Therefore, the actual coverage figures may be slightly
+     lower than those above)</li>
+ <li>The <a href="http://www.gnope.org">Gnope installer</a> has been downloaded
+     over 8000 times since its release last month.</li>
+ <li><a href="http://xml.cweiske.de/php-gtk2%20coverage.xhtml">Gtk2_PHPConfig</a>,
+     an application that makes it easy to modify php.ini files, has been
+     proposed on <a href="http://pear.php.net">PEAR</a> by Anant Narayanan.</li>
+</ul>
+</p>
+
+<?php hdelim(); ?>
+
 <h1>Gnope Installer Released</h1>
 
 <p><span class="newsdate">[11-Dec-2005]</span>
@@ -284,19 +312,6 @@ If you are interested in helping test PHP-GTK 2 on Windows, please send your com
 
 <p>In other news, the <a href="/manual/">manual</a> has been updated to 
    include syntax highlighting (coloring) in the code examples.</p>
-
-<?php hdelim(); ?>
-
-
-<h1>Documentation updates listed on PHP-GTK Web site</h1>
-
-<p><span class="newsdate">[05-Aug-2004]</span> The PHP-GTK Web site now features 
-    a regularly updated listing of documentation updates. The listing is 
-    displayed on the home page and is updated every night when the manual is 
-    updated from CVS. The updates are listed in reverse chronological order 
-    (the newest at the top), and the latest fifteen updates are shown at any 
-    given time. In addition, a <a href="docs-rss.php">documentation update 
-    feed</a> is available in RSS format.</p>
 
 <?php hdelim(); ?>
 
