@@ -100,7 +100,7 @@ more information or to download Gnope visit
 <p><span class="newsdate">[21-Oct-2005]</span>
 <a href="http://cweiske.de">Christian Weiske</a> has written an
 <a href="http://www.phpmagazin.de/itr/ausgaben/psecom,id,287,nodeid,60.html">article</a>
-for PHP Magazin titled "Rapit Application Development Mit PHP-GTK" which
+for PHP Magazin titled "Rapid Application Development Mit PHP-GTK" which
 discusses creating applications using PHP-GTK and Glade.
 </p>
 <p>An unofficial version of PHP-GTK 2 for Windows can be found at
@@ -161,7 +161,7 @@ If you are interested in helping test PHP-GTK 2 on Windows, please send your com
  progress has been made with trees and editable cells. Parameter reflection has 
  also been added thanks to Christian. The lastest efforts have led to the first
  set of practical applications written with PHP-GTK 2. Christian's 
- <a href="http://xml.cweiske.de/phpgtk2/inspector/">reflection browser</a> makes 
+ <a href="http://cweiske.de/phpgtk2_devinspector.htm">reflection browser</a> makes 
  it easy to take a look at the inner workings of PHP-GTK 2 classes and can be
  used as simple documentation. 
 </p>
