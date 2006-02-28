@@ -26,6 +26,27 @@
     </items>
 </channel>
 
+<item rdf:about="http://gtk.php.net/about/news-2006-02-28">
+ <title>Moving toward a release of PHP-GTK 2</title>
+ <link>http://gtk.php.net</link>
+ <description>
+This month PHP-GTK 2 has continued its march toward an initial release. Andrei
+has been working through bug fixes and implementing new features. Recently he 
+added the ability to use GtkListStores and GtkTreeStores as if they were 
+iterators or arrays. This makes it much easier to work with data models for 
+GtkTreeView and GtkComboBox. The documentation team has been working hard to 
+fill out the docs. Several new pages have been added and the PHP-GTK 2 docs 
+will soon make their first appearance on the PHP-GTK website.
+
+Even though PHP-GTK 2 is not quite stable yet, several applications have been 
+developed using the CVS version. There are now four PHP-GTK 2 packages 
+available on PEAR including the newly added Gtk2_ScrollingLabel and 
+Gtk2_PHPConfig. Christian Weiske has released the first game developed with 
+PHP-GTK 2: Minesweeper. 
+ </description>
+ <dc:date>2006-02-28</dc:date>
+</item>
+
 <item rdf:about="http://gtk.php.net/about/news-2006-01-23">
  <title>PHP-GTK 2 Progress</title>
  <link>http://gtk.php.net</link>
@@ -214,13 +235,6 @@ plenty of activity not only in commits to CVS but in other parts of the PHP-GTK
     organizers of the International PHP Conference have put out a call
     for papers. One of the requested topics is PHP-GTK.</description>
     <dc:date>2004-12-20</dc:date>
-</item>
-
-<item rdf:about="http://gtk.php.net/about/news-2004-11-12">
-    <title>Small steps into a better world</title>
-    <link>http://gtk.php.net/</link>
-    <description>While work continues on PHP-GTK 2, there has been some big news with PHP-GTK 1. The continuing documentation efforts have produced two new tutorials and lots of new doc pages. To go along with all of the new documentation, Christian Weiske has released manualBrowser, a PHP-GTK application to make it easier to read and search the docs offline. The folks over at PEAR have even jumped on the PHP-GTK bandwagon. There are two new gtk classes and a new PHP-GTK interface for PHPUnit.</description>
-    <dc:date>2004-11-12</dc:date>
 </item>
 
 </rdf:RDF>

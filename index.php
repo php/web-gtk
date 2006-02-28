@@ -56,6 +56,30 @@ commonHeader();
 
 ?>
 
+<h1>Moving toward a release of PHP-GTK 2</h1>
+
+<p><span class="newsdate">[28-Feb-2006]</span>
+This month PHP-GTK 2 has continued its march toward an initial release. Andrei 
+has been working through bug fixes and 
+<a href="http://cvs.php.net/viewcvs.cgi/php-gtk/ChangeLog?view=log">implementing new features</a>. 
+Recently he added the ability to use GtkListStores and GtkTreeStores as if 
+they were 
+<a href="http://marc.theaimsgroup.com/?l=php-gtk-general&m=114029530823343&w=2">iterators or arrays</a>. 
+This makes it much easier to work with data models for GtkTreeView and 
+GtkComboBox. The documentation team has been working hard to fill out the docs.
+Several new pages have been added and the PHP-GTK 2 docs will soon make their 
+first appearance on the PHP-GTK website.
+</p>
+<p>
+Even though PHP-GTK 2 is not quite stable yet, several applications have been 
+developed using the CVS version. There are now four PHP-GTK 2 packages 
+available on PEAR including the newly added 
+<a href="http://pear.php.net/package/Gtk2_ScrollingLabel">Gtk2_ScrollingLabel</a> 
+and <a href="http://pear.php.net/package/Gtk2_PHPConfig">Gtk2_PHPConfig</a>. 
+Christian Weiske has released the first game developed with PHP-GTK 2: 
+<a href="http://www.gnope.org/pearfront/index.php?package=Game_Minesweeper">Minesweeper</a>.
+</p>
+
 <h1>PHP-GTK 2 Progress</h1>
 
 <p><span class="newsdate">[23-Jan-2006]</span>
@@ -292,26 +316,6 @@ If you are interested in helping test PHP-GTK 2 on Windows, please send your com
     two new 
     <a href="http://pear.php.net/packages.php?catpid=34&amp;catname=Gtk+Components">gtk classes</a> 
     and a new PHP-GTK interface for PHPUnit.</p>
-
-<?php hdelim(); ?>
-
-
-<h1>PHP-GTK 1.0.1 released</h1>
-
-<p><span class="newsdate">[09-Aug-2004]</span> <a href="/download.php">PHP-GTK 
-    version 1.0.1</a> is the first release in nine months. However, this 
-    release is also the proof that activity in the PHP-GTK camp has indeed 
-    increased and is rapidly moving along toward a stable PHP-GTK 2.</p>
-
-<p>PHP-GTK 1.0.1, affectionately termed the "you thought we were done?" version, 
-    implements and exposes some new methods for 
-    <a href="/manual/en/gtk.gtktoolbar.php">GtkToolbar</a>, reimplements 
-    Gdk::cursor_new_from_pixmap() "so it actually works," and has various tweaks
-    to the build system. Note that this version requires PHP 4.3.x to build. See
-    the <a href="/changelog.php#1.0.1">changelog</a> for full details.</a>
-
-<p>In other news, the <a href="/manual/">manual</a> has been updated to 
-   include syntax highlighting (coloring) in the code examples.</p>
 
 <?php hdelim(); ?>
 
