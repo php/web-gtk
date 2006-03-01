@@ -61,7 +61,7 @@ commonHeader();
 <p><span class="newsdate">[28-Feb-2006]</span>
 This month PHP-GTK 2 has continued its march toward an initial release. Andrei 
 has been working through bug fixes and 
-<a href="http://cvs.php.net/viewcvs.cgi/php-gtk/ChangeLog?view=log">implementing new features</a>. 
+<a href="http://cvs.php.net/viewcvs.cgi/php-gtk/ChangeLog?view=markup">implementing new features</a>. 
 Recently he added the ability to use GtkListStores and GtkTreeStores as if 
 they were 
 <a href="http://marc.theaimsgroup.com/?l=php-gtk-general&m=114029530823343&w=2">iterators or arrays</a>. 
