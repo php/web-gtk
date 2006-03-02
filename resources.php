@@ -76,7 +76,7 @@ PHP-GTK list has no information about.</li>
     2001 O'Reilly Open Source Conference PHP-GTK talk</a></li>
 </ul>
 
-<a name="#lists"></a>
+<a name="lists"></a>
 <h2>Mailing Lists</h2>
 
 <P>
