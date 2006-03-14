@@ -40,8 +40,8 @@ function makeBorderTOC($this) {
 	global $NEXT, $PREV, $UP, $HOME, $TOC;
 	global $SIDEBAR_DATA;
 
-	$SIDEBAR_DATA = '<form method="get" action="/manual-lookup.php">';
-	/* ALTER FOR LOCAL "../../php-gtk-web/manual-lookup.php" */
+	$SIDEBAR_DATA = '<form method="get" action="/manual1-lookup.php">';
+	/* ALTER FOR LOCAL "../../php-gtk-web/manual1-lookup.php" */
 	$SIDEBAR_DATA.= '<table border="0" CELLPADDING="4" CELLSPACING="0" WIDTH="160">';
 
 	if(sizeof($TOC) > 1) {
@@ -187,16 +187,16 @@ function makeEntry($row, $show_admin = true, $show_rating = true ) {
 	echo '<td align="right" nowrap><small>';
 	if (isset($MAGIC_COOKIE) && $show_admin) {
 
-		print_link('/manual/admin-notes.php?action=edit+' . $row['id'] . '&brief=1',
+		print_link('/manual1/admin-notes.php?action=edit+' . $row['id'] . '&brief=1',
 			make_image('notes-edit.gif', 'edit note')
 		);
 		echo '&nbsp';
-		print_link('/manual/admin-notes.php?action=reject+' . $row['id'] . '&brief=1&popup=1',
+		print_link('/manual1/admin-notes.php?action=reject+' . $row['id'] . '&brief=1&popup=1',
 			make_image('notes-reject.gif', 'reject note'),
 			'admin'
 		);
 		echo '&nbsp';
-		print_link('/manual/admin-notes.php?action=delete+' . $row['id'] . '&brief=1&popup=1',
+		print_link('/manual1/admin-notes.php?action=delete+' . $row['id'] . '&brief=1&popup=1',
 			make_image('notes-delete.gif', 'delete note'),
 			'admin'
 		);
@@ -249,7 +249,7 @@ echo "\n\n<!-- " . $p['path'] . " :: " . $_SERVER['SCRIPT_NAME'] . " -->\n\n";
 
 function manualGetUserNotes($title, $id) {
 	// if we're gtk.php.net, get it from the local DB
-	// otherwise look in "/manual/usernotes/$title.txt" (if present)
+	// otherwise look in "/manual1/usernotes/$title.txt" (if present)
 	$notes = array();
 #	if(is_primary_site() || strstr($MYSITE,"localhost")) {
 
@@ -309,11 +309,11 @@ function manualUserNotes($title, $id) {
 	echo '<tr bgcolor="#d0d0d0" valign="top">';
 	echo '<td><small>User Contributed Notes<br></small><b>' . $title . '</b><br></td>';
 	echo '<td align="right">';
-	print_link('/manual/add-note.php?sect='.$id.'&redirect='.$back_url,
+	print_link('/manual1/add-note.php?sect='.$id.'&redirect='.$back_url,
 		make_image('notes-add.gif','add a note')
 	);
 	echo "&nbsp;";
-	print_link('/manual/about-notes.php',
+	print_link('/manual1/about-notes.php',
 		make_image('notes-about.gif', 'about notes')
 	);
 	echo "<br></td>\n";
@@ -325,7 +325,7 @@ function manualUserNotes($title, $id) {
 			echo '<tr valign="top">';
 			echo '<td bgcolor="#e0e0e0" colspan="2">';
 			echo 'User contributed notes are not available on this mirror site; try ';
-			print_link('http://gtk.php.net/manual/'.$LANG.'/'.$id, 'here');
+			print_link('http://gtk.php.net/manual1/'.$LANG.'/'.$id, 'here');
 			echo '.<br></td></tr>';
 		} else {
 			echo '<tr valign="top">';
@@ -342,11 +342,11 @@ function manualUserNotes($title, $id) {
 
 		echo "<tr bgcolor=\"#d0d0d0\" valign=\"top\">\n";
 		echo "<td colspan=\"2\" align=\"right\">\n";
-		print_link('/manual/add-note.php?sect='.$id.'&redirect='.$back_url,
+		print_link('/manual1/add-note.php?sect='.$id.'&redirect='.$back_url,
 			make_image('notes-add.gif','add a note')
 			);
 		echo "&nbsp;";
-		print_link('/manual/about-notes.php',
+		print_link('/manual1/about-notes.php',
 			make_image('notes-about.gif', 'about notes')
 			);
 		echo "<br></td>\n";
@@ -365,7 +365,7 @@ function manualHeader($title, $id="") {
 	global $HTDIG;
 
 	makeBorderTOC($title);
-	commonHeader('Manual: '.$title);
+	commonHeader('PHP-GTK 1 Manual: '.$title);
 	# create links to plain html and other languages
 	if (!$HTDIG) {
 		navigationBar($title, $id, "top");
