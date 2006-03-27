@@ -8,8 +8,8 @@ elseif(isset($_GET['function'])) {
 $show = $_POST['show'];
 
 if(isset($pattern) && ($pattern) && isset($show) && ($show == "manual")) {
-	/* ALTER FOR LOCAL $location = "manual-lookup.php"; */
-	$location = "/manual-lookup.php";
+	/* ALTER FOR LOCAL $location = "manual1-lookup.php"; */
+	$location = "/manual1-lookup.php";
 	$query = "function=".urlencode($pattern);
 	Header("Location: ".$location."?".$query);
 	exit;

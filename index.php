@@ -271,7 +271,7 @@ If you are interested in helping test PHP-GTK 2 on Windows, please send your com
    href="http://www.zend.com/pear/whoiswho.php">Zend Who's Who of PHP</a>".<p>
 
 <p>In other news, the GDK section of the manual has been completely 
-   translated into <a href="http://gtk.php.net/manual/ru/">Russian</a>.</p>
+   translated into <a href="http://gtk.php.net/manual1/ru/">Russian</a>.</p>
 
 <?php hdelim(); ?>
 
@@ -292,7 +292,7 @@ If you are interested in helping test PHP-GTK 2 on Windows, please send your com
     first.</p>
 
 <p>On the international level, PHP-GTK documentation is being translated
-    into <a href="http://gtk.php.net/manual/ru/">Russian</a> thanks to the
+    into <a href="http://gtk.php.net/manual1/ru/">Russian</a> thanks to the
     work of Andrew Krasnyansky. Also, the organizers of the International
     PHP Conference have put out a <a
     href="http://www.phpconference.com/konferenzen/divers/psecom,id,191,nodeid,240.html">call
@@ -307,7 +307,7 @@ If you are interested in helping test PHP-GTK 2 on Windows, please send your com
     <a href="http://gtk.php.net/wiki/PhpGtk/Php-Gtk2">PHP-GTK 2</a>, there
     has been some big news with PHP-GTK 1. The continuing documentation 
     efforts have produced 
-    <a href="http://gtk.php.net/manual/en/tutorials.php">two new tutorials</a>
+    <a href="http://gtk.php.net/manual1/en/tutorials.php">two new tutorials</a>
     and lots of new doc pages. To go along with all of the new documentation, 
     Christian Weiske has released 
     <a href="http://www.cweiske.de/phpgtk_coders.htm#manualbrowser">manualBrowser</a>, 

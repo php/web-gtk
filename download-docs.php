@@ -69,14 +69,14 @@ use does otherwise.
 			echo "<td align=\"center\" bgcolor=\"#eeeeee\">";
 
 			$link_to = "";
-			if (file_exists("manual/$langcode/$fn")) {
-				$link_to = "manual/$langcode/$fn";
+			if (file_exists("manual1/$langcode/$fn")) {
+				$link_to = "manual1/$langcode/$fn";
 			}
-			elseif (file_exists("distributions/manual/php_gtk_manual_$langcode.$details[1]")) {
-				$link_to = "distributions/manual/php_gtk_manual_$langcode.$details[1]";
+			elseif (file_exists("distributions/manual1/php_gtk_manual_$langcode.$details[1]")) {
+				$link_to = "distributions/manual1/php_gtk_manual_$langcode.$details[1]";
 			}
-			elseif (file_exists("distributions/manual/manual-$langcode.$details[1]")) {
-				$link_to = "distributions/manual/manual-$langcode.$details[1]";
+			elseif (file_exists("distributions/manual1/manual-$langcode.$details[1]")) {
+				$link_to = "distributions/manual1/manual-$langcode.$details[1]";
 			}
 
 			if (!$link_to) {

@@ -111,7 +111,7 @@ function makeBorderTOC($this) {
 function navigationBar($title, $id, $loc) {
 	global $NEXT, $PREV, $tstamp;
 
-	echo '<table border="0" width="580" bgcolor="#e0e0e0" cellpadding="0" cellspacing="4">';
+	echo '<table border="0" width="100%" bgcolor="#e0e0e0" cellpadding="0" cellspacing="4">';
 
 	echo '<tr><td>';
 	if ($PREV[1]) {

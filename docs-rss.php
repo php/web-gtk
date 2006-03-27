@@ -24,9 +24,9 @@ echo '<?xml version="1.0" encoding="UTF-8"?>';
     xmlns="http://purl.org/rss/1.0/"
     xmlns:dc="http://purl.org/dc/elements/1.1/">
 
-<channel rdf:about="http://gtk.php.net/manual">
+<channel rdf:about="http://gtk.php.net/manual1">
     <title>PHP-GTK Manual</title>
-    <link>http://gtk.php.net/manual</link>
+    <link>http://gtk.php.net/manual1</link>
     <description>The PHP-GTK on-line manual</description>
     <items>
         <rdf:Seq>

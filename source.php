@@ -5,7 +5,7 @@ commonHeader('Show Source');
 
 $url = $_GET['url'];
 
-if (strpos($url, "manual/") !== FALSE) {
+if (strpos($url, "manual1/") !== FALSE) {
     $lang = substr($url, 8, 2);
 }
 
@@ -32,7 +32,7 @@ Source of: <?php echo $url; ?><br />
 hdelim(); 
 
 $legal_dirs = array(
-    "/manual/$lang" => 1,
+    "/manual1/$lang" => 1,
     "/include" => 1,
     "/stats" => 1);
 

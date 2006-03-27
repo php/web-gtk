@@ -94,7 +94,7 @@ A typical example would be:</p>
 <dd><p>or:</p>
 <dd><p>c:\php4\php_win -c \php4\php.ini -f c:\php4\test\hello.php</p></dl>
 <dd><p>(If you have installed your php.ini file in your windows directory, the -c option can be dropped.  For more
-information on command line options, see <a href="http://us3.php.net/manual/en/features.commandline.php">'Using PHP from the command line'</a> 
+information on command line options, see <a href="http://www.php.net/manual/en/features.commandline.php">'Using PHP from the command line'</a> 
 on the main PHP site.)</p>
 <DD><P>
 <B>Troubleshooting:</B>
@@ -127,7 +127,7 @@ on the main PHP site.)</p>
   <li>Install the <a href="http://www.cweiske.de/phpgtk_apps.htm#phpgtklauncher">php-gtk launcher</a>. It 
   handles many of the Windows directory issues and provides a series of PHP-GTK icons.  Also from Christian.
   <li>Consider using Glade/XML for setting up your screens and reducing maintenance time.   
-				     <dl><dd>- Start with the info page at: <a href="http://gtk.php.net/manual/en/glade.gladexml.php">http://gtk.php.net/manual/en/glade.gladexml.php</a>.</dl>   
+				     <dl><dd>- Start with the info page at: <a href="http://gtk.php.net/manual1/en/glade.gladexml.php">http://gtk.php.net/manual1/en/glade.gladexml.php</a>.</dl>   
   <br>
 </UL>
 

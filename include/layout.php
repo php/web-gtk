@@ -209,7 +209,7 @@ function commonHeader($title=false, $padding=true) {
     <tr bgcolor="#000033"><td colspan="2"><?php spacer(1,1) ;?><br /></td></tr>
 </table>
 
-<table border="0" cellpadding="0" cellspacing="0">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
     <tr valign="top">
     <?php if (isset($SIDEBAR_DATA)): ?>
         <td width="200" bgcolor="#F0F0F0">

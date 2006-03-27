@@ -21,7 +21,7 @@ print("
 	<br>
 	<ul>
 		<li><a href='/apps/admin-apps.php'>Application Administration</a><br><br>
-		<li><a href='/manual/admin-notes.php'>Notes Administration</a>
+		<li><a href='/manual1/admin-notes.php'>Notes Administration</a>
 	</ul>
 ");
 

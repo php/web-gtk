@@ -23,7 +23,7 @@ if (preg_match('/\.(pdf|gif|jpg)$/', $_SERVER['REQUEST_URI'])) {
 }
 
 $lang = "en";
-if (!is_dir("{$_SERVER['DOCUMENT_ROOT']}/manual/$lang")) {
+if (!is_dir("{$_SERVER['DOCUMENT_ROOT']}/manual1/$lang")) {
 	$lang = "en"; // fall back to English
 }
 # handle .php3 files that were renamed to .php
@@ -44,11 +44,11 @@ if (preg_match("/(.*\.php)3$/", $ri, $array)) {
 }
 
 # handle moving english manual down into its own directory
-if (eregi("^(.*)/manual/((html/)?[^/]+)$", $ri, $array)) {
+if (eregi("^(.*)/manual1/((html/)?[^/]+)$", $ri, $array)) {
 	if($_SERVER['SERVER_PORT']!=80) {
-		$url = "http://".$_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']."$array[1]/manual/$lang/".$array[2];
+		$url = "http://".$_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']."$array[1]/manual1/$lang/".$array[2];
 	} else {
-		$url = "http://".$_SERVER['SERVER_NAME']."$array[1]/manual/$lang/".$array[2];
+		$url = "http://".$_SERVER['SERVER_NAME']."$array[1]/manual1/$lang/".$array[2];
 	}
 	$urle = htmlspecialchars($url);
 	
@@ -64,7 +64,7 @@ $uri = substr($REDIRECT_REDIRECT_ERROR_NOTES, strpos($REDIRECT_REDIRECT_ERROR_NO
 
 # try to find the uri as a manual entry
 
-require "manual-lookup.inc";
+require "manual1-lookup.inc";
 if(strchr($uri, '/')) {
 	list($lang, $function) = explode('/', $uri, 2);
 	$function = strtolower($function);

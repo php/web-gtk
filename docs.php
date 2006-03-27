@@ -38,7 +38,7 @@ $SIDEBAR_DATA = <<< EOF
 
 <h3>Sample Code</h3>
 <p>Sample code and example scripts are often the best way to learn PHP-GTK. 
-    The manual comes complete with a <a href="/manual/en/tutorials.php">Tutorials
+    The manual comes complete with a <a href="/manual1/en/tutorials.php">Tutorials
     section</a> that contains some sample code.  However, the Wiki also has a 
     <a href="/wiki/Code">code section</a> dedicated to samples.</p>
 EOF;
@@ -71,7 +71,7 @@ commonHeader("Documentation");
 
 $lastlang = count($man_languages) - 1;
 foreach ($man_languages as $langnum => $langcode) {
-	echo '<a href="/manual/'.$langcode.'/">'.$LANGUAGES[$langcode].'</a>';
+	echo '<a href="/manual1/'.$langcode.'/">'.$LANGUAGES[$langcode].'</a>';
 	echo ($lastlang != $langnum) ? ", " : "";
 }
 
@@ -84,7 +84,7 @@ foreach ($man_languages as $langnum => $langcode) {
 <?php
 
 foreach ($man_languages as $langnum => $langcode) {
-	echo '<a href="/manual/'.$langcode.'/html/">'.$LANGUAGES[$langcode].'</a>';
+	echo '<a href="/manual1/'.$langcode.'/html/">'.$LANGUAGES[$langcode].'</a>';
 	echo ($lastlang != $langnum) ? ", " : "";
 }
 
