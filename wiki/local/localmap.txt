@@ -1,4 +1,4 @@
 ManPHP          http://www.php.net/
 ManGTK          http://developer.gnome.org/doc/API/$1.html
 ManGTK2         http://developer.gnome.org/doc/API/2.0/$1.html
-ManPHPGTK       http://gtk.php.net/manual/en/$1.php
+ManPHPGTK       http://gtk.php.net/manual1/en/$1.php
