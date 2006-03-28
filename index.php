@@ -11,12 +11,10 @@ ob_start();
 <div id="docsupdates">
 <h3>Docs Updates</h3>
 <p>
-<!-- <?php -->
 Docs updates are currently offline.
 <br />
 <br />
 Watch this space!
-<!-- ?> -->
 </p>
 </div>
 <?php
