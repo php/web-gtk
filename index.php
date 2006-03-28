@@ -7,7 +7,7 @@
 // CVS updates file (that is echoed when included) and save to a variable
 // instead of echoing it right away.
 // ob_start();
-// ?>
+?>
 <div id="docsupdates">
 <h3>Docs Updates</h3>
 <p>
