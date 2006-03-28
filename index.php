@@ -6,7 +6,7 @@
 // Start output buffering in order to grab the data from the documentation
 // CVS updates file (that is echoed when included) and save to a variable
 // instead of echoing it right away.
-// ob_start();
+ob_start();
 ?>
 <div id="docsupdates">
 <h3>Docs Updates</h3>
@@ -21,7 +21,6 @@ Watch this space!
 </div>
 <?php
 $RIGHT_SIDEBAR_DATA = ob_get_clean();
-
 
 $SIDEBAR_DATA = <<< EOF
 <h3>What is PHP-GTK?</h3>
