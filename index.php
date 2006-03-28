@@ -6,13 +6,18 @@
 // Start output buffering in order to grab the data from the documentation
 // CVS updates file (that is echoed when included) and save to a variable
 // instead of echoing it right away.
-ob_start();
-?>
+// ob_start();
+// ?>
 <div id="docsupdates">
 <h3>Docs Updates</h3>
-<?php
-include_once 'manual/en/updates.php';
-?>
+<p>
+<!-- <?php -->
+Docs updates are currently offline.
+<br />
+<br />
+Watch this space!
+<!-- ?> -->
+</p>
 </div>
 <?php
 $RIGHT_SIDEBAR_DATA = ob_get_clean();
