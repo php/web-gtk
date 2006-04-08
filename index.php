@@ -11,10 +11,9 @@ ob_start();
 <div id="docsupdates">
 <h3>Docs Updates</h3>
 <p>
-Docs updates are currently offline.
-<br />
-<br />
-Watch this space!
+<?php
+include_once 'manual/en/updates.php';
+?>
 </p>
 </div>
 <?php
