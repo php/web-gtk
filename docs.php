@@ -49,7 +49,7 @@ commonHeader("Documentation");
 
 <h1>Documentation</h1>
 
-<p>The PHP-GTK manual is available online in a selection of languages. You can 
+<p>The PHP-GTK 1 manual is available online in a selection of languages. You can 
     choose between the printer friendly and graphically designed versions. 
     Please pick a language and format from the table below.</p>
 
@@ -84,7 +84,55 @@ foreach ($man_languages as $langnum => $langcode) {
 <?php
 
 foreach ($man_languages as $langnum => $langcode) {
-	echo '<a href="/manual1/'.$langcode.'/html/">'.$LANGUAGES[$langcode].'</a>';
+	echo '<a href="/manual1/'.$langcode.'/html/index.html">'.$LANGUAGES[$langcode].'</a>';
+	echo ($lastlang != $langnum) ? ", " : "";
+}
+
+?>
+        </td>
+    </tr>
+    <tr>
+        <th bgcolor="#dddddd">Downloads</th>
+        <td bgcolor="#eeeeee">For other downloadable formats, please visit 
+            our <a href="download-docs.php">documentation downloads</a> 
+            page.</td>
+        
+    </tr>
+</table>
+
+<p>The documentation for PHP-GTK 2 is a work in progress, as can be seen from the
+    updates list to your right. Translations are very much in the early stages, and
+    will be added here as they start to come in.</p>
+
+<p>Note that, in translated versions of the manual, untranslated sections will
+    still be in English.</p>
+
+<table border="0" cellpadding="3" cellspacing="2" width="100%">
+    <tr bgcolor="#cccccc">
+        <th>Formats</th>
+        <th>Languages</th>
+    </tr>
+    <tr>
+        <th bgcolor="#dddddd">View Online</th>
+        <td bgcolor="#eeeeee">
+<?php
+
+$lastlang = count($man2_languages) - 1;
+foreach ($man2_languages as $langnum => $langcode) {
+	echo '<a href="/manual/'.$langcode.'/">'.$LANGUAGES[$langcode].'</a>';
+	echo ($lastlang != $langnum) ? ", " : "";
+}
+
+?>
+        </td>
+    </tr>
+    <tr>
+        <th bgcolor="#dddddd">Printer friendly</th>
+        <td bgcolor="#eeeeee">
+<?php
+
+foreach ($man2_languages as $langnum => $langcode) {
+	echo '<a href="/manual/'.$langcode.'/html/index.html">'.$LANGUAGES[$langcode].'</a>';
 	echo ($lastlang != $langnum) ? ", " : "";
 }
 
