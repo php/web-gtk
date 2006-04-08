@@ -7,13 +7,13 @@ font-family: monospace, 'Courier New', Courier;
 font-size: 90%;
 }
 .phpcode .kw1 {
-color: #b1b100;color: #aa3333; font-weight: bold
+color: #d09010; font-weight: bold
 }
 .phpcode .kw2 {
 color: #000000; font-weight: bold;
 }
 .phpcode .kw3 {
-color: #000066;
+color: #000066; font-weight: bold;
 }
 .phpcode .co1 {
 color: #808080; font-style: italic;
@@ -28,19 +28,19 @@ color: #808080; font-style: italic;
 color: green; font-weight: bold;
 }
 .phpcode .br0 {
-color: #66cc66;color: #404040
+color: #404040
 }
 .phpcode .st0 {
-color: #ff0000;color: green
+color: green
 }
 .phpcode .nu0 {
-color: #cc66cc;color: #6600cc
+color: #6600cc
 }
 .phpcode .me0 {
-color: #006600;color: black; font-style: italic
+color: black; font-style: italic
 }
 .phpcode .re0 {
-color: #0000ff;color: #004090
+color: #004090
 }
 
 /*
