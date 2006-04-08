@@ -111,7 +111,7 @@ function makeBorderTOC($this) {
 function navigationBar($title, $id, $loc) {
 	global $NEXT, $PREV, $tstamp;
 
-	echo '<table border="0" width="580" bgcolor="#e0e0e0" cellpadding="0" cellspacing="4">';
+	echo '<table border="0" width="100%" bgcolor="#e0e0e0" cellpadding="0" cellspacing="4">';
 
 	echo '<tr><td>';
 	if ($PREV[1]) {
@@ -145,8 +145,8 @@ function navigationBar($title, $id, $loc) {
 		$links = array();
 		if($LANGUAGES){
 			foreach($LANGUAGES as $code=>$name) {
-				if (file_exists("../$code/$id")) {
-					$links[] = make_link("../$code/$id", $name);
+				if (file_exists("../../manual/$code/$id")) {
+					$links[] = make_link("../../manual/$code/$id", $name);
 					}
 				}
 			}
