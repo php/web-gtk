@@ -365,7 +365,7 @@ function manualHeader($title, $id="") {
 	global $HTDIG;
 
 	makeBorderTOC($title);
-	commonHeader('Manual: '.$title);
+	commonHeader('PHP-GTK 2 Manual : '.$title);
 	# create links to plain html and other languages
 	if (!$HTDIG) {
 		navigationBar($title, $id, "top");
