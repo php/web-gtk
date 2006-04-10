@@ -141,12 +141,12 @@ function navigationBar($title, $id, $loc) {
 
 #	} else {
 
-		global $LANGUAGES;
+		global $LANGUAGES, $man2_languages;
 		$links = array();
 		if($LANGUAGES){
 			foreach($LANGUAGES as $code=>$name) {
-				if (file_exists("../../manual/$code/$id")) {
-					$links[] = make_link("../../manual/$code/$id", $name);
+				if (in_array($code, $man2_languages) && file_exists("../$code/$id")) {
+					$links[] = make_link("../$code/$id", $name);
 					}
 				}
 			}
