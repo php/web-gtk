@@ -7,7 +7,14 @@ elseif(isset($_GET['function'])) {
 	}
 $show = $_POST['show'];
 
-if(isset($pattern) && ($pattern) && isset($show) && ($show == "manual")) {
+if(isset($pattern) && ($pattern) && isset($show) && ($show == "manual2")) {
+    $location = "/manual2-lookup.php";
+    $query = "q=".urlencode($pattern);
+    Header("Location: ".$location."?".$query);
+    exit;
+}
+
+if(isset($pattern) && ($pattern) && isset($show) && ($show == "manual1")) {
 	/* ALTER FOR LOCAL $location = "manual1-lookup.php"; */
 	$location = "/manual1-lookup.php";
 	$query = "function=".urlencode($pattern);
