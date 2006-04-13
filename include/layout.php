@@ -74,7 +74,7 @@ function make_submit($file, $alt=false, $align=false, $extras=false, $dir=false,
     $return = make_image($file, $alt, $align, $extras, $dir, $border);
 
     if ($return != "<img/>") {
-        $return = '<input type="image"' . substr($return,4);
+        $return = str_replace(' border="' . $border . '"', '', '<input type="image"' . substr($return,4));
     } else {
         $return = '<input type="submit"/>';
     }
@@ -138,8 +138,11 @@ function print_email($email, $linktext=false) {
 #
 #
 function commonHeader($title=false, $padding=true) {
-	global $SIDEBAR_DATA;
-?><html>
+    global $SIDEBAR_DATA;
+    echo '<' . '?xml version="1.0" encoding="UTF-8"?'.'>' . "\r\n";
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
     <title>PHP-GTK<?php if ($title) { echo ' : '.$title; } ?></title>
@@ -150,7 +153,7 @@ function commonHeader($title=false, $padding=true) {
 
 <body bgcolor="#FFFFFF" text="#000000" link="#000099" alink="#0000FF" vlink="#000099">
 <a name="TOP"></a>
-<table border="0" cellspacing="0" cellpadding="0" height="48" width="100%">
+<table border="0" cellspacing="0" cellpadding="0" width="100%" style="height:48px;">
     <tr bgcolor="#0099CC">
         <td align="left" rowspan="2">
             <?php print_link('/', make_image('php-gtk.gif', 'PHP-GTK', false, 'vspace="2" hspace="2"')); ?><br />
@@ -185,8 +188,8 @@ function commonHeader($title=false, $padding=true) {
     </tr>
     <tr bgcolor="#000033"><td colspan="2"><?php spacer(1,1); ?><br /></td></tr>
     <tr bgcolor="#006699">
-        <form method="post" action="/search.php">
-            <td align="right" valign="top" colspan="2" nowrap="nowrap" style="color:#FFF">
+        <td align="right" valign="top" colspan="2" nowrap="nowrap" style="color:#FFF">
+            <form method="post" action="/search.php" style="display:inline">
                 <small>search for</small>
                 <input class="small" type="text" name="pattern" value="<?php echo htmlentities($prevsearch); ?>" size="30" />
                 <small>in the</small>
@@ -200,8 +203,8 @@ function commonHeader($title=false, $padding=true) {
                     <option value="php-gtk-doc-list">documentation mailing list</option>
                 </select>
                 <?php echo make_submit('small_submit_white.gif', 'search', 'bottom'); ?>&nbsp;<br />
-            </td>
-        </form>
+            </form>
+        </td>
     </tr>
     <tr bgcolor="#000033"><td colspan="2"><?php spacer(1,1) ;?><br /></td></tr>
 </table>
@@ -218,7 +221,7 @@ function commonHeader($title=false, $padding=true) {
                 </tr>
             </table>
         </td>
-        <td bgcolor="#CCCCCC" background="/gifs/checkerboard.gif"><?php spacer(1,1); ?><br /></td>
+        <td bgcolor="#CCCCCC" style="background-image:url(/gifs/checkerboard.gif)"><?php spacer(1,1); ?><br /></td>
     <?php endif; ?>
         <td>
             <table width="100%" cellpadding="<?php if ($padding) { print("10"); } else { print("0"); } ?>" cellspacing="0">
@@ -242,7 +245,7 @@ function commonFooter($padding = true) {
             </table>
         </td>
     <?php if (isset($RIGHT_SIDEBAR_DATA)): ?>
-        <td bgcolor="#CCCCCC" background="/gifs/checkerboard.gif"><?php spacer(1,1);?><br /></td>
+        <td bgcolor="#CCCCCC"  style="background-image:url(/gifs/checkerboard.gif)"><?php spacer(1,1);?><br /></td>
         <td width="170" bgcolor="#F0F0F0">
             <table width="100%" cellpadding="4" cellspacing="0">
                 <tr valign="top">

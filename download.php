@@ -6,74 +6,77 @@ commonHeader('Downloads');
 
 <h1>Download</h1>
 
-<P>
+<p>
 <b>Note:</b> PHP-GTK requires PHP 4.0.5 or greater (latest CVS version will work
 too). Versions 1.0.1 and later require PHP 4.3.x to build.
-</P>
-<P>
+</p>
+<p>
 PHP-GTK currently supports GTK+ v1.2.6 or greater, but not GTK+ v2.x. You can
 obtain the latest stable release 
 of GTK+ v1.2.x from <?php print_link('ftp://ftp.gtk.org/pub/gtk/v1.2/'); ?>.
-</P>
+</p>
 
 <h2>Latest Stable Release</h2>
 
-<UL>
-<LI><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-1.0.2.tar.gz', 'php-gtk-1.0.2 Source'); ?> - 15-Jul-2005<br>
+<ul>
+<li><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-1.0.2.tar.gz', 'php-gtk-1.0.2 Source'); ?> - 15-Jul-2005</li>
 
-<LI><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-1.0.1.tar.gz', 'php-gtk-1.0.1 Source'); ?> - 09-Aug-2004<br>
+<li><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-1.0.1.tar.gz', 'php-gtk-1.0.1 Source'); ?> - 09-Aug-2004</li>
 
 <!-- Bump off list
-<LI><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-1.0.0.tar.gz', 'php-gtk-1.0.0 Source'); ?> - 23-Oct-2003<br>
+<li><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-1.0.0.tar.gz', 'php-gtk-1.0.0 Source'); ?> - 23-Oct-2003</li>
 -->
 
-<LI><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-1.0.2-win32.zip', 'php-gtk-1.0.2 Windows and PHP Binaries'); ?> - 15-Jul-2005<br>
+<li><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-1.0.2-win32.zip', 'php-gtk-1.0.2 Windows and PHP Binaries'); ?> - 15-Jul-2005</li>
 
-<LI><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-1.0.1a-win32.zip', 'php-gtk-1.0.1a Windows and PHP Binaries'); ?> - 25-Aug-2004<br>
+<li><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-1.0.1a-win32.zip', 'php-gtk-1.0.1a Windows and PHP Binaries'); ?> - 25-Aug-2004</li>
 
-<LI><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-1.0.0-win32.zip', 
-	'php-gtk-1.0.0 Windows and PHP Binaries including ComboButton, Extra, libGlade, Scintilla, Spaned, SQPane'); ?> - 23-Oct-2003<br>
+<li><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-1.0.0-win32.zip',
+    'php-gtk-1.0.0 Windows and PHP Binaries including ComboButton, Extra, libGlade, Scintilla, Spaned, SQPane'); ?> - 23-Oct-2003</li>
 
-
-</UL>
+</ul>
 
 <h2>CVS Version</h2>
 
-<P>
+<p>
 Alternatively, you can get the latest and greatest 
 version of PHP-GTK directly from the PHP CVS server.
-</P>
+</p>
 
-<UL>
+<ul>
 
-<LI>
-Log in to the PHP anonymous CVS server (use <B>phpfi</B> as the password):
-<PRE>
+<li>
+ Log in to the PHP anonymous CVS server (use <b>phpfi</b> as the password):
+<pre>
 cvs -d :pserver:cvsread@cvs.php.net:/repository login
-</PRE>
+</pre>
+</li>
 
-<LI>
-Obtain the PHP-GTK tree:
-<PRE>
+<li>
+ Obtain the PHP-GTK tree:
+<pre>
 cvs -d :pserver:cvsread@cvs.php.net:/repository co -r PHP_GTK_1 php-gtk
-</PRE>
+</pre>
+</li>
 
-<LI>
-Move into the source tree:
-<PRE>
+<li>
+ Move into the source tree:
+<pre>
 cd php-gtk
-</PRE>
+</pre>
+</li>
 
-<LI>
-Configure and install:
-<PRE>
+<li>
+ Configure and install:
+<pre>
 ./buildconf
 ./configure
 make
 make install
-</PRE>
+</pre>
+</li>
 
-</UL>
+</ul>
 
       
 <?php
