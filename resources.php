@@ -6,11 +6,11 @@ commonHeader('Resources');
 
 <h1>Resources</h1>
 
-<p>
-There are various resources for PHP-GTK.  Below are
-listed the ones that we are aware of.  If you know of others
+<P>
+There are various resources for PHP-GTK.  Below are 
+listed the ones that we are aware of.  If you know of others 
 please <? print_email('php-gtk-webmaster@lists.php.net', 'email the webmaster'); ?>.
-</p>
+</P>
 
 <h2>Sites</h2>
 
@@ -79,7 +79,7 @@ PHP-GTK list has no information about.</li>
 <a name="lists"></a>
 <h2>Mailing Lists</h2>
 
-<p>
+<P>
 There are various mailing lists for PHP-GTK.
 </p>
 <p>
@@ -107,18 +107,19 @@ The address of the list itself is <?php print_email('php-gtk-cvs@lists.php.net')
 The list is archived at <?php print_link('http://marc.theaimsgroup.com/?l=php-gtk-cvs', 'MARC'); ?>.
 </p>
 <p>
-The old <b>php-gtk</b> list is still archived at <?php print_link('http://marc.theaimsgroup.com/?l=php-gtk&amp;r=1&amp;w=2', 'MARC'); ?>.
+The old <b>php-gtk</b> list is still archived at <?php print_link('http://marc.theaimsgroup.com/?l=php-gtk&r=1&w=2', 'MARC'); ?>.
 </p>
 
 
 
 <h2>IRC</h2>
 
-<p>
-The <b>#php-gtk</b> IRC channel on Freenode has a few regulars who can most
+<P>
+The <B>#php-gtk</B> IRC channel on Freenode has a few regulars who can most
 likely answer the questions you have.
-</p>
+</P>
 
+</ul>
 
 <?php
 

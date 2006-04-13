@@ -65,7 +65,7 @@ has been working through bug fixes and
 <a href="http://cvs.php.net/viewcvs.cgi/php-gtk/ChangeLog?view=markup">implementing new features</a>. 
 Recently he added the ability to use GtkListStores and GtkTreeStores as if 
 they were 
-<a href="http://marc.theaimsgroup.com/?l=php-gtk-general&amp;m=114029530823343&amp;w=2">iterators or arrays</a>. 
+<a href="http://marc.theaimsgroup.com/?l=php-gtk-general&m=114029530823343&w=2">iterators or arrays</a>. 
 This makes it much easier to work with data models for GtkTreeView and 
 GtkComboBox. The documentation team has been working hard to fill out the docs.
 Several new pages have been added and the PHP-GTK 2 docs will soon make their 
@@ -87,7 +87,6 @@ Christian Weiske has released the first game developed with PHP-GTK 2:
 Development of PHP-GTK 2 is steadily picking up pace. The last month has seen
 plenty of activity not only in commits to CVS but in other parts of the PHP-GTK
 2 community also:
-</p>
 <ul>
  <li>The PHP-GTK 2 documentation is filling out. More classes have been
      documented and given examples (especially the GtkTree* classes).</li>
@@ -106,6 +105,7 @@ plenty of activity not only in commits to CVS but in other parts of the PHP-GTK
      an application that makes it easy to modify php.ini files, has been
      proposed on <a href="http://pear.php.net">PEAR</a> by Anant Narayanan.</li>
 </ul>
+</p>
 
 <?php hdelim(); ?>
 
@@ -118,8 +118,6 @@ installation on a Windows system with just a few clicks. It is designed to
 make installation of PHP-GTK2 and PHP-GTK2 applications quick and easy. For
 more information or to download Gnope visit 
 <a href="http://www.gnope.org">http://www.gnope.org</a>.
-</p>
-
 <?php hdelim(); ?>
 
 <h1>October News</h1>
@@ -157,7 +155,7 @@ If you are interested in helping test PHP-GTK 2 on Windows, please send your com
 
 <p><span class="newsdate">[25-Jul-2005]</span>
  There is talk on the
- <a href="http://marc.theaimsgroup.com/?l=php-dev&amp;m=112142925911670&amp;w=2">PHP
+ <a href="http://marc.theaimsgroup.com/?l=php-dev&m=112142925911670&w=2">PHP
  Internals mailing list</a> about removing support for Win9x (95/98/2000/ME)
  from PHP 5.1. For most PHP developers this isn't much of a big deal but for 
  PHP-GTK 2 developers it may have a much more significant impact. If you have
@@ -214,7 +212,7 @@ If you are interested in helping test PHP-GTK 2 on Windows, please send your com
    <p>In other news, Christian Weiske is making steady progress on the 
     documentation system. Docs skeletons can now be automatically generated
     for all of the classes that have been implemented so far. Read his 
-    <a href="http://marc.theaimsgroup.com/?l=php-gtk-doc&amp;m=111316563116664&amp;w=2">post</a>
+    <a href="http://marc.theaimsgroup.com/?l=php-gtk-doc&m=111316563116664&w=2">post</a>
     to the documentation mailing list for more details.
    </p>
 
@@ -225,7 +223,7 @@ If you are interested in helping test PHP-GTK 2 on Windows, please send your com
 <p><span class="newsdate">[21-Mar-2005]</span> PHP-GTK 2 is making great strides
    toward a working release. Andrei's relentless work has lead to a current CVS
    version that can run non-trivial scripts. See this 
-   <a href="http://marc.theaimsgroup.com/?l=php-gtk-general&amp;m=111006182204075&amp;w=2">posting</a>
+   <a href="http://marc.theaimsgroup.com/?l=php-gtk-general&m=111006182204075&w=2">posting</a>
    to the general mailing list for an example. Take a look at the
    <a href="http://cvs.php.net/co.php/php-gtk/ChangeLog">change log</a> for the
    latest updates.</p>
@@ -267,11 +265,11 @@ If you are interested in helping test PHP-GTK 2 on Windows, please send your com
 
 <p>Other PHP communities are contributing to PHP-GTK development in their 
    own way. PEAR has released another class, <a 
-   href="http://pear.php.net/packages.php?catpid=34&amp;catname=Gtk+Components">Gtk_Styled</a>, 
+   href="http://pear.php.net/packages.php?catpid=34&catname=Gtk+Components">Gtk_Styled</a>, 
    to help PHP-GTK developers write cleaner, more stable code. The folks 
    over at Zend have recognized everyone who has contributed to PHP-GTK 
    development, documentation or the web site by adding them to the "<a 
-   href="http://www.zend.com/pear/whoiswho.php">Zend Who's Who of PHP</a>".</p>
+   href="http://www.zend.com/pear/whoiswho.php">Zend Who's Who of PHP</a>".<p>
 
 <p>In other news, the GDK section of the manual has been completely 
    translated into <a href="http://gtk.php.net/manual1/ru/">Russian</a>.</p>
@@ -284,7 +282,7 @@ If you are interested in helping test PHP-GTK 2 on Windows, please send your com
 <p><span class="newsdate">[20-Dec-2004]</span> There has been a lot of 
     discussion lately about the role PHP-GTK can and is playing in the 
     business world. Several people have <a
-    href="http://marc.theaimsgroup.com/?l=php-gtk-general&amp;m=109903609804913&amp;w=2">commented</a>
+    href="http://marc.theaimsgroup.com/?l=php-gtk-general&m=109903609804913&w=2">commented</a>
     on the <a href="http://gtk.php.net/resources.php">php-gtk-general
     mailing list</a> about how they have developed secure, cross-platform
     applications for use in business with PHP-GTK. Using tools such as

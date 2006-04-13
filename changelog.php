@@ -10,7 +10,7 @@ commonHeader('PHP-GTK Changelog');
 <h3>Version 1.0.1 "you thought we were done?"</h3>
 <b>09-Aug-2004</b>
 <ul>
-<li>buildconf script now takes an optional --with-phpize=&lt;path&gt; option to specify the location of phpize script. (Andrei)</li>
+<li>buildconf script now takes an optional --with-phpize=<path> option to specify the location of phpize script. (Andrei)</li>
 <li>removed support for old build system. PHP 4.3.x is now required to build PHP-GTK. (Andrei)</li>
 <li>implemented append_element(), prepend_element(), insert_element(), append_item(), prepend_item(), and insert_item() methods of GtkToolbar class. (Andrei)</li>
 <li>exposed the following (read-only) GtkToolbar properties: (Andrei)

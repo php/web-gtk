@@ -5,7 +5,7 @@
 # print a IMG tag for a sized spacer GIF
 #
 function spacer($width=1, $height=1, $align=false, $extras=false) {
-    printf('<img src="/gifs/spacer.gif" width="%d" height="%d" border="0" alt="" %s%s/>',
+    printf('<img src="/gifs/spacer.gif" width="%d" height="%d" border="0" alt="" %s%s>',
         $width,
         $height,
         ($align ? 'align="'.$align.'" ' : ''),
@@ -33,7 +33,7 @@ function make_image($file, $alt=false, $align=false, $extras=false, $dir=false, 
     }
     
     if ($size = @getimagesize($_SERVER['DOCUMENT_ROOT'].$dir.'/'.$file)) {
-        $image = sprintf('<img src="%s/%s" border="%d" %s alt="%s" %s%s/>',
+        $image = sprintf('<img src="%s/%s" border="%d" %s alt="%s" %s%s>',
             $dir,
             $file,
             $border,
@@ -43,12 +43,12 @@ function make_image($file, $alt=false, $align=false, $extras=false, $dir=false, 
             ($extras ? ' '.$extras            : '')
         );
     } else {
-        $image = sprintf('<img src="%s/%s" border="%d" alt="%s"%s%s/>',
+        $image = sprintf('<img src="%s/%s" border="%d" alt="%s" %s%s>',
             $dir,
             $file,
             $border,
             ($alt    ? $alt : ''),
-            ($align  ? ' align="'.$align.'"'  : ''),
+            ($align  ? ' ALIGN="'.$align.'"'  : ''),
             ($extras ? ' '.$extras            : '')
         );
     }
@@ -73,10 +73,10 @@ function make_submit($file, $alt=false, $align=false, $extras=false, $dir=false,
 
     $return = make_image($file, $alt, $align, $extras, $dir, $border);
 
-    if ($return != "<img/>") {
-        $return = str_replace(' border="' . $border . '"', '', '<input type="image"' . substr($return,4));
+    if ($return != "<img>") {
+        $return = '<input type="image"' . substr($return,4);
     } else {
-        $return = '<input type="submit"/>';
+        $return = '<input type="submit">';
     }
     return $return;
 }
@@ -88,7 +88,7 @@ function delim($color=false) {
     if (!$color) {
         return '&nbsp;|&nbsp;';
     }
-    return sprintf('<span style="color:%s">&nbsp;|&nbsp;</span>', $color);
+    return sprintf('<font color="%s">&nbsp;|&nbsp;</font>', $color);
 }
 
 # hdelim()
@@ -121,7 +121,7 @@ function print_link($url, $linktext=false, $target=false, $extras=false) {
 # make an e-mail hyperlink
 # 
 function make_email($email, $linktext=false) {
-    return sprintf('<a href="mailto:%s">%s</a>',
+    return sprintf("<a href=\"mailto:%s\">%s</a>",
         $email,
         ($linktext ? $linktext : $email)
     );
@@ -138,13 +138,10 @@ function print_email($email, $linktext=false) {
 #
 #
 function commonHeader($title=false, $padding=true) {
-    global $SIDEBAR_DATA;
-    echo '<' . '?xml version="1.0" encoding="UTF-8"?'.'>' . "\r\n";
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+	global $SIDEBAR_DATA;
+?><html>
 <head>
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <title>PHP-GTK<?php if ($title) { echo ' : '.$title; } ?></title>
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="/style-highlight.css" />
@@ -153,17 +150,19 @@ function commonHeader($title=false, $padding=true) {
 
 <body bgcolor="#FFFFFF" text="#000000" link="#000099" alink="#0000FF" vlink="#000099">
 <a name="TOP"></a>
-<table border="0" cellspacing="0" cellpadding="0" width="100%" style="height:48px;">
+<table border="0" cellspacing="0" cellpadding="0" height="48" width="100%">
     <tr bgcolor="#0099CC">
         <td align="left" rowspan="2">
             <?php print_link('/', make_image('php-gtk.gif', 'PHP-GTK', false, 'vspace="2" hspace="2"')); ?><br />
         </td>
-        <td align="right" valign="top" nowrap="nowrap" style="color:#FFF; font-weight:bold">
-          <?php echo strftime("%A, %B %d, %Y"); ?>&nbsp;<br />
+        <td align="right" valign="top" nowrap>
+            <font color="#FFFFFF">
+                <b><?php echo strftime("%A, %B %d, %Y"); ?></b>&nbsp;<br />
+            </font>
         </td>
     </tr>
     <tr bgcolor="#0099CC">
-        <td align="right" valign="bottom" nowrap="nowrap">
+        <td align="right" valign="bottom" nowrap>
             <?php
             print_link('/download.php', 'download', false, 'class="menuBlack"');
             echo delim();
@@ -188,23 +187,24 @@ function commonHeader($title=false, $padding=true) {
     </tr>
     <tr bgcolor="#000033"><td colspan="2"><?php spacer(1,1); ?><br /></td></tr>
     <tr bgcolor="#006699">
-        <td align="right" valign="top" colspan="2" nowrap="nowrap" style="color:#FFF">
-            <form method="post" action="/search.php" style="display:inline">
-                <small>search for</small>
-                <input class="small" type="text" name="pattern" value="<?php echo htmlentities($prevsearch); ?>" size="30" />
-                <small>in the</small>
-                <select name="show" class="small">
-                    <option value="manual1"<?php echo $_SERVER['SCRIPT_NAME'] == '/manual1-lookup.php' ? ' selected="selected"':'' ?>>manual v1</option>
-                    <option value="manual2"<?php echo $_SERVER['SCRIPT_NAME'] == '/manual2-lookup.php' ? ' selected="selected"':'' ?>>manual v2</option>
-                    <option value="whole-site">whole site</option>
-                    <option value="wiki">wiki</option>
-                    <option value="php-gtk-general-list">general mailing list</option>
-                    <option value="php-gtk-dev-list">development mailing list</option>
-                    <option value="php-gtk-doc-list">documentation mailing list</option>
-                </select>
-                <?php echo make_submit('small_submit_white.gif', 'search', 'bottom'); ?>&nbsp;<br />
-            </form>
-        </td>
+	    <form method="POST" action="/search.php">
+            <td align="right" valign="top" colspan="2" nowrap>
+                <font color="#FFFFFF">
+                    <small>search for</small>
+                    <input class="small" type="text" name="pattern" value="<?php echo htmlentities($prevsearch); ?>" size="30" />
+                    <small>in the</small>
+                    <select name="show" class="small">
+                        <option value="manual">manual</option>
+                        <option value="whole-site">whole site</option>
+                        <option value="wiki">wiki</option>
+                        <option value="php-gtk-general-list">general mailing list</option>
+                        <option value="php-gtk-dev-list">development mailing list</option>
+                        <option value="php-gtk-doc-list">documentation mailing list</option>
+                    </select>
+                    <?php echo make_submit('small_submit_white.gif', 'search', 'bottom'); ?>&nbsp;<br />
+                </font>
+            </td>
+        </form>
     </tr>
     <tr bgcolor="#000033"><td colspan="2"><?php spacer(1,1) ;?><br /></td></tr>
 </table>
@@ -221,7 +221,7 @@ function commonHeader($title=false, $padding=true) {
                 </tr>
             </table>
         </td>
-        <td bgcolor="#CCCCCC" style="background-image:url(/gifs/checkerboard.gif)"><?php spacer(1,1); ?><br /></td>
+        <td bgcolor="#CCCCCC" background="/gifs/checkerboard.gif"><?php spacer(1,1); ?><br /></td>
     <?php endif; ?>
         <td>
             <table width="100%" cellpadding="<?php if ($padding) { print("10"); } else { print("0"); } ?>" cellspacing="0">
@@ -245,7 +245,7 @@ function commonFooter($padding = true) {
             </table>
         </td>
     <?php if (isset($RIGHT_SIDEBAR_DATA)): ?>
-        <td bgcolor="#CCCCCC"  style="background-image:url(/gifs/checkerboard.gif)"><?php spacer(1,1);?><br /></td>
+        <td bgcolor="#CCCCCC" background="/gifs/checkerboard.gif"><?php spacer(1,1);?><br /></td>
         <td width="170" bgcolor="#F0F0F0">
             <table width="100%" cellpadding="4" cellspacing="0">
                 <tr valign="top">

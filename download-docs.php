@@ -55,50 +55,49 @@ use does otherwise.
 <table border="0" cellpadding="2" cellspacing="1" width="100%">
  <tr bgcolor="#cccccc">
   <td>&nbsp;</td>
-  <?php
-    while (list($k,$v) = each($formats)) {
-        echo "<th valign=\"bottom\">$v[0]</th>\n";
-    }?>
+  <?php 
+	while (list($k,$v) = each($formats)) {
+		echo "<th valign=\"bottom\">$v[0]</th>\n";
+	}?>
  </tr>
  <?php
-    while (list(,$langcode) = each($man_languages)) {
-        $language = $LANGUAGES[$langcode];
-        echo "<tr>\n<td bgcolor=\"#dddddd\"><b>$language</b></td>\n";
-        reset($formats);
-        while (list($fn,$details) = each($formats)) {
-            echo "<td align=\"center\" bgcolor=\"#eeeeee\">";
+	while (list(,$langcode) = each($man_languages)) {
+		$language = $LANGUAGES[$langcode];
+		echo "<tr>\n<td bgcolor=\"#dddddd\"><b>$language</b></td>\n";
+		reset($formats);
+		while (list($fn,$details) = each($formats)) {
+			echo "<td align=\"center\" bgcolor=\"#eeeeee\">";
 
-            $link_to = "";
-            if (file_exists("manual1/$langcode/$fn")) {
-                $link_to = "manual1/$langcode/$fn";
-            }
-            elseif (file_exists("distributions/manual1/php_gtk_manual_$langcode.$details[1]")) {
-                $link_to = "distributions/manual1/php_gtk_manual_$langcode.$details[1]";
-            }
-            elseif (file_exists("distributions/manual1/manual-$langcode.$details[1]")) {
-                $link_to = "distributions/manual1/manual-$langcode.$details[1]";
-            }
+			$link_to = "";
+			if (file_exists("manual1/$langcode/$fn")) {
+				$link_to = "manual1/$langcode/$fn";
+			}
+			elseif (file_exists("distributions/manual1/php_gtk_manual_$langcode.$details[1]")) {
+				$link_to = "distributions/manual1/php_gtk_manual_$langcode.$details[1]";
+			}
+			elseif (file_exists("distributions/manual1/manual-$langcode.$details[1]")) {
+				$link_to = "distributions/manual1/manual-$langcode.$details[1]";
+			}
 
-            if (!$link_to) {
-                echo "&nbsp;";
-            } else {
-                $size = @filesize($link_to);
-                $changed = @filemtime($link_to);
-                $date_format = "j M Y"; // Part of the RFC date type (to be short)
-                if ($size) {
-                    echo "<a href=\"$link_to\" title=\" Size: ", (int) ($size/1024), "Kb\n Date: ", date($date_format, $changed), "\">$details[1]</a>";
-                    if ($sizes) {
-                        echo "<br/><small>Size: ", (int) ($size/1024), "Kb<br/>Date: ", date($date_format, $changed), "</small>";
-                    }
-                } else {
-                    echo "&nbsp;";
-                }
-            }
-            echo "</td>\n";
-        }
-        echo "</tr>\n";
-    }
-?>
+			if (!$link_to) {
+			echo "&nbsp;";
+			}
+			else {
+				$size = @filesize($link_to);
+				$changed = @filemtime($link_to);
+				$date_format = "j M Y"; // Part of the RFC date type (to be short)
+				if ($size) {
+					echo "<a href=\"$link_to\" title=\" Size: ", (int) ($size/1024), "Kb\n Date: ", date($date_format, $changed), "\">$details[1]</a>";
+				if ($sizes) {
+					echo "<br><small>Size: ", (int) ($size/1024), "Kb<br>Date: ", date($date_format, $changed), "</small>";
+				}
+			} else {
+				echo "&nbsp;";
+			}
+		}
+	echo "</td>\n";
+	}
+}?>
 </table>
 
 <?php commonFooter(); ?>
