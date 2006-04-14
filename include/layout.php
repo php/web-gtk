@@ -196,8 +196,8 @@ function commonHeader($title=false, $padding=true) {
        <input class="small" type="text" name="pattern" value="<?php echo htmlentities($prevsearch); ?>" size="30" />
        <small>in the</small>
        <select name="show" class="small">
-        <option value="manual1">PHP-GTK 1 manual</option>
         <option value="manual">PHP-GTK 2 manual</option>
+        <option value="manual1">PHP-GTK 1 manual</option>
         <option value="whole-site">whole site</option>
         <option value="wiki">wiki</option>
         <option value="php-gtk-general-list">general mailing list</option>
