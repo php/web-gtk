@@ -37,13 +37,13 @@ function multi_choice($file, $lang) {
 	if($full_match > 1) {
 		commonHeader('multiple choice');
 		echo "<br><br>";
-		echo "<h1>Which &quot;$request&quot; did you want?</h1>\n";
+		echo "<h1>PHP-GTK 1 Manual search results for &quot;$request&quot;</h1>\n";
 		echo "<br>";
 	}
 	elseif($full_match < 1) {
 		commonHeader('multiple choice');
 		echo "<br><br>";
-		echo "<h1>There is no exact match for &quot;$request&quot;.<br>Here is a list of the nearest matches:</h1>\n";
+		echo "<h1>There is no exact match for &quot;$request&quot; in the PHP-GTK 1 Manual.<br>Here is a list of the nearest matches:</h1>\n";
 		echo "<br>";
 		$switch = 1;
 	}
