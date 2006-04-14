@@ -7,5 +7,7 @@ require_once 'PhpGtkDoc/Search2/Index.php';
 
 $strDocDir = dirname(__FILE__) . '/../manual/en/';
 $strIndexFile = dirname(__FILE__) . '/PhpGtkDoc/index.dat';
+
+echo "Generating manual2 search index\r\n";
 PhpGtkDoc_Search2_Index::createIndex($strDocDir, $strIndexFile);
 ?>
