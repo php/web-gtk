@@ -11,7 +11,7 @@ if (isset($_REQUEST['q']) && $_REQUEST['q'] != '') {
     require_once 'PhpGtkDoc/Search2.php';
     require_once 'PhpGtkDoc/Search2/Result/Html.php';
 
-    $strIndexFile = dirname(__FILE__) . '/include/PhpGtkDoc/index.dat';
+    $strIndexFile = dirname(__FILE__) . '/include/PhpGtkDoc/index.search';
     $strDocumentationDir = 'manual/en/';
 
     if (isset($_REQUEST['type']) && isset($arTypes[$_REQUEST['type']])) {
