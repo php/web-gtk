@@ -55,8 +55,8 @@ use does otherwise.
 <table border="0" cellpadding="2" cellspacing="1" width="100%">
  <tr bgcolor="#cccccc">
   <td>&nbsp;</td>
-  <?php 
-	while (list($k,$v) = each($formats)) {
+  <?php
+	while (list($k, $v) = each($formats)) {
 		echo "<th valign=\"bottom\">$v[0]</th>\n";
 	}?>
  </tr>
@@ -88,16 +88,18 @@ use does otherwise.
 				$date_format = "j M Y"; // Part of the RFC date type (to be short)
 				if ($size) {
 					echo "<a href=\"$link_to\" title=\" Size: ", (int) ($size/1024), "Kb\n Date: ", date($date_format, $changed), "\">$details[1]</a>";
-				if ($sizes) {
-					echo "<br><small>Size: ", (int) ($size/1024), "Kb<br>Date: ", date($date_format, $changed), "</small>";
+					if ($sizes) {
+						echo "<br /><small>Size: ", (int) ($size/1024), "Kb<br />Date: ", date($date_format, $changed), "</small>";
+					}
+				} else {
+					echo "&nbsp;";
 				}
-			} else {
-				echo "&nbsp;";
 			}
+			echo "</td>\n";
 		}
-	echo "</td>\n";
+		echo "</tr>\n";
 	}
-}?>
+?>
 </table>
 
 <?php commonFooter(); ?>
