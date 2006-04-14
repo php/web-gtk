@@ -140,8 +140,7 @@ function print_email($email, $linktext=false) {
 function commonHeader($title=false, $padding=true) {
 	global $SIDEBAR_DATA;
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-            "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
