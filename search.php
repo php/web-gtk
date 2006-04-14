@@ -7,8 +7,8 @@ elseif(isset($_GET['function'])) {
 	}
 $show = $_POST['show'];
 
-if(isset($pattern) && ($pattern) && isset($show) && ($show == "manual2")) {
-    $location = "/manual2-lookup.php";
+if(isset($pattern) && ($pattern) && isset($show) && ($show == "manual")) {
+    $location = "/manual-lookup.php";
     $query = "q=".urlencode($pattern);
     Header("Location: ".$location."?".$query);
     exit;
