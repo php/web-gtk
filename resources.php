@@ -23,7 +23,7 @@ PHP-GTK project.</li>
 <li><? print_link('http://www.cweiske.de/phpgtk.htm', 'PHP-GTK Application Downloads at cweiske.de') ?><br />
 This site provides several PHP-GTK freeware applications for download, as well as some reusable code for PHP-GTK programmers</li>
 
-<li><? print_link('http://www.php-gtk.org.br/', 'Brazilian PHP-GTK Community Portal'); ?></li>
+<li><? print_link('http://www.php-gtk.com.br/', 'Brazilian PHP-GTK Community Portal'); ?></li>
 
 <li><? print_link('http://www.phpgtk.de', 'German PHP-GTK Portal'); ?></li>
 
