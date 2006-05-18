@@ -26,6 +26,24 @@
     </items>
 </channel>
 
+<item rdf:about="http://gtk.php.net/about/news-2006-05-18">
+ <title>PHP-GTK 2 Resources</title>
+ <link>http://gtk.php.net</link>
+ <description>
+The number of PHP-GTK 2 resources has been climbing steadily as development
+continues. As it stands now there are eight PHP-GTK 2 packages available from
+PEAR. The availability of the PHP-GTK 2 documentation provides an online
+resources for developers needing help with the PHP-GTK 2 API. Included in the
+online documentation is a new tutorial on using Glade with PHP-GTK 2. In
+addition several websites devoted to PHP-GTK 2 have cropped up providing a wide
+range of resources. Finally, the first PHP-GTK 2 book, Pro PHP-GTK, has been 
+published. All of these resources should provide a strong launching point for 
+any developer wanting to get a head start working with the soon-to-be-released 
+alpha version of PHP-GTK 2.
+ </description>
+ <dc:date>2006-05-18</dc:date>
+</item>
+
 <item rdf:about="http://gtk.php.net/about/news-2006-02-28">
  <title>Moving toward a release of PHP-GTK 2</title>
  <link>http://gtk.php.net</link>
@@ -217,24 +235,6 @@ plenty of activity not only in commits to CVS but in other parts of the PHP-GTK
     In other news, the GDK section of the manual has been completely 
     translated into Russian.</description>
     <dc:date>2005-01-18</dc:date>
-</item>
-
-<item rdf:about="http://gtk.php.net/about/news-2004-12-20">
-    <title>PHP-GTK in business</title>
-    <link>http://gtk.php.net/</link>
-    <description>There has been a lot of 
-    discusson lately about the role PHP-GTK can and is playing in the 
-    business world. Several people have commented
-    on the php-gtk-general mailing list about how they have developed 
-    secure, cross-platform applications for use in business with PHP-GTK.
-    Using tools such as Roadsend's PHP Compiler, developers are able to 
-    create and distribute PHP-GTK applications that don't require the 
-    user to have a working installation first.
-    On the international level, PHP-GTK documentation is being translated
-    into Russian thanks to the work of Andrew Krasnyansky. Also, the 
-    organizers of the International PHP Conference have put out a call
-    for papers. One of the requested topics is PHP-GTK.</description>
-    <dc:date>2004-12-20</dc:date>
 </item>
 
 </rdf:RDF>

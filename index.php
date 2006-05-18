@@ -57,6 +57,30 @@ commonHeader();
 
 ?>
 
+<h1>PHP-GTK 2 Resources</h1>
+
+<p><span class="newsdate">[18-May-2006]</span>
+The number of PHP-GTK 2 resources has been climbing steadily as development
+continues. As it stands now there are <a
+href="http://pear.php.net/search.php?q=gtk2&in=packages&x=0&y=0">eight PHP-GTK
+2 packages</a> available from <a href="http://pear.php.net">PEAR</a>. 
+The availability of the <a href="http://gtk.php.net/docs.php">PHP-GTK 2 
+documentation</a> provides an online resources for developers needing help with
+the PHP-GTK 2 API. Included in the online documentation is a <a
+href="http://gtk.php.net/manual/en/tutorials.helloglade.php">new tutorial on 
+using Glade with PHP-GTK 2</a>. In addition <a 
+href="http://gnope.org/">several</a> <a 
+href="http://www.writingup.com/blog/phpgtk2">websites</a> <a 
+href="http://www.crisscott.com/">devoted</a> to PHP-GTK 2 have cropped up 
+providing a wide range of resources. Finally, the first PHP-GTK 2 book, <a 
+href="http://www.amazon.com/gp/product/1590596137/">Pro PHP-GTK</a>, has been 
+published. All of these resources should provide a strong launching point for 
+any developer wanting to get a head start working with the soon-to-be-released 
+alpha version of PHP-GTK 2.
+</p>
+
+<?php hdelim(); ?>
+
 <h1>Moving toward a release of PHP-GTK 2</h1>
 
 <p><span class="newsdate">[28-Feb-2006]</span>
@@ -80,6 +104,8 @@ and <a href="http://pear.php.net/package/Gtk2_PHPConfig">Gtk2_PHPConfig</a>.
 Christian Weiske has released the first game developed with PHP-GTK 2: 
 <a href="http://www.gnope.org/pearfront/index.php?package=Game_Minesweeper">Minesweeper</a>.
 </p>
+
+<?php hdelim(); ?>
 
 <h1>PHP-GTK 2 Progress</h1>
 
@@ -298,27 +324,6 @@ If you are interested in helping test PHP-GTK 2 on Windows, please send your com
     PHP Conference have put out a <a
     href="http://www.phpconference.com/konferenzen/divers/psecom,id,191,nodeid,240.html">call
     for papers</a>. One of the requested topics is PHP-GTK.</p>
-
-<?php hdelim(); ?>
-
-
-<h1>Small steps into a better world</h1>
-
-<p><span class="newsdate">[12-Nov-2004]</span> While work continues on 
-    <a href="http://gtk.php.net/wiki/PhpGtk/Php-Gtk2">PHP-GTK 2</a>, there
-    has been some big news with PHP-GTK 1. The continuing documentation 
-    efforts have produced 
-    <a href="http://gtk.php.net/manual1/en/tutorials.php">two new tutorials</a>
-    and lots of new doc pages. To go along with all of the new documentation, 
-    Christian Weiske has released 
-    <a href="http://www.cweiske.de/phpgtk_coders.htm#manualbrowser">manualBrowser</a>, 
-    a PHP-GTK application to make it easier to read and search the docs offline. 
-    The folks over at PEAR have even jumped on the PHP-GTK bandwagon. There are 
-    two new 
-    <a href="http://pear.php.net/packages.php?catpid=34&amp;catname=Gtk+Components">gtk classes</a> 
-    and a new PHP-GTK interface for PHPUnit.</p>
-
-<?php hdelim(); ?>
 
 <?php
 
