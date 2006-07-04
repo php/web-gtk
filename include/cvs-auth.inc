@@ -1,31 +1,74 @@
 <?php
 /* $Id$ */
+require_once('config.inc');
 
-$ignore_password = false;
-$passwd_file = "/local/repository/CVSROOT/passwd";
+function get_auth($name, $pass, $connect=null) {
 
-function find_password($user) {
-	global $passwd_file, $ignore_password;
-	if ($ignore_password) return " "; // can't be ""
-	$fp=fopen($passwd_file,"r");
-	while(!feof($fp)) {
-		$line=fgets($fp,120);
-		list($luser,$passwd,$junk) = explode(":",$line);
-		if($user==$luser) {
-			fclose($fp);
-			return($passwd);
+	static $cvs_encode = array(
+		32, 120,  53,  35,  36, 109,  72, 108,
+		70,  64,  76,  67, 116,  74,  68,  87,
+		111,  52,  75, 119,  49,  34,  82,  81,
+		95,  65, 112,  86, 118, 110, 122, 105,
+		64,  57,  83,  43,  46, 102,  40,  89,
+		38, 103,  45,  50,  42, 123,  91,  35,
+		125,  55,  54,  66, 124, 126,  59,  47,
+		92,  71, 115,  91,  92,  93,  94,  56,
+		96, 121, 117, 104, 101, 100,  69,  73,
+		99,  63,  94,  93,  39,  37,  61,  48,
+		58, 113,  32,  90,  44,  98,  60,  51,
+		33,  97,  62, 123, 124, 125, 126, 127);
+
+	$encoded = 'A';
+	$l = strlen($pass);
+
+	for ($i = 0; $i < $l; $i++) {
+		$o = ord($pass{$i});
+		if ($o >= 32 && $o <= 127) {
+			$encoded .= chr($cvs_encode[$o - 32]);
+		} else {
+			$encoded .= $pass{$i};
 		}
 	}
-	fclose($fp);
-	return("");
+
+	if (!$connect) {
+		$encrypted = crypt($encoded);
+		return $encrypted;
+	}
+
+	$cvs = fsockopen('cvs.php.net', 2401, $errno, $errstr);
+	if (!$cvs)
+		return $errstr;
+
+	$pkt = "BEGIN AUTH REQUEST\n/repository\n$name\n$encoded\nEND AUTH REQUEST\n";
+
+	fwrite($cvs, $pkt);
+	$response = fgets($cvs);
+	fclose($cvs);
+	return 0 == strncmp($response, 'I LOVE YOU', 10) ? true : false;
 }
 
 function verify_password($user, $pass) {
-	global $ignore_password;
-	$psw = find_password($user);
-	if (strlen($psw) > 0) {
-		if ($ignore_password || crypt($pass,substr($psw,0,2)) == $psw) {
-			return true;
+
+	if (strlen($user) > 0 && strlen($pass) > 0) {
+		if (!isset($_COOKIE['GTK'])) {
+			$auth = get_auth($user, $pass, true);
+			if (is_bool($auth) && $auth == true) {
+				$encoded = get_auth($user, $pass);
+				setcookie('GTK', base64_encode($user.':'.$encoded), time()+(3600*24), '/' );
+				file_put_contents(DB_DIR."/$user.txt", $encoded);
+			}
+		}
+	}
+	header("Location: {$_SERVER['HTTP_REFERER']}");
+}
+
+function get_user() {
+
+	if (isset($_COOKIE['GTK'])) {
+		list($user, $pass) = explode(':', base64_decode($_COOKIE['GTK']));
+		$stored = file_get_contents(DB_DIR."/$user.txt");
+		if ($pass == $stored) {
+			return $user;
 		}
 	}
 	return false;
