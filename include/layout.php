@@ -135,6 +135,7 @@ function print_email($email, $linktext=false) {
 #
 function commonHeader($title=false, $padding=true) {
 	global $SIDEBAR_DATA;
+	ob_start();
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -189,7 +190,7 @@ function commonHeader($title=false, $padding=true) {
     <form method="post" action="/search.php" style="display:inline">
       <font color="#FFFFFF">
        <small>search for</small>
-       <input class="small" type="text" name="pattern" value="<?php echo htmlentities($prevsearch); ?>" size="30" />
+       <input class="small" type="text" name="pattern" value="<?php if (isset($_GET['prevsearch'])) echo htmlentities($prevsearch); ?>" size="30" />
        <small>in the</small>
        <select name="show" class="small">
         <option value="manual">PHP-GTK 2 manual</option>
@@ -362,6 +363,11 @@ function sect_to_file($string) {
     } else {
         return "$string.php";
     }
+}
+
+function stretchPage($pixels) {
+	$div = "<div style = 'margin: ".$pixels."%'>";
+	return $div;
 }
 
 /*
