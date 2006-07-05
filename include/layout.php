@@ -5,7 +5,7 @@
 # print a IMG tag for a sized spacer GIF
 #
 function spacer($width=1, $height=1, $align=false, $extras=false) {
-    printf('<img src="/gifs/spacer.gif" width="%d" height="%d" border="0" alt="" %s%s>',
+    printf('<img src="/gifs/spacer.gif" width="%d" height="%d" border="0" alt="" %s%s />',
         $width,
         $height,
         ($align ? 'align="'.$align.'" ' : ''),
@@ -31,9 +31,9 @@ function make_image($file, $alt=false, $align=false, $extras=false, $dir=false, 
         // ALTER FOR LOCAL $dir = '../../php-gtk-web/gifs';
         $dir = "/gifs";
     }
-    
+
     if ($size = @getimagesize($_SERVER['DOCUMENT_ROOT'].$dir.'/'.$file)) {
-        $image = sprintf('<img src="%s/%s" border="%d" %s alt="%s" %s%s>',
+        $image = sprintf('<img src="%s/%s" border="%d" %s alt="%s" %s%s />',
             $dir,
             $file,
             $border,
@@ -43,7 +43,7 @@ function make_image($file, $alt=false, $align=false, $extras=false, $dir=false, 
             ($extras ? ' '.$extras            : '')
         );
     } else {
-        $image = sprintf('<img src="%s/%s" border="%d" alt="%s" %s%s>',
+        $image = sprintf('<img src="%s/%s" border="%d" alt="%s" %s%s />',
             $dir,
             $file,
             $border,
@@ -73,11 +73,7 @@ function make_submit($file, $alt=false, $align=false, $extras=false, $dir=false,
 
     $return = make_image($file, $alt, $align, $extras, $dir, $border);
 
-    if ($return != "<img>") {
-        $return = str_replace(' border="' . $border . '"', '', '<input type="image"' . substr($return,4));
-    } else {
-        $return = '<input type="submit">';
-    }
+    $return = str_replace(' border="' . $border . '"', '', '<input type="image"' . substr($return,4));
     return $return;
 }
 
@@ -143,7 +139,7 @@ function commonHeader($title=false, $padding=true) {
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
- <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+ <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
  <title>PHP-GTK<?php if ($title) { echo ' : '.$title; } ?></title>
  <link rel="stylesheet" href="/style.css" />
  <link rel="stylesheet" href="/style-highlight.css" />
