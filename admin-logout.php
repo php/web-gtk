@@ -1,20 +1,9 @@
 <?php
 
-SetCookie('MAGIC_COOKIE', '', time() - 3600, '/');
-unset($MAGIC_COOKIE);
+/* allow for timezone differences */
+setcookie('GTK', '', time() - (3600*24), '/');
 
-commonHeader('Administration Logout');
-
-echo "<h1>Administration Logout</h1>";
-
-if(!isset($MAGIC_COOKIE)) {
-	echo "You have been logged out.  Click <a href = '$_SERVER[HTTP_REFERER]'>here</a> for it to really take effect.";
-	}
-
-else {
-	echo "Unable to log you out.";
-	}
-
-commonFooter();
+header("Location: {$_SERVER['HTTP_REFERER']}");
+exit;
 
 ?>
