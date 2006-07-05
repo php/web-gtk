@@ -39,7 +39,7 @@ function get_auth($name, $pass, $connect=null) {
 	if (!$cvs)
 		return $errstr;
 
-	$pkt = "BEGIN AUTH REQUEST\n/repository\n$name\n$encoded\nEND AUTH REQUEST\n";
+	$pkt = "BEGIN VERIFICATION REQUEST\n/repository\n$name\n$encoded\nEND VERIFICATION REQUEST\n";
 
 	fwrite($cvs, $pkt);
 	$response = fgets($cvs);
