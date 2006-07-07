@@ -5,7 +5,7 @@ $mailto    = 'php-gtk-webmaster@lists.php.net';
 $mailfrom  = 'notes@gtk.php.net';
 
 /* filepaths */
-define('DB_DIR', '../../db');
+define('DB_DIR', '/local/Web/php-gtk-notes-db');
 
 $notesfile =  DB_DIR.'/gtknotes.sqlite';
 $queuefile =  DB_DIR.'/gtkqueue.sqlite';

@@ -36,11 +36,11 @@ if (!isset($_COOKIE['GTK'])) {
 	unset($user);
 	unset($pass);
 	print("
-		<h1>You're logged in</h1>
+		<h1>You are logged in</h1>
 		<br />
 		<ul>
-			<li><a href='/apps/admin-apps.php'>Application Administration</a><br /></li>
-			<li><a href='/manual/admin-notes.php'>Notes Administration</a><br /></li>
+			<li>Application Administration (currently offline)<br /></li>
+			<li><a href='manual/browse-notes.php'>Notes Administration</a><br /></li>
 			<li><a href='info.php'>Check phpinfo()</a><br /></li>
 			<li><a href='admin-logout.php'>Log out</a></li>
 		</ul>
