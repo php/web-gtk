@@ -378,7 +378,7 @@ function makeAdminOpts() {
 		$order = 'page';
 	}
 
-	$SIDEBAR_DATA = "<form method='POST' action='manual/browse-notes.php'>\n".
+	$SIDEBAR_DATA = "<form method='POST' action='browse-notes.php'>\n".
 	"<table border='0' cellpadding='0' cellspacing='0' align='center'>\n".
 	"<tr><td valign='bottom' colspan='3'><br /><b>Order by:</b></td></tr>\n".
 	"<tr><td valign='top'><br />page (default)</td>\n".
@@ -393,7 +393,7 @@ function makeAdminOpts() {
 	"<td><input type='radio' name='order' value='date'";
 	if ($order == 'date') $SIDEBAR_DATA .= " checked";
 	$SIDEBAR_DATA .= " /></td>\n<td>&nbsp;&nbsp;".
-	make_submit('gifs/small_submit.gif', 'Order by', 'bottom').
+	make_submit('small_submit.gif', 'Order by', 'bottom').
 	"</td></tr>\n</table>\n</form>\n";
 }
 
