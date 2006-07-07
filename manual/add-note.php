@@ -44,7 +44,7 @@ if (isset($_POST['cancel'])) {
 }
 
 /* hide everything while we sort it all out */
-if (file_exists(DB_DIR)) {
+if (file_exists(DB_DIR."/$notesfile")) {
 
 if (isset($_POST['add']) || isset($_POST['preview'])) {
 
