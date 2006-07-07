@@ -1,18 +1,14 @@
 <?php
 
-define(NAV_NONE, 0);
-define(NAV_CLASSENTRY, 1);
-define(NAV_CONSTRUCTOR, 2);
-define(NAV_METHOD, 3);
-define(NAV_SIGNAL, 4);
-define(NAV_ENUM, 5);
-
-mysql_connect("localhost","nobody","");
-mysql_select_db("gtk");
+define('NAV_NONE', 0);
+define('NAV_CLASSENTRY', 1);
+define('NAV_CONSTRUCTOR', 2);
+define('NAV_METHOD', 3);
+define('NAV_SIGNAL', 4);
+define('NAV_ENUM', 5);
 
 $NEXT = $PREV = $UP = $HOME = array(false, false);
 $TOC = array();
-
 $SIDEBAR_DATA = '';
 
 function recursive_trim(&$s, $k) {
@@ -33,35 +29,35 @@ function setupNavigation($data) {
 	$PREV = @$data["prev"];
 	$TOC =  @$data["toc"];
 	$UP = @$data["up"];
-	$tstamp = gmdate("D, d M Y",getlastmod());
+	$tstamp = gmdate("D, d M Y", getlastmod());
 }
 
 function makeBorderTOC($this) {
 	global $NEXT, $PREV, $UP, $HOME, $TOC;
 	global $SIDEBAR_DATA;
 
-	$SIDEBAR_DATA = '<form method="get" action="/manual-lookup.php">';
-	/* ALTER FOR LOCAL "../../php-gtk-web/manual-lookup.php" */
+	$SIDEBAR_DATA = '<form method="get" action="manual-lookup.php">';
+	/* ALTER FOR LOCAL "manual-lookup.php" */
 	$SIDEBAR_DATA.= '<table border="0" CELLPADDING="4" CELLSPACING="0" WIDTH="160">';
 
 	if(sizeof($TOC) > 1) {
 	$SIDEBAR_DATA.= '<tr valign="top"><td><small>' .
 		'lookup: <input type="text" class="small" name="function" size="10"> ' .
-		make_submit('small_submit.gif', 'lookup', 'bottom') .
-		'<br></small></td></tr>';
+		make_submit('gifs/small_submit.gif', 'lookup', 'bottom') .
+		'<br /></small></td></tr>';
 
 	$SIDEBAR_DATA.= '<tr bgcolor="#cccccc"><td></td></tr>';
 
 	$SIDEBAR_DATA.= '<tr valign="top"><td>' . 
 	make_link('./', make_image('caret-t.gif', $HOME[1]) . $HOME[1] ) . 
-	'<br></td></tr>';
+	'<br /></td></tr>';
 
 	$SIDEBAR_DATA.= '<tr bgcolor="#cccccc"><td></td></tr>';
 
 	if (($HOME[1] != $UP[1]) && $UP[1]) {
 		$SIDEBAR_DATA.= '<tr valign="top"><td>' . 
 			make_link($UP[0], make_image('caret-u.gif', $UP[1]) . $UP[1] ) . 
-			'<br></td></tr>';
+			'<br /></td></tr>';
 	}
 
 	$SIDEBAR_DATA.= '<tr valign="top"><td><small>';
@@ -101,7 +97,7 @@ function makeBorderTOC($this) {
 		}
 		$SIDEBAR_DATA .= '&nbsp;' . 
 			make_link($url, make_image($img, $title) . $title ) . 
-			'<br>';
+			'<br />';
 		}
 		$SIDEBAR_DATA.= '</small></td></tr>';
 	}
@@ -112,179 +108,186 @@ function navigationBar($title, $id, $loc) {
 	global $NEXT, $PREV, $tstamp;
 
 	echo '<table border="0" width="100%" bgcolor="#e0e0e0" cellpadding="0" cellspacing="4">';
-
 	echo '<tr><td>';
+
 	if ($PREV[1]) {
 		echo make_link( $PREV[0] , make_image('caret-l.gif', 'previous') . $PREV[1] ) ;
 	}
-	echo '<br></td>';
 
+	echo '<br /></td>';
 	echo '<td align="right">';
+
 	if ($NEXT[1]) {
 		echo make_link( $NEXT[0] , $NEXT[1] . make_image('caret-r.gif', 'next') ) ;
 	}
-	echo '<br></td>';
-	echo '</tr>';
 
+	echo '<br /></td>';
+	echo '</tr>';
 	echo '<tr bgcolor="#cccccc"><td colspan="2">';
 	spacer(1,1);
-	echo '<br></td></tr>';
-
+	echo '<br /></td></tr>';
 	echo '<tr>';
-	echo '<td align="right" colspan="2"><small>Last updated: '.$tstamp.'<br>';
+	echo '<td align="right" colspan="2"><small>Last updated: '.$tstamp.'<br />';
 
-#	if ($loc == 'bottom') {
+	global $LANGUAGES, $man2_languages;
+	$links = array();
 
-#		$back_url = 'http://' . $_SERVER['SERVER_NAME'] . 
-#			(($_SERVER['SERVER_PORT']==80) ? '' : ':'.$_SERVER['SERVER_PORT'] ) . 
-#			$_SERVER['PHP_SELF'];
-
-#	} else {
-
-		global $LANGUAGES, $man2_languages;
-		$links = array();
-		if($LANGUAGES){
-			foreach($LANGUAGES as $code=>$name) {
-				if (in_array($code, $man2_languages) && file_exists("../$code/$id")) {
-					$links[] = make_link("../$code/$id", $name);
-					}
-				}
+	if ($LANGUAGES){
+		foreach($LANGUAGES as $code=>$name) {
+			if (in_array($code, $man2_languages) && file_exists("../$code/$id")) {
+				$links[] = make_link("../$code/$id", $name);
 			}
-		$file = substr($id,0,-4);
-		if (file_exists("html/$file.html")) {
-			$links[] = make_link("html/$file.html", 'Plain HTML');
 		}
-		if (count($links)) {
-			echo 'view this page in ' . join (delim(), $links);
-			echo '<br></small></td></tr>';
-		}
+	}
+
+	$file = substr($id, 0, -4);
+
+	if (file_exists("html/$file.html")) {
+		$links[] = make_link("html/$file.html", 'Plain HTML');
+	}
+
+	if (count($links)) {
+		echo 'view this page in ' . join (delim(), $links);
+		echo '<br /></small></td></tr>';
+	}
+
 	echo "</table>\n";
 }
 
 function makeTitle($title) {
-	echo '<tr bgcolor="#d0d0d0" valign="top">';
-	echo '<td colspan="2"><b>' . $title . '</b><br></td>';
+
+	echo "<tr bgcolor='#d0d0d0' valign='top'>\n";
+	echo "<td colspan='2'><b>$title</b><br /></td>\n";
 	echo "</tr>\n";
 }
 
-function makeEntry($row, $show_admin = true, $show_rating = true ) {
-	global $MAGIC_COOKIE;
+function makeEntry($row, $show_admin = false) {
 
-	echo '<tr valign="top">';
-	echo '<td bgcolor="#e0e0e0" colspan="2">';
-	echo '<table border="0" cellpadding="2" cellspacing="0" width="100%">';
-	echo '<tr valign="top"><td>';
-	$name = htmlspecialchars($row['user']);
-	if ($name && $name != "php-gtk@lists.php.net" && $name != "user@example.com") {
-		if (ereg("(.+)@(.+)\.(.+)",$name)) {
-			echo '<a href="mailto:'.$name.'">'.$name.'</a><br>';
-		} else {
-			echo '<b>'.$name.'</b><br>';
-		}
+	echo "<tr valign='top'>\n";
+	echo "<td bgcolor='#e0e0e0' colspan='2'>\n";
+	echo "<table border='0' cellpadding='2' cellspacing='0' width='100%'>\n";
+	echo "<tr valign='top'>\n<td>\n";
+
+	$name = $row['display'];
+
+	if ($name) {
+		echo "<b>$name</b><br />\n";
 	}
-	echo '<small>' . date("d-M-Y h:i", $row['xwhen']) . '</small>';
-	echo '<br></td>';
-	echo '<td align="right" nowrap><small>';
-	if (isset($MAGIC_COOKIE) && $show_admin) {
 
-		print_link('/manual/admin-notes.php?action=edit+' . $row['id'] . '&brief=1',
-			make_image('notes-edit.gif', 'edit note')
-		);
+	echo "<small>" . date('d-M-Y H:i', $row['date']) . "</small>\n";
+	echo "<br />\n</td>\n";
+	echo "<td align='right' nowrap><small>";
+
+	if (isset($_COOKIE['GTK']) && $show_admin) {
+
+		$get = isset($_GET['let']) ? "&let={$_GET['let']}" : null;
+		if (!$get) {
+			$get = isset($_GET['y']) ? "&y={$_GET['y']}" : null;
+		}
+
+		print_link("{$_SERVER['PHP_SELF']}?edit={$row['id']}$get",
+			make_image('notes-edit.gif', 'edit note'));
 		echo '&nbsp';
-		print_link('/manual/admin-notes.php?action=reject+' . $row['id'] . '&brief=1&popup=1',
-			make_image('notes-reject.gif', 'reject note'),
-			'admin'
-		);
+		print_link("{$_SERVER['PHP_SELF']}?reject={$row['id']}$get",
+			make_image('notes-reject.gif', 'reject note'));
 		echo '&nbsp';
-		print_link('/manual/admin-notes.php?action=delete+' . $row['id'] . '&brief=1&popup=1',
-			make_image('notes-delete.gif', 'delete note'),
-			'admin'
-		);
+		print_link("{$_SERVER['PHP_SELF']}?delete={$row['id']}$get",
+			make_image('notes-delete.gif', 'delete note'));
 	}
-	echo '<br>';
-
-	if ($show_rating) {
-		echo 'rating: ';
-		if ( $row['votes'] > 2 ) {
-			printf('<b>%.01f</b>', $row['rate'] );
-		} else {
-			echo '<b><font color="#cc0000">new</font></b>';
-		}
-		echo ' | rate: ';
-		for ($i=1; $i<=5; $i++) {
-			if ($i>1) {
-				echo ' <font color="#999999">|</font> ';
-			}
-			print_link(htmlspecialchars($_SERVER['PHP_SELF']).'?rate_id='.$row['id'].'&rate_note='.$i, $i);
-		}
-		echo '<br>';
-	}
-
-	echo '</small></td></tr>';
-	echo '<tr bgcolor="#f0f0f0"><td colspan="2">';
-	echo clean_note($row['note']). '<br>';
-	echo '</td></tr>';
-	echo '</table>';
-	echo '</td></tr>';
-}
-
-function updateNotesVoting() {
-
-	# probably a better way/place to do this, but ...
-
-	if ($_GET['rate_id'] && $_GET['rate_note']) {
-		$p = parse_url($_SERVER['HTTP_REFERER']);
-
-echo "\n\n<!-- " . $p['path'] . " :: " . $_SERVER['SCRIPT_NAME'] . " -->\n\n";
-
-		/* prevent outside scripts from voting */
-		if ($_SERVER['SCRIPT_NAME']==$p['path']) {
-			$query = 'UPDATE note SET votes=votes+1, rating=rating+' . 
-				min(5, $_GET['rate_note']) .
-				' WHERE id=' . $_GET['rate_id'];
-			$result_id = @mysql_query($query);
-		}
-	}
-}
-
-function manualGetUserNotes($title, $id) {
-	// if we're gtk.php.net, get it from the local DB
-	// otherwise look in "/manual/usernotes/$title.txt" (if present)
-	$notes = array();
-#	if(is_primary_site() || strstr($MYSITE,"localhost")) {
-
-	if ( true ) {
-
-		updateNotesVoting();
-
-		$query = "SELECT *, UNIX_TIMESTAMP(ts) AS xwhen, IF(votes=0, 10, rating/votes) AS rate FROM note " .
-				"WHERE sect='$title' OR sect='$id' ORDER BY xwhen DESC, id";
-
-echo "\n\n<!-- DEBUG: $query -->\n\n";
-
-		$result_id = @mysql_query($query);
-		if ($result_id && mysql_num_rows($result_id) > 0) {
-echo "\n\n<!-- DEBUG: numrows=" . mysql_num_rows($result_id) . " -->\n\n";
-			while ($row = mysql_fetch_array($result_id)) {
-				$notes[] = $row;
-			}
-		} else {
-echo "\n\n<!-- DEBUG: err=" . @mysql_error($result_id) . " -->\n\n";
-		}
+	echo "<br />\n";
+	echo "</small></td>\n</tr>\n";
+	echo "<tr bgcolor='#f0f0f0'>\n<td colspan='2'>\n";
+	if (strstr($row['comment'], '&lt;?')) {
+		$note = do_highlighting($row['comment']);
 	} else {
-		$notes_file = "../usernotes/" . urlencode( $title ) . ".txt";
-		if ( @file_exists( $notes_file ) )
-		{
-			$fp = @fopen($notes_file,"r");
-			if ($fp) {
-				$body = fread($fp,filesize($notes_file));
-				if (strlen($body)) {
-					$notes = @unserialize($body);
-				}
-				fclose($fp);
-			}
+		$note = nl2br(stripslashes($row['comment']));
+	}
+	echo "\n<br />\n".$note."\n<br />\n";
+	echo "</td>\n</tr>\n";
+	echo "</table>\n";
+	echo "</td>\n</tr>\n";
+}
+
+function do_highlighting($orig_note) {
+
+	$startcodes    = array();
+	$endcodes      = array();
+	$samples       = array();
+	$clean_samples = array();
+
+	$lines = explode("\n", $orig_note);
+	$i = 0;
+
+	/* find PHP start and end tags */
+	foreach ($lines as $line) {
+		if (strstr($line, '&lt;?')) {
+			$startcodes[] = $i;
+		}
+		if (strstr($line, "?&gt;")) {
+			$endcodes[] = $i;
+		}
+		$i++;
+	}
+
+	/* collect code samples */
+	foreach($startcodes as $key => $startcode) {
+		if (isset($endcodes[$key])) {
+			$samples[] = array_slice($lines, $startcode, ($endcodes[$key] - ($startcode - 1)));
 		}
 	}
+
+	/* clean code samples */
+	if (!empty($samples)) {
+		foreach($samples as $sample) {
+			foreach($sample as $number => $sampleline) {
+				$sample[$number] = strip_tags($sampleline);
+			}
+			$clean_samples[] = $sample;
+		}
+
+	}
+	
+	/* make the array be a string again */
+	$data = implode("<br />\n", $lines);
+
+	/* highlight code samples */
+	if (!empty($clean_samples)) {
+		foreach($clean_samples as $number => $sample) {
+			$original = implode("<br />\n", $samples[$number]);
+			$string = trim(implode("\n", $sample));
+			$string = str_replace("&gt;", '>', $string);
+			$string = str_replace("&lt;", '<', $string);
+			$string = str_replace('&quot;', '"', $string);
+			$string = str_replace('&amp;', '&', $string);
+
+			ob_start();
+			highlight_string($string);
+			$highlit = ob_get_contents();
+			ob_end_clean();
+
+			$highlit = preg_replace("'([a-zA-Z0-9\=])&nbsp;'", "$1 ", $highlit);
+			if (substr(PHP_OS, 0, 3) == 'WIN') {
+				$highlit = str_replace("\r<br />", "<br />\r", $highlit);
+			} else {
+				$highlit = str_replace("\n<br />", "<br />\n", $highlit);
+			}
+			$data = str_replace($original, $highlit, $data);
+		}
+	}
+
+	return $data;
+}
+
+function manualGetUserNotes($id) {
+
+	$notes = array();
+
+	$db = sqlite_open('../../../db/gtknotes.sqlite');
+	$result = sqlite_array_query($db, "SELECT * FROM notes WHERE page = '$id' ORDER BY date DESC");
+	foreach ($result as $row) {
+		$notes[] = $row;
+	}
+	sqlite_close($db);
 	return $notes;
 }
 
@@ -292,47 +295,30 @@ function manualUserNotes($title, $id) {
 	global $LANG, $MYSITE;
 
 	$cur = substr(dirname($_SERVER['PHP_SELF']), -2);
-	if($cur=='al') {
+	if ($cur=='al') {
 		$cur='en';
 	}
 
-	echo "<BR>\n\n";
-
+	echo "<br />\n\n";
 	echo '<table border="0" cellpadding="4" cellspacing="0" width="100%">';
 
-	$notes = manualGetUserNotes($title, $id);
-
-	$back_url = 'http://' . $_SERVER['SERVER_NAME'] . 
-		(($SERVER_PORT==80) ? '' : ':'.$_SERVER['SERVER_PORT'] ) . 
-		htmlspecialchars($_SERVER['PHP_SELF']);
+	$notes = manualGetUserNotes($id);
 
 	echo '<tr bgcolor="#d0d0d0" valign="top">';
-	echo '<td><small>User Contributed Notes<br></small><b>' . $title . '</b><br></td>';
+	echo '<td><small>User Contributed Notes<br /></small><b>' . $id . '</b><br /></td>';
 	echo '<td align="right">';
-	print_link('/manual/add-note.php?sect='.$id.'&redirect='.$back_url,
-		make_image('notes-add.gif','add a note')
-	);
+	print_link('manual/add-note.php', make_image('notes-add.gif','add a note'));
 	echo "&nbsp;";
-	print_link('/manual/about-notes.php',
-		make_image('notes-about.gif', 'about notes')
-	);
-	echo "<br></td>\n";
+	print_link('manual/about-notes.php', make_image('notes-about.gif', 'about notes'));
+	echo "<br /></td>\n";
 	echo "</tr>\n";
 
-	if ( sizeof($notes) == 0 ) {
+	if (sizeof($notes) == 0) {
 
-		if ( false ) {
-			echo '<tr valign="top">';
-			echo '<td bgcolor="#e0e0e0" colspan="2">';
-			echo 'User contributed notes are not available on this mirror site; try ';
-			print_link('http://gtk.php.net/manual/'.$LANG.'/'.$id, 'here');
-			echo '.<br></td></tr>';
-		} else {
-			echo '<tr valign="top">';
-			echo '<td bgcolor="#e0e0e0" colspan="2">';
-			echo 'There are no user contributed notes for this page.';
-			echo '<br></td></tr>';
-		}
+		echo '<tr valign="top">';
+		echo '<td bgcolor="#e0e0e0" colspan="2">';
+		echo 'There are no user contributed notes for this page.';
+		echo '<br /></td></tr>';
 
 	} else {
 
@@ -342,52 +328,73 @@ function manualUserNotes($title, $id) {
 
 		echo "<tr bgcolor=\"#d0d0d0\" valign=\"top\">\n";
 		echo "<td colspan=\"2\" align=\"right\">\n";
-		print_link('/manual/add-note.php?sect='.$id.'&redirect='.$back_url,
-			make_image('notes-add.gif','add a note')
-			);
+		print_link('manual/add-note.php', make_image('notes-add.gif','add a note'));
 		echo "&nbsp;";
-		print_link('/manual/about-notes.php',
-			make_image('notes-about.gif', 'about notes')
-			);
-		echo "<br></td>\n";
+		print_link('manual/about-notes.php', make_image('notes-about.gif', 'about notes'));
+		echo "<br /></td>\n";
 		echo "</tr>\n";
 	}
-	echo "</table><br><br>\n";
+	echo "</table><br /><br />\n";
 }
 
 function sendManualHeaders($charset, $LANG) {
+
 	global $LANG;
-	Header("Content-type: text/html;charset=UTF-8");
-	Header("Content-language: $LANG");
+	header("Content-type: text/html; charset=UTF-8");
+	header("Content-language: $LANG");
 }
 
 function manualHeader($title, $id="") {
-	global $HTDIG;
 
 	makeBorderTOC($title);
 	commonHeader('PHP-GTK 2 Manual : '.$title);
-	# create links to plain html and other languages
-	if (!$HTDIG) {
-		navigationBar($title, $id, "top");
-	}
+	navigationBar($title, $id, "top");
 }
 
 function manualFooter($title, $id="") {
-	global $HTDIG;
-	if (!$HTDIG) {
-		manualUserNotes($title,$id);
-		navigationBar($title, $id, "bottom");
-	}
+
+	manualUserNotes($title, $id);
+	navigationBar($title, $id, "bottom");
 	commonFooter();
 }
 
 function dehtmlspecialchars($str) {
 
-	$str = str_replace("&gt;",">",$str);
-	$str = str_replace("&lt;","<",$str);
-	$str = str_replace("&quot;","\"",$str);
-	$str = str_replace("&amp;","&",$str);
+	$str = str_replace("&gt;",">", $str);
+	$str = str_replace("&lt;","<", $str);
+	$str = str_replace("&quot;","\"", $str);
+	$str = str_replace("&amp;","&", $str);
 	return $str;
+}
+
+function makeAdminOpts() {
+	global $SIDEBAR_DATA;
+
+	if (isset($_POST['order'])) {
+		$order = $_POST['order'];
+	} elseif (isset($_COOKIE['order'])) {
+		$order = $_COOKIE['order'];
+	} else {
+		$order = 'page';
+	}
+
+	$SIDEBAR_DATA = "<form method='POST' action='manual/browse-notes.php'>\n".
+	"<table border='0' cellpadding='0' cellspacing='0' align='center'>\n".
+	"<tr><td valign='bottom' colspan='3'><br /><b>Order by:</b></td></tr>\n".
+	"<tr><td valign='top'><br />page (default)</td>\n".
+	"<td colspan='2'><br /><input type='radio' name='order' value='page'";
+	if ($order == 'page') $SIDEBAR_DATA .= " checked";
+	$SIDEBAR_DATA .= " /></td></tr>\n".
+	"<tr><td valign='top'>user</td>\n".
+	"<td colspan='2'><input type='radio' name='order' value='display'";
+	if ($order == 'display') $SIDEBAR_DATA .= " checked";
+	$SIDEBAR_DATA .= " /></td></tr>\n".
+	"<tr><td valign='top'>date</td>\n".
+	"<td><input type='radio' name='order' value='date'";
+	if ($order == 'date') $SIDEBAR_DATA .= " checked";
+	$SIDEBAR_DATA .= " /></td>\n<td>&nbsp;&nbsp;".
+	make_submit('gifs/small_submit.gif', 'Order by', 'bottom').
+	"</td></tr>\n</table>\n</form>\n";
 }
 
 ?>
