@@ -43,7 +43,7 @@ function makeBorderTOC($this) {
 	if(sizeof($TOC) > 1) {
 	$SIDEBAR_DATA.= '<tr valign="top"><td><small>' .
 		'lookup: <input type="text" class="small" name="function" size="10"> ' .
-		make_submit('gifs/small_submit.gif', 'lookup', 'bottom') .
+		make_submit('small_submit.gif', 'lookup', 'bottom') .
 		'<br /></small></td></tr>';
 
 	$SIDEBAR_DATA.= '<tr bgcolor="#cccccc"><td></td></tr>';
