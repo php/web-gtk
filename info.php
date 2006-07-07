@@ -1,7 +1,10 @@
 <?php
 
-if (!isset($_COOKIE['GTK'])) { /* remember to change this, assuming everything works */
-	header("Location: {$_SERVER['HTTP_REFERER']}");
+require_once('cvs-auth.inc');
+
+if (!get_user()) {
+	$referrer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : $_SERVER['REQUEST_URI'];
+	header("Location: $referrer");
 	exit;
 }
 
