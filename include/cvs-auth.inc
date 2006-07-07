@@ -37,7 +37,7 @@ function get_auth($name, $pass, $connect=null) {
 
 	$cvs = fsockopen('cvs.php.net', 2401, $errno, $errstr);
 	if (!$cvs)
-		return $errstr;
+		return false;
 
 	$pkt = "BEGIN VERIFICATION REQUEST\n/repository\n$name\n$encoded\nEND VERIFICATION REQUEST\n";
 
@@ -50,11 +50,14 @@ function get_auth($name, $pass, $connect=null) {
 function verify_password($user, $pass) {
 
 	if (strlen($user) > 0 && strlen($pass) > 0) {
+
 		if (!isset($_COOKIE['GTK'])) {
+
 			$auth = get_auth($user, $pass, true);
-			if (is_bool($auth) && $auth == true) {
+
+			if ($auth == true) {
 				$encoded = get_auth($user, $pass);
-				setcookie('GTK', base64_encode($user.':'.$encoded), time()+(3600*24), '/' );
+				setcookie('GTK', base64_encode($user.':'.$encoded), time()+(3600*24), '/');
 				file_put_contents(DB_DIR."/$user.txt", $encoded);
 			}
 		}
