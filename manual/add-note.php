@@ -23,10 +23,18 @@ function check_email() {
 </SCRIPT>
 <?php
 
+$referrer = null;
+
 if (isset($_POST['referer'])) {
 	$referrer  = trim($_POST['referer']);
 } else {
 	$referrer = $_SERVER['HTTP_REFERER'];
+}
+
+if (!$referrer) {
+	$referrer = substr($_SERVER['PHP_SELF'], 0, strrpos($_SERVER['PHP_SELF'], '/'));
+	header("Location: $referrer");
+	exit;
 }
 
 /* Honour form cancellation */
@@ -41,11 +49,11 @@ if (file_exists(DB_DIR)) {
 if (isset($_POST['add']) || isset($_POST['preview'])) {
 
 	/* Throw out any attempt at redirection */
-	if (substr($referrer, 0, 25) != 'http://gtk.php.net/manual' || strstr($referrer, '?')) {
+/*	if (substr($referrer, 0, 25) != 'http://gtk.php.net/manual' || strstr($referrer, '?')) {
 		header("Location: $referrer");
 		exit;
 	}
-
+*/
 	/* set globals and initialize a bunch of vars */
 	$email      = stripslashes(trim($_POST['email']));
 	$content    = stripslashes(trim($_POST['note']));
