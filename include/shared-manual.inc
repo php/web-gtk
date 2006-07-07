@@ -307,9 +307,9 @@ function manualUserNotes($title, $id) {
 	echo '<tr bgcolor="#d0d0d0" valign="top">';
 	echo '<td><small>User Contributed Notes<br /></small><b>' . $id . '</b><br /></td>';
 	echo '<td align="right">';
-	print_link('manual/add-note.php', make_image('notes-add.gif','add a note'));
+	print_link('add-note.php', make_image('notes-add.gif','add a note'));
 	echo "&nbsp;";
-	print_link('manual/about-notes.php', make_image('notes-about.gif', 'about notes'));
+	print_link('about-notes.php', make_image('notes-about.gif', 'about notes'));
 	echo "<br /></td>\n";
 	echo "</tr>\n";
 
@@ -328,9 +328,9 @@ function manualUserNotes($title, $id) {
 
 		echo "<tr bgcolor=\"#d0d0d0\" valign=\"top\">\n";
 		echo "<td colspan=\"2\" align=\"right\">\n";
-		print_link('manual/add-note.php', make_image('notes-add.gif','add a note'));
+		print_link('add-note.php', make_image('notes-add.gif','add a note'));
 		echo "&nbsp;";
-		print_link('manual/about-notes.php', make_image('notes-about.gif', 'about notes'));
+		print_link('about-notes.php', make_image('notes-about.gif', 'about notes'));
 		echo "<br /></td>\n";
 		echo "</tr>\n";
 	}
