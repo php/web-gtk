@@ -116,19 +116,29 @@ if ($user = get_user()) {
 	}
 
 } else {
-	commonHeader("Browse Manual Notes");
+	/* hide everything while we sort it all out */
+	if (file_exists(DB_DIR."/$notesfile")) {
+		commonHeader("Browse Manual Notes");
 
-	$order = isset($_POST['order']) ? $_POST['order'] : null;
-	if (isset($order)) {
-		if (!isset($_COOKIE['order']) || (isset($_COOKIE['order']) && $order != $_COOKIE['order'])) {
-			setcookie('order', $order, time()+(3600*24), '/');
+		$order = isset($_POST['order']) ? $_POST['order'] : null;
+		if (isset($order)) {
+			if (!isset($_COOKIE['order']) || (isset($_COOKIE['order']) && $order != $_COOKIE['order'])) {
+				setcookie('order', $order, time()+(3600*24), '/');
+			}
+		} else {
+			$order = $_COOKIE['order'];
 		}
 	} else {
-		$order = $_COOKIE['order'];
+		commonHeader("Browse Manual Notes");
+		echo '<h1>Browse Manual Notes</h1>';
+		$admin = false;
+		print stretchPage(22);
+		print "<p>The PHP-GTK manual notes system is off-line at present. Please try again later!</p>";
+		print "<p><a href = '{$_SERVER['HTTP_REFERER']}'>Back</a></p>";
+		print "</div>";
+		commonFooter();
+		exit;
 	}
-
-	echo '<h1>Browse Manual Notes</h1>';
-	$admin = false;
 }
 
 ob_start();
