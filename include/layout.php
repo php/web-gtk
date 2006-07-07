@@ -176,7 +176,7 @@ function commonHeader($title=false, $padding=true) {
      print_link('/changelog.php', 'changelog', false, 'class="menuBlack"');
      echo delim();
      print_link('/resources.php', 'resources', false, 'class="menuBlack"');
-     if (isset($_COOKIE['MAGIC_COOKIE'])) {
+     if (isset($_COOKIE['GTK'])) {
          echo delim();
          print_link('/admin-logout.php', 'logout', false, 'class="menuBlack"');
      }
