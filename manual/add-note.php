@@ -44,7 +44,7 @@ if (isset($_POST['cancel'])) {
 }
 
 /* hide everything from non-administrators while we sort it all out */
-if (file_exists(DB_DIR."/$notesfile") || $user = get_user()) {
+if (file_exists($okfile) || $user = get_user()) {
 
 if (isset($_POST['add']) || isset($_POST['preview'])) {
 

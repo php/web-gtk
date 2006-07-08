@@ -117,7 +117,7 @@ if ($user = get_user()) {
 
 } else {
 	/* hide everything while we sort it all out */
-	if (file_exists(DB_DIR."/$notesfile")) {
+	if (file_exists($okfile)) {
 		commonHeader("Browse Manual Notes");
 
 		$order = isset($_POST['order']) ? $_POST['order'] : null;
