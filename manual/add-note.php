@@ -276,14 +276,14 @@ if (isset($_POST['add'])) {
 		file_put_contents($stats, "GTK_ERROR:$errmsg Backup is in $id.txt\n", FILE_APPEND);
 		$bytes = file_put_contents(DB_DIR."/$id.txt", $id."\n".$page."\n".$lang."\n".$date."\n".$email."\n".$display."\n".$content."\n\n".$ip);
 		$msg = "page: $page\n\n$content\n\n$display - ".date('d-M-Y H:i', $date);
-		mail($mailto, "queue system failed: note $id was backed up ($bytes bytes)", $msg, "From: $mailfrom");
+		//mail($mailto, "queue system failed: note $id was backed up ($bytes bytes)", $msg, "From: $mailfrom");
 		commonFooter();
 		exit;
 	}
 
 	/* Mail success notification to the list */
 	$msg = "page: <a href='$referrer'>$page</a>\n\n$content\n\n$display - ".date('d-M-Y H:i', $date);
-	mail($mailto, "note $id has been queued", $msg, "From: $mailfrom");
+	//mail($mailto, "note $id has been queued", $msg, "From: $mailfrom");
 	/*
 	 * We can't check for the current id without holding up the page for a whole
 	 * unacceptable minute - so we keep the current entry in the queue and
@@ -363,7 +363,7 @@ if (isset($_POST['add'])) {
 				/* Mail the user to confirm good stuff */
 				if ($errcode != 'GTK_888' && !strstr($last['email'], "GTK_000")) {
 					$msg = "Hi\n\nThis is to confirm that your PHP-GTK manual note reached the top of the queue and will be available for viewing shortly at <a href='$referrer'>$referrer</a>.\n\nThank you again for your contribution!\n\nRegards,\nThe PHP-GTK Documentation Group";
-					mail($lastemail, "PHP-GTK Manual Note $lastid added", $msg, "From: $mailfrom");
+					//mail($lastemail, "PHP-GTK Manual Note $lastid added", $msg, "From: $mailfrom");
 				}
 
 				if (!$errcode) {
@@ -379,7 +379,7 @@ if (isset($_POST['add'])) {
 		/* We're being attacked and they've managed to screw up at least one db */
 		/* use GTK_999 but preserve the original combo so we know where to look */
 		$msg = "page: <a href='$referrer'>$page</a>\n\n$content\n\n$display - ".date('d-M-Y H:i', $date);
-		mail($mailto, "GTK_999 notification", $msg, "From: $mailfrom");
+		//mail($mailto, "GTK_999 notification", $msg, "From: $mailfrom");
 		exit;
 	}
 
