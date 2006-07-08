@@ -12,6 +12,7 @@ $queuefile =  DB_DIR.'/gtkqueue.sqlite';
 $blockfile =  DB_DIR.'/gtkblocked.txt';
 $stats     =  DB_DIR.'/gtkstats.txt';
 $last_id   =  DB_DIR.'/gtklastid.txt';
+$okfile    =  DB_DIR.'/gtkgolive.txt';
 
 /* NOTE: none of this can be seen from shared-manual.inc... */
 
