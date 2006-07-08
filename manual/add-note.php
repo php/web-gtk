@@ -2,6 +2,7 @@
 
 require_once 'shared-manual.inc';
 require_once 'config.inc';
+require_once 'cvs-auth.inc';
 require_once 'email-validation.inc';
 /*
 Unleash this if we want the same layout as phpdoc
