@@ -282,7 +282,7 @@ function manualGetUserNotes($id) {
 
 	$notes = array();
 
-	if (file_exists('/local/Web/php-gtk-notes-db/gtkgolive.txt')) {
+	if (file_exists('/local/Web/php-gtk-notes-db/gtkgolive.txt') || isset($_COOKIE['GTK'])) {
 
 		$db = sqlite_open('/local/Web/php-gtk-notes-db/gtknotes.sqlite');
 		$result = sqlite_array_query($db, "SELECT * FROM notes WHERE page = '$id' ORDER BY date DESC");
