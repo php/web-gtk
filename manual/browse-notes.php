@@ -12,7 +12,6 @@ if (isset($_POST['cancel'])) {
 makeAdminOpts();
 
 if ($user = get_user()) {
-	commonHeader("Manual Notes Administration");
 
 	commonHeader("Manual Notes Administration");
 
