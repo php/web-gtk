@@ -282,22 +282,22 @@ function manualGetUserNotes($id) {
 
 	$notes = array();
 
-	$db = sqlite_open('../../../db/gtknotes.sqlite');
-	$result = sqlite_array_query($db, "SELECT * FROM notes WHERE page = '$id' ORDER BY date DESC");
-	foreach ($result as $row) {
-		$notes[] = $row;
+	if (file_exists('/local/Web/php-gtk-notes-db/gtkgolive.txt')) {
+
+		$db = sqlite_open('/local/Web/php-gtk-notes-db/gtknotes.sqlite');
+		$result = sqlite_array_query($db, "SELECT * FROM notes WHERE page = '$id' ORDER BY date DESC");
+		foreach ($result as $row) {
+			$notes[] = $row;
+		}
+		sqlite_close($db);
 	}
-	sqlite_close($db);
 	return $notes;
 }
 
 function manualUserNotes($title, $id) {
-	global $LANG, $MYSITE;
 
-	$cur = substr(dirname($_SERVER['PHP_SELF']), -2);
-	if ($cur=='al') {
-		$cur='en';
-	}
+	$current = dirname($_SERVER['PHP_SELF']);
+	$toplevel = substr($current, 0, strrpos($current, '/'));
 
 	echo "<br />\n\n";
 	echo '<table border="0" cellpadding="4" cellspacing="0" width="100%">';
@@ -307,9 +307,9 @@ function manualUserNotes($title, $id) {
 	echo '<tr bgcolor="#d0d0d0" valign="top">';
 	echo '<td><small>User Contributed Notes<br /></small><b>' . $id . '</b><br /></td>';
 	echo '<td align="right">';
-	print_link('add-note.php', make_image('notes-add.gif','add a note'));
+	print_link($toplevel.'/add-note.php', make_image('notes-add.gif','add a note'));
 	echo "&nbsp;";
-	print_link('about-notes.php', make_image('notes-about.gif', 'about notes'));
+	print_link($toplevel.'/about-notes.php', make_image('notes-about.gif', 'about notes'));
 	echo "<br /></td>\n";
 	echo "</tr>\n";
 
@@ -328,20 +328,19 @@ function manualUserNotes($title, $id) {
 
 		echo "<tr bgcolor=\"#d0d0d0\" valign=\"top\">\n";
 		echo "<td colspan=\"2\" align=\"right\">\n";
-		print_link('add-note.php', make_image('notes-add.gif','add a note'));
+		print_link($toplevel.'/add-note.php', make_image('notes-add.gif','add a note'));
 		echo "&nbsp;";
-		print_link('about-notes.php', make_image('notes-about.gif', 'about notes'));
+		print_link($toplevel.'/about-notes.php', make_image('notes-about.gif', 'about notes'));
 		echo "<br /></td>\n";
 		echo "</tr>\n";
 	}
 	echo "</table><br /><br />\n";
 }
 
-function sendManualHeaders($charset, $LANG) {
+function sendManualHeaders($charset, $lang) {
 
-	global $LANG;
 	header("Content-type: text/html; charset=UTF-8");
-	header("Content-language: $LANG");
+	header("Content-language: $lang");
 }
 
 function manualHeader($title, $id="") {
