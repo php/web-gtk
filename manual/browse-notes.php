@@ -14,13 +14,19 @@ makeAdminOpts();
 if ($user = get_user()) {
 	commonHeader("Manual Notes Administration");
 
+	commonHeader("Manual Notes Administration");
+
 	$order = isset($_POST['order']) ? $_POST['order'] : null;
 	if (isset($order)) {
 		if (!isset($_COOKIE['order']) || (isset($_COOKIE['order']) && $order != $_COOKIE['order'])) {
 			setcookie('order', $order, time()+(3600*24), '/');
 		}
 	} else {
-		$order = $_COOKIE['order'];
+		if (isset($_COOKIE['order'])) {
+			$order = $_COOKIE['order'];
+		} else {
+			$order = 'page';
+		}
 	}
 
 	echo "<h1>Manual Notes Administration</h1>\n\n";
@@ -126,7 +132,11 @@ if ($user = get_user()) {
 				setcookie('order', $order, time()+(3600*24), '/');
 			}
 		} else {
-			$order = $_COOKIE['order'];
+			if (isset($_COOKIE['order'])) {
+				$order = $_COOKIE['order'];
+			} else {
+				$order = 'page';
+			}
 		}
 	} else {
 		commonHeader("Browse Manual Notes");
