@@ -14,7 +14,7 @@ if ($user = get_user()) {
 	commonHeader("Manual Notes Administration");
 
 	$order = isset($_POST['order']) ? $_POST['order'] : null;
-	if (isset($order)) {
+	if ($order) {
 		if (!isset($_COOKIE['order']) || (isset($_COOKIE['order']) && $order != $_COOKIE['order'])) {
 			setcookie('order', $order, time()+(3600*24), '/');
 		}
