@@ -1,8 +1,6 @@
 <?php
 
 require_once 'shared-manual.inc';
-require_once 'config.inc';
-require_once 'cvs-auth.inc';
 require_once 'email-validation.inc';
 /*
 Unleash this if we want the same layout as phpdoc
@@ -26,11 +24,7 @@ function check_email() {
 
 $referrer = null;
 
-if (isset($_POST['referer'])) {
-	$referrer  = trim($_POST['referer']);
-} else {
-	$referrer = $_SERVER['HTTP_REFERER'];
-}
+$referrer = isset($_POST['referer']) ? trim($_POST['referer']) : $_SERVER['HTTP_REFERER'];
 
 if (!$referrer) {
 	$referrer = substr($_SERVER['PHP_SELF'], 0, strrpos($_SERVER['PHP_SELF'], '/'));
@@ -44,7 +38,7 @@ if (isset($_POST['cancel'])) {
 	exit;
 }
 
-/* hide everything from non-administrators while we sort it all out */
+/* hide everything while we sort it all out */
 if (file_exists($okfile) || $user = get_user()) {
 
 if (isset($_POST['add']) || isset($_POST['preview'])) {
@@ -112,6 +106,23 @@ if (isset($_POST['add']) || isset($_POST['preview'])) {
 			}
 		}
 	}
+
+	if (!file_exists($queuefile)) {
+		$db = sqlite_open($queuefile);
+		sqlite_query($db, 
+			"BEGIN;
+			CREATE TABLE notes( 
+				id INTEGER PRIMARY KEY, 
+				page CHAR(100), 
+				lang CHAR(5),
+				date INT(11), 
+				email CHAR(700), 
+				display CHAR(700),
+				comment CHAR(4000)); 
+			COMMIT;"
+		);
+		sqlite_close($db);
+	}
 }
 
 /* ============================ PREVIEW ONLY ========================= */
@@ -119,8 +130,8 @@ if (isset($_POST['add']) || isset($_POST['preview'])) {
 if (isset($_POST['preview'])) {
 	print "<br />\n<p>\nThis is what your entry will look like, roughly:\n</p>\n";
 	print "<table border='0' cellpadding='0' cellspacing='0' width='100%' align = 'center'>\n";
-	$temp = array('user' => $display, 'note' => htmlentities($content), 'xwhen' => time());
-	makeEntry($temp, false, false);
+	$temp = array('display' => $display, 'comment' => htmlentities($content), 'date' => time());
+	makeEntry($temp, false);
 	print "</table>\n";
 	print "<br />\n";
 	print "<a href = '#notes'>Edit the form</a>\n";
@@ -276,14 +287,14 @@ if (isset($_POST['add'])) {
 		file_put_contents($stats, "GTK_ERROR:$errmsg Backup is in $id.txt\n", FILE_APPEND);
 		$bytes = file_put_contents(DB_DIR."/$id.txt", $id."\n".$page."\n".$lang."\n".$date."\n".$email."\n".$display."\n".$content."\n\n".$ip);
 		$msg = "page: $page\n\n$content\n\n$display - ".date('d-M-Y H:i', $date);
-		//mail($mailto, "queue system failed: note $id was backed up ($bytes bytes)", $msg, "From: $mailfrom");
+		mail($mailto, "queue system failed: note $id was backed up ($bytes bytes)", $msg, "From: $mailfrom");
 		commonFooter();
 		exit;
 	}
 
 	/* Mail success notification to the list */
 	$msg = "page: <a href='$referrer'>$page</a>\n\n$content\n\n$display - ".date('d-M-Y H:i', $date);
-	//mail($mailto, "note $id has been queued", $msg, "From: $mailfrom");
+	mail($mailto, "note $id has been queued", $msg, "From: $mailfrom");
 	/*
 	 * We can't check for the current id without holding up the page for a whole
 	 * unacceptable minute - so we keep the current entry in the queue and
@@ -361,9 +372,10 @@ if (isset($_POST['add'])) {
 				}
 
 				/* Mail the user to confirm good stuff */
-				if ($errcode != 'GTK_888' && !strstr($last['email'], "GTK_000")) {
+				if (($errcode != 'GTK_888' && !strstr($last['email'], "GTK_000")) || isset($_COOKIE[$user])) {
 					$msg = "Hi\n\nThis is to confirm that your PHP-GTK manual note reached the top of the queue and will be available for viewing shortly at <a href='$referrer'>$referrer</a>.\n\nThank you again for your contribution!\n\nRegards,\nThe PHP-GTK Documentation Group";
-					//mail($lastemail, "PHP-GTK Manual Note $lastid added", $msg, "From: $mailfrom");
+					if (isset($_COOKIE[$user])) $lastemail = $_COOKIE[$user];
+					mail($lastemail, "PHP-GTK Manual Note $lastid added", $msg, "From: $mailfrom");
 				}
 
 				if (!$errcode) {
@@ -379,7 +391,7 @@ if (isset($_POST['add'])) {
 		/* We're being attacked and they've managed to screw up at least one db */
 		/* use GTK_999 but preserve the original combo so we know where to look */
 		$msg = "page: <a href='$referrer'>$page</a>\n\n$content\n\n$display - ".date('d-M-Y H:i', $date);
-		//mail($mailto, "GTK_999 notification", $msg, "From: $mailfrom");
+		mail($mailto, "GTK_999 notification", $msg, "From: $mailfrom");
 		exit;
 	}
 
@@ -521,4 +533,5 @@ note posted here becomes the property of the PHP-GTK Documentation Group.
 }
 
 commonFooter();
+
 ?>
