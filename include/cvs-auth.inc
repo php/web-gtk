@@ -2,7 +2,7 @@
 /* $Id$ */
 require_once('config.inc');
 
-function get_auth($name, $pass, $connect=null) {
+function get_auth($name, $pass, $connect = null) {
 
 	static $cvs_encode = array(
 		32, 120,  53,  35,  36, 109,  72, 108,
@@ -51,13 +51,13 @@ function verify_password($user, $pass) {
 
 	if (strlen($user) > 0 && strlen($pass) > 0) {
 
-		if (!isset($_COOKIE['GTK'])) {
+		if (!isset($_COOKIE['PHP-GTK'])) {
 
 			$auth = get_auth($user, $pass, true);
 
 			if ($auth == true) {
 				$encoded = get_auth($user, $pass);
-				setcookie('GTK', base64_encode($user.':'.$encoded), time()+(3600*24), '/');
+				setcookie('PHP-GTK', base64_encode($user.':'.$encoded), time()+(3600*24), '/');
 				file_put_contents(DB_DIR."/$user.txt", $encoded);
 			}
 		}
@@ -67,8 +67,8 @@ function verify_password($user, $pass) {
 
 function get_user() {
 
-	if (isset($_COOKIE['GTK'])) {
-		list($user, $pass) = explode(':', base64_decode($_COOKIE['GTK']));
+	if (isset($_COOKIE['PHP-GTK'])) {
+		list($user, $pass) = explode(':', base64_decode($_COOKIE['PHP-GTK']));
 		$stored = file_get_contents(DB_DIR."/$user.txt");
 		if ($pass == $stored) {
 			return $user;

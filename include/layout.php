@@ -4,7 +4,7 @@
 # spacer()
 # print a IMG tag for a sized spacer GIF
 #
-function spacer($width=1, $height=1, $align=false, $extras=false) {
+function spacer($width = 1, $height = 1, $align = false, $extras = false) {
     printf('<img src="/gifs/spacer.gif" width="%d" height="%d" border="0" alt="" %s%s />',
         $width,
         $height,
@@ -16,7 +16,7 @@ function spacer($width=1, $height=1, $align=false, $extras=false) {
 # resize_image()
 # tag the output of make_image() and resize it manually
 #
-function resize_image($img, $width=1, $height=1) {
+function resize_image($img, $width = 1, $height = 1) {
     $str = preg_replace('/width=\"([0-9]+?)\"/i', '', $img);
     $str = preg_replace('/height=\"([0-9]+?)\"/i', '', $str);
     $str = substr($str, 0, -1) . sprintf(' height="%s" width="%s">', $height, $width);
@@ -26,9 +26,8 @@ function resize_image($img, $width=1, $height=1) {
 # make_image()
 # return an IMG tag for a given file (relative to the images dir)
 #
-function make_image($file, $alt=false, $align=false, $extras=false, $dir=false, $border=0) {
+function make_image($file, $alt = false, $align = false, $extras = false, $dir = false, $border = 0) {
     if (!$dir) {
-        // ALTER FOR LOCAL $dir = '../../php-gtk-web/gifs';
         $dir = "/gifs";
     }
 
@@ -58,16 +57,15 @@ function make_image($file, $alt=false, $align=false, $extras=false, $dir=false, 
 # print_image()
 # print an IMG tag for a given file
 #
-function print_image($file, $alt=false, $align=false, $extras=false, $dir=false, $border=0) {
+function print_image($file, $alt = false, $align = false, $extras = false, $dir = false, $border = 0) {
     print make_image($file, $alt, $align, $extras, $dir);
 }
 
 # make_submit()
 #  - make a submit button image
 #
-function make_submit($file, $alt=false, $align=false, $extras=false, $dir=false, $border=0) {
+function make_submit($file, $alt = false, $align = false, $extras = false, $dir = false, $border = 0) {
     if (!$dir) {
-        //ALTER FOR LOCAL $dir = '../../php-gtk-web/gifs';
         $dir = "/gifs";
     }
 
@@ -80,11 +78,11 @@ function make_submit($file, $alt=false, $align=false, $extras=false, $dir=false,
 # delim()
 # print a pipe delimiter
 #
-function delim($color=false) {
+function delim($color = false) {
     if (!$color) {
         return '&nbsp;|&nbsp;';
     }
-    return sprintf('<font color="%s">&nbsp;|&nbsp;</font>', $color);
+    return sprintf('<span style="color: %s">&nbsp;|&nbsp;</span>', $color);
 }
 
 # hdelim()
@@ -109,14 +107,14 @@ function make_link($url, $linktext=false, $target=false, $extras=false) {
 # print_link()
 # echo a hyperlink to something, within the site
 #
-function print_link($url, $linktext=false, $target=false, $extras=false) {
+function print_link($url, $linktext = false, $target = false, $extras = false) {
     echo make_link($url, $linktext, $target, $extras);
 }
 
 # make_email()
 # make an e-mail hyperlink
 # 
-function make_email($email, $linktext=false) {
+function make_email($email, $linktext = false) {
     return sprintf("<a href=\"mailto:%s\">%s</a>",
         $email,
         ($linktext ? $linktext : $email)
@@ -126,14 +124,14 @@ function make_email($email, $linktext=false) {
 # print_email()
 # echo an e-mail hyperlink
 # 
-function print_email($email, $linktext=false) {
+function print_email($email, $linktext = false) {
     echo make_email($email, $linktext);
 }
 
 # commonheader()
 #
 #
-function commonHeader($title=false, $padding=true) {
+function commonHeader($title = false, $padding = true) {
 	global $SIDEBAR_DATA;
 	ob_start();
 ?>
@@ -176,15 +174,15 @@ function commonHeader($title=false, $padding=true) {
      print_link('/changelog.php', 'changelog', false, 'class="menuBlack"');
      echo delim();
      print_link('/resources.php', 'resources', false, 'class="menuBlack"');
-     if (isset($_COOKIE['GTK'])) {
+     if (isset($_COOKIE['PHP-GTK'])) {
          echo delim();
          print_link('/admin-logout.php', 'logout', false, 'class="menuBlack"');
      }
     ?>&nbsp;<br />
-    <?php spacer(2,2); ?><br />
+    <?php spacer(2, 2); ?><br />
    </td>
   </tr>
-  <tr bgcolor="#000033"><td colspan="2"><?php spacer(1,1); ?><br /></td></tr>
+  <tr bgcolor="#000033"><td colspan="2"><?php spacer(1, 1); ?><br /></td></tr>
   <tr bgcolor="#006699">
    <td align="right" valign="top" colspan="2" nowrap>
     <form method="post" action="/search.php" style="display:inline">
@@ -206,7 +204,7 @@ function commonHeader($title=false, $padding=true) {
     </form>
    </td>
   </tr>
-  <tr bgcolor="#000033"><td colspan="2"><?php spacer(1,1) ;?><br /></td></tr>
+  <tr bgcolor="#000033"><td colspan="2"><?php spacer(1, 1) ;?><br /></td></tr>
  </table>
 
  <table border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -221,7 +219,7 @@ function commonHeader($title=false, $padding=true) {
      </tr>
     </table>
    </td>
-   <td bgcolor="#CCCCCC" style="background-image:url(/gifs/checkerboard.gif)"><?php spacer(1,1); ?><br /></td>
+   <td bgcolor="#CCCCCC" style="background-image:url(/gifs/checkerboard.gif)"><?php spacer(1, 1); ?><br /></td>
     <?php endif; ?>
    <td>
     <table width="100%" cellpadding="<?php if ($padding) { print("10"); } else { print("0"); } ?>" cellspacing="0">
@@ -245,7 +243,7 @@ function commonFooter($padding = true) {
     </table>
    </td>
    <?php if (isset($RIGHT_SIDEBAR_DATA)): ?>
-   <td bgcolor="#CCCCCC" style="background-image:url(/gifs/checkerboard.gif)"><?php spacer(1,1); ?><br /></td>
+   <td bgcolor="#CCCCCC" style="background-image: url(/gifs/checkerboard.gif)"><?php spacer(1, 1); ?><br /></td>
    <td width="170" bgcolor="#F0F0F0">
     <table width="100%" cellpadding="4" cellspacing="0">
      <tr valign="top">
@@ -293,76 +291,6 @@ function commonFooter($padding = true) {
 </body>
 </html>
 <?php
-}
-
-# clean_note()
-#
-#
-function clean_note($text) {
-    $text = htmlentities($text);
-    $allowed = array(
-        'from' => array(
-            '&lt;br&gt;', 
-            '&lt;br /&gt;', 
-            '&lt;br/&gt;', 
-            '&lt;p&gt;', 
-            '&lt;/p&gt;', 
-            '&lt;b&gt;',
-            '&lt;/b&gt;',
-            '&lt;strong&gt;',
-            '&lt;/strong&gt;',
-            '&lt;i&gt;',
-            '&lt;/i&gt;',
-            '&lt;em&gt;',
-            '&lt;/em&gt;'
-        ),
-        'to' => array(
-            '<br />', 
-            '<br />', 
-            '<br />', 
-            '<p>', 
-            '</p>',
-            '<b>',
-            '</b>',
-            '<strong>',
-            '</strong>',
-            '<i>',
-            '</i>',
-            '<em>',
-            '</em>'
-        )
-    );
-    foreach ($fixes as $f) {
-        $text = str_ireplace($allow['from'], $allowed['to'], $text);
-    }
-	$text = '<tt>' . nl2br($text) . '</tt>';
-	return $text;
-}
-
-# sect_to_file()
-#
-#
-function sect_to_file($string) {
-    $string = strtolower($string);
-    $string = str_replace(' ', '-', $string);
-    $string = str_replace('_', '-', $string);
-
-    $func   = "function.$string.php";
-    $chap   = "ref.$string.php";
-    $feat   = "features.$string.php";
-    $struct = "control-structures.$string.php";
-
-    if (is_file($func)) {
-        return $func;
-    } elseif (is_file($chap)) {
-        return $chap;
-    } elseif (is_file($feat)) {
-        return $feat;
-    } elseif (is_file($struct)) {
-        return $struct;
-    } else {
-        return "$string.php";
-    }
 }
 
 function stretchPage($pixels) {

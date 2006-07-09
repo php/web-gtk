@@ -1,5 +1,7 @@
 <?php
 
+require_once('cvs-auth.inc');
+
 define('NAV_NONE', 0);
 define('NAV_CLASSENTRY', 1);
 define('NAV_CONSTRUCTOR', 2);
@@ -105,7 +107,7 @@ function makeBorderTOC($this) {
 }
 
 function navigationBar($title, $id, $loc) {
-	global $NEXT, $PREV, $tstamp;
+	global $NEXT, $PREV, $tstamp, $LANGUAGES, $man2_languages;
 
 	echo '<table border="0" width="100%" bgcolor="#e0e0e0" cellpadding="0" cellspacing="4">';
 	echo '<tr><td>';
@@ -129,14 +131,11 @@ function navigationBar($title, $id, $loc) {
 	echo '<tr>';
 	echo '<td align="right" colspan="2"><small>Last updated: '.$tstamp.'<br />';
 
-	global $LANGUAGES, $man2_languages;
 	$links = array();
 
-	if ($LANGUAGES){
-		foreach($LANGUAGES as $code=>$name) {
-			if (in_array($code, $man2_languages) && file_exists("../$code/$id")) {
-				$links[] = make_link("../$code/$id", $name);
-			}
+	foreach($LANGUAGES as $code=>$name) {
+		if (in_array($code, $man2_languages) && file_exists("../$code/$id")) {
+			$links[] = make_link("../$code/$id", $name);
 		}
 	}
 
@@ -178,12 +177,11 @@ function makeEntry($row, $show_admin = false) {
 	echo "<br />\n</td>\n";
 	echo "<td align='right' nowrap><small>";
 
-	if (isset($_COOKIE['GTK']) && $show_admin) {
+	if (get_user() && $show_admin) {
 
-		$get = isset($_GET['let']) ? "&let={$_GET['let']}" : null;
-		if (!$get) {
-			$get = isset($_GET['y']) ? "&y={$_GET['y']}" : null;
-		}
+		$get = (isset($_POST['queue']) || array_key_exists('q', $_GET)) ? '&q': null;
+		$get .= isset($_GET['let']) ? "&let={$_GET['let']}" : null;
+		$get .= isset($_GET['y']) ? "&y={$_GET['y']}" : null;
 
 		print_link("{$_SERVER['PHP_SELF']}?edit={$row['id']}$get",
 			make_image('notes-edit.gif', 'edit note'));
@@ -280,11 +278,13 @@ function do_highlighting($orig_note) {
 
 function manualGetUserNotes($id) {
 
+	global $okfile, $notesfile;
+
 	$notes = array();
 
-	if (file_exists('/local/Web/php-gtk-notes-db/gtkgolive.txt') || isset($_COOKIE['GTK'])) {
+	if (file_exists($okfile) || $user = get_user()) {
 
-		$db = sqlite_open('/local/Web/php-gtk-notes-db/gtknotes.sqlite');
+		$db = sqlite_open($notesfile);
 		$result = sqlite_array_query($db, "SELECT * FROM notes WHERE page = '$id' ORDER BY date DESC");
 		foreach ($result as $row) {
 			$notes[] = $row;
@@ -379,7 +379,19 @@ function makeAdminOpts() {
 
 	$SIDEBAR_DATA = "<form method='POST' action='browse-notes.php'>\n".
 	"<table border='0' cellpadding='0' cellspacing='0' align='center'>\n".
-	"<tr><td valign='bottom' colspan='3'><br /><b>Order by:</b></td></tr>\n".
+	"<tr><td valign='top' colspan='3'><br />\n".
+	make_link('../admin-login.php', '<b>Admin home</b>')."<br />\n<br />\n</td></tr>\n";
+	if (strstr($_SERVER['PHP_SELF'], '/manual/browse-notes.php')) {
+		$SIDEBAR_DATA .= "<tr><td valign='top' colspan='3'>\n";
+		if (!isset($_POST['queue']) && !array_key_exists('q', $_GET)) {
+			$SIDEBAR_DATA .= make_link($_SERVER['PHP_SELF'].'?q','<b>Queue administration</b>');
+		} else {
+			$SIDEBAR_DATA .= make_link($_SERVER['PHP_SELF'],'<b>Notes administration</b>').
+			"<input type='hidden' name='queue' value='1' />";
+		}
+		$SIDEBAR_DATA .= "<br />\n<br />\n</td></tr>\n";
+	}
+	$SIDEBAR_DATA .= "<tr><td valign='bottom' colspan='3'><br /><b>Order notes by:</b></td></tr>\n".
 	"<tr><td valign='top'><br />page (default)</td>\n".
 	"<td colspan='2'><br /><input type='radio' name='order' value='page'";
 	if ($order == 'page') $SIDEBAR_DATA .= " checked";
@@ -392,7 +404,7 @@ function makeAdminOpts() {
 	"<td><input type='radio' name='order' value='date'";
 	if ($order == 'date') $SIDEBAR_DATA .= " checked";
 	$SIDEBAR_DATA .= " /></td>\n<td>&nbsp;&nbsp;".
-	make_submit('small_submit.gif', 'Order by', 'bottom').
+	make_submit('small_submit.gif', 'Order by', 'bottom', "height='11', width='11'").
 	"</td></tr>\n</table>\n</form>\n";
 }
 
