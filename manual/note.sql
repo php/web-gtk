@@ -1,19 +1,14 @@
 #
-# Table structure for table 'note'
+# Table structure for table 'notes'
 #
 
-CREATE TABLE note (
-  id mediumint(9) NOT NULL auto_increment,
-  sect varchar(80),
-  user varchar(80),
-  note text,
-  ts datetime,
-  status varchar(16),
-  lang varchar(16),
-  votes mediumint(9) DEFAULT '0' NOT NULL,
-  rating mediumint(9) DEFAULT '0' NOT NULL,
-  PRIMARY KEY (id),
-  KEY sect (sect)
+CREATE TABLE notes(
+  id INTEGER PRIMARY KEY,
+  page CHAR(100),
+  lang CHAR(5),
+  date INT(11),
+  email CHAR(700),
+  display CHAR(700),
+  comment CHAR(4000)
 );
-
 
