@@ -36,13 +36,13 @@ $links = array();
 if ($order == 'date') {
 	rsort($used);
 	foreach ($used as $year) {
-		$links[] = make_link("{$_SERVER['PHP_SELF']}?y=$year", "<b>$year</b>");
+		$links[] = make_link("{$_SERVER['PHP_SELF']}?y=$year$queue", "<b>$year</b>");
 	}
 } else {
 	for ($i = ord('a'); $i <= ord('z'); $i++) {
 		$letter = chr($i);
 		if (isset($used[$letter])) {
-			$links[] = make_link("{$_SERVER['PHP_SELF']}?let=$letter", "<b>$letter</b>");
+			$links[] = make_link("{$_SERVER['PHP_SELF']}?let=$letter$queue", "<b>$letter</b>");
 		} else {
 			$links[] = $letter;
 		}
