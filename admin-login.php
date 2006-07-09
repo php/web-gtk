@@ -39,20 +39,22 @@ if (!isset($_COOKIE['PHP-GTK'])) {
 		<h1>You are logged in</h1>
 		<br />
 		<ul>
-			<li>Application Administration (currently offline)<br /></li>
+			<li>Applications Administration (currently offline)<br /></li>
 			<li><a href='manual/browse-notes.php'>Notes Administration</a><br /></li>
 			<li><a href='info.php'>Check phpinfo()</a><br /></li>
-			<li><a href='manual/admin-notes.php'>Switch public access to user notes
-				<b>".(file_exists($okfile) ? 'off' : 'on')."</b></a> (restricted)<br /></li>
 			<li><a href='manual/admin-notes.php?test'>Set up test environment</a>
 				(restricted) <b>".(isset($_COOKIE[get_user()]) ? 'Test mode enabled' :
 				'Test mode disabled')."</b><br /></li>
+			<li><a href='manual/admin-notes.php'>Switch public access to user notes
+				<b>".(file_exists($okfile) ? 'off' : 'on')."</b></a> (restricted)<br /></li>
+			<li><a href='manual/admin-notes.php?m'>Switch outgoing mail
+				<b>".(file_exists($mailfile) ? 'off' : 'on')."</b></a> (restricted)<br /></li>
 			<li><a href='admin-logout.php'>Log out</a></li>
 		</ul>
 	");
 }
 
-print stretchPage(8);
+print stretchPage(7);
 print "&nbsp;</div>\n";
 commonFooter();
 
