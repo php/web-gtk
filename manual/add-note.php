@@ -274,8 +274,8 @@ if (isset($_POST['add'])) {
 
 	$id = $lastid + 1;
 	$url = explode('/', $referrer);
-	$lang = $url[4];
-	$page = $url[5];
+	$lang = $url[sizeof($url) - 2];
+	$page = $url[sizeof($url) - 1];
 	$date = time();
 
 	$db_string = '("'.$id.'", "'.$page.'", "'.$lang.'", "'.$date.'", "'.$email.'", "'.$display.'", "'.$content.'")';
