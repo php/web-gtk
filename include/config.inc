@@ -20,6 +20,7 @@ $blockfile  =  DB_DIR.'/gtkblocked.txt';
 $stats      =  DB_DIR.'/gtkstats.txt';
 $last_id    =  DB_DIR.'/gtklastid.txt';
 $okfile     =  DB_DIR.'/gtkgolive.txt';
+$mailfile   =  DB_DIR.'/gktmaillive.txt';
 
 /* db update checks. Settings of 15, 10 and 2 could have prevented phpdoc's last attack */
 $recent     = strtotime("15 minutes ago");
@@ -37,5 +38,7 @@ if ($user && isset($_COOKIE[$user])) {
 	$queuefile = DB_DIR."/$user.queue.sqlite";
 	$last_id   = DB_DIR."/$user.lastid.txt";
 }
+
+$mail = file_exists($mailfile) ? true : false;
 
 ?>

@@ -70,8 +70,8 @@ function make_submit($file, $alt = false, $align = false, $extras = false, $dir 
     }
 
     $return = make_image($file, $alt, $align, $extras, $dir, $border);
+    $return = str_replace(' border="' . $border . '"', '', '<input type="image"' . substr($return, 4));
 
-    $return = str_replace(' border="' . $border . '"', '', '<input type="image"' . substr($return,4));
     return $return;
 }
 
@@ -292,6 +292,10 @@ function commonFooter($padding = true) {
 </html>
 <?php
 }
+
+# stretchPage()
+#
+#
 
 function stretchPage($pixels) {
 	$div = "<div style = 'margin: ".$pixels."%'>";
