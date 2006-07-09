@@ -39,8 +39,7 @@ function makeBorderTOC($this) {
 	global $SIDEBAR_DATA;
 
 	$SIDEBAR_DATA = '<form method="get" action="manual-lookup.php">';
-	/* ALTER FOR LOCAL "manual-lookup.php" */
-	$SIDEBAR_DATA.= '<table border="0" CELLPADDING="4" CELLSPACING="0" WIDTH="160">';
+	$SIDEBAR_DATA.= '<table border="0" cellpadding="4" cellspacing="0" width="160">';
 
 	if(sizeof($TOC) > 1) {
 	$SIDEBAR_DATA.= '<tr valign="top"><td><small>' .
@@ -180,8 +179,8 @@ function makeEntry($row, $show_admin = false) {
 	if (get_user() && $show_admin) {
 
 		$get = (isset($_POST['queue']) || array_key_exists('q', $_GET)) ? '&q': null;
-		$get .= isset($_GET['let']) ? "&let={$_GET['let']}" : null;
-		$get .= isset($_GET['y']) ? "&y={$_GET['y']}" : null;
+		$get .= isset($_GET['let']) ? "&amp;let={$_GET['let']}" : null;
+		$get .= isset($_GET['y']) ? "&amp;y={$_GET['y']}" : null;
 
 		print_link("{$_SERVER['PHP_SELF']}?edit={$row['id']}$get",
 			make_image('notes-edit.gif', 'edit note'));
@@ -404,7 +403,7 @@ function makeAdminOpts() {
 	"<td><input type='radio' name='order' value='date'";
 	if ($order == 'date') $SIDEBAR_DATA .= " checked";
 	$SIDEBAR_DATA .= " /></td>\n<td>&nbsp;&nbsp;".
-	make_submit('small_submit.gif', 'Order by', 'bottom', "height='11', width='11'").
+	make_submit('small_submit.gif', 'Order by', 'bottom', 'style = "height: 11; width: 11"').
 	"</td></tr>\n</table>\n</form>\n";
 }
 

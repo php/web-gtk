@@ -138,11 +138,11 @@ function commonHeader($title = false, $padding = true) {
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
- <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+ <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
  <title>PHP-GTK<?php if ($title) { echo ' : '.$title; } ?></title>
- <link rel="stylesheet" href="/style.css" />
- <link rel="stylesheet" href="/style-highlight.css" />
- <link rel="shortcut icon" href="/gifs/favicon.ico" />
+ <link rel="stylesheet" href="/style.css">
+ <link rel="stylesheet" href="/style-highlight.css">
+ <link rel="shortcut icon" href="/gifs/favicon.ico">
 </head>
 
 <body bgcolor="#FFFFFF" text="#000000" link="#000099" alink="#0000FF" vlink="#000099">
