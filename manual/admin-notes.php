@@ -46,6 +46,17 @@ if ($user = get_user()) {
 			setcookie($user, $adminmail, time()+(3600*24), '/');
 		}
 
+	} elseif (array_key_exists('m', $_GET)) {
+
+		/* switch outgoing mail on/off */
+		if (in_array($user, $systems)) {
+			if (file_exists($mailfile)) {
+				unlink($mailfile);
+			} else {
+				file_put_contents($mailfile, 'OK');
+			}
+		}
+
 	} else {
 
 		/* switch public viewing of manual notes on/off */

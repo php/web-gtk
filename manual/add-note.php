@@ -44,8 +44,8 @@ if ((file_exists($okfile) || $user = get_user()) && file_exists($notesfile)) {
 if (isset($_POST['add']) || isset($_POST['preview'])) {
 
 	/* Throw out any attempt at redirection */
-	$len = strlen($_SERVER['HTTP_HOST']) + 14;
-	if (substr($referrer, 0, $len) != 'http://'.$_SERVER['HTTP_HOST'].'/manual' || strstr($referrer, '?')) {
+	$len = strlen($_SERVER['HTTP_HOST']) + 7;
+	if (substr($referrer, 0, $len) != 'http://'.$_SERVER['HTTP_HOST'] || strstr($referrer, '?')) {
 		header("Location: $referrer");
 		exit;
 	}
@@ -129,8 +129,14 @@ if (isset($_POST['add']) || isset($_POST['preview'])) {
 	/* check for/create the last_id file while we're at it */
 	if (!file_exists($last_id)) {
 		$db = sqlite_open($notesfile);
-		$setlast = sqlite_last_insert_rowid($db);
-		file_put_contents($last_id, $setlast);
+		$estimate = sqlite_single_query($db, "SELECT COUNT(*) FROM notes");
+		$setid = sqlite_query($db, "SELECT id FROM notes WHERE id > '$estimate'", SQLITE_ASSOC);
+		if (sqlite_fetch_single($setid) !== false)
+			while (sqlite_valid($setid))
+				$rowid = sqlite_fetch_single($setid);
+		else
+			$rowid = $estimate;
+		file_put_contents($last_id, $rowid);
 		sqlite_close($db);
 	}
 }
@@ -262,10 +268,8 @@ if (isset($_POST['add'])) {
 	$content = htmlentities($content, ENT_COMPAT, 'UTF-8');
 
 	/* Pick up id, insert note data into queue and mail out admin notification */
-	if (!$setlast && !$lastid = file_get_contents($last_id)) {
+	if (!$lastid = file_get_contents($last_id)) {
 		die("Could not obtain note ID");
-	} else {
-		$lastid = $setlast;
 	}
 
 	$id = $lastid + 1;
@@ -288,9 +292,8 @@ if (isset($_POST['add'])) {
 		$printmsg .= ", and you will be notified by email when it goes live";
 	}
 	$printmsg .= ".</p>";
-	print stretchPage(22);
+	print stretchPage(20);
 	print $printmsg;
-	print $db_string;
 	print "<p><a href = '$referrer'>Back</a></p>";
 	commonFooter();
 
@@ -299,14 +302,14 @@ if (isset($_POST['add'])) {
 		file_put_contents($stats, "GTK_ERROR:$errmsg Backup is in $id.txt\n", FILE_APPEND);
 		$bytes = file_put_contents(DB_DIR."/$id.txt", $id."\n".$page."\n".$lang."\n".$date."\n".$email."\n".$display."\n".$content."\n\n".$ip);
 		$msg = "page: $page\n\n$content\n\n$display - ".date('d-M-Y H:i', $date);
-		mail($mailto, "queue system failed: note $id was backed up ($bytes bytes)", $msg, "From: $mailfrom");
+		if ($mail) mail($mailto, "queue system failed: note $id was backed up ($bytes bytes)", $msg, "From: $mailfrom");
 		commonFooter();
 		exit;
 	}
 
 	/* Mail success notification to the list */
 	$msg = "page: <a href='$referrer'>$page</a>\n\n$content\n\n$display - ".date('d-M-Y H:i', $date);
-	mail($mailto, "note $id has been queued", $msg, "From: $mailfrom");
+	if ($mail) mail($mailto, "note $id has been queued", $msg, "From: $mailfrom");
 	/*
 	 * We can't check for the current id without holding up the page for a whole
 	 * unacceptable minute - so we keep the current entry in the queue and
@@ -387,7 +390,7 @@ if (isset($_POST['add'])) {
 				if (($errcode != 'GTK_888' && !strstr($last['email'], "GTK_000")) || isset($_COOKIE[$user])) {
 					$msg = "Hi\n\nThis is to confirm that your PHP-GTK manual note reached the top of the queue and will be available for viewing shortly at <a href='$referrer'>$referrer</a>.\n\nThank you again for your contribution!\n\nRegards,\nThe PHP-GTK Documentation Group";
 					if (isset($_COOKIE[$user])) $lastemail = $_COOKIE[$user];
-					mail($lastemail, "PHP-GTK Manual Note $lastid added", $msg, "From: $mailfrom");
+					if ($mail) mail($lastemail, "PHP-GTK Manual Note $lastid added", $msg, "From: $mailfrom");
 				}
 
 				if (!$errcode) {
@@ -403,7 +406,7 @@ if (isset($_POST['add'])) {
 		/* We're being attacked and they've managed to screw up at least one db */
 		/* use GTK_999 but preserve the original combo so we know where to look */
 		$msg = "page: <a href='$referrer'>$page</a>\n\n$content\n\n$display - ".date('d-M-Y H:i', $date);
-		mail($mailto, "GTK_999 notification", $msg, "From: $mailfrom");
+		if ($mail) mail($mailto, "GTK_999 notification", $msg, "From: $mailfrom");
 		exit;
 	}
 

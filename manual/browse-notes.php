@@ -65,13 +65,13 @@ if ($user = get_user()) {
 					if (!isset($_COOKIE[$user])) { /* but only if we're not in test mode */
 						$mailto = $row['email'];
 					}
-					mail($mailto, "note {$row['id']} rejected: {$row['page']}", $reject_text."----- Copy of your note below -----\n\n".stripslashes($row['comment']), "From: $user@php.net");
+					if ($mail) mail($mailto, "note {$row['id']} rejected: {$row['page']}", $reject_text."----- Copy of your note below -----\n\n".stripslashes($row['comment']), "From: $user@php.net");
 				}
 				$actioned = 'rejected';
 			} else {
 				$actioned = 'deleted';
 			}
-			mail($mailto, "note $id $actioned: {$row['page']}", "Content of note:\n\n".stripslashes($row['comment']), "From: $user@php.net");
+			if ($mail) mail($mailto, "note $id $actioned: {$row['page']}", "Content of note:\n\n".stripslashes($row['comment']), "From: $user@php.net");
 			print "<p><b>Note $id deleted successfully</b></p>";
 		} else {
 			print "<p><b>Unable to delete note $id</b></p>";
@@ -125,7 +125,7 @@ if ($user = get_user()) {
 		$query .= " comment='$note' WHERE id='{$row['id']}'";
 		if (sqlite_exec($db, $query)) {
 			echo "<p><b>Record {$row['id']} modified successfully</b></p>";
-			mail($mailto, "note {$row['id']} modified: {$row['page']}", $note.$add_url, "From: $user@php.net");
+			if ($mail) mail($mailto, "note {$row['id']} modified: {$row['page']}", $note.$add_url, "From: $user@php.net");
 		} else {
 			echo "<p><b>Record {$row['id']} not modified (query failed)</b></p>";
 		}
