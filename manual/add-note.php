@@ -39,16 +39,17 @@ if (isset($_POST['cancel'])) {
 }
 
 /* hide everything while we sort it all out */
-if (file_exists($okfile) || $user = get_user()) {
+if ((file_exists($okfile) || $user = get_user()) && file_exists($notesfile)) {
 
 if (isset($_POST['add']) || isset($_POST['preview'])) {
 
 	/* Throw out any attempt at redirection */
-/*	if (substr($referrer, 0, 25) != 'http://gtk.php.net/manual' || strstr($referrer, '?')) {
+	$len = strlen($_SERVER['HTTP_HOST']) + 14;
+	if (substr($referrer, 0, $len) != 'http://'.$_SERVER['HTTP_HOST'].'/manual' || strstr($referrer, '?')) {
 		header("Location: $referrer");
 		exit;
 	}
-*/
+
 	/* set globals and initialize a bunch of vars */
 	$email      = stripslashes(trim($_POST['email']));
 	$content    = stripslashes(trim($_POST['note']));
@@ -107,6 +108,7 @@ if (isset($_POST['add']) || isset($_POST['preview'])) {
 		}
 	}
 
+	/* check for/create the queue file */
 	if (!file_exists($queuefile)) {
 		$db = sqlite_open($queuefile);
 		sqlite_query($db, 
@@ -121,6 +123,14 @@ if (isset($_POST['add']) || isset($_POST['preview'])) {
 				comment CHAR(4000)); 
 			COMMIT;"
 		);
+		sqlite_close($db);
+	}
+
+	/* check for/create the last_id file while we're at it */
+	if (!file_exists($last_id)) {
+		$db = sqlite_open($notesfile);
+		$setlast = sqlite_last_insert_rowid($db);
+		file_put_contents($last_id, $setlast);
 		sqlite_close($db);
 	}
 }
@@ -252,8 +262,10 @@ if (isset($_POST['add'])) {
 	$content = htmlentities($content, ENT_COMPAT, 'UTF-8');
 
 	/* Pick up id, insert note data into queue and mail out admin notification */
-	if (!$lastid = file_get_contents($last_id)) {
+	if (!$setlast && !$lastid = file_get_contents($last_id)) {
 		die("Could not obtain note ID");
+	} else {
+		$lastid = $setlast;
 	}
 
 	$id = $lastid + 1;
