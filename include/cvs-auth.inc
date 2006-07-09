@@ -57,7 +57,7 @@ function verify_password($user, $pass) {
 
 			if ($auth == true) {
 				$encoded = get_auth($user, $pass);
-				setcookie('PHP-GTK', base64_encode($user.':'.$encoded), time()+(3600*24), '/');
+				setcookie('PHP-GTK', base64_encode($user.':'.$encoded), time()+(3600*6), '/');
 				file_put_contents(DB_DIR."/$user.txt", $encoded);
 			}
 		}
