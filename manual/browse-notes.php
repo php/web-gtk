@@ -16,7 +16,7 @@ if ($user = get_user()) {
 	$order = isset($_POST['order']) ? $_POST['order'] : null;
 	if ($order) {
 		if (!isset($_COOKIE['order']) || (isset($_COOKIE['order']) && $order != $_COOKIE['order'])) {
-			setcookie('order', $order, time()+(3600*24), '/');
+			setcookie('order', $order, time()+(3600*24*7), '/');
 		}
 	} else {
 		if (isset($_COOKIE['order'])) {

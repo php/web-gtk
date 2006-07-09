@@ -43,7 +43,7 @@ if ($user = get_user()) {
 				}
 			}
 			$adminmail = trim($_POST['adminmail']);
-			setcookie($user, $adminmail, time()+(3600*24), '/');
+			setcookie($user, $adminmail, time()+(3600*6), '/');
 		}
 
 	} elseif (array_key_exists('m', $_GET)) {
