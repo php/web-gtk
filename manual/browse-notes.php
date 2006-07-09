@@ -1,18 +1,16 @@
 <?php
 
-require_once 'config.inc';
-require_once 'cvs-auth.inc';
 require_once 'shared-manual.inc';
 
 if (isset($_POST['cancel'])) {
-	header("Location: {$_SERVER['REQUEST_URI']}");
+	header("Location: {$_SERVER['REQUEST_URI']}".(isset($_POST['queue']) ? '?q' : ''));
 	exit;
 }
 
 makeAdminOpts();
+$queue = null;
 
 if ($user = get_user()) {
-
 	commonHeader("Manual Notes Administration");
 
 	$order = isset($_POST['order']) ? $_POST['order'] : null;
@@ -28,7 +26,14 @@ if ($user = get_user()) {
 		}
 	}
 
-	echo "<h1>Manual Notes Administration</h1>\n\n";
+	if (isset($_POST['queue']) || array_key_exists('q', $_GET)) {
+		echo "<h1>Manual Notes Queue Administration</h1>\n\n";
+		$notesfile = $queuefile;
+		$queue = '&q';
+	} else {
+		echo "<h1>Manual Notes Administration</h1>\n\n";
+	}
+
 	$admin = true;
 	$id = null;
 
@@ -57,13 +62,16 @@ if ($user = get_user()) {
 			if (isset($_GET['reject'])) {
 				if (!substr($row['email'], 0, 3) == 'GTK_') {
 					/* email user */
-					//mail($row['email'], "note {$row['id']} rejected: {$row['page']}", $reject_text."----- Copy of your note below -----\n\n".stripslashes($row['comment']), "From: $user@php.net");
+					if (!isset($_COOKIE[$user])) { /* but only if we're not in test mode */
+						$mailto = $row['email'];
+					}
+					mail($mailto, "note {$row['id']} rejected: {$row['page']}", $reject_text."----- Copy of your note below -----\n\n".stripslashes($row['comment']), "From: $user@php.net");
 				}
 				$actioned = 'rejected';
 			} else {
 				$actioned = 'deleted';
 			}
-			//mail($mailto, "note $id $actioned: {$row['page']}", "Content of note:\n\n".stripslashes($row['comment']), "From: $user@php.net");
+			mail($mailto, "note $id $actioned: {$row['page']}", "Content of note:\n\n".stripslashes($row['comment']), "From: $user@php.net");
 			print "<p><b>Note $id deleted successfully</b></p>";
 		} else {
 			print "<p><b>Unable to delete note $id</b></p>";
@@ -80,10 +88,14 @@ if ($user = get_user()) {
 		if (substr($email, 0, 3) == 'GTK_') {
 			$email = null;
 		}
+
 		$get = isset($_GET['let']) ? "?let={$_GET['let']}" : null;
 		if (!$get) {
 			$get = isset($_GET['y']) ? "?y={$_GET['y']}" : null;
 		}
+		if ($get) $get .= $queue ? '&q': null;
+		else $get .= $queue ? '?q': null;
+
 		echo '<form method="POST" action="'.$_SERVER['PHP_SELF'].$get.'">';
 		echo '<table border="0" cellpadding="5" width="80%" bgcolor="#e0e0e0">';
 		echo '<tr><td align="right">E-mail:<br /></td>' .
@@ -113,7 +125,7 @@ if ($user = get_user()) {
 		$query .= " comment='$note' WHERE id='{$row['id']}'";
 		if (sqlite_exec($db, $query)) {
 			echo "<p><b>Record {$row['id']} modified successfully</b></p>";
-			//mail($mailto, "note {$row['id']} modified: {$row['page']}", $note.$add_url, "From: $user@php.net");
+			mail($mailto, "note {$row['id']} modified: {$row['page']}", $note.$add_url, "From: $user@php.net");
 		} else {
 			echo "<p><b>Record {$row['id']} not modified (query failed)</b></p>";
 		}
@@ -121,33 +133,24 @@ if ($user = get_user()) {
 	}
 
 } else {
-	/* hide everything while we sort it all out */
-	if (file_exists($okfile)) {
-		commonHeader("Browse Manual Notes");
 
-		$order = isset($_POST['order']) ? $_POST['order'] : null;
-		if (isset($order)) {
-			if (!isset($_COOKIE['order']) || (isset($_COOKIE['order']) && $order != $_COOKIE['order'])) {
-				setcookie('order', $order, time()+(3600*24), '/');
-			}
-		} else {
-			if (isset($_COOKIE['order'])) {
-				$order = $_COOKIE['order'];
-			} else {
-				$order = 'page';
-			}
+	commonHeader("Browse Manual Notes");
+
+	$order = isset($_POST['order']) ? $_POST['order'] : null;
+	if (isset($order)) {
+		if (!isset($_COOKIE['order']) || (isset($_COOKIE['order']) && $order != $_COOKIE['order'])) {
+			setcookie('order', $order, time()+(3600*24), '/');
 		}
 	} else {
-		commonHeader("Browse Manual Notes");
-		echo '<h1>Browse Manual Notes</h1>';
-		$admin = false;
-		print stretchPage(22);
-		print "<p>The PHP-GTK manual notes system is off-line at present. Please try again later!</p>";
-		print "<p><a href = '{$_SERVER['HTTP_REFERER']}'>Back</a></p>";
-		print "</div>";
-		commonFooter();
-		exit;
+		if (isset($_COOKIE['order'])) {
+			$order = $_COOKIE['order'];
+		} else {
+			$order = 'page';
+		}
 	}
+
+	echo '<h1>Browse Manual Notes</h1>';
+	$admin = false;
 }
 
 ob_start();
