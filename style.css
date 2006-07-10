@@ -9,6 +9,7 @@ body, html {
     padding: 0px;
     background-color: #FFF;
 	color: #000;
+	font-size: 90%;
 }
 
 /* Font settings for page elements */
@@ -22,7 +23,7 @@ code, pre, tt {
 
 /* Default font size for elements */
 body, ul, td, th {
-    font-size: 85%;
+    font-size: 1em;
 }
 
 li {
@@ -41,14 +42,14 @@ acronym {
 }
 
 .newsDate {
-    font-size: 75%;
+    font-size: .75em;
     font-style: italic;
     color: #66C;
 	background-color: inherit;
 }
 
 .sidebar {
-	font-size: 80%;
+	font-size: .80em;
 	padding: 5px;
 }
 
@@ -57,21 +58,21 @@ acronym {
 }
 
 a.menuWhite {
-    font-size: 75%;
+    font-size: .75em;
     color: #FFF;
     text-decoration: none;
 	background-color: inherit;
 }
 
 a.menuBlack {
-    font-size: 75%;
+    font-size: .75em;
     color: #000;
     text-decoration: none;
 	background-color: inherit;
 }
 
 pre, code {
-    font-size: 80%;
+    font-size: .80em;
 }
 
 pre.code {
@@ -85,11 +86,11 @@ h1, h2, h3, h4, dt {
     color: #006;
 	background-color: inherit;
 }
-h1 { font-size: 130%; }
-h2 { font-size: 125%; }
-h3, dt { font-size: 110%; }
+h1 { font-size: 1.30em; }
+h2 { font-size: 1.25em; }
+h3, dt { font-size: 1.10em; }
 h4 {
-    font-size: 90%;
+    font-size: .90em;
     padding-top: 0px;
     padding-bottom: 0px;
 }
@@ -99,11 +100,11 @@ blockquote {
 }
 
 small {
-    font-size: 75%;
+    font-size: .75em;
 }
 
 a.small {
-    font-size: 75%;
+    font-size: .75em;
     text-decoration: none;
 }
 
@@ -112,17 +113,17 @@ a.small {
 }
 
 .tableExtras {
-    font-size: 85%;
+    font-size: .85em;
     color: #FFF;
 	background-color: inherit;
 }
 
 input.small, select.small {
-    font-size: 75%;
+    font-size: .75em;
 }
 
 textarea.small {
-    font-size: 75%;
+    font-size: .75em;
 }
 
 .programlisting {
