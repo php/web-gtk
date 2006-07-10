@@ -7,7 +7,8 @@
 body, html {
     margin: 0px;
     padding: 0px;
-    background-color: #FFFFFF;
+    background-color: #FFF;
+	color: #000;
 }
 
 /* Font settings for page elements */
@@ -42,7 +43,8 @@ acronym {
 .newsDate {
     font-size: 75%;
     font-style: italic;
-    color: #6666CC;
+    color: #66C;
+	background-color: inherit;
 }
 
 .sidebar {
@@ -56,14 +58,16 @@ acronym {
 
 a.menuWhite {
     font-size: 75%;
-    color: #FFFFFF;
+    color: #FFF;
     text-decoration: none;
+	background-color: inherit;
 }
 
 a.menuBlack {
     font-size: 75%;
-    color: #000000;
+    color: #000;
     text-decoration: none;
+	background-color: inherit;
 }
 
 pre, code {
@@ -72,12 +76,14 @@ pre, code {
 
 pre.code {
     background-color: #F0F0F0;
+	color: inherit;
 }
 
 /* General header styles */
 h1, h2, h3, h4, dt {
     font-weight: bold;
-    color: #000066;
+    color: #006;
+	background-color: inherit;
 }
 h1 { font-size: 130%; }
 h2 { font-size: 125%; }
@@ -107,7 +113,8 @@ a.small {
 
 .tableExtras {
     font-size: 85%;
-    color: #FFFFFF;
+    color: #FFF;
+	background-color: inherit;
 }
 
 input.small, select.small {
@@ -121,12 +128,13 @@ textarea.small {
 .programlisting {
     display: block;
     width: 100%;
-    background-color: #E0E0E0
+    background-color: #E0E0E0;
+	color: inherit;
 }
 
 hr {
     border: 0px;
-    color: black;
+    color: #000;
     background-color: black;
     height: 1px;
 }
