@@ -113,6 +113,7 @@ Christian Weiske has released the first game developed with PHP-GTK 2:
 Development of PHP-GTK 2 is steadily picking up pace. The last month has seen
 plenty of activity not only in commits to CVS but in other parts of the PHP-GTK
 2 community also:
+</p>
 <ul>
  <li>The PHP-GTK 2 documentation is filling out. More classes have been
      documented and given examples (especially the GtkTree* classes).</li>
@@ -131,7 +132,6 @@ plenty of activity not only in commits to CVS but in other parts of the PHP-GTK
      an application that makes it easy to modify php.ini files, has been
      proposed on <a href="http://pear.php.net">PEAR</a> by Anant Narayanan.</li>
 </ul>
-</p>
 
 <?php hdelim(); ?>
 
