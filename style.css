@@ -9,7 +9,6 @@ body, html {
     padding: 0px;
     background-color: #FFF;
 	color: #000;
-	font-size: 90%;
 }
 
 /* Font settings for page elements */
@@ -23,7 +22,7 @@ code, pre, tt {
 
 /* Default font size for elements */
 body, ul, td, th {
-    font-size: 1em;
+    font-size: .95em;
 }
 
 li {
