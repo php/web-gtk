@@ -59,10 +59,10 @@ commonHeader();
 
 <h1>PHP-GTK 2 Resources</h1>
 
-<p><span class="newsdate">[18-May-2006]</span>
+<p><span class="newsDate">[18-May-2006]</span>
 The number of PHP-GTK 2 resources has been climbing steadily as development
 continues. As it stands now there are <a
-href="http://pear.php.net/search.php?q=gtk2&in=packages&x=0&y=0">eight PHP-GTK
+href="http://pear.php.net/search.php?q=gtk2&amp;in=packages&amp;x=0&amp;y=0">eight PHP-GTK
 2 packages</a> available from <a href="http://pear.php.net">PEAR</a>. 
 The availability of the <a href="http://gtk.php.net/docs.php">PHP-GTK 2 
 documentation</a> provides an online resources for developers needing help with
@@ -83,7 +83,7 @@ alpha version of PHP-GTK 2.
 
 <h1>Moving toward a release of PHP-GTK 2</h1>
 
-<p><span class="newsdate">[28-Feb-2006]</span>
+<p><span class="newsDate">[28-Feb-2006]</span>
 This month PHP-GTK 2 has continued its march toward an initial release. Andrei 
 has been working through bug fixes and 
 <a href="http://cvs.php.net/viewcvs.cgi/php-gtk/ChangeLog?view=markup">implementing new features</a>. 
@@ -109,7 +109,7 @@ Christian Weiske has released the first game developed with PHP-GTK 2:
 
 <h1>PHP-GTK 2 Progress</h1>
 
-<p><span class="newsdate">[23-Jan-2006]</span>
+<p><span class="newsDate">[23-Jan-2006]</span>
 Development of PHP-GTK 2 is steadily picking up pace. The last month has seen
 plenty of activity not only in commits to CVS but in other parts of the PHP-GTK
 2 community also:
@@ -137,7 +137,7 @@ plenty of activity not only in commits to CVS but in other parts of the PHP-GTK
 
 <h1>Gnope Installer Released</h1>
 
-<p><span class="newsdate">[11-Dec-2005]</span>
+<p><span class="newsDate">[11-Dec-2005]</span>
 Version 1.0 of the <a href="http://www.gnope.org">Gnope Installer</a> has
 been released. The Gnope installer helps to set up a full featured PHP-GTK2
 installation on a Windows system with just a few clicks. It is designed to
@@ -148,7 +148,7 @@ more information or to download Gnope visit
 
 <h1>October News</h1>
 
-<p><span class="newsdate">[21-Oct-2005]</span>
+<p><span class="newsDate">[21-Oct-2005]</span>
 <a href="http://cweiske.de">Christian Weiske</a> has written an
 <a href="http://www.phpmagazin.de/itr/ausgaben/psecom,id,287,nodeid,60.html">article</a>
 for PHP Magazin titled "Rapid Application Development Mit PHP-GTK" which
@@ -164,7 +164,7 @@ If you are interested in helping test PHP-GTK 2 on Windows, please send your com
 
 <h1>PHP-GTK 2 at the International PHP Conference</h1>
 
-<p><span class="newsdate">[25-Jul-2005]</span>
+<p><span class="newsDate">[25-Jul-2005]</span>
  <a href="http://www.jeremyjohnstone.com/blog">Jeremy Johnstone</a> will be
  presenting a talk titled
  <a href="http://www.phpconference.com/konferenzen/psecom,id,343,nodeid,,_language,uk.html">"GUI
@@ -179,7 +179,7 @@ If you are interested in helping test PHP-GTK 2 on Windows, please send your com
 
 <h1>Win9x Support in PHP 5.1</h1>
 
-<p><span class="newsdate">[25-Jul-2005]</span>
+<p><span class="newsDate">[25-Jul-2005]</span>
  There is talk on the
  <a href="http://marc.theaimsgroup.com/?l=php-dev&amp;m=112142925911670&amp;w=2">PHP
  Internals mailing list</a> about removing support for Win9x (95/98/2000/ME)
@@ -194,7 +194,7 @@ If you are interested in helping test PHP-GTK 2 on Windows, please send your com
 
 <h1>PHP-GTK 1.0.2 Released</h1>
 
-<p><span class="newsdate">[15-Jul-2005]</span>
+<p><span class="newsDate">[15-Jul-2005]</span>
  <a href="/download.php">PHP-GTK 1.0.2</a> is a minor release that fixes
  a bug in the build process that prevented PHP-GTK from being installed
  with the newly released PHP 4.4.x branch.
@@ -204,7 +204,7 @@ If you are interested in helping test PHP-GTK 2 on Windows, please send your com
 
 <h1>Getting Ready for PHP-GTK 2</h1>
 
-<p><span class="newsdate">[18-May-2005]</span>
+<p><span class="newsDate">[18-May-2005]</span>
  PHP-GTK 2 is getting closer and closer to a first release every day. At the
  <a href="http://www.phpconference.com/">International PHP Conference</a>, Andrei
  gave a <a href="http://www.gravitonic.com/talks/">talk</a> about the current 
@@ -221,7 +221,7 @@ If you are interested in helping test PHP-GTK 2 on Windows, please send your com
 
 <h1>A Message from Andrei</h1>
 
-<p><span class="newsdate">[22-Apr-2005]</span> I finished porting the first
+<p><span class="newsDate">[22-Apr-2005]</span> I finished porting the first
     demo from PyGTK, the stock item browser. It's in 
     <a href="http://cvs.php.net/co.php/php-gtk/demos/stock-browser.php">demos/stock-browser.php</a>
     and in the process I've implemented a fair amount of new
@@ -246,7 +246,7 @@ If you are interested in helping test PHP-GTK 2 on Windows, please send your com
 
 <h1>PHP-GTK 2 Making Progress</h1>
 
-<p><span class="newsdate">[21-Mar-2005]</span> PHP-GTK 2 is making great strides
+<p><span class="newsDate">[21-Mar-2005]</span> PHP-GTK 2 is making great strides
    toward a working release. Andrei's relentless work has lead to a current CVS
    version that can run non-trivial scripts. See this 
    <a href="http://marc.theaimsgroup.com/?l=php-gtk-general&amp;m=111006182204075&amp;w=2">posting</a>
@@ -258,7 +258,7 @@ If you are interested in helping test PHP-GTK 2 on Windows, please send your com
 
 <h1>February News</h1>
 
-<p><span class="newsdate">[22-Feb-2005]</span> It's getting close to
+<p><span class="newsDate">[22-Feb-2005]</span> It's getting close to
    conference season and with that comes a few talks about PHP-GTK. At
    the <a href="http://phpconference.com">International PHP Conference</a>, 
    <a href="http://gtk.php.net/wiki/Profiles/Ramsey?from=People.BenRamsey">Ben
@@ -280,7 +280,7 @@ If you are interested in helping test PHP-GTK 2 on Windows, please send your com
 
 <h1>Expanding Horizons</h1>
 
-<p><span class="newsdate">[18-Jan-2005]</span> PHP-GTK development is
+<p><span class="newsDate">[18-Jan-2005]</span> PHP-GTK development is
    growing in several directions. A recent <a 
    href="http://cvs.php.net/co.php/php-gtk/ChangeLog?r=1.259">barrage
    of commits</a> by Andrei shows that PHP-GTK 2 is moving ever closer
@@ -305,7 +305,7 @@ If you are interested in helping test PHP-GTK 2 on Windows, please send your com
 
 <h1>PHP-GTK in business</h1>
 
-<p><span class="newsdate">[20-Dec-2004]</span> There has been a lot of 
+<p><span class="newsDate">[20-Dec-2004]</span> There has been a lot of 
     discussion lately about the role PHP-GTK can and is playing in the 
     business world. Several people have <a
     href="http://marc.theaimsgroup.com/?l=php-gtk-general&amp;m=109903609804913&amp;w=2">commented</a>
