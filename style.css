@@ -21,8 +21,8 @@ code, pre, tt {
 }
 
 /* Default font size for elements */
-body, ul, td, th {
-    font-size: .95em;
+body {
+    font-size: .85em;
 }
 
 li {
