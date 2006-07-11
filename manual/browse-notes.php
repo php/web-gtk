@@ -3,7 +3,7 @@
 require_once 'shared-manual.inc';
 
 if (isset($_POST['cancel'])) {
-	header("Location: {$_SERVER['REQUEST_URI']}".(isset($_POST['queue']) ? '?q' : ''));
+	header("Location: {$_SERVER['PHP_SELF']}".(isset($_POST['queue']) ? '?q' : ''));
 	exit;
 }
 
