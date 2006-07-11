@@ -19,7 +19,7 @@ function spacer($width = 1, $height = 1, $align = false, $extras = false) {
 function resize_image($img, $width = 1, $height = 1) {
     $str = preg_replace('/width=\"([0-9]+?)\"/i', '', $img);
     $str = preg_replace('/height=\"([0-9]+?)\"/i', '', $str);
-    $str = substr($str, 0, -1) . sprintf(' height="%s" width="%s">', $height, $width);
+    $str = substr($str, 0, -1) . sprintf(' style="height:%s; width:%s;">', $height, $width);
     return $str;
 }
 
