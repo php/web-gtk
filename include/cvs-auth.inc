@@ -62,7 +62,7 @@ function verify_password($user, $pass) {
 			}
 		}
 	}
-	$ref = substr($_SERVER['HTTP_REFERER'], 0, strpos($_SERVER['HTTP_REFERER'], '.php') + 4);
+	$ref = substr($_SERVER['HTTP_REFERER'], 0, strrpos($_SERVER['HTTP_REFERER'], '.php') + 4);
 	header("Location: $ref");
 }
 
