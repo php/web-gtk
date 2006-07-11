@@ -302,13 +302,14 @@ function manualUserNotes($title, $id) {
 	echo '<table border="0" cellpadding="4" cellspacing="0" width="100%">';
 
 	$notes = manualGetUserNotes($id);
+	$ref = isset($_SERVER['HTTP_REFERER']) ? null : "?ref={$_SERVER['PHP_SELF']}";
 
 	echo '<tr bgcolor="#d0d0d0" valign="top">';
 	echo '<td><small>User Contributed Notes<br /></small><b>' . $id . '</b><br /></td>';
 	echo '<td align="right">';
-	print_link($toplevel.'/add-note.php', make_image('notes-add.gif','add a note'));
+	print_link($toplevel.'/add-note.php'.$ref, make_image('notes-add.gif','add a note'));
 	echo "&nbsp;";
-	print_link($toplevel.'/about-notes.php', make_image('notes-about.gif', 'about notes'));
+	print_link($toplevel.'/about-notes.php'.$ref, make_image('notes-about.gif', 'about notes'));
 	echo "<br /></td>\n";
 	echo "</tr>\n";
 
@@ -327,9 +328,9 @@ function manualUserNotes($title, $id) {
 
 		echo "<tr bgcolor=\"#d0d0d0\" valign=\"top\">\n";
 		echo "<td colspan=\"2\" align=\"right\">\n";
-		print_link($toplevel.'/add-note.php', make_image('notes-add.gif','add a note'));
+		print_link($toplevel.'/add-note.php'.$ref, make_image('notes-add.gif','add a note'));
 		echo "&nbsp;";
-		print_link($toplevel.'/about-notes.php', make_image('notes-about.gif', 'about notes'));
+		print_link($toplevel.'/about-notes.php'.$ref, make_image('notes-about.gif', 'about notes'));
 		echo "<br /></td>\n";
 		echo "</tr>\n";
 	}
