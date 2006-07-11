@@ -11,9 +11,8 @@ if (file_exists(DB_DIR."/$user.notes.sqlite")) unlink(DB_DIR."/$user.notes.sqlit
 if (file_exists(DB_DIR."/$user.queue.sqlite")) unlink(DB_DIR."/$user.queue.sqlite");
 if (file_exists(DB_DIR."/$user.lastid.txt")) unlink(DB_DIR."/$user.lastid.txt");
 
-$referrer = isset($_SERVER['HTTP_REFERER']) ? 
-					$_SERVER['HTTP_REFERER'] : 
-					substr($_SERVER['PHP_SELF'], 0, strrpos($_SERVER['PHP_SELF'], '/'));
+$referrer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '/';
+
 header("Location: $referrer");
 exit;
 

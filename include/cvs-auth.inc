@@ -47,7 +47,7 @@ function get_auth($name, $pass, $connect = null) {
 	return 0 == strncmp($response, 'I LOVE YOU', 10) ? true : false;
 }
 
-function verify_password($user, $pass) {
+function verify_password($user, $pass, $ref) {
 
 	if (strlen($user) > 0 && strlen($pass) > 0) {
 
@@ -62,7 +62,6 @@ function verify_password($user, $pass) {
 			}
 		}
 	}
-	$ref = substr($_SERVER['HTTP_REFERER'], 0, strrpos($_SERVER['HTTP_REFERER'], '.php') + 4);
 	header("Location: $ref");
 }
 
