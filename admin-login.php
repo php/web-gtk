@@ -9,13 +9,12 @@ print "<br />\n";
 
 if (!isset($_COOKIE['PHP-GTK'])) {
 	if (isset($_POST['submit']) && isset($_POST['pass'])) {
-		$user = verify_password(htmlentities($_POST['user']), htmlentities($_POST['pass']));
+		$user = verify_password(htmlentities($_POST['user']), htmlentities($_POST['pass']), $_SERVER['PHP_SELF']);
 	} else {
 		$user = null;
-		$self = substr($_SERVER['PHP_SELF'], 0, strpos($_SERVER['PHP_SELF'], '.php') + 4);
 ?>
 	<h1>Administration Login</h1>
-	<form action = "<?php echo $self ?>" method = 'POST'>
+	<form action = "<?php echo $_SERVER['PHP_SELF']; ?>" method = 'POST'>
 	<table border='0' cellpadding='3' bgcolor='#e0e0e0' width=<?php echo isset($SIDEBAR_DATA) ? '50%' : '40%'; ?>>
 	<tr>
 	<td><br />User name:</td>
