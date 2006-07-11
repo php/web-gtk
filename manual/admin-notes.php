@@ -7,6 +7,10 @@ $referer = isset($_POST['referer']) ? $_POST['referer'] : $_SERVER['HTTP_REFERER
 
 if ($user = get_user()) {
 
+	if (!$referer) {
+		$referer = '../admin-login.php';
+	}
+
 	/* set up a test db and a cookie to notify the rest of the site */
 	if (array_key_exists('test', $_GET) && in_array($user, $docteam)) {
 
@@ -68,6 +72,10 @@ if ($user = get_user()) {
 			}
 		}
 	}
+}
+
+if (!$referer) {
+	$referer = '/';
 }
 
 header("Location: $referer");

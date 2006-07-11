@@ -22,13 +22,26 @@ function check_email() {
 </SCRIPT>
 <?php
 
-$referrer = null;
-
-$referrer = isset($_POST['referer']) ? trim($_POST['referer']) : $_SERVER['HTTP_REFERER'];
+$referer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : null;
+$referrer = isset($_POST['referer']) ? trim($_POST['referer']) : $referer;
 
 if (!$referrer) {
-	$referrer = substr($_SERVER['PHP_SELF'], 0, strrpos($_SERVER['PHP_SELF'], '/'));
-	header("Location: $referrer");
+	if (isset($_GET['ref'])) {
+		$referrer = $_GET['ref'];
+	} else {
+		/* no idea how this person got here */
+		header("Location: /");
+		exit;
+	}
+}
+
+/* better check it, eh? */
+$referrer = htmlentities(strip_tags($referrer));
+$real = $_SERVER['DOCUMENT_ROOT'];
+$real .= str_replace('http://'.$_SERVER['HTTP_HOST'], '', $referrer);
+
+if (!file_exists($real)) {
+	header("Location: /");
 	exit;
 }
 
