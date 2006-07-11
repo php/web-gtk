@@ -9,7 +9,7 @@ print "<br />\n";
 
 if (!isset($_COOKIE['PHP-GTK'])) {
 	if (isset($_POST['submit']) && isset($_POST['pass'])) {
-		verify_password($_POST['user'], $_POST['pass']);
+		$user = verify_password(htmlentities($_POST['user']), htmlentities($_POST['pass']));
 	} else {
 		$user = null;
 		$self = substr($_SERVER['PHP_SELF'], 0, strpos($_SERVER['PHP_SELF'], '.php') + 4);
