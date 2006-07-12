@@ -3,7 +3,7 @@
 require_once('cvs-auth.inc');
 require_once('email-validation.inc');
 
-$referer = isset($_POST['referer']) ? $_POST['referer'] : $_SERVER['HTTP_REFERER'];
+$referer = isset($_POST['referer']) ? $_POST['referer'] : null;
 
 if ($user = get_user()) {
 
