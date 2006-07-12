@@ -158,6 +158,7 @@ if (isset($_POST['add']) || isset($_POST['preview'])) {
 
 if (isset($_POST['preview'])) {
 	print "<br />\n<p>\nThis is what your entry will look like, roughly:\n</p>\n";
+	print "<br />\n<p>\nId: ".file_get_contents($last_id)."\n</p>\n";
 	print "<table border='0' cellpadding='0' cellspacing='0' width='100%' align = 'center'>\n";
 	$temp = array('display' => $display, 'comment' => htmlentities($content), 'date' => time());
 	makeEntry($temp, false);
@@ -282,7 +283,7 @@ if (isset($_POST['add'])) {
 
 	/* Pick up id, insert note data into queue and mail out admin notification */
 	if (!$lastid = file_get_contents($last_id)) {
-		die("Could not obtain note ID");
+		die("Could not obtain note ID\n\n".commonFooter());
 	}
 
 	$id = $lastid + 1;
@@ -297,7 +298,7 @@ if (isset($_POST['add'])) {
 	$result = sqlite_exec($queuedb, "INSERT INTO notes VALUES $db_string");
 	sqlite_close($queuedb);
 	if (!file_put_contents($last_id, $id)) {
-		die("New note ID not saved");
+		die("New note ID not saved\n\n".commonFooter());
 	}
 
 	$printmsg = "<p>Thank you for contributing! Your note has been queued for processing";
