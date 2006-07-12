@@ -77,6 +77,10 @@ if (isset($_POST['add']) || isset($_POST['preview'])) {
 	$display    = '';
 	$urls       = 0;
 	$blanklines = 0;
+	/* these are temporary and can be dropped later */
+	$estimate   = 0;
+	$setid      = 0;
+	$rowid      = 0;
 
 	function force_shuffle($item, &$array) {
 		if (strlen($item) < 2) {
@@ -158,7 +162,12 @@ if (isset($_POST['add']) || isset($_POST['preview'])) {
 
 if (isset($_POST['preview'])) {
 	print "<br />\n<p>\nThis is what your entry will look like, roughly:\n</p>\n";
-	print "<br />\n<p>\nId: ".file_get_contents($last_id)."\n</p>\n";
+	if (file_exists($last_id)) {
+		print "<br />\n<p>\nId: ".file_get_contents($last_id)."\n</p>\n";
+	} else {
+		print "<br />\n<p>\n***Id file not generated***\n</p>\n";
+		print "<br />\n<p>\n***estimate: $estimate setid: $setid rowid: $rowid ***\n</p>\n";
+	}
 	print "<table border='0' cellpadding='0' cellspacing='0' width='100%' align = 'center'>\n";
 	$temp = array('display' => $display, 'comment' => htmlentities($content), 'date' => time());
 	makeEntry($temp, false);
