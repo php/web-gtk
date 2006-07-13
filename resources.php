@@ -9,7 +9,7 @@ commonHeader('Resources');
 <p>
 There are various resources for PHP-GTK.  Below are 
 listed the ones that we are aware of.  If you know of others 
-please <?php print_email('php-gtk-webmaster@lists.php.net', 'email the webmaster'); ?>.
+please <?php print_email('php-gtk-webmaster_at_lists_dot_php_dot_net', 'email the webmaster'); ?>.
 </p>
 
 <a name="lists"></a>
@@ -34,36 +34,36 @@ to the address listed in the SUBSCRIBE column.</p>
   <tr valign="top">
    <td><strong>php-gtk-general</strong></td>
    <td>For general discussion about using PHP-GTK.</td>
-   <td><?php print_email('php-gtk-general@lists.php.net'); ?></td>
-   <td><?php print_email('php-gtk-general-subscribe@lists.php.net'); ?></td>
+   <td><?php print_email('php-gtk-general_at_lists_dot_php_dot_net'); ?></td>
+   <td><?php print_email('php-gtk-general-subscribe_at_lists_dot_php_dot_net'); ?></td>
    <td><?php print_link('http://marc.theaimsgroup.com/?l=php-gtk-general', 'MARC'); ?></td>
   </tr>
   <tr valign="top">
    <td><strong>php-gtk-dev</strong></td>
    <td>For the discussion about the development of PHP-GTK itself.</td>
-   <td><?php print_email('php-gtk-dev@lists.php.net'); ?></td>
-   <td><?php print_email('php-gtk-dev-subscribe@lists.php.net'); ?></td>
+   <td><?php print_email('php-gtk-dev_at_lists_dot_php_dot_net'); ?></td>
+   <td><?php print_email('php-gtk-dev-subscribe_at_lists_dot_php_dot_net'); ?></td>
    <td><?php print_link('http://marc.theaimsgroup.com/?l=php-gtk-dev', 'MARC'); ?></td>
   </tr>
   <tr valign="top">
    <td><strong>php-gtk-doc</strong></td>
    <td>For discussion about the writing and translation of the PHP-GTK documentation.</td>
-   <td><?php print_email('php-gtk-doc@lists.php.net'); ?></td>
-   <td><?php print_email('php-gtk-doc-subscribe@lists.php.net'); ?></td>
+   <td><?php print_email('php-gtk-doc_at_lists_dot_php_dot_net'); ?></td>
+   <td><?php print_email('php-gtk-doc-subscribe_at_lists_dot_php_dot_net'); ?></td>
    <td><?php print_link('http://marc.theaimsgroup.com/?l=php-gtk-doc', 'MARC'); ?></td>
   </tr>
   <tr valign="top">
    <td><strong>php-gtk-cvs</strong></td>
    <td>Has all CVS commits to PHP-GTK and related projects posted to it automatically.</td>
-   <td><?php print_email('php-gtk-cvs@lists.php.net'); ?></td>
-   <td><?php print_email('php-gtk-cvs-subscribe@lists.php.net'); ?></td>
+   <td><?php print_email('php-gtk-cvs_at_lists_dot_php_dot_net'); ?></td>
+   <td><?php print_email('php-gtk-cvs-subscribe_at_lists_dot_php_dot_net'); ?></td>
    <td><?php print_link('http://marc.theaimsgroup.com/?l=php-gtk-cvs', 'MARC'); ?></td>
   </tr>
   <tr valign="top">
    <td><strong>php-gtk-webmaster</strong></td>
    <td>For discussion about updating and maintaining the PHP-GTK website.</td>
-   <td><?php print_email('php-gtk-webmaster@lists.php.net'); ?></td>
-   <td><?php print_email('php-gtk-webmaster-subscribe@lists.php.net'); ?></td>
+   <td><?php print_email('php-gtk-webmaster_at_lists_dot_php_dot_net'); ?></td>
+   <td><?php print_email('php-gtk-webmaster-subscribe_at_lists_dot_php_dot_net'); ?></td>
    <td><?php print_link('http://marc.theaimsgroup.com/?l=php-gtk-webmaster', 'MARC'); ?></td>
   </tr>
  </tbody>
@@ -90,14 +90,14 @@ This site provides several PHP-GTK freeware applications for download, as well a
 <li><?php print_link('http://www.gnope.org', 'Gnope.org'); ?><br />
 PHP-GTK Windows installer and support forum. Gnope.org also provides application downloads via their PEAR channel.</li>
 
-<li><?php print_link('http://pear.php.net/search.php?q=gtk2&amp;in=packages', 'PEAR PHP-GTK 2 Packages'); ?><br />
+<li><?php print_link('http://pear_dot_php_dot_net/search.php?q=gtk2&amp;in=packages', 'PEAR PHP-GTK 2 Packages'); ?><br />
 PHP-GTK 2 packages available from PEAR.</li>
 </ul>
 
 <h3>Documentation/Help</h3>
 
 <ul>
-<li><?php print_link('http://gtk.php.net/wiki/', 'PHP-GTK Wiki') ?><br />
+<li><?php print_link('http://gtk_dot_php_dot_net/wiki/', 'PHP-GTK Wiki') ?><br />
 This site allows the PHP-GTK community to help contribute documentation to the
 PHP-GTK project.</li>
 
@@ -188,7 +188,7 @@ PHP-GTK weekly news summaries.</li>
 
 <li><?php print_link('http://www.gravitonic.com/do_download.php?download_file=talks/phptropics2005/php-gtk2_phptropics2005.pdf', 'php|tropics 2005'); ?> &quot;Say Hello to PHP-GTK 2&quot; by Andrei Zmievski</li>
 
-<li><?php print_link('http://talks.php.net/show/vancouver-gtk', 'Vancouver 2004'); ?> &quot;PHP-GTK: Something Old, Something New&quot; by Andrei Zmievski</li>
+<li><?php print_link('http://talks_dot_php_dot_net/show/vancouver-gtk', 'Vancouver 2004'); ?> &quot;PHP-GTK: Something Old, Something New&quot; by Andrei Zmievski</li>
 </ul>
 
 <?php
