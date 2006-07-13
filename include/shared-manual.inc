@@ -61,7 +61,7 @@ function makeBorderTOC($this) {
 			'<br /></td></tr>';
 	}
 
-	$SIDEBAR_DATA.= '<tr valign="top"><td><small>';
+	$SIDEBAR_DATA.= '<tr valign="top"><td id="docnav">';
 
 	for ($i = 0; $i < count($TOC); $i++) {
 		list($url, $title, $type) = $TOC[$i];
@@ -100,7 +100,7 @@ function makeBorderTOC($this) {
 			make_link($url, make_image($img, $title) . $title ) . 
 			'<br />';
 		}
-		$SIDEBAR_DATA.= '</small></td></tr>';
+		$SIDEBAR_DATA.= '</td></tr>';
 	}
 	$SIDEBAR_DATA.= '</table></form>';
 }
