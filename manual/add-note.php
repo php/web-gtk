@@ -81,6 +81,7 @@ if (isset($_POST['add']) || isset($_POST['preview'])) {
 	$estimate   = 0;
 	$setid      = 0;
 	$rowid      = 0;
+	if (file_exists($last_id)) unlink($last_id);
 
 	function force_shuffle($item, &$array) {
 		if (strlen($item) < 2) {
