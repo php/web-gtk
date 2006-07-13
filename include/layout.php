@@ -136,13 +136,13 @@ function commonHeader($title = false, $padding = true) {
 	ob_start();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
- "DTD/xhtml-transitional.dtd">
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
  <title>PHP-GTK<?php if ($title) { echo ' : '.$title; } ?></title>
- <link rel="stylesheet" href="/style.css" />
- <link rel="stylesheet" href="/style-highlight.css" />
+ <link rel="stylesheet" type="text/css" href="/style.css" />
+ <link rel="stylesheet" type="text/css" href="/style-highlight.css" />
  <link rel="shortcut icon" href="/gifs/favicon.ico" />
 </head>
 
