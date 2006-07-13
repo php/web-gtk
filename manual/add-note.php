@@ -286,6 +286,7 @@ if (isset($_POST['add'])) {
 	if (strlen($content) > 4096) {
 		print stretchPage(22);
 		print "<p>Your note is too long to fit on the manual pages! Please review it and try to make it less verbose.</p>";
+		print "</div>";
 		commonFooter();
 		exit;
 	}
@@ -293,7 +294,11 @@ if (isset($_POST['add'])) {
 
 	/* Pick up id, insert note data into queue and mail out admin notification */
 	if (!$lastid = file_get_contents($last_id)) {
-		die("Could not obtain note ID\n\n".commonFooter());
+		print stretchPage(22);
+		print "Could not obtain note ID<br />\n<br />\n";
+		print "</div>";
+		commonFooter();
+		exit;
 	}
 
 	$id = $lastid + 1;
@@ -308,7 +313,11 @@ if (isset($_POST['add'])) {
 	$result = sqlite_exec($queuedb, "INSERT INTO notes VALUES $db_string");
 	sqlite_close($queuedb);
 	if (!file_put_contents($last_id, $id)) {
-		die("New note ID not saved\n\n".commonFooter());
+		print stretchPage(22);
+		print "New note ID not saved<br />\n<br />\n";
+		print "</div>";
+		commonFooter();
+		exit;
 	}
 
 	$printmsg = "<p>Thank you for contributing! Your note has been queued for processing";
