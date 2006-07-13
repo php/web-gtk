@@ -76,7 +76,7 @@ function makeAppSelectMenuOptions($selected_id = "") {
 function appHeader($the_cat = false, $the_subcat = false) {
 	global $appCats, $MAGIC_COOKIE;
 
-	if( $_SERVER[SCRIPT_NAME] == "/apps/admin-apps.php" ) {
+	if( $_SERVER['SCRIPT_NAME'] == "/apps/admin-apps.php" ) {
 		$script = "/apps/admin-apps.php";
 	}else {
 		$script = "/apps/";
@@ -96,22 +96,22 @@ function appHeader($the_cat = false, $the_subcat = false) {
    <table width="170" cellpadding="4" cellspacing="0">
     <tr valign="top">
      <td class="sidebar">
-	 	<table border="0" CELLPADDING="4" CELLSPACING="0" WIDTH="160">
+	 	<table border="0" cellpadding="4" cellspacing="0" width="160">
 			<tr valign="top">
-				<td><a href="./"><img src="/gifs/caret-t.gif" border="0" width="11" height="7" ALT="Applications">Applications</a><br></td>
+				<td><a href="./"><img src="/gifs/caret-t.gif" border="0" width="11" height="7" alt="Applications"/>Applications</a><br/></td>
 			</tr>
 			<tr valign="top">
-			<td nowrap><small>
+			<td style="white-space: nowrap"><small>
 				<?php if( isset($MAGIC_COOKIE) ) { ?>
-					&nbsp; &nbsp; &nbsp; <a href="admin-apps.php?key=modified"><img src="/gifs/box-0.gif" border="0" width="11" height="7" alt="">Modified Applications</a><br>
-					&nbsp; &nbsp; &nbsp; <a href="admin-apps.php"><img src="/gifs/box-0.gif" border="0" width="11" height="7" alt="">Pending Applications</a><br>
-					<br>
+					&nbsp; &nbsp; &nbsp; <a href="admin-apps.php?key=modified"><img src="/gifs/box-0.gif" border="0" width="11" height="7" alt="">Modified Applications</a><br/>
+					&nbsp; &nbsp; &nbsp; <a href="admin-apps.php"><img src="/gifs/box-0.gif" border="0" width="11" height="7" alt="">Pending Applications</a><br/>
+					<br/>
 				<?php } ?>
-				&nbsp; &nbsp; &nbsp; <a href="add.php?cat_id=<?php print($this_cat) ?>"><img src="/gifs/box-0.gif" border="0" width="11" height="7" alt="">Add Application</a><br>
-				&nbsp; &nbsp; &nbsp; <a href="edit.php"><img src="/gifs/box-0.gif" border="0" width="11" height="7" alt="">Edit Your Application</a><br>
-				<br>
-				&nbsp; &nbsp; &nbsp; <a href="<?php print($script) ?>?key=new"><img src="/gifs/box-0.gif" border="0" width="11" height="7" alt="">Newest Applications</a><br>
-				&nbsp; &nbsp; &nbsp; <a href="<?php print($script) ?>?key=rating"><img src="/gifs/box-0.gif" border="0" width="11" height="7" alt="">Highest Rated Applications</a><br>
+				&nbsp; &nbsp; &nbsp; <a href="add.php?cat_id=<?php print($this_cat) ?>"><img src="/gifs/box-0.gif" border="0" width="11" height="7" alt=""/>Add Application</a><br/>
+				&nbsp; &nbsp; &nbsp; <a href="edit.php"><img src="/gifs/box-0.gif" border="0" width="11" height="7" alt=""/>Edit Your Application</a><br/>
+				<br/>
+				&nbsp; &nbsp; &nbsp; <a href="<?php print($script) ?>?key=new"><img src="/gifs/box-0.gif" border="0" width="11" height="7" alt=""/>Newest Applications</a><br/>
+				&nbsp; &nbsp; &nbsp; <a href="<?php print($script) ?>?key=rating"><img src="/gifs/box-0.gif" border="0" width="11" height="7" alt=""/>Highest Rated Applications</a><br/>
 			</small></td>
 			</tr>
 			<tr bgcolor="#cccccc"><td></td></tr>
@@ -129,19 +129,19 @@ foreach( $appCats as $cat_id => $catObj ) {
 	}else {
 		$img = "/gifs/box-0.gif";
 	}
-	print("<td nowrap><a href=\"$script?the_cat=$cat_id\"><img src=\"$img\" border=\"0\" width=\"11\" height=\"7\" ALT=\"$catObj->name\" >$catObj->name</a><br></td>");
+	print("<td style='white-space: nowrap'><a href=\"$script?the_cat=$cat_id\"><img src=\"$img\" border=\"0\" width=\"11\" height=\"7\" alt=\"$catObj->name\" />$catObj->name</a><br/></td>");
 	print("</tr>");
 	
 	if( $_GET['the_cat'] == $cat_id && is_array($catObj->sub) )  {
 		print("<tr valign=\"top\">");
-		print("<td nowrap><small>");
+		print("<td style='white-space: nowrap'><small>");
 		foreach( $catObj->sub as $subcat_id => $subcatObj ) {
 			if( $_GET['the_subcat'] == $subcat_id ) {
 				$img = "/gifs/box-1.gif";
 			}else {
 				$img = "/gifs/box-0.gif";
 			}
-			print("&nbsp; &nbsp; &nbsp; <a href=\"$script?the_cat=$cat_id&the_subcat=$subcat_id\"><img src=\"$img\" border=\"0\" width=\"11\" height=\"7\" ALT=\"$subcatObj->name\" >$subcatObj->name</a><br>");
+			print("&nbsp; &nbsp; &nbsp; <a href=\"$script?the_cat=$cat_id&the_subcat=$subcat_id\"><img src=\"$img\" border=\"0\" width=\"11\" height=\"7\" alt=\"$subcatObj->name\" />$subcatObj->name</a><br/>");
 		}
 		print("</small></td>");
 		print("</tr>");
@@ -156,7 +156,7 @@ foreach( $appCats as $cat_id => $catObj ) {
     </tr>
    </table>
   </td>
-  <td bgcolor="#cccccc" background="/gifs/checkerboard.gif"><img src="/gifs/spacer.gif" width="1" height="1" border="0" alt="" ><br></td>
+  <td bgcolor="#cccccc" style="background-image: url(/gifs/checkerboard.gif)"><img src="/gifs/spacer.gif" width="1" height="1" border="0" alt="" /><br/></td>
   <td>
    <table width="600" cellpadding="10" cellspacing="0">
     <tr>
@@ -172,7 +172,7 @@ foreach( $appCats as $cat_id => $catObj ) {
 // 
 function appFooter() {
 ?>
-      	<br>
+      	<br/>
      </td>
     </tr>
    </table>
@@ -199,7 +199,7 @@ function displayApp($app, $the_cat, $the_subcat, $offset, $user_edit_mode = fals
 	}
 
 	if( $app->has_screenshot == 'Y' ) {
-		$screenshot = "<a href='screenshot.php/$app->id.jpg' target='apppop'><img src='screenshot.php/$app->id-thumb.jpg' alt='' align=right border=0></a>";
+		$screenshot = "<a href='screenshot.php/$app->id.jpg' target='apppop'><img src='screenshot.php/$app->id-thumb.jpg' alt='' align='right' border='0'/></a>";
 	}else {
 		$screenshot = "";
 	}
@@ -208,17 +208,17 @@ function displayApp($app, $the_cat, $the_subcat, $offset, $user_edit_mode = fals
 	print("
 		<tr valign=top bgcolor='#e0e0e0'>
 			<td><b>$app->name</b></td>
-			<td align=right nowrap>
+			<td align='right' style='white-space: nowrap'>
 	");
 	if( isset($MAGIC_COOKIE) ) {
 		if( $app->status == 'P' || $app->status == "M" ) {
-			print("<a href='admin-apps.php?action=approve&app_id=$app->id' title='Approve'><img src='/gifs/notes-add.gif' width=13 height=13 border=0 alt='Approve'></a> ");
+			print("<a href='admin-apps.php?action=approve&app_id=$app->id' title='Approve'><img src='/gifs/notes-add.gif' width=13 height=13 border=0 alt='Approve'/></a> ");
 		}
-		print("<a href='admin-apps.php?action=edit&app_id=$app->id' title='Edit'><img src='/gifs/notes-edit.gif' width=13 height=13 border=0 alt='Edit'></a> ");
+		print("<a href='admin-apps.php?action=edit&app_id=$app->id' title='Edit'><img src='/gifs/notes-edit.gif' width=13 height=13 border=0 alt='Edit'/></a> ");
 		if( $app->status == 'P' || $app->status == "M" ) {
-			print("<a href='admin-apps.php?action=reject&app_id=$app->id' title='Reject' onclick=\"return confirm('Are you sure you want to reject this app?')\"><img src='/gifs/notes-reject.gif' width=13 height=13 border=0 alt='Reject'></a> ");
+			print("<a href='admin-apps.php?action=reject&app_id=$app->id' title='Reject' onclick=\"return confirm('Are you sure you want to reject this app?')\"><img src='/gifs/notes-reject.gif' width='13' height='13' border='0' alt='Reject'/></a> ");
 		}
-		print("<a href='admin-apps.php?action=delete&app_id=$app->id' title='Delete' onclick=\"return confirm('Are you sure you want to delete this app?')\"><img src='/gifs/notes-delete.gif' width=13 height=13 border=0 alt='Delete'></a> ");
+		print("<a href='admin-apps.php?action=delete&app_id=$app->id' title='Delete' onclick=\"return confirm('Are you sure you want to delete this app?')\"><img src='/gifs/notes-delete.gif' width='13' height=13 border='0' alt='Delete'/></a> ");
 	}else if( $user_edit_mode == true ) {
 		print("<a href='edit.php?action=edit&app_id=$app->id'>edit this application</a>");
 	}else {
@@ -226,15 +226,15 @@ function displayApp($app, $the_cat, $the_subcat, $offset, $user_edit_mode = fals
 			<small>
 				rating: <b>$rating</b> |
 				rate: 
-				<a href='rate.php?app_id=$app->id&rate=1&the_cat={$_GET['the_cat']}&the_subcat={$_GET['the_subcat']}&offset=$offset'>1</a> 
+				<a href='rate.php?app_id=$app->id&amp;rate=1&amp;the_cat={$_GET['the_cat']}&amp;the_subcat={$_GET['the_subcat']}&amp;offset=$offset'>1</a> 
 				<font color='#999999'>|</font> 
-				<a href='rate.php?app_id=$app->id&rate=2&the_cat={$_GET['the_cat']}&the_subcat={$_GET['the_subcat']}&offset=$offset'>2</a> 
+				<a href='rate.php?app_id=$app->id&amp;rate=2&amp;the_cat={$_GET['the_cat']}&amp;the_subcat={$_GET['the_subcat']}&amp;offset=$offset'>2</a> 
 				<font color='#999999'>|</font> 
-				<a href='rate.php?app_id=$app->id&rate=3&the_cat={$_GET['the_cat']}&the_subcat={$_GET['the_subcat']}&offset=$offset'>3</a> 
+				<a href='rate.php?app_id=$app->id&amp;rate=3&amp;the_cat={$_GET['the_cat']}&amp;the_subcat={$_GET['the_subcat']}&amp;offset=$offset'>3</a> 
 				<font color='#999999'>|</font> 
-				<a href='rate.php?app_id=$app->id&rate=4&the_cat={$_GET['the_cat']}&the_subcat={$_GET['the_subcat']}&offset=$offset'>4</a> 
+				<a href='rate.php?app_id=$app->id&amp;rate=4&amp;the_cat={$_GET['the_cat']}&amp;the_subcat={$_GET['the_subcat']}&amp;offset=$offset'>4</a> 
 				<font color='#999999'>|</font> 
-				<a href='rate.php?app_id=$app->id&rate=5&the_cat={$_GET['the_cat']}&the_subcat={$_GET['the_subcat']}&offset=$offset'>5</a>
+				<a href='rate.php?app_id=$app->id&amp;rate=5&amp;the_cat={$_GET['the_cat']}&amp;the_subcat={$_GET['the_subcat']}&amp;offset=$offset'>5</a>
 			</small>
 		");
 	}
@@ -261,7 +261,7 @@ function displayApp($app, $the_cat, $the_subcat, $offset, $user_edit_mode = fals
 			$app->blurb
 		</td>
 		</tr>
-		<tr><td colspan=2><br></td></tr>
+		<tr><td colspan=2><br/></td></tr>
 	");
 }
 

@@ -66,14 +66,14 @@ if( !empty($this_cat) )  {
 
 $num_rows = mysql_num_rows($res);
 if( $res && $num_rows > 0 ) {
-	print("<table border=0 cellpadding=2 cellspacing=0 width=100%>");
+	print("<table border='0' cellpadding='2' cellspacing='0' width='100%'>");
 	while( $row = mysql_fetch_object($res) )  {
 		displayApp($row, $_GET['the_cat'], $_GET['the_subcat'], $_GET['offset']);
 	}
 	print("</table>");
 
 	if( $num_rows >= $limit ) {
-		print("<br>");
+		print("<br/>");
 		print("<p align=right>");
 		print("<small>");
 
@@ -87,16 +87,16 @@ if( $res && $num_rows > 0 ) {
 
 		print("</small>");
 		print("</p>");
-		print("<br>");
-		print("<br>");
+		print("<br/>");
+		print("<br/>");
 	}
 }else {
 	if( $offset > 0 ) {
 		print("There are no more applications in this category.");
 	}else {
 		print("There are not any applications in this category.");
-		print("<br>");
-		print("<br>");
+		print("<br/>");
+		print("<br/>");
 		print("Maybe you'd like to <a href='add.php?cat_id=$this_cat'>add one</a>?");
 
 	}
