@@ -90,14 +90,14 @@ This site provides several PHP-GTK freeware applications for download, as well a
 <li><?php print_link('http://www.gnope.org', 'Gnope.org'); ?><br />
 PHP-GTK Windows installer and support forum. Gnope.org also provides application downloads via their PEAR channel.</li>
 
-<li><?php print_link('http://pear_dot_php_dot_net/search.php?q=gtk2&amp;in=packages', 'PEAR PHP-GTK 2 Packages'); ?><br />
+<li><?php print_link('http://pear.php.net/search.php?q=gtk2&amp;in=packages', 'PEAR PHP-GTK 2 Packages'); ?><br />
 PHP-GTK 2 packages available from PEAR.</li>
 </ul>
 
 <h3>Documentation/Help</h3>
 
 <ul>
-<li><?php print_link('http://gtk_dot_php_dot_net/wiki/', 'PHP-GTK Wiki') ?><br />
+<li><?php print_link('http://gtk.php.net/wiki/', 'PHP-GTK Wiki') ?><br />
 This site allows the PHP-GTK community to help contribute documentation to the
 PHP-GTK project.</li>
 
@@ -188,7 +188,7 @@ PHP-GTK weekly news summaries.</li>
 
 <li><?php print_link('http://www.gravitonic.com/do_download.php?download_file=talks/phptropics2005/php-gtk2_phptropics2005.pdf', 'php|tropics 2005'); ?> &quot;Say Hello to PHP-GTK 2&quot; by Andrei Zmievski</li>
 
-<li><?php print_link('http://talks_dot_php_dot_net/show/vancouver-gtk', 'Vancouver 2004'); ?> &quot;PHP-GTK: Something Old, Something New&quot; by Andrei Zmievski</li>
+<li><?php print_link('http://talks.php.net/show/vancouver-gtk', 'Vancouver 2004'); ?> &quot;PHP-GTK: Something Old, Something New&quot; by Andrei Zmievski</li>
 </ul>
 
 <?php
