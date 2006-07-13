@@ -250,7 +250,8 @@ if (isset($_POST['add'])) {
 		}
 		print stretchPage(22);
 		print "<p>\n$errmsg\n</p>\n";
-		print "<p><a href = '$referrer'>Back</a></p>";
+		print "<p><a href = '$referrer'>Back</a></p>\n";
+		print "</div>\n";
 		commonFooter();
 		exit;
 	}
@@ -279,8 +280,8 @@ if (isset($_POST['add'])) {
 	/* Check and secure contents */
 	if (strlen($content) > 4096) {
 		print stretchPage(22);
-		print "<p>Your note is too long to fit on the manual pages! Please review it and try to make it less verbose.</p>";
-		print "</div>";
+		print "<p>Your note is too long to fit on the manual pages! Please review it and try to make it less verbose.</p>\n";
+		print "</div>\n";
 		commonFooter();
 		exit;
 	}
@@ -290,7 +291,7 @@ if (isset($_POST['add'])) {
 	if (!$lastid = file_get_contents($last_id)) {
 		print stretchPage(22);
 		print "Could not obtain note ID<br />\n<br />\n";
-		print "</div>";
+		print "</div>\n";
 		commonFooter();
 		exit;
 	}
@@ -309,7 +310,7 @@ if (isset($_POST['add'])) {
 	if (!file_put_contents($last_id, $id)) {
 		print stretchPage(22);
 		print "New note ID not saved<br />\n<br />\n";
-		print "</div>";
+		print "</div>\n";
 		commonFooter();
 		exit;
 	}
@@ -318,10 +319,11 @@ if (isset($_POST['add'])) {
 	if (!strstr($email, 'GTK_000')) {
 		$printmsg .= ", and you will be notified by email when it goes live";
 	}
-	$printmsg .= ".</p>";
+	$printmsg .= ".</p>\n";
 	print stretchPage(20);
 	print $printmsg;
-	print "<p><a href = '$referrer'>Back</a></p>";
+	print "<p><a href = '$referrer'>Back</a></p>\n";
+	print "</div>\n";
 	commonFooter();
 
 	if (!$result) {
@@ -569,9 +571,9 @@ note posted here becomes the property of the PHP-GTK Documentation Group.
 } else {
 	/* hide everything if the notes mechanism is down */
 	print stretchPage(22);
-	print "<p>The PHP-GTK manual notes system is off-line at present. Please try again later!</p>";
-	print "<p><a href = '$referrer'>Back</a></p>";
-	print "</div>";
+	print "<p>The PHP-GTK manual notes system is off-line at present. Please try again later!</p>\n";
+	print "<p><a href = '$referrer'>Back</a></p>\n";
+	print "</div>\n";
 }
 
 commonFooter();
