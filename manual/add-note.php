@@ -165,10 +165,12 @@ if (isset($_POST['preview'])) {
 	print "<br />\n<p>\nThis is what your entry will look like, roughly:\n</p>\n";
 	if (file_exists($last_id)) {
 		print "<br />\n<p>\nId: ".file_get_contents($last_id)."\n</p>\n";
-	} else {
-		print "<br />\n<p>\n***Id file not generated***\n</p>\n";
 		print "<br />\n<p>\n***estimate: $estimate setid: $setid rowid: $rowid ***\n</p>\n";
 	}
+	print file_exists($last_id) ? "last_id exists OK<br />" : "last_id not created<br />";
+	print file_exists($queuefile) ? "queuefile exists OK<br />" : "queuefile not created<br />";
+	print file_exists($notesfile) ? "notesfile found OK<br />" : "notesfile not found<br />";
+
 	print "<table border='0' cellpadding='0' cellspacing='0' width='100%' align = 'center'>\n";
 	$temp = array('display' => $display, 'comment' => htmlentities($content), 'date' => time());
 	makeEntry($temp, false);
