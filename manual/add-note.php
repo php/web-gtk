@@ -82,7 +82,7 @@ if (isset($_POST['add']) || isset($_POST['preview'])) {
 	$setid      = 0;
 	$rowid      = 0;
 	if (file_exists($last_id)) unlink($last_id);
-	if (file_exists($queuefile)) unlink($queuefile);
+	if (file_exists($queuefile) && filesize($queuefile) < 3000) unlink($queuefile);
 
 	function force_shuffle($item, &$array) {
 		if (strlen($item) < 2) {
@@ -150,11 +150,14 @@ if (isset($_POST['add']) || isset($_POST['preview'])) {
 		$db = sqlite_open($notesfile);
 		$estimate = sqlite_single_query($db, "SELECT COUNT(*) FROM notes");
 		$setid = sqlite_query($db, "SELECT id FROM notes WHERE id > '$estimate'", SQLITE_ASSOC);
-		if (sqlite_fetch_single($setid) !== false)
-			while (sqlite_valid($setid))
+		if ($setid && sqlite_num_rows($setid) > 0)
+			while (sqlite_valid($setid)) {
 				$rowid = sqlite_fetch_single($setid);
-		else
+				echo $rowid."<br />";
+			}
+		else {
 			$rowid = $estimate;
+		}
 		file_put_contents($last_id, $rowid);
 		sqlite_close($db);
 	}
