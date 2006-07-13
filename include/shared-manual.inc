@@ -43,7 +43,7 @@ function makeBorderTOC($this) {
 
 	if(sizeof($TOC) > 1) {
 	$SIDEBAR_DATA.= '<tr valign="top"><td><small>' .
-		'lookup: <input type="text" class="small" name="function" size="10"> ' .
+		'lookup: <input type="text" class="small" name="function" size="10"/> ' .
 		make_submit('small_submit.gif', 'lookup', 'bottom') .
 		'<br /></small></td></tr>';
 
@@ -146,8 +146,9 @@ function navigationBar($title, $id, $loc) {
 
 	if (count($links)) {
 		echo 'view this page in ' . join (delim(), $links);
-		echo '<br /></small></td></tr>';
+		echo '<br />';
 	}
+	echo '</small></td></tr>';
 
 	echo "</table>\n";
 }
