@@ -135,15 +135,15 @@ function commonHeader($title = false, $padding = true) {
 	global $SIDEBAR_DATA;
 	ob_start();
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-          "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "DTD/xhtml-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
- <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+ <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
  <title>PHP-GTK<?php if ($title) { echo ' : '.$title; } ?></title>
- <link rel="stylesheet" href="/style.css">
- <link rel="stylesheet" href="/style-highlight.css">
- <link rel="shortcut icon" href="/gifs/favicon.ico">
+ <link rel="stylesheet" href="/style.css" />
+ <link rel="stylesheet" href="/style-highlight.css" />
+ <link rel="shortcut icon" href="/gifs/favicon.ico" />
 </head>
 
 <body bgcolor="#FFFFFF" text="#000000" link="#000099" alink="#0000FF" vlink="#000099">
@@ -153,14 +153,14 @@ function commonHeader($title = false, $padding = true) {
    <td align="left" rowspan="2">
     <?php print_link('/', make_image('php-gtk.gif', 'PHP-GTK', false, 'vspace="2" hspace="2"')); ?><br />
    </td>
-   <td align="right" valign="top" nowrap>
+   <td align="right" valign="top" style="white-space: nowrap">
     <font color="#FFFFFF">
      <b><?php echo strftime("%A, %B %d, %Y"); ?></b>&nbsp;<br />
     </font>
    </td>
   </tr>
   <tr bgcolor="#0099CC">
-   <td align="right" valign="bottom" nowrap>
+   <td align="right" valign="bottom" style="white-space: nowrap">
     <?php
      print_link('/download.php', 'download', false, 'class="menuBlack"');
      echo delim();
@@ -185,7 +185,7 @@ function commonHeader($title = false, $padding = true) {
   </tr>
   <tr bgcolor="#000033"><td colspan="2"><?php spacer(1, 1); ?><br /></td></tr>
   <tr bgcolor="#006699">
-   <td align="right" valign="top" colspan="2" nowrap>
+   <td align="right" valign="top" colspan="2" style="white-space: nowrap">
     <form method="post" action="/search.php" style="display:inline">
       <font color="#FFFFFF">
        <small>search for</small>

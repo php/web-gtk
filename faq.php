@@ -99,17 +99,23 @@ command line statement with '-c' option, as given in the php_win example below.
 </p>
 <p>
  To avoid the DOS box, you can use the php_win executable, provided in the install file:
+</p>
 <pre>
 c:\php4\php_win c:\php4\test\hello.php
 </pre>
+<p>
 or
+</p>
 <pre>
 start c:\php4\php_win c:\php4\test\hello.php
 </pre>
+<p>
 or
+</p>
 <pre>
 c:\php4\php_win -c \php4\php.ini -f c:\php4\test\hello.php
 </pre>
+<p>
 If you have installed your php.ini file in your Windows directory, the -c option
 can be dropped. For more information on command line options, see
 <a href="http://www.php.net/manual/en/features.commandline.php">'Using PHP from

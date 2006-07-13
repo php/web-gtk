@@ -144,6 +144,8 @@ installation on a Windows system with just a few clicks. It is designed to
 make installation of PHP-GTK2 and PHP-GTK2 applications quick and easy. For
 more information or to download Gnope visit 
 <a href="http://www.gnope.org">http://www.gnope.org</a>.
+</p>
+
 <?php hdelim(); ?>
 
 <h1>October News</h1>
@@ -295,7 +297,7 @@ If you are interested in helping test PHP-GTK 2 on Windows, please send your com
    to help PHP-GTK developers write cleaner, more stable code. The folks 
    over at Zend have recognized everyone who has contributed to PHP-GTK 
    development, documentation or the web site by adding them to the "<a 
-   href="http://www.zend.com/pear/whoiswho.php">Zend Who's Who of PHP</a>".<p>
+   href="http://www.zend.com/pear/whoiswho.php">Zend Who's Who of PHP</a>".</p>
 
 <p>In other news, the GDK section of the manual has been completely 
    translated into <a href="http://gtk.php.net/manual1/ru/">Russian</a>.</p>
