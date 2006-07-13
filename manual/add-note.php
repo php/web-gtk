@@ -77,12 +77,6 @@ if (isset($_POST['add']) || isset($_POST['preview'])) {
 	$display    = '';
 	$urls       = 0;
 	$blanklines = 0;
-	/* these are temporary and can be dropped later */
-	$estimate   = 0;
-	$setid      = 0;
-	$rowid      = 0;
-	if (file_exists($last_id)) unlink($last_id);
-	if (file_exists($queuefile) && filesize($queuefile) < 3000) unlink($queuefile);
 
 	function force_shuffle($item, &$array) {
 		if (strlen($item) < 2) {
@@ -128,6 +122,9 @@ if (isset($_POST['add']) || isset($_POST['preview'])) {
 	}
 
 	/* check for/create the queue file */
+	if (file_exists($queuefile) && filesize($queuefile) < 3000) unlink($queuefile);
+	clearstatcache();
+
 	if (!file_exists($queuefile)) {
 		$db = sqlite_open($queuefile);
 		sqlite_query($db, 
@@ -146,14 +143,13 @@ if (isset($_POST['add']) || isset($_POST['preview'])) {
 	}
 
 	/* check for/create the last_id file while we're at it */
-	if (!file_exists($last_id)) {
+	if (!file_exists($last_id) || !file_get_contents($last_id) || file_get_contents($last_id == '0')) {
 		$db = sqlite_open($notesfile);
 		$estimate = sqlite_single_query($db, "SELECT COUNT(*) FROM notes");
 		$setid = sqlite_query($db, "SELECT id FROM notes WHERE id > '$estimate'", SQLITE_ASSOC);
 		if ($setid && sqlite_num_rows($setid) > 0)
 			while (sqlite_valid($setid)) {
 				$rowid = sqlite_fetch_single($setid);
-				echo $rowid."<br />";
 			}
 		else {
 			$rowid = $estimate;
@@ -167,14 +163,6 @@ if (isset($_POST['add']) || isset($_POST['preview'])) {
 
 if (isset($_POST['preview'])) {
 	print "<br />\n<p>\nThis is what your entry will look like, roughly:\n</p>\n";
-	if (file_exists($last_id)) {
-		print "<br />\n<p>\nId: ".file_get_contents($last_id)."\n</p>\n";
-		print "<br />\n<p>\n***estimate: $estimate setid: $setid rowid: $rowid ***\n</p>\n";
-	}
-	print file_exists($last_id) ? "last_id exists OK<br />" : "last_id not created<br />";
-	print file_exists($queuefile) ? "queuefile exists OK<br />" : "queuefile not created<br />";
-	print file_exists($notesfile) ? "notesfile found OK<br />" : "notesfile not found<br />";
-
 	print "<table border='0' cellpadding='0' cellspacing='0' width='100%' align = 'center'>\n";
 	$temp = array('display' => $display, 'comment' => htmlentities($content), 'date' => time());
 	makeEntry($temp, false);
