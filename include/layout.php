@@ -5,7 +5,7 @@
 # print a IMG tag for a sized spacer GIF
 #
 function spacer($width = 1, $height = 1, $align = false, $extras = false) {
-    printf('<img src="/gifs/spacer.gif" width="%d" height="%d" border="0" alt="" %s%s />',
+    printf('<img src="/gifs/spacer.gif" style="width:%d; height:%d;" border="0" alt="" %s%s />',
         $width,
         $height,
         ($align ? 'align="'.$align.'" ' : ''),
@@ -19,7 +19,7 @@ function spacer($width = 1, $height = 1, $align = false, $extras = false) {
 function resize_image($img, $width = 1, $height = 1) {
     $str = preg_replace('/width=\"([0-9]+?)\"/i', '', $img);
     $str = preg_replace('/height=\"([0-9]+?)\"/i', '', $str);
-    $str = substr($str, 0, -1) . sprintf(' style="height:%s; width:%s;">', $height, $width);
+    $str = substr($str, 0, -1) . sprintf(' style="height:%d; width:%d;">', $height, $width);
     return $str;
 }
 
@@ -277,8 +277,8 @@ function commonFooter($padding = true) {
    <td>
     <small>
      <?php print_link('http://www.php.net/', make_image('php-logo.gif', 'PHP', 'left')); ?>
-     <?php print_link('/copyright.php', 'Copyright &copy; 2001-' . date('Y') . ' The PHP Group'); ?><br />
-     All rights reserved.<br />
+     &nbsp;<?php print_link('/copyright.php', 'Copyright &copy; 2001-' . date('Y') . ' The PHP Group'); ?><br />
+     &nbsp;All rights reserved.<br />
     </small>
    </td>
    <td align="right">
