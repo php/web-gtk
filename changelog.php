@@ -6,6 +6,14 @@ commonHeader('PHP-GTK Changelog');
 
 <h1>PHP-GTK ChangeLog</h1>
 
+<a name="2.0.0zeta"></a>
+<h3>Version 2.0.0zeta "renaissance redux"</h3>
+<b>15-July-2006</b>
+<ul>
+<li>first preview release of the new architecture</li>
+<li>make PHP 5, ZendEngine 2, and 1.5 gajillion little and big pieces (including my brain and caffeine metabolizer cells) work, basically. (Andrei, et al)</li>
+</ul>
+
 <a name="1.0.1"></a>
 <h3>Version 1.0.1 "you thought we were done?"</h3>
 <b>09-Aug-2004</b>
