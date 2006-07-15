@@ -1,10 +1,10 @@
-<?
+<?php
+
 if (!isset($_SERVER['HTTP_REFERER'])) {
-	$_SERVER['HTTP_REFERER']="-";
+	$_SERVER['HTTP_REFERER'] = "-";
 }
 
-if (!isset($download_file)
-	|| !file_exists("distributions/$download_file")) {
+if (!isset($download_file) || !file_exists("distributions/$download_file")) {
 	exit("Invalid file requested for download!");
 }
 
