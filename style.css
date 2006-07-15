@@ -5,10 +5,10 @@
 /* Let no border around the body appear, and set
    it to display on a white background */
 body, html {
+    background-color: white;
+    color: black;
     margin: 0px;
     padding: 0px;
-    background-color: #FFF;
-	color: #000;
 }
 
 /* Font settings for page elements */
@@ -16,6 +16,7 @@ body, ul, td, th, p, h1, h2, h3, h4, dt, small, .small,
 .tableTitle, .tableExtras, input, textarea, select {
     font-family: Verdana, Arial, Helvetica, sans-serif;
 }
+
 code, pre, tt {
     font-family: Courier, "Courier New", monospace;
 }
@@ -26,48 +27,48 @@ body {
 }
 
 li {
-    padding-top: 3px;
     padding-bottom: 3px;
+    padding-top: 3px;
 }
 
 em {
-    font-weight: bold;
     font-style: italic;
+    font-weight: bold;
 }
 
 acronym {
-    border-bottom: 1px dashed #00cc00;
+    border-bottom: 1px dashed #00CC00;
     cursor: help;
 }
 
 .newsDate {
-    font-size: .75em;
+    background-color: inherit;
+    color: #6666CC;
+    font-size: .80em;
     font-style: italic;
-    color: #66C;
-	background-color: inherit;
 }
 
 .sidebar {
-	font-size: .80em;
-	padding: 5px;
+    font-size: .95em;
+    padding: 5px;
 }
 
 .sidebar p {
-	text-align: left !important;
+    text-align: left !important;
 }
 
 a.menuWhite {
-    font-size: .75em;
-    color: #FFF;
+    background-color: inherit;
+    color: white;
+    font-size: .80em;
     text-decoration: none;
-	background-color: inherit;
 }
 
 a.menuBlack {
-    font-size: .75em;
-    color: #000;
+    background-color: inherit;
+    color: black;
+    font-size: .80em;
     text-decoration: none;
-	background-color: inherit;
 }
 
 pre, code {
@@ -76,34 +77,43 @@ pre, code {
 
 pre.code {
     background-color: #F0F0F0;
-	color: inherit;
+    color: inherit;
 }
 
 /* General header styles */
 h1, h2, h3, h4, dt {
+    color: #000066;
+    background-color: inherit;
     font-weight: bold;
-    color: #006;
-	background-color: inherit;
 }
-h1 { font-size: 1.30em; }
-h2 { font-size: 1.25em; }
-h3, dt { font-size: 1.10em; }
+
+h1 {
+    font-size: 1.30em;
+}
+
+h2 {
+    font-size: 1.25em;
+}
+
+h3, dt {
+    font-size: 1.10em;
+}
+
 h4 {
     font-size: .90em;
-    padding-top: 0px;
     padding-bottom: 0px;
+    padding-top: 0px;
 }
 
 blockquote {
     margin-left: 12px;
 }
 
-small {
-    font-size: .75em;
+small, a.small, input.small, select.small, textarea.small {
+    font-size: .80em;
 }
 
 a.small {
-    font-size: .75em;
     text-decoration: none;
 }
 
@@ -112,35 +122,23 @@ a.small {
 }
 
 .tableExtras {
+    background-color: inherit;
+    color: white;
     font-size: .85em;
-    color: #FFF;
-	background-color: inherit;
-}
-
-input.small, select.small {
-    font-size: .75em;
-}
-
-textarea.small {
-    font-size: .75em;
 }
 
 .programlisting {
+    background-color: #E0E0E0;
+    color: inherit;
     display: block;
     width: 100%;
-    background-color: #E0E0E0;
-	color: inherit;
 }
 
 hr {
+    background-color: inherit;
     border: 0px;
-    color: #000;
-    background-color: black;
+    color: black;
     height: 1px;
-}
-
-#docsupdates h3 {
-    margin-top: 0px;
 }
 
 /*
