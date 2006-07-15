@@ -120,7 +120,7 @@ plenty of activity not only in commits to CVS but in other parts of the PHP-GTK
  <li>Source code highlighting has been added to the
      <a href="http://php-gtk2.de/manual/en/html/">PHP-GTK 2 manual</a>.</li>
  <li>Most of the get_size* methods have been implemented.</li>
- <li><a href="http://xml.cweiske.de/php-gtk2%20coverage.xhtml">85% of all
+ <li><a href="http://xml.cweiske.de/classcoverage.htm">85% of all
      methods and properties have been implemented</a>. The other 15% need to be
      written by hand, and more are being added every week. (Some automatically
      generated methods may not be implemented correctly and will have to be
