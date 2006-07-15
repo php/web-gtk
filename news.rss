@@ -10,6 +10,7 @@
     <description>The PHP-GTK extension Web site</description>
     <items>
         <rdf:Seq>
+            <rdf:li rdf:resource="http://gtk.php.net/about/news-2006-07-15" />
             <rdf:li rdf:resource="http://gtk.php.net/about/news-2005-01-18" />
             <rdf:li rdf:resource="http://gtk.php.net/about/news-2004-12-20" />
             <rdf:li rdf:resource="http://gtk.php.net/about/news-2004-11-12" />
@@ -25,6 +26,20 @@
         </rdf:Seq>
     </items>
 </channel>
+
+<item rdf:about="http://gtk.php.net/about/news-2006-07-15">
+ <title>PHP-GTK 2 Zeta Release</title>
+ <link>http://gtk.php.net</link>
+ <description>
+  After a long development cycle, PHP-GTK team is proud to announce the first
+  official preview release of PHP-GTK 2. Since everyone has been
+  patiently waiting for this release for quite a while, we have
+  decided to skip a few letters of the Greek alphabet and go straight to
+  zeta, which does not get nearly enough respect in the software world compared
+   to its brethren. So, without further ado, please welcome PHP-GTK 2.0.0 Zeta!
+ </description>
+ <dc:date>2006-07-15</dc:date>
+</item>
 
 <item rdf:about="http://gtk.php.net/about/news-2006-05-18">
  <title>PHP-GTK 2 Resources</title>
