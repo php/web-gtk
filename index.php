@@ -62,13 +62,13 @@ commonHeader();
 <p><span class="newsDate">[15-July-2006]</span>
 After a long development cycle, PHP-GTK team is proud to announce the first
 official preview release of
-<a href="http://gtk.php.net/about.php">PHP-GTK 2</a>. Since everyone has been
+<a href="about.php">PHP-GTK 2</a>. Since everyone has been
 patiently waiting for this
-<a href="http://gtk.php.net/download.php">release</a> for quite a while, we have
+<a href="download.php">release</a> for quite a while, we have
 decided to skip a few letters of the Greek alphabet and go straight to <a href="http://en.wikipedia.org/wiki/Zeta_%28letter%29">zeta</a>,
 which does not get nearly enough respect in the software world compared to its
 brethren. So, without further ado, please welcome <a
-href="http://gtk.php.net/changelog.php">PHP-GTK 2.0.0 Zeta</a>!
+href="changelog.php">PHP-GTK 2.0.0 Zeta</a>!
 </p>
 
 <?php hdelim(); ?>
