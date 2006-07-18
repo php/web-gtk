@@ -57,6 +57,15 @@ commonHeader();
 
 ?>
 
+<h1>PHP-GTK 2 Alpha Re-release</h1>
+<p><span class="newsDate">[17-July-2006]</span>
+Apparently, PEAR infrastructure tools (due to a deficiency in PHP's <tt>version_compare()</tt>
+function) cannot handle a version modifier called "zeta". We had to rename it to
+good old "alpha", re-package and re-release. <a href="download.php">Download it</a> if you plan to use PEAR's
+or <a href="http://gnope.org/">gnope.org</a>'s packages.
+
+<?php hdelim(); ?>
+
 <h1>PHP-GTK 2 Zeta Release</h1>
 
 <p><span class="newsDate">[15-July-2006]</span>

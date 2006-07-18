@@ -6,8 +6,8 @@ commonHeader('PHP-GTK Changelog');
 
 <h1>PHP-GTK ChangeLog</h1>
 
-<a name="2.0.0zeta"></a>
-<h3>Version 2.0.0zeta "renaissance redux"</h3>
+<a name="2.0.0alpha"></a>
+<h3>Version 2.0.0alpha "renaissance redux"</h3>
 <b>15-July-2006</b>
 <ul>
 <li>first preview release of the new architecture</li>

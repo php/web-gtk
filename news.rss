@@ -10,6 +10,7 @@
     <description>The PHP-GTK extension Web site</description>
     <items>
         <rdf:Seq>
+            <rdf:li rdf:resource="http://gtk.php.net/about/news-2006-07-17" />
             <rdf:li rdf:resource="http://gtk.php.net/about/news-2006-07-15" />
             <rdf:li rdf:resource="http://gtk.php.net/about/news-2005-01-18" />
             <rdf:li rdf:resource="http://gtk.php.net/about/news-2004-12-20" />
@@ -26,6 +27,18 @@
         </rdf:Seq>
     </items>
 </channel>
+
+<item rdf:about="http://gtk.php.net/about/news-2006-07-17">
+ <title>PHP-GTK 2 Alpha Re-release</title>
+ <link>http://gtk.php.net</link>
+ <description>
+Apparently, PEAR infrastructure tools (due to a deficiency in PHP's
+version_compare() function) cannot handle a version modifier called "zeta". We
+had to rename it to good old "alpha", re-package and re-release. Download it if you plan
+to use PEAR's or gnope.org's packages.
+ </description>
+ <dc:date>2006-07-17</dc:date>
+</item>
 
 <item rdf:about="http://gtk.php.net/about/news-2006-07-15">
  <title>PHP-GTK 2 Zeta Release</title>
