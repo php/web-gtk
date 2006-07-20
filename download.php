@@ -5,7 +5,7 @@ commonHeader('Downloads');
 ?>
 
 <h1>Download</h1>
-<h2>Latest Release of PHP-GTK 2</h2>
+<h2>Latest Development Release</h2>
 
 <p>
 <b>GTK+ version:</b>
@@ -28,7 +28,7 @@ the PHP_5_2 branch in CVS will work, too.
 
 <hr />
 
-<h2>Latest Stable PHP-GTK Release</h2>
+<h2>Latest Stable Release</h2>
 
 <p>
 <b>GTK+ version:</b>
