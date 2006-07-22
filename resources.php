@@ -153,7 +153,12 @@ PHP-GTK weekly news summaries.</li>
 <a name="printarticles"></a>
 <h2>Print Publications</h2>
 
+
 <ul>
+<li>&quot;<?php print_link('http://www.phpmagazin.de/itr/ausgaben/psecom,id,318,nodeid,60.html', 'Aktuelle Entwicklungen beim PHP-GTK'); ?>&quot;
+     by Christian Weiske<br />
+    <em>PHP Magazin</em>, 07.2006</li>
+
 <li>&quot;<?php print_link('http://www.amazon.com/gp/product/1590596137/', 'Pro PHP-GTK'); ?>&quot;
     by Scott Mattocks<br />
     <em>Apress</em>, 04.2006</li>
