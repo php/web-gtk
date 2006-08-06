@@ -196,6 +196,14 @@ PHP-GTK weekly news summaries.</li>
 <li><?php print_link('http://talks.php.net/show/vancouver-gtk', 'Vancouver 2004'); ?> &quot;PHP-GTK: Something Old, Something New&quot; by Andrei Zmievski</li>
 </ul>
 
+<a name="development"></a>
+<h2>Development</h2>
+
+<ul>
+ <li><?php print_link('http://php-gtk2.de/manual/coverage.htm', 'PHP-Gtk2 documentation coverage analysis') ?></li>
+ <li><?php print_link('http://php-gtk2.de/manual/classcoverage.htm', 'PHP-Gtk2 implementation coverage analysis') ?></li>
+</ul>
+
 <?php
 
 commonFooter();
