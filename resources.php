@@ -155,7 +155,7 @@ PHP-GTK weekly news summaries.</li>
 
 
 <ul>
-<li>&quot;<?php print_link('http://www.phpmagazin.de/itr/ausgaben/psecom,id,318,nodeid,60.html', 'Aktuelle Entwicklungen beim PHP-GTK'); ?>&quot;
+<li>&quot;<?php print_link('http://phpmagazin.de/itr/online_artikel/psecom,id,831,nodeid,62.html', 'Aktuelle Entwicklungen beim PHP-GTK'); ?>&quot;
      by Christian Weiske<br />
     <em>PHP Magazin</em>, 07.2006</li>
 
