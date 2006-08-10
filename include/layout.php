@@ -192,13 +192,23 @@ function commonHeader($title = false, $padding = true) {
        <input class="small" type="text" name="pattern" value="<?php if (isset($_GET['prevsearch'])) echo htmlentities($_GET['prevsearch']); ?>" size="30" />
        <small>in the</small>
        <select name="show" class="small">
-        <option value="manual">PHP-GTK 2 manual</option>
-        <option value="manual1">PHP-GTK 1 manual</option>
-        <option value="whole-site">whole site</option>
-        <option value="wiki">wiki</option>
-        <option value="php-gtk-general-list">general mailing list</option>
-        <option value="php-gtk-dev-list">development mailing list</option>
-        <option value="php-gtk-doc-list">documentation mailing list</option>
+<?php
+$options = array(
+    'manual' => 'PHP-GTK 2 manual',
+    'manual1' => 'PHP-GTK 1 manual',
+    'whole-site' => 'whole site',
+    'wiki' => 'wiki',
+    'php-gtk-general-list' => 'general mailing list',
+    'php-gtk-dev-list' => 'development mailing list',
+    'php-gtk-doc-list' => 'documentation mailing list'
+);
+$uris = explode('/', $_SERVER['REQUEST_URI']);
+$dir = $uris[1];
+foreach ($options as $value => $title) {
+    $sel = ($value == substr($dir, 0, strlen($value))) ? ' selected="selected"' : '';
+    echo '<option value="' . $value . '"' . $sel . '>' . $title . '</option>' . "\n";
+}
+?>
        </select>
       <?php echo make_submit('small_submit_white.gif', 'search', 'bottom'); ?>&nbsp;<br />
      </font>

@@ -2,30 +2,29 @@
 require_once 'prepend.php';
 require_once 'manual1-lookup.inc';
 
-$pattern = $_POST['pattern'];
+$pattern = isset($_POST['pattern']) ? $_POST['PATTERN'] : null;
 $function = $_GET['function'];
 
 if (!$function && $pattern) $function = $pattern;
 $function = strtolower($function);
 
 /* it gets messy trying to pass $lang around - so get it from the referral dir */
-if(strstr(dirname($_SERVER[HTTP_REFERER]), "manual1/")) {
-	$lang = substr(dirname($_SERVER[HTTP_REFERER]), -2);
-	}
-else {
+if(isset($_SERVER['HTTP_REFERER']) && strstr(dirname($_SERVER['HTTP_REFERER']), "manual1/")) {
+	$lang = substr(dirname($_SERVER['HTTP_REFERER']), -2);
+} else {
 	$lang="en";
-	}
+}
 /* there's always one, eh? */
 if($lang == "BR") $lang = "pt_BR";
 
 function make404($lang) {
 	commonHeader("404 Not Found");
-	$no_path = str_replace("/php-gtk-web/manual1-lookup.php?lang=$lang&function=", "", htmlspecialchars($_SERVER[REQUEST_URI]));
+	$no_path = str_replace("/php-gtk-web/manual1-lookup.php?lang=$lang&amp;function=", "", htmlspecialchars($_SERVER['REQUEST_URI']));
 	$no_path = ereg_replace('&[x]=[0-9]&[y]=[0-9]', '', $no_path);
-	echo "<br>&nbsp;<H1>Not Found</H1><br>";
+	echo "<br/>&nbsp;<h1>Not Found</h1><br>";
 	if(strlen($no_path) < 3)
-	echo "&nbsp;<B>" . $no_path . "</B> is too short to be used as a search string.  <a href=$_SERVER[HTTP_REFERER]>Go back and try something longer</a><br><br><br><br><br><br><br>";
-	else echo "&nbsp;The function <B>" . $no_path . "</B> could not be found.  <a href=$_SERVER[HTTP_REFERER]>Try again</a><br><br><br><br><br><br><br>";
+	echo "&nbsp;<b>" . $no_path . "</b> is too short to be used as a search string.  <a href=\"$_SERVER[HTTP_REFERER]\">Go back and try something longer</a><br/><br/><br/><br/><br/><br/><br/>";
+	else echo "&nbsp;The function <b>" . $no_path . "</b> could not be found.  <a href=\"$_SERVER[HTTP_REFERER]\">Try again</a><br/><br/><br/><br/><br/><br/><br/>";
 	commonFooter();
 }
 
