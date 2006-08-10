@@ -28,6 +28,26 @@
     </items>
 </channel>
 
+<item rdf:about="http://gtk.php.net/about/news-2006-08-10">
+ <title>Documentation Filling Out</title>
+ <link>http://gtk.php.net</link>
+ <description>
+This week, the PHP-Gtk2 documentation broke the 44.44% barrier: nearly
+half of the classes and their methods, properties and signals are
+documented. PHP-Gtk2 consists of 202 classes with nearly 2900 methods,
+and several signals and properties. PHP-Gtk2 is not half as useful if
+there is no documentation and examples the developer can rely on.
+
+We ask you to help us in filling the white spots and creating examples.
+Writing documentation helps the project, but more you will learn from
+experimenting with new methods, and get a better understanding of the
+inner workings of the project. Interested? The doccing tutorial explains
+the first steps, and the php-gtk-doc mailing list is the central place
+for all manual issues. All help, examples and documentation, is appreciated.
+ </description>
+ <dc:date>2006-08-10</dc:date>
+</item>
+
 <item rdf:about="http://gtk.php.net/about/news-2006-07-17">
  <title>PHP-GTK 2 Alpha Re-release</title>
  <link>http://gtk.php.net</link>
@@ -244,25 +264,6 @@ plenty of activity not only in commits to CVS but in other parts of the PHP-GTK
     of bcompiler. bcompiler lets you "create a exe file of a PHP-GTK
     application."</description>
     <dc:date>2005-02-22</dc:date>
-</item>
-
-<item rdf:about="http://gtk.php.net/about/news-2005-01-18">
-    <title>Expanding Horizons</title>
-    <link>http://gtk.php.net/</link>
-    <description>PHP-GTK development is growing in several directions. A
-    recent barrage of commits by Andrei shows that PHP-GTK 2 is moving 
-    ever closer towards a working release. At the same time, Ivan Rodriguez 
-    has been helping to add some GtkExtra classes to the CVS versions of 
-    both PHP-GTK 1 and PHP-GTK 2.
-    Other PHP communities are contributing to PHP-GTK development in their 
-    own way. PEAR has released another class, Gtk_Styled, to help PHP-GTK 
-    developers write cleaner, more stable code. The folks over at Zend have 
-    recognized everyone who has contributed to PHP-GTK development, 
-    documentation or the web site by adding them to the "Zend Who's Who of 
-    PHP".
-    In other news, the GDK section of the manual has been completely 
-    translated into Russian.</description>
-    <dc:date>2005-01-18</dc:date>
 </item>
 
 </rdf:RDF>

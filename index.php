@@ -57,6 +57,17 @@ commonHeader();
 
 ?>
 
+<h1>Documentation Filling Out</h1>
+<p><span class="newsDate">[10-August-2006]</span>
+This week, the <a href="http://gtk.php.net/docs.php">PHP-Gtk2 documentation</a> broke the 44.44% barrier: nearly half of the classes and their methods, properties and signals are documented. PHP-Gtk2 consists of 202 classes with nearly 2900 methods, and several signals and properties. PHP-Gtk2 is not half as useful if
+there is no documentation and examples the developer can rely on.
+</p>
+<p>
+We ask you to help us in filling the white spots and creating examples. Writing documentation helps the project, but more you will learn from experimenting with new methods, and get a better understanding of the inner workings of the project. Interested? The doccing tutorial explains the first steps, and the php-gtk-doc mailing list is the central place for all manual issues. All help, examples and documentation, is appreciated.
+</p>
+
+<?php hdelim(); ?>
+
 <h1>PHP-GTK 2 Alpha Re-release</h1>
 <p><span class="newsDate">[17-July-2006]</span>
 Apparently, PEAR infrastructure tools (due to a deficiency in PHP's <tt>version_compare()</tt>
@@ -326,31 +337,6 @@ If you are interested in helping test PHP-GTK 2 on Windows, please send your com
 
 <p>In other news, the GDK section of the manual has been completely 
    translated into <a href="http://gtk.php.net/manual1/ru/">Russian</a>.</p>
-
-<?php hdelim(); ?>
-
-
-<h1>PHP-GTK in business</h1>
-
-<p><span class="newsDate">[20-Dec-2004]</span> There has been a lot of 
-    discussion lately about the role PHP-GTK can and is playing in the 
-    business world. Several people have <a
-    href="http://marc.theaimsgroup.com/?l=php-gtk-general&amp;m=109903609804913&amp;w=2">commented</a>
-    on the <a href="http://gtk.php.net/resources.php">php-gtk-general
-    mailing list</a> about how they have developed secure, cross-platform
-    applications for use in business with PHP-GTK. Using tools such as
-    Roadsend's <a
-    href="http://www.roadsend.com/home/index.php?pageID=compiler">PHP
-    Compiler</a>, developers are able to create and distribute PHP-GTK
-    applications that don't require the user to have a working installation
-    first.</p>
-
-<p>On the international level, PHP-GTK documentation is being translated
-    into <a href="http://gtk.php.net/manual1/ru/">Russian</a> thanks to the
-    work of Andrew Krasnyansky. Also, the organizers of the International
-    PHP Conference have put out a <a
-    href="http://www.phpconference.com/konferenzen/divers/psecom,id,191,nodeid,240.html">call
-    for papers</a>. One of the requested topics is PHP-GTK.</p>
 
 <?php
 
