@@ -59,11 +59,10 @@ commonHeader();
 
 <h1>Documentation Filling Out</h1>
 <p><span class="newsDate">[10-August-2006]</span>
-This week, the <a href="http://gtk.php.net/docs.php">PHP-Gtk2 documentation</a> broke the 44.44% barrier: nearly half of the classes and their methods, properties and signals are documented. PHP-Gtk2 consists of 202 classes with nearly 2900 methods, and several signals and properties. PHP-Gtk2 is not half as useful if
-there is no documentation and examples the developer can rely on.
+This week, the <a href="http://gtk.php.net/docs.php">PHP-Gtk2 documentation</a> broke the 44.44% barrier: nearly half of the classes and their methods, properties and signals are documented. PHP-GTK 2 consists of 202 classes with nearly 2,900 methods, and many signals and properties. As the documentation matures, PHP-GTK 2 becomes easier to work with as the answers to many common problems become easier to find. 
 </p>
 <p>
-We ask you to help us in filling the white spots and creating examples. Writing documentation helps the project, but more you will learn from experimenting with new methods, and get a better understanding of the inner workings of the project. Interested? The doccing tutorial explains the first steps, and the php-gtk-doc mailing list is the central place for all manual issues. All help, examples and documentation, is appreciated.
+We ask you to help us fill in the white spaces and create examples for others to learn from. Writing documentation not only helps the project, but also helps you learn through experimenting with new methods, and gain a better understanding of the inner workings of the project. Interested? The <a href="http://gtk.php.net/resources.php">doccing tutorial</a> explains the first steps, and the <a href="http://gtk.php.net/resources.php">php-gtk-doc mailing list</a> is the central place for all manual issues. All help creating examples and writing or translating documentation, is appreciated.
 </p>
 
 <?php hdelim(); ?>
