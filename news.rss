@@ -28,6 +28,34 @@
     </items>
 </channel>
 
+<item rdf:about="http://gtk.php.net/about/news-2006-09-22">
+ <title>Taking Conferences by Storm</title>
+ <link>http://gtk.php.net</link>
+ <description>
+It's conference season in the PHP world and no PHP conference would be complete
+without a PHP-GTK 2 presenetation (you hear that DCPHP!). Earlier this month
+Andrei, demonstrated how easy it is to create powerful desktop applications
+with PHP-GTK 2 at PHP|Works in Toronot. Next, in October, Scott will be
+speaking at the Zend/PHP Conference. Finally, in early November, Steph will
+talk about the new features of PHP-GTK 2 at the International PHP Conference 
+and demonstrate how to make lightweight cross-platform applications.
+ </description>
+ <dc:date>2006-08-10</dc:date>
+</item>
+
+<item rdf:about="http://gtk.php.net/about/news-2006-09-22">
+ <title>Online Help</title>
+ <link>http://gtk.php.net</link>
+ <description>
+While the development team works hard to finish the API (90% coverage is not
+far off), a new set of online tutorials has sprung up recently kksou.com. The 
+tutorials are short and to the point. They cover those nagging issues that 
+don't necessarily prevent you from completing your application, but add a great
+deal to the finished product.
+ </description>
+ <dc:date>2006-08-10</dc:date>
+</item>
+
 <item rdf:about="http://gtk.php.net/about/news-2006-08-10">
  <title>Documentation Filling Out</title>
  <link>http://gtk.php.net</link>
