@@ -166,8 +166,10 @@ function commonHeader($title = false, $padding = true) {
      echo delim();
      print_link('/docs.php', 'documentation', false, 'class="menuBlack"');
      echo delim();
+     /*
      print_link('/wiki/Main/HomePage', 'wiki', false, 'class="menuBlack"');
      echo delim();
+     */
      print_link('/apps/', 'applications', false, 'class="menuBlack"');
      echo delim();
      print_link('/faq.php', 'faq', false, 'class="menuBlack"');
@@ -197,7 +199,6 @@ $options = array(
     'manual' => 'PHP-GTK 2 manual',
     'manual1' => 'PHP-GTK 1 manual',
     'whole-site' => 'whole site',
-    'wiki' => 'wiki',
     'php-gtk-general-list' => 'general mailing list',
     'php-gtk-dev-list' => 'development mailing list',
     'php-gtk-doc-list' => 'documentation mailing list'

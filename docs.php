@@ -24,8 +24,10 @@ $SIDEBAR_DATA = <<< EOF
     information and those questions that seem to be on most people&#8217;s 
     minds.</p>
 
+<!--
 <p>The <a href="/wiki/">PHP-GTK Wiki</a> also provides an <a href="/wiki/PhpGtk/PhpGtkFaq">extended 
     FAQ</a> section.</p>
+-->
 
 <h3>Changelog</h3>
 <p>You can also find the <a href="/changelog.php">PHP-GTK Changelog</a> useful, 
