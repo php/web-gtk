@@ -84,7 +84,7 @@ We ask you to help us fill in the white spaces and create examples for others to
 Apparently, PEAR infrastructure tools (due to a deficiency in PHP's <tt>version_compare()</tt>
 function) cannot handle a version modifier called "zeta". We had to rename it to
 good old "alpha", re-package and re-release. <a href="download.php">Download it</a> if you plan to use PEAR's
-or <a href="http://gnope.org/">gnope.org</a>'s packages.
+or <a href="http://gnope.org/">gnope.org</a>'s packages.</p>
 
 <?php hdelim(); ?>
 
