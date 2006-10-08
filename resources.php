@@ -115,6 +115,9 @@ Ron Tarrant's blog contains many articles and tutorials for PHP-GTK 2 developers
 
 <li><?php print_link('http://crisscott.com/category/php-gtk/', 'Crisscott.com'); ?><br />
 PHP-GTK weekly news summaries.</li>
+
+<li><?php print_link('http://www.kksou.com/php-gtk2/index.php', 'kksou.com'); ?><br />
+PHP-GTK Cookbook.</li>
 </ul>
 
 <h3>Regional Portals</h3>
@@ -176,6 +179,10 @@ PHP-GTK weekly news summaries.</li>
 <li>&quot;<?php print_link('http://www.phparch.com/issue.php?mid=42', 'PHP-GTK and the Glade GUI Builder: Building Client Applications with Style'); ?>&quot;
     by Tony Leake<br />
     <em>PHP|Architect</em>, 10.2004</li>
+
+<li>&quot;<?php print_link('http://www.php-mag.net/magphpde/magphpde_article/psecom,id,426,nodeid,21.html', 'Use your mouse'); ?>&quot;
+    by Steph Fox<br />
+    <em>International PHP Magazine</em>, 06.2004</li>
 
 <li>&quot;<?php print_link('http://www.phpmag.net/itr/ausgaben/psecom,id,212,nodeid,112.html', 'Making a GUI Mess of PHP: Building \'Stand-alone\' GUI Applications with PHP-GTK');?>&quot; 
     by Ben Ramsey<br />
