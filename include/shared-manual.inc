@@ -38,7 +38,7 @@ function makeBorderTOC($this) {
 	global $NEXT, $PREV, $UP, $HOME, $TOC;
 	global $SIDEBAR_DATA;
 
-	$SIDEBAR_DATA = '<form method="get" action="manual-lookup.php">';
+	$SIDEBAR_DATA = '<form method="get" action="/manual-lookup.php">';
 	$SIDEBAR_DATA.= '<table border="0" cellpadding="4" cellspacing="0" width="160">';
 
 	if(sizeof($TOC) > 1) {
