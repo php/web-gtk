@@ -58,12 +58,12 @@ commonHeader();
 ?>
 
 <h1>Taking Conferences by Storm</h1>
-<p>
-It's conference season in the PHP world and no PHP conference would be complete without a PHP-GTK 2 presenetation (you hear that DCPHP!). Earlier this month Andrei, demonstrated how easy it is to create powerful desktop applications with PHP-GTK 2 at <a href="http://hades.phparch.com/ceres/public/page/index.php/works::schedule::synopses::php_gtk2">PHP|Works</a> in Toronot. Next, in October, Scott will be speaking at the <a href="http://www.zendcon.com/">Zend/PHP Conference</a>. Finally, in early November, Steph will talk about the new features of PHP-GTK 2 at the <a href="http://phpconference.com/konferenzen/psecom,id,482,track,7,nodeid,,_language,uk.html">International PHP Conference</a> and demonstrate how to make lightweight cross-platform applications.
+<p><span class="newsDate">[22-September-2006]</span>
+It's conference season in the PHP world and no PHP conference would be complete without a PHP-GTK 2 presentation (you hear that DCPHP!). Earlier this month Andrei, demonstrated how easy it is to create powerful desktop applications with PHP-GTK 2 at <a href="http://hades.phparch.com/ceres/public/page/index.php/works::schedule::synopses::php_gtk2">PHP|Works</a> in Toronot. Next, in October, Scott will be speaking at the <a href="http://www.zendcon.com/">Zend/PHP Conference</a>. Finally, in early November, Steph will talk about the new features of PHP-GTK 2 at the <a href="http://phpconference.com/konferenzen/psecom,id,482,track,7,nodeid,,_language,uk.html">International PHP Conference</a> and demonstrate how to make lightweight cross-platform applications.
 </p>
 
 <h1>Online Help</h1>
-<p>
+<p><span class="newsDate">[22-September-2006]</span>
 While the development team works hard to finish the API (90% coverage is not far off), a new set of online tutorials has sprung up recently <a href="http://www.kksou.com/php-gtk2/index.php">kksou.com</a>. The tutorials are short and to the point. They cover those nagging issues that don't necessarily prevent you from completing your application, but add a great deal to the finished product.
 </p>
 
