@@ -36,35 +36,35 @@ to the address listed in the SUBSCRIBE column.</p>
    <td>For general discussion about using PHP-GTK.</td>
    <td><?php print_email('php-gtk-general_at_lists_dot_php_dot_net'); ?></td>
    <td><?php print_email('php-gtk-general-subscribe_at_lists_dot_php_dot_net'); ?></td>
-   <td><?php print_link('http://marc.theaimsgroup.com/?l=php-gtk-general', 'MARC'); ?></td>
+   <td><?php print_link('http://news.php.net/php.gtk.general', 'news.php.net'); ?></td>
   </tr>
   <tr valign="top">
    <td><strong>php-gtk-dev</strong></td>
    <td>For the discussion about the development of PHP-GTK itself.</td>
    <td><?php print_email('php-gtk-dev_at_lists_dot_php_dot_net'); ?></td>
    <td><?php print_email('php-gtk-dev-subscribe_at_lists_dot_php_dot_net'); ?></td>
-   <td><?php print_link('http://marc.theaimsgroup.com/?l=php-gtk-dev', 'MARC'); ?></td>
+   <td><?php print_link('http://news.php.net/php.gtk.dev', 'news.php.net'); ?></td>
   </tr>
   <tr valign="top">
    <td><strong>php-gtk-doc</strong></td>
    <td>For discussion about the writing and translation of the PHP-GTK documentation.</td>
    <td><?php print_email('php-gtk-doc_at_lists_dot_php_dot_net'); ?></td>
    <td><?php print_email('php-gtk-doc-subscribe_at_lists_dot_php_dot_net'); ?></td>
-   <td><?php print_link('http://marc.theaimsgroup.com/?l=php-gtk-doc', 'MARC'); ?></td>
+   <td><?php print_link('http://news.php.net/php.gtk.doc', 'news.php.net'); ?></td>
   </tr>
   <tr valign="top">
    <td><strong>php-gtk-cvs</strong></td>
    <td>Has all CVS commits to PHP-GTK and related projects posted to it automatically.</td>
    <td><?php print_email('php-gtk-cvs_at_lists_dot_php_dot_net'); ?></td>
    <td><?php print_email('php-gtk-cvs-subscribe_at_lists_dot_php_dot_net'); ?></td>
-   <td><?php print_link('http://marc.theaimsgroup.com/?l=php-gtk-cvs', 'MARC'); ?></td>
+   <td><?php print_link('http://news.php.net/php.gtk.cvs', 'news.php.net'); ?></td>
   </tr>
   <tr valign="top">
    <td><strong>php-gtk-webmaster</strong></td>
    <td>For discussion about updating and maintaining the PHP-GTK website.</td>
    <td><?php print_email('php-gtk-webmaster_at_lists_dot_php_dot_net'); ?></td>
    <td><?php print_email('php-gtk-webmaster-subscribe_at_lists_dot_php_dot_net'); ?></td>
-   <td><?php print_link('http://marc.theaimsgroup.com/?l=php-gtk-webmaster', 'MARC'); ?></td>
+   <td><?php print_link('http://news.php.net/php.gtk.webmaster', 'news.php.net'); ?></td>
   </tr>
  </tbody>
 </table>
