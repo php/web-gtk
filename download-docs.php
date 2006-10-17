@@ -53,8 +53,8 @@ use does otherwise.
 </p>
 
 <table border="0" cellpadding="2" cellspacing="1" width="100%">
- <tr bgcolor="#dddddd">
-  <td colspan="<?php echo (sizeof($formats) + 1); ?>"><b>PHP-GTK 2 manual</b></td>
+ <tr bgcolor="#bbbbbb">
+  <th colspan="<?php echo (sizeof($formats) + 1); ?>"><b>PHP-GTK 2 manual</b></td>
  </tr>
  <tr bgcolor="#cccccc">
   <td>&nbsp;</td>
@@ -104,8 +104,8 @@ use does otherwise.
 	}
 	reset($formats);
 ?>
- <tr bgcolor="#dddddd">
-  <td colspan="<?php echo (sizeof($formats) + 1); ?>"><b>PHP-GTK 1 manual</b></td>
+ <tr bgcolor="#bbbbbb">
+  <th colspan="<?php echo (sizeof($formats) + 1); ?>"><b>PHP-GTK 1 manual</b></td>
  </tr>
  <tr bgcolor="#cccccc">
   <td>&nbsp;</td>
