@@ -54,7 +54,7 @@ use does otherwise.
 
 <table border="0" cellpadding="2" cellspacing="1" width="100%">
  <tr bgcolor="#dddddd">
-  <td colspan="<?php echo sizeof($formats); ?>"><b>PHP-GTK 2 manual</b></td>
+  <td colspan="<?php echo (sizeof($formats) + 1); ?>"><b>PHP-GTK 2 manual</b></td>
  </tr>
  <tr bgcolor="#cccccc">
   <td>&nbsp;</td>
@@ -78,7 +78,7 @@ use does otherwise.
 			elseif (file_exists("distributions/manual/php_gtk_manual_$langcode.$details[1]")) {
 				$link_to = "distributions/manual/php_gtk_manual_$langcode.$details[1]";
 			}
-			elseif (file_exists("distributions/manual1/manual-$langcode.$details[1]")) {
+			elseif (file_exists("distributions/manual/manual-$langcode.$details[1]")) {
 				$link_to = "distributions/manual/manual-$langcode.$details[1]";
 			}
 
@@ -105,7 +105,7 @@ use does otherwise.
 	reset($formats);
 ?>
  <tr bgcolor="#dddddd">
-  <td colspan="<?php echo sizeof($formats); ?>"><b>PHP-GTK 1 manual</b></td>
+  <td colspan="<?php echo (sizeof($formats) + 1); ?>"><b>PHP-GTK 1 manual</b></td>
  </tr>
  <tr bgcolor="#cccccc">
   <td>&nbsp;</td>
