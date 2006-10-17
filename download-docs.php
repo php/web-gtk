@@ -40,8 +40,8 @@ $formats = array(
 <h1>Download documentation</h1>
 
 <p>
-The PHP-GTK manual is available in various formats. Pick a language and
-format from the table below to start downloading.
+Both the PHP-GTK 2 and the PHP-GTK 1 manual are available in various formats.
+Pick a version, a language and a format from the table below to start downloading.
 </p>
 
 <p>
@@ -53,6 +53,60 @@ use does otherwise.
 </p>
 
 <table border="0" cellpadding="2" cellspacing="1" width="100%">
+ <tr bgcolor="#dddddd">
+  <td colspan="<?php echo sizeof($formats); ?>"><b>PHP-GTK 2 manual</b></td>
+ </tr>
+ <tr bgcolor="#cccccc">
+  <td>&nbsp;</td>
+  <?php
+	while (list($k, $v) = each($formats)) {
+		echo "<th valign=\"bottom\">$v[0]</th>\n";
+	}?>
+ </tr>
+ <?php
+	while (list(,$langcode) = each($man2_languages)) {
+		$language = $LANGUAGES[$langcode];
+		echo "<tr>\n<td bgcolor=\"#dddddd\"><b>$language</b></td>\n";
+		reset($formats);
+		while (list($fn,$details) = each($formats)) {
+			echo "<td align=\"center\" bgcolor=\"#eeeeee\">";
+
+			$link_to = "";
+			if (file_exists("manual/$langcode/$fn")) {
+				$link_to = "manual/$langcode/$fn";
+			}
+			elseif (file_exists("distributions/manual/php_gtk_manual_$langcode.$details[1]")) {
+				$link_to = "distributions/manual/php_gtk_manual_$langcode.$details[1]";
+			}
+			elseif (file_exists("distributions/manual1/manual-$langcode.$details[1]")) {
+				$link_to = "distributions/manual/manual-$langcode.$details[1]";
+			}
+
+			if (!$link_to) {
+			echo "&nbsp;";
+			}
+			else {
+				$size = @filesize($link_to);
+				$changed = @filemtime($link_to);
+				$date_format = "j M Y"; // Part of the RFC date type (to be short)
+				if ($size) {
+					echo "<a href=\"$link_to\" title=\" Size: ", (int) ($size/1024), "Kb\n Date: ", date($date_format, $changed), "\">$details[1]</a>";
+					if ($sizes) {
+						echo "<br /><small>Size: ", (int) ($size/1024), "Kb<br />Date: ", date($date_format, $changed), "</small>";
+					}
+				} else {
+					echo "&nbsp;";
+				}
+			}
+			echo "</td>\n";
+		}
+		echo "</tr>\n";
+	}
+	reset($formats);
+?>
+ <tr bgcolor="#dddddd">
+  <td colspan="<?php echo sizeof($formats); ?>"><b>PHP-GTK 1 manual</b></td>
+ </tr>
  <tr bgcolor="#cccccc">
   <td>&nbsp;</td>
   <?php
