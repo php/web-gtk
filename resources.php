@@ -118,7 +118,9 @@ PHP-GTK Cookbook.</li>
 <ul>
 <li><?php print_link('http://www.php-gtk.com.br/', 'Brazilian PHP-GTK Community Portal'); ?></li>
 
-<li><?php print_link('http://www.php-gtk2.de', 'German PHP-GTK 2 Portal'); ?></li>
+<li><?php print_link('http://www.php-gtk.eu/', 'Worldwide PHP-GTK 2 community site'); ?></li>
+
+<li><?php print_link('http://www.php-gtk2.de', 'PHP-GTK 2 link list'); ?></li>
 </ul>
 
 <a name="onlinearticles"></a>
