@@ -66,6 +66,11 @@ Christian <a href="http://php-gtk2.de/maps.html">created a map</a> which tells y
 Freenode and add yourself!
 </p>
 <p>
+<a href="http://www.kateos.org/">KateOS</a>, a multitasking operating system;
+includes a <a href="http://wikidoc.kateos.org/index.php/KatePKG-en">package manager written entirely in PHP-GTK 2</a>! This is the first time any distribution
+has adopted PHP-GTK 2 at such a level; we hope this trend continues!
+</p>
+<p>
 The Chinese translation of the PHP-GTK 2 manual has now begun. If you are
 interested in contributing to the documentation or development of PHP-GTK 2 
 then <a href="http://gtk.php.net/resources.php">get in touch</a> with us, and 

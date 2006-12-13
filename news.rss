@@ -38,6 +38,10 @@ and code samples for PHP-GTK, be sure to stop by. Also, Christian
 created a map which tells you where PHP-GTK 2 developers and users
 are located. Join us on #php-gtk on Freenode and add yourself!
 
+KateOS, a multitasking operating system; includes a package manager written 
+entirely in PHP-GTK 2! This is the first time any distribution has adopted
+PHP-GTK 2 at such a level; we hope this trend continues!
+
 The Chinese translation of the PHP-GTK 2 manual has now begun. If you
 are interested in contributing to the documentation or development of
 PHP-GTK 2 then get in touch with us, and help in making a faster release!
