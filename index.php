@@ -57,6 +57,28 @@ commonHeader();
 
 ?>
 
+<h1>December News</h1>
+<p><span class="newsDate">[13-December-2006]</span>
+Interest in PHP-GTK is growing, and this is evident by the increasing number of
+hits at the <a href="http://www.php-gtk.eu">community site</a>. The site
+provides useful tips and code samples for PHP-GTK, be sure to stop by. Also, 
+Christian <a href="http://php-gtk2.de/maps.html">created a map</a> which tells you where PHP-GTK 2 developers and users are located. Join us on #php-gtk on
+Freenode and add yourself!
+</p>
+<p>
+The Chinese translation of the PHP-GTK 2 manual has now begun. If you are
+interested in contributing to the documentation or development of PHP-GTK 2 
+then <a href="http://gtk.php.net/resources.php">get in touch</a> with us, and 
+help in making a faster release!
+</p>
+<p>
+<a href="http://www.callicore.net/">Callicore</a> is a framework for PHP-GTK 2 and provides a set of re-usable classes designed to make application development
+quicker and painless. Though no releases have been made yet, the code from the 
+repository is pretty usable.
+</p>
+
+<?php hdelim(); ?>
+
 <h1>Taking Conferences by Storm</h1>
 <p><span class="newsDate">[22-September-2006]</span>
 It's conference season in the PHP world and no PHP conference would be complete without a PHP-GTK 2 presentation (you hear that DCPHP!). Earlier this month Andrei, demonstrated how easy it is to create powerful desktop applications with PHP-GTK 2 at <a href="http://hades.phparch.com/ceres/public/page/index.php/works::schedule::synopses::php_gtk2">PHP|Works</a> in Toronot. Next, in October, Scott will be speaking at the <a href="http://www.zendcon.com/">Zend/PHP Conference</a>. Finally, in early November, Steph will talk about the new features of PHP-GTK 2 at the <a href="http://phpconference.com/konferenzen/psecom,id,482,track,7,nodeid,,_language,uk.html">International PHP Conference</a> and demonstrate how to make lightweight cross-platform applications.
@@ -324,30 +346,6 @@ If you are interested in helping test PHP-GTK 2 on Windows, please send your com
 <p>PECL developers, Alan Knowles and Val Khokhlov have release a new
    version of <a href="http://pecl.php.net/package/bcompiler">bcompiler</a>.
    bcompiler lets you "create a exe file of a PHP-GTK application."</p>
-
-<?php hdelim(); ?>
-
-<h1>Expanding Horizons</h1>
-
-<p><span class="newsDate">[18-Jan-2005]</span> PHP-GTK development is
-   growing in several directions. A recent <a 
-   href="http://cvs.php.net/co.php/php-gtk/ChangeLog?r=1.259">barrage
-   of commits</a> by Andrei shows that PHP-GTK 2 is moving ever closer
-   towards a working release. At the same time, Ivan Rodriguez has been
-   helping to add some GtkExtra classes to the <a 
-   href="http://gtk.php.net/download.php">CVS versions</a> of both PHP-GTK
-   1 and PHP-GTK 2.</p>
-
-<p>Other PHP communities are contributing to PHP-GTK development in their 
-   own way. PEAR has released another class, <a 
-   href="http://pear.php.net/packages.php?catpid=34&amp;catname=Gtk+Components">Gtk_Styled</a>, 
-   to help PHP-GTK developers write cleaner, more stable code. The folks 
-   over at Zend have recognized everyone who has contributed to PHP-GTK 
-   development, documentation or the web site by adding them to the "<a 
-   href="http://www.zend.com/pear/whoiswho.php">Zend Who's Who of PHP</a>".</p>
-
-<p>In other news, the GDK section of the manual has been completely 
-   translated into <a href="http://gtk.php.net/manual1/ru/">Russian</a>.</p>
 
 <?php
 

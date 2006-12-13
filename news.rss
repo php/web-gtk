@@ -28,6 +28,28 @@
     </items>
 </channel>
 
+<item rdf:about="http://gtk.php.net/about/news-2006-12-13">
+ <title>December News</title>
+ <link>http://gtk.php.net</link>
+ <description>
+Interest in PHP-GTK is growing, and this is evident by the increasing
+number of hits at the community site. The site provides useful tips
+and code samples for PHP-GTK, be sure to stop by. Also, Christian
+created a map which tells you where PHP-GTK 2 developers and users
+are located. Join us on #php-gtk on Freenode and add yourself!
+
+The Chinese translation of the PHP-GTK 2 manual has now begun. If you
+are interested in contributing to the documentation or development of
+PHP-GTK 2 then get in touch with us, and help in making a faster release!
+
+Callicore is a framework for PHP-GTK 2 and provides a set of
+re-usable classes designed to make application development quicker and
+painless. Though no releases have been made yet, the code from the
+repository is pretty usable.
+ </description>
+ <dc:date>2006-12-13</dc:date>
+</item>
+
 <item rdf:about="http://gtk.php.net/about/news-2006-09-22">
  <title>Taking Conferences by Storm</title>
  <link>http://gtk.php.net</link>
@@ -276,24 +298,6 @@ plenty of activity not only in commits to CVS but in other parts of the PHP-GTK
     non-trivial scripts. See the general mailing list archives for an example.
     Take a look at the change log for the latest updates.</description>
     <dc:date>2005-03-22</dc:date>
-</item>
-
-<item rdf:about="http://gtk.php.net/about/news-2005-02-22">
-    <title>February News</title>
-    <link>http://gtk.php.net/</link>
-    <description>It's getting close to conference season and with that comes
-    a few talks about PHP-GTK. At the International PHP Conference, Ben
-    Ramsey will be holding a talk titled "PHP in a Whole New World: Desktop
-    Applications Built in PHP-GTK." At the same conference Andrei Zmievski
-    will be giving a much anticipated talk called, "Say Hello To PHP-GTK 2."
-    The latest issue of the International PHP Magazine has an article by
-    David Heath called "Free You CMS" which talks about "building an offline
-    desktop client tool that is a synthesis of several exciting technologies:
-    PHP-GTK, SQLite, and XML-RPC."
-    PECL developers, Alan Knowles and Val Khokhlov have release a new version
-    of bcompiler. bcompiler lets you "create a exe file of a PHP-GTK
-    application."</description>
-    <dc:date>2005-02-22</dc:date>
 </item>
 
 </rdf:RDF>
