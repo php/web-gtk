@@ -57,6 +57,21 @@ commonHeader();
 
 ?>
 
+<h1>PHP-GTK Teams for the PHPThrowdown</h1>
+<p><span class="newsDate">[12-January-2007]</span>
+The <a href="http://www.phpthrowdown.com">PHPThrowdown</a> is a competition to see
+which team or individual can build the best application in 24 hours. Its a test of
+skill and stamina. Most people expect to see a whole bunch of web applications, but we
+here in the PHP-GTK community know that the best applications are written with PHP-GTK.
+To help prove this point to the rest of the world, a few teams are being organized to
+enter PHP-GTK applications into the contest. If you are interested in joining (or
+leading) a team, be sure to sign up on the <a 
+href="http://www.opsat.net/ptd/interestapp.php">PHP-GTK PHPThrowdown Team organization
+form</a>.
+</p>
+
+<?php hdelim(); ?>
+
 <h1>December News</h1>
 <p><span class="newsDate">[13-December-2006]</span>
 Interest in PHP-GTK is growing, and this is evident by the increasing number of
@@ -329,28 +344,6 @@ If you are interested in helping test PHP-GTK 2 on Windows, please send your com
    to the general mailing list for an example. Take a look at the
    <a href="http://cvs.php.net/co.php/php-gtk/ChangeLog">change log</a> for the
    latest updates.</p>
-
-<?php hdelim(); ?>
-
-<h1>February News</h1>
-
-<p><span class="newsDate">[22-Feb-2005]</span> It's getting close to
-   conference season and with that comes a few talks about PHP-GTK. At
-   the <a href="http://phpconference.com">International PHP Conference</a>, 
-   <a href="http://gtk.php.net/wiki/Profiles/Ramsey?from=People.BenRamsey">Ben
-   Ramsey</a> will be holding a talk titled "PHP in a Whole New World: Desktop
-   Applications Built in PHP-GTK." At the same conference 
-   <a href="http://gtk.php.net/wiki/Profiles/Andrei?from=People.AndreiZmievski">Andrei
-   Zmievski</a> will be giving a much anticipated talk called, "Say Hello
-   To PHP-GTK 2." The latest issue of the 
-   <a href="http://php-mag.net">International PHP Magazine</a> has an 
-   article by David Heath called "Free You CMS" which talks about "building
-   an offline desktop client tool that is a synthesis of several exciting
-   technologies: PHP-GTK, SQLite, and XML-RPC."</p>
-
-<p>PECL developers, Alan Knowles and Val Khokhlov have release a new
-   version of <a href="http://pecl.php.net/package/bcompiler">bcompiler</a>.
-   bcompiler lets you "create a exe file of a PHP-GTK application."</p>
 
 <?php
 

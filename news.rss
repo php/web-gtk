@@ -28,6 +28,21 @@
     </items>
 </channel>
 
+<item rdf:about="http://gtk.php.net/about/news-2007-01-12">
+ <title>PHP-GTK Teams for the PHPThrowdown</title>
+ <link>http://gtk.php.net</link>
+ <description>
+The PHPThrowdown is a competition to see which team or individual can build the best
+application in 24 hours. Its a test of skill and stamina. Most people expect to see
+a whole bunch of web applications, but we here in the PHP-GTK community know that the
+best applications are written with PHP-GTK. To help prove this point to the rest of the
+world, a few teams are being organized to enter PHP-GTK applications into the contest.
+If you are interested in joining (or leading) a team, be sure to sign up on the PHP-GTK
+PHPThrowdown Team organization form.
+ </description>
+ <dc:date>2007-01-12</dc:date>
+</item>
+
 <item rdf:about="http://gtk.php.net/about/news-2006-12-13">
  <title>December News</title>
  <link>http://gtk.php.net</link>
