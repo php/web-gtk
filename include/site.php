@@ -35,6 +35,6 @@ $LANGUAGES = array(
 );
 
 $man_languages = array('cs', 'de', 'en', 'es', 'fr', 'it', 'ja', 'pt_BR', 'ru');
-$man2_languages = array('en', 'pt_BR');
+$man2_languages = array('bg', 'de', 'en', 'ja', 'pt_BR', 'zh_cn');
 
 ?>
