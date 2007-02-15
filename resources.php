@@ -150,18 +150,26 @@ PHP-GTK Cookbook.</li>
 
 </ul>
 
+<a name="books"></a>
+<h2>Books</h2>
+
+<ul>
+<li>&quot;<?php print_link('http://www.amazon.com/gp/product/1590596137/', 'Pro PHP-GTK'); ?>&quot;
+    by Scott Mattocks<br />
+    <em>Apress</em>, 04.2006</li>
+
+<li>&quot;<?php print_link('http://www.kksou.com/php-gtk2/ebook/', 'PHP-GTK2 Demystified'); ?>&quot;
+    by kksou<br />
+    ebook, 02.2007</li>
+</ul>
+
 <a name="printarticles"></a>
 <h2>Print Publications</h2>
-
 
 <ul>
 <li>&quot;<?php print_link('http://phpmagazin.de/itr/online_artikel/psecom,id,831,nodeid,62.html', 'Aktuelle Entwicklungen beim PHP-GTK'); ?>&quot;
      by Christian Weiske<br />
     <em>PHP Magazin</em>, 07.2006</li>
-
-<li>&quot;<?php print_link('http://www.amazon.com/gp/product/1590596137/', 'Pro PHP-GTK'); ?>&quot;
-    by Scott Mattocks<br />
-    <em>Apress</em>, 04.2006</li>
 
 <li>&quot;<?php print_link('http://www.phpmagazin.de/itr/ausgaben/psecom,id,287,nodeid,60.html', 'Rapid Application Development Mit PHP-GTK'); ?>&quot;
      by Christian Weiske<br />
