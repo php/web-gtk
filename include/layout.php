@@ -143,6 +143,7 @@ function commonHeader($title = false, $padding = true) {
  <title>PHP-GTK<?php if ($title) { echo ' : '.$title; } ?></title>
  <link rel="stylesheet" type="text/css" href="/style.css" />
  <link rel="stylesheet" type="text/css" href="/style-highlight.css" />
+ <link rel="alternate" type="application/rss+xml" title="PHP-GTK News" href="http://gtk.php.net/news.rss"/>
  <link rel="shortcut icon" href="/gifs/favicon.ico" />
 </head>
 
