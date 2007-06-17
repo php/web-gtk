@@ -60,9 +60,9 @@ commonHeader();
 <h1>PHP-GTK 2 Beta!</h1>
 <p><span class="newsDate">[17-June-2007]</span>
 The PHP-GTK team is proud to announce the release of a beta version of
-<a href="about.php">PHP-GTK 2</a>. This release, aptly named "
-<a href="changelog.php">extension extravaganza</a>", brings with it tons
-of new features that you can look forward to:</p>
+<a href="about.php">PHP-GTK 2</a>. This release, aptly named
+<em><a href="changelog.php">extension extravaganza</a></em>, brings with
+it tons of new features that you can look forward to:</p>
 <ul>
 <li>Overall API coverage is now at 90%, with over 95% coverage for just
 the Gtk+ API.</li>
