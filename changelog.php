@@ -6,6 +6,20 @@ commonHeader('PHP-GTK Changelog');
 
 <h1>PHP-GTK ChangeLog</h1>
 
+<a name="2.0.0beta"></a>
+<h3>Version 2.0.0beta "extension extravaganza"</h3>
+<b>17-June-2007</b>
+<ul>
+<li>custom tree models, clipboard support, enhanced gobject construction (Andrei)</li>
+<li>drag and drop support for gtktreeview (Christian)</li>
+<li>gtkspell, gtkextra, gtkhtml3, libsexy and scintilla extensions for *nix (Anant)</li>
+<li>lots of unit tests (Christian, Scott)</li>
+<li>win32 support for gtksourceview, gtkextra, gtkhtml3, and libsexy (Elizabeth)</li>
+<li>win32 support for scintilla (Tom)</li>
+<li>support for gtk+ 2.8 and 2.10 (Elizabeth)</li>
+<li>more api coverage, bunch of bug fixes (Andrei, et al )</li>
+</ul>
+
 <a name="2.0.0alpha"></a>
 <h3>Version 2.0.0alpha "renaissance redux"</h3>
 <b>15-July-2006</b>

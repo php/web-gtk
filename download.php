@@ -21,9 +21,8 @@ the PHP_5_2 branch in CVS will work, too.
 </p>
 
 <ul>
-<li><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-2.0.0alpha.tar.gz', 'php-gtk-2.0.0 alpha Source'); ?> - 17-Jul-2006</li>
-<li><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk2-alpha-5_1-win32.zip', 'php-gtk-2.0.0 alpha Windows binary for PHP 5.1.*'); ?> - 19-Jul-2006</li>
-<li><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk2-alpha-5_2-win32.zip', 'php-gtk-2.0.0 alpha Windows binary for PHP 5.2.*'); ?> - 19-Jul-2006</li>
+<li><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-2.0.0beta.tar.gz', 'php-gtk-2.0.0 Beta Source'); ?> - 17-June-2007</li>
+<li>Windows builds coming soon<li>
 </ul>
 
 <hr />

@@ -28,6 +28,33 @@
     </items>
 </channel>
 
+<item rdf:about="http://gtk.php.net/about/news-2007-06-17">
+ <title>PHP-GTK 2 Beta!</title>
+ <link>http://gtk.php.net</link>
+ <description>
+The PHP-GTK team is proud to announce the release of a beta version of
+PHP-GTK 2. This release, aptly named "extension extravaganza", brings
+with it tons of new features that you can look forward to:
+ - Overall API coverage is now at 90%, with over 95% coverage for just
+the Gtk+ API.
+ - The GtkTreeView widget has been significantly enhanced with custom
+model and drag-and-drop support.
+ - Basic clipboard functionality is now supported.
+ - Exciting new cross-platform widgets now available through the GtkSpell,
+GtkExtra, GtkHTML3, libsexy and Scintilla extensions.
+ - Gtk+ versions 2.8 and 2.10 are now supported, which brings along a host
+of new features such as enhanced printing support; revamped GtkIconView,
+GtkNotebook; GtkPlug/Socket support for Win32; and a variety of new widgets
+like GtkStatusIcon and GtkAssistant.
+ - The usual set of bug fixes and unit test additions.
+
+Head over to the download section and grab a tarball. PHP-GTK 2 is now one
+step closer to a final release. Thanks to entire PHP-GTK team for making
+this release possible!
+ </description>
+ <dc:date>2007-06-17</dc:date>
+</item>
+
 <item rdf:about="http://gtk.php.net/about/news-2007-01-12">
  <title>PHP-GTK Teams for the PHPThrowdown</title>
  <link>http://gtk.php.net</link>

@@ -57,6 +57,32 @@ commonHeader();
 
 ?>
 
+<h1>PHP-GTK 2 Beta!</h1>
+<p><span class="newsDate">[17-June-2007]</span>
+The PHP-GTK team is proud to announce the release of a beta version of
+<a href="about.php">PHP-GTK 2</a>. This release, aptly named "
+<a href="changelog.php">extension extravaganza</a>", brings with it tons
+of new features that you can look forward to:</p>
+<ul>
+<li>Overall API coverage is now at 90%, with over 95% coverage for just
+the Gtk+ API.</li>
+<li>The GtkTreeView widget has been significantly enhanced with custom
+model and drag-and-drop support</li>
+<li>Basic clipboard functionality is now supported.</li>
+<li>Exciting new cross-platform widgets now available through the GtkSpell,
+GtkExtra, GtkHTML3, libsexy and Scintilla extensions</li>
+<li>Gtk+ versions 2.8 and 2.10 are now supported, which brings along a host
+of new features such as enhanced printing support; revamped GtkIconView,
+GtkNotebook; GtkPlug/Socket support for Win32; and a variety of new widgets
+like GtkStatusIcon and GtkAssistant.</li>
+<li>The usual set of bug fixes and unit test additions.</li>
+</ul>
+<p>Head over to the <a href="download.php">download</a> section and grab
+a tarball. PHP-GTK 2 is now one step closer to a final release. Thanks to
+entire PHP-GTK team for making this release possible!</p>
+
+<?php hdelim(); ?>
+
 <h1>PHP-GTK Teams for the PHPThrowdown</h1>
 <p><span class="newsDate">[12-January-2007]</span>
 The <a href="http://www.phpthrowdown.com">PHPThrowdown</a> is a competition to see
@@ -332,18 +358,6 @@ If you are interested in helping test PHP-GTK 2 on Windows, please send your com
     <a href="http://marc.theaimsgroup.com/?l=php-gtk-doc&amp;m=111316563116664&amp;w=2">post</a>
     to the documentation mailing list for more details.
    </p>
-
-<?php hdelim(); ?>
-
-<h1>PHP-GTK 2 Making Progress</h1>
-
-<p><span class="newsDate">[21-Mar-2005]</span> PHP-GTK 2 is making great strides
-   toward a working release. Andrei's relentless work has lead to a current CVS
-   version that can run non-trivial scripts. See this 
-   <a href="http://marc.theaimsgroup.com/?l=php-gtk-general&amp;m=111006182204075&amp;w=2">posting</a>
-   to the general mailing list for an example. Take a look at the
-   <a href="http://cvs.php.net/co.php/php-gtk/ChangeLog">change log</a> for the
-   latest updates.</p>
 
 <?php
 
