@@ -167,6 +167,15 @@ PHP-GTK Cookbook.</li>
 <h2>Print Publications</h2>
 
 <ul>
+
+<li>&quot;<?php print_link('http://www.phparch.com/issue.php?mid=86', 'Application Development with PHP-GTK 2 - Part 2'); ?>&quot;
+     by Anant Narayanan<br />
+    <em>PHP|Architect</em>, 08.2006</li>
+
+<li>&quot;<?php print_link('http://www.phparch.com/issue.php?mid=84', 'Application Development with PHP-GTK 2 - Part 1'); ?>&quot;
+     by Anant Narayanan<br />
+    <em>PHP|Architect</em>, 07.2006</li>
+
 <li>&quot;<?php print_link('http://phpmagazin.de/itr/online_artikel/psecom,id,831,nodeid,62.html', 'Aktuelle Entwicklungen beim PHP-GTK'); ?>&quot;
      by Christian Weiske<br />
     <em>PHP Magazin</em>, 07.2006</li>
