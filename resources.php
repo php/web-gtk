@@ -168,13 +168,15 @@ PHP-GTK Cookbook.</li>
 
 <ul>
 
-<li>&quot;<?php print_link('http://www.phparch.com/issue.php?mid=86', 'Application Development with PHP-GTK 2 - Part 2'); ?>&quot;
+<li>&quot;<?php print_link('http://www.php-mag.net/magphpde/psecom,id,20,archive,2,noeid,20,.html', 'PHP-GTK 2 Extensions'); ?>&quot;
      by Anant Narayanan<br />
-    <em>PHP|Architect</em>, 08.2006</li>
+    <em>International PHP Magazine</em>, 05.2007</li>
 
-<li>&quot;<?php print_link('http://www.phparch.com/issue.php?mid=84', 'Application Development with PHP-GTK 2 - Part 1'); ?>&quot;
+<li>&quot;Application Development with PHP-GTK 2 - 
+    <?php print_link('http://www.phparch.com/issue.php?mid=84', 'Part 1'); ?> - &nbsp;
+    <?php print_link('http://www.phparch.com/issue.php?mid=86', 'Part 2'); ?> &quot;
      by Anant Narayanan<br />
-    <em>PHP|Architect</em>, 07.2006</li>
+    <em>PHP|Architect</em>, 07-08.2006</li>
 
 <li>&quot;<?php print_link('http://phpmagazin.de/itr/online_artikel/psecom,id,831,nodeid,62.html', 'Aktuelle Entwicklungen beim PHP-GTK'); ?>&quot;
      by Christian Weiske<br />
