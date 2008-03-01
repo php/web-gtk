@@ -5,7 +5,8 @@ commonHeader('Downloads');
 ?>
 
 <h1>Download</h1>
-<h2>Latest Development Release</h2>
+
+<h2>PHP-GTK 2</h2>
 
 <p>
 <b>GTK+ version:</b>
@@ -21,21 +22,18 @@ the PHP_5_2 branch in CVS will work, too.
 </p>
 
 <ul>
-<li><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-2.0.0beta.tar.gz', 'php-gtk-2.0.0 beta Source for Gtk+ 2.10 upwards'); ?> - 17-Jun-2007</li>
-<li><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-2.0.0beta-2_8.tar.gz', 'php-gtk-2.0.0 beta Source for Gtk+ 2.8 upwards'); ?> - 17-Jun-2007</li>
-<li><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-2.0.0beta-win32.zip', 'php-gtk-2.0.0 beta Windows binary with Gtk+ 2.10'); ?> - 20-Jun-2007</li>
-<li><?php print_link('http://gtk.php.net/do_download.php?download_file=php-extensions-nts-5.2.3-win32.zip', 'php-gtk-2.0.0 beta Windows binary extensions pack'); ?> - 20-Jun-2007</li>
-<li><?php print_link('http://gtk.php.net/do_download.php?download_file=php-debug-pack-nts-5.2.3-win32.zip', 'php-gtk-2.0.0 beta Windows binary debug pack'); ?> - 20-Jun-2007</li>
+<li><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-2.0.0.tar.gz', 'php-gtk-2.0.0 Source for Gtk+ 2.6 upwards'); ?> - 29-Feb-2008</li>
+<li><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-2.0.0-win32-nts.zip', 'php-gtk-2.0.0 Windows binary pack'); ?> - 29-Feb-2008</li>
 </ul>
 
 <hr />
 
-<h2>Latest Stable Release</h2>
+<h2>PHP-GTK 1</h2>
 
 <p>
 <b>GTK+ version:</b>
 <br />
-PHP-GTK currently supports GTK+ 1.2.6 or greater. You can obtain the
+PHP-GTK 1 currently supports GTK+ 1.2.6 or greater. You can obtain the
 latest stable release of GTK+ 1.2.x from
 <?php print_link('ftp://ftp.gtk.org/pub/gtk/v1.2/'); ?>.
 </p>

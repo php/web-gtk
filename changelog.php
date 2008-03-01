@@ -5,6 +5,16 @@ commonHeader('PHP-GTK Changelog');
 ?>
 
 <h1>PHP-GTK ChangeLog</h1>
+<a name="2.0.0"></a>
+<h3>Version 2.0.0 "leap day special"</h3>
+<b>29-February-2008</b>
+<ul>
+<li>API coverage improved</li>
+<li>Support for GTK+ up to 2.12</li>
+<li>Custom GTypes, signals and properties support (see demos/examples)</li>
+<li>Shared extensions are now prefixed with "php_gtk_"</li>
+<li>Some constants moved to GObject:: class</li>
+</ul>
 
 <a name="2.0.0beta"></a>
 <h3>Version 2.0.0beta "extension extravaganza"</h3>

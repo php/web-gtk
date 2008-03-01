@@ -57,6 +57,26 @@ commonHeader();
 
 ?>
 
+<h1>PHP-GTK 2 is Here!</h1>
+<p><span class="newsDate">[29-February-2008]</span>
+After a long development and QA cycle, we are proud to release <a href="http://gtk.php.net/download.php">version 2.0</a> of
+PHP-GTK. This release, named <em><a href="changelog.php">leap day special</a></em>, marks PHP-GTK 2 as stable and comes with support for
+<a href="http://gtk.org/">GTK+</a>
+versions 2.6 through 2.12. Although support for more recent versions than 2.8
+is not 100% complete, we hope to cover as much of the API as possible in
+upcoming releases.</p>
+
+<p>This release comes with support for custom GTypes and signals, more API
+coverage, and the usual slew of bug fixes. Take a look at the Changelog for
+detailed information on changes since the beta.</p>
+
+<p>If you're looking to learn PHP-GTK, the <a href="http://gtk.php.net/docs.php">documentation</a> is a great place to
+start. There's also an excellent <a href="http://www.amazon.com/gp/product/1590596137/">book from Apress by Scott Mattocks</a> on the
+topic. We hope you will enjoy developing applications with PHP-GTK 2. Please
+don't hesitate to file bug reports at the <a href="http://bugs.php.net/">bug tracker</a>, or give us feedback on
+the <a href="http://gtk.php.net/resources.php#lists">php-gtk-general</a> mailing list. Have fun! 
+</p>
+
 <h1>PHP-GTK 2 Beta!</h1>
 <p><span class="newsDate">[17-June-2007]</span>
 The PHP-GTK team is proud to announce the release of a beta version of

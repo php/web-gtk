@@ -10,6 +10,7 @@
     <description>The PHP-GTK extension Web site</description>
     <items>
         <rdf:Seq>
+            <rdf:li rdf:resource="http://gtk.php.net/about/news-2008-02-29" />
             <rdf:li rdf:resource="http://gtk.php.net/about/news-2007-06-17" />
             <rdf:li rdf:resource="http://gtk.php.net/about/news-2006-07-17" />
             <rdf:li rdf:resource="http://gtk.php.net/about/news-2006-07-15" />
@@ -28,6 +29,27 @@
         </rdf:Seq>
     </items>
 </channel>
+
+<item rdf:about="http://gtk.php.net/about/news-2007-06-17">
+ <title>PHP-GTK 2 is Here!</title>
+ <link>http://gtk.php.net</link>
+ <description>
+After a long development and QA cycle, we are proud to release version 2.0 of PHP-GTK.
+This release marks PHP-GTK 2 as stable and comes with support for GTK+ versions 2.6
+through 2.12. Although support for more recent versions than 2.8 is not 100% complete, we
+hope to cover as much of the API as possible in upcoming releases.
+
+This release comes with support for custom GTypes and signals, more API coverage, and the
+usual slew of bug fixes. Take a look at the Changelog for detailed information on changes
+since the beta.
+
+If you're looking to learn PHP-GTK, the documentation is a great place to start. There's
+also an excellent book from Apress by Scott Mattocks on the topic. We hope you will enjoy
+developing applications with PHP-GTK 2. Please don't hesitate to file bug reports at the
+bug tracker, or give us feedback on the php-gtk-general mailing list. Have fun! 
+ </description>
+ <dc:date>2008-02-29</dc:date>
+</item>
 
 <item rdf:about="http://gtk.php.net/about/news-2007-06-17">
  <title>PHP-GTK 2 Beta!</title>
