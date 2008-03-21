@@ -57,6 +57,14 @@ commonHeader();
 
 ?>
 
+<h1>Summer of Code 2008</h1>
+<p><span class="newsDate">[21-March-2008]</span>
+The 2008 edition of the <a href="http://code.google.com/soc/2008/">Google Summer of Code</a> is here! The PHP project will be
+<a href="http://code.google.com/soc/2008/php/about.html">participating</a> and you can propose PHP-GTK related projects.
+If you're an <a href="http://code.google.com/opensource/gsoc/2008/faqs.html#0.1_eligibility">eligible</a> student, take a look
+at some of our <a href="http://wiki.php.net/gsoc/2008#php-gtk">project ideas</a> to get started. Mentors will be available
+on the development mailing list and on IRC for feedback on your application. All the best!</p>
+
 <h1>PHP-GTK 2 is Here!</h1>
 <p><span class="newsDate">[29-February-2008]</span>
 After a long development and QA cycle, we are proud to release <a href="http://gtk.php.net/download.php">version 2.0</a> of
