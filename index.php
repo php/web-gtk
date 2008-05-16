@@ -362,6 +362,7 @@ If you are interested in helping test PHP-GTK 2 on Windows, please send your com
  used as simple documentation. 
 </p>
 
+<!--
 <?php hdelim(); ?>
 
 <h1>A Message from Andrei</h1>
@@ -386,6 +387,7 @@ If you are interested in helping test PHP-GTK 2 on Windows, please send your com
     <a href="http://marc.theaimsgroup.com/?l=php-gtk-doc&amp;m=111316563116664&amp;w=2">post</a>
     to the documentation mailing list for more details.
    </p>
+-->
 
 <?php
 

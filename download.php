@@ -22,6 +22,12 @@ the PHP_5_2 branch in CVS will work, too.
 </p>
 
 <ul>
+<li><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-2.0.1.tar.gz', 'php-gtk-2.0.1 Source'); ?> - 15-May-2008</li>
+<li><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-2.0.1-win32-nts.zip', 'php-gtk-2.0.1 Windows binary pack'); ?> - 16-May-2008</li>
+<li><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-2.0.1-win32-extensions.zip', 'php-gtk-2.0.1 Windows binary extensions pack'); ?> - 16-May-2008</li>
+</ul>
+
+<ul>
 <li><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-2.0.0.tar.gz', 'php-gtk-2.0.0 Source for Gtk+ 2.6 upwards'); ?> - 29-Feb-2008</li>
 <li><?php print_link('http://gtk.php.net/do_download.php?download_file=php-gtk-2.0.0-win32-nts.zip', 'php-gtk-2.0.0 Windows binary pack'); ?> - 29-Feb-2008</li>
 </ul>
