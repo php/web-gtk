@@ -5,6 +5,16 @@ commonHeader('PHP-GTK Changelog');
 ?>
 
 <h1>PHP-GTK ChangeLog</h1>
+<a name="2.0.1"></a>
+<h3>Version 2.0.1 "you knew this was coming"</h3>
+<b>16-May-2008</b>
+<ul>
+<li>GtkBuilder support</li>
+<li>Support for the new GTK+ 2.12 tooltips API</li>
+<li>Prevent segfaults when clone is used</li>
+<li>Miscellaneous bug fixes, and support for PHP 5.3+ features</li>
+</ul>
+
 <a name="2.0.0"></a>
 <h3>Version 2.0.0 "leap day special"</h3>
 <b>29-February-2008</b>

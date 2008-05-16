@@ -57,6 +57,18 @@ commonHeader();
 
 ?>
 
+<h1>PHP-GTK 2.0.1 released</h1>
+<p><span class="newsDate">[16-May-2008]</span>
+PHP-GTK 2.0.1 has been released, head over to the <a href="download.php">download</a> page and get your copy.
+This release, named <em><a href="changelog.php">you knew this was coming</a></em>, adds full support for
+GtkBuilder and tooltips; in addition to a slew of bug fixes and overrides.</p>
+<p>Coming up next: <a href="http://openaki.wordpress.com/">Akshat Gupta</a>, our student for the Summer of Code 
+program this year will be working on <a href="http://cairographics.org/">cairo</a> support for PHP-GTK. We're
+still looking for more people to help us out with development and documentation - please
+<a href="resources.php">get in touch</a> with us if you're interested.</p>
+  
+<?php hdelim(); ?>
+
 <h1>Summer of Code 2008</h1>
 <p><span class="newsDate">[21-March-2008]</span>
 The 2008 edition of the <a href="http://code.google.com/soc/2008/">Google Summer of Code</a> is here! The PHP project will be
@@ -64,6 +76,8 @@ The 2008 edition of the <a href="http://code.google.com/soc/2008/">Google Summer
 If you're an <a href="http://code.google.com/opensource/gsoc/2008/faqs.html#0.1_eligibility">eligible</a> student, take a look
 at some of our <a href="http://wiki.php.net/gsoc/2008#php-gtk">project ideas</a> to get started. Mentors will be available
 on the development mailing list and on IRC for feedback on your application. All the best!</p>
+
+<?php hdelim(); ?>
 
 <h1>PHP-GTK 2 is Here!</h1>
 <p><span class="newsDate">[29-February-2008]</span>
@@ -84,6 +98,8 @@ topic. We hope you will enjoy developing applications with PHP-GTK 2. Please
 don't hesitate to file bug reports at the <a href="http://bugs.php.net/">bug tracker</a>, or give us feedback on
 the <a href="http://gtk.php.net/resources.php#lists">php-gtk-general</a> mailing list. Have fun! 
 </p>
+
+<?php hdelim(); ?>
 
 <h1>PHP-GTK 2 Beta!</h1>
 <p><span class="newsDate">[17-June-2007]</span>
