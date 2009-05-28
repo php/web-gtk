@@ -64,6 +64,8 @@ very much still alive, but we're waiting for PHP 5.3 to come out, and also some
 work needs to be done on the Cairo extension before a new release can be made.
 This should be completed soon. This release will come with support for GTK+ 2.14
 and 2.16, Cairo, and PHP 5.3.</p>
+<p>The next release will also include official installers for Windows and Mac OSX, 
+and an installer script (thank you bob) for Linux.</p>
 <p>If you are interested in helping out with the project, there are many ways
 to get involved. Contributions of code and tests are always welcome. You can
 get in touch on our <a href="http://news.php.net/php.gtk.dev">development
