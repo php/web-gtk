@@ -57,6 +57,23 @@ commonHeader();
 
 ?>
 
+<h1>We're still here!</h1>
+<p><span class="newsDate">[28-May-2009]</span>
+Rumours of PHP-GTK's death have been greatly exaggerated! The project is
+very much still alive, but we're waiting for PHP 5.3 to come out, and also some
+work needs to be done on the Cairo extension before a new release can be made.
+This should be completed soon. This release will come with support for GTK+ 2.14
+and 2.16, Cairo, and PHP 5.3.</p>
+<p>If you are interested in helping out with the project, there are many ways
+to get involved. Contributions of code and tests are always welcome. You can
+get in touch on our <a href="http://news.php.net/php.gtk.dev">development
+mailing list</a>.  We're also looking at improving the PHP-GTK documentation
+and website, which has its own <a
+href="http://news.php.net/php.gtk.doc">mailing list</a> too. Alternatively,
+join us in #php-gtk on the Freenode IRC network.</p>
+
+<?php hdelim(); ?>
+
 <h1>PHP-GTK 2.0.1 released</h1>
 <p><span class="newsDate">[16-May-2008]</span>
 PHP-GTK 2.0.1 has been released, head over to the <a href="download.php">download</a> page and get your copy.
