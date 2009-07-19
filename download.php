@@ -65,33 +65,26 @@ PHP-GTK 1 requires PHP 4.0.5 or greater, with versions from
 
 <p>
 Alternatively, you can get the latest and greatest 
-version of PHP-GTK directly from the PHP CVS server.
+version of PHP-GTK directly from the PHP SVN server.
 </p>
 
 <ol>
-
-<li>
-Log in to the PHP anonymous CVS server (use <b>phpfi</b> as the password):
-<pre>
-cvs -d :pserver:cvsread@cvs.php.net:/repository login
-</pre>
-</li>
 
 <li>
 Obtain the PHP-GTK tree.
 <br />
 <br />For PHP-GTK 2:
 <pre>
-cvs -d :pserver:cvsread@cvs.php.net:/repository co php-gtk
+svn co http://svn.php.net/repository/gtk/php-gtk/trunk php-gtk
 </pre>
 For PHP-GTK 1:
 <pre>
-cvs -d :pserver:cvsread@cvs.php.net:/repository co -r PHP_GTK_1 php-gtk
+svn co http://svn.php.net/repository/gtk/php-gtk/branches/PHP_GTK_1 php-gtk
 </pre>
 </li>
 
 <li>
-Move into the source tree:
+cd into the source tree:
 <pre>
 cd php-gtk
 </pre>
