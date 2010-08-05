@@ -57,6 +57,21 @@ commonHeader();
 
 ?>
 
+<h1>A Year Later...</h1>
+<p><span class="newsDate">[5-Aug-2010]</span>
+Dropping by to let the PHP-GTK community know that development <em>is</em>
+still happening! The project is being split up into different projects, 
+<a href="http://pecl.php.net/cairo">PECL/Cairo</a>, GLib, GObject, etc.</p>
+<p>While development is slow, there are still a few crazy people hacking away
+into the early hours.</p>
+<p>Sit tight!</p>
+
+<p>P.S. If you find that you're crazy enough to want to help the PHP-GTK
+project get back into rhythm, the guys are very welcoming. Find us on the 
+#php-gtk channel on Freenode.</p>
+
+<?php hdelim(); ?>
+
 <h1>We're still here!</h1>
 <p><span class="newsDate">[28-May-2009]</span>
 Rumours of PHP-GTK's death have been greatly exaggerated! The project is
