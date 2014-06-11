@@ -56,6 +56,7 @@ if ($user = get_user()) {
 
 	if ($id) {
 		$db = sqlite_open($notesfile);
+		$id = (int)$id;
 		$query = sqlite_query($db, "SELECT * FROM notes WHERE id = '$id'");
 		$row = sqlite_fetch_array($query, SQLITE_ASSOC);
 		if (sqlite_exec($db, "DELETE FROM notes WHERE id = '$id'")) {
@@ -81,7 +82,7 @@ if ($user = get_user()) {
 
 	if (isset($_GET['edit']) && is_numeric($_GET['edit'])) {
 		$db = sqlite_open($notesfile);
-		$query = sqlite_query($db, "SELECT * FROM notes WHERE id = ".$_GET['edit']);
+		$query = sqlite_query($db, "SELECT * FROM notes WHERE id = ".(int)$_GET['edit']);
 		$row = sqlite_fetch_array($query, SQLITE_ASSOC);
 		$email = stripslashes($row['email']);
 		$comment = stripslashes($row['comment']);
@@ -114,7 +115,7 @@ if ($user = get_user()) {
 
 	if (isset($_POST['modify'])) {
 		$db = sqlite_open($notesfile);
-		$query = sqlite_query($db, "SELECT * FROM notes WHERE id = ".$_POST['id']);
+		$query = sqlite_query($db, "SELECT * FROM notes WHERE id = ".(int)$_POST['id']);
 		$row = sqlite_fetch_array($query, SQLITE_ASSOC);
 		$add_url = "\n\nhttp://gtk.php.net/manual/{$row['lang']}/{$row['page']}\n";
 		$note = htmlentities($_POST['note'], ENT_COMPAT, 'UTF-8');

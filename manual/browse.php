@@ -1,5 +1,12 @@
 <?php
 
+// exit when not included from a page where we already has $order set
+if (!isset($order)) {
+	exit;
+}
+
+$order = sqlite_escape_string($order);
+
 $last = '';
 $used = array();
 
@@ -14,7 +21,7 @@ if (strlen($y) != 4 || !preg_match("'[\d]{4}'", $y)) {
 }
 
 $db = sqlite_open($notesfile);
-$query = sqlite_query($db, "SELECT DISTINCT $order FROM notes");
+$query = sqlite_query($db, 'SELECT DISTINCT "'.$order.'" FROM notes');
 
 while ($row = sqlite_fetch_array($query, SQLITE_ASSOC)) {
 	if ($order == 'date') {
