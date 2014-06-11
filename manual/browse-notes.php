@@ -90,9 +90,9 @@ if ($user = get_user()) {
 			$email = null;
 		}
 
-		$get = isset($_GET['let']) ? "?let={$_GET['let']}" : null;
+		$get = isset($_GET['let']) ? "?let=".urlencode($_GET['let']) : null;
 		if (!$get) {
-			$get = isset($_GET['y']) ? "?y={$_GET['y']}" : null;
+			$get = isset($_GET['y']) ? "?y=".urlencode($_GET['y']) : null;
 		}
 		if ($get) $get .= $queue ? '&q': null;
 		else $get .= $queue ? '?q': null;
