@@ -67,10 +67,18 @@ function verify_password($user, $pass, $ref) {
 
 function get_user() {
 
+	// TODO: kill magic cookie
 	if (isset($_COOKIE['PHP-GTK'])) {
 		list($user, $pass) = explode(':', base64_decode($_COOKIE['PHP-GTK']));
-		$stored = file_get_contents(DB_DIR."/$user.txt");
-		if ($pass == $stored) {
+		// using the same username validation as done for new accounts on php.net
+		if (!preg_match('!^[a-z]\w+$!', $_POST['id'])) {
+			return false;
+		}
+		// TODO: kill file based password storage
+		if (!file_exists(DB_DIR."/$user.txt")) {
+			return false;
+		}
+		if ($pass === file_get_contents(DB_DIR."/$user.txt")) {
 			return $user;
 		}
 	}
