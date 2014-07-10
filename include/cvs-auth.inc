@@ -71,7 +71,7 @@ function get_user() {
 	if (isset($_COOKIE['PHP-GTK'])) {
 		list($user, $pass) = explode(':', base64_decode($_COOKIE['PHP-GTK']));
 		// using the same username validation as done for new accounts on php.net
-		if (!preg_match('!^[a-z]\w+$!', $_POST['id'])) {
+		if (!preg_match('!^[a-z]\w+$!', $user)) {
 			return false;
 		}
 		// TODO: kill file based password storage
