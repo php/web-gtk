@@ -7,7 +7,7 @@ require_once('cvs-auth.inc');
 commonHeader("Administration Login");
 print "<br />\n";
 
-if (!isset($_COOKIE['PHP-GTK'])) {
+if (|get_user()) {
 	if (isset($_POST['submit']) && isset($_POST['pass'])) {
 		$user = verify_password(htmlentities($_POST['user']), htmlentities($_POST['pass']), $_SERVER['PHP_SELF']);
 	} else {
