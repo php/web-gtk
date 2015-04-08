@@ -1,9 +1,0 @@
-Welcome to PmWiki.
-
-The local/ subdirectory is a good place to put your local PmWiki site
-configuration files and scripts.  It's better to put your customizations
-and modifications here than to directly edit the files in the scripts/ 
-subdirectory, so that PmWiki updates won't accidentally overwrite your
-modifications.
-
-This is pmwiki-1.0.5.

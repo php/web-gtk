@@ -1,8 +1,0 @@
-PmWiki 		http://www.pmwiki.org/wiki/PmWiki/
-Wiki 		http://c2.com/cgi/wiki?
-Meatball 	http://www.usemod.com/cgi-bin/mb.pl?
-MeatballWiki 	http://www.usemod.com/cgi-bin/mb.pl?
-UseMod 		http://www.usemod.com/cgi-bin/wiki.pl?
-ISBN		http://www.amazon.com/exec/obidos/tg/detail/-/
-Wikipedia	http://www.wikipedia.com/wiki/
-Cookbook        http://www.pmwiki.org/wiki/Cookbook/$1

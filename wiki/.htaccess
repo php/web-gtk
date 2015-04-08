@@ -1,4 +1,0 @@
-# AcceptPathInfo on
-RewriteEngine on
-RewriteBase /wiki/
-RewriteRule ^([A-Z].*) /local/Web/sites/php-gtk-web/wiki/pmwiki.php?pagename=$1 [L,qsappend]
