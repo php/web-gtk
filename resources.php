@@ -90,11 +90,6 @@ PHP-GTK 2 packages available from PEAR.</li>
 <h3>Documentation/Help</h3>
 
 <ul>
-<!--
-<li><?php print_link('http://gtk.php.net/wiki/', 'PHP-GTK Wiki') ?><br />
-This site allows the PHP-GTK community to help contribute documentation to the
-PHP-GTK project.</li>
--->
 
 <li><?php print_link('http://developer.gnome.org/doc/API/2.0/gtk/index.html', 'GTK+ Reference Manual'); ?><br />
 The GTK+ manual with a list of all widgets and their corresponding functions/attributes.</li>

@@ -30,13 +30,6 @@ if(isset($pattern) && ($pattern) && isset($show) && ($show == "whole-site")) {
 	exit;
 }
 
-if(isset($pattern) && ($pattern) && isset($show) && ($show == "wiki")) {
-    $query = urlencode($pattern);
-    $location = '/wiki/Main/SearchWiki?text=' . $query;
-	Header("Location: ".$location);
-	exit;
-}
-
 if (isset($pattern) && ($pattern)) {
 	$location = "http://marc.theaimsgroup.com/";
 	if (substr($show, -5) == "-list") {

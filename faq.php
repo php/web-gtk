@@ -156,10 +156,6 @@ the command line'</a> on the main PHP site.
   <li>If you are planning to launch on an association, decide which extension you
   want to use for your scripts. Be aware that other applications register .php, so
   something like .php-gtk might be a better option.</li>
-  <!--
-  <li>Check out the Code Snippets and Code Hints on the
-  <a href="http://gtk.php.net/wiki/">PHP-GTK Wiki page</a>.</li>
-  -->
   <li>You can set your scripts to use Win32 themes, courtesy of Christian Weiske.
   Check out the info page at:<br/>
   <a href="http://www.cweiske.de/phpgtk_themes.htm ">http://www.cweiske.de/phpgtk_themes.htm </a></li>

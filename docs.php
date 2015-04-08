@@ -24,25 +24,15 @@ $SIDEBAR_DATA = <<< EOF
     information and those questions that seem to be on most people&#8217;s 
     minds.</p>
 
-<!--
-<p>The <a href="/wiki/">PHP-GTK Wiki</a> also provides an <a href="/wiki/PhpGtk/PhpGtkFaq">extended 
-    FAQ</a> section.</p>
--->
-
 <h3>Changelog</h3>
 <p>You can also find the <a href="/changelog.php">PHP-GTK Changelog</a> useful, 
     if you would like to look up changes between various versions of 
     PHP-GTK.</p>
 
-<h3>More Information</h3>
-<p>The <a href="/wiki/">PHP-GTK Wiki</a> is an excellent resource and 
-    addendum to the documentation listed here.</p>
-
 <h3>Sample Code</h3>
 <p>Sample code and example scripts are often the best way to learn PHP-GTK. 
     The manual comes complete with a <a href="/manual1/en/tutorials.php">Tutorials
-    section</a> that contains some sample code.  However, the Wiki also has a 
-    <a href="/wiki/Code">code section</a> dedicated to samples.</p>
+    section</a> that contains some sample code.</p>
 EOF;
 
 commonHeader("Documentation");
