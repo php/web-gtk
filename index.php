@@ -57,6 +57,15 @@ commonHeader();
 
 ?>
 
+<h1>PHP-GTK is not dead.</h1>
+<span class="newsDate">[5-Jan-2015]</span>
+<b><font color=blue>Just had a short break to return stronger.</font></b><br />
+We are gradually correcting the gtk.php.net site links.<br />
+We have beta builds with PHP 5.4 and PHP 5.5.<br />
+The developers that can help in php-gtk source code have the best support structure in gtihub:<br />
+https://github.com/php/php-gtk-src<br />
+Join us.<br />
+
 <h1>A Year Later...</h1>
 <p><span class="newsDate">[5-Aug-2010]</span>
 Dropping by to let the PHP-GTK community know that development <em>is</em>
