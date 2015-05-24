@@ -9,7 +9,7 @@ commonHeader('Resources');
 <p>
 There are various resources for PHP-GTK.  Below are 
 listed the ones that we are aware of.  If you know of others 
-please <?php print_email('php-gtk-webmaster_at_lists_dot_php_dot_net', 'email the webmaster'); ?>.
+please <?php print_email('php-gtk-webmaster@lists.php.net', 'email the webmaster'); ?>.
 </p>
 
 <a name="lists"></a>
@@ -34,30 +34,30 @@ to the address listed in the SUBSCRIBE column.</p>
   <tr valign="top">
    <td><strong>php-gtk-general</strong></td>
    <td>For general discussion about using PHP-GTK.</td>
-   <td><?php print_email('php-gtk-general_at_lists_dot_php_dot_net'); ?></td>
-   <td><?php print_email('php-gtk-general-subscribe_at_lists_dot_php_dot_net'); ?></td>
-   <td><?php print_link('http://marc.theaimsgroup.com/?l=php-gtk-general', 'MARC'); ?></td>
+   <td><?php print_email('php-gtk-general@lists.php.net'); ?></td>
+   <td><?php print_email('php-gtk-general-subscribe@lists.php.net'); ?></td>
+   <td><?php print_link('http://marc.info/?l=php-gtk-general', 'MARC'); ?></td>
   </tr>
   <tr valign="top">
    <td><strong>php-gtk-dev</strong></td>
    <td>For the discussion about the development of PHP-GTK itself.</td>
-   <td><?php print_email('php-gtk-dev_at_lists_dot_php_dot_net'); ?></td>
-   <td><?php print_email('php-gtk-dev-subscribe_at_lists_dot_php_dot_net'); ?></td>
-   <td><?php print_link('http://marc.theaimsgroup.com/?l=php-gtk-dev', 'MARC'); ?></td>
+   <td><?php print_email('php-gtk-dev@lists.php.net'); ?></td>
+   <td><?php print_email('php-gtk-dev-subscribe@lists.php.net'); ?></td>
+   <td><?php print_link('http://marc.info/?l=php-gtk-dev', 'MARC'); ?></td>
   </tr>
   <tr valign="top">
    <td><strong>php-gtk-doc</strong></td>
    <td>For discussion about the writing and translation of the PHP-GTK documentation.</td>
-   <td><?php print_email('php-gtk-doc_at_lists_dot_php_dot_net'); ?></td>
-   <td><?php print_email('php-gtk-doc-subscribe_at_lists_dot_php_dot_net'); ?></td>
-   <td><?php print_link('http://marc.theaimsgroup.com/?l=php-gtk-doc', 'MARC'); ?></td>
+   <td><?php print_email('php-gtk-doc@lists.php.net'); ?></td>
+   <td><?php print_email('php-gtk-doc-subscribe@lists.php.net'); ?></td>
+   <td><?php print_link('http://marc.info/?l=php-gtk-doc', 'MARC'); ?></td>
   </tr>
   <tr valign="top">
    <td><strong>php-gtk-cvs</strong></td>
    <td>Has all CVS commits to PHP-GTK and related projects posted to it automatically.</td>
-   <td><?php print_email('php-gtk-cvs_at_lists_dot_php_dot_net'); ?></td>
-   <td><?php print_email('php-gtk-cvs-subscribe_at_lists_dot_php_dot_net'); ?></td>
-   <td><?php print_link('http://marc.theaimsgroup.com/?l=php-gtk-cvs', 'MARC'); ?></td>
+   <td><?php print_email('php-gtk-cvs@lists.php.net'); ?></td>
+   <td><?php print_email('php-gtk-cvs-subscribe@lists.php.net'); ?></td>
+   <td><?php print_link('http://marc.info/?l=php-gtk-cvs', 'MARC'); ?></td>
   </tr>
  </tbody>
 </table>
@@ -80,9 +80,6 @@ likely answer the questions you have.
 <li><?php print_link('http://www.cweiske.de/phpgtk.htm', 'PHP-GTK Application Downloads at cweiske.de') ?><br />
 This site provides several PHP-GTK freeware applications for download, as well as some reusable code for PHP-GTK programmers</li>
 
-<li><?php print_link('http://www.gnope.org', 'Gnope.org'); ?><br />
-PHP-GTK Windows installer and support forum. Gnope.org also provides application downloads via their PEAR channel.</li>
-
 <li><?php print_link('http://pear.php.net/search.php?q=gtk2&amp;in=packages', 'PEAR PHP-GTK 2 Packages'); ?><br />
 PHP-GTK 2 packages available from PEAR.</li>
 </ul>
@@ -98,12 +95,6 @@ The GTK+ manual with a list of all widgets and their corresponding functions/att
 This list might be useful if you have a certain GTK+ question or problem that
 PHP-GTK list has no information about.</li>
 
-<li><?php print_link('http://www.writingup.com/blog/phpgtk2', 'Ron Tarrant\'s PHP-GTK 2 Blog'); ?><br />
-Ron Tarrant's blog contains many articles and tutorials for PHP-GTK 2 developers.</li>
-
-<li><?php print_link('http://crisscott.com/category/php-gtk/', 'Crisscott.com'); ?><br />
-PHP-GTK weekly news summaries.</li>
-
 <li><?php print_link('http://www.kksou.com/php-gtk2/index.php', 'kksou.com'); ?><br />
 PHP-GTK Cookbook.</li>
 </ul>
@@ -115,7 +106,6 @@ PHP-GTK Cookbook.</li>
 
 <li><?php print_link('http://www.php-gtk.eu/', 'Worldwide PHP-GTK 2 community site'); ?></li>
 
-<li><?php print_link('http://www.php-gtk2.de', 'PHP-GTK 2 link list'); ?></li>
 </ul>
 
 <a name="onlinearticles"></a>
@@ -127,21 +117,11 @@ PHP-GTK Cookbook.</li>
                    'Develop Desktop GUI Apps with PHP-GTK, the Standalone PHP'); ?>&quot;
     by Gregory L. Magnusson</li>
 
-<li>&quot;<?php print_link('http://www.goldweb.com.au/~davidj/articles/html/1.html',
-                   'Introductory PHP-GTK'); ?>&quot; 
-    by David Jorm</li>
 
 <li>&quot;<?php print_link('http://www.webmasterbase.com/article/697',
                    'Build Cross-Platform Windowed Apps with PHP'); ?>&quot;
     by Mitchell Harper</li>
 
-<li>&quot;<?php print_link('http://products.magnet-i.com/phpgale/php-gtk_endliess_possibilities.pdf',
-                   'PHP-GTK: Endless Possibilities') ?>&quot;
-    by Nirav Mehta, Vaishali Master, and Piyush Shah</li>
-
-<li>&quot;<?php print_link('http://hades.phparch.com/ceres/public/article/index.php/art::php_gtk::what_is_php_gtk', 'What is PHP-GTK'); ?>&quot; by Scott Mattocks</li>
-
-<li>&quot;<?php print_link('http://hades.phparch.com/ceres/public/article/index.php/art::php_gtk::hello_php_gtk', 'Hello PHP-GTK 2'); ?>&quot; by Scott Mattocks</li>
 
 </ul>
 
@@ -153,7 +133,7 @@ PHP-GTK Cookbook.</li>
     by Scott Mattocks<br />
     <em>Apress</em>, 04.2006</li>
 
-<li>&quot;<?php print_link('http://www.kksou.com/php-gtk2/ebook/', 'PHP-GTK2 Demystified'); ?>&quot;
+<li>&quot;<?php print_link('http://www.kksou.com/php-gtk2/PHP-GTK2-Demystified/', 'PHP-GTK2 Demystified'); ?>&quot;
     by kksou<br />
     ebook, 02.2007</li>
 </ul>
@@ -161,66 +141,15 @@ PHP-GTK Cookbook.</li>
 <a name="printarticles"></a>
 <h2>Print Publications</h2>
 
-<ul>
-
-<li>&quot;<?php print_link('http://www.php-mag.net/magphpde/psecom,id,20,archive,2,noeid,20,.html', 'PHP-GTK 2 Extensions'); ?>&quot;
-     by Anant Narayanan<br />
-    <em>International PHP Magazine</em>, 05.2007</li>
-
-<li>&quot;Application Development with PHP-GTK 2 - 
-    <?php print_link('http://www.phparch.com/issue.php?mid=84', 'Part 1'); ?> - &nbsp;
-    <?php print_link('http://www.phparch.com/issue.php?mid=86', 'Part 2'); ?> &quot;
-     by Anant Narayanan<br />
-    <em>PHP|Architect</em>, 07-08.2006</li>
-
-<li>&quot;<?php print_link('http://phpmagazin.de/itr/online_artikel/psecom,id,831,nodeid,62.html', 'Aktuelle Entwicklungen beim PHP-GTK'); ?>&quot;
-     by Christian Weiske<br />
-    <em>PHP Magazin</em>, 07.2006</li>
-
-<li>&quot;<?php print_link('http://www.phpmagazin.de/itr/ausgaben/psecom,id,287,nodeid,60.html', 'Rapid Application Development Mit PHP-GTK'); ?>&quot;
-     by Christian Weiske<br />
-    <em>PHP Magazin</em>, 10.2005</li>
-
-<li>&quot;<?php print_link('http://www.phparch.com/issue.php?mid=52', 'Turning a Class Into an Application With PHP-GTK'); ?>&quot;
-     by Scott Mattocks<br />
-    <em>PHP|Architect</em>, 03.2005</li>
-
-<li>&quot;<?php print_link('http://www.phparch.com/issue.php?mid=42', 'PHP-GTK and the Glade GUI Builder: Building Client Applications with Style'); ?>&quot;
-    by Tony Leake<br />
-    <em>PHP|Architect</em>, 10.2004</li>
-
-<li>&quot;<?php print_link('http://www.php-mag.net/magphpde/magphpde_article/psecom,id,426,nodeid,21.html', 'Use your mouse'); ?>&quot;
-    by Steph Fox<br />
-    <em>International PHP Magazine</em>, 06.2004</li>
-
-<li>&quot;<?php print_link('http://www.phpmag.net/itr/ausgaben/psecom,id,212,nodeid,112.html', 'Making a GUI Mess of PHP: Building \'Stand-alone\' GUI Applications with PHP-GTK');?>&quot; 
-    by Ben Ramsey<br />
-    <em>International PHP Magazine</em>, 05.2004</li>
-
-<li>&quot;<?php print_link('http://www.phparch.com/issue.php?mid=24', 'Offline News Management with PHP-GTK'); ?>&quot;
-    by Morgan Tocker<br />
-    <em>PHP|Architect</em>, 02.2004</li>
-
-</ul>
-
 <a name="presentations"></a>
 <h2>Presentations</h2>
 
 <ul>
-<li><?php print_link('http://www.gravitonic.com/do_download.php?download_file=talks/php-quebec-2006/php-gtk-2.pdf', 'PHP Quebec 2006'); ?> &quot;PHP-GTK 2&quot; by Andrei Zmievski</li>
-
-<li><?php print_link('http://www.gravitonic.com/do_download.php?download_file=talks/phptropics2005/php-gtk2_phptropics2005.pdf', 'php|tropics 2005'); ?> &quot;Say Hello to PHP-GTK 2&quot; by Andrei Zmievski</li>
-
 <li><?php print_link('http://talks.php.net/show/vancouver-gtk', 'Vancouver 2004'); ?> &quot;PHP-GTK: Something Old, Something New&quot; by Andrei Zmievski</li>
 </ul>
 
 <a name="development"></a>
 <h2>Development</h2>
-
-<ul>
- <li><?php print_link('http://php-gtk2.de/manual/coverage.htm', 'PHP-Gtk2 documentation coverage analysis') ?></li>
- <li><?php print_link('http://php-gtk2.de/manual/classcoverage.htm', 'PHP-Gtk2 implementation coverage analysis') ?></li>
-</ul>
 
 <?php
 
