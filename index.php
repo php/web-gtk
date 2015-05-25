@@ -40,12 +40,12 @@ $SIDEBAR_DATA = <<< EOF
     the manual and the <strong>php-gtk-general</strong> mailing list.</p>
 
 <p>Any serious PHP-GTK related questions should be sent to 
-    <a href="mailto:andrei_at_php_dot_net">andrei at php dot net</a>, unless 
+    <a href="mailto:andrei@php.dot.net">andrei@php.dot.net</a>, unless 
     they are related to the manual, in which case they should be sent to 
-    <a href="mailto:sfox_at_php_dot_net">sfox at php dot net</a>. If you have 
+    <a href="mailto:sfox@php.net">sfox@php.net</a>. If you have 
     a question or suggestion for the website, you should contact 
-    <a href="mailto:php-gtk-webmaster_at_lists_dot_php_dot_net">
-    php-gtk-webmaster at lists dot php dot net</a>.</p>
+    <a href="mailto:php-gtk-webmaster@lists.php.net">
+    php-gtk-webmaster@lists.php.net</a>.</p>
 
 <h3>Syndication</h3>
 <p>Our news is available as an <a href="/news.rss">RSS feed</a>. Also, a 
@@ -58,7 +58,7 @@ commonHeader();
 ?>
 
 <h1>PHP-GTK is not dead.</h1>
-<span class="newsDate">[5-Jan-2015]</span>
+<span class="newsDate">[25-may-2015]</span>
 <b><font color=blue>Just had a short break to return stronger.</font></b><br />
 We are gradually correcting the gtk.php.net site links.<br />
 We have beta builds with PHP 5.4 and PHP 5.5.<br />
