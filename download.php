@@ -22,8 +22,10 @@ We do not assume any damage that may occur.<br />
 Please report bugs to php-gtk-dev@lists.php.net.<br />
 </p>
 <ul>
-<li><?php print_link('http://gtk.php.net/distributions/php54-gtk2.exe', 'php-gtk-2.0.1 with php 5.4'); ?> - 15-Jan-2015</li>
-<li><?php print_link('http://gtk.php.net/distributions/php55-gtk2.exe', 'php-gtk-2.0.1 with php 5.5'); ?> - 15-Jan-2015</li>
+<li><?php print_link('http://gtk.php.net/distributions/php54-gtk2.exe', 'php-gtk-2.0.1 with php 5.4 with installer'); ?> - 15-Jan-2015</li>
+<li><?php print_link('http://gtk.php.net/distributions/PHP54-GTK2.zip', 'php-gtk-2.0.1 with php 5.4 zipped'); ?> - 15-Jan-2015</li>
+<li><?php print_link('http://gtk.php.net/distributions/php55-gtk2.exe', 'php-gtk-2.0.1 with php 5.5 with installer'); ?> - 15-Jan-2015</li>
+<li><?php print_link('http://gtk.php.net/distributions/PHP55-GTK2.zip', 'php-gtk-2.0.1 with php 5.5 zipped'); ?> - 15-Jan-2015</li>
 <li><?php print_link('https://github.com/php/php-gtk-src/archive/master.zip', 'php-gtk-2.0.1 source'); ?> - 15-Jan-2015</li>
 </ul>
 <br />
