@@ -29,10 +29,10 @@ Please report bugs to php-gtk-dev@lists.php.net.<br />
 <br />
 
 To run the php-gtk with php 5.4 you may need to install:<br />
-Visual C++ Redistributable for Visual Studio 2012 Update 4 <br />
+Microsoft Visual C++ 2008 SP1 Redistributable Package (x86)<br />
 <pre>http://www.microsoft.com/en-us/download/details.aspx?id=5582</pre><br />
 To run the php-gtk with php 5.5 you may need to install:<br />
-Microsoft Visual C++ 2008 SP1 Redistributable Package (x86)<br />
+Visual C++ Redistributable for Visual Studio 2012 Update 4 <br />
 <pre>http://www.microsoft.com/en-us/download/details.aspx?id=30679</pre><br />
 <br /><p>
 PHP-GTK 2 requires PHP 5.1.x or greater. The latest version of
