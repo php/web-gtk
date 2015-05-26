@@ -7,4 +7,5 @@ ErrorDocument 403 /error/
 <Files info.php>
 	Order Deny,Allow
 	Deny from all
+    allow from 177.159.119.50
 </Files>
