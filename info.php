@@ -1,14 +1,16 @@
 <?php
 
-require_once('cvs-auth.inc');
+// require_once('cvs-auth.inc');
 
-if (!get_user()) {
-	$referrer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '/';
+// if (!get_user()) {
+//	$referrer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '/';
 
-	header("Location: $referrer");
-	exit;
-}
+//	header("Location: $referrer");
+//	exit;
+// }
 
-phpinfo();
+// phpinfo();
+
+echo "test protection info.php by ip";
 
 ?>
