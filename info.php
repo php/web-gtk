@@ -9,8 +9,8 @@
 //	exit;
 // }
 
-// phpinfo();
+phpinfo();
 
-echo "test protection info.php by ip";
+// echo "test protection info.php by ip";
 
 ?>
