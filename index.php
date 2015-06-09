@@ -57,7 +57,7 @@ commonHeader();
 
 ?>
 
-<h1>We want you to PHP-GTK. (Nós queremos vocês para o PHP-GTK)</h1>
+<h1>We want you to PHP-GTK. (NÃ³s queremos vocÃªs para o PHP-GTK)</h1>
 <span class="newsDate">[09-June-2015]</span>
 <b>Congratulations PHP-GTK community.</b><br />
 As mentioned in a previous post: PHP-GTK is not dead!<br />
@@ -71,15 +71,15 @@ All of us together can create an excellent working tool for desktop.<br /><br />
 
 <b>Translation for the portuguse language community</b><br /><br />
 
-<b>Congratulações comunidade PHP-GTK.</b><br />
+<b>CongratulaÃ§Ãµes comunidade PHP-GTK.</b><br />
 Como foi mencionado em post anterior: PHP-GTK is not dead!<br />
-Se você já participou ativamente da comunidade por favor considere nos ajudar novamente.<br />
-Acesse http://gtk.php.net/resources.php e participe de nossas listas de discussão.<br />
-Dê suas sugestões e auxilie o projeto.<br />
-Traga os comentários como os que eu vi em: http://www.reddit.com/r/PHP/comments/38foik/phpgtk_is_not_dead/ para as listas dos PHP_GTK.<br />
-Há muito trabalho a ser feito. O PHP-GTK precisa de vocês.<br />
-Se você nunca participou da comunidade nós queremos você para o PHP-GTK.<br />
-Todos nós juntos podemos criar uma excelente ferramenta de trabalho para desktop.<br />
+Se vocÃª jÃ¡ participou ativamente da comunidade por favor considere nos ajudar novamente.<br />
+Acesse http://gtk.php.net/resources.php e participe de nossas listas de discussÃ£o.<br />
+DÃª suas sugestÃµes e auxilie o projeto.<br />
+Traga os comentÃ¡rios como os que eu vi em: http://www.reddit.com/r/PHP/comments/38foik/phpgtk_is_not_dead/ para as listas dos PHP_GTK.<br />
+HÃ¡ muito trabalho a ser feito. O PHP-GTK precisa de vocÃªs.<br />
+Se vocÃª nunca participou da comunidade nÃ³s queremos vocÃª para o PHP-GTK.<br />
+Todos nÃ³s juntos podemos criar uma excelente ferramenta de trabalho para desktop.<br />
 
 
 <h1>PHP-GTK is not dead.</h1>
