@@ -40,7 +40,7 @@ $SIDEBAR_DATA = <<< EOF
     the manual and the <strong>php-gtk-general</strong> mailing list.</p>
 
 <p>Any serious PHP-GTK related questions should be sent to 
-    <a href="mailto:andrei@php.dot.net">andrei@php.dot.net</a>, unless 
+    <a href="mailto:andrei@php.net">andrei@php.net</a>, unless 
     they are related to the manual, in which case they should be sent to 
     <a href="mailto:sfox@php.net">sfox@php.net</a>. If you have 
     a question or suggestion for the website, you should contact 
@@ -56,6 +56,31 @@ EOF;
 commonHeader();
 
 ?>
+
+<h1>We want you to PHP-GTK. (Nós queremos vocês para o PHP-GTK)</h1>
+<span class="newsDate">[09-June-2015]</span>
+<b>Congratulations PHP-GTK community.</b><br />
+As mentioned in a previous post: PHP-GTK is not dead!<br />
+If you have actively participated in the community please consider helping us again.<br />
+Visit http://gtk.php.net/resources.php and participate in our mailing lists.<br />
+Give your suggestions and assist the project.<br />
+Bring the comments as I've seen in: http://www.reddit.com/r/PHP/comments/38foik/phpgtk_is_not_dead/ to the lists of PHP_GTK.<br />
+There is much work to be done. The PHP-GTK needs you.<br />
+If you have never participated in the community we want you to PHP-GTK.<br />
+All of us together can create an excellent working tool for desktop.<br /><br />
+
+<b>Translation for the portuguse language community</b><br /><br />
+
+<b>Congratulações comunidade PHP-GTK.</b><br />
+Como foi mencionado em post anterior: PHP-GTK is not dead!<br />
+Se você já participou ativamente da comunidade por favor considere nos ajudar novamente.<br />
+Acesse http://gtk.php.net/resources.php e participe de nossas listas de discussão.<br />
+Dê suas sugestões e auxilie o projeto.<br />
+Traga os comentários como os que eu vi em: http://www.reddit.com/r/PHP/comments/38foik/phpgtk_is_not_dead/ para as listas dos PHP_GTK.<br />
+Há muito trabalho a ser feito. O PHP-GTK precisa de vocês.<br />
+Se você nunca participou da comunidade nós queremos você para o PHP-GTK.<br />
+Todos nós juntos podemos criar uma excelente ferramenta de trabalho para desktop.<br />
+
 
 <h1>PHP-GTK is not dead.</h1>
 <span class="newsDate">[25-may-2015]</span>
