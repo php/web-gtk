@@ -57,7 +57,7 @@ commonHeader();
 
 ?>
 
-<h1>We want you to PHP-GTK. (Nós queremos vocês para o PHP-GTK)</h1>
+<h1>We want you for PHP-GTK. (Nós queremos vocês para o PHP-GTK)</h1>
 <span class="newsDate">[09-June-2015]</span>
 <b>Congratulations PHP-GTK community.</b><br />
 As mentioned in a previous post: PHP-GTK is not dead!<br />
@@ -66,7 +66,7 @@ Visit http://gtk.php.net/resources.php and participate in our mailing lists.<br 
 Give your suggestions and assist the project.<br />
 Bring the comments as I've seen in: http://www.reddit.com/r/PHP/comments/38foik/phpgtk_is_not_dead/ to the lists of PHP_GTK.<br />
 There is much work to be done. The PHP-GTK needs you.<br />
-If you have never participated in the community we want you to PHP-GTK.<br />
+If you have never participated in the community we want you for PHP-GTK.<br />
 All of us together can create an excellent working tool for desktop.<br /><br />
 
 <b>Translation for the portuguse language community</b><br /><br />
