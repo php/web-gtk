@@ -56,6 +56,23 @@ EOF;
 commonHeader();
 
 ?>
+<h1>News for PHP-GTK community</h1>
+<span class="newsDate">[22-June-2015]</span>
+<b>We have created the branch dev-php-gtk3.</b><br />
+Branch development of PHP-GTK3 is dev-php-gtk3.</br>
+All development of PH-GTK3 will be done in this branch.</br>
+We in the coming days we will put more files with instructions on the standard design php-gtk3 and skel in dev-php-gtk3 to start the works.<br />
+This is the chance for you to participate in this great project.<br /><br />
+
+Translation for the portuguse language community<br />
+
+<h1>Notícias para comunidade PHP-GTK</h1>
+<span class="newsDate">[22-June-2015]</span>
+<b>Criamos o branch dev-php-gtk3.</b><br />
+O branch de desenvolvimento do PHP-GTK3 é dev-php-gtk3. <br />
+Todo o desenvolvimento do PH-GTK3 será feito neste branch. <br />
+Nós nos próximos dias vamos colocar mais arquivos com instruções sobre o padrão do projeto php-GTK3 e o skel em dev-php-gtk3 para iniciarmos os trabalhos. <br />
+Esta é a oportunidade para você participar desse grande projeto. <br /> <br />
 
 <h1>We want you for PHP-GTK. (Nós queremos vocês para o PHP-GTK)</h1>
 <span class="newsDate">[09-June-2015]</span>
