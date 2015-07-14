@@ -60,7 +60,7 @@ to the address listed in the SUBSCRIBE column.</p>
    <td><?php print_link('http://marc.info/?l=php-gtk-cvs', 'MARC'); ?></td>
   </tr>
   <tr valign="top">
-   <td><strong>php-gtk-cvs</strong></td>
+   <td><strong>php-gtk-webmaster</strong></td>
    <td>For the discussion on the development of PHP-GTK website.</td>
    <td><?php print_email('php-gtk-webmaster@lists.php.net'); ?></td>
    <td><?php print_email('php-gtk-webmaster-subscribe@lists.php.net'); ?></td>
