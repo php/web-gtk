@@ -64,7 +64,7 @@ to the address listed in the SUBSCRIBE column.</p>
    <td>For the discussion on the development of PHP-GTK website.</td>
    <td><?php print_email('php-gtk-webmaster@lists.php.net'); ?></td>
    <td><?php print_email('php-gtk-webmaster-subscribe@lists.php.net'); ?></td>
-   <td><?php print_link('http://news.php.net/php.gtk.webmaster', 'MARC'); ?></td>
+   <td><?php print_link('http://news.php.net/php.gtk.webmaster', 'NEWS'); ?></td>
    </tr>
  </tbody>
 </table>
