@@ -33,7 +33,14 @@ $ git clone https://git.php.net/repository/web/gtk.git
 cd gtk
 php -S localhost:8080
  
- 
+Editor files
+We will use the bluefish editor.
+1) Because it is licensed under the GNU_GPL. There will be no cost with the purchase of paid editors.
+2) We will avoid possible dirt in the generated code for various file editors.
+3) Supports multiple encoding which will facilitate the creation of files in different languages.
+
+url to download: http://bluefish.openoffice.nl/index.html
+
 This repo includes most (generated) files that are required for normal
 operation of this website, such as
 
