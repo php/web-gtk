@@ -41,6 +41,10 @@ We will use the bluefish editor.
 
 url to download: http://bluefish.openoffice.nl/index.html
 
+Frameworks:
+W3.CSS is a small, fast, and modern CSS framework with built-in responsiveness.
+http://www.w3schools.com/w3css/default.asp
+
 This repo includes most (generated) files that are required for normal
 operation of this website, such as
 
