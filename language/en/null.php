@@ -3,7 +3,7 @@ define('DEFAULTHEADER', '"en":"PHP-GTK - Section not created":"Section not creat
 define('DEFAULTHEADER1',"Building Desktop Applications in PHP with PHP-GTK");
 define('DEFAULTHEADER2',"You can to send any serious questions about PHP-GTK to php-gtk-dev@lists.php.net, but the questions about PHP-GTK MANUAL you must send them to php-gtk-doc@lists.php.net.
 <br/>Now, if you have any question or suggestion for our website you can send them to php-gtk-webmaster@lists.php.net. Thank you!");
-define('DEFAULTMENU','Home:Download:Documentation:Applications:FAQ:Changelog:Resources:Wiki:Screenshots:Old site');
+define('DEFAULTMENU','Home:Download:Documentation:Applications:FAQ:Changelog:Resources:Wiki:Screenshots');
 define('DEFAULTMENULEFT','News:Roadmap:To help<br/>the project');
 define('WELCOME','This page of the site has not yet been created!');
 define('TITLE1','Do you have any suggestions for this page?');

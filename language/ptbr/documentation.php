@@ -3,7 +3,7 @@ define('DEFAULTHEADER', '"pt-BR":"PHP-GTK - Documentação":"Documentação do P
 define('DEFAULTHEADER1',"Criando aplicativos de desktop em PHP com PHP-GTK");
 define('DEFAULTHEADER2',"Você pode enviar quaisquer perguntas sérias sobre PHP-GTK para php-gtk-dev@lists.php.net, mas as perguntas sobre o MANUAL PHP-GTK você deve enviá-las para  php-gtk-doc@lists.php.net.
 <br>Agora, se você tem qualquer pergunta ou sugestão para nosso website você pode contatar php-gtk-webmaster@lists.php.net. Obrigado!");
-define('DEFAULTMENU','Início:Download:Documentação:Aplicativos:FAQ:Changelog:Recursos:Wiki:Telas:Site antigo');
+define('DEFAULTMENU','Início:Download:Documentação:Aplicativos:FAQ:Changelog:Recursos:Wiki:Telas');
 define('DEFAULTMENULEFT','Notícias:Roadmap:Para ajudar<br>o projeto');
 define('WELCOME','Ajudenos a fazer a documentação do PHP-GTK: php-gtk-doc@lists.php.net');
 define('TITLE1','Baixe a documentação');
