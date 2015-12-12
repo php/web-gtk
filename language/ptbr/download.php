@@ -3,7 +3,7 @@ define('DEFAULTHEADER', '"pt-BR":"PHP-GTK - Downloads":"Baixe e experimente o ph
 define('DEFAULTHEADER1',"Criando aplicativos de desktop em PHP com PHP-GTK");
 define('DEFAULTHEADER2',"Você pode enviar quaisquer perguntas sérias sobre PHP-GTK para php-gtk-dev@lists.php.net, mas as perguntas sobre o MANUAL PHP-GTK você deve enviá-las para  php-gtk-doc@lists.php.net.
 <br>Agora, se você tem qualquer pergunta ou sugestão para nosso website você pode contatar php-gtk-webmaster@lists.php.net. Obrigado!");
-define('DEFAULTMENU','Início:Download:Documentação:Aplicativos:FAQ:Changelog:Recursos:Wiki:Telas');
+define('DEFAULTMENU','Início:Download:Documentação:Aplicativos:FAQ:Changelog:Recursos:Wiki:Telas:Site antigo');
 define('DEFAULTMENULEFT','Notícias:Roadmap:Para ajudar<br>o projeto');
 define('WELCOME','Baixe e experimente o PHP-GTK no seu desktop');
 define('TITLE1','PHP-GTK 2 para MS-Windows');
