@@ -62,6 +62,7 @@ echo"<header class=\"w3-row \">
   <a href=\"null.php?language=".$_SESSION['link']."\">$menu[6]</a>
   <a href=\"null.php?language=".$_SESSION['link']."\">$menu[7]</a>
   <a href=\"null.php?language=".$_SESSION['link']."\">$menu[8]</a>
+  <a href=\"oldsite/index.php\">$menu[9]</a>
   <div class=\"w3-dropdown-hover\">
   <button class=\"w3-btn\">".LANGUAGE."</button>
   <div class=\"w3-dropdown-content w3-border w3-black\">
