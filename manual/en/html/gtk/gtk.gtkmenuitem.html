@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkMenuItem</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkmenubar.constructor.html" title="GtkMenuBar Constructor"><link rel="next" href="gtk.gtkmenuitem.constructor.html" title="GtkMenuItem Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkmenubar.constructor.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkMenuItem</span></th><td width="20%" align="right"> <a href="gtk.gtkmenuitem.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkmenuitem"></a><h2 class="title"><span dir="ltr">GtkMenuItem</span></h2><p><blockquote>
+   A widget used for holding items in menus.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkbin.html">GtkBin</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkitem.html">GtkItem</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkmenuitem.html">GtkMenuItem</a></span><br></div></blockquote></p><p><h3>Direct Subclasses</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="gtk.gtkcheckmenuitem.html">GtkCheckMenuItem</a></span>, <span dir="ltr"><a href="gtk.gtkimagemenuitem.html">GtkImageMenuItem</a></span>, <span dir="ltr"><a href="gtk.gtkseparatormenuitem.html">GtkSeparatorMenuItem</a></span>, <span dir="ltr"><a href="gtk.gtktearoffmenuitem.html">GtkTearoffMenuItem</a></span></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    The <span dir="ltr"><a href="gtk.gtkmenuitem.html">GtkMenuItem</a></span> is the fundamental building block
+    of all menus. These widgets are responsible for holding valid children
+    that will make up the menu. Their function is to correctly handle
+    highlighting, alignment, events and the addition of sub-menus.
+   </p>
+   <p>
+    Since this widget derives itself from <span dir="ltr"><a href="gtk.gtkbin.html">GtkBin</a></span>, it
+    can hold any valid child widget, although only a few may aid in the
+    creation of menus.
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp71371616"><p></p><a name="idp71371616"></a> <span dir="ltr"><a href="gtk.gtkmenuitem.constructor.html">GtkMenuItem</a></span> (string <i><tt>label</tt></i>]);</div></p> --
+    Creates a new <span dir="ltr"><a href="gtk.gtkmenuitem.html">GtkMenuItem</a></span>.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkmenuitem.method.get_right_justified.html">get_right_justified()</a></span> </dt><dd> 
+    Returns whether the menu item appears justified to the right of its menu
+    bar.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkmenuitem.method.get_submenu.html">get_submenu()</a></span> </dt><dd> 
+    Return the submenu attached to the menu item.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkmenuitem.method.remove_submenu.html">remove_submenu()</a></span> </dt><dd> 
+    Removes the submenu associated with the menu item.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkmenuitem.method.right_justify.html">right_justify()</a></span> </dt><dd> 
+    DEPRECATED Sets the menu item to be right aligned.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkmenuitem.method.set_right_justified.html">set_right_justified()</a></span> </dt><dd> 
+    Aligns the menu item to the right.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkmenuitem.method.set_submenu.html">set_submenu()</a></span> </dt><dd> 
+    Sets the submenu for the menu item.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkmenuitem.method.toggle_size_allocate.html">toggle_size_allocate()</a></span> </dt><dd> 
+    Emits the <span dir="ltr"><tt>toggle-size-allocate</tt></span> signal for the menu
+    item. 
+   </dd><dt><span dir="ltr"><a href="gtk.gtkmenuitem.method.set_item_accel_path.html">set_item_accel_path()</a></span> </dt><dd> 
+    Sets the accelerator path for the menu item.
+   </dd></blockquote></div><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtkmenuitem.signal.activate.html">activate</a>"</span></dt><dd> 
+    Emitted when the menu item is activated.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkmenuitem.signal.activate-item.html">activate-item</a>"</span></dt><dd> 
+    Emitted when the menu item is activated and has a submenu.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkmenuitem.signal.toggle-size-allocate.html">toggle-size-allocate</a>"</span></dt><dd> 
+    Emitted when the size allocation is changed.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkmenuitem.signal.toggle-size-request.html">toggle-size-request</a>"</span></dt><dd> 
+    Emitted when a size change request is made.
+   </dd></blockquote></p></div>
+
+  
+
+ 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+ 
+
+  
+  
+  
+  
+  
+  
+  
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkmenubar.constructor.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkmenuitem.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkMenuBar</span> Constructor </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkMenuItem</span> Constructor</td></tr></table></div></body></html>

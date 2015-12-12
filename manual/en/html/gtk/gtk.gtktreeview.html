@@ -1,0 +1,417 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkTreeView</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtktreestore.method.set_column_types.html" title="GtkTreeStore::set_column_types"><link rel="next" href="gtk.gtktreeview.constructor.html" title="GtkTreeView Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtktreestore.method.set_column_types.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkTreeView</span></th><td width="20%" align="right"> <a href="gtk.gtktreeview.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtktreeview"></a><h2 class="title"><span dir="ltr">GtkTreeView</span></h2><div style="float:right;"><img src="../images/reference/gtk/gtktreeview.png"></div><p><blockquote>
+   A widget for displaying both trees and lists.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtktreeview.html">GtkTreeView</a></span><br></div></blockquote></p><p><h3>Direct Subclasses</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="../sexy.sexytreeview.html">SexyTreeView</a></span></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    A GtkTreeView can display both list and tree structures. To display a list,
+    pass a <span dir="ltr"><a href="gtk.gtkliststore.html">GtkListStore</a></span> object to the constructor or
+    <span dir="ltr"><a href="gtk.gtktreeview.method.set_model.html">set_model()</a></span> . For a tree, use a
+    <span dir="ltr"><a href="gtk.gtktreestore.html">GtkTreeStore</a></span> object. Basically any object of
+    a class that implements the <span dir="ltr"><a href="gtk.gtktreemodel.html">GtkTreeModel</a></span> interface
+    is suitable.
+   </p>
+   <p>
+    After creating the view and setting the model, you need to create some
+    <span dir="ltr"><a href="gtk.gtktreeviewcolumn.html">GtkTreeViewColumn</a></span>s and add them to the view with
+    <span dir="ltr"><a href="gtk.gtktreeview.method.append_column.html">append_column()</a></span> . The column widgets
+    themselves need some <span dir="ltr"><a href="gtk.gtkcellrenderer.html">GtkCellRenderer</a></span>s that actually
+    draw and display the data of the model.
+   </p>
+   <p>
+    To obtain the selected rows of the view, get the view's
+    <span dir="ltr"><a href="gtk.gtktreeselection.html">GtkTreeSelection</a></span> object that manages the selection
+    by using <span dir="ltr"><a href="gtk.gtktreeview.method.get_selection.html">get_selection()</a></span> .
+    If you want to track if it changes, connect its
+    <span dir="ltr">"<a href="gtk.gtktreeselection.signal.changed.html">changed</a>"</span>
+    signal.
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp84769840"><p></p><a name="idp84769840"></a> <span dir="ltr"><a href="gtk.gtktreeview.constructor.html">GtkTreeView</a></span> ([<span dir="ltr"><a href="gtk.gtktreemodel.html">GtkTreeModel</a></span> <i><tt>model</tt></i>]);</div></p> --
+    Create a new tree view.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtktreeview.method.append_column.html">append_column()</a></span> </dt><dd> 
+    Appends a column to the view.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.collapse_all.html">collapse_all()</a></span> </dt><dd> 
+    Collapses all nodes.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.collapse_row.html">collapse_row()</a></span> </dt><dd> 
+    Collapses a given row.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.columns_autosize.html">columns_autosize()</a></span> </dt><dd> 
+    Resizes all columns to their optimal width.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.create_row_drag_icon.html">create_row_drag_icon()</a></span> </dt><dd> 
+    Creates a GdkPixmap representation of the row
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.expand_all.html">expand_all()</a></span> </dt><dd> 
+    Recursively expands all nodes in the tree view.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.expand_row.html">expand_row()</a></span> </dt><dd> 
+    Opens the row so its children are visible.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.expand_to_path.html">expand_to_path()</a></span> </dt><dd> 
+    Expands the row to a path.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.get_background_area.html">get_background_area()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.get_bin_window.html">get_bin_window()</a></span> </dt><dd> 
+    Returns the window that the view renders to.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.get_cell_area.html">get_cell_area()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.get_column.html">get_column()</a></span> </dt><dd> 
+    Gets the GtkTreeViewColumn at the given position
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.get_columns.html">get_columns()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.get_cursor.html">get_cursor()</a></span> </dt><dd> 
+    Returns the current path and focus column.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.get_enable_search.html">get_enable_search()</a></span> </dt><dd> 
+    Whether or not the tree allows interactive searching.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.get_expander_column.html">get_expander_column()</a></span> </dt><dd> 
+    Returns the column that is the current expander column.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.get_fixed_height_mode.html">get_fixed_height_mode()</a></span> </dt><dd> 
+    Whether fixed height mode is turned on or not.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.get_hadjustment.html">get_hadjustment()</a></span> </dt><dd> 
+     Gets the GtkAdjustment for the horizontal aspect.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.get_headers_visible.html">get_headers_visible()</a></span> </dt><dd> 
+    If the headers on the view are visible.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.get_hover_expand.html">get_hover_expand()</a></span> </dt><dd> 
+    Whether hover expansion mode is turned on.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.get_hover_selection.html">get_hover_selection()</a></span> </dt><dd> 
+    Whether hover selection mode is turned on.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.get_model.html">get_model()</a></span> </dt><dd> 
+    Returns the model used.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.get_path_at_pos.html">get_path_at_pos()</a></span> </dt><dd> 
+    Returns the tree path at a pixel position.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.get_reorderable.html">get_reorderable()</a></span> </dt><dd> 
+    Whether the user can reorder rows via drag-and-drop.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.get_rules_hint.html">get_rules_hint()</a></span> </dt><dd> 
+    Returns the rules_hint setting.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.get_search_column.html">get_search_column()</a></span> </dt><dd> 
+    Returns the column id used for searches.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.get_selection.html">get_selection()</a></span> </dt><dd> 
+    Returns the selection object associated with the view.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.get_vadjustment.html">get_vadjustment()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.get_visible_rect.html">get_visible_rect()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.insert_column.html">insert_column()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.insert_column_with_data_func.html">insert_column_with_data_func()</a></span> </dt><dd> 
+    Inserts a column at the given position with a data function assigned.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.move_column_after.html">move_column_after()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.remove_column.html">remove_column()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.row_activated.html">row_activated()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.row_expanded.html">row_expanded()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.scroll_to_cell.html">scroll_to_cell()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.scroll_to_point.html">scroll_to_point()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.set_column_drag_function.html">set_column_drag_function()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.set_cursor.html">set_cursor()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.set_cursor_on_cell.html">set_cursor_on_cell()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.set_drag_dest_row.html">set_drag_dest_row()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.set_enable_search.html">set_enable_search()</a></span> </dt><dd> 
+    Sets whether or not interactive search is enabled for the view.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.set_expander_column.html">set_expander_column()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.set_fixed_height_mode.html">set_fixed_height_mode()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.set_hadjustment.html">set_hadjustment()</a></span> </dt><dd> 
+    Sets the GtkAdjustment for the current horizontal aspect.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.set_headers_clickable.html">set_headers_clickable()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.set_headers_visible.html">set_headers_visible()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.set_hover_expand.html">set_hover_expand()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.set_hover_selection.html">set_hover_selection()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.set_model.html">set_model()</a></span> </dt><dd> 
+    Sets the model for the view.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.set_reorderable.html">set_reorderable()</a></span> </dt><dd> 
+    Allow/disallow reordering of model rows.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.set_row_separator_func.html">set_row_separator_func()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.set_rules_hint.html">set_rules_hint()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.set_search_column.html">set_search_column()</a></span> </dt><dd> 
+    Sets the column of the interactive search.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.set_search_equal_func.html">set_search_equal_func()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.set_vadjustment.html">set_vadjustment()</a></span> </dt><dd> 
+    Sets the GtkAdjustment for the current vertical aspect.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.tree_to_widget_coords.html">tree_to_widget_coords()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.unset_rows_drag_dest.html">unset_rows_drag_dest()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.unset_rows_drag_source.html">unset_rows_drag_source()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.widget_to_tree_coords.html">widget_to_tree_coords()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.enable_model_drag_dest.html">enable_model_drag_dest()</a></span> </dt><dd> 
+    
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.enable_model_drag_source.html">enable_model_drag_source()</a></span> </dt><dd> 
+    
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.get_dest_row_at_pos.html">get_dest_row_at_pos()</a></span> </dt><dd> 
+    
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.get_drag_dest_row.html">get_drag_dest_row()</a></span> </dt><dd> 
+    
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.get_enable_tree_lines.html">get_enable_tree_lines()</a></span> </dt><dd> 
+    
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.get_grid_lines.html">get_grid_lines()</a></span> </dt><dd> 
+    
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.get_headers_clickable.html">get_headers_clickable()</a></span> </dt><dd> 
+    
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.get_rubber_banding.html">get_rubber_banding()</a></span> </dt><dd> 
+    
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.get_search_entry.html">get_search_entry()</a></span> </dt><dd> 
+    
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.get_visible_range.html">get_visible_range()</a></span> </dt><dd> 
+    
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.set_enable_tree_lines.html">set_enable_tree_lines()</a></span> </dt><dd> 
+    
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.set_grid_lines.html">set_grid_lines()</a></span> </dt><dd> 
+    
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.set_rubber_banding.html">set_rubber_banding()</a></span> </dt><dd> 
+    
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreeview.method.set_search_entry.html">set_search_entry()</a></span> </dt><dd> 
+    
+   </dd></blockquote></div><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtktreeview.signal.columns-changed.html">columns-changed</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtktreeview.signal.cursor-changed.html">cursor-changed</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtktreeview.signal.expand-collapse-cursor-row.html">expand-collapse-cursor-row</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtktreeview.signal.move-cursor.html">move-cursor</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtktreeview.signal.row-activated.html">row-activated</a>"</span></dt><dd> 
+    Signal emmitted when a row in a GtkTreeView is double-clicked.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtktreeview.signal.row-collapsed.html">row-collapsed</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtktreeview.signal.row-expanded.html">row-expanded</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtktreeview.signal.select-all.html">select-all</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtktreeview.signal.select-cursor-parent.html">select-cursor-parent</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtktreeview.signal.select-cursor-row.html">select-cursor-row</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtktreeview.signal.set-scroll-adjustments.html">set-scroll-adjustments</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtktreeview.signal.start-interactive-search.html">start-interactive-search</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtktreeview.signal.test-collapse-row.html">test-collapse-row</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtktreeview.signal.test-expand-row.html">test-expand-row</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtktreeview.signal.toggle-cursor-row.html">toggle-cursor-row</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtktreeview.signal.unselect-all.html">unselect-all</a>"</span></dt><dd> 
+   </dd></blockquote></p></div>
+  
+ 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtktreestore.method.set_column_types.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtktreeview.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkTreeStore::set_column_types</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkTreeView</span> Constructor</td></tr></table></div></body></html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkTable Constructor</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtktable.html#idp78180256" title=""><link rel="previous" href="gtk.gtktable.html" title="GtkTable"><link rel="next" href="gtk.gtktable.method.attach.html" title="GtkTable::attach"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtktable.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkTable</span> Constructor</th><td width="20%" align="right"> <a href="gtk.gtktable.method.attach.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtktable.constructor"></a><h2><span dir="ltr">GtkTable</span> Constructor</h2><p><div class="funcsynopsis" id="idp78181280"><p></p><a name="idp78181280"></a> <span dir="ltr"><a href="gtk.gtktable.constructor.html">GtkTable</a></span> ([int <i><tt>n_rows = 1</tt></i> [, int <i><tt>n_columns = 1</tt></i> [, bool <i><tt>homogeneous = false</tt></i>]]]);</div></p>
+    <p>
+     The first two parameters in this constructor (<i><tt>n_rows</tt></i>,
+     <i><tt>n_columns</tt></i>) define the size of the table and thus the
+     number of cells. They are optional, and since the table will pick up the 
+     layout from the information given as its children are attached to it, they
+     will be overridden automatically if needed.
+    </p>
+    <p>
+     The last parameter (<i><tt>homogeneous</tt></i>) is also optional,
+     and relates to the way the table manages the size of it's child widgets.
+     If changed to true (the default value is <span dir="ltr"><tt>false</tt></span>) all
+     children will have the same height and width as the largest child.
+    </p>
+    <p>
+     There are a lot of parameters in the 
+     <span dir="ltr"><a href="gtk.gtktable.method.attach.html">attach()</a></span>  method - nine in total -
+     four of which are optional. Basically, if the homogeneous parameter in the
+     constructor is set to <span dir="ltr"><tt>true</tt></span>, there is very little point
+     most of the time in using any of the four optional packing parameters.
+     These come into their own when the children are not required to take up
+     the same amount of space.
+    </p>
+    <div class="example" align="left"><p><a name="idp78193568"></a><b>Example 117. GtkTable usage demonstration</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//Creating the window that will hold our example program
+$window = new GtkWindow();
+//Title of the window
+$window-&gt;set_title("GtkTable usage demonstration");
+//Initial placement of the window 
+$window-&gt;set_position(Gtk::WIN_POS_CENTER);
+//Connecting the "destroy" signal
+$window-&gt;connect_simple('destroy', array('Gtk', 'main_quit'));
+
+//Creating our GtkTable
+// note that the homogeneous property defaults to false.
+$table = new GtkTable(3, 3, false);
+
+//Let's define the spacing between columns and rows to 10 pixels
+$table-&gt;set_row_spacings(10);
+$table-&gt;set_col_spacings(10);
+
+//Adding the table to the window
+$window-&gt;add($table);
+
+//Now that we have a table, let's add some widgets to it
+//Note the different AttachOptions: 
+// resize the window to see the effects of each
+$text = new GtkTextView();
+$table-&gt;attach($text, 0, 3, 0, 1);
+
+$button1 = new GtkButton('Button 1 ');
+$table-&gt;attach($button1, 0, 1, 1, 2, Gtk::SHRINK, Gtk::SHRINK, 3, 3);
+
+$button2 = new GtkButton('Button 2 ');
+$table-&gt;attach($button2, 1, 2, 1, 2, Gtk::FILL, Gtk::FILL, 3, 3);
+
+$button3 = new GtkButton('Button 3 ');
+$table-&gt;attach($button3, 2, 3, 1, 2, Gtk::FILL, Gtk::EXPAND, 3, 3);
+
+//Let's add a label with information.
+// We'll use it to experiment with acessing
+// widgets in a GtkTable
+$label = new GtkLabel(
+    "Expand this window to see the difference \r\n"
+    . "between the GtkAttachOptions settings."
+);
+$table-&gt;attach($label, 0, 3, 2, 3, Gtk::SHRINK, Gtk::SHRINK);
+
+//Adding a button that will change the text in the label
+$button4 = new GtkButton('Change label text');
+
+//If you recall, we created a 3*3 table, but as we're out
+// of space right now, this button will be placed on row
+// 4. You can use resize(), but just attaching
+// the child will cause the table to automatically change
+// it's size 
+$table-&gt;attach($button4, 0, 3, 3, 4, Gtk::FILL, Gtk::EXPAND, 3, 3);
+
+//Let's connect button4 to a function
+// that changes the text of the label
+$button4-&gt;connect_simple('clicked', 'change_text');
+
+//This function accesses the GtkLabel and changes it's content
+function change_text()
+{
+	//Getting a list of the GtkTable's child widgets
+	global $table;
+
+	$children = $table-&gt;get_children();
+	//Echoing the name of the children to the console
+	foreach($children as $key =&gt; $var) {
+	    echo $var-&gt;get_name()."\n";
+	}
+	echo "\n";
+	//Accessing the label's text
+	$current_text = $children['1']-&gt;get_text();
+	//Decide which text to show
+	if (substr($current_text, 0, 6) == "Expand") {
+		$children['1']-&gt;set_text("Have a nice day! \r\n");
+	} else {
+		$children['1']-&gt;set_text(
+            "Expand this window to see the difference \r\n"
+            . "between the GtkAttachOptions settings."
+        );
+	}
+}
+
+//Make everything in the window visible
+$window-&gt;show_all();
+//Main loop
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtktable.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtktable.method.attach.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkTable</span> </td><td width="20%" align="center"><a href="gtk.gtktable.html#idp78180256">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkTable::attach</span></td></tr></table></div></body></html>

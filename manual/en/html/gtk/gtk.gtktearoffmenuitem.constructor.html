@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkTearoffMenuItem Constructor</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtktearoffmenuitem.html#idp78468240" title=""><link rel="previous" href="gtk.gtktearoffmenuitem.html" title="GtkTearoffMenuItem"><link rel="next" href="gtk.gtktextattributes.html" title="GtkTextAttributes"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtktearoffmenuitem.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkTearoffMenuItem</span> Constructor</th><td width="20%" align="right"> <a href="gtk.gtktextattributes.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtktearoffmenuitem.constructor"></a><h2><span dir="ltr">GtkTearoffMenuItem</span> Constructor</h2><p><div class="funcsynopsis" id="idp78469056"><p></p><a name="idp78469056"></a> <span dir="ltr"><a href="gtk.gtktearoffmenuitem.constructor.html">GtkTearoffMenuItem</a></span> ();</div></p>
+    <p>
+     This constructor doesn't have any parameters; just
+     instantiate and add it to a <span dir="ltr"><a href="gtk.gtkmenu.html">GtkMenu</a></span>
+     via its <span dir="ltr"><a href="gtk.gtkcontainer.method.add.html">add()</a></span>  method.
+    </p>
+    <div class="example" align="left"><p><a name="idp78473728"></a><b>Example 118. Detaching a menu</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//The menu will look like this:
+// [File            ]
+//  + -----------
+//  + New
+//  + Open
+//  + Save
+
+//Create a menu bar to add the file menu to
+$menubar = new GtkMenuBar();
+
+//File menu
+$file = new GtkMenuItem('_File');
+$menubar-&gt;add($file);
+//Menu to hold the items
+$mnuFile = new GtkMenu();
+$file-&gt;set_submenu($mnuFile);
+
+//Add the tearoff menu item to the file menu
+$mnuFile-&gt;add(new GtkTearOffMenuItem());
+//Add the normal menu items
+$mnuFile-&gt;add(new GtkImageMenuItem(Gtk::STOCK_NEW));
+$mnuFile-&gt;add(new GtkImageMenuItem(Gtk::STOCK_OPEN));
+$mnuFile-&gt;add(new GtkImageMenuItem(Gtk::STOCK_SAVE));
+
+
+//standard stuff for window creation
+$wnd = new GtkWindow();
+$wnd-&gt;connect_simple('destroy', array('Gtk', 'main_quit'));
+$wnd-&gt;add($menubar);
+$wnd-&gt;show_all();
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtktearoffmenuitem.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtktextattributes.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkTearoffMenuItem</span> </td><td width="20%" align="center"><a href="gtk.gtktearoffmenuitem.html#idp78468240">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkTextAttributes</span></td></tr></table></div></body></html>

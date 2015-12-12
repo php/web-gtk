@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>Events</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="tutorials.signals.html" title="Signal Handling"><link rel="previous" href="tutorials.signals.connecting.html" title="Connecting the two"><link rel="next" href="tutorials.signals.summary.html" title="Summary"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Signal Handling</th></tr><tr><td width="20%" align="left"><a href="tutorials.signals.connecting.html">Prev</a> </td><th width="60%" align="center">Events</th><td width="20%" align="right"> <a href="tutorials.signals.summary.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="tutorials.signals.events"></a><div class="titlepage"><div><h2 class="title" style="clear: all"><a name="tutorials.signals.events"></a>Events</h2></div></div><p>
+   There is a lot of difference between <span dir="ltr"><tt>events</tt></span> and
+   <span dir="ltr"><tt>signals</tt></span>, and both of them are far from interchangeable.
+  </p><p>
+   A signal is emitted by an instance of a <span dir="ltr"><a href="../gtk/gtk.gtkobject.html">GtkObject</a></span> in
+   response to some action by the user or an instruction from a function or a
+   method.
+  </p><p>
+   Events on the other hand, are a continual stream of impulses that communicate
+   messages regarding the environmental changes in the underlying windowing
+   system. These are rather low-level, that means that every small change in the
+   environment counts as an event.
+  </p><div class="note" style="margin-left: 24px; margin-right: 24px; font-weight: bold;">
+   It is not possible to connect a callback to an event directly.
+  </div><p>
+   We had used the <span dir="ltr"><tt>enter-notify-event</tt></span> signal in our previous
+   example. But it certainly sounds like it should be an event, isn't it? Many
+   of the events have important applications and it is often necessary to be
+   able to connect callbacks to them. For this purpose, PHP-GTK 2 provides
+   several signals known as <span dir="ltr"><tt>event signals</tt></span> (such as
+   <span dir="ltr"><tt>enter-notify-event</tt></span> and
+   <span dir="ltr"><tt>leave-notify-event</tt></span>) that are actually wrappers over the
+   events themselves. These are ways of describing events in terms of signals so
+   that we can connects callbacks to them.
+  </p><p>
+   Whenever you require to capture an event, you would most probably find an
+   equivalent signal to work with. In case you don't, it is possible for every
+   widget that has its own <span dir="ltr"><a href="../gdk/gdk.gdkwindow.html">GdkWindow</a></span> to capture events
+   relevant to it. For those widgets that don't have a
+   <span dir="ltr"><a href="../gdk/gdk.gdkwindow.html">GdkWindow</a></span>, they must be encapsulated in a
+   <span dir="ltr"><a href="../gtk/gtk.gtkeventbox.html">GtkEventBox</a></span> to be able to capture events. Capturing
+   an event is not an easy task, and is beyond the scope of this tutorial. Like
+   I said before, you will mostly find an equivalent signal to work with anyway,
+   so don't worry too much about events.
+  </p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="tutorials.signals.connecting.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="tutorials.signals.summary.html">Next</a></td></tr><tr><td width="40%" align="left">Connecting the two </td><td width="20%" align="center"><a href="tutorials.signals.html">Up</a></td><td width="40%" align="right"> Summary</td></tr></table></div></body></html>

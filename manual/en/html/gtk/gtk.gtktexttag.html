@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkTextTag</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtktextmark.method.set_visible.html" title="GtkTextMark::set_visible"><link rel="next" href="gtk.gtktexttag.constructor.html" title="GtkTextTag Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtktextmark.method.set_visible.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkTextTag</span></th><td width="20%" align="right"> <a href="gtk.gtktexttag.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtktexttag"></a><h2 class="title"><span dir="ltr">GtkTextTag</span></h2><p><blockquote>
+   An object used to change the display properties of a block of text in a 
+   <span dir="ltr"><a href="gtk.gtktextbuffer.html">GtkTextBuffer</a></span>.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtktexttag.html">GtkTextTag</a></span><br></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    <span dir="ltr"><a href="gtk.gtktexttag.html">GtkTextTag</a></span>s are used to change the display
+    properties of a block of text in a <span dir="ltr"><a href="gtk.gtktextbuffer.html">GtkTextBuffer</a></span>.
+   </p>
+   <p>
+    A tag is applied across a range of text identified by two
+    <span dir="ltr"><a href="gtk.gtktextiter.html">GtkTextIter</a></span>s and affects the way that range of text
+    is displayed. For example, a tag may define the font-weight, color, text
+    size or any combination of many different properties for the range of
+    text.
+   </p>
+   <p>
+    Before a tag can be used with a <span dir="ltr"><a href="gtk.gtktextbuffer.html">GtkTextBuffer</a></span>, it
+    must be added to the buffer's <span dir="ltr"><a href="gtk.gtktexttagtable.html">GtkTextTagTable</a></span> with
+    <span dir="ltr"><a href="gtk.gtktexttagtable.method.add.html">add()</a></span>  (or by creating the tag
+    with create_tag).
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp80359904"><p></p><a name="idp80359904"></a> <span dir="ltr"><a href="gtk.gtktexttag.constructor.html">GtkTextTag</a></span> ([string 
+     <i><tt>name = null</tt></i>
+    ]);</div></p> --
+    Creates a <span dir="ltr"><a href="gtk.gtktexttag.html">GtkTextTag</a></span> instance.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtktexttag.method.event.html">event()</a></span> </dt><dd> 
+    Emits the event signal on the tag.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktexttag.method.get_priority.html">get_priority()</a></span> </dt><dd> 
+    Returns the tag's priority in relation to other tags in its
+    <span dir="ltr"><a href="gtk.gtktexttagtable.html">GtkTextTagTable</a></span>.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktexttag.method.set_priority.html">set_priority()</a></span> </dt><dd> 
+    Sets the priority of the tag in relation to the other tags in its
+    <span dir="ltr"><a href="gtk.gtktexttagtable.html">GtkTextTagTable</a></span>.
+   </dd></blockquote></div><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtktexttag.signal.event.html">event</a>"</span></dt><dd> 
+   </dd></blockquote></p></div>
+
+  
+
+ 
+
+  
+
+  
+
+  
+
+ 
+
+  
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtktextmark.method.set_visible.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtktexttag.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkTextMark::set_visible</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkTextTag</span> Constructor</td></tr></table></div></body></html>

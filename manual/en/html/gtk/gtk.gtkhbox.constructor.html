@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkHBox Constructor</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkhbox.html#idp66543200" title=""><link rel="previous" href="gtk.gtkhbox.html" title="GtkHBox"><link rel="next" href="gtk.gtkhbuttonbox.html" title="GtkHButtonBox"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkhbox.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkHBox</span> Constructor</th><td width="20%" align="right"> <a href="gtk.gtkhbuttonbox.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkhbox.constructor"></a><h2><span dir="ltr">GtkHBox</span> Constructor</h2><p><div class="funcsynopsis" id="idp66544224"><p></p><a name="idp66544224"></a> <span dir="ltr"><a href="gtk.gtkhbox.constructor.html">GtkHBox</a></span> ([bool <i><tt>homogeneous = false</tt></i> [, int <i><tt>spacing = 0</tt></i>]]);</div></p>
+    <p>
+     The parameter <i><tt>homogeneous</tt></i> is a boolean value which determines whether all
+     child widgets in the box should be assigned the width of the largest widget. The default
+     behaviour (false) is to maintain the individual width of the widgets unchanged.
+     The second parameter, <i><tt>spacing</tt></i>, defines the minimum number of pixels to
+     be left between widgets.
+    </p>
+    <div class="example" align="left"><p><a name="idp66550992"></a><b>Example 69. GtkHBox and GtkVBox packing demonstration</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//Here we create the GtkWindow
+$window = new GtkWindow();
+$window-&gt;set_title("GtkHBox and GtkVBox packing demonstration");
+$window-&gt;set_position(Gtk::WIN_POS_CENTER);
+$window-&gt;connect_simple("destroy", array("gtk", "main_quit"));
+$window-&gt;show();
+
+//Adding a GtkVBox to our $window
+$vbox = new GtkVBox(false, 5);
+$window-&gt;add($vbox);
+
+//Let's add a GtkLabel as the first (topmost) widget in our $vbox
+$label = new GtkLabel();
+$label-&gt;set_text("This GtkLabel is packed at the start of a GtkVBox.
+The GtkCalendar and the empty GtkTextView below are packed, respectively,
+at the start and the end of a GtkHBox, which is in turn packed at the end
+of the GtkVBox.");
+$label-&gt;set_justify(Gtk::JUSTIFY_LEFT);
+$vbox-&gt;pack_start($label, true, true, 5);
+$label-&gt;show();
+
+//Adding a GtkHBox to the end (bottom) of the $vbox
+$hbox = new GtkHBox(true, 0);
+$vbox-&gt;pack_end($hbox);
+
+//Here we'll add GtkCalendar to the start (ie. the left) of the $hbox
+$calendar = new GtkCalendar();
+$hbox-&gt;pack_start($calendar, true, true, 2);
+$calendar-&gt;show();
+
+//Adding a GtkTextView to the end (ie. the right) fo the $hbox
+$text = new GtkTextView();
+$text-&gt;set_editable(true);
+$hbox-&gt;pack_end($text, true, true, 2);
+$text-&gt;show();
+
+$window-&gt;show_all();
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkhbox.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkhbuttonbox.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkHBox</span> </td><td width="20%" align="center"><a href="gtk.gtkhbox.html#idp66543200">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkHButtonBox</span></td></tr></table></div></body></html>

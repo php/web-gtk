@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>timeout_add</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.functions.html" title="Gtk"><link rel="previous" href="gtk.method.stock_lookup.html" title="stock_lookup"><link rel="next" href="gtk.method.timeout_remove.html" title="timeout_remove"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Gtk</th></tr><tr><td width="20%" align="left"><a href="gtk.method.stock_lookup.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">timeout_add</span></th><td width="20%" align="right"> <a href="gtk.method.timeout_remove.html">Next</a></td></tr></table><hr></div><div><a name="gtk.method.timeout_add"></a><h2><span dir="ltr">timeout_add</span></h2><p><div class="funcsynopsis" id="idp54080416"><p></p><a name="idp54080416"></a>int timeout_add(int <i><tt>timeout</tt></i>, callback callback [, 
+      mixed <i><tt>user_data1, ...</tt></i>
+     ]);</div></p>
+    <p>
+     Registers a function to be called periodically.
+     The function will be called repeatedly after
+     <i><tt>interval</tt></i> milliseconds until it
+     returns <span dir="ltr"><tt>false</tt></span> (or nothing) at which point the timeout
+     is destroyed and will not be called again.
+    </p>
+    <p>
+     So to keep the timeout alive, your callback function
+     needs to <span dir="ltr"><tt>return true;</tt></span>
+    </p>
+    <div class="example" align="left"><p><a name="idp54088976"></a><b>Example 13. Using Gtk::timeout_add() to create a simple clock</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//Simple clock using Gtk::timeout_add()
+
+//At first, we need a label displaying the time
+$lbl = new GtkLabel('Clock');
+//Now, call function "onTimeout" every 1 second
+// (1 second == 1000 milliseconds)
+//Also pass $lbl as parameter so we can
+// change it in the function without using
+// global variables (bad!)
+Gtk::timeout_add(1000, 'onTimeout', $lbl);
+
+//our callback function has one parameter,
+// the one we defined in Gtk::timeout_add()
+function onTimeout($lbl)
+{
+    //do the things we want to do
+    $lbl-&gt;set_text(date('H:i:s'));
+
+    //at the end, return "true" if the timeout shall
+    // be executed again. If you don't return anything
+    // or return false, the timeout is stopped.
+    return true;
+}
+
+//standard stuff
+$wnd = new GtkWindow();
+$wnd-&gt;connect_simple('destroy', array('gtk', 'main_quit'));
+$wnd-&gt;add($lbl);
+$wnd-&gt;show_all();
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+
+    <p>
+     The integer returned by this method can be used by
+     <span dir="ltr"><a href="gtk.method.timeout_remove.html">timeout_remove()</a></span>  to destroy
+     the timeout independent of the return value of the callback.
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.method.stock_lookup.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.method.timeout_remove.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">stock_lookup</span> </td><td width="20%" align="center"><a href="gtk.functions.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">timeout_remove</span></td></tr></table></div></body></html>

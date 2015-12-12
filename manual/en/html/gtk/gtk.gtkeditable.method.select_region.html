@@ -1,0 +1,16 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkEditable::select_region</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkeditable.html#idp62668240" title=""><link rel="previous" href="gtk.gtkeditable.method.paste_clipboard.html" title="GtkEditable::paste_clipboard"><link rel="next" href="gtk.gtkeditable.method.set_editable.html" title="GtkEditable::set_editable"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkeditable.method.paste_clipboard.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkEditable::select_region</span></th><td width="20%" align="right"> <a href="gtk.gtkeditable.method.set_editable.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkeditable.method.select_region"></a><h2><span dir="ltr">GtkEditable::select_region</span></h2><p><div class="funcsynopsis" id="idp62827408"><p></p><a name="idp62827408"></a>void select_region(int <i><tt>start</tt></i>, int <i><tt>end</tt></i>);</div></p>
+    <p>
+     Selects a region of text. The characters that are selected are
+     those characters at positions from <i><tt>start_pos</tt></i>
+     up to, but not including <i><tt>end_pos</tt></i>. If
+     <i><tt>end_pos</tt></i> is negative, then the the characters
+     selected will be those characters from <i><tt>start_pos</tt></i>
+     to the end of the text.
+    </p>
+    <div class="example" align="left"><p><a name="idp62835248"></a><b>Example 58. Selecting all text</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+
+$text = $editable-&gt;select_region(0, -1);
+
+     </pre></td></tr></table></div>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkeditable.method.paste_clipboard.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkeditable.method.set_editable.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkEditable::paste_clipboard</span> </td><td width="20%" align="center"><a href="gtk.gtkeditable.html#idp62668240">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkEditable::set_editable</span></td></tr></table></div></body></html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GdkPixbuf::get_pixel</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gdk.gdkpixbuf.html#idp51536736" title=""><link rel="previous" href="gdk.gdkpixbuf.method.get_option.html" title="GdkPixbuf::get_option"><link rel="next" href="gdk.gdkpixbuf.method.get_pixels.html" title="GdkPixbuf::get_pixels"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gdk.gdkpixbuf.method.get_option.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GdkPixbuf::get_pixel</span></th><td width="20%" align="right"> <a href="gdk.gdkpixbuf.method.get_pixels.html">Next</a></td></tr></table><hr></div><div><a name="gdk.gdkpixbuf.method.get_pixel"></a><h2><span dir="ltr">GdkPixbuf::get_pixel</span></h2><p><div class="funcsynopsis" id="idp51689104"><p></p><a name="idp51689104"></a>int get_pixel(int <i><tt>x</tt></i>, int <i><tt>y</tt></i>);</div></p>
+    <p>
+     Returns the color of a single pixel. The number returned is a
+     <i>pixel specification</i>. See the example on how to
+     split it into usable values.
+    </p>
+    <div class="example" align="left"><p><a name="idp51694416"></a><b>Example 9. Get the color of a certain pixel</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//Create a new pixbuf of size 320x240
+$pixbuf = new GdkPixbuf(Gdk::COLORSPACE_RGB, true, 8, 320, 240);
+
+//green, half-transparent
+//overwrites the previously set color
+$pixbuf-&gt;fill(128, 255, 0, 128);
+echo "setting: (128,255,0,128)\n";
+
+//now get the pixel at a certain position
+$pixel = $pixbuf-&gt;get_pixel(10, 20);
+echo 'pixel: ' . $pixel . "\n";
+
+$r = ($pixel &amp; 0xff000000) &gt;&gt; 24;
+$g = ($pixel &amp; 0x00ff0000) &gt;&gt; 16;
+$b = ($pixel &amp; 0x0000ff00) &gt;&gt; 8;
+$a = ($pixel &amp; 0x000000ff);
+echo "rgba: ($r,$g,$b,$a)\n";
+?&gt;</pre></td></tr></table></div>
+    <p>
+     See also:
+     <span dir="ltr"><a href="gdk.gdkpixbuf.method.put_pixel.html">put_pixel()</a></span> 
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gdk.gdkpixbuf.method.get_option.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gdk.gdkpixbuf.method.get_pixels.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GdkPixbuf::get_option</span> </td><td width="20%" align="center"><a href="gdk.gdkpixbuf.html#idp51536736">Up</a></td><td width="40%" align="right"> <span dir="ltr">GdkPixbuf::get_pixels</span></td></tr></table></div></body></html>

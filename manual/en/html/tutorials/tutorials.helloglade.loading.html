@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>Loading the file</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="tutorials.helloglade.html" title="Hello Glade!"><link rel="previous" href="tutorials.helloglade.preparation.html" title="Preparation"><link rel="next" href="tutorials.helloglade.partial.html" title="Loading a part of a .glade file"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Hello Glade!</th></tr><tr><td width="20%" align="left"><a href="tutorials.helloglade.preparation.html">Prev</a> </td><th width="60%" align="center">Loading the file</th><td width="20%" align="right"> <a href="tutorials.helloglade.partial.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="tutorials.helloglade.loading"></a><div class="titlepage"><div><h2 class="title" style="clear: all"><a name="tutorials.helloglade.loading"></a>Loading the file</h2></div></div><p>
+   The first thing to do is loading the <tt>.glade</tt>
+   file from the previous section. <span dir="ltr"><a href="../glade/glade.gladexml.html">GladeXML</a></span> constructor
+   takes the file path as first parameter, so all we need to do is this:
+  </p><div class="example" align="left"><p><a name="idp44361696"></a><b>Example 4.2. Loading the .glade file</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//Create a new glade instance, load the 
+// widgets from the file passed as parameter
+$glade = new GladeXML('helloglade.glade');
+
+//Start the main loop
+Gtk::main();
+?&gt;</pre></td></tr></table></div><p>
+   When running the script, you will note that the window with the button appears
+   on your screen, but doesn't react to anything other than closing the window.
+   Even there, the window is destroyed but your script continues to run
+   - clearly a case of missing signal connections.
+  </p><div class="sect2"><a name="tutorials.helloglade.connecting"></a><div class="titlepage"><div><h3 class="title"><a name="tutorials.helloglade.connecting"></a>Connecting signals by hand</h3></div></div><p>
+    Next, we will just connect the signals as we know it: Call
+    connect or
+    connect_simple on
+    the widget object. To get the object, just use the
+    <span dir="ltr"><a href="../glade/glade.gladexml.method.get_widget.html">get_widget()</a></span>  method and pass
+    the widget's name (id) to it. Then do the job as usual:
+   </p><div class="example" align="left"><p><a name="idp44369392"></a><b>Example 4.3. Getting and connecting the widgets</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//Create a new glade instance, load the
+// widgets from the file passed as parameter
+//We use the absolute file path as it is not uncommon
+// that the application is run from a different working directory
+$glade = new GladeXML(dirname(__FILE__) . '/helloglade.glade');
+
+//Nothing happened when you clicked the button or closed
+// the window with Step 1's code.
+//Here we manually connect the widget signals as you know it
+$window = $glade-&gt;get_widget('wndClose');
+$window-&gt;connect_simple('destroy', array('Gtk', 'main_quit'));
+
+//Again, get the widget object and connect the clicked signal
+$button = $glade-&gt;get_widget('btnClose');
+$button-&gt;connect_simple('clicked', 'onClickButton');
+
+//This method is called when the button is clicked
+function onClickButton() {
+    echo "button clicked!\r\n";
+    Gtk::main_quit();
+}
+
+//Start the main loop
+Gtk::main();
+?&gt;</pre></td></tr></table></div></div><div class="sect2"><a name="tutorials.helloglade.autoconnect"></a><div class="titlepage"><div><h3 class="title"><a name="tutorials.helloglade.autoconnect"></a>Use Glade to connect the signals</h3></div></div><p>
+    You probably noted the &lt;signal&gt; tags in the
+    <tt>.glade</tt> file - it is
+    possible to define signal handlers directly in the file. All we have to do
+    is telling Glade to establish the connections by calling
+    <span dir="ltr"><a href="../glade/glade.gladexml.method.signal_autoconnect.html">signal_autoconnect()</a></span> .
+   </p><p>
+    You can either define plain function names as handler that will be
+    called when an event occurs, or use a special notation for
+    static method calls by separating class name and method name
+    with double colons as in <span dir="ltr"><tt>Classname::methodName</tt></span>.
+   </p><div class="example" align="left"><p><a name="idp44376752"></a><b>Example 4.4. Using signal_autoconnect</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//Create a new glade instance, load the
+// widgets from the file passed as parameter
+//We use the absolute file path as it is not uncommon
+// that the application is run from a different working directory
+$glade = new GladeXML(dirname(__FILE__) . '/helloglade.glade');
+
+//Let glade do all the signal connections we specified in the file
+$glade-&gt;signal_autoconnect();
+
+//This method is called when the button is clicked
+function onClickButton() {
+    echo "button clicked!\r\n";
+    Gtk::main_quit();
+}
+
+//Start the main loop
+Gtk::main();
+?&gt;</pre></td></tr></table></div></div><div class="sect2"><a name="tutorials.helloglade.autoconnect_instance"></a><div class="titlepage"><div><h3 class="title"><a name="tutorials.helloglade.autoconnect_instance"></a>Connecting to object methods</h3></div></div><p>
+    Just connecting to plain functions or static methods doesn't really
+    fulfill the needs of a good programmer. To get away from spaghetti code,
+    we need to be able to connect signals to methods of objects.
+   </p><p>
+    Doing that is really simple: Just use
+    <span dir="ltr"><a href="../glade/glade.gladexml.method.signal_autoconnect_instance.html">signal_autoconnect_instance()</a></span>  with
+    the object as first parameter instead of using
+    <span dir="ltr"><a href="../glade/glade.gladexml.method.signal_autoconnect.html">signal_autoconnect()</a></span> :
+   </p><div class="example" align="left"><p><a name="idp44383472"></a><b>Example 4.5. Using signal_autoconnect_instance</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//Here we use an object and connect all the
+// signals to *object methods* instead of
+// functions
+
+class MyClass {
+    //This method is called when the button is clicked
+    function onClickButton() {
+        echo "MyClass-&gt;onClickButton!\r\n";
+        Gtk::main_quit();
+    }
+
+    function staticMethod() {
+        echo "MyClass::staticMethod()\r\n";
+    }
+}
+
+$glade = new GladeXML(dirname(__FILE__) . '/helloglade.glade');
+
+//Let glade do all the signal connections we specified in the file
+// but this time, connect to the object methods
+$myClassInstance = new MyClass();
+$glade-&gt;signal_autoconnect_instance($myClassInstance);
+
+//Start the main loop
+Gtk::main();
+?&gt;</pre></td></tr></table></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="tutorials.helloglade.preparation.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="tutorials.helloglade.partial.html">Next</a></td></tr><tr><td width="40%" align="left">Preparation </td><td width="20%" align="center"><a href="tutorials.helloglade.html">Up</a></td><td width="40%" align="right"> Loading a part of a .glade file</td></tr></table></div></body></html>

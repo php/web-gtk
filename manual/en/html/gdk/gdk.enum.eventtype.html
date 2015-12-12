@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GdkEventType</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gdkenums.html#gdk.gdkenum" title="GDK Enums"><link rel="previous" href="gdk.enum.eventmask.html" title="GdkEventMask"><link rel="next" href="gdk.enum.extensionmode.html" title="GdkExtensionMode"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GDK Enums</th></tr><tr><td width="20%" align="left"><a href="gdk.enum.eventmask.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GdkEventType</span></th><td width="20%" align="right"> <a href="gdk.enum.extensionmode.html">Next</a></td></tr></table><hr></div><a class="enum" name="gdk.enum.eventtype"></a><h1 class="title">GdkEventType</h1><p>
+   <p>
+    Do not confuse these events with the signals that GTK+ widgets emit. 
+    Although many of these events result in corresponding signals being 
+    emitted, the events are often transformed or filtered along the way.
+   </p>
+  </p><table width="100%" cellpadding="2" cellspacing="1"><tr><td width="7%"><h3>Value</h3></td><td width="40%"><h3>Symbolic name</h3></td><td width="52%"><h3>Description</h3></td></tr><tr valign="top"><td> -1</td><td>Gdk::NOTHING</td><td>
+       a special code to indicate a null event.
+   </td></tr><tr valign="top"><td>  0</td><td>Gdk::DELETE</td><td>
+       the window manager has requested that the toplevel window be hidden 
+       or destroyed, usually when the user clicks on a special icon in the 
+       title bar.
+   </td></tr><tr valign="top"><td>  1</td><td>Gdk::DESTROY</td><td>
+       the window has been destroyed.
+   </td></tr><tr valign="top"><td>  2</td><td>Gdk::EXPOSE</td><td>
+       all or part of the window has become visible and needs to be redrawn.
+   </td></tr><tr valign="top"><td>  3</td><td>Gdk::MOTION_NOTIFY</td><td>
+       the pointer (usually a mouse) has moved.
+   </td></tr><tr valign="top"><td>  4</td><td>Gdk::BUTTON_PRESS</td><td>
+       a mouse button has been pressed.
+   </td></tr><tr valign="top"><td>  5</td><td>Gdk::_2BUTTON_PRESS</td><td>
+       a mouse button has been double-clicked (clicked twice 
+       within a short period of time). Note that each click also 
+       generates a <span dir="ltr"><tt>Gdk::BUTTON_PRESS</tt></span> event.
+   </td></tr><tr valign="top"><td>  6</td><td>Gdk::_3BUTTON_PRESS</td><td>
+       a mouse button has been clicked 3 times in a short period of 
+       time. Note that each click also generates a 
+       <span dir="ltr"><tt>Gdk::BUTTON_PRESS</tt></span> event.
+   </td></tr><tr valign="top"><td>  7</td><td>Gdk::BUTTON_RELEASE</td><td>
+       a mouse button has been released.
+   </td></tr><tr valign="top"><td>  8</td><td>Gdk::KEY_PRESS</td><td>
+       a key has been pressed.
+   </td></tr><tr valign="top"><td>  9</td><td>Gdk::KEY_RELEASE</td><td>
+       a key has been released.
+   </td></tr><tr valign="top"><td>  10</td><td>Gdk::ENTER_NOTIFY</td><td>
+       the pointer has entered the window.
+   </td></tr><tr valign="top"><td>  11</td><td>Gdk::LEAVE_NOTIFY</td><td>
+       the pointer has left the window.
+   </td></tr><tr valign="top"><td>  12</td><td>Gdk::FOCUS_CHANGE</td><td>
+       the keyboard focus has entered or left the window.
+   </td></tr><tr valign="top"><td>  13</td><td>Gdk::CONFIGURE</td><td>
+       the size, position or stacking order of the window has changed. 
+       Note that GTK+ discards these events for 
+       <span dir="ltr"><tt>Gdk::WINDOW_CHILD</tt></span> windows.
+   </td></tr><tr valign="top"><td>  14</td><td>Gdk::MAP</td><td>
+       the window has been mapped.
+   </td></tr><tr valign="top"><td>  15</td><td>Gdk::UNMAP</td><td>
+       the window has been unmapped.
+   </td></tr><tr valign="top"><td>  16</td><td>Gdk::PROPERTY_NOTIFY</td><td>
+       a property on the window has been changed or deleted.
+   </td></tr><tr valign="top"><td>  17</td><td>Gdk::SELECTION_CLEAR</td><td>
+       the application has lost ownership of a selection.
+   </td></tr><tr valign="top"><td>  18</td><td>Gdk::SELECTION_REQUEST</td><td>
+       another application has requested a selection.
+   </td></tr><tr valign="top"><td>  19</td><td>Gdk::SELECTION_NOTIFY</td><td>
+       a selection has been received.
+   </td></tr><tr valign="top"><td>  20</td><td>Gdk::PROXIMITY_IN</td><td>
+       an input device has moved into contact with a sensing
+       surface (e.g. a touchscreen or graphics tablet).
+   </td></tr><tr valign="top"><td>  21</td><td>Gdk::PROXIMITY_OUT</td><td>
+       an input device has moved out of contact with a sensing surface.
+   </td></tr><tr valign="top"><td>  22</td><td>Gdk::DRAG_ENTER</td><td>
+       the mouse has entered the window while a drag is in progress.
+   </td></tr><tr valign="top"><td>  23</td><td>Gdk::DRAG_LEAVE</td><td>
+       the mouse has left the window while a drag is in progress.
+   </td></tr><tr valign="top"><td>  24</td><td>Gdk::DRAG_MOTION</td><td>
+       the mouse has moved in the window while a drag is in progress.
+   </td></tr><tr valign="top"><td>  25</td><td>Gdk::DRAG_STATUS</td><td>
+       the status of the drag operation initiated by the window has changed.
+   </td></tr><tr valign="top"><td>  26</td><td>Gdk::DROP_START</td><td>
+       a drop operation onto the window has started.
+   </td></tr><tr valign="top"><td>  27</td><td>Gdk::DROP_FINISHED</td><td>
+       the drop operation initiated by the window has completed.
+   </td></tr><tr valign="top"><td>  28</td><td>Gdk::CLIENT_EVENT</td><td>
+       a message has been received from another application.
+   </td></tr><tr valign="top"><td>  29</td><td>Gdk::VISIBILITY_NOTIFY</td><td>
+       the window visibility status has changed.
+   </td></tr><tr valign="top"><td>  30</td><td>Gdk::NO_EXPOSE</td><td>
+       Indicates that the source region was completely available 
+       when parts of a drawable were copied. This is not very useful.
+   </td></tr><tr valign="top"><td>  31</td><td>Gdk::SCROLL</td><td>
+    
+   </td></tr><tr valign="top"><td>  32</td><td>Gdk::WINDOW_STATE</td><td>
+    
+   </td></tr><tr valign="top"><td>  33</td><td>Gdk::SETTING</td><td>
+    
+   </td></tr><tr valign="top"><td>  34</td><td>Gdk::OWNER_CHANGE</td><td>
+    
+   </td></tr></table><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gdk.enum.eventmask.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gdk.enum.extensionmode.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GdkEventMask</span> </td><td width="20%" align="center"><a href="../gdkenums.html#gdk.gdkenum">Up</a></td><td width="40%" align="right"> <span dir="ltr">GdkExtensionMode</span></td></tr></table></div></body></html>

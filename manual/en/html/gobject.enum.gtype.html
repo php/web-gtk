@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GType</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="stylesheet.css"><link rel="home" href="index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gobjectenums.html#gobjectenum" title="GObject Enums"><link rel="previous" href="gobjectenums.html" title="GObject Enums"><link rel="next" href="gobject.enum.gpriority.html" title="GPriority"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GObject Enums</th></tr><tr><td width="20%" align="left"><a href="gobjectenums.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GType</span></th><td width="20%" align="right"> <a href="gobject.enum.gpriority.html">Next</a></td></tr></table><hr></div><a class="enum" name="gobject.enum.gtype"></a><h1 class="title">GType</h1><p>
+   <p>
+    GType is used in <span dir="ltr"><a href="gtk/gtk.gtkliststore.html">GtkListStore</a></span> and
+    <span dir="ltr"><a href="gtk/gtk.gtktreestore.html">GtkTreeStore</a></span> to determine the type of
+    the column in the data table.  It is also used for custom signals
+    when defining the return values and accepted parameters for callbacks.
+   </p>
+   <p>
+    The GType controls what type of data may be stored in
+    the particular column, how the default
+    <span dir="ltr"><a href="gtk/gtk.gtkcellrenderer.html">GtkCellRenderer</a></span> displays the value in
+    the view, even what user defined signal callbacks can accept and return.
+    The typing is very strict.  It is generally safest to make
+    sure you cast your variables properly.  In addition, every object
+    that is an instanceof Gobject will have a type in a class constant called
+    gtype.  This allows you to store widgets or pixbufs in data stores, or
+    use them for parameters and return values with custom signals.
+   </p>
+  </p><table width="100%" cellpadding="2" cellspacing="1"><tr><td width="7%"><h3>Value</h3></td><td width="40%"><h3>Symbolic name</h3></td><td width="52%"><h3>Description</h3></td></tr><tr valign="top"><td>  0</td><td>Gobject::TYPE_INVALID</td><td>
+    
+   </td></tr><tr valign="top"><td>  4</td><td>Gobject::TYPE_NONE</td><td>
+    
+   </td></tr><tr valign="top"><td>  8</td><td>Gobject::TYPE_INTERFACE</td><td>
+    
+   </td></tr><tr valign="top"><td>  12</td><td>Gobject::TYPE_CHAR</td><td>
+    
+   </td></tr><tr valign="top"><td>  20</td><td>Gobject::TYPE_BOOLEAN</td><td>
+    A boolean value, <span dir="ltr"><tt>true</tt></span> or <span dir="ltr"><tt>false</tt></span>
+   </td></tr><tr valign="top"><td>  32</td><td>Gobject::TYPE_LONG</td><td>
+    A big integer number.
+   </td></tr><tr valign="top"><td>  48</td><td>Gobject::TYPE_ENUM</td><td>
+    
+   </td></tr><tr valign="top"><td>  52</td><td>Gobject::TYPE_FLAGS</td><td>
+    
+   </td></tr><tr valign="top"><td>  60</td><td>Gobject::TYPE_DOUBLE</td><td>
+    A decimal number with a fraction dot in it.
+   </td></tr><tr valign="top"><td>  64</td><td>Gobject::TYPE_STRING</td><td>
+    A normal string.
+   </td></tr><tr valign="top"><td>  68</td><td>Gobject::TYPE_POINTER</td><td>
+    
+   </td></tr><tr valign="top"><td>  72</td><td>Gobject::TYPE_BOXED</td><td>
+    
+   </td></tr><tr valign="top"><td>  76</td><td>Gobject::TYPE_PARAM</td><td>
+    
+   </td></tr><tr valign="top"><td>  80</td><td>Gobject::TYPE_OBJECT</td><td>
+    
+   </td></tr><tr valign="top"><td>  137706104</td><td>Gobject::TYPE_PHP_VALUE</td><td>
+    Any PHP variable content.
+   </td></tr></table><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gobjectenums.html">Prev</a> </td><td width="20%" align="center"><a href="index.html">Home</a></td><td width="40%" align="right"> <a href="gobject.enum.gpriority.html">Next</a></td></tr><tr><td width="40%" align="left">GObject Enums </td><td width="20%" align="center"><a href="gobjectenums.html#gobjectenum">Up</a></td><td width="40%" align="right"> <span dir="ltr">GPriority</span></td></tr></table></div></body></html>

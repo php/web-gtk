@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkScale</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkruler.property.upper.html" title="GtkRuler::upper"><link rel="next" href="gtk.gtkscale.method.get_digits.html" title="GtkScale::get_digits"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkruler.property.upper.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkScale</span></th><td width="20%" align="right"> <a href="gtk.gtkscale.method.get_digits.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkscale"></a><h2 class="title"><span dir="ltr">GtkScale</span></h2><p><blockquote>
+   Base class for GtkHScale and GtkVScale.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkrange.html">GtkRange</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkscale.html">GtkScale</a></span><br></div></blockquote></p><p><h3>Direct Subclasses</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="gtk.gtkhscale.html">GtkHScale</a></span>, <span dir="ltr"><a href="gtk.gtkvscale.html">GtkVScale</a></span></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    A <span dir="ltr"><a href="gtk.gtkscale.html">GtkScale</a></span> is a widget that looks very like a
+    <span dir="ltr"><a href="gtk.gtkscrollbar.html">GtkScrollbar</a></span> without the arrow buttons at either
+    end and with the ability to display the current value as text.
+   </p>
+   <p>
+    There are some issues with the value display, in that scrolling-aware
+    container widgets will not allow their child's
+    <span dir="ltr"><a href="gtk.gtkadjustment.html">GtkAdjustment</a></span> to be overwritten, which means that
+    the <span dir="ltr"><a href="gtk.gtkscale.html">GtkScale</a></span> cannot have focus unless it takes
+    the values given by the container to the scrollable widget. This in turn
+    misconfigures the display area, which is calculated with regard to
+    the upper value of the associated adjustment object. When a container
+    sets an adjustment, each value is 0 at the start, and the later values
+    are calculated on the fly after the widgets have been drawn.
+   </p>
+   <p>
+    Although it is possible to use the <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span>
+    method <span dir="ltr"><a href="gtk.gtkwidget.method.queue_resize.html">queue_resize()</a></span>  to force
+    the text area to resize according to the width of the new adjustment
+    values, the widget does not fully redraw unless it has a configure event
+    - that is, you need to manually resize it and then restore it.
+   </p>
+   <p>
+    For all these reasons, it is unadvisable to use the draw-value feature
+    where the <span dir="ltr"><a href="gtk.gtkscale.html">GtkScale</a></span> is associated with a
+    scrollable widget.
+   </p>
+  </blockquote></p><p><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkscale.method.get_digits.html">get_digits()</a></span> </dt><dd> 
+     Gets number of decimal places.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkscale.method.get_draw_value.html">get_draw_value()</a></span> </dt><dd> 
+    Gets if value is displayed or not.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkscale.method.get_layout.html">get_layout()</a></span> </dt><dd> 
+    Returns the <span dir="ltr"><a href="../pango/pango.pangolayout.html">PangoLayout</a></span> for the scale.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkscale.method.get_layout_offsets.html">get_layout_offsets()</a></span> </dt><dd> 
+    Returns the coordinates where the scale will draw the text in the scale.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkscale.method.get_value_pos.html">get_value_pos()</a></span> </dt><dd> 
+     Gets position of numeric text.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkscale.method.set_digits.html">set_digits()</a></span> </dt><dd> 
+    Sets number of decimal places.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkscale.method.set_draw_value.html">set_draw_value()</a></span> </dt><dd> 
+     Toggles whether value is displayed.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkscale.method.set_value_pos.html">set_value_pos()</a></span> </dt><dd> 
+    Sets position of numeric text.
+   </dd></blockquote></div><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtkscale.signal.format-value.html">format-value</a>"</span></dt><dd> 
+    Signal which allows the display value of the scale to be changed.
+   </dd></blockquote></p></div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ 
+
+  
+
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkruler.property.upper.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkscale.method.get_digits.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkRuler::upper</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkScale::get_digits</span></td></tr></table></div></body></html>

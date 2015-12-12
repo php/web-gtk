@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkBox</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkborder.method.free.html" title="GtkBorder::free"><link rel="next" href="gtk.gtkbox.method.get_homogeneous.html" title="GtkBox::get_homogeneous"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkborder.method.free.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkBox</span></th><td width="20%" align="right"> <a href="gtk.gtkbox.method.get_homogeneous.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkbox"></a><h2 class="title"><span dir="ltr">GtkBox</span></h2><p><blockquote>
+   Base class for box containers.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkbox.html">GtkBox</a></span><br></div></blockquote></p><p><h3>Direct Subclasses</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="gtk.gtkbuttonbox.html">GtkButtonBox</a></span>, <span dir="ltr"><a href="gtk.gtkhbox.html">GtkHBox</a></span>, <span dir="ltr"><a href="gtk.gtkvbox.html">GtkVBox</a></span></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    <span dir="ltr"><a href="gtk.gtkbox.html">GtkBox</a></span> is a base class providing box
+    containers <span dir="ltr"><a href="gtk.gtkhbox.html">GtkHBox</a></span> and 
+    <span dir="ltr"><a href="gtk.gtkvbox.html">GtkVBox</a></span> with properties and methods for
+    packing any number of child widgets.
+   </p>
+   <p>
+    Note that <span dir="ltr"><a href="gtk.gtkbox.html">GtkBox</a></span> is an abstract class
+    and cannot be constructed directly.
+   </p>
+   <p>
+    For more information about packing widgets see
+    the <a href="../tutorials/tutorials.packing.html" title="Packing Widgets">packing tutorial</a>.
+   </p>
+  </blockquote></p><p><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkbox.method.get_homogeneous.html">get_homogeneous()</a></span> </dt><dd> 
+    Whether all children are allocated the same size.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkbox.method.get_spacing.html">get_spacing()</a></span> </dt><dd> 
+    Returns the spacing between widgets.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkbox.method.pack_end.html">pack_end()</a></span> </dt><dd> 
+    Adds a widget to the box in the next available position, starting from the
+    end.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkbox.method.pack_start.html">pack_start()</a></span> </dt><dd> 
+    Adds a widget to the box in the next available position starting from the
+    begining.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkbox.method.reorder_child.html">reorder_child()</a></span> </dt><dd> 
+    Moves a child widget to a certain position.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkbox.method.set_child_packing.html">set_child_packing()</a></span> </dt><dd> 
+     Sets packing parameters for a child.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkbox.method.set_homogeneous.html">set_homogeneous()</a></span> </dt><dd> 
+    Toggles equality of child sizing.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkbox.method.set_spacing.html">set_spacing()</a></span> </dt><dd> 
+    Sets spacing between children.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkbox.method.pack_end_defaults.html">pack_end_defaults()</a></span> </dt><dd> 
+    DEPRECATED: use <span dir="ltr"><a href="gtk.gtkbox.method.pack_end.html">pack_end()</a></span>  instead
+   </dd><dt><span dir="ltr"><a href="gtk.gtkbox.method.pack_start_defaults.html">pack_start_defaults()</a></span> </dt><dd> 
+    DEPRECATED: use <span dir="ltr"><a href="gtk.gtkbox.method.pack_start.html">pack_start()</a></span>  instead
+   </dd><dt><span dir="ltr"><a href="gtk.gtkbox.method.query_child_packing.html">query_child_packing()</a></span> </dt><dd> 
+    Returns array of information about a packed widget.
+   </dd></blockquote></div></p></div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkborder.method.free.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkbox.method.get_homogeneous.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkBorder::free</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkBox::get_homogeneous</span></td></tr></table></div></body></html>

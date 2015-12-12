@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkFileChooser</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkexpander.signal.activate.html" title="activate"><link rel="next" href="gtk.gtkfilechooser.method.add_filter.html" title="GtkFileChooser::add_filter"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkexpander.signal.activate.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkFileChooser</span></th><td width="20%" align="right"> <a href="gtk.gtkfilechooser.method.add_filter.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkfilechooser"></a><h2 class="title"><span dir="ltr">GtkFileChooser</span></h2><p><blockquote>
+    File chooser interface used by GtkFileChooserWidget and gtkfilechooser.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="gtk.gtkfilechooser.html">GtkFileChooser</a></span><br></div></blockquote></p><h3>Implemented by</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="gtk.gtkfilechooserbutton.html">GtkFileChooserButton</a></span>, <span dir="ltr"><a href="gtk.gtkfilechooserdialog.html">GtkFileChooserDialog</a></span>, <span dir="ltr"><a href="gtk.gtkfilechooserwidget.html">GtkFileChooserWidget</a></span></div></blockquote><p><h3>Description</h3><blockquote><strong>This is an interface and cannot be instantiated directly.</strong></blockquote><blockquote>
+   <p>
+    GtkFileChooser is an interface that can be implemented by file
+    selection widgets. In GTK+, the main objects that implement this
+    interface are <span dir="ltr"><a href="gtk.gtkfilechooserwidget.html">GtkFileChooserWidget</a></span>,
+    gtkfilechooser,
+    and <span dir="ltr"><a href="gtk.gtkfilechooserbutton.html">GtkFileChooserButton</a></span>. You do not need to write
+    an object that implements the <span dir="ltr"><a href="gtk.gtkfilechooser.html">GtkFileChooser</a></span>
+    interface unless you are trying to adapt an existing file selector
+    to expose a standard programming interface.
+   </p>
+  </blockquote></p><p><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.add_filter.html">add_filter()</a></span> </dt><dd> 
+    Adds a filter to the GtkFileChooser
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.add_shortcut_folder.html">add_shortcut_folder()</a></span> </dt><dd> 
+    Adds a folder to be displayed with the shortcut folders.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.add_shortcut_folder_uri.html">add_shortcut_folder_uri()</a></span> </dt><dd> 
+    Adds a folder URI to be displayed with the shortcut folders.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.get_action.html">get_action()</a></span> </dt><dd> 
+    Returns the action of the chooser.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.get_current_folder.html">get_current_folder()</a></span> </dt><dd> 
+     Returns the current folder.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.get_current_folder_uri.html">get_current_folder_uri()</a></span> </dt><dd> 
+    Gets the current folder as an URI.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.get_extra_widget.html">get_extra_widget()</a></span> </dt><dd> 
+    Returns the extra widget defined for the chooser.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.get_filename.html">get_filename()</a></span> </dt><dd> 
+    Returns the current file location selected.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.get_filenames.html">get_filenames()</a></span> </dt><dd> 
+    Lists all the selected files and subfolders.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.get_filter.html">get_filter()</a></span> </dt><dd> 
+     Returns the <span dir="ltr"><a href="gtk.gtkfilefilter.html">GtkFileFilter</a></span> object.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.get_local_only.html">get_local_only()</a></span> </dt><dd> 
+    Whether only local files can be selected.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.get_preview_filename.html">get_preview_filename()</a></span> </dt><dd> 
+    Filename that should be previewed in a custom preview widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.get_preview_uri.html">get_preview_uri()</a></span> </dt><dd> 
+    URI that should be previewed in a custom preview widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.get_preview_widget.html">get_preview_widget()</a></span> </dt><dd> 
+    Gets the current preview widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.get_preview_widget_active.html">get_preview_widget_active()</a></span> </dt><dd> 
+    Whether the preview widget should be shown for the current filename.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.get_select_multiple.html">get_select_multiple()</a></span> </dt><dd> 
+    Whether multiple files can be selected.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.get_show_hidden.html">get_show_hidden()</a></span> </dt><dd> 
+    Whether hidden files and folders are displayed.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.get_uri.html">get_uri()</a></span> </dt><dd> 
+    URI for the currently selected file.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.get_uris.html">get_uris()</a></span> </dt><dd> 
+    Lists all the selected files and subfolders.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.get_use_preview_label.html">get_use_preview_label()</a></span> </dt><dd> 
+    Gets whether a stock label should be drawn with the name of the previewed file.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.list_filters.html">list_filters()</a></span> </dt><dd> 
+    Lists the current set of user-selectable filters.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.list_shortcut_folder_uris.html">list_shortcut_folder_uris()</a></span> </dt><dd> 
+    Queries the list of shortcut folders.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.list_shortcut_folders.html">list_shortcut_folders()</a></span> </dt><dd> 
+    Queries the list of shortcut folders.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.remove_filter.html">remove_filter()</a></span> </dt><dd> 
+    Removes filter from the list of filters the user can select.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.remove_shortcut_folder.html">remove_shortcut_folder()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.remove_shortcut_folder_uri.html">remove_shortcut_folder_uri()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.select_all.html">select_all()</a></span> </dt><dd> 
+    Selects all the files in the current folder.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.select_filename.html">select_filename()</a></span> </dt><dd> 
+    Selects a filename.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.select_uri.html">select_uri()</a></span> </dt><dd> 
+    Selects an URI.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.set_action.html">set_action()</a></span> </dt><dd> 
+    Defines the action.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.set_current_folder.html">set_current_folder()</a></span> </dt><dd> 
+     Defines the current path shown.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.set_current_folder_uri.html">set_current_folder_uri()</a></span> </dt><dd> 
+     Defines the current path shown.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.set_current_name.html">set_current_name()</a></span> </dt><dd> 
+    Sets the current name in the file selector.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.set_extra_widget.html">set_extra_widget()</a></span> </dt><dd> 
+    Define an extra widget that is packed at the bottom of the widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.set_filename.html">set_filename()</a></span> </dt><dd> 
+    Defines the current file location.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.set_filter.html">set_filter()</a></span> </dt><dd> 
+    Sets the current filter
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.set_local_only.html">set_local_only()</a></span> </dt><dd> 
+    Sets whether only local files can be selected.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.set_preview_widget.html">set_preview_widget()</a></span> </dt><dd> 
+    Sets an application-supplied widget to display a custom preview of the file.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.set_preview_widget_active.html">set_preview_widget_active()</a></span> </dt><dd> 
+    Sets whether the preview widget should be shown.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.set_select_multiple.html">set_select_multiple()</a></span> </dt><dd> 
+    Sets whether multiple files can be selected.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.set_show_hidden.html">set_show_hidden()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.set_uri.html">set_uri()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.set_use_preview_label.html">set_use_preview_label()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.unselect_all.html">unselect_all()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.unselect_filename.html">unselect_filename()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooser.method.unselect_uri.html">unselect_uri()</a></span> </dt><dd> 
+
+   </dd></blockquote></div></p></div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkexpander.signal.activate.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkfilechooser.method.add_filter.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">activate</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkFileChooser::add_filter</span></td></tr></table></div></body></html>

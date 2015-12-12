@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkLabel::get_selection_bounds</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtklabel.html#idp69134576" title=""><link rel="previous" href="gtk.gtklabel.method.get_selectable.html" title="GtkLabel::get_selectable"><link rel="next" href="gtk.gtklabel.method.get_single_line_mode.html" title="GtkLabel::get_single_line_mode"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtklabel.method.get_selectable.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkLabel::get_selection_bounds</span></th><td width="20%" align="right"> <a href="gtk.gtklabel.method.get_single_line_mode.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtklabel.method.get_selection_bounds"></a><h2><span dir="ltr">GtkLabel::get_selection_bounds</span></h2><p><div class="funcsynopsis" id="idp69221568"><p></p><a name="idp69221568"></a>array get_selection_bounds();</div></p>
+    <p>
+     Gets the selected range of characters in the label. The first array value
+     is the start character offset, the second the end offset.
+    </p>
+    <p>
+     So a return array of <span dir="ltr"><tt>array(1,2)</tt></span> would mean that 1
+     character (from position 1 to position 2) is selected.
+    </p>
+    <p>
+     <div class="example" align="left"><p><a name="idp69226464"></a><b>Example 79. Getting the Selection Bounds of a GtkLabel</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+// Create a label
+$label = new GtkLabel('Example Label');
+
+// Make the label selectable.
+$label-&gt;set_selectable(true);
+
+// Select a region.
+$label-&gt;select_region(3, 7);
+
+// Dump out the selection bounds.
+print_r($label-&gt;get_selection_bounds());
+?&gt;
+</pre></td></tr></table></div>
+    </p>
+    <p> 
+     See also:
+     <span dir="ltr"><a href="gtk.gtklabel.method.select_region.html">select_region()</a></span> 
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtklabel.method.get_selectable.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtklabel.method.get_single_line_mode.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkLabel::get_selectable</span> </td><td width="20%" align="center"><a href="gtk.gtklabel.html#idp69134576">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkLabel::get_single_line_mode</span></td></tr></table></div></body></html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>key-press-event</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkwidget.html#idp88473568" title=""><link rel="previous" href="gtk.gtkwidget.signal.hierarchy-changed.html" title="hierarchy-changed"><link rel="next" href="gtk.gtkwidget.signal.key-release-event.html" title="key-release-event"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkwidget.signal.hierarchy-changed.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">key-press-event</span></th><td width="20%" align="right"> <a href="gtk.gtkwidget.signal.key-release-event.html">Next</a></td></tr></table><hr></div><a name="gtk.gtkwidget.signal.key-press-event"></a><h2><span dir="ltr">key-press-event</span></h2><p>
+    <p>
+     This signal is emitted when a key has been pressed down.
+    </p>
+    <div class="note" style="margin-left: 24px; margin-right: 24px; font-weight: bold;">
+     This signal is emitted before any changes to the widget are made. For
+     example, if you are using a <span dir="ltr"><a href="gtk.gtkentry.html">GtkEntry</a></span>, the signal
+     will be emitted before the text of the entry is changed.
+    </div>
+    <p>
+     Useful event properties are:
+     <div class="itemizedlist"><ul><li><a name="idp88695632"></a><span dir="ltr"><tt>keyval</tt></span> - integer that can be compared to
+       the <a href="../appendix.keysyms.html">key symbols</a> to check which
+       key has been pressed down.
+      </li><li><a name="idp88697648"></a><span dir="ltr"><tt>state</tt></span> - a bitmask of
+       <span dir="ltr"><a href="../gdk/gdk.enum.modifiertype.html">GdkModifierType</a></span>s that can be used to check if
+       <span dir="ltr"><tt>Ctrl</tt></span> or <span dir="ltr"><tt>Alt</tt></span> have been hold down
+       additional to the pressed key.
+      </li></ul></div>
+    </p>
+    <p>
+     <div class="example" align="left"><p><a name="idp88701184"></a><b>Example 155. Using the key-press-event signal</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+$wnd = new GtkWindow();
+$wnd-&gt;connect_simple('destroy', array('Gtk', 'main_quit'));
+
+//we want to receive key press events
+$wnd-&gt;connect('key-press-event', 'onKeyPress');
+
+//here we handle the key press events
+function onKeyPress($widget, $event) {
+    if ($event-&gt;state &amp; Gdk::CONTROL_MASK &amp;&amp; $event-&gt;keyval == Gdk::KEY_q) {
+        //Press Ctrl+q, and the window will be closed
+        $widget-&gt;destroy();
+    } else if ($event-&gt;keyval == Gdk::KEY_F1) {
+        //Press F1 to shwo a help text in the title
+        $widget-&gt;set_title('Press Ctrl+Q to quit');
+    }
+}
+
+$wnd-&gt;show();
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+    </p>
+   </p><p><b>Callback function</b></p><p><p><div class="funcsynopsis" id="idp88688992"><p></p><a name="idp88688992"></a>bool callback(<span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span> <i><tt>widget</tt></i>, <span dir="ltr"><a href="../gdk/gdk.gdkevent.html">GdkEvent</a></span> <i><tt>event</tt></i>);</div></p></p><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkwidget.signal.hierarchy-changed.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkwidget.signal.key-release-event.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">hierarchy-changed</span> </td><td width="20%" align="center"><a href="gtk.gtkwidget.html#idp88473568">Up</a></td><td width="40%" align="right"> <span dir="ltr">key-release-event</span></td></tr></table></div></body></html>

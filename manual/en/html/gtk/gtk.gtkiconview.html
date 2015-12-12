@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkIconView</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkicontheme.signal.changed.html" title="changed"><link rel="next" href="gtk.gtkiconview.constructor.html" title="GtkIconView Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkicontheme.signal.changed.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkIconView</span></th><td width="20%" align="right"> <a href="gtk.gtkiconview.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkiconview"></a><h2 class="title"><span dir="ltr">GtkIconView</span></h2><div style="float:right; border:1px solid #000;"><img src="../images/reference/gtk/gtkiconview.constructor.png"></div><p><blockquote>
+   Displays a list of icons in a grid.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkiconview.html">GtkIconView</a></span><br></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    <span dir="ltr"><a href="gtk.gtkiconview.html">GtkIconView</a></span> provides an alternative view on a list model: 
+    It displays the model as a grid of icons with labels, the way
+    you will already know it from a file manager.
+   </p>
+   <p>
+    Like <span dir="ltr"><a href="gtk.gtktreeview.html">GtkTreeView</a></span>, it allows to select one or multiple items (depending 
+    on the selection mode, see <span dir="ltr"><a href="gtk.gtkiconview.method.set_selection_mode.html">set_selection_mode()</a></span> ).
+    In addition to selection with the arrow keys, <span dir="ltr"><a href="gtk.gtkiconview.html">GtkIconView</a></span>
+    supports rubberband selection, which is controlled by dragging the pointer.
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp67469936"><p></p><a name="idp67469936"></a> <span dir="ltr"><a href="gtk.gtkiconview.constructor.html">GtkIconView</a></span> ();</div></p> --
+    Creates a new <span dir="ltr"><a href="gtk.gtkiconview.html">GtkIconView</a></span> instance.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkiconview.method.get_column_spacing.html">get_column_spacing()</a></span> </dt><dd> 
+    Returns the space between single columns in pixels.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconview.method.get_columns.html">get_columns()</a></span> </dt><dd> 
+    The number of columns in the view.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconview.method.get_item_width.html">get_item_width()</a></span> </dt><dd> 
+    The width of a single item.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconview.method.get_margin.html">get_margin()</a></span> </dt><dd> 
+    The empty border around view.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconview.method.get_markup_column.html">get_markup_column()</a></span> </dt><dd> 
+    Column of the model in which markup is stored.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconview.method.get_model.html">get_model()</a></span> </dt><dd> 
+    The list's data model.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconview.method.get_orientation.html">get_orientation()</a></span> </dt><dd> 
+    Returns the orientation of the icon labels.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconview.method.get_path_at_pos.html">get_path_at_pos()</a></span> </dt><dd> 
+    Returns the path to the item at the given position.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconview.method.get_pixbuf_column.html">get_pixbuf_column()</a></span> </dt><dd> 
+    Model column number containing the pixbufs.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconview.method.get_row_spacing.html">get_row_spacing()</a></span> </dt><dd> 
+    Space in pixels between rows.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconview.method.get_selected_items.html">get_selected_items()</a></span> </dt><dd> 
+    Returns an array of paths for the selected items.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconview.method.get_selection_mode.html">get_selection_mode()</a></span> </dt><dd> 
+    Item selection mode.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconview.method.get_spacing.html">get_spacing()</a></span> </dt><dd> 
+    Space in pixels between icon and label.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconview.method.get_text_column.html">get_text_column()</a></span> </dt><dd> 
+    Model column number containing the text for the labels.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconview.method.item_activated.html">item_activated()</a></span> </dt><dd> 
+    Activates an item.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconview.method.path_is_selected.html">path_is_selected()</a></span> </dt><dd> 
+    Checks if an item is selected.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconview.method.select_all.html">select_all()</a></span> </dt><dd> 
+    Selects all items.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconview.method.select_path.html">select_path()</a></span> </dt><dd> 
+    Select an item in the view.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconview.method.set_column_spacing.html">set_column_spacing()</a></span> </dt><dd> 
+    Set the spacing between columns.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconview.method.set_columns.html">set_columns()</a></span> </dt><dd> 
+    Set the number of columns in the list.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconview.method.set_item_width.html">set_item_width()</a></span> </dt><dd> 
+    Width of an item.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconview.method.set_margin.html">set_margin()</a></span> </dt><dd> 
+    Margin to the widget's border.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconview.method.set_markup_column.html">set_markup_column()</a></span> </dt><dd> 
+    Set the model column containing the markup.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconview.method.set_model.html">set_model()</a></span> </dt><dd> 
+    Set the data model.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconview.method.set_orientation.html">set_orientation()</a></span> </dt><dd> 
+    Set the orientation of label relative to the icon.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconview.method.set_pixbuf_column.html">set_pixbuf_column()</a></span> </dt><dd> 
+    Set the model column in which pixbufs are located.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconview.method.set_row_spacing.html">set_row_spacing()</a></span> </dt><dd> 
+    Set the spacing between rows.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconview.method.set_selection_mode.html">set_selection_mode()</a></span> </dt><dd> 
+    Set mode of selection.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconview.method.set_spacing.html">set_spacing()</a></span> </dt><dd> 
+    Set the space between icon and label.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconview.method.set_text_column.html">set_text_column()</a></span> </dt><dd> 
+    Set model column in which the text is located.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconview.method.unselect_all.html">unselect_all()</a></span> </dt><dd> 
+    Unselects all items.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconview.method.unselect_path.html">unselect_path()</a></span> </dt><dd> 
+    Unselects a single item.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconview.method.selected_foreach.html">selected_foreach()</a></span> </dt><dd> 
+
+   </dd></blockquote></div><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtkiconview.signal.activate-cursor-item.html">activate-cursor-item</a>"</span></dt><dd> 
+    The current cursor item has been activated.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkiconview.signal.item-activated.html">item-activated</a>"</span></dt><dd> 
+    An item has been activated (not selected)
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkiconview.signal.move-cursor.html">move-cursor</a>"</span></dt><dd> 
+    Cursor (not selection) has moved.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkiconview.signal.select-all.html">select-all</a>"</span></dt><dd> 
+    FIXME
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkiconview.signal.select-cursor-item.html">select-cursor-item</a>"</span></dt><dd> 
+    FIXME
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkiconview.signal.selection-changed.html">selection-changed</a>"</span></dt><dd> 
+    Emitted when the selection has changed.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkiconview.signal.set-scroll-adjustments.html">set-scroll-adjustments</a>"</span></dt><dd> 
+    When the widget gets scroll bars.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkiconview.signal.toggle-cursor-item.html">toggle-cursor-item</a>"</span></dt><dd> 
+    Current cursor item changes its selection state.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkiconview.signal.unselect-all.html">unselect-all</a>"</span></dt><dd> 
+    FIXME 
+   </dd></blockquote></p></div>
+
+  
+
+ 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ 
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkicontheme.signal.changed.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkiconview.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">changed</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkIconView</span> Constructor</td></tr></table></div></body></html>

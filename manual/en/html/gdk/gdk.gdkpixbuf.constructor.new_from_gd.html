@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GdkPixbuf Constructor</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gdk.gdkpixbuf.html#idp51481792" title=""><link rel="previous" href="gdk.gdkpixbuf.constructor.new_from_xpm_data.html" title="GdkPixbuf Constructor"><link rel="next" href="gdk.gdkpixbuf.method.add_alpha.html" title="GdkPixbuf::add_alpha"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gdk.gdkpixbuf.constructor.new_from_xpm_data.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GdkPixbuf</span> Constructor</th><td width="20%" align="right"> <a href="gdk.gdkpixbuf.method.add_alpha.html">Next</a></td></tr></table><hr></div><div><a name="gdk.gdkpixbuf.constructor.new_from_gd"></a><h2><span dir="ltr">GdkPixbuf</span> Constructor</h2><p><div class="funcsynopsis" id="idp51527024"><p></p><a name="idp51527024"></a> <span dir="ltr"><a href="gdk.gdkpixbuf.constructor.new_from_gd.html">GdkPixbuf::new_from_gd</a></span> ( <i><tt>gd_image</tt></i>);</div></p>
+    <p>
+     Creates a GdkPixbuf object based on a GD image object.
+    </p>
+    <p>
+     This method opens a range of possible interactions with
+     PEAR packages: Any package that is able to produce GD images can
+     be used to display its output directly in a
+     <span dir="ltr"><a href="../gtk/gtk.gtkimage.html">GtkImage</a></span> widget by loading the GD resource
+     into a pixbuf.
+    </p>
+    <p>
+     The following examples uses the PEAR package Image_Graph to create
+     a chart. Then it obtains internally used GD object and converts it
+     to a GdkPixbuf, which itself is used as base for the
+     <span dir="ltr"><a href="../gtk/gtk.gtkimage.html">GtkImage</a></span> widget.
+    </p>
+    <div class="example" align="left"><p><a name="idp51532992"></a><b>Example 6. Displaying a chart created with Image_Graph</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+/**
+* Using Image_Graph to create a chart and displaying it directly
+* in a GtkImage widget, getting it to there with the
+* GdkPixbuf::new_from_gd() method.
+*
+* The Image_Graph code is a slightly modified version of the
+* simple.php example.
+*
+* You need Image_Graph version 0.7.3 or higher (0.7.2 doesn't
+* support the required "none" output switch)
+*/
+
+include 'Image/Graph.php';
+
+//we want to use the gd library
+$Graph = Image_Graph::factory('graph', array(array('width' =&gt; 400, 'height' =&gt; 300, 'canvas' =&gt; 'gd')));
+
+//prepare the chart
+$Plotarea = $Graph-&gt;addNew('plotarea');
+$Dataset = Image_Graph::factory('dataset');
+$Dataset-&gt;addPoint('Denmark', 10);
+$Dataset-&gt;addPoint('Norway', 3);
+$Dataset-&gt;addPoint('Sweden', 8);
+$Dataset-&gt;addPoint('Finland', 5);
+$Plot = $Plotarea-&gt;addNew('bar', $Dataset);
+$Plot-&gt;setLineColor('blue@0.2');
+
+//This is the key: Don't output anything, just finish it
+$Graph-&gt;done(array('output' =&gt; 'none'));
+
+//get the gd object
+$canvas = $Graph-&gt;_getCanvas();
+$gd = $canvas-&gt;_canvas;
+
+//Create GdkPixbuf from the GD object
+$pixbuf = GdkPixbuf::new_from_gd($gd);
+
+//Display the pixbuf by using a GtkImage widget
+$wnd = new GtkWindow();
+$wnd-&gt;connect_simple('destroy', array('Gtk', 'main_quit'));
+$wnd-&gt;add(GtkImage::new_from_pixbuf($pixbuf));
+$wnd-&gt;show_all();
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gdk.gdkpixbuf.constructor.new_from_xpm_data.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gdk.gdkpixbuf.method.add_alpha.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GdkPixbuf</span> Constructor </td><td width="20%" align="center"><a href="gdk.gdkpixbuf.html#idp51481792">Up</a></td><td width="40%" align="right"> <span dir="ltr">GdkPixbuf::add_alpha</span></td></tr></table></div></body></html>

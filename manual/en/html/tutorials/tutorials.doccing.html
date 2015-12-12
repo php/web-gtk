@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>PHP-GTK 2 Documentation</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="tutorials.html" title="PHP-GTK 2 Tutorials"><link rel="previous" href="tutorials.treeview.view.html" title="The view: GtkTreeView, GtkTreeViewColumn, GtkCellRenderer"><link rel="next" href="tutorials.doccing.checkout.html" title="Checking Out, Updating and Compiling"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">PHP-GTK 2 Tutorials</th></tr><tr><td width="20%" align="left"><a href="tutorials.treeview.view.html">Prev</a> </td><th width="60%" align="center">PHP-GTK 2 Documentation</th><td width="20%" align="right"> <a href="tutorials.doccing.checkout.html">Next</a></td></tr></table><hr></div><div id="tutorials.doccing" class="chapter"><div class="titlepage"><div><h2 class="title"><a name="tutorials.doccing" id="tutorials.doccing-title"></a>PHP-GTK 2 Documentation</h2></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><a href="tutorials.doccing.html#idp45130032">About this Tutorial and the Manual</a></dt><dt><a href="tutorials.doccing.checkout.html">Checking Out, Updating and Compiling</a></dt><dt><a href="tutorials.doccing.translating.html">Translating the Manual</a></dt><dt><a href="tutorials.doccing.writing.html">Writing Documentation</a></dt><dt><a href="tutorials.doccing.standards.html">Coding standards</a></dt></dl></div>
+ 
+
+ <div class="sect1"><a name="idp45130032"></a><div class="titlepage"><div><h2 class="title" style="clear: all"><a name="idp45130032"></a>About this Tutorial and the Manual</h2></div></div><p>
+   This tutorial explains how to obtain, compile and write or extend the
+   official PHP-GTK 2 documentation - that is, the manual you are currently
+   reading.
+  </p><p>
+   If you simply want to read the manual, this probably isn't of any interest
+   to you.
+  </p><p>
+   The source for this documentation, along with the PHP-GTK 2 source and
+   everything else that comes under the PHP project umbrella, resides on the
+   PHP project's SVN server at
+   <a href="http://svn.php.net" target="_top">svn.php.net</a>. It is loosely
+   based on an XML dialect called <i>DocBook</i>, which was
+   designed to be used for books and other forms of technical documentation.
+   The reason the PHP-GTK documentation project can't adhere to strict DocBook
+   syntax is that it has one major weakness: there is no DocBook syntax to
+   support the documentation of object oriented languages. We had to design
+   our own. This, in turn, means that the PHP-GTK Documentation Group also
+   need to adapt other php.net mechanisms - such as livedocs and .chm builds
+   - specifically to work with the php-gtk-doc syntax, whereas we could
+   utilize those tools out of the box if we were able to use pure DocBook XML.
+  </p><p>
+   Despite this, there are several benefits in basing the manual on DocBook.
+   The document (i.e. the entire manual) can be distributed over many files,
+   so that the files are in handy pieces and many people can work concurrently
+   on different parts of it. Further, the base XML files can be converted into
+   many formats: plain HTML for offline reading, PHP code (as you can see in
+   the online manual), Windows <span dir="ltr"><tt>.chm</tt></span> files, and
+   <span dir="ltr"><tt>.pdf</tt></span> files, to name but a few.
+  </p><p>
+   A big disadvantage is that you need to compile the XML from the sources
+   into the desired format, which can take quite some time. This manual
+   consists of over 300 single files, and the compiled HTML version has
+   more than 3000 generated files. Compilation takes 10 minutes on a 1.6GHz
+   system; on a 400MHz it's around 40 to 45 minutes. To combat this problem,
+   there is a single-page HTML version of the manual,
+   <span dir="ltr"><tt>bigmanual.html</tt></span>, which builds in just a few minutes
+   and which can be used to uncover any syntax errors in the source files.
+  </p></div>
+
+ 
+
+ 
+
+ 
+
+ 
+
+</div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="tutorials.treeview.view.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="tutorials.doccing.checkout.html">Next</a></td></tr><tr><td width="40%" align="left">The view: GtkTreeView, GtkTreeViewColumn, GtkCellRenderer </td><td width="20%" align="center"><a href="tutorials.html">Up</a></td><td width="40%" align="right"> Checking Out, Updating and Compiling</td></tr></table></div></body></html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkTooltips</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtktoolitem.property.visible_vertical.html" title="GtkToolItem::visible-vertical"><link rel="next" href="gtk.gtktooltips.constructor.html" title="GtkTooltips Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtktoolitem.property.visible_vertical.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkTooltips</span></th><td width="20%" align="right"> <a href="gtk.gtktooltips.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtktooltips"></a><h2 class="title"><span dir="ltr">GtkTooltips</span></h2><p><blockquote>
+   An object for managing a collection of tooltips.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtktooltips.html">GtkTooltips</a></span><br></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    Tooltips are the messages that appear next to a widget when the mouse
+    pointer is held over it for a short amount of time. They are especially
+    helpful for adding more verbose descriptions of things such as buttons
+    in a toolbar.
+   </p>
+   <p>
+    An individual tooltip belongs to a group of tooltips. A group is created
+    with the constructor. Every tooltip in the group can then be turned off
+    with a call to <span dir="ltr"><a href="gtk.gtktooltips.method.disable.html">disable()</a></span>  and
+    enabled with <span dir="ltr"><a href="gtk.gtktooltips.method.enable.html">enable()</a></span> .
+   </p>
+   <div class="note" style="margin-left: 24px; margin-right: 24px; font-weight: bold;"><p>
+     Tooltips can only be set on widgets which have their own X window.
+     To add a tooltip to a widget that doesn't have its own window, place
+     the widget inside a <span dir="ltr"><a href="gtk.gtkeventbox.html">GtkEventBox</a></span> and add a tooltip
+     to that instead.
+    </p></div>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp83060176"><p></p><a name="idp83060176"></a> <span dir="ltr"><a href="gtk.gtktooltips.constructor.html">GtkTooltips</a></span> ();</div></p> --
+    Creates a new tooltips object.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtktooltips.method.disable.html">disable()</a></span> </dt><dd> 
+    Disables the tooltips.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktooltips.method.enable.html">enable()</a></span> </dt><dd> 
+    Enables the tooltips.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktooltips.method.force_window.html">force_window()</a></span> </dt><dd> 
+    Internal use only.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktooltips.method.set_delay.html">set_delay()</a></span> </dt><dd> 
+    Set the amount of time until the tips appear.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktooltips.method.set_tip.html">set_tip()</a></span> </dt><dd> 
+    Set the tooltip for a widget.
+   </dd></blockquote></div><h3>Fields</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtktooltips.field.active_tips_data.html">active_tips_data</a></span>:</dt><dd> 
+   </dd><dt><span dir="ltr"><a href="gtk.gtktooltips.field.delay.html">delay</a></span>:</dt><dd> 
+   </dd><dt><span dir="ltr"><a href="gtk.gtktooltips.field.enabled.html">enabled</a></span>:</dt><dd> 
+   </dd><dt><span dir="ltr"><a href="gtk.gtktooltips.field.timer_tag.html">timer_tag</a></span>:</dt><dd> 
+   </dd><dt><span dir="ltr"><a href="gtk.gtktooltips.field.tip_label.html">tip_label</a></span>:</dt><dd> 
+   </dd><dt><span dir="ltr"><a href="gtk.gtktooltips.field.tip_window.html">tip_window</a></span>:</dt><dd> 
+   </dd><dt><span dir="ltr"><a href="gtk.gtktooltips.field.tips_data_list.html">tips_data_list</a></span>:</dt><dd> 
+   </dd><dt><span dir="ltr"><a href="gtk.gtktooltips.field.use_sticky_delay.html">use_sticky_delay</a></span>:</dt><dd> 
+   </dd></blockquote></p></div>
+  
+ 
+  
+
+  
+
+  
+
+  
+
+  
+ 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtktoolitem.property.visible_vertical.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtktooltips.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkToolItem::visible-vertical</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkTooltips</span> Constructor</td></tr></table></div></body></html>

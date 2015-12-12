@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>move-cursor</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtklabel.html#idp69618752" title=""><link rel="previous" href="gtk.gtklabel.signal.copy-clipboard.html" title="copy-clipboard"><link rel="next" href="gtk.gtklabel.signal.populate-popup.html" title="populate-popup"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtklabel.signal.copy-clipboard.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">move-cursor</span></th><td width="20%" align="right"> <a href="gtk.gtklabel.signal.populate-popup.html">Next</a></td></tr></table><hr></div><a name="gtk.gtklabel.signal.move-cursor"></a><h2><span dir="ltr">move-cursor</span></h2><p>
+    <p>
+     Emitted when the cursor is moved within the label. 
+    </p>
+    <p>
+     When this signal is emitted, four arguments are passed to the callback.
+     First, the label will be passed. Next an integer,
+     <i><tt>step</tt></i>, is passed. This integer indicates the
+     type of movement. This value will be a
+     <span dir="ltr"><a href="gtk.enum.movementstep.html">GtkMovementStep</a></span>. This value tells you whether the 
+     cursor has moved, by a character, word, line, etc. The third argument 
+     passed, <i><tt>direction</tt></i>, indicates the direction the
+     cursor has moved. A positive value means the cursor has moved toward the
+     end of the label's text. A negative value means the cursor has moved
+     toward the start of the label's text. The final argument,
+     <i><tt>selecting</tt></i> is a boolean value indicating whether or
+     not a region of text is being selected. A region of text is normally
+     selected when the user holds down <span dir="ltr"><tt>Shift</tt></span> while moving
+     the cursor.
+    </p>
+    <div class="note" style="margin-left: 24px; margin-right: 24px; font-weight: bold;">
+     A negative value for <i><tt>direction</tt></i> does not necessarily
+     mean that the curosr was moved from right to left. Depending on the
+     direction of the language, a negative value could mean that the cursor was
+     moved from left to right.
+    </div>
+    <p>
+     This signal cannot be emitted unless the label has been made selectable by
+     passing <span dir="ltr"><tt>true</tt></span> to <span dir="ltr"><a href="gtk.gtklabel.method.set_selectable.html">set_selectable()</a></span> , because text that is not
+     selectable cannot have a cursor position.
+    </p>
+   </p><p><b>Callback function</b></p><p><p><div class="funcsynopsis" id="idp69629296"><p></p><a name="idp69629296"></a>void callback(GtkLabel <i><tt>label</tt></i>, 
+      <span dir="ltr"><a href="gtk.enum.movementstep.html">GtkMovementStep</a></span> <i><tt>step</tt></i>
+     , int <i><tt>direction</tt></i>, bool <i><tt>selecting</tt></i>);</div></p></p><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtklabel.signal.copy-clipboard.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtklabel.signal.populate-popup.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">copy-clipboard</span> </td><td width="20%" align="center"><a href="gtk.gtklabel.html#idp69618752">Up</a></td><td width="40%" align="right"> <span dir="ltr">populate-popup</span></td></tr></table></div></body></html>

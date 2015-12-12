@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkWindow::get_focus</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkwindow.html#idp90308480" title=""><link rel="previous" href="gtk.gtkwindow.method.get_destroy_with_parent.html" title="GtkWindow::get_destroy_with_parent"><link rel="next" href="gtk.gtkwindow.method.get_focus_on_map.html" title="GtkWindow::get_focus_on_map"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkwindow.method.get_destroy_with_parent.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkWindow::get_focus</span></th><td width="20%" align="right"> <a href="gtk.gtkwindow.method.get_focus_on_map.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkwindow.method.get_focus"></a><h2><span dir="ltr">GtkWindow::get_focus</span></h2><p><div class="funcsynopsis" id="idp90427232"><p></p><a name="idp90427232"></a>
+      <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span> get_focus
+     ();</div></p>
+    <p>
+     Retrieves the current focused widget within the window. Returns
+     <span dir="ltr"><tt>null</tt></span> if no widget has the focus.
+    </p>
+    <div class="note" style="margin-left: 24px; margin-right: 24px; font-weight: bold;"><p>
+      Note that this is the widget that would have the focus if the toplevel
+      window focused; if the toplevel window is not focused then
+      <table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">$widget-&gt;flags() &amp; Gtk::HAS_FOCUS</pre></td></tr></table>
+      will not be <span dir="ltr"><tt>&gt; 0</tt></span> for the widget.
+     </p></div>
+    <p>
+     <div class="example" align="left"><p><a name="idp90434656"></a><b>Example 159. Using GtkWindow::get_focus()</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+/**
+* Start the script and use &lt;Tab&gt; key to cycle the focus
+* through the buttons. You will see the label of the focused
+* button be echoed to the console every second.
+* Also try to activate another window while the script is
+* running.
+*/
+
+$wnd  = new GtkWindow();
+$vbox = new GtkVBox();
+
+//Create ten buttons we can focus with &lt;Tab&gt;
+for ($nA = 1; $nA &lt;= 10; $nA++) {
+    $button = new GtkButton('Button ' . $nA);
+    $vbox-&gt;add($button);
+}
+
+/**
+* This method will write the label of the current
+* focused widget to the console
+* It returns true, so that the interval doesn't stop
+*/
+function echoFocusedLabel($wnd)
+{
+    //get_focus() returns the widget
+    if ($wnd-&gt;get_focus()-&gt;flags() &amp; Gtk::HAS_FOCUS) {
+        $focus = 'focus is set';
+    } else {
+        $focus = 'focus is NOT set (window not focused?)';
+    }
+    echo $wnd-&gt;get_focus()-&gt;get_label() . ' - ' . $focus . "\r\n";
+    return true;
+}
+
+//add a timeout of one second, so that the echoFocusedLabel
+//method will echo the label of the focused widget every second
+Gtk::timeout_add(1000, 'echoFocusedLabel', $wnd);
+
+$wnd-&gt;add($vbox);
+$wnd-&gt;connect_simple('destroy', array('gtk', 'main_quit'));
+$wnd-&gt;show_all();
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+    </p>
+    <p>
+     See also:
+     <span dir="ltr"><a href="gtk.gtkwindow.method.activate_focus.html">activate_focus()</a></span> , 
+     <span dir="ltr"><a href="gtk.gtkwindow.method.set_focus.html">set_focus()</a></span> 
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkwindow.method.get_destroy_with_parent.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkwindow.method.get_focus_on_map.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkWindow::get_destroy_with_parent</span> </td><td width="20%" align="center"><a href="gtk.gtkwindow.html#idp90308480">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkWindow::get_focus_on_map</span></td></tr></table></div></body></html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GdkEvent</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gdkclasses.html" title="GDK Classes"><link rel="previous" href="gdk.gdkdrawable.field.xid.html" title="GdkDrawable::xid"><link rel="next" href="gdk.gdkevent.constructor.html" title="GdkEvent Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GDK Classes</th></tr><tr><td width="20%" align="left"><a href="gdk.gdkdrawable.field.xid.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GdkEvent</span></th><td width="20%" align="right"> <a href="gdk.gdkevent.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gdk.gdkevent"></a><h2 class="title"><span dir="ltr">GdkEvent</span></h2><p><blockquote>
+   An object representing an event from the windowing system.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="gdk.gdkevent.html">GdkEvent</a></span><br></div></blockquote></p><p><h3>Description</h3><blockquote>
+   An object representing an event from the windowing system with
+   data specific to that event.
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp50446976"><p></p><a name="idp50446976"></a><span dir="ltr"><a href="gdk.gdkevent.constructor.html">GdkEvent</a></span> (
+      <span dir="ltr"><a href="../#">GdkEventtype</a></span>
+      <i><tt>type</tt></i>
+     );</div></p> --
+    Creates a new <span dir="ltr"><a href="gdk.gdkevent.html">GdkEvent</a></span> object for the given type.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gdk.gdkevent.method.free.html">free()</a></span> </dt><dd> 
+    Free the event and any resources associated with it.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkevent.method.get_axis.html">get_axis()</a></span> </dt><dd> 
+    The get_axis() method returns the axis value for the axis use 
+    specified by <i><tt>axis_use</tt></i> from an event structure.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkevent.method.get_coords.html">get_coords()</a></span> </dt><dd> 
+    Returns an array of the event coordinates.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkevent.method.get_root_coords.html">get_root_coords()</a></span> </dt><dd> 
+    Returns an array containing the x and y coordinates of the event 
+    relative to the root window.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkevent.method.get_screen.html">get_screen()</a></span> </dt><dd> 
+    Returns the <span dir="ltr"><a href="gdk.gdkscreen.html">GdkScreen</a></span> for the event.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkevent.method.get_state.html">get_state()</a></span> </dt><dd> 
+    Returns the value of the modifier "state" field.  
+   </dd><dt><span dir="ltr"><a href="gdk.gdkevent.method.get_time.html">get_time()</a></span> </dt><dd> 
+    Returns the timestamp field from the event.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkevent.method.put.html">put()</a></span> </dt><dd> 
+    Appends a copy of the given event onto the tail of the event queue.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkevent.method.set_screen.html">set_screen()</a></span> </dt><dd> 
+    Sets the <span dir="ltr"><a href="gdk.gdkscreen.html">GdkScreen</a></span> for the event.
+   </dd></blockquote></div><h3>Fields</h3><blockquote><dt><span dir="ltr"><a href="gdk.gdkevent.field.state.html">state</a></span>:</dt><dd> 
+    A bit-mask representing the state of the modifier keys 
+    (e.g. Control, Shift and Alt) and the pointer buttons.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkevent.field.type.html">type</a></span>:</dt><dd> 
+    The event type
+   </dd><dt><span dir="ltr"><a href="gdk.gdkevent.field.window.html">window</a></span>:</dt><dd> 
+    The <span dir="ltr"><a href="gdk.gdkwindow.html">GdkWindow</a></span> the event occurred on.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkevent.field.send_event.html">send_event</a></span>:</dt><dd> 
+    <i>TRUE</i> if the event was sent explicitly.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkevent.field.area.html">area</a></span>:</dt><dd> 
+    The bounding box of the area to be redrawn.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkevent.field.count.html">count</a></span>:</dt><dd> 
+    The number of contiguous <span dir="ltr"><a href="../#">Gdk::EXPOSE</a></span> events 
+    following this one.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkevent.field.time.html">time</a></span>:</dt><dd> 
+    The time of the event in milliseconds.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkevent.field.x.html">x</a></span>:</dt><dd> 
+    The x coordinate of the pointer relative to the window.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkevent.field.y.html">y</a></span>:</dt><dd> 
+    The y coordinate of the pointer relative to the window.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkevent.field.axes.html">axes</a></span>:</dt><dd> 
+    <span dir="ltr"><a href="gdk.gdkevent.field.x.html">x</a></span>, <span dir="ltr"><a href="gdk.gdkevent.field.y.html">y</a></span> translated to the 
+    axes of device, or <i>NULL</i> if device is the mouse.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkevent.field.is_hint.html">is_hint</a></span>:</dt><dd> 
+    <i>TRUE</i> if the <span dir="ltr"><a href="../#">Gdk::POINTER_MOTION_HINT_MASK</a></span> is set.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkevent.field.device.html">device</a></span>:</dt><dd> 
+   The device where the event originated.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkevent.field.x_root.html">x_root</a></span>:</dt><dd> 
+   The x coordinate of the pointer relative to the root of the screen.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkevent.field.y_root.html">y_root</a></span>:</dt><dd> 
+    The y coordinate of the pointer relative to the root of the screen.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkevent.field.button.html">button</a></span>:</dt><dd> 
+    The mouse button that was clicked.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkevent.field.keyval.html">keyval</a></span>:</dt><dd> 
+      The key that was pressed or released.
+    </dd><dt><span dir="ltr"><a href="gdk.gdkevent.field.string.html">string</a></span>:</dt><dd> 
+      A string containing the composed characters resulting from the key press.
+    </dd><dt><span dir="ltr"><a href="gdk.gdkevent.field.hardward_keycode.html">hardware_keycode</a></span>:</dt><dd> 
+    The raw code of the key that was pressed or released.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkevent.field.group.html">group</a></span>:</dt><dd> The keyboard group.</dd><dt><span dir="ltr"><a href="gdk.gdkevent.field.mode.html">mode</a></span>:</dt><dd> 
+      The crossing mode (<span dir="ltr"><a href="../#">Gdk::CROSSING_NORMAL</a></span>, 
+      <span dir="ltr"><a href="../#">Gdk::CROSSING_GRAB</a></span>
+      or <span dir="ltr"><a href="../#">Gdk::CROSSING_UNGRAB</a></span>).
+    </dd><dt><span dir="ltr"><a href="gdk.gdkevent.field.detail.html">detail</a></span>:</dt><dd> 
+      The kind of crossing that happened.
+    </dd><dt><span dir="ltr"><a href="gdk.gdkevent.field.focus.html">focus</a></span>:</dt><dd> 
+      <i>TRUE</i> if <span dir="ltr"><a href="gdk.gdkevent.field.window.html">window</a></span> is the focus window or an inferior.
+    </dd><dt><span dir="ltr"><a href="gdk.gdkevent.field.in.html">in</a></span>:</dt><dd> 
+      <i>TRUE</i> if the <span dir="ltr"><a href="gdk.gdkevent.field.window.html">window</a></span> has gained the keyboard 
+      focus, <i>FALSE</i> if it has lost the focus.
+    </dd><dt><span dir="ltr"><a href="gdk.gdkevent.field.width.html">width</a></span>:</dt><dd> The new width of the <span dir="ltr"><a href="gdk.gdkevent.field.window.html">window</a></span>.</dd><dt><span dir="ltr"><a href="gdk.gdkevent.field.height.html">height</a></span>:</dt><dd> The new height of the <span dir="ltr"><a href="gdk.gdkevent.field.window.html">window</a></span>.</dd><dt><span dir="ltr"><a href="gdk.gdkevent.field.context.html">context</a></span>:</dt><dd> 
+      The <span dir="ltr"><a href="gdk.gdkdragcontext.html">GdkDragContext</a></span> for the DnD operation.
+    </dd></blockquote></p></div>
+  
+ 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+ 
+  <p>
+   Note: fields are dependant on the type of event. Each field's page 
+   lists the event types that field as available to.
+  </p>
+  
+  
+   
+   
+   
+   
+   
+   
+   
+    
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gdk.gdkdrawable.field.xid.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gdk.gdkevent.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GdkDrawable::xid</span> </td><td width="20%" align="center"><a href="../gdkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GdkEvent</span> Constructor</td></tr></table></div></body></html>

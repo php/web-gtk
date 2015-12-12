@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkFrame</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkfontselectiondialog.field.ok_button.html" title="GtkFontSelectionDialog::ok_button"><link rel="next" href="gtk.gtkframe.constructor.html" title="GtkFrame Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkfontselectiondialog.field.ok_button.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkFrame</span></th><td width="20%" align="right"> <a href="gtk.gtkframe.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkframe"></a><h2 class="title"><span dir="ltr">GtkFrame</span></h2><div style="float:right; border:1px solid #000;"><img src="../images/reference/gtk/gtkframe.png"></div><p><blockquote>
+   A decorative frame for holding a widget.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkbin.html">GtkBin</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkframe.html">GtkFrame</a></span><br></div></blockquote></p><p><h3>Direct Subclasses</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="gtk.gtkaspectframe.html">GtkAspectFrame</a></span></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    A <span dir="ltr"><a href="gtk.gtkframe.html">GtkFrame</a></span> is essentially a
+    <span dir="ltr"><a href="gtk.gtkbin.html">GtkBin</a></span> with a decorative border and an optional
+    label. It is most often used to neatly contain your widgets in an
+    application in an organized and appealing fashion.
+   </p>
+   <p>
+    If a label is specified, it will appear in a gap at the top of the
+    frame. The position of the label may be specified with 
+    <span dir="ltr"><a href="gtk.gtkframe.method.set_label_align.html">set_label_align()</a></span> .
+   </p>
+   <p>
+    An important thing to note is that, since the 
+    <span dir="ltr"><a href="gtk.gtkframe.html">GtkFrame</a></span> is derived from 
+    <span dir="ltr"><a href="gtk.gtkbin.html">GtkBin</a></span>, it may hold only one child widget!
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp66161120"><p></p><a name="idp66161120"></a> <span dir="ltr"><a href="gtk.gtkframe.constructor.html">GtkFrame</a></span> ([string <i><tt>label = null</tt></i>]);</div></p> --
+    Creates a new frame optionally with a label.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkframe.method.get_label.html">get_label()</a></span> </dt><dd> 
+    Returns the label assigned to the frame.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkframe.method.get_label_align.html">get_label_align()</a></span> </dt><dd> 
+    Retrieves the X and Y alignment of the frame's label.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkframe.method.get_label_widget.html">get_label_widget()</a></span> </dt><dd> 
+    Returns the frame's label widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkframe.method.get_shadow_type.html">get_shadow_type()</a></span> </dt><dd> 
+    Returns the frame's shadow type.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkframe.method.set_label.html">set_label()</a></span> </dt><dd> 
+    Sets the current label of the frame.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkframe.method.set_label_align.html">set_label_align()</a></span> </dt><dd> 
+    Sets the alignment of the frame's label.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkframe.method.set_label_widget.html">set_label_widget()</a></span> </dt><dd> 
+    Sets the frame's label.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkframe.method.set_shadow_type.html">set_shadow_type()</a></span> </dt><dd> 
+     Sets the shadow type of the frame.
+   </dd></blockquote></div></p></div>
+
+  
+
+ 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkfontselectiondialog.field.ok_button.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkframe.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkFontSelectionDialog::ok_button</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkFrame</span> Constructor</td></tr></table></div></body></html>

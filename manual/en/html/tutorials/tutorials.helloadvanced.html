@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>Hello World (advanced)</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="tutorials.html" title="PHP-GTK 2 Tutorials"><link rel="previous" href="tutorials.helloworld.html" title="Hello World (basic)"><link rel="next" href="tutorials.helloglade.html" title="Hello Glade!"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">PHP-GTK 2 Tutorials</th></tr><tr><td width="20%" align="left"><a href="tutorials.helloworld.html">Prev</a> </td><th width="60%" align="center">Hello World (advanced)</th><td width="20%" align="right"> <a href="tutorials.helloglade.html">Next</a></td></tr></table><hr></div><div id="tutorials.helloadvanced" class="chapter"><div class="titlepage"><div><h2 class="title"><a name="tutorials.helloadvanced" id="tutorials.helloadvanced-title"></a>Hello World (advanced)</h2></div></div>
+
+ 
+
+ <p>
+  This tutorial deals with some more advanced functionality
+  than the first hello world tutorial. Here, we create a
+  login screen in which the user can type his username and
+  his password. When the user clicks on the Login button, the
+  text fields are checked and an error message is shown if
+  the user forgot his name or his password.
+ </p>
+
+ <p>
+  Here is a screenshot of how the program will look when it's finished:
+  <p><img src="../images/tutorials/helloadvanced.png"></p>
+ </p>
+
+ <p>
+  At first, we create a window, set its title and tell that the main loop
+  shall be quit when the window is destroyed - you already know that from
+  the first tutorial:
+  <p><div class="informalexample" id="idp44228864"><p></p><a name="idp44228864"></a><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+$wnd = new GtkWindow();
+$wnd-&gt;set_title('Login');
+$wnd-&gt;connect_simple('destroy', array('gtk', 'main_quit'));
+</pre></td></tr></table></div></p>
+ </p>
+
+ <p>
+  The next task is to create all the widgets we need on this dialog:
+  At first, two text entry fields for username and password:
+  <p><div class="informalexample" id="idp44273472"><p></p><a name="idp44273472"></a><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+$txtUsername = new GtkEntry();
+$txtPassword = new GtkEntry();
+</pre></td></tr></table></div></p>
+  Then we want the user to know which text field is password or
+  username, so there is the need for some descriptive labels:
+  <p><div class="informalexample" id="idp44274976"><p></p><a name="idp44274976"></a><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+//The second parameter says that the underscore should be parsed as underline
+$lblUsername = new GtkLabel('_Username', true);
+$lblPassword = new GtkLabel('_Password', true);
+</pre></td></tr></table></div></p>
+  And at last, we need two buttons: One for login, and one to cancel the
+  process:
+  <p><div class="informalexample" id="idp44276480"><p></p><a name="idp44276480"></a><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+$btnLogin    = new GtkButton('_Login');
+$btnCancel   = new GtkButton('_Cancel');
+</pre></td></tr></table></div></p>
+  You might note that the <span dir="ltr"><a href="../gtk/gtk.gtklabel.html">GtkLabel</a></span> constructor
+  gets a second parameter passed, to tell that the underscore
+  <span dir="ltr"><tt>_</tt></span> is shown as underline to the next character,
+  but that's not done in the <span dir="ltr"><a href="../gtk/gtk.gtkbutton.html">GtkButton</a></span> constructor:
+  The button constructor does that automatically, while the label one doesn't.
+  This behavior might be strange to you, but it's more likely that you have
+  a mnemonic in a button's label than that a normal label has one.
+ </p>
+
+ <p>
+  Now the labels need to know what widget needs to be activated when
+  they are activated via the mnemonic. This is done that way:
+  <p><div class="informalexample" id="idp44280192"><p></p><a name="idp44280192"></a><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+$lblUsername-&gt;set_mnemonic_widget($txtUsername);
+$lblPassword-&gt;set_mnemonic_widget($txtPassword);
+</pre></td></tr></table></div></p>
+  Further, we need to determine what action is taken when the buttons
+  are clicked. The Cancel button shall destroy the window (thus ending
+  the application) and the Login button shall check the text fields and
+  take further action:
+  <p><div class="informalexample" id="idp44281888"><p></p><a name="idp44281888"></a><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+$btnCancel-&gt;connect_simple('clicked', array($wnd, 'destroy'));
+$btnLogin -&gt;connect_simple('clicked', 'login', $wnd, $txtUsername, $txtPassword);
+</pre></td></tr></table></div></p>
+  We pass the three widgets <tt>$wnd</tt>, 
+  <tt>$txtUsername</tt> and <tt>$txtPassword</tt>
+  as optional parameters to the (yet to be defined) 
+  <span dir="ltr"><tt>login</tt></span> function, because we will need them there:
+  To get the values from the text fields, and to destroy/hide the window
+  if all is ok.
+ </p>
+
+ <p>
+  Now that we have all the widgets we need, they are added to
+  the window. As <span dir="ltr"><a href="../gtk/gtk.gtkwindow.html">GtkWindow</a></span> is a bin container,
+  it can hold only one single widget. So we need a container that
+  can hold several widgets and lays out our elements nicely.
+  The decision goes to <span dir="ltr"><a href="../gtk/gtk.gtktable.html">GtkTable</a></span>, because it provides
+  a way to keep the labels in a column, and the entry fields in the next one:
+  <p><div class="informalexample" id="idp44286848"><p></p><a name="idp44286848"></a><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+$tbl = new GtkTable(3, 2);
+$tbl-&gt;attach($lblCredit, 0, 2, 0, 1);
+$tbl-&gt;attach($lblUsername, 0, 1, 1, 2);
+$tbl-&gt;attach($txtUsername, 1, 2, 1, 2);
+$tbl-&gt;attach($lblPassword, 0, 1, 2, 3);
+$tbl-&gt;attach($txtPassword, 1, 2, 2, 3);
+</pre></td></tr></table></div></p>
+  (The <tt>$lblCredit</tt> is just a label with a message).
+  The buttons get their own <span dir="ltr"><a href="../gtk/gtk.gtkhbuttonbox.html">GtkHButtonBox</a></span>, because
+  that class allows one to lay out several buttons very nicely:
+  <p><div class="informalexample" id="idp44289232"><p></p><a name="idp44289232"></a><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+$bbox = new GtkHButtonBox();
+$bbox-&gt;set_layout(Gtk::BUTTONBOX_EDGE);
+$bbox-&gt;add($btnCancel);
+$bbox-&gt;add($btnLogin);
+</pre></td></tr></table></div></p>
+ </p>
+
+ <p>
+  The last thing in layouting is adding the table and the button box
+  to the window. That's not directly possible, because
+  <span dir="ltr"><a href="../gtk/gtk.gtkwindow.html">GtkWindow</a></span> is a <span dir="ltr"><a href="../gtk/gtk.gtkbin.html">GtkBin</a></span>
+  and can hold only one widget. So we need another container,
+  this time a <span dir="ltr"><a href="../gtk/gtk.gtkvbox.html">GtkVBox</a></span>:
+  <p><div class="informalexample" id="idp44292464"><p></p><a name="idp44292464"></a><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+$vbox = new GtkVBox();
+$vbox-&gt;pack_start($tbl);
+$vbox-&gt;pack_start($bbox);
+</pre></td></tr></table></div></p>
+  That would be all, and we can show the window:
+  <p><div class="informalexample" id="idp44293920"><p></p><a name="idp44293920"></a><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+$wnd-&gt;add($vbox);
+$wnd-&gt;show_all();
+Gtk::main();
+</pre></td></tr></table></div></p>
+ </p>
+
+ <p>
+  The last thing missing is the <span dir="ltr"><tt>login</tt></span> function that
+  is called when the user clicks the Login button. It shall check the
+  value of the username and password field: If their length is 0 (the
+  user didn't type anything in), an error message will be shown. If all
+  is ok, the window will be destroyed and the program could go on with
+  loading the main window.
+ </p>
+
+ <p>
+  Getting the text from the widgets is very simple, we just use the
+  <span dir="ltr"><a href="../gtk/gtk.gtkentry.method.get_text.html">get_text()</a></span>  method of
+  <span dir="ltr"><a href="../gtk/gtk.gtkentry.html">GtkEntry</a></span>:
+  <p><div class="informalexample" id="idp44298032"><p></p><a name="idp44298032"></a><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+$strUsername = $txtUsername-&gt;get_text();
+$strPassword = $txtPassword-&gt;get_text();
+</pre></td></tr></table></div></p>
+  Checking is done via the normal
+  php <span dir="ltr"><tt>strlen</tt></span> function. If an error occured, we want
+  to show a message box with a little message.
+  <span dir="ltr"><a href="../gtk/gtk.gtkmessagedialog.html">GtkMessageDialog</a></span> is ideal for this, as it
+  automatically creates icons and the buttons (Ok, Yes/No) automatically:
+  <p><div class="informalexample" id="idp44300608"><p></p><a name="idp44300608"></a><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+$dialog = new GtkMessageDialog($wnd, Gtk::DIALOG_MODAL, Gtk::MESSAGE_ERROR, Gtk::BUTTONS_OK, $errors);
+$dialog-&gt;set_markup("The following errors occured:\r\n&lt;span foreground='red'&gt;" . $errors . "&lt;/span&gt;");
+$dialog-&gt;run();
+$dialog-&gt;destroy();
+</pre></td></tr></table></div></p>
+ </p>
+
+ <p>
+  Now make sure that you put the login function before(!) the main loop
+  and run it.
+ </p>
+
+ <div class="example" align="left"><p><a name="idp44302768"></a><b>Example 3.1. The full program</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+/**
+*   Here we create a login window.
+*   It has a username and a password field, and a
+*   Cancel and Login button. Some error checking
+*   is being done when the user clicks "Login".
+*/
+
+if (!class_exists('gtk')) {
+    die("Please load the php-gtk2 module in your php.ini\r\n");
+}
+
+/**
+*   This function gets called as soon as the user 
+*   clicks on the Login button.
+*
+*   @param GtkWindow $wnd           The login window, needed to close it
+*                                    when all is ok
+*   @param GtkEntry $txtUsername    The username text field, used to get
+*                                    the username
+*   @param GtkEntry $txtPassword    The password widget to retrieve the
+*                                    password
+*/
+function login(GtkWindow $wnd, GtkEntry $txtUsername, GtkEntry $txtPassword)
+{
+    //fetch the values from the widgets into variables
+    $strUsername = $txtUsername-&gt;get_text();
+    $strPassword = $txtPassword-&gt;get_text();
+
+    //Do some error checking
+    $errors = null;
+    if (strlen($strUsername) == 0) {
+        $errors .= "Username is missing.\r\n";
+    }
+    if (strlen($strPassword) == 0) {
+        $errors .= "No password given.\r\n";
+    }
+
+    if ($errors !== null) {
+        //There was at least one error.
+        //We show a message box with the errors
+        $dialog = new GtkMessageDialog($wnd, Gtk::DIALOG_MODAL,
+            Gtk::MESSAGE_ERROR, Gtk::BUTTONS_OK, $errors);
+        $dialog-&gt;set_markup(
+            "The following errors occured:\r\n"
+            . "&lt;span foreground='red'&gt;" . $errors . "&lt;/span&gt;"
+        );
+        $dialog-&gt;run();
+        $dialog-&gt;destroy();
+    } else {
+        //No error. You would need to hide the dialog now
+        //instead of destroying it (because when you destroy it,
+        //Gtk::main_quit() gets called) and show the main window
+        $wnd-&gt;destroy();
+    }
+}
+
+//Create the login window
+$wnd = new GtkWindow();
+$wnd-&gt;set_title('Login');
+//Close the main loop when the window is destroyed
+$wnd-&gt;connect_simple('destroy', array('gtk', 'main_quit'));
+
+
+//Set up all the widgets we need
+$lblCredit   = new GtkLabel('Please provide your data');
+//The second parameter says that the underscore should be parsed as underline
+$lblUsername = new GtkLabel('_Username', true);
+$lblPassword = new GtkLabel('_Password', true);
+$txtUsername = new GtkEntry();
+$txtPassword = new GtkEntry();
+$btnLogin    = new GtkButton('_Login');
+$btnCancel   = new GtkButton('_Cancel');
+
+
+//Which widget should be activated when the 
+// mnemonic (Alt+U or Alt+P) is pressed?
+$lblUsername-&gt;set_mnemonic_widget($txtUsername);
+$lblPassword-&gt;set_mnemonic_widget($txtPassword);
+//Hide the password
+//$txtPassword-&gt;set_invisible_char('*');
+
+//Destroy the window when the user clicks Cancel
+$btnCancel-&gt;connect_simple('clicked', array($wnd, 'destroy'));
+//Call the login function when the user clicks on Login
+$btnLogin-&gt;connect_simple('clicked', 'login', $wnd, $txtUsername, $txtPassword);
+
+
+//Lay out all the widgets in the table
+$tbl = new GtkTable(3, 2);
+$tbl-&gt;attach($lblCredit, 0, 2, 0, 1);
+$tbl-&gt;attach($lblUsername, 0, 1, 1, 2);
+$tbl-&gt;attach($txtUsername, 1, 2, 1, 2);
+$tbl-&gt;attach($lblPassword, 0, 1, 2, 3);
+$tbl-&gt;attach($txtPassword, 1, 2, 2, 3);
+
+
+//Add the buttons to a button box
+$bbox = new GtkHButtonBox();
+$bbox-&gt;set_layout(Gtk::BUTTONBOX_EDGE);
+$bbox-&gt;add($btnCancel);
+$bbox-&gt;add($btnLogin);
+
+
+//Add the table and the button box to a vbox
+$vbox = new GtkVBox();
+$vbox-&gt;pack_start($tbl);
+$vbox-&gt;pack_start($bbox);
+
+//Add the vbox to the window
+$wnd-&gt;add($vbox);
+//Show all widgets
+$wnd-&gt;show_all();
+//Start the main loop
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+
+</div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="tutorials.helloworld.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="tutorials.helloglade.html">Next</a></td></tr><tr><td width="40%" align="left">Hello World (basic) </td><td width="20%" align="center"><a href="tutorials.html">Up</a></td><td width="40%" align="right"> Hello Glade!</td></tr></table></div></body></html>

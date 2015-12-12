@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkFileFilter</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkfilechooserwidget.constructor.new_with_backend.html" title="GtkFileChooserWidget Constructor"><link rel="next" href="gtk.gtkfilefilter.constructor.html" title="GtkFileFilter Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkfilechooserwidget.constructor.new_with_backend.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkFileFilter</span></th><td width="20%" align="right"> <a href="gtk.gtkfilefilter.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkfilefilter"></a><h2 class="title"><span dir="ltr">GtkFileFilter</span></h2><p><blockquote>
+   A filter to select a subset of files.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkfilefilter.html">GtkFileFilter</a></span><br></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    This is a filter that is basically used to restrict the the files that
+    are shown in a <span dir="ltr"><a href="gtk.gtkfilechooserwidget.html">GtkFileChooserWidget</a></span>. You may filter
+    the files either by basis of their names
+    (<span dir="ltr"><a href="gtk.gtkfilefilter.method.add_pattern.html">add_pattern()</a></span> ), mime types
+    (<span dir="ltr"><a href="gtk.gtkfilefilter.method.add_mime_type.html">add_mime_type()</a></span> ), or files
+    that are supported by GdkPixbuf
+    (<span dir="ltr"><a href="gtk.gtkfilefilter.method.add_pixbuf_formats.html">add_pixbuf_formats()</a></span> ).
+    To check with your very own function, use
+    <span dir="ltr"><a href="gtk.gtkfilefilter.method.add_custom.html">add_custom()</a></span>  with a
+    callback.
+   </p>
+   <p>
+    When you choose to filter by mime types, note that selecting a
+    particular mime type will also automatically include all subclasses of
+    that type. For example, filtering for the mime type text/plain will
+    also include all files of type application/rtf since it a subclass of
+    text/plain. You may also use wild card to specify your mime type, such
+    as image/*.
+   </p>
+   <p>
+    The most common way to use a file filter is to add it to a
+    <span dir="ltr"><a href="gtk.gtkfilechooserwidget.html">GtkFileChooserWidget</a></span> with the
+    set_filter method. Of
+    course, the same method may also be used on a
+    <span dir="ltr"><a href="gtk.gtkfilechooserbutton.html">GtkFileChooserButton</a></span> or a
+    <span dir="ltr"><a href="gtk.gtkfilechooserdialog.html">GtkFileChooserDialog</a></span>.
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp65155312"><p></p><a name="idp65155312"></a> <span dir="ltr"><a href="gtk.gtkfilefilter.constructor.html">GtkFileFilter</a></span> ();</div></p> --
+    Creates a new file filter.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkfilefilter.method.add_custom.html">add_custom()</a></span> </dt><dd> 
+    Display files passing checks of your own function.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilefilter.method.add_mime_type.html">add_mime_type()</a></span> </dt><dd> 
+    Allow files of specified mime type to be displayed.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilefilter.method.add_pattern.html">add_pattern()</a></span> </dt><dd> 
+    Allow files with names that match with the specified pattern to be
+    displayed.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilefilter.method.add_pixbuf_formats.html">add_pixbuf_formats()</a></span> </dt><dd> 
+    Allow images supported by GdkPixbuf to be displayed.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilefilter.method.filter.html">filter()</a></span> </dt><dd> 
+    Test file filters.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilefilter.method.get_name.html">get_name()</a></span> </dt><dd> 
+    Returns the human-readable name of the file filter.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilefilter.method.get_needed.html">get_needed()</a></span> </dt><dd> 
+    FIXME!
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilefilter.method.set_name.html">set_name()</a></span> </dt><dd> 
+    Sets the human-readable name of the file filter.
+   </dd></blockquote></div></p></div>
+
+  
+
+ 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkfilechooserwidget.constructor.new_with_backend.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkfilefilter.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkFileChooserWidget</span> Constructor </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkFileFilter</span> Constructor</td></tr></table></div></body></html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkTreeStore::set</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtktreestore.html#idp84319200" title=""><link rel="previous" href="gtk.gtktreestore.method.remove.html" title="GtkTreeStore::remove"><link rel="next" href="gtk.gtktreestore.method.swap.html" title="GtkTreeStore::swap"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtktreestore.method.remove.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkTreeStore::set</span></th><td width="20%" align="right"> <a href="gtk.gtktreestore.method.swap.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtktreestore.method.set"></a><h2><span dir="ltr">GtkTreeStore::set</span></h2><p><div class="funcsynopsis" id="idp84491440"><p></p><a name="idp84491440"></a>void set(<span dir="ltr"><a href="gtk.gtktreeiter.html">GtkTreeIter</a></span> <i><tt>iter</tt></i>, <i><tt>column</tt></i>, <i><tt>value</tt></i> [, <i><tt>column</tt></i> [, <i><tt>value</tt></i>]]);</div></p>
+    <p>
+     Sets the values of the row specified by <i><tt>iter</tt></i>.
+     The parameters have to be pairs, determining the column id and the value
+     the column shall be set to.
+    </p>
+    <p>
+     This method is useful when you used
+     <span dir="ltr"><a href="gtk.gtktreestore.method.insert.html">insert()</a></span>  or one of its siblings
+     to create an empty row, or if you want to change multiple columns of a
+     row.
+    </p>
+    <div class="example" align="left"><p><a name="idp84501344"></a><b>Example 138. Setting column values with set()</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//A row in that store can hold a string, an integer and a float
+$store = new GtkTreeStore(Gtk::TYPE_STRING, Gtk::TYPE_LONG, GTK::TYPE_DOUBLE);
+
+//create a new (empty) row
+$row = $store-&gt;insert();
+//set value of the first row
+$store-&gt;set($row, 0, 'String');
+//set value of the third and second row
+$store-&gt;set($row, 2, 0.5, 1, 20);
+
+
+//Display the store
+$wnd  = new GtkWindow();
+$view = new GtkTreeView($store);
+$rend = new GtkCellRendererText();
+$view-&gt;append_column(new GtkTreeViewColumn('String', $rend, 'text', 0));
+$view-&gt;append_column(new GtkTreeViewColumn('Int'   , $rend, 'text', 1));
+$view-&gt;append_column(new GtkTreeViewColumn('Float' , $rend, 'text', 2));
+$wnd-&gt;add($view);
+$wnd-&gt;connect_simple('destroy', array('gtk', 'main_quit'));
+$wnd-&gt;show_all();
+Gtk::main();
+
+?&gt;</pre></td></tr></table></div>
+    <p>
+     See also:
+
+      <span dir="ltr"><a href="gtk.gtktreestore.method.append.html">append()</a></span> ,
+      <span dir="ltr"><a href="gtk.gtktreestore.method.prepend.html">prepend()</a></span> 
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtktreestore.method.remove.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtktreestore.method.swap.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkTreeStore::remove</span> </td><td width="20%" align="center"><a href="gtk.gtktreestore.html#idp84319200">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkTreeStore::swap</span></td></tr></table></div></body></html>

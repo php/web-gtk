@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkTreeViewColumn Constructor</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtktreeviewcolumn.html#idp85932880" title=""><link rel="previous" href="gtk.gtktreeviewcolumn.html" title="GtkTreeViewColumn"><link rel="next" href="gtk.gtktreeviewcolumn.method.cell_get_position.html" title="GtkTreeViewColumn::cell_get_position"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtktreeviewcolumn.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkTreeViewColumn</span> Constructor</th><td width="20%" align="right"> <a href="gtk.gtktreeviewcolumn.method.cell_get_position.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtktreeviewcolumn.constructor"></a><h2><span dir="ltr">GtkTreeViewColumn</span> Constructor</h2><p><div class="funcsynopsis" id="idp85933840"><p></p><a name="idp85933840"></a> <span dir="ltr"><a href="gtk.gtktreeviewcolumn.constructor.html">GtkTreeViewColumn</a></span> ([string <i><tt>title</tt></i> [, <span dir="ltr"><a href="gtk.gtkcellrenderer.html">GtkCellRenderer</a></span> <i><tt>cell_renderer</tt></i> [, string <i><tt>attribute</tt></i> [, int <i><tt>column</tt></i>]]]]);</div></p>
+    <p>
+     Creates a new column object that can be added to a
+     <span dir="ltr"><a href="gtk.gtktreeview.html">GtkTreeView</a></span> with the
+     add_column method.
+    </p>
+    <p>
+     The first parameter defines the title of the column which is shown on top
+     of the widget. The second one, <i><tt>cell_renderer</tt></i>,
+     is used to draw the actual values in the column of the row.
+    </p>
+    <p>
+     Parameter <i><tt>attribute</tt></i> selects the attribute of the
+     cell renderer that shall be set.
+    </p>
+    <p>
+     The last parameter, <i><tt>column</tt></i> defines the number
+     of the <span dir="ltr"><a href="gtk.gtktreemodel.html">GtkTreeModel</a></span> column that is displayed.
+    </p>
+    <p>
+     <div class="itemizedlist"><p><b>Commonly used attributes</b></p><ul><li><a name="idp85947824"></a><span dir="ltr"><tt>text</tt></span> for <span dir="ltr"><a href="gtk.gtkcellrenderertext.html">GtkCellRendererText</a></span>
+       and <span dir="ltr"><a href="gtk.gtkcellrenderercombo.html">GtkCellRendererCombo</a></span></li><li><a name="idp85949792"></a><span dir="ltr"><tt>pixbuf</tt></span> for <span dir="ltr"><a href="gtk.gtkcellrendererpixbuf.html">GtkCellRendererPixbuf</a></span></li><li><a name="idp85951312"></a><span dir="ltr"><tt>active</tt></span> for <span dir="ltr"><a href="gtk.gtkcellrenderertoggle.html">GtkCellRendererToggle</a></span></li><li><a name="idp85952832"></a><span dir="ltr"><tt>value</tt></span> for <span dir="ltr"><a href="gtk.gtkcellrendererprogress.html">GtkCellRendererProgress</a></span></li></ul></div>
+    </p>
+    <div class="example" align="left"><p><a name="idp85954608"></a><b>Example 143. Creating a GtkTreeViewColumn</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+$renderer = new GtkCellRendererText();
+$column = new GtkTreeViewColumn('Title', $renderer, 'text', 0);
+</pre></td></tr></table></div>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtktreeviewcolumn.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtktreeviewcolumn.method.cell_get_position.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkTreeViewColumn</span> </td><td width="20%" align="center"><a href="gtk.gtktreeviewcolumn.html#idp85932880">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkTreeViewColumn::cell_get_position</span></td></tr></table></div></body></html>

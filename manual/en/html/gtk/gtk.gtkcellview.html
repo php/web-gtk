@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkCellView</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkcellrenderertoggle.property.radio.html" title="GtkCellRendererToggle::radio"><link rel="next" href="gtk.gtkcellview.constructor.html" title="GtkCellView Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkcellrenderertoggle.property.radio.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkCellView</span></th><td width="20%" align="right"> <a href="gtk.gtkcellview.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkcellview"></a><h2 class="title"><span dir="ltr">GtkCellView</span></h2><p><blockquote>
+   A widget for displaying a single cell of a GtkTreeModel.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcellview.html">GtkCellView</a></span><br></div></blockquote></p><h3>Implemented Interfaces</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="gtk.gtkcelllayout.html">GtkCellLayout</a></span></div></blockquote><p><h3>Description</h3><blockquote>
+   <p>
+    A GtkCellView displays a single row of a
+    <span dir="ltr"><a href="gtk.gtktreemodel.html">GtkTreeModel</a></span>, using cell renderers just like
+    <span dir="ltr"><a href="gtk.gtktreeview.html">GtkTreeView</a></span>. GtkCellView doesn't support some
+    of the more complex features of <span dir="ltr"><a href="gtk.gtktreeview.html">GtkTreeView</a></span>,
+    like cell editing and drag and drop.
+   </p>
+   <p>
+    The GtkCellView class is used in <span dir="ltr"><a href="gtk.gtkcombobox.html">GtkComboBox</a></span> which
+    is therefore capable of displaying several columns of one model at once.
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp58416352"><p></p><a name="idp58416352"></a> <span dir="ltr"><a href="gtk.gtkcellview.constructor.html">GtkCellView</a></span> ();</div></p> --
+    Creates a new GtkCellView widget.
+   <br><br><p><div class="funcsynopsis" id="idp58421056"><p></p><a name="idp58421056"></a> <span dir="ltr"><a href="gtk.gtkcellview.constructor.new_with_pixbuf.html">GtkCellView::new_with_pixbuf</a></span> (<span dir="ltr"><a href="../gdk/gdk.gdkpixbuf.html">GdkPixbuf</a></span> <i><tt>pixbuf</tt></i>);</div></p> --
+    Creates a new GtkCellView widget and adds a pixbuf renderer.
+   <br><br><p><div class="funcsynopsis" id="idp58427200"><p></p><a name="idp58427200"></a> <span dir="ltr"><a href="gtk.gtkcellview.constructor.new_with_text.html">GtkCellView::new_with_text</a></span> (string <i><tt>text</tt></i>);</div></p> --
+    Creates a new GtkCellView widget and adds a text renderer.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkcellview.method.get_cell_renderers.html">get_cell_renderers()</a></span> </dt><dd> 
+    Returns all cell renderers.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcellview.method.get_displayed_row.html">get_displayed_row()</a></span> </dt><dd> 
+    Returns the path of the row currently visible.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcellview.method.get_size_of_row.html">get_size_of_row()</a></span> </dt><dd> 
+    Returns the size needed to render the row.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcellview.method.set_background_color.html">set_background_color()</a></span> </dt><dd> 
+    Sets the background color of the view.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcellview.method.set_displayed_row.html">set_displayed_row()</a></span> </dt><dd> 
+    Sets the row of the model to display.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcellview.method.set_model.html">set_model()</a></span> </dt><dd> 
+    Set the model to display data from.
+   </dd></blockquote></div></p></div>
+
+  
+
+  
+
+  
+
+  
+
+ 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+ 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkcellrenderertoggle.property.radio.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkcellview.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkCellRendererToggle::radio</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkCellView</span> Constructor</td></tr></table></div></body></html>

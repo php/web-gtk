@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GdkAction</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gdkenums.html#gdk.gdkenum" title="GDK Enums"><link rel="previous" href="../gdkenums.html" title="GDK Enums"><link rel="next" href="gdk.enum.axisuse.html" title="GdkAxisUse"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GDK Enums</th></tr><tr><td width="20%" align="left"><a href="../gdkenums.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GdkAction</span></th><td width="20%" align="right"> <a href="gdk.enum.axisuse.html">Next</a></td></tr></table><hr></div><a class="enum" name="gdk.enum.action"></a><h1 class="title">GdkAction</h1><p>
+   <p>
+       Used in GdkDragContext to indicate what the
+       destination should do with the dropped data.
+   </p>
+  </p><table width="100%" cellpadding="2" cellspacing="1"><tr><td width="7%"><h3>Value</h3></td><td width="40%"><h3>Symbolic name</h3></td><td width="52%"><h3>Description</h3></td></tr><tr valign="top"><td>  1</td><td>Gdk::ACTION_DEFAULT</td><td>
+    
+   </td></tr><tr valign="top"><td>  2</td><td>Gdk::ACTION_COPY</td><td>
+       Copy the data.
+   </td></tr><tr valign="top"><td>  4</td><td>Gdk::ACTION_MOVE</td><td>
+       Move the data, i.e. first copy it, then delete it
+       from the source using the DELETE target of the X selection protocol.
+   </td></tr><tr valign="top"><td>  8</td><td>Gdk::ACTION_LINK</td><td>
+       Add a link to the data. Note that this is only useful if
+       source and destination agree on what it means.
+   </td></tr><tr valign="top"><td>  16</td><td>Gdk::ACTION_PRIVATE</td><td>
+       Special action which tells the source that the destination will 
+       do something that the source doesn't understand.
+   </td></tr><tr valign="top"><td>  32</td><td>Gdk::ACTION_ASK</td><td>
+       Ask the user what to do with the data.
+   </td></tr></table><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="../gdkenums.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gdk.enum.axisuse.html">Next</a></td></tr><tr><td width="40%" align="left">GDK Enums </td><td width="20%" align="center"><a href="../gdkenums.html#gdk.gdkenum">Up</a></td><td width="40%" align="right"> <span dir="ltr">GdkAxisUse</span></td></tr></table></div></body></html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkScrolledWindow Constructor</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkscrolledwindow.html#idp75336576" title=""><link rel="previous" href="gtk.gtkscrolledwindow.html" title="GtkScrolledWindow"><link rel="next" href="gtk.gtkscrolledwindow.method.add_with_viewport.html" title="GtkScrolledWindow::add_with_viewport"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkscrolledwindow.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkScrolledWindow</span> Constructor</th><td width="20%" align="right"> <a href="gtk.gtkscrolledwindow.method.add_with_viewport.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkscrolledwindow.constructor"></a><h2><span dir="ltr">GtkScrolledWindow</span> Constructor</h2><p><div class="funcsynopsis" id="idp75337648"><p></p><a name="idp75337648"></a> <span dir="ltr"><a href="gtk.gtkscrolledwindow.constructor.html">GtkScrolledWindow</a></span> ([
+      <span dir="ltr"><a href="gtk.gtkadjustment.html">GtkAdjustment</a></span>
+      <i><tt>hadjustment = null</tt></i>
+      [, 
+      <span dir="ltr"><a href="gtk.gtkadjustment.html">GtkAdjustment</a></span>
+      <i><tt>vadjustment = null</tt></i>
+     ]]);</div></p>
+    <p>
+     Creates a new scrolled window. The two arguments are the scrolled
+     window's adjustments; these will be shared with the scrollbars and
+     the child widget to keep the bars in sync with the child.
+    </p>
+    <p>
+     Usually you want to pass <span dir="ltr"><tt>null</tt></span> for the adjustments,
+     which will cause the scrolled window to create them for you.
+    </p>
+    <div class="example" align="left"><p><a name="idp75345072"></a><b>Example 111. Scrolling a list of buttons</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//Create a new scrolled window
+$scrwnd = new GtkScrolledWindow();
+//hide scrollbars when not needed
+$scrwnd-&gt;set_policy(Gtk::POLICY_AUTOMATIC, Gtk::POLICY_AUTOMATIC);
+//make it look nicer
+$scrwnd-&gt;set_border_width(10);
+
+
+//now create a vbox with buttons that shall be scrollable
+$vbox = new GtkVBox();
+for ($i = 0; $i &lt; 10; $i++) {
+    $vbox-&gt;pack_start(new GtkButton('Button ' . $i));
+}
+
+//Add the box to the scrolled window, but use a viewport
+// between them - since the vbox doesn't support scrolling natively.
+$scrwnd-&gt;add_with_viewport($vbox);
+
+
+//standard stuff for window creation
+$wnd = new GtkWindow();
+$wnd-&gt;connect_simple('destroy', array('Gtk', 'main_quit'));
+$wnd-&gt;add($scrwnd);
+$wnd-&gt;show_all();
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+    <p>
+     It will look like this:
+     <p><img src="../images/reference/gtk/gtkscrolledwindow.png"></p>
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkscrolledwindow.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkscrolledwindow.method.add_with_viewport.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkScrolledWindow</span> </td><td width="20%" align="center"><a href="gtk.gtkscrolledwindow.html#idp75336576">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkScrolledWindow::add_with_viewport</span></td></tr></table></div></body></html>

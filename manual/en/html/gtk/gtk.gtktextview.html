@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkTextView</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtktexttagtable.signal.tag-removed.html" title="tag-removed"><link rel="next" href="gtk.gtktextview.constructor.html" title="GtkTextView Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtktexttagtable.signal.tag-removed.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkTextView</span></th><td width="20%" align="right"> <a href="gtk.gtktextview.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtktextview"></a><h2 class="title"><span dir="ltr">GtkTextView</span></h2><p><blockquote>
+   A widget for displaying and editing a large block of text.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtktextview.html">GtkTextView</a></span><br></div></blockquote></p><p><h3>Direct Subclasses</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="../sourceview/sourceview.gtksourceview.html">GtkSourceView</a></span></div></blockquote></p><p><h3>Description</h3><blockquote>
+    <p>GtkTextViews store text in a buffer. If you want to get the text contents of the <span dir="ltr"><a href="gtk.gtktextview.html">GtkTextView</a></span>, you need to use the <span dir="ltr"><a href="gtk.gtktextview.method.get_buffer.html">get_buffer()</a></span>  function (which returns a <span dir="ltr"><a href="gtk.gtktextbuffer.html">GtkTextBuffer</a></span> object) and from that object you have created, get the text contents using the <span dir="ltr"><a href="gtk.gtktextbuffer.method.get_text.html">get_text()</a></span>  function.</p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp80584624"><p></p><a name="idp80584624"></a> <span dir="ltr"><a href="gtk.gtktextview.constructor.html">GtkTextView</a></span> ();</div></p> --
+
+   <br><br><p><div class="funcsynopsis" id="idp80588464"><p></p><a name="idp80588464"></a> <span dir="ltr"><a href="gtk.gtktextview.constructor.new_with_buffer.html">GtkTextView::new_with_buffer</a></span> ([GtkTextBuffer <i><tt>buffer = null</tt></i>]);</div></p> --
+
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtktextview.method.add_child_at_anchor.html">add_child_at_anchor()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.add_child_in_window.html">add_child_in_window()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.backward_display_line.html">backward_display_line()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.backward_display_line_start.html">backward_display_line_start()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.buffer_to_window_coords.html">buffer_to_window_coords()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.forward_display_line.html">forward_display_line()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.forward_display_line_end.html">forward_display_line_end()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.get_accepts_tab.html">get_accepts_tab()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.get_border_window_size.html">get_border_window_size()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.get_buffer.html">get_buffer()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.get_cursor_visible.html">get_cursor_visible()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.get_default_attributes.html">get_default_attributes()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.get_editable.html">get_editable()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.get_indent.html">get_indent()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.get_iter_at_location.html">get_iter_at_location()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.get_iter_at_position.html">get_iter_at_position()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.get_iter_location.html">get_iter_location()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.get_justification.html">get_justification()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.get_left_margin.html">get_left_margin()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.get_line_at_y.html">get_line_at_y()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.get_line_yrange.html">get_line_yrange()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.get_overwrite.html">get_overwrite()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.get_pixels_above_lines.html">get_pixels_above_lines()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.get_pixels_below_lines.html">get_pixels_below_lines()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.get_pixels_inside_wrap.html">get_pixels_inside_wrap()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.get_right_margin.html">get_right_margin()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.get_tabs.html">get_tabs()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.get_visible_rect.html">get_visible_rect()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.get_window.html">get_window()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.get_window_type.html">get_window_type()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.get_wrap_mode.html">get_wrap_mode()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.move_child.html">move_child()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.move_mark_onscreen.html">move_mark_onscreen()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.move_visually.html">move_visually()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.place_cursor_onscreen.html">place_cursor_onscreen()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.scroll_mark_onscreen.html">scroll_mark_onscreen()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.scroll_to_iter.html">scroll_to_iter()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.scroll_to_mark.html">scroll_to_mark()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.set_accepts_tab.html">set_accepts_tab()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.set_border_window_size.html">set_border_window_size()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.set_buffer.html">set_buffer()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.set_cursor_visible.html">set_cursor_visible()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.set_editable.html">set_editable()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.set_indent.html">set_indent()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.set_justification.html">set_justification()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.set_left_margin.html">set_left_margin()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.set_overwrite.html">set_overwrite()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.set_pixels_above_lines.html">set_pixels_above_lines()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.set_pixels_below_lines.html">set_pixels_below_lines()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.set_pixels_inside_wrap.html">set_pixels_inside_wrap()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.set_right_margin.html">set_right_margin()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.set_tabs.html">set_tabs()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.set_wrap_mode.html">set_wrap_mode()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.starts_display_line.html">starts_display_line()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextview.method.window_to_buffer_coords.html">window_to_buffer_coords()</a></span> </dt><dd> 
+
+   </dd></blockquote></div><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtktextview.signal.backspace.html">backspace</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtktextview.signal.copy-clipboard.html">copy-clipboard</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtktextview.signal.cut-clipboard.html">cut-clipboard</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtktextview.signal.delete-from-cursor.html">delete-from-cursor</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtktextview.signal.insert-at-cursor.html">insert-at-cursor</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtktextview.signal.move-cursor.html">move-cursor</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtktextview.signal.move-focus.html">move-focus</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtktextview.signal.move-viewport.html">move-viewport</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtktextview.signal.page-horizontally.html">page-horizontally</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtktextview.signal.paste-clipboard.html">paste-clipboard</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtktextview.signal.populate-popup.html">populate-popup</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtktextview.signal.select-all.html">select-all</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtktextview.signal.set-anchor.html">set-anchor</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtktextview.signal.set-scroll-adjustments.html">set-scroll-adjustments</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtktextview.signal.toggle-overwrite.html">toggle-overwrite</a>"</span></dt><dd> 
+   </dd></blockquote></p></div>
+
+  
+
+  
+
+ 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ 
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtktexttagtable.signal.tag-removed.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtktextview.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">tag-removed</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkTextView</span> Constructor</td></tr></table></div></body></html>

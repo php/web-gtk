@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkTreeView::get_selection</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtktreeview.html#idp84779376" title=""><link rel="previous" href="gtk.gtktreeview.method.get_search_column.html" title="GtkTreeView::get_search_column"><link rel="next" href="gtk.gtktreeview.method.get_vadjustment.html" title="GtkTreeView::get_vadjustment"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtktreeview.method.get_search_column.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkTreeView::get_selection</span></th><td width="20%" align="right"> <a href="gtk.gtktreeview.method.get_vadjustment.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtktreeview.method.get_selection"></a><h2><span dir="ltr">GtkTreeView::get_selection</span></h2><p><div class="funcsynopsis" id="idp84945232"><p></p><a name="idp84945232"></a><span dir="ltr"><a href="gtk.gtktreeselection.html">GtkTreeSelection</a></span> get_selection();</div></p>
+    <p>
+     This method returns the <span dir="ltr"><a href="gtk.gtktreeselection.html">GtkTreeSelection</a></span> object
+     associated with the view. The selection object itself contains
+     all the data about a selection, be it just a single row, or multiple
+     rows that are selected.
+    </p>
+    <p>
+     Always keep in mind that the view, not the underlying model, has a
+     selection! That means that different views of the same model can have
+     different selections.
+    </p>
+    <div class="example" align="left"><p><a name="idp84949936"></a><b>Example 141. Using GtkTreeSelection</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//create a model
+$model = new GtkListStore(Gobject::TYPE_STRING);
+//create the view to display the model data
+$view = new GtkTreeView($model);
+//now, get the selection object of that view
+$selection = $view-&gt;get_selection();
+//capture the "changed" signal
+$selection-&gt;connect('changed', 'selection_changed');
+
+/**
+*   This is the callback function for the changed
+*   signal and display the value of the first column
+*   of the selected row.
+*/
+function selection_changed($selection)
+{
+    //get_selected returns the store and the iterator for that row
+    list($model, $iter) = $selection-&gt;get_selected();
+    //get one single value of the model via get_value
+    echo 'Value of column 0: ' . $model-&gt;get_value($iter, 0) . "\r\n";
+}//function selection_changed($selection)
+
+
+//add a column to display the data
+$col = new GtkTreeViewColumn('Number', new GtkCellRendererText(), 'text', 0);
+$view-&gt;append_column($col);
+
+//add some data to the model/store
+$model-&gt;append(array('Zero'));
+$model-&gt;append(array('One'));
+$model-&gt;append(array('Two'));
+
+//add the view to the window
+$wnd = new GtkWindow();
+$wnd-&gt;set_title('GtkTreeView selection example');
+$wnd-&gt;connect_simple('destroy', array('Gtk', 'main_quit'));
+$wnd-&gt;add($view);
+$wnd-&gt;show_all();
+Gtk::main();
+?&gt;
+</pre></td></tr></table></div>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtktreeview.method.get_search_column.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtktreeview.method.get_vadjustment.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkTreeView::get_search_column</span> </td><td width="20%" align="center"><a href="gtk.gtktreeview.html#idp84779376">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkTreeView::get_vadjustment</span></td></tr></table></div></body></html>

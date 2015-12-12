@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>drag-drop</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkwidget.html#idp88473568" title=""><link rel="previous" href="gtk.gtkwidget.signal.drag-data-received.html" title="drag-data-received"><link rel="next" href="gtk.gtkwidget.signal.drag-end.html" title="drag-end"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkwidget.signal.drag-data-received.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">drag-drop</span></th><td width="20%" align="right"> <a href="gtk.gtkwidget.signal.drag-end.html">Next</a></td></tr></table><hr></div><a name="gtk.gtkwidget.signal.drag-drop"></a><h2><span dir="ltr">drag-drop</span></h2><p>
+    <p>
+     The <span dir="ltr"><tt>drag-drop</tt></span> signal is emitted on the drop site when
+     the user drops the data onto the widget. The signal handler must determine
+     whether the cursor position is in a drop zone or not. If it is not in a
+     drop zone, it returns <span dir="ltr"><tt>false</tt></span> and no further processing
+     is necessary. Otherwise, the handler returns <span dir="ltr"><tt>true</tt></span>.
+     In this case, the handler must ensure that
+     <span dir="ltr"><a href="../gdk/gdk.gdkdragcontext.method.drop_finish.html">drop_finish()</a></span>  is called to let
+     the source know that the drop is done. The call to
+     <span dir="ltr"><a href="../gdk/gdk.gdkdragcontext.method.drop_finish.html">drop_finish()</a></span>  can be done either
+     directly or in a
+     <span dir="ltr">"<a href="gtk.gtkwidget.signal.drag-data-received.html">drag-data-received</a>"</span> handler
+     which gets triggered by calling
+     get_data to receive
+     the data for one or more of the supported targets.
+    </p>
+   </p><p><b>Callback function</b></p><p><p><div class="funcsynopsis" id="idp88590368"><p></p><a name="idp88590368"></a>bool callback(<span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span> <i><tt>widget</tt></i>, <span dir="ltr"><a href="../gdk/gdk.gdkdragcontext.html">GdkDragContext</a></span> <i><tt>context</tt></i>, int <i><tt>x</tt></i>, int <i><tt>y</tt></i>, int <i><tt>time</tt></i>);</div></p></p><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkwidget.signal.drag-data-received.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkwidget.signal.drag-end.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">drag-data-received</span> </td><td width="20%" align="center"><a href="gtk.gtkwidget.html#idp88473568">Up</a></td><td width="40%" align="right"> <span dir="ltr">drag-end</span></td></tr></table></div></body></html>

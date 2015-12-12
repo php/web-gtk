@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>Connecting the two</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="tutorials.signals.html" title="Signal Handling"><link rel="previous" href="tutorials.signals.callbacks.html" title="Callbacks and Signal Handlers"><link rel="next" href="tutorials.signals.events.html" title="Events"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Signal Handling</th></tr><tr><td width="20%" align="left"><a href="tutorials.signals.callbacks.html">Prev</a> </td><th width="60%" align="center">Connecting the two</th><td width="20%" align="right"> <a href="tutorials.signals.events.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="tutorials.signals.connecting"></a><div class="titlepage"><div><h2 class="title" style="clear: all"><a name="tutorials.signals.connecting"></a>Connecting the two</h2></div></div><p>
+   It should be clear by now that if you want to react to an action, you must
+   connect its signal to a signal handler that you have written, so that 
+   PHP-GTK 2 can call that function whenever the signal is triggered. Let's 
+   look into how you can connect signals to signal handlers.
+  </p><p>
+   There are 4 main functions that you can use to connect signals to callbacks:
+   <div class="itemizedlist"><ul><li><a name="idp44889696"></a>connect_simple</li><li><a name="idp44890080"></a>connect_simple_after</li><li><a name="idp44890464"></a>connect</li><li><a name="idp44890848"></a>connect_after</li></ul></div>
+  </p><div class="note" style="margin-left: 24px; margin-right: 24px; font-weight: bold;">
+   The *_after methods are used if you want your signal handlers to be invoked
+   <i>after</i> the ones connected using
+   <span dir="ltr"><tt>connect</tt></span> and <span dir="ltr"><tt>connect_simple</tt></span>. We will be 
+   discussing only the <span dir="ltr"><tt>connect_simple</tt></span> and 
+   <span dir="ltr"><tt>connect</tt></span> methods. The respective *_after methods behave in
+   the same way except for the fact that the signal handler is guaranteed to be
+   invoked only after those connected via <span dir="ltr"><tt>connect</tt></span> or
+   <span dir="ltr"><tt>connect_simple</tt></span> have.
+  </div><div class="sect2"><a name="tutorials.signals.connecting.simple"></a><div class="titlepage"><div><h3 class="title"><a name="tutorials.signals.connecting.simple"></a>Simple connections</h3></div></div><p>
+    First we'll look into how to connect a signal to a signal handler in the most
+    simplest way. We'll be using, you guessed it, the
+    <span dir="ltr"><tt>connect_simple</tt></span> method.
+   </p><p>
+    Of course, it is vital that you know the names of the signals that you would
+    want to connect to. The PHP-GTK 2 documentation contains a list of all signals 
+    that are relevant for a particular widget. Once you know that, and once you
+    have written a function that contains the code you want to be executed when
+    the signal is generated all you have to do is:
+    <table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+${widget}-&gt;connect_simple('{signal-name}', '{callback-name}');
+ </pre></td></tr></table>
+    where, {widget} is the object whose signal you want to connect,
+    {signal-name} is the signal name, which of course must be relevant to
+    {widget}, and {callback-name} is the name of the callback function.
+   </p><div class="note" style="margin-left: 24px; margin-right: 24px; font-weight: bold;">
+    Signal handlers are invoked whenever a signal is generated, by whatever means.
+    Remember that it is possible to generate signals through functions, and hence
+    a signal generation does not guarantee that the user has performed an
+    action.
+   </div><p>
+    To make things a little clearer, let's take a full fledged example. Here, we
+    add a button to a window. When a user clicks the button, the application
+    quits:
+    <div class="example" align="left"><p><a name="idp44901584"></a><b>Example 9.1. A simple connection</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+
+$win = new GtkWindow();
+$but = new GtkButton('Click to Quit!');
+
+$win-&gt;add($but);
+$win-&gt;show_all();
+
+$but-&gt;connect_simple('clicked', 'quit');
+
+function quit()
+{
+    echo "You have quit!\n";
+    Gtk::main_quit();
+}
+
+Gtk::main();
+
+?&gt;
+</pre></td></tr></table></div>
+   </p><p>
+    It's quite a simple program. We create a button and a window, add the button
+    to the window and show them. The line we are concerned with is:
+    <table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+$but-&gt;connect_simple('clicked', 'quit');
+ </pre></td></tr></table>
+    As you can see, we have connected the 
+    <span dir="ltr">"<a href="../gtk/gtk.gtkbutton.signal.clicked.html">clicked</a>"</span> signal of a
+    <span dir="ltr"><a href="../gtk/gtk.gtkbutton.html">GtkButton</a></span> widget to the signal handler named
+    <span dir="ltr"><tt>quit</tt></span>. Simple, eh? The function <span dir="ltr"><tt>quit</tt></span>
+    will be called whenever the <span dir="ltr"><tt>clicked</tt></span> signal is emitted
+    from our button, or, whenever the user clicks on our button.
+   </p><p>
+    You can see in the <span dir="ltr"><tt>quit</tt></span> function definition that we
+    display a message and then call the <span dir="ltr"><tt>Gtk::main_quit()</tt></span>
+    function to exit the program.
+   </p></div><div class="sect2"><a name="tutorials.signals.connecting.multiple"></a><div class="titlepage"><div><h3 class="title"><a name="tutorials.signals.connecting.multiple"></a>Multiple Connections</h3></div></div><p>
+    <i>What if I connect the same signal twice to two different
+    callbacks?</i>, I hear you ask. Well, the signal handlers will simply 
+    be called in the order in which they were connected. 
+   </p><div class="note" style="margin-left: 24px; margin-right: 24px; font-weight: bold;">
+    If any of your signal handlers return <span dir="ltr"><tt>true</tt></span> then no more
+    signal handlers will be called for the current signal being handled. This is
+    a useful way of controlling logic when you have multiple signal handlers.
+   </div><p>
+    An example to make things crystal clear:
+    <div class="example" align="left"><p><a name="idp44914144"></a><b>Example 9.2. Multiple signal connections</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+
+$win = new GtkWindow();
+$but = new GtkButton('Click to Quit!');
+
+$win-&gt;add($but);
+$win-&gt;show_all();
+
+$but-&gt;connect_simple('clicked', 'first');
+$but-&gt;connect_simple('clicked', 'second');
+$but-&gt;connect_simple('clicked', 'third');
+
+function first()
+{
+    echo "I am the first function!\n";
+}
+
+function second()
+{
+    echo "I am the second function!\n";
+}
+
+function third()
+{
+    echo "And I'm the function that's going to stop this program!\n";
+    Gtk::main_quit();
+}
+
+Gtk::main();
+
+?&gt;
+</pre></td></tr></table></div>
+    Run the program and you will see that signal handlers are indeed
+    invoked in the order in which they were connected.
+   </p><p>
+    <i>OK, but what if I connect the signal to the same callback a hundred
+    times?</i> The callback will be invoked a hundred times. But there's no
+    reason anyone would want to do this.
+   </p><p>
+    <i>Can I connect multiple signals to the same callback?</i> 
+    Yes, and in fact this is actually very useful. Many applications will have 
+    multiple ways of quitting the program: the regular "cross" button, a "quit" 
+    button on the file menu etc. You can connect signals for each one of them 
+    to a single <span dir="ltr"><tt>quit</tt></span> function. You don't have to worry about 
+    where the signal came from, you just know that the user wants to quit the 
+    application.
+   </p></div><div class="sect2"><a name="tutorials.signals.connecting.advanced"></a><div class="titlepage"><div><h3 class="title"><a name="tutorials.signals.connecting.advanced"></a>Customizing connections</h3></div></div><p>
+    Sometimes, its useful to know which widget had triggered a particular
+    signal. If your application has more than one button, and you've connected
+    all their <span dir="ltr"><tt>clicked</tt></span> signals to a single callback, you'd
+    definitely want to know which button the signal came from. It is in fact
+    efficient to write a single signal handler for multiple signals.
+   </p><p>
+    Here is where the <span dir="ltr"><tt>connect</tt></span> method comes into the picture.
+    This method passes the object of the widget that generated the signal as the
+    first parameter to the signal handler.
+    <table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+$button1 = new GtkButton('First');
+$button2 = new GtkButton('Second');
+
+$button1-&gt;connect('clicked', 'show');
+$button2-&gt;connect('clicked', 'show');
+
+function show($whichbutton)
+{
+    echo $whichbutton-&gt;get_label();
+}
+ </pre></td></tr></table>    
+    In the above example, you will get an output of "First" or "Second"
+    depending on which button was clicked.
+   </p><p>
+    It is also useful at times if you could pass custom parameters to your
+    signal handlers. PHP-GTK 2 provides this functionality in both the
+    <span dir="ltr"><tt>connect</tt></span> and <span dir="ltr"><tt>connect_after</tt></span> methods. You
+    simply pass your parameters after the second argument to both these methods
+    separated by commas like this:
+    <div class="example" align="left"><p><a name="idp44926992"></a><b>Example 9.3. Passing custom parameters</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+
+$win = new GtkWindow();
+$but = new GtkButton('Move over me!');
+
+$win-&gt;add($but);
+$win-&gt;show_all();
+
+$win-&gt;connect_simple('destroy', array('gtk', 'main_quit'));
+$but-&gt;connect_simple('enter-notify-event', 'showMessage', true, 'You moved the mouse');
+$but-&gt;connect_simple('leave-notify-event', 'showMessage', false, 'You moved the mouse');
+
+function showMessage($enter, $message)
+{
+    if ($enter) {
+        echo $message." over the button!\n";
+    } else {
+        echo $message." away from the button!\n";
+    }
+}
+
+Gtk::main();
+
+?&gt;
+</pre></td></tr></table></div>
+    In this example, we pass two custom parameters to our signal handler that 
+    helps us from differentiating whether the mouse entered the button or left 
+    it. Note that your custom parameters can be of any type: string, boolean, 
+    integer, an array or even an object, as long as its a valid type in PHP. 
+    In fact, it is a very common necessity to pass widget objects as parameters
+    to signal handlers, because a callback connected to a signal triggered by 
+    some widget may need to modify some other widget. You may pass as many 
+    custom parameters as you want. Just ensure that your signal handler is 
+    designed to receive the same number of parameters, or you may raise 
+    warnings.
+   </p><div class="note" style="margin-left: 24px; margin-right: 24px; font-weight: bold;">
+    For more information on signals such as
+    <span dir="ltr"><tt>enter-notify-event</tt></span>, see the section on 
+    <a href="tutorials.signals.events.html" title="Events">events</a>, because
+    there is more to this than meets the eye.
+   </div></div><div class="sect2"><a name="tutorials.signals.connecting.object"></a><div class="titlepage"><div><h3 class="title"><a name="tutorials.signals.connecting.object"></a>Object-oriented connections</h3></div></div><p>
+    Let us analyze the line that you might have seen frequently:
+    <table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+$window-&gt;connect_simple('destroy', array('gtk', 'main_quit'));
+ </pre></td></tr></table>
+    Why an array as the second argument?
+   </p><p>
+    Remember that whenever you connect to callback functions in an
+    object-oriented context, the second argument to the connect_* functions must
+    be an array. The first element of the array should point to the class that
+    contains the callback and the second element must contain the name of the
+    callback itself.
+   </p><p>
+    When the callback is static in nature (like
+    <span dir="ltr"><tt>Gtk::main_quit()</tt></span>), we generally specify the name of the
+    class as a string. However if the callback is not static in nature, but is a
+    member of your current class instead, the first element should be the
+    special <span dir="ltr"><tt>$this</tt></span> variable. Have a look at the tutorial on
+    <a href="tutorials.objectorientation.advanced.html" title="A little more complexity">Object Oriented
+    Programming</a> for examples of usage in such a context. The point is to
+    somehow make the first element of the array point to the class that contains
+    the callback and the second element point to the callback.
+   </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="tutorials.signals.callbacks.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="tutorials.signals.events.html">Next</a></td></tr><tr><td width="40%" align="left">Callbacks and Signal Handlers </td><td width="20%" align="center"><a href="tutorials.signals.html">Up</a></td><td width="40%" align="right"> Events</td></tr></table></div></body></html>

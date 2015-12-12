@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkPaned::compute_position</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkpaned.html#idp73210992" title=""><link rel="previous" href="gtk.gtkpaned.method.add2.html" title="GtkPaned::add2"><link rel="next" href="gtk.gtkpaned.method.get_child1.html" title="GtkPaned::get_child1"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkpaned.method.add2.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkPaned::compute_position</span></th><td width="20%" align="right"> <a href="gtk.gtkpaned.method.get_child1.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkpaned.method.compute_position"></a><h2><span dir="ltr">GtkPaned::compute_position</span></h2><p><div class="funcsynopsis" id="idp73230240"><p></p><a name="idp73230240"></a>void compute_position(int <i><tt>allocation</tt></i>, int <i><tt>child1_req</tt></i>, int <i><tt>child2_req</tt></i>);</div></p>
+    <p>
+     This method computes the position of the separator according
+     to the specification of the parameters. The calculation is
+     affected by the packing parameters of the child widgets depending
+     on whether they can resize and shrink. This method is used by subclasses
+     of <span dir="ltr"><a href="gtk.gtkpaned.html">GtkPaned</a></span> and is usually not needed by
+     applications. the <span dir="ltr"><a href="gtk.gtkwidget.method.queue_resize.html">queue_resize()</a></span> 
+     method must be called after this method to have the resizing displayed.
+    </p>
+    <p>
+     The minimum position is <span dir="ltr"><tt>0</tt></span> if child1's shrink value is
+     <span dir="ltr"><tt>true</tt></span> or the value of child1_req, if
+     <span dir="ltr"><tt>false</tt></span>. The maximum position is the value of allocation
+     if child2's shrink value is <span dir="ltr"><tt>true</tt></span>, or the value of
+     (allocation - child2_req), if <span dir="ltr"><tt>false</tt></span>. The final
+     calculated position will be between the minimum and maximum positions.
+    </p>
+    <p>
+     <div class="itemizedlist"><ul><li><a name="idp73242512"></a><i><tt>allocation</tt></i> - the total space allocation in pixels
+       for the paned widget
+      </li><li><a name="idp73243680"></a><i><tt>child1_req</tt></i> - 	the minimum space in pixels required
+        for the left or top child widget
+      </li><li><a name="idp73244864"></a><i><tt>child2_req</tt></i> - the minimum space in pixels required
+       for the right or bottom child widget
+      </li></ul></div>
+    </p>
+    <p>
+     See also:
+     <span dir="ltr"><a href="gtk.gtkpaned.method.get_position.html">get_position()</a></span> ,
+     <span dir="ltr"><a href="gtk.gtkpaned.method.set_position.html">set_position()</a></span> 
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkpaned.method.add2.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkpaned.method.get_child1.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkPaned::add2</span> </td><td width="20%" align="center"><a href="gtk.gtkpaned.html#idp73210992">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkPaned::get_child1</span></td></tr></table></div></body></html>

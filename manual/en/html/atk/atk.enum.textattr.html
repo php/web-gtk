@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>AtkTextAttr</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../atkenums.html#atk.atkenum" title="ATK Enums"><link rel="previous" href="atk.enum.textcliptype.html" title="AtkTextClipType"><link rel="next" href="atk.enum.coordtype.html" title="AtkCoordType"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">ATK Enums</th></tr><tr><td width="20%" align="left"><a href="atk.enum.textcliptype.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">AtkTextAttr</span></th><td width="20%" align="right"> <a href="atk.enum.coordtype.html">Next</a></td></tr></table><hr></div><a class="enum" name="atk.enum.textattr"></a><h1 class="title">AtkTextAttr</h1><p>
+   <p>
+    Describes the text attributes supported
+   </p>
+  </p><table width="100%" cellpadding="2" cellspacing="1"><tr><td width="7%"><h3>Value</h3></td><td width="40%"><h3>Symbolic name</h3></td><td width="52%"><h3>Description</h3></td></tr><tr valign="top"><td>  0</td><td>Atk::TEXT_ATTR_INVALID</td><td>
+       Invalid attribute
+      </td></tr><tr valign="top"><td>  1</td><td>Atk::TEXT_ATTR_LEFT_MARGIN</td><td>
+       The pixel width of the left margin
+      </td></tr><tr valign="top"><td>  2</td><td>Atk::TEXT_ATTR_RIGHT_MARGIN</td><td>
+       The pixel width of the right margin
+      </td></tr><tr valign="top"><td>  3</td><td>Atk::TEXT_ATTR_INDENT</td><td>
+       The number of pixels that the text is indented
+      </td></tr><tr valign="top"><td>  4</td><td>Atk::TEXT_ATTR_INVISIBLE</td><td>
+       Either "true" or "false" indicating whether text is visible or not
+      </td></tr><tr valign="top"><td>  5</td><td>Atk::TEXT_ATTR_EDITABLE</td><td>
+       Either "true" or "false" indicating whether text is editable or not
+      </td></tr><tr valign="top"><td>  6</td><td>Atk::TEXT_ATTR_PIXELS_ABOVE_LINES</td><td>
+       Pixels of blank space to leave above each newline-terminated line.
+      </td></tr><tr valign="top"><td>  7</td><td>Atk::TEXT_ATTR_PIXELS_BELOW_LINES</td><td>
+    Pixels of blank space to leave below each newline-terminated line.
+   </td></tr><tr valign="top"><td>  8</td><td>Atk::TEXT_ATTR_PIXELS_INSIDE_WRAP</td><td>
+    Pixels of blank space to leave between wrapped lines inside the same
+    newline-terminated line (paragraph).
+   </td></tr><tr valign="top"><td>  9</td><td>Atk::TEXT_ATTR_BG_FULL_HEIGHT</td><td>
+    "true" or "false" whether to make the background color for each character 
+    the height of the highest font used on the current line, or the height 
+    of the font used for the current character.
+   </td></tr><tr valign="top"><td>  10</td><td>Atk::TEXT_ATTR_RISE</td><td>
+    Number of pixels that the characters are risen above the baseline
+   </td></tr><tr valign="top"><td>  11</td><td>Atk::TEXT_ATTR_UNDERLINE</td><td>
+    "none", "single", "double" or "low"
+   </td></tr><tr valign="top"><td>  12</td><td>Atk::TEXT_ATTR_STRIKETHROUGH</td><td>
+    "true" or "false" whether the text is strikethrough
+   </td></tr><tr valign="top"><td>  13</td><td>Atk::TEXT_ATTR_SIZE</td><td>
+    The size of the characters.
+   </td></tr><tr valign="top"><td>  14</td><td>Atk::TEXT_ATTR_SCALE</td><td>
+    The scale of the characters. The value is a string representation of a double
+   </td></tr><tr valign="top"><td>  15</td><td>Atk::TEXT_ATTR_WEIGHT</td><td>
+    The weight of the characters.
+   </td></tr><tr valign="top"><td>  16</td><td>Atk::TEXT_ATTR_LANGUAGE</td><td>
+    The language used
+   </td></tr><tr valign="top"><td>  17</td><td>Atk::TEXT_ATTR_FAMILY_NAME</td><td>
+    The font family name
+   </td></tr><tr valign="top"><td>  18</td><td>Atk::TEXT_ATTR_BG_COLOR</td><td>
+    The background color. The value is an RGB value of the format "u,u,u"
+   </td></tr><tr valign="top"><td>  19</td><td>Atk::TEXT_ATTR_FG_COLOR</td><td>
+    The foreground color. The value is an RGB value of the format "u,u,u"
+   </td></tr><tr valign="top"><td>  20</td><td>Atk::TEXT_ATTR_BG_STIPPLE</td><td>
+    "true" if a GdkBitmap is set for stippling the background color.
+   </td></tr><tr valign="top"><td>  21</td><td>Atk::TEXT_ATTR_FG_STIPPLE</td><td>
+    "true" if a GdkBitmap is set for stippling the foreground color.
+   </td></tr><tr valign="top"><td>  22</td><td>Atk::TEXT_ATTR_WRAP_MODE</td><td>
+    The wrap mode of the text, if any. Values are "none", "char" or "word"
+   </td></tr><tr valign="top"><td>  23</td><td>Atk::TEXT_ATTR_DIRECTION</td><td>
+    The direction of the text, if set. Values are "none", "ltr" or "rtl"
+   </td></tr><tr valign="top"><td>  24</td><td>Atk::TEXT_ATTR_JUSTIFICATION</td><td>
+    The justification of the text, if set. Values are "left", "right", "center" or "fill"
+   </td></tr><tr valign="top"><td>  25</td><td>Atk::TEXT_ATTR_STRETCH</td><td>
+    The stretch of the text, if set. Values are "ultra_condensed", "extra_condensed", 
+    "condensed", "semi_condensed", "normal", "semi_expanded", "expanded", 
+    "extra_expanded" or "ultra_expanded"
+   </td></tr><tr valign="top"><td>  26</td><td>Atk::TEXT_ATTR_VARIANT</td><td>
+    The capitalization variant of the text, if set. Values are "normal" or "small_caps"
+   </td></tr><tr valign="top"><td>  27</td><td>Atk::TEXT_ATTR_STYLE</td><td>
+    The slant style of the text, if set. Values are "normal", "oblique" or "italic"
+   </td></tr><tr valign="top"><td>  28</td><td>Atk::TEXT_ATTR_LAST_DEFINED</td><td>
+    not a valid text attribute, used for finding end of enumeration
+   </td></tr></table><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="atk.enum.textcliptype.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="atk.enum.coordtype.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">AtkTextClipType</span> </td><td width="20%" align="center"><a href="../atkenums.html#atk.atkenum">Up</a></td><td width="40%" align="right"> <span dir="ltr">AtkCoordType</span></td></tr></table></div></body></html>

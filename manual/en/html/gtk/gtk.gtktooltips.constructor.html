@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkTooltips Constructor</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtktooltips.html#idp83059104" title=""><link rel="previous" href="gtk.gtktooltips.html" title="GtkTooltips"><link rel="next" href="gtk.gtktooltips.method.disable.html" title="GtkTooltips::disable"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtktooltips.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkTooltips</span> Constructor</th><td width="20%" align="right"> <a href="gtk.gtktooltips.method.disable.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtktooltips.constructor"></a><h2><span dir="ltr">GtkTooltips</span> Constructor</h2><p><div class="funcsynopsis" id="idp83060176"><p></p><a name="idp83060176"></a> <span dir="ltr"><a href="gtk.gtktooltips.constructor.html">GtkTooltips</a></span> ();</div></p>
+    <p>
+     Creates a new tooltips object. After instantiating the object,
+     you can begin to add tooltips for widgets with
+     <span dir="ltr"><a href="gtk.gtktooltips.method.set_tip.html">set_tip()</a></span> .
+    </p>
+    <div class="example" align="left"><p><a name="idp83064416"></a><b>Example 126. Adding a tooltip to a button</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+$tt = new GtkTooltips();
+
+$btn = new GtkButton('Quit');
+$btn-&gt;connect_simple('clicked', array('Gtk', 'main_quit'));
+
+//set the tip
+$tt-&gt;set_tip(
+    //widget to set the tip of
+    $btn,
+    //normal tooltip
+    'Quits the application',
+    //longer description
+    'If you press this button, then'
+    . ' the application ends its life.'
+);
+
+
+//create the window, add the button
+$wnd = new GtkWindow();
+$wnd-&gt;connect_simple('destroy', array('Gtk', 'main_quit'));
+$wnd-&gt;add($btn);
+$wnd-&gt;show_all();
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtktooltips.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtktooltips.method.disable.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkTooltips</span> </td><td width="20%" align="center"><a href="gtk.gtktooltips.html#idp83059104">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkTooltips::disable</span></td></tr></table></div></body></html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkDialog</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkcurve.method.set_vector.html" title="GtkCurve::set_vector"><link rel="next" href="gtk.gtkdialog.constructor.html" title="GtkDialog Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkcurve.method.set_vector.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkDialog</span></th><td width="20%" align="right"> <a href="gtk.gtkdialog.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkdialog"></a><h2 class="title"><span dir="ltr">GtkDialog</span></h2><div style="float:right; border:1px solid #000;"><img src="../images/reference/gtk/gtkdialog.png"></div><p><blockquote>
+   A popup window.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkbin.html">GtkBin</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwindow.html">GtkWindow</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkdialog.html">GtkDialog</a></span><br></div></blockquote></p><p><h3>Direct Subclasses</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="gtk.gtkaboutdialog.html">GtkAboutDialog</a></span>, <span dir="ltr"><a href="gtk.gtkcolorselectiondialog.html">GtkColorSelectionDialog</a></span>, <span dir="ltr"><a href="gtk.gtkfilechooserdialog.html">GtkFileChooserDialog</a></span>, <span dir="ltr"><a href="gtk.gtkfileselection.html">GtkFileSelection</a></span>, <span dir="ltr"><a href="gtk.gtkfontselectiondialog.html">GtkFontSelectionDialog</a></span>, <span dir="ltr"><a href="gtk.gtkinputdialog.html">GtkInputDialog</a></span>, <span dir="ltr"><a href="gtk.gtkmessagedialog.html">GtkMessageDialog</a></span></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    As the name suggests, <span dir="ltr"><a href="gtk.gtkdialog.html">GtkDialog</a></span> is a widget that
+    is useful whenever you want to interact with the user. For example,
+    you might want to ask the user a question, prompt for certain input, or
+    confirm some action. The <span dir="ltr"><a href="gtk.gtkdialog.html">GtkDialog</a></span> helps in such
+    cases by providing a suitable window for interaction. Don't be fooled
+    by the simple example, a <span dir="ltr"><a href="gtk.gtkdialog.html">GtkDialog</a></span> can do much
+    more powerful things than what is shown!
+   </p>
+   <p>
+    A <span dir="ltr"><a href="gtk.gtkdialog.html">GtkDialog</a></span> is basically made up of two main
+    areas, the top area, where you may pack widgets like
+    <span dir="ltr"><a href="gtk.gtklabel.html">GtkLabel</a></span> or a <span dir="ltr"><a href="gtk.gtkentry.html">GtkEntry</a></span>.
+    The bottom area may be used to display
+    <span dir="ltr"><a href="gtk.gtkbutton.html">GtkButton</a></span>s that will perform some action, like
+    OK or cancel. The bottom area of the dialog is known as the
+    <span dir="ltr"><a href="gtk.gtkdialog.field.action_area.html">action_area</a></span>, while the top area 
+    is a <span dir="ltr"><a href="gtk.gtkdialog.field.vbox.html">vbox</a></span>.
+   </p>
+   <p>
+    The general procedure for creating a dialog box would be to create a
+    Dialog Box with its constructor and then adding the appropriate widgets
+    to the <span dir="ltr"><a href="gtk.gtkdialog.field.vbox.html">vbox</a></span> and 
+    <span dir="ltr"><a href="gtk.gtkdialog.field.action_area.html">action_area</a></span>. Alternatively, 
+    instead of adding the required buttons to the 
+    <span dir="ltr"><a href="gtk.gtkdialog.field.action_area.html">action_area</a></span>, you may make use of 
+    the <span dir="ltr"><a href="gtk.gtkdialog.method.add_button.html">add_button()</a></span>  method. The
+    advantage of this method is that you get to choose a response signal. 
+    You may choose a response ID from <span dir="ltr"><a href="gtk.enum.responsetype.html">GtkResponseType</a></span>,
+    that suits the purpose of your button. The third and most convenient way 
+    to add buttons to the dialog is passing them as parameters while using 
+    the constructor.
+   </p>
+   <div class="note" style="margin-left: 24px; margin-right: 24px; font-weight: bold;">
+    Most of the time however, you do not have to go through all this
+    trouble unless you want to create a highly customized dialog. The
+    common types of dialog boxes have widgets of their own, like the
+    <span dir="ltr"><a href="gtk.gtkfilechooserdialog.html">GtkFileChooserDialog</a></span> or the
+    <span dir="ltr"><a href="gtk.gtkcolorselectiondialog.html">GtkColorSelectionDialog</a></span>.
+   </div>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp62449152"><p></p><a name="idp62449152"></a> <span dir="ltr"><a href="gtk.gtkdialog.constructor.html">GtkDialog</a></span> ([string <i><tt>title = null</tt></i> [, GtkWidget <i><tt>parent_window = null</tt></i> [, <span dir="ltr"><a href="gtk.enum.dialogflags.html">GtkDialogFlags</a></span> <i><tt>dialog_flags = 0</tt></i> [, array <i><tt>(GtkButton,
+    <span dir="ltr"><a href="gtk.enum.responsetype.html">GtkResponseType</a></span>)</tt></i>]]]]);</div></p> --
+    Creates a new dialog box.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkdialog.method.add_action_widget.html">add_action_widget()</a></span> </dt><dd> 
+    Add a widget to the <span dir="ltr"><tt>action_area</tt></span>
+   </dd><dt><span dir="ltr"><a href="gtk.gtkdialog.method.add_button.html">add_button()</a></span> </dt><dd> 
+    Adds a button to the dialog.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkdialog.method.add_buttons.html">add_buttons()</a></span> </dt><dd> 
+    Adds an array of buttons to the dialog.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkdialog.method.get_has_separator.html">get_has_separator()</a></span> </dt><dd> 
+    Returns whether the dialog has a separator.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkdialog.method.response.html">response()</a></span> </dt><dd> 
+    Emits the response signal.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkdialog.method.run.html">run()</a></span> </dt><dd> 
+    Blocks the main loop until the dialog is destroyed.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkdialog.method.set_default_response.html">set_default_response()</a></span> </dt><dd> 
+    Sets the response ID to be generated by the dialog.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkdialog.method.set_has_separator.html">set_has_separator()</a></span> </dt><dd> 
+    Sets whether the dialog has a separator.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkdialog.method.set_response_sensitive.html">set_response_sensitive()</a></span> </dt><dd> 
+    Sets the activatable widgets to be sensitive or not.
+   </dd></blockquote></div><h3>Fields</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkdialog.field.action_area.html">action_area</a></span>:</dt><dd> 
+    Describes the area of the dialog that holds the action widgets
+    (buttons).
+   </dd><dt><span dir="ltr"><a href="gtk.gtkdialog.field.vbox.html">vbox</a></span>:</dt><dd> 
+    Describes the area of the dialog that holds the prompt widgets 
+    (labels). 
+   </dd></blockquote><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtkdialog.signal.close.html">close</a>"</span></dt><dd> 
+    Emitted when the dialog is destroyed.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkdialog.signal.response.html">response</a>"</span></dt><dd> 
+    Emitted when an action widget (button) is clicked.
+   </dd></blockquote></p></div>
+
+  
+ 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ 
+
+  
+
+  
+
+ 
+
+  
+  
+  
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkcurve.method.set_vector.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkdialog.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkCurve::set_vector</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkDialog</span> Constructor</td></tr></table></div></body></html>

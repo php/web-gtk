@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkHandleBox</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkgammacurve.field.table.html" title="GtkGammaCurve::table"><link rel="next" href="gtk.gtkhandlebox.constructor.html" title="GtkHandleBox Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkgammacurve.field.table.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkHandleBox</span></th><td width="20%" align="right"> <a href="gtk.gtkhandlebox.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkhandlebox"></a><h2 class="title"><span dir="ltr">GtkHandleBox</span></h2><p><blockquote>
+   A container for creating detachable window elements.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkbin.html">GtkBin</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkhandlebox.html">GtkHandleBox</a></span><br></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    The GtkHandleBox widget allows a portion of a window to be "torn off".
+    It is a bin widget which displays its child and a handle that the user
+    can drag to tear off a separate window (the float window) containing
+    the child widget.
+    A thin ghost is drawn in the original location of the handlebox.
+    By dragging the separate window back to its original location,
+    it can be reattached.
+   </p>
+   <p>
+    When reattaching, the ghost and float window, must be aligned
+    along one of the edges, the <i>snap edge</i>.
+    This either can be specified by the application programmer explicitely,
+    or GTK+ will pick a reasonable default based on the handle position.
+   </p>
+   <p>
+    To make detaching and reattaching the handlebox as minimally confusing
+    as possible to the user, it is important to set the snap edge so that
+    the snap edge does not move when the handlebox is deattached.
+    For instance, if the handlebox is packed at the bottom of a VBox,
+    then when the handlebox is detached, the bottom edge of the handlebox's
+    allocation will remain fixed as the height of the handlebox shrinks,
+    so the snap edge should be set to
+    <span dir="ltr"><a href="gtk.enum.positiontype.html">Gtk::POS_BOTTOM</a></span>.
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp66295296"><p></p><a name="idp66295296"></a> <span dir="ltr"><a href="gtk.gtkhandlebox.constructor.html">GtkHandleBox</a></span> ();</div></p> --
+    Creates a new handle box.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkhandlebox.method.get_handle_position.html">get_handle_position()</a></span> </dt><dd> 
+    Gets the handle position of the handle box.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkhandlebox.method.get_shadow_type.html">get_shadow_type()</a></span> </dt><dd> 
+    Gets the type of shadow drawn around the handle box.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkhandlebox.method.get_snap_edge.html">get_snap_edge()</a></span> </dt><dd> 
+    Gets the edge used for determining reattachment of the handle box.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkhandlebox.method.set_handle_position.html">set_handle_position()</a></span> </dt><dd> 
+    Sets the side of the handlebox where the handle is drawn.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkhandlebox.method.set_shadow_type.html">set_shadow_type()</a></span> </dt><dd> 
+    Sets the type of shadow to be drawn around the border of the handle box.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkhandlebox.method.set_snap_edge.html">set_snap_edge()</a></span> </dt><dd> 
+    Sets the snap edge of a handlebox.
+   </dd></blockquote></div><h3>Properties</h3><p>Use get_property and set_property methods to access these.</p><blockquote><dt><span dir="ltr"><a href="gtk.gtkhandlebox.property.handle-position.html">handle-position</a></span>:</dt><dd> 
+     Position of the handle relative to the child widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkhandlebox.property.shadow-type.html">shadow-type</a></span>:</dt><dd> 
+     Appearance of the shadow that surrounds the container.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkhandlebox.property.snap-edge.html">snap-edge</a></span>:</dt><dd> 
+     Side of the handlebox that's lined up with the docking point to dock the handlebox.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkhandlebox.property.snap-edge-set.html">snap-edge-set</a></span>:</dt><dd> 
+     Whether to use the value from the <span dir="ltr"><tt>snap_edge</tt></span> property.
+   </dd></blockquote><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtkhandlebox.signal.child-attached.html">child-attached</a>"</span></dt><dd> 
+    The contents of the box are reattached to the main window.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkhandlebox.signal.child-detached.html">child-detached</a>"</span></dt><dd> 
+    The widget is detached from the main window.
+   </dd></blockquote></p></div>
+  
+ 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+ 
+  
+
+  
+
+  
+
+  
+ 
+  
+
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkgammacurve.field.table.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkhandlebox.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkGammaCurve::table</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkHandleBox</span> Constructor</td></tr></table></div></body></html>

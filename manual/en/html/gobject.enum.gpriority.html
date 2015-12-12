@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GPriority</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="stylesheet.css"><link rel="home" href="index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gobjectenums.html#gobjectenum" title="GObject Enums"><link rel="previous" href="gobject.enum.gtype.html" title="GType"><link rel="next" href="gobject.enum.giocondition.html" title="GIOCondition"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GObject Enums</th></tr><tr><td width="20%" align="left"><a href="gobject.enum.gtype.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GPriority</span></th><td width="20%" align="right"> <a href="gobject.enum.giocondition.html">Next</a></td></tr></table><hr></div><a class="enum" name="gobject.enum.gpriority"></a><h1 class="title">GPriority</h1><p>
+   <p>
+    Controls how important event sources are during the main loop.
+   </p>
+  </p><table width="100%" cellpadding="2" cellspacing="1"><tr><td width="7%"><h3>Value</h3></td><td width="40%"><h3>Symbolic name</h3></td><td width="52%"><h3>Description</h3></td></tr><tr valign="top"><td> -100</td><td>Gobject::PRIORITY_DEFAULT</td><td>
+    Use this for default priority event sources
+   </td></tr><tr valign="top"><td>  100</td><td>Gobject::PRIORITY_HIGH_IDLE</td><td>
+    Use this for high priority timeouts. This priority is never 
+    used inside GTK+ so everything running at this priority will 
+    be running before anything inside the toolkit.
+   </td></tr><tr valign="top"><td>  110</td><td>Gobject::PRIORITY_HIGH_IDLE</td><td>
+    Use this priority for resizing related stuff. It is used internally by 
+    GTK+ to compute the sizes of widgets. This priority is higher than 
+    <span dir="ltr"><tt>Gobject::GTK_PRIORITY</tt></span>to avoid resizing a widget which 
+    was just redrawn.
+   </td></tr><tr valign="top"><td>  120</td><td>Gobject::PRIORITY_REDRAW</td><td>
+    Use this priority for redrawing related stuff. It is used internally by
+    GTK+ to do pending redraws. This priority is lower than 
+    <span dir="ltr"><tt>Gobject::PRIORITY_RESIZE</tt></span> to avoid redrawing a widget just
+    before resizing (and therefore redrawing it again).
+   </td></tr><tr valign="top"><td>  200</td><td>Gobject::PRIORITY_DEFAULT_IDLE</td><td>
+    Default priority for idle functions.
+   </td></tr><tr valign="top"><td>  300</td><td>Gobject::PRIORITY_LOW</td><td>
+    Priority for very unimportant background tasks.
+   </td></tr></table><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gobject.enum.gtype.html">Prev</a> </td><td width="20%" align="center"><a href="index.html">Home</a></td><td width="40%" align="right"> <a href="gobject.enum.giocondition.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GType</span> </td><td width="20%" align="center"><a href="gobjectenums.html#gobjectenum">Up</a></td><td width="40%" align="right"> <span dir="ltr">GIOCondition</span></td></tr></table></div></body></html>

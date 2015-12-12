@@ -1,0 +1,15 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GObject::stop_emission</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="stylesheet.css"><link rel="home" href="index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gobject.html#idp46487392" title=""><link rel="previous" href="gobject.method.signal_query.html" title="GObject::signal_query"><link rel="next" href="gobject.method.thaw_notify.html" title="GObject::thaw_notify"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gobject.method.signal_query.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GObject::stop_emission</span></th><td width="20%" align="right"> <a href="gobject.method.thaw_notify.html">Next</a></td></tr></table><hr></div><div><a name="gobject.method.stop_emission"></a><h2><span dir="ltr">GObject::stop_emission</span></h2><p><div class="funcsynopsis" id="idp46717808"><p></p><a name="idp46717808"></a>void stop_emission</div></p>
+    <p>
+     Stops a signal's current emission for the object this is called on.
+    </p>
+    <p>
+     This will prevent the default method from running, if the signal was
+     G_SIGNAL_RUN_LAST and you connected normally (i.e. without the "after" flag).
+     Prints a warning if used on a signal which isn't being emitted.
+    </p>
+    <p>
+     See also:
+     <span dir="ltr"><a href="gobject.method.emit.html">emit()</a></span> ,
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gobject.method.signal_query.html">Prev</a> </td><td width="20%" align="center"><a href="index.html">Home</a></td><td width="40%" align="right"> <a href="gobject.method.thaw_notify.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GObject::signal_query</span> </td><td width="20%" align="center"><a href="gobject.html#idp46487392">Up</a></td><td width="40%" align="right"> <span dir="ltr">GObject::thaw_notify</span></td></tr></table></div></body></html>

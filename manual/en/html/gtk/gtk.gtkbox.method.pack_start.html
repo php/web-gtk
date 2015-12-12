@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkBox::pack_start</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkbox.html#idp56228224" title=""><link rel="previous" href="gtk.gtkbox.method.pack_end.html" title="GtkBox::pack_end"><link rel="next" href="gtk.gtkbox.method.reorder_child.html" title="GtkBox::reorder_child"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkbox.method.pack_end.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkBox::pack_start</span></th><td width="20%" align="right"> <a href="gtk.gtkbox.method.reorder_child.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkbox.method.pack_start"></a><h2><span dir="ltr">GtkBox::pack_start</span></h2><p><div class="funcsynopsis" id="idp56292512"><p></p><a name="idp56292512"></a>void pack_start(<span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span> <i><tt>child</tt></i> [, bool <i><tt>expand = true</tt></i> [, bool <i><tt>fill = true</tt></i> [, int <i><tt>padding = 0</tt></i>]]]);</div></p>
+    <p>
+     Adds <i><tt>child</tt></i> to the box starting from the begining.
+     If the box is a <span dir="ltr"><a href="gtk.gtkvbox.html">GtkVBox</a></span>, the
+     <i><tt>child</tt></i> will be added starting from the top. If the
+     box is a <span dir="ltr"><a href="gtk.gtkhbox.html">GtkHBox</a></span> the <i><tt>child</tt></i>
+     will be added starting from the left.
+    </p>
+    <p>
+     The optional argument <i><tt>expand</tt></i>, controls whether or
+     not the widget should consume all of the space available when the
+     container and the <i><tt>child</tt></i> are shown. Consuming the
+     available space does not mean the <i><tt>child</tt></i> will be
+     resized to fit the container.
+    </p>
+    <p>
+     See also:
+     <span dir="ltr"><a href="gtk.gtkbox.method.pack_end.html">pack_end()</a></span> 
+    </p>
+
+    <div class="example" align="left"><p><a name="idp56307248"></a><b>Example 19. GtkBox' expand and fill parameters in action</b></p><p>
+      This example demonstrates the <i><tt>expand</tt></i> and
+      <i><tt>fill</tt></i> parameters.
+     </p><p>
+      At first two <span dir="ltr"><a href="gtk.gtklabel.html">GtkLabel</a></span>s are created and
+      <span dir="ltr"><a href="gtk.gtkbox.method.pack_start.html">pack_start()</a></span> 'ed to a box,
+      the first expanded and the second unexpanded.
+     </p><p>
+      The right side of the window shows the <i><tt>fill</tt></i>
+      parameter: Two buttons are added to the box, both expanded, but only
+      the first one filled: The second one takes half of the space, but
+      keeps the ideal size required to display all the text, while
+      the first one takes all the space for display.
+     </p><p><img src="../images/reference/gtk/gtkbox.packing.png"></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//GtkBox expand and fill parameter example
+
+/**
+* Example 1: The "expand" parameter
+*/
+$boxExpand   = new GtkVBox();
+$lblExpand   = new GtkLabel('Expand');
+$lblNoExpand = new GtkLabel('No expand');
+
+//Add the expanded Label with the 
+//expand parameter set to true
+$boxExpand-&gt;pack_start($lblExpand, true);
+
+//to see the difference better
+$boxExpand-&gt;pack_start(new GtkHSeparator(), false, false, 3);
+
+//Add the unexpanded label with the
+//expand parameter set to false
+$boxExpand-&gt;pack_start($lblNoExpand, false);
+
+
+/**
+* Example 2: The "fill" parameter
+*/
+$boxFill   = new GtkVBox();
+$btnFill   = new GtkButton('Fill');
+$btnNoFill = new GtkButton('No fill');
+
+//Add the filled button to the box
+//with the fill parameter set to true
+$boxFill-&gt;pack_start($btnFill, true, true);
+
+//to see the difference better
+$boxFill-&gt;pack_start(new GtkHSeparator(), false, false, 3);
+
+//Add the unfilled button to the box,
+//with the filled parameter set to false
+$boxFill-&gt;pack_start($btnNoFill, true, false);
+
+
+/**
+* Add both of the example boxes to the window
+*/
+$wnd = new GtkWindow();
+$wnd-&gt;set_title('Pack test');
+$wnd-&gt;connect_simple('destroy', array('gtk', 'main_quit'));
+$wnd-&gt;set_size_request(300, 200);
+
+//Set the box homogenous, so that left and right
+//example get the same space
+$hbox = new GtkHBox(true);
+
+//Add the expand example box
+$hbox-&gt;pack_start($boxExpand, true);
+//Add the fill example box
+$hbox-&gt;pack_start($boxFill, true);
+
+//Add the main box to the window
+$wnd-&gt;add($hbox);
+$wnd-&gt;show_all();
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkbox.method.pack_end.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkbox.method.reorder_child.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkBox::pack_end</span> </td><td width="20%" align="center"><a href="gtk.gtkbox.html#idp56228224">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkBox::reorder_child</span></td></tr></table></div></body></html>

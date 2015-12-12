@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>button-press-event</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkwidget.html#idp88473568" title=""><link rel="previous" href="gtk.gtkwidget.signal.accel-closures-changed.html" title="accel-closures-changed"><link rel="next" href="gtk.gtkwidget.signal.button-release-event.html" title="button-release-event"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkwidget.signal.accel-closures-changed.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">button-press-event</span></th><td width="20%" align="right"> <a href="gtk.gtkwidget.signal.button-release-event.html">Next</a></td></tr></table><hr></div><a name="gtk.gtkwidget.signal.button-press-event"></a><h2><span dir="ltr">button-press-event</span></h2><p>
+    <p>
+     This signal is emitted when a mouse button has been pressed down.
+    </p>
+    <p>
+     Useful event properties are:
+     <div class="itemizedlist"><ul><li><a name="idp88485200"></a><span dir="ltr"><tt>x, y</tt></span> - The x and y widget coordinates at which
+       the cursor is.
+      </li><li><a name="idp88486352"></a><span dir="ltr"><tt>button</tt></span> - Mouse button (1 - left, 2 - middle, 3 - right)
+      </li><li><a name="idp88487504"></a><span dir="ltr"><tt>state</tt></span> - Bitmask of other keys that were
+       pressed (e.g. Ctrl or Shift) - <span dir="ltr"><a href="../gdk/gdk.enum.modifiertype.html">GdkModifierType</a></span></li><li><a name="idp88489088"></a><span dir="ltr"><tt>type</tt></span> - Event type, e.g. normal press, double click
+       or so - <span dir="ltr"><a href="../gdk/gdk.enum.eventtype.html">GdkEventType</a></span>.
+      </li></ul></div>
+    </p>
+    <p>
+     <div class="example" align="left"><p><a name="idp88491200"></a><b>Example 154. Using the key-press-event signal</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+$wnd = new GtkWindow();
+$wnd-&gt;connect_simple('destroy', array('Gtk', 'main_quit'));
+
+//we want to receive mouse button press events
+$wnd-&gt;set_events(Gdk::BUTTON_PRESS_MASK);
+$wnd-&gt;connect('button-press-event', 'onButtonPress');
+
+//here we handle the mouse button press events
+function onButtonPress($widget, $event) {
+    $widget-&gt;set_title($event-&gt;button . ' - ' . $event-&gt;x . ':' . $event-&gt;y);
+}
+$wnd-&gt;show();
+
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+    </p>
+
+   </p><p><b>Callback function</b></p><p><p><div class="funcsynopsis" id="idp88479504"><p></p><a name="idp88479504"></a>bool callback(<span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span> <i><tt>widget</tt></i>, <span dir="ltr"><a href="../gdk/gdk.gdkevent.html">GdkEvent</a></span> <i><tt>event</tt></i>);</div></p></p><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkwidget.signal.accel-closures-changed.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkwidget.signal.button-release-event.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">accel-closures-changed</span> </td><td width="20%" align="center"><a href="gtk.gtkwidget.html#idp88473568">Up</a></td><td width="40%" align="right"> <span dir="ltr">button-release-event</span></td></tr></table></div></body></html>

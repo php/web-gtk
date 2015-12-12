@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkVButtonBox Constructor</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkvbuttonbox.html#idp87095376" title=""><link rel="previous" href="gtk.gtkvbuttonbox.html" title="GtkVButtonBox"><link rel="next" href="gtk.gtkvbuttonbox.method.get_layout_default.html" title="GtkVButtonBox::get_layout_default"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkvbuttonbox.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkVButtonBox</span> Constructor</th><td width="20%" align="right"> <a href="gtk.gtkvbuttonbox.method.get_layout_default.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkvbuttonbox.constructor"></a><h2><span dir="ltr">GtkVButtonBox</span> Constructor</h2><p><div class="funcsynopsis" id="idp87096448"><p></p><a name="idp87096448"></a>void <span dir="ltr"><a href="gtk.gtkvbuttonbox.constructor.html">GtkVButtonBox</a></span> ();</div></p>
+    <p>
+     A new GtkVButtonBox is created as in the following example. Adding buttons
+     is also shown.
+    </p>
+    
+    <table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+     //Creating a GtkVButtonBox
+     $vbbox = new GtkVButtonBox();
+     //Selecting a layout for the button box. Try other
+     //GtkButtonBoxStyle options to see the difference  
+     $vbbox-&gt;set_layout(Gtk::BUTTONBOX_SPREAD);
+     //Setting the spacing
+     $vbbox-&gt;set_spacing(25);
+
+     //Creating buttons to add
+     $button1 = new GtkButton('Button 1');
+     $button2 = new GtkButton('Button 2');
+
+     //Adding the buttons to the GtkVButtonBox
+     $vbbox-&gt;add($button1);
+     $vbbox-&gt;add($button2);
+    </pre></td></tr></table>
+    <p>
+     Note that there are no parameters in the constructor. Also, as with all
+     container widgets, GtkVButtonBox takes up no space until its child 
+     widgets are in place.
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkvbuttonbox.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkvbuttonbox.method.get_layout_default.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkVButtonBox</span> </td><td width="20%" align="center"><a href="gtk.gtkvbuttonbox.html#idp87095376">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkVButtonBox::get_layout_default</span></td></tr></table></div></body></html>

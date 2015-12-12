@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkContainer::set_focus_chain</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkcontainer.html#idp61209856" title=""><link rel="previous" href="gtk.gtkcontainer.method.set_border_width.html" title="GtkContainer::set_border_width"><link rel="next" href="gtk.gtkcontainer.method.set_focus_child.html" title="GtkContainer::set_focus_child"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkcontainer.method.set_border_width.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkContainer::set_focus_chain</span></th><td width="20%" align="right"> <a href="gtk.gtkcontainer.method.set_focus_child.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkcontainer.method.set_focus_chain"></a><h2><span dir="ltr">GtkContainer::set_focus_chain</span></h2><p><div class="funcsynopsis" id="idp61303136"><p></p><a name="idp61303136"></a>void set_focus_chain(array <i><tt>widgets</tt></i>);</div></p>
+    <p>
+     Sets a focus chain, overriding the one computed automatically by GTK+.
+    </p>
+    <p>
+     In principle each widget in the chain should be a descendant of the
+     container, but this is not enforced by this method, since it's allowed
+     to set the focus chain before you pack the widgets, or have a widget
+     in the chain that isn't always packed. The necessary checks are done
+     when the focus chain is actually traversed.
+    </p>
+    <p>
+     See also:
+     <span dir="ltr"><a href="gtk.gtkcontainer.method.get_focus_chain.html">get_focus_chain()</a></span> , 
+     <span dir="ltr"><a href="gtk.gtkcontainer.method.unset_focus_chain.html">unset_focus_chain()</a></span> 
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkcontainer.method.set_border_width.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkcontainer.method.set_focus_child.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkContainer::set_border_width</span> </td><td width="20%" align="center"><a href="gtk.gtkcontainer.html#idp61209856">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkContainer::set_focus_child</span></td></tr></table></div></body></html>

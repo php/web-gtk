@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>Fixed layout</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="tutorials.packing.html" title="Packing Widgets"><link rel="previous" href="tutorials.packing.table.html" title="Tabular layout with GtkTable"><link rel="next" href="tutorials.objectorientation.html" title="Object Oriented Programming"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Packing Widgets</th></tr><tr><td width="20%" align="left"><a href="tutorials.packing.table.html">Prev</a> </td><th width="60%" align="center">Fixed layout</th><td width="20%" align="right"> <a href="tutorials.objectorientation.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="tutorials.packing.fixed"></a><div class="titlepage"><div><h2 class="title" style="clear: all"><a name="tutorials.packing.fixed"></a>Fixed layout</h2></div></div><p>
+   This container has no own layouting logic; you have to tell
+   where the widget shall be placed. The size of the widgets is
+   determined automatically, but you can override that by requesting
+   a certain size via <span dir="ltr"><a href="../gtk/gtk.gtkwidget.method.set_size_request.html">set_size_request()</a></span> .
+  </p><p>
+   While it's very simple to place and layout the widgets, they are fixed:
+   Resizing the window doesn't move or resize the widgets. Use it only when
+   it's absolute necessary; dynamic containers are often the better choice.
+  </p><div class="example" align="left"><p><a name="idp44655632"></a><b>Example 7.3. Fixed layout with <span dir="ltr"><a href="../gtk/gtk.gtkfixed.html">GtkFixed</a></span></b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+$w = new GtkWindow();
+$w-&gt;set_title('GtkFixed test');
+$w-&gt;connect_simple('destroy', array('gtk', 'main_quit'));
+
+$btn = new GtkButton('Button');
+$txt = new GtkEntry();
+
+$fixed = new GtkFixed();
+$w-&gt;add($fixed);
+
+$fixed-&gt;put($btn, 10, 100);
+$fixed-&gt;put($txt, 50, 10);
+$btn-&gt;set_size_request(150, -1);
+
+$w-&gt;show_all();
+Gtk::main();
+?&gt;</pre></td></tr></table></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="tutorials.packing.table.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="tutorials.objectorientation.html">Next</a></td></tr><tr><td width="40%" align="left">Tabular layout with GtkTable </td><td width="20%" align="center"><a href="tutorials.packing.html">Up</a></td><td width="40%" align="right"> Object Oriented Programming</td></tr></table></div></body></html>

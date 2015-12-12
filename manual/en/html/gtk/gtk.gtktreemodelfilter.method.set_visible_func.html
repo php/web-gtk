@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkTreeModelFilter::set_visible_func</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtktreemodelfilter.html#idp83588672" title=""><link rel="previous" href="gtk.gtktreemodelfilter.method.set_visible_column.html" title="GtkTreeModelFilter::set_visible_column"><link rel="next" href="gtk.gtktreemodelrow.html" title="GtkTreeModelRow"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtktreemodelfilter.method.set_visible_column.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkTreeModelFilter::set_visible_func</span></th><td width="20%" align="right"> <a href="gtk.gtktreemodelrow.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtktreemodelfilter.method.set_visible_func"></a><h2><span dir="ltr">GtkTreeModelFilter::set_visible_func</span></h2><p><div class="funcsynopsis" id="idp83671616"><p></p><a name="idp83671616"></a>void set_visible_func(<i><tt>callback</tt></i>);</div></p>
+    <p>
+     Sets the visible function used when filtering the model.
+     The function should return <span dir="ltr"><tt>true</tt></span> if the given
+     row should be visible and <span dir="ltr"><tt>false</tt></span> otherwise.
+    </p>
+    <p>
+     If the condition calculated by the function changes over time
+     (e.g. because it depends on some global parameters), you must call
+     <span dir="ltr"><a href="gtk.gtktreemodelfilter.method.refilter.html">refilter()</a></span>  to keep
+     the visibility information of the model up to date.
+    </p>
+    
+    <div class="note" style="margin-left: 24px; margin-right: 24px; font-weight: bold;"><p>
+      Once set, the function cannot be changed or disabled.
+     </p></div>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtktreemodelfilter.method.set_visible_column.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtktreemodelrow.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkTreeModelFilter::set_visible_column</span> </td><td width="20%" align="center"><a href="gtk.gtktreemodelfilter.html#idp83588672">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkTreeModelRow</span></td></tr></table></div></body></html>

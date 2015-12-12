@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkCellRenderer</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkcelllayout.method.set_cell_data_func.html" title="GtkCellLayout::set_cell_data_func"><link rel="next" href="gtk.gtkcellrenderer.method.activate.html" title="GtkCellRenderer::activate"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkcelllayout.method.set_cell_data_func.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkCellRenderer</span></th><td width="20%" align="right"> <a href="gtk.gtkcellrenderer.method.activate.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkcellrenderer"></a><h2 class="title"><span dir="ltr">GtkCellRenderer</span></h2><p><blockquote>
+   Base class to display cell contents in a GtkTreeView.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcellrenderer.html">GtkCellRenderer</a></span><br></div></blockquote></p><p><h3>Direct Subclasses</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="gtk.gtkcellrendererpixbuf.html">GtkCellRendererPixbuf</a></span>, <span dir="ltr"><a href="gtk.gtkcellrendererprogress.html">GtkCellRendererProgress</a></span>, <span dir="ltr"><a href="gtk.gtkcellrenderertext.html">GtkCellRendererText</a></span>, <span dir="ltr"><a href="gtk.gtkcellrenderertoggle.html">GtkCellRendererToggle</a></span></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    The GtkCellRenderer is a base class of a set of objects used for rendering
+    a cell to a <span dir="ltr"><a href="../gdk/gdk.gdkdrawable.html">GdkDrawable</a></span>. These objects are used
+    primarily by the <span dir="ltr"><a href="gtk.gtktreeview.html">GtkTreeView</a></span> widget, though they
+    aren't tied to them in any specific way. It is worth noting that
+    GtkCellRenderer is not a <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span> and cannot be
+    treated as such.
+   </p>
+   <p>
+    Beyond merely rendering a cell, cell renderers can optionally provide
+    active user interface elements. A cell renderer can be
+    <span dir="ltr"><tt>activatable</tt></span> like 
+    <span dir="ltr"><a href="gtk.gtkcellrenderertoggle.html">GtkCellRendererToggle</a></span>, which toggles when it gets
+    activated by a mouse click, or it can be <span dir="ltr"><tt>editable</tt></span> like
+    <span dir="ltr"><a href="gtk.gtkcellrenderertext.html">GtkCellRendererText</a></span>, which allows the user to edit
+    the text using a <span dir="ltr"><a href="gtk.gtkentry.html">GtkEntry</a></span>.
+   </p>
+   <p>
+    Changes of edited cells are not automatically saved in the model; this has
+    to be done by hand: Connect to the
+    <span dir="ltr">"<a href="gtk.gtkcellrenderertext.signal.edited.html">edited</a>"</span> (text) or
+    <span dir="ltr">"<a href="gtk.gtkcellrenderertoggle.signal.toggled.html">toggled</a>"</span> (toggle)
+    signal and set the new values in the store.
+   </p>
+
+    <div class="example" align="left"><p><a name="idp57555504"></a><b>Example 21. Text and toggle cell renderers</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+/*
+ * This sample shows how to use the
+ * GtkCellRenderer along with GtkTreeView
+ */
+
+// Creates the main window
+$window = new GtkWindow;
+$window-&gt;set_title('Cell Renderers');
+$window-&gt;connect_simple('destroy', array('Gtk', 'main_quit'));
+$window-&gt;set_position(GTK::WIN_POS_CENTER);
+$window-&gt;set_default_size(280,140);
+
+// Creates the data model
+$model = new GtkListStore(Gtk::TYPE_STRING, Gtk::TYPE_BOOLEAN);
+
+// Creates the view to display the content
+$view = new GtkTreeView($model);
+
+// Creates two columns
+$column1 = new GtkTreeViewColumn('Language');
+$column2 = new GtkTreeViewColumn('Open Source?');
+
+// Add the columns to the view
+$view-&gt;append_column($column1);
+$view-&gt;append_column($column2);
+
+// Creates two cell-renderers
+$cell_renderer1 = new GtkCellRendererText();
+$cell_renderer2 = new GtkCellRendererToggle();
+
+// change the property 'width'
+$cell_renderer1-&gt;set_property('width', 180);
+$cell_renderer2-&gt;set_property('width', -1);
+
+// Pack the cell-renderers
+$column1-&gt;pack_start($cell_renderer1, true);
+$column2-&gt;pack_start($cell_renderer2, true);
+
+// link the renderers to the model
+$column1-&gt;set_attributes($cell_renderer1, 'text',   0);
+$column2-&gt;set_attributes($cell_renderer2, 'active', 1);
+
+// Add some data
+$model-&gt;append(array('PHP',             true));
+$model-&gt;append(array('Python',          true));
+$model-&gt;append(array('Delphi',          false));
+$model-&gt;append(array('Visual Basic',    false));
+
+// pack the view inside the window
+$window-&gt;add($view);
+
+// show the window
+$window-&gt;show_all();
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+  </blockquote></p><p><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkcellrenderer.method.activate.html">activate()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcellrenderer.method.editing_canceled.html">editing_canceled()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcellrenderer.method.get_fixed_size.html">get_fixed_size()</a></span> </dt><dd> 
+    Retrieves an array containing the width and height of the cell.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcellrenderer.method.render.html">render()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcellrenderer.method.set_fixed_size.html">set_fixed_size()</a></span> </dt><dd> 
+    Sets the renderer size to the specified width and height, independent of the properties set.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcellrenderer.method.start_editing.html">start_editing()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcellrenderer.method.stop_editing.html">stop_editing()</a></span> </dt><dd> 
+
+   </dd></blockquote></div><h3>Properties</h3><p>Use get_property and set_property methods to access these.</p><blockquote><dt><span dir="ltr"><a href="gtk.gtkcellrenderer.property.cell-background.html">cell-background</a></span>:</dt><dd> 
+    The background color of the cell as a string. Default: NULL
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcellrenderer.property.cell-background-gdk.html">cell-background-gdk</a></span>:</dt><dd> 
+     The background color of the cell as a GtkColor
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcellrenderer.property.cell-background-set.html">cell-background-set</a></span>:</dt><dd> 
+    If TRUE the cell background color is set by this cellrenderer. Default: FALSE.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcellrenderer.property.height.html">height</a></span>:</dt><dd> 
+    Changes the height of the cell. Allowed values &gt;= -1. Default: -1
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcellrenderer.property.is-expanded.html">is-expanded</a></span>:</dt><dd> 
+     If TRUE the row has children and it is expanded to show the children.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcellrenderer.property.is-expander.html">is-expander</a></span>:</dt><dd> 
+    If TRUE the row has children. Default: FALSE.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcellrenderer.property.sensitive.html">sensitive</a></span>:</dt><dd> 
+     If TRUE the cell is displayed as sensitive. If FALSE, in grayscale. Default: TRUE.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcellrenderer.property.visible.html">visible</a></span>:</dt><dd> 
+     If TRUE the cell is displayed. Default: TRUE.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcellrenderer.property.width.html">width</a></span>:</dt><dd> 
+     The fixed width of the cell in pixels. Allowed values &gt;= -1. Default: -1.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcellrenderer.property.xalign.html">xalign</a></span>:</dt><dd> 
+     The fraction of free space to the left of the cell.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcellrenderer.property.yalign.html">yalign</a></span>:</dt><dd> 
+    The fraction of free space above the cell.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcellrenderer.property.xpad.html">xpad</a></span>:</dt><dd> 
+    The amount of padding to the left and right of the cell.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcellrenderer.property.ypad.html">ypad</a></span>:</dt><dd> 
+    The amount of padding above and below cell.
+   </dd></blockquote><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtkcellrenderer.signal.editing-canceled.html">editing-canceled</a>"</span></dt><dd> 
+    Emitted when the user cancels the  of editing a cell.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkcellrenderer.signal.editing-started.html">editing-started</a>"</span></dt><dd> 
+    Emitted when a cell starts to be edited.
+   </dd></blockquote></p></div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+
+
+  
+  
+  
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkcelllayout.method.set_cell_data_func.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkcellrenderer.method.activate.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkCellLayout::set_cell_data_func</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkCellRenderer::activate</span></td></tr></table></div></body></html>

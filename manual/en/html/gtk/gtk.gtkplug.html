@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkPlug</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkpixmap.method.set_build_insensitive.html" title="GtkPixmap::set_build_insensitive"><link rel="next" href="gtk.gtkplug.method.get_id.html" title="GtkPlug::get_id"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkpixmap.method.set_build_insensitive.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkPlug</span></th><td width="20%" align="right"> <a href="gtk.gtkplug.method.get_id.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkplug"></a><h2 class="title"><span dir="ltr">GtkPlug</span></h2><p><blockquote>
+   A toplevel window to be embedded into other processes.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkbin.html">GtkBin</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwindow.html">GtkWindow</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkplug.html">GtkPlug</a></span><br></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    This class provides the ability to embed widgets from one process into
+    another in a way that is transparent to the user. One process creates a
+    <span dir="ltr"><a href="gtk.gtksocket.html">GtkSocket</a></span> widget and passes the ID of that widget's
+    window to the other process, which then creates a
+    <span dir="ltr"><a href="gtk.gtkplug.html">GtkPlug</a></span> with that window ID. Any widgets contained in
+    the <span dir="ltr"><a href="gtk.gtkplug.html">GtkPlug</a></span> will appear inside the first
+    application's window.
+   </p>
+  </blockquote></p><p><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkplug.method.get_id.html">get_id()</a></span> </dt><dd> 
+    Retrieves the window ID for the plug.
+   </dd></blockquote></div><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtkplug.signal.embedded.html">embedded</a>"</span></dt><dd> 
+    Emitted when plug window is reparented to socket window.
+   </dd></blockquote></p></div>
+
+  
+
+  
+
+  
+
+ 
+
+  
+
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkpixmap.method.set_build_insensitive.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkplug.method.get_id.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkPixmap::set_build_insensitive</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkPlug::get_id</span></td></tr></table></div></body></html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkEventBox Constructor</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkeventbox.html#idp63964624" title=""><link rel="previous" href="gtk.gtkeventbox.html" title="GtkEventBox"><link rel="next" href="gtk.gtkeventbox.method.get_above_child.html" title="GtkEventBox::get_above_child"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkeventbox.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkEventBox</span> Constructor</th><td width="20%" align="right"> <a href="gtk.gtkeventbox.method.get_above_child.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkeventbox.constructor"></a><h2><span dir="ltr">GtkEventBox</span> Constructor</h2><p><div class="funcsynopsis" id="idp63965648"><p></p><a name="idp63965648"></a> <span dir="ltr"><a href="gtk.gtkeventbox.constructor.html">GtkEventBox</a></span> ();</div></p>
+    <p>
+     Use this constructor to create a new
+     <span dir="ltr"><a href="gtk.gtkeventbox.html">GtkEventBox</a></span>.
+    </p>
+    <div class="example" align="left"><p><a name="idp63969312"></a><b>Example 61. A Demonstration of usage of the event box.</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//Initialising the event box and adding an image to it
+$imageEvent = new GtkEventBox();
+$imageWidget = GtkImage::new_from_stock(
+    Gtk::STOCK_DIALOG_WARNING,
+    Gtk::ICON_SIZE_DIALOG
+);
+$imageEvent-&gt;add($imageWidget);
+
+//Initialising another event box and adding a label to it
+$labelEvent = new GtkEventBox();
+$labelWidget = new GtkLabel('Click something!');
+$labelEvent-&gt;add($labelWidget);
+
+//Connecting the signals to the callback
+$imageEvent-&gt;connect('button_press_event', 'doSomething');
+$labelEvent-&gt;connect('button_press_event', 'doSomething');
+
+//The callback function
+function doSomething($widget, $event)
+{
+    //Determine which widget triggered the signal
+    $widget = $widget-&gt;get_child()-&gt;get_name();
+    if ($widget == 'GtkImage') {
+        $type = 'image';
+    } else {
+        $type = 'label';
+    }
+
+    //Show a dialog that displays a message
+    $dialog = new GtkMessageDialog(
+        null,
+        0,
+        Gtk::MESSAGE_INFO,
+        Gtk::BUTTONS_OK,
+        'You clicked the ' . $type . '!'
+    );
+    $dialog-&gt;run();
+    $dialog-&gt;destroy();
+}
+
+//Creating a VBox to add the event boxes to
+$vbox = new GtkVBox();
+$seperator = new GtkHSeparator();
+$vbox-&gt;pack_start($imageEvent);
+$vbox-&gt;pack_start($seperator);
+$vbox-&gt;pack_start($labelEvent);
+
+//Creating a window and adding the VBox to it
+$window = new GtkWindow();
+$window-&gt;add($vbox);
+$window-&gt;set_position(Gtk::WIN_POS_CENTER);
+$window-&gt;set_default_size(200,150);
+$window-&gt;show_all();
+$window-&gt;set_title("Event Boxes!");
+$window-&gt;connect_simple(
+    'destroy',
+    array('Gtk', 'main_quit')
+);
+
+//Starting main loop
+Gtk::main();
+?&gt;
+</pre></td></tr></table></div>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkeventbox.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkeventbox.method.get_above_child.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkEventBox</span> </td><td width="20%" align="center"><a href="gtk.gtkeventbox.html#idp63964624">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkEventBox::get_above_child</span></td></tr></table></div></body></html>

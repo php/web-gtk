@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GdkPixbuf::save</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gdk.gdkpixbuf.html#idp51536736" title=""><link rel="previous" href="gdk.gdkpixbuf.method.saturate_and_pixelate.html" title="GdkPixbuf::saturate_and_pixelate"><link rel="next" href="gdk.gdkpixbuf.method.scale.html" title="GdkPixbuf::scale"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gdk.gdkpixbuf.method.saturate_and_pixelate.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GdkPixbuf::save</span></th><td width="20%" align="right"> <a href="gdk.gdkpixbuf.method.scale.html">Next</a></td></tr></table><hr></div><div><a name="gdk.gdkpixbuf.method.save"></a><h2><span dir="ltr">GdkPixbuf::save</span></h2><p><div class="funcsynopsis" id="idp51768672"><p></p><a name="idp51768672"></a>bool save(string <i><tt>filename</tt></i>, string <i><tt>type</tt></i> [, array <i><tt>options</tt></i>]);</div></p>
+    <p>
+     Saves the pixbuf into a file of a given type.
+    </p>
+    <div class="example" align="left"><p><a name="idp51774576"></a><b>Example 10. Save a pixbuf into a file</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//Create a new pixbuf of size 320x240
+$pixbuf = new GdkPixbuf(Gdk::COLORSPACE_RGB, false, 8, 320, 240);
+
+//green
+$pixbuf-&gt;fill(128, 255, 0, 255);
+
+//save it as a png file
+$pixbuf-&gt;save('green.png', 'png');
+?&gt;</pre></td></tr></table></div>
+    <p>
+     The optional third <i><tt>options</tt></i> can be a list of keys
+     and values that depend on the output format. E.g., jpg has a
+     <span dir="ltr"><tt>quality</tt></span> parameter that defines the jpg quality from
+     <span dir="ltr"><tt>0</tt></span> to <span dir="ltr"><tt>100</tt></span>.
+    </p>
+    <div class="example" align="left"><p><a name="idp51781280"></a><b>Example 11. Save a pixbuf into a jpg</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//Create a new pixbuf of size 320x240
+$pixbuf = new GdkPixbuf(Gdk::COLORSPACE_RGB, false, 8, 320, 240);
+
+//green
+$pixbuf-&gt;fill(128, 255, 0, 255);
+
+//save it as a png file
+$pixbuf-&gt;save('green.jpg', 'jpg', array('quality' =&gt; 85));
+?&gt;</pre></td></tr></table></div>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gdk.gdkpixbuf.method.saturate_and_pixelate.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gdk.gdkpixbuf.method.scale.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GdkPixbuf::saturate_and_pixelate</span> </td><td width="20%" align="center"><a href="gdk.gdkpixbuf.html#idp51536736">Up</a></td><td width="40%" align="right"> <span dir="ltr">GdkPixbuf::scale</span></td></tr></table></div></body></html>

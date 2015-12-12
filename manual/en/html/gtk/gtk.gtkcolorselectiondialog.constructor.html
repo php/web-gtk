@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkColorSelectionDialog Constructor</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkcolorselectiondialog.html#idp60389952" title=""><link rel="previous" href="gtk.gtkcolorselectiondialog.html" title="GtkColorSelectionDialog"><link rel="next" href="gtk.gtkcolorselectiondialog.field.cancel_button.html" title="GtkColorSelectionDialog::cancel_button"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkcolorselectiondialog.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkColorSelectionDialog</span> Constructor</th><td width="20%" align="right"> <a href="gtk.gtkcolorselectiondialog.field.cancel_button.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkcolorselectiondialog.constructor"></a><h2><span dir="ltr">GtkColorSelectionDialog</span> Constructor</h2><p><div class="funcsynopsis" id="idp60390800"><p></p><a name="idp60390800"></a> <span dir="ltr"><a href="gtk.gtkcolorselectiondialog.constructor.html">GtkColorSelectionDialog</a></span> ([string <i><tt>title = null</tt></i>]);</div></p>
+    <p>
+     Use the constructor to create a new 
+     <span dir="ltr"><a href="gtk.gtkcolorselectiondialog.html">GtkColorSelectionDialog</a></span>.
+    </p>
+
+    <div class="example" align="left"><p><a name="idp60395216"></a><b>Example 48. Customized GtkColorSelectionDialog</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//Create the color selection dialog
+$dlgColorsel = new GtkColorSelectionDialog('GtkColorSelectionDialog demo');
+//Quit Gtk loop when destroying the dialog
+$dlgColorsel-&gt;connect_simple('destroy', array('gtk', 'main_quit'));
+
+
+//Let the Cancel button quit the program
+$dlgColorsel-&gt;cancel_button-&gt;connect_simple(
+    'clicked',
+    array($dlgColorsel, 'destroy')
+);
+
+//The OK button shows the current color
+$dlgColorsel-&gt;ok_button-&gt;set_label('Show color');
+$dlgColorsel-&gt;ok_button-&gt;connect('clicked', 'showColor');
+
+//The callback function when the OK button is clicked
+function showColor($button)
+{
+    $dlgColorsel = $button-&gt;get_toplevel();
+    $color       = $dlgColorsel-&gt;colorsel-&gt;get_current_color();
+    //The GdkColor has 48 bit depth (each R, B and G 16 bit). As
+    //we just want 8 bit, we shift the values by 8 bit
+    $strColor    = 'RGB: ' . ($color-&gt;red &gt;&gt; 8) . ' '
+                 . ($color-&gt;green &gt;&gt; 8) . ' ' . ($color-&gt;blue &gt;&gt; 8);
+    $msg = new GtkMessageDialog(
+        null,
+        0,
+        Gtk::MESSAGE_INFO,
+        Gtk::BUTTONS_OK,
+        $strColor
+    );
+    $msg-&gt;run();
+    $msg-&gt;destroy();
+}//function showColor($button)
+
+//The help button shall be hidden
+$dlgColorsel-&gt;help_button-&gt;hide();
+
+
+//show the dialog
+$dlgColorsel-&gt;show();
+//start the main loop
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkcolorselectiondialog.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkcolorselectiondialog.field.cancel_button.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkColorSelectionDialog</span> </td><td width="20%" align="center"><a href="gtk.gtkcolorselectiondialog.html#idp60389952">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkColorSelectionDialog::cancel_button</span></td></tr></table></div></body></html>

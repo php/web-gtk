@@ -1,0 +1,860 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkWidget</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkvseparator.constructor.html" title="GtkVSeparator Constructor"><link rel="next" href="gtk.gtkwidget.method.activate.html" title="GtkWidget::activate"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkvseparator.constructor.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkWidget</span></th><td width="20%" align="right"> <a href="gtk.gtkwidget.method.activate.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkwidget"></a><h2 class="title"><span dir="ltr">GtkWidget</span></h2><p><blockquote>
+   Base class for all widgets.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br></div></blockquote></p><p><h3>Direct Subclasses</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="gtk.gtkcalendar.html">GtkCalendar</a></span>, <span dir="ltr"><a href="gtk.gtkcellview.html">GtkCellView</a></span>, <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span>, <span dir="ltr"><a href="gtk.gtkdrawingarea.html">GtkDrawingArea</a></span>, <span dir="ltr"><a href="gtk.gtkentry.html">GtkEntry</a></span>, <span dir="ltr"><a href="gtk.gtkinvisible.html">GtkInvisible</a></span>, <span dir="ltr"><a href="gtk.gtkmisc.html">GtkMisc</a></span>, <span dir="ltr"><a href="gtk.gtkoldeditable.html">GtkOldEditable</a></span>, <span dir="ltr"><a href="gtk.gtkpreview.html">GtkPreview</a></span>, <span dir="ltr"><a href="gtk.gtkprogress.html">GtkProgress</a></span>, <span dir="ltr"><a href="gtk.gtkrange.html">GtkRange</a></span>, <span dir="ltr"><a href="gtk.gtkruler.html">GtkRuler</a></span>, <span dir="ltr"><a href="gtk.gtkseparator.html">GtkSeparator</a></span>, <span dir="ltr"><a href="gtk.gtkplot.html">GtkPlot</a></span></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    A widget is any class which inherits from <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span>.
+    Widgets are classes which can listen for and react to user events. Widgets
+    are usually associated with display and/or layout.
+   </p>
+  </blockquote></p><p><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkwidget.method.activate.html">activate()</a></span> </dt><dd> 
+    Activates the widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.add_accelerator.html">add_accelerator()</a></span> </dt><dd> 
+    Adds an accelerator for the widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.add_events.html">add_events()</a></span> </dt><dd> 
+    Let the widget receive more events.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.add_mnemonic_label.html">add_mnemonic_label()</a></span> </dt><dd> 
+    Adds a widget to the list of mnemonic labels for this widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.can_activate_accel.html">can_activate_accel()</a></span> </dt><dd> 
+    Returns whether or not the signal can be activated by its associated
+    accelerator.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.child_focus.html">child_focus()</a></span> </dt><dd> 
+    Invokes the focus signal when a widgets child has the focus.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.child_notify.html">child_notify()</a></span> </dt><dd> 
+    Emits a child-notify signal for the given child property.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.class_path.html">class_path()</a></span> </dt><dd> 
+    Returns the class path of the widget
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.create_pango_context.html">create_pango_context()</a></span> </dt><dd> 
+    Creates a new <span dir="ltr"><a href="../pango/pango.pangocontext.html">PangoContext</a></span> with the appropriate font map, font
+    description, and base direction for drawing text for this widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.create_pango_layout.html">create_pango_layout()</a></span> </dt><dd> 
+    Creates a new <span dir="ltr"><a href="../pango/pango.pangolayout.html">PangoLayout</a></span> with the appropriate font 
+    map, font description, and base direction for drawing text for this widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.drag_begin.html">drag_begin()</a></span> </dt><dd> 
+    Initiates a drag on the source side.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.drag_check_threshold.html">drag_check_threshold()</a></span> </dt><dd> 
+    Checks to see if a mouse drag has crossed the widgets drag threshold and
+    should therefore trigger a drag and drop operation.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.drag_dest_add_image_targets.html">drag_dest_add_image_targets()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.drag_dest_add_text_targets.html">drag_dest_add_text_targets()</a></span> </dt><dd> 
+    Add the image targets supported by GtkSelection to
+    the target list of the drag destination. 
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.drag_dest_add_uri_targets.html">drag_dest_add_uri_targets()</a></span> </dt><dd> 
+    Add the URI targets supported by GtkSelection to
+    the target list of the drag destination. 
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.drag_dest_find_target.html">drag_dest_find_target()</a></span> </dt><dd> 
+    Looks for a match between the context targets and the destination target
+    list.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.drag_dest_get_target_list.html">drag_dest_get_target_list()</a></span> </dt><dd> 
+    Returns the list of targets this widget can accept from a drag and drop.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.drag_dest_set.html">drag_dest_set()</a></span> </dt><dd> 
+    Sets the widget as a potential drop destination.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.drag_dest_set_proxy.html">drag_dest_set_proxy()</a></span> </dt><dd> 
+    Sets this widget as a proxy for drops to another window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.drag_dest_set_target_list.html">drag_dest_set_target_list()</a></span> </dt><dd> 
+    Sets the list of targets that this widget can accept from a drag and drop.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.drag_dest_unset.html">drag_dest_unset()</a></span> </dt><dd> 
+    Unsets this widget as a potential drop destination.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.drag_get_data.html">drag_get_data()</a></span> </dt><dd> 
+    Gets the data associated with the drag.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.drag_highlight.html">drag_highlight()</a></span> </dt><dd> 
+    Draws a highlight around the widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.drag_source_add_text_targets.html">drag_source_add_text_targets()</a></span> </dt><dd> 
+    Add the text targets supported by GtkSelection to
+    the target list of the drag destination.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.drag_source_get_target_list.html">drag_source_get_target_list()</a></span> </dt><dd> 
+    Returns the list of targets this widget can provide for drag and drop.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.drag_source_set.html">drag_source_set()</a></span> </dt><dd> 
+    Sets widget to be the source of a drag operation.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.drag_source_set_icon.html">drag_source_set_icon()</a></span> </dt><dd> 
+    Sets the icon that will be displayed when the user drags the widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.drag_source_set_icon_pixbuf.html">drag_source_set_icon_pixbuf()</a></span> </dt><dd> 
+    Sets the icon that will be displayed when the user drags the widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.drag_source_set_icon_stock.html">drag_source_set_icon_stock()</a></span> </dt><dd> 
+    Sets a stock icon that will be displayed when the user drags the widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.drag_source_set_target_list.html">drag_source_set_target_list()</a></span> </dt><dd> 
+    Sets the target types that the widget offers for drag and drop.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.drag_source_unset.html">drag_source_unset()</a></span> </dt><dd> 
+    Unsets the widget as a potential source for drag and drop.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.drag_unhighlight.html">drag_unhighlight()</a></span> </dt><dd> 
+    Removes the highlight around a widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.draw.html">draw()</a></span> </dt><dd> 
+    DEPRECATED. Invalidates, then updates a region of the widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.ensure_style.html">ensure_style()</a></span> </dt><dd> 
+    Ensures that the widget has a style.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.event.html">event()</a></span> </dt><dd> 
+    Emit an event signal on the widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.freeze_child_notify.html">freeze_child_notify()</a></span> </dt><dd> 
+    Stops emission of child-notify signals.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.get_accessible.html">get_accessible()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.get_allocation.html">get_allocation()</a></span> </dt><dd> 
+    Returns the current allocation.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.get_ancestor.html">get_ancestor()</a></span> </dt><dd> 
+    Returns the first ancestor of the given type.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.get_child_requisition.html">get_child_requisition()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.get_child_visible.html">get_child_visible()</a></span> </dt><dd> 
+    Returns value set with set_child_visible().
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.get_clipboard.html">get_clipboard()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.get_colormap.html">get_colormap()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.get_composite_name.html">get_composite_name()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.get_default_colormap.html">get_default_colormap()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.get_default_direction.html">get_default_direction()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.get_default_style.html">get_default_style()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.get_default_visual.html">get_default_visual()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.get_direction.html">get_direction()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.get_display.html">get_display()</a></span> </dt><dd> 
+    Returns the GdkDisplay for the toplevel of this widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.get_events.html">get_events()</a></span> </dt><dd> 
+    Returns the event mask for the widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.get_extension_events.html">get_extension_events()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.get_modifier_style.html">get_modifier_style()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.get_name.html">get_name()</a></span> </dt><dd> 
+    Returns the custom widget name.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.get_no_show_all.html">get_no_show_all()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.get_pango_context.html">get_pango_context()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.get_parent.html">get_parent()</a></span> </dt><dd> 
+    Returns the widget's parent widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.get_parent_window.html">get_parent_window()</a></span> </dt><dd> 
+    Returns the widget's parent GdkWindow.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.get_pointer.html">get_pointer()</a></span> </dt><dd> 
+    Returns the mouse coordinates relative to the widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.get_root_window.html">get_root_window()</a></span> </dt><dd> 
+    Returns the root GdkWindow.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.get_screen.html">get_screen()</a></span> </dt><dd> 
+    Returns the GdkScreen of the toplevel parent.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.get_settings.html">get_settings()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.get_size_request.html">get_size_request()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.get_style.html">get_style()</a></span> </dt><dd> 
+    Returns the <span dir="ltr"><a href="gtk.gtkstyle.html">GtkStyle</a></span> object for the widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.get_toplevel.html">get_toplevel()</a></span> </dt><dd> 
+    Returns the toplevel ancestor widget of the current widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.get_visual.html">get_visual()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.grab_add.html">grab_add()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.grab_default.html">grab_default()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.grab_focus.html">grab_focus()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.grab_remove.html">grab_remove()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.has_screen.html">has_screen()</a></span> </dt><dd> 
+    Checks whether a GdkScreen is associated with the widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.hide.html">hide()</a></span> </dt><dd> 
+    Removes the widget from being displayed on the screen.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.hide_all.html">hide_all()</a></span> </dt><dd> 
+    Removes the widget and all of its children from being displayed on the
+    screen.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.hide_on_delete.html">hide_on_delete()</a></span> </dt><dd> 
+    Hides the widget when it receives the <span dir="ltr">"<a href="gtk.gtkwidget.signal.delete-event.html">delete-event</a>"</span>
+    signal instead of deleting it.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.intersect.html">intersect()</a></span> </dt><dd> 
+    Returns whether or not the widget and the area intersect.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.is_ancestor.html">is_ancestor()</a></span> </dt><dd> 
+    Returns whether or not the calling widget is an ancestor of the given
+    widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.is_focus.html">is_focus()</a></span> </dt><dd> 
+    Returns whether the widget is the focus widget within its toplevel.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.is_visible.html">is_visible()</a></span> </dt><dd> 
+    Returns whether or not the widget is currently visible.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.list_mnemonic_labels.html">list_mnemonic_labels()</a></span> </dt><dd> 
+    Returns an array of widgets for which the current widget is a mnemonic
+    target.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.map.html">map()</a></span> </dt><dd> 
+    Maps the widget to the screen.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.mnemonic_activate.html">mnemonic_activate()</a></span> </dt><dd> 
+    Activates the mnemonic for the widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.modify_base.html">modify_base()</a></span> </dt><dd> 
+    Sets the base color for the widget when in state
+    <i><tt>state</tt></i>.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.modify_bg.html">modify_bg()</a></span> </dt><dd> 
+    Sets the background color for the widget when in state
+    <i><tt>state</tt></i>.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.modify_fg.html">modify_fg()</a></span> </dt><dd> 
+    Sets the foreground color for the widget when in state
+    <i><tt>state</tt></i>.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.modify_font.html">modify_font()</a></span> </dt><dd> 
+    Sets the font for the widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.modify_style.html">modify_style()</a></span> </dt><dd> 
+    Modifies style values for the widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.modify_text.html">modify_text()</a></span> </dt><dd> 
+    Sets the text color for the widget when in state
+    <i><tt>state</tt></i>.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.path.html">path()</a></span> </dt><dd> 
+    Returns the widget path.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.pop_colormap.html">pop_colormap()</a></span> </dt><dd> 
+    Removes a colormap pushed with <span dir="ltr"><a href="gtk.gtkwidget.method.push_colormap.html">push_colormap()</a></span> .
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.pop_composite_child.html">pop_composite_child()</a></span> </dt><dd> 
+    Pops a composite child pushed with <span dir="ltr"><a href="gtk.gtkwidget.method.push_composite_child.html">push_composite_child()</a></span> .
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.push_colormap.html">push_colormap()</a></span> </dt><dd> 
+    Pushes a colormap onto a global stack of colormaps.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.push_composite_child.html">push_composite_child()</a></span> </dt><dd> 
+    Makes all newly-created widgets as composite children until the
+    corresponding <span dir="ltr"><a href="gtk.gtkwidget.method.pop_composite_child.html">pop_composite_child()</a></span> 
+    call.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.queue_clear.html">queue_clear()</a></span> </dt><dd> 
+    DEPRECATED. Alias for <span dir="ltr"><a href="gtk.gtkwidget.method.queue_draw.html">queue_draw()</a></span> .
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.queue_clear_area.html">queue_clear_area()</a></span> </dt><dd> 
+    DEPRECATED. Alias for <span dir="ltr"><a href="gtk.gtkwidget.method.queue_draw_area.html">queue_draw_area()</a></span> .
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.queue_draw.html">queue_draw()</a></span> </dt><dd> 
+    Queues the widget to be redrawn.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.queue_draw_area.html">queue_draw_area()</a></span> </dt><dd> 
+    Queues an area of the widget to be redrawn by invalidating it.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.queue_resize.html">queue_resize()</a></span> </dt><dd> 
+    Flags the widget to have its size renegotiated.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.queue_resize_no_redraw.html">queue_resize_no_redraw()</a></span> </dt><dd> 
+    Flags the widget to have its size renegotiated without invalidating the
+    widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.rc_get_style.html">rc_get_style()</a></span> </dt><dd> 
+    DEPRECATED. Use <span dir="ltr"><a href="gtk.gtkwidget.method.get_style.html">get_style()</a></span>  instead.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.realize.html">realize()</a></span> </dt><dd> 
+    Realizes the widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.remove_accelerator.html">remove_accelerator()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.remove_mnemonic_label.html">remove_mnemonic_label()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.render_icon.html">render_icon()</a></span> </dt><dd> 
+    Creates a GdkPixbuf from a stock item.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.reparent.html">reparent()</a></span> </dt><dd> 
+    Moves the widget from its current parent container to another container
+    widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.reset_rc_styles.html">reset_rc_styles()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.selection_add_target.html">selection_add_target()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.selection_clear.html">selection_clear()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.selection_clear_targets.html">selection_clear_targets()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.selection_convert.html">selection_convert()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.selection_owner_set.html">selection_owner_set()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.selection_remove_all.html">selection_remove_all()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.send_expose.html">send_expose()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.set_accel_path.html">set_accel_path()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.set_app_paintable.html">set_app_paintable()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.set_child_visible.html">set_child_visible()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.set_colormap.html">set_colormap()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.set_composite_name.html">set_composite_name()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.set_default_colormap.html">set_default_colormap()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.set_default_direction.html">set_default_direction()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.set_direction.html">set_direction()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.set_double_buffered.html">set_double_buffered()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.set_events.html">set_events()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.set_extension_events.html">set_extension_events()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.set_name.html">set_name()</a></span> </dt><dd> 
+    Sets the name of the widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.set_no_show_all.html">set_no_show_all()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.set_parent.html">set_parent()</a></span> </dt><dd> 
+    Sets the parent container for the widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.set_parent_window.html">set_parent_window()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.set_redraw_on_allocate.html">set_redraw_on_allocate()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.set_scroll_adjustments.html">set_scroll_adjustments()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.set_sensitive.html">set_sensitive()</a></span> </dt><dd> 
+    Sets wether or not the widget will react to events.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.set_size_request.html">set_size_request()</a></span> </dt><dd> 
+    Requests a new size for the widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.set_state.html">set_state()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.set_style.html">set_style()</a></span> </dt><dd> 
+    Sets the <span dir="ltr"><a href="gtk.gtkstyle.html">GtkStyle</a></span> object for the widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.set_uposition.html">set_uposition()</a></span> </dt><dd> 
+    DEPRECATED. Sets the widgets position relative to its parent.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.set_usize.html">set_usize()</a></span> </dt><dd> 
+    DEPRECATED. Sets a widgets size.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.set_visible.html">set_visible()</a></span> </dt><dd> 
+    Hides or shows the widget depending on the value of
+    <i><tt>visible</tt></i>.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.shape_combine_mask.html">shape_combine_mask()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.show.html">show()</a></span> </dt><dd> 
+    Displays the widget on the screen.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.show_all.html">show_all()</a></span> </dt><dd> 
+    Displays the widget and all of its children on the screen.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.show_now.html">show_now()</a></span> </dt><dd> 
+    Sets a widget visible and wait until it is shown.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.size_allocate.html">size_allocate()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.size_request.html">size_request()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.thaw_child_notify.html">thaw_child_notify()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.translate_coordinates.html">translate_coordinates()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.unmap.html">unmap()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.unparent.html">unparent()</a></span> </dt><dd> 
+    Removes the widget from its parent container.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.unrealize.html">unrealize()</a></span> </dt><dd> 
+    Unrealizes the widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.drag_source_add_image_targets.html">drag_source_add_image_targets()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.method.drag_source_add_uri_targets.html">drag_source_add_uri_targets()</a></span> </dt><dd> 
+
+   </dd></blockquote></div><h3>Fields</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkwidget.field.allocation.html">allocation</a></span>:</dt><dd> 
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.field.name.html">name</a></span>:</dt><dd> 
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.field.parent.html">parent</a></span>:</dt><dd> 
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.field.saved_state.html">saved_state</a></span>:</dt><dd> 
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.field.state.html">state</a></span>:</dt><dd> 
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.field.style.html">style</a></span>:</dt><dd> 
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwidget.field.window.html">window</a></span>:</dt><dd> 
+    The GdkWindow for the widget.
+   </dd></blockquote><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.accel-closures-changed.html">accel-closures-changed</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.button-press-event.html">button-press-event</a>"</span></dt><dd> 
+    Mouse button has been pressed down.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.button-release-event.html">button-release-event</a>"</span></dt><dd> 
+    Mouse button has been released.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.can-activate-accel.html">can-activate-accel</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.child-notify.html">child-notify</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.client-event.html">client-event</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.configure-event.html">configure-event</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.delete-event.html">delete-event</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.destroy-event.html">destroy-event</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.direction-changed.html">direction-changed</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.drag-begin.html">drag-begin</a>"</span></dt><dd> 
+    Dragging from the widget has been started.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.drag-data-delete.html">drag-data-delete</a>"</span></dt><dd> 
+    Drag move has been completed.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.drag-data-get.html">drag-data-get</a>"</span></dt><dd> 
+    Drag data need to be supplied.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.drag-data-received.html">drag-data-received</a>"</span></dt><dd> 
+    Drop data receive in the application.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.drag-drop.html">drag-drop</a>"</span></dt><dd> 
+    A drop occured.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.drag-end.html">drag-end</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.drag-leave.html">drag-leave</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.drag-motion.html">drag-motion</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.enter-notify-event.html">enter-notify-event</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.event.html">event</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.event-after.html">event-after</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.expose-event.html">expose-event</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.focus.html">focus</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.focus-in-event.html">focus-in-event</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.focus-out-event.html">focus-out-event</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.grab-focus.html">grab-focus</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.grab-notify.html">grab-notify</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.hide.html">hide</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.hierarchy-changed.html">hierarchy-changed</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.key-press-event.html">key-press-event</a>"</span></dt><dd> 
+    A key has been pressed.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.key-release-event.html">key-release-event</a>"</span></dt><dd> 
+    A key has been released
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.leave-notify-event.html">leave-notify-event</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.map.html">map</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.map-event.html">map-event</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.mnemonic-activate.html">mnemonic-activate</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.motion-notify-event.html">motion-notify-event</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.no-expose-event.html">no-expose-event</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.parent-set.html">parent-set</a>"</span></dt><dd> 
+    Emitted when a widget's parent is changed.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.popup-menu.html">popup-menu</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.property-notify-event.html">property-notify-event</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.proximity-in-event.html">proximity-in-event</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.proximity-out-event.html">proximity-out-event</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.realize.html">realize</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.screen-changed.html">screen-changed</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.scroll-event.html">scroll-event</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.selection-clear-event.html">selection-clear-event</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.selection-get.html">selection-get</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.selection-notify-event.html">selection-notify-event</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.selection-received.html">selection-received</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.selection-request-event.html">selection-request-event</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.show.html">show</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.show-help.html">show-help</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.size-allocate.html">size-allocate</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.size-request.html">size-request</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.state-changed.html">state-changed</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.style-set.html">style-set</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.unmap.html">unmap</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.unmap-event.html">unmap-event</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.unrealize.html">unrealize</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.visibility-notify-event.html">visibility-notify-event</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwidget.signal.window-state-event.html">window-state-event</a>"</span></dt><dd> 
+   </dd></blockquote></p></div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+ 
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+ 
+  
+
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkvseparator.constructor.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkwidget.method.activate.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkVSeparator</span> Constructor </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkWidget::activate</span></td></tr></table></div></body></html>

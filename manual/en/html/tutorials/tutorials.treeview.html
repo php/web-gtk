@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkTreeView Tutorial (basic)</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="tutorials.html" title="PHP-GTK 2 Tutorials"><link rel="previous" href="tutorials.signals.summary.html" title="Summary"><link rel="next" href="tutorials.treeview.model.html" title="The model: GtkTreeModel and GtkTreeStore"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">PHP-GTK 2 Tutorials</th></tr><tr><td width="20%" align="left"><a href="tutorials.signals.summary.html">Prev</a> </td><th width="60%" align="center">GtkTreeView Tutorial (basic)</th><td width="20%" align="right"> <a href="tutorials.treeview.model.html">Next</a></td></tr></table><hr></div><div id="tutorials.treeview" class="chapter"><div class="titlepage"><div><h2 class="title"><a name="tutorials.treeview" id="tutorials.treeview-title"></a>GtkTreeView Tutorial (basic)</h2></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><a href="tutorials.treeview.html#tutorials.treeview.intro">Introduction</a></dt><dt><a href="tutorials.treeview.model.html">The model: GtkTreeModel and GtkTreeStore</a></dt><dt><a href="tutorials.treeview.view.html">The view: GtkTreeView, GtkTreeViewColumn, GtkCellRenderer</a></dt></dl></div>
+ 
+
+ <div class="sect1"><a name="tutorials.treeview.intro"></a><div class="titlepage"><div><h2 class="title" style="clear: all"><a name="tutorials.treeview.intro"></a>Introduction</h2></div></div><p>
+   Thanks to Lars Wirzenius for the 
+   <a href="http://liw.iki.fi/liw/texts/gtktreeview-tutorial.html" target="_top">original version</a>
+   of this tutorial written for PyGtk. Changes to the document were only to
+   reflect the current state of the Gtk+ codebase and to be applicable to PHP-Gtk2.
+  </p><p>
+   Version 2.0 of Gtk+ introduces its third generation of tree
+   and list widgets. Version 1.0 had GtkList and GtkTree, version 1.2
+   had <span dir="ltr"><a href="../gtk/gtk.gtkclist.html">GtkCList</a></span> and <span dir="ltr"><a href="../gtk/gtk.gtkctree.html">GtkCTree</a></span>,
+   and now version 2.0 has <span dir="ltr"><a href="../gtk/gtk.gtktreeview.html">GtkTreeView</a></span>,
+   which servers both as a list and a tree. With each version, the
+   power and usefulness of the widgets have increased.
+  </p><p>
+   <span dir="ltr"><a href="../gtk/gtk.gtktreeview.html">GtkTreeView</a></span> uses a Model/View/Controller approach.
+   This means that the code is divided into a data structure representing
+   user's data ("the model"), the widgets that display the data and
+   interact with the user ("the view"), and some logic to tie things
+   nicely together ("the controller"). The model is implemented by
+   <span dir="ltr"><a href="../gtk/gtk.gtktreemodel.html">GtkTreeModel</a></span> (actually, classes implementing that interface), the
+   view by GtkTreeView with some helpers, and the controller by the
+   user code.
+  </p><p>
+   This sounds unnecessarily complicated, but the complexity
+   is local, and this aproach actually simplifies overall program
+   structure. For example, it is often necessary to view the same data
+   (i.e., model) in different ways, or in different windows. Think,
+   for example, of a programmer's editor: the same source code may
+   be viewed in several windows at the same time, and changes in one
+   window should be shown in all the others, as well. Thus, it makes
+   sense to separate the storage of the text from its display, rather
+   than storing the text in each window widget.
+  </p><p>
+   The example application in this article lets the user manage
+   a folder tree. The folders are virtual, not real directories in
+   the filesystem, to keep the code simpler. The example is actually
+   derived from Lodju, in which the folders have nothing to do with
+   the filesystem.
+  </p><p>
+   The <a href="http://developer.gnome.org/doc/API/" target="_top">official Gtk+ 2.0
+   API reference documentation for GtkTreeView</a>
+   should be read together with this tutorial, even if it is a bit sparse in
+   some details.
+  </p><p>
+   I thank the people on the
+   <a href="../irc://irc.gimp.org/gtk+" target="_top">Gtk+ developer IRC channel</a> for
+   encouragement and feedback.
+  </p></div>
+
+ 
+
+
+ 
+
+</div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="tutorials.signals.summary.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="tutorials.treeview.model.html">Next</a></td></tr><tr><td width="40%" align="left">Summary </td><td width="20%" align="center"><a href="tutorials.html">Up</a></td><td width="40%" align="right"> The model: GtkTreeModel and GtkTreeStore</td></tr></table></div></body></html>

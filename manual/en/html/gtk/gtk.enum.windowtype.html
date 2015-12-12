@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkWindowType</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkenums.html#gtk.gtkenum" title="GTK Enums"><link rel="previous" href="gtk.enum.windowposition.html" title="GtkWindowPosition"><link rel="next" href="gtk.enum.wrapmode.html" title="GtkWrapMode"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Enums</th></tr><tr><td width="20%" align="left"><a href="gtk.enum.windowposition.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkWindowType</span></th><td width="20%" align="right"> <a href="gtk.enum.wrapmode.html">Next</a></td></tr></table><hr></div><a class="enum" name="gtk.enum.windowtype"></a><h1 class="title">GtkWindowType</h1><p>
+   <p>
+    A <span dir="ltr"><a href="gtk.gtkwindow.html">GtkWindow</a></span> can be one of these types. 
+    Most things you'd consider a "window" should have type 
+    <span dir="ltr"><tt>Gtk::WINDOW_TOPLEVEL</tt></span>; windows with this type are
+    managed by the window manager and have a frame by default (call
+    <span dir="ltr"><a href="gtk.gtkwindow.method.set_decorated.html">set_decorated()</a></span>  to toggle the frame).
+   </p>
+   <p>
+    Windows with type <span dir="ltr"><tt>Gtk::WINDOW_POPUP</tt></span> are ignored by the window 
+    manager; window manager keybindings won't work on them, the window manager 
+    won't decorate the window with a frame, many GTK+ features that rely on the 
+    window manager will not work (e.g. resize grips and maximization/minimization). 
+    <span dir="ltr"><tt>Gtk::WINDOW_POPUP</tt></span> is used to implement widgets such as 
+    <span dir="ltr"><a href="gtk.gtkmenu.html">GtkMenu</a></span> or tooltips that you normally don't think of 
+    as windows per se. 
+   </p>
+   <p>
+    Nearly all windows should be <span dir="ltr"><tt>Gtk::WINDOW_TOPLEVEL</tt></span>. In particular, 
+    do not use <span dir="ltr"><tt>Gtk::WINDOW_POPUP</tt></span> just to turn off the window 
+    borders; use <span dir="ltr"><a href="gtk.gtkwindow.method.set_decorated.html">set_decorated()</a></span>  for that.
+   </p>
+  </p><table width="100%" cellpadding="2" cellspacing="1"><tr><td width="7%"><h3>Value</h3></td><td width="40%"><h3>Symbolic name</h3></td><td width="52%"><h3>Description</h3></td></tr><tr valign="top"><td>  0</td><td>Gtk::WINDOW_TOPLEVEL</td><td>
+    A regular window, such as a dialog.
+   </td></tr><tr valign="top"><td>  1</td><td>Gtk::WINDOW_POPUP</td><td>
+    A special window such as a tooltip.
+   </td></tr></table><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.enum.windowposition.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.enum.wrapmode.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkWindowPosition</span> </td><td width="20%" align="center"><a href="../gtkenums.html#gtk.gtkenum">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkWrapMode</span></td></tr></table></div></body></html>

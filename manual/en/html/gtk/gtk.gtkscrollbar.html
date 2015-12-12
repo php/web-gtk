@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkScrollbar</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkscale.signal.format-value.html" title="format-value"><link rel="next" href="gtk.gtkscrollbar.property.fixed-slider-length.html" title="GtkScrollbar::fixed-slider-length"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkscale.signal.format-value.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkScrollbar</span></th><td width="20%" align="right"> <a href="gtk.gtkscrollbar.property.fixed-slider-length.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkscrollbar"></a><h2 class="title"><span dir="ltr">GtkScrollbar</span></h2><p><blockquote>
+   A base class for GtkHScrollbar and GtkVScrollbar
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkrange.html">GtkRange</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkscrollbar.html">GtkScrollbar</a></span><br></div></blockquote></p><p><h3>Direct Subclasses</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="gtk.gtkhscrollbar.html">GtkHScrollbar</a></span>, <span dir="ltr"><a href="gtk.gtkvscrollbar.html">GtkVScrollbar</a></span></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    The <span dir="ltr"><a href="gtk.gtkscrollbar.html">GtkScrollbar</a></span> widget is an abstract base class
+    for <span dir="ltr"><a href="gtk.gtkhscrollbar.html">GtkHScrollbar</a></span> and
+    <span dir="ltr"><a href="gtk.gtkvscrollbar.html">GtkVScrollbar</a></span>. It is not very useful in itself.
+   </p>
+   <p>
+    The position of the thumb in a scrollbar is controlled by the scroll
+    adjustments. See <span dir="ltr"><a href="gtk.gtkadjustment.html">GtkAdjustment</a></span> for the fields in an
+    adjustment - for <span dir="ltr"><a href="gtk.gtkscrollbar.html">GtkScrollbar</a></span>, the
+    <span dir="ltr"><a href="gtk.gtkadjustment.field.value.html">value</a></span> field represents the
+    position of the scrollbar, which must be between the
+    <span dir="ltr"><a href="gtk.gtkadjustment.field.lower.html">lower</a></span> field and
+    "<span dir="ltr"><a href="gtk.gtkadjustment.field.upper.html">upper</a></span> -
+    <span dir="ltr"><a href="gtk.gtkadjustment.field.page_size.html">page_size</a></span>." The
+    <span dir="ltr"><a href="gtk.gtkadjustment.field.page_size.html">page_size</a></span> field represents the
+    size of the visible scrollable area. The
+    <span dir="ltr"><a href="gtk.gtkadjustment.field.step_increment.html">step_increment</a></span> and
+    <span dir="ltr"><a href="gtk.gtkadjustment.field.page_increment.html">page_increment</a></span> fields are used
+    when the user asks to step down (using the small stepper arrows) or page down
+    (using for example the PageDown key).
+   </p>
+   <p>
+    <span dir="ltr"><a href="gtk.gtkscrollbar.html">GtkScrollbar</a></span> has no own method; have a look at
+    <span dir="ltr"><a href="gtk.gtkrange.html">GtkRange</a></span> instead.
+   </p>
+   <div class="note" style="margin-left: 24px; margin-right: 24px; font-weight: bold;"><p>
+     If you want to add scrollbars to a <span dir="ltr"><a href="gtk.gtktextview.html">GtkTextView</a></span> or a
+     <span dir="ltr"><a href="gtk.gtktreeview.html">GtkTreeView</a></span>, you should use a
+     <span dir="ltr"><a href="gtk.gtkscrolledwindow.html">GtkScrolledWindow</a></span>.
+    </p></div>
+  </blockquote></p><p><h3>Style Properties</h3><p>Can be set with rc files/strings only.</p><blockquote><dt><span dir="ltr"><a href="gtk.gtkscrollbar.property.fixed-slider-length.html">fixed-slider-length</a></span>:</dt><dd> 
+    Don't change slider size, just lock it to the minimum length.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkscrollbar.property.has-backward-stepper.html">has-backward-stepper</a></span>:</dt><dd> 
+    Display the standard backward arrow button.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkscrollbar.property.has-forward-stepper.html">has-forward-stepper</a></span>:</dt><dd> 
+    Display the standard forward arrow button.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkscrollbar.property.has-secondary-backward-stepper.html">has-secondary-backward-stepper</a></span>:</dt><dd> 
+    Display a second backward arrow button on the opposite end of the scrollbar.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkscrollbar.property.has-secondary-forward-stepper.html">has-secondary-forward-stepper</a></span>:</dt><dd> 
+    Display a secondary forward arrow button on the opposite end of the scrollbar.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkscrollbar.property.min-slider-length.html">min-slider-length</a></span>:</dt><dd> 
+    Minimum length of scrollbar slider.
+   </dd></blockquote></p></div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkscale.signal.format-value.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkscrollbar.property.fixed-slider-length.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">format-value</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkScrollbar::fixed-slider-length</span></td></tr></table></div></body></html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkUIManager</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtktreeviewcolumn.property.width.html" title="GtkTreeViewColumn::width"><link rel="next" href="gtk.gtkuimanager.constructor.html" title="GtkUIManager Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtktreeviewcolumn.property.width.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkUIManager</span></th><td width="20%" align="right"> <a href="gtk.gtkuimanager.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkuimanager"></a><h2 class="title"><span dir="ltr">GtkUIManager</span></h2><p><blockquote>
+   An object for creating menus and toolbars from XML.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkuimanager.html">GtkUIManager</a></span><br></div></blockquote></p><p><h3>Description</h3><blockquote>
+    A GtkUIManager object constructs menus and toolbars from an XML description.
+    GtkUIManager is used to create a user interfaces consisting of menus and
+    toolbars from a UI definition which references one or more action groups.
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp86713632"><p></p><a name="idp86713632"></a> <span dir="ltr"><a href="gtk.gtkuimanager.constructor.html">GtkUIManager</a></span> ();</div></p> --
+    Creates a new GtkUIManager object.
+   <br><br><p><div class="funcsynopsis" id="idp86717600"><p></p><a name="idp86717600"></a> <span dir="ltr"><a href="gtk.gtkuimanager.constructor.new_merge_id.html">GtkUIManager::new_merge_id</a></span> ();</div></p> --
+
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkuimanager.method.add_ui.html">add_ui()</a></span> </dt><dd> 
+    Adds a new UI element to the specified location.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkuimanager.method.add_ui_from_file.html">add_ui_from_file()</a></span> </dt><dd> 
+    Merges a file UI definition.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkuimanager.method.add_ui_from_string.html">add_ui_from_string()</a></span> </dt><dd> 
+    Merges a string UI definition.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkuimanager.method.ensure_update.html">ensure_update()</a></span> </dt><dd> 
+    Make sure all pending updates have been added.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkuimanager.method.get_accel_group.html">get_accel_group()</a></span> </dt><dd> 
+    Returns an associated <span dir="ltr"><a href="gtk.gtkaccelgroup.html">GtkAccelGroup</a></span>
+   </dd><dt><span dir="ltr"><a href="gtk.gtkuimanager.method.get_action.html">get_action()</a></span> </dt><dd> 
+    Looks up a <span dir="ltr"><a href="gtk.gtkaction.html">GtkAction</a></span> by following a path.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkuimanager.method.get_action_groups.html">get_action_groups()</a></span> </dt><dd> 
+    Returns associated <span dir="ltr"><a href="gtk.gtkactiongroup.html">GtkActionGroup</a></span> objects.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkuimanager.method.get_add_tearoffs.html">get_add_tearoffs()</a></span> </dt><dd> 
+    Returns <span dir="ltr"><tt>true</tt></span>
+    if regular menus will have tearoff menu items.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkuimanager.method.get_toplevels.html">get_toplevels()</a></span> </dt><dd> 
+    Obtains a list of all toplevel widgets of the requested types.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkuimanager.method.get_ui.html">get_ui()</a></span> </dt><dd> 
+    Gets a string containing an XML representation of the merged UI.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkuimanager.method.get_widget.html">get_widget()</a></span> </dt><dd> 
+    Looks up a widget by following a path.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkuimanager.method.insert_action_group.html">insert_action_group()</a></span> </dt><dd> 
+    Inserts a <span dir="ltr"><a href="gtk.gtkactiongroup.html">GtkActionGroup</a></span> at a location.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkuimanager.method.new_merge_id.html">new_merge_id()</a></span> </dt><dd> 
+    Returns a merge id for use when adding a ui component.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkuimanager.method.remove_action_group.html">remove_action_group()</a></span> </dt><dd> 
+    Removes the par of the ui definition content.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkuimanager.method.remove_ui.html">remove_ui()</a></span> </dt><dd> 
+    Remove part of the ui description.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkuimanager.method.set_add_tearoffs.html">set_add_tearoffs()</a></span> </dt><dd> 
+    Controls if regular menu items will have tearoffs.
+   </dd></blockquote></div><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtkuimanager.signal.actions-changed.html">actions-changed</a>"</span></dt><dd> 
+    This signal is emitted when the set of actions changes.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkuimanager.signal.add-widget.html">add-widget</a>"</span></dt><dd> 
+    This signal is emitted for each generated menubar and toolbar
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkuimanager.signal.connect-proxy.html">connect-proxy</a>"</span></dt><dd> 
+    This signal is emitted when a widget is connected to an action.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkuimanager.signal.disconnect-proxy.html">disconnect-proxy</a>"</span></dt><dd> 
+    This signal is emitted when a widget is disconnected from an action.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkuimanager.signal.post-activate.html">post-activate</a>"</span></dt><dd> 
+    Emitted after action is activated.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkuimanager.signal.pre-activate.html">pre-activate</a>"</span></dt><dd> 
+    Emitted before action is activated.
+   </dd></blockquote></p></div>
+
+  
+
+ 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ 
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtktreeviewcolumn.property.width.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkuimanager.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkTreeViewColumn::width</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkUIManager</span> Constructor</td></tr></table></div></body></html>

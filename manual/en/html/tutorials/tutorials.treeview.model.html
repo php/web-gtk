@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>The model: GtkTreeModel and GtkTreeStore</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="tutorials.treeview.html" title="GtkTreeView Tutorial (basic)"><link rel="previous" href="tutorials.treeview.html" title="GtkTreeView Tutorial (basic)"><link rel="next" href="tutorials.treeview.view.html" title="The view: GtkTreeView, GtkTreeViewColumn, GtkCellRenderer"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GtkTreeView Tutorial (basic)</th></tr><tr><td width="20%" align="left"><a href="tutorials.treeview.html">Prev</a> </td><th width="60%" align="center">The model: GtkTreeModel and GtkTreeStore</th><td width="20%" align="right"> <a href="tutorials.treeview.view.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="tutorials.treeview.model"></a><div class="titlepage"><div><h2 class="title" style="clear: all"><a name="tutorials.treeview.model"></a>The model: GtkTreeModel and GtkTreeStore</h2></div></div><p>
+   <span dir="ltr"><a href="../gtk/gtk.gtktreemodel.html">GtkTreeModel</a></span> is the interface definition for the model part of
+   <span dir="ltr"><a href="../gtk/gtk.gtktreeview.html">GtkTreeView</a></span>.  The application programmer could define his own model,
+   but GtkTreeView provides the two most popular ones: a linear list
+   with <span dir="ltr"><a href="../gtk/gtk.gtkliststore.html">GtkListStore</a></span>, and a hierarchical tree with
+   <span dir="ltr"><a href="../gtk/gtk.gtktreestore.html">GtkTreeStore</a></span>. The
+   GtkTreeView reference manual claims that few application programmers
+   will need to use anything else, and they may well be right. Since I
+   have little experience with <span dir="ltr"><a href="../gtk/gtk.gtkliststore.html">GtkListStore</a></span>, this article will discuss
+   GtkTreeStore only.
+  </p><p>
+   The first step in using <span dir="ltr"><a href="../gtk/gtk.gtktreeview.html">GtkTreeView</a></span>, then, is to set up a
+   <span dir="ltr"><a href="../gtk/gtk.gtktreestore.html">GtkTreeStore</a></span> to keep your data. The model contains some number of
+   rows and each row contains the same number of columns. The cells
+   in each column contain the same type of data. These columns are
+   declared when the model is created, though they can be changed later,
+   if necessary.
+  </p><div class="example" align="left"><p><a name="idp45066208"></a><b>Example 10.1. Model</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">$model = new GtkTreeStore(Gobject::TYPE_PHP_VALUE, Gobject::TYPE_STRING);</pre></td></tr></table></div><p>
+   Here we create a <span dir="ltr"><a href="../gtk/gtk.gtktreestore.html">GtkTreeStore</a></span> with two columns. The first
+   column contains a PHP variable (of any type), the second a
+   string. There are several different types available, see <a href="../gobject.enum.gtype.html">GType</a>.
+   We will be using the first column to hold an array
+   containing all the information about a folder and the second
+   column to display its name.
+  </p><div class="note" style="margin-left: 24px; margin-right: 24px; font-weight: bold;">
+   It does not matter in which order you define
+   the columns. The order in which <span dir="ltr"><a href="../gtk/gtk.gtktreestore.html">GtkTreeStore</a></span>
+   knows them does not
+   affect how they are displayed to the user. It is not even necessary
+   to display all columns to the user.
+  </div><p>
+   Nodes can be added to a GtkTreeStore in several ways. My
+   preference is to use the gtk_tree_store_insert_before function,
+   known as the <span dir="ltr"><a href="../gtk/gtk.gtktreestore.method.insert_before.html">insert_before()</a></span>  method in PHP.
+  </p><div class="example" align="left"><p><a name="idp45072096"></a><b>Example 10.2. Create Row</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">$folder = new_folder();
+$iter = $model-&gt;insert_before(null, null);
+$model-&gt;set($iter, 0, $folder);
+$model-&gt;set($iter, 1, $folder['name']);</pre></td></tr></table></div><p>
+   This code first inserts an empty row into the model,
+   then sets the values in both cells for the row.
+  </p><p>
+   A GtkTreeModel lets the programmer refer to rows in various
+   ways.  We see here a <span dir="ltr"><a href="../gtk/gtk.gtktreeiter.html">GtkTreeIter</a></span> object,
+   which essentially works as a
+   pointer to the row.  We then use this pointer, plus a column number,
+   to refer to a cell.
+  </p><p>
+   <span dir="ltr"><a href="../gtk/gtk.gtktreeiter.html">GtkTreeIter</a></span> objects are also used as arguments to
+   <span dir="ltr"><a href="../gtk/gtk.gtktreestore.method.insert_before.html">insert_before()</a></span> , to define the parent
+   of the new node,
+   and the sibling that is to follow the new node. If the parent is <span dir="ltr"><tt>NULL</tt></span>,
+   as in the example above, the new node is added to the top level,
+   and if sibling is <span dir="ltr"><tt>NULL</tt></span>, then the new node becomes
+   the last child of the parent.
+  </p><p>
+   The GtkTreeIter objects may be temporary, and may become
+   invalidated as the tree is modified by adding or removing nodes. It
+   is probably a bad idea to store them.
+  </p><p>
+   You can also remove rows (gtk_tree_store_remove a.k.a.
+   $model-&gt;<span dir="ltr"><a href="../gtk/gtk.gtktreestore.method.remove.html">remove()</a></span> ).
+   For other operations, please see the API reference documentation.
+  </p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="tutorials.treeview.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="tutorials.treeview.view.html">Next</a></td></tr><tr><td width="40%" align="left">GtkTreeView Tutorial (basic) </td><td width="20%" align="center"><a href="tutorials.treeview.html">Up</a></td><td width="40%" align="right"> The view: GtkTreeView, GtkTreeViewColumn, GtkCellRenderer</td></tr></table></div></body></html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>Connecting Signals</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="tutorials.changes.html" title="Changes since PHP-GTK 1"><link rel="previous" href="tutorials.changes.constants.html" title="GTK constants"><link rel="next" href="tutorials.changes.deprecated.html" title="Deprecated Widgets"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Changes since PHP-GTK 1</th></tr><tr><td width="20%" align="left"><a href="tutorials.changes.constants.html">Prev</a> </td><th width="60%" align="center">Connecting Signals</th><td width="20%" align="right"> <a href="tutorials.changes.deprecated.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="tutorials.changes.connect"></a><div class="titlepage"><div><h2 class="title" style="clear: all"><a name="tutorials.changes.connect"></a>Connecting Signals</h2></div></div><p>
+   To tie signals to a specific function in your PHP-GTK 1 code, you could use
+   connect,
+   connect_object,
+   connect_after or
+   connect_object_after.
+   The functionality of <span dir="ltr"><tt>connect_object</tt></span>, in particular, wasn't
+   clear at first sight.
+  </p><p>
+   Following some changes made in the GTK signals API, the decision was taken
+   to rename <span dir="ltr"><tt>connect_object</tt></span> to
+   connect_simple and
+   <span dir="ltr"><tt>connect_object_after</tt></span> to
+   connect_simple_after in PHP-GTK 2.
+   <i>Simple</i> here means that you have fewer function
+   parameters because the object itself is missing from them - something that
+   <span dir="ltr"><tt>connect_object</tt></span> meant, but did not imply.
+  </p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="tutorials.changes.constants.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="tutorials.changes.deprecated.html">Next</a></td></tr><tr><td width="40%" align="left">GTK constants </td><td width="20%" align="center"><a href="tutorials.changes.html">Up</a></td><td width="40%" align="right"> Deprecated Widgets</td></tr></table></div></body></html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkLabel::set_text_with_mnemonic</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtklabel.html#idp69134576" title=""><link rel="previous" href="gtk.gtklabel.method.set_text.html" title="GtkLabel::set_text"><link rel="next" href="gtk.gtklabel.method.set_use_markup.html" title="GtkLabel::set_use_markup"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtklabel.method.set_text.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkLabel::set_text_with_mnemonic</span></th><td width="20%" align="right"> <a href="gtk.gtklabel.method.set_use_markup.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtklabel.method.set_text_with_mnemonic"></a><h2><span dir="ltr">GtkLabel::set_text_with_mnemonic</span></h2><p><div class="funcsynopsis" id="idp69468768"><p></p><a name="idp69468768"></a>void set_text_with_mnemonic(string <i><tt>str</tt></i>);</div></p>
+    <p>
+     Sets the label's text from the string <i><tt>str</tt></i>. 
+     If characters in <i><tt>str</tt></i> are preceded by an underscore, 
+     they are underlined indicating that they represent a keyboard 
+     accelerator called a <a href="../appendix.glossary.html#appendix.glossary.m.mnemonic">mnemonic</a>.
+    </p>
+    <p>
+     The mnemonic key can be used to activate another widget, 
+     chosen automatically, or explicitly using 
+     <span dir="ltr"><a href="gtk.gtklabel.method.set_mnemonic_widget.html">set_mnemonic_widget()</a></span> .
+    </p>
+    <p>
+     <div class="example" align="left"><p><a name="idp69476736"></a><b>Example 93. Setting the Text of a GtkLabel with a Mnemonic</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+// Create a window to hold the label.
+$window = new GtkWindow();
+
+// Set up the window to close cleanly.
+$window-&gt;connect_simple('destroy', array('Gtk', 'main_quit'));
+
+// Create a label.
+$label = new GtkLabel();
+
+// Set the mnemonic text. Note this could be done on construction. It is done
+// this way for purposes of the example only. 
+$label-&gt;set_text_with_mnemonic('_Example Label');
+
+// Add the label to the window.
+$window-&gt;add($label);
+
+// Show the window and start the main loop.
+$window-&gt;show_all();
+Gtk::main();
+?&gt;
+</pre></td></tr></table></div>
+    </p>
+    <p>
+     See also:
+     <span dir="ltr"><a href="gtk.gtklabel.method.set_text.html">set_text()</a></span> 
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtklabel.method.set_text.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtklabel.method.set_use_markup.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkLabel::set_text</span> </td><td width="20%" align="center"><a href="gtk.gtklabel.html#idp69134576">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkLabel::set_use_markup</span></td></tr></table></div></body></html>

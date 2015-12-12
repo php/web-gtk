@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkEntry::get_layout_offsets</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkentry.html#idp63061344" title=""><link rel="previous" href="gtk.gtkentry.method.get_layout.html" title="GtkEntry::get_layout"><link rel="next" href="gtk.gtkentry.method.get_max_length.html" title="GtkEntry::get_max_length"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkentry.method.get_layout.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkEntry::get_layout_offsets</span></th><td width="20%" align="right"> <a href="gtk.gtkentry.method.get_max_length.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkentry.method.get_layout_offsets"></a><h2><span dir="ltr">GtkEntry::get_layout_offsets</span></h2><p><div class="funcsynopsis" id="idp63106432"><p></p><a name="idp63106432"></a>array get_layout_offsets();</div></p>
+    <p>
+     Obtains the position of the <span dir="ltr"><a href="../pango/pango.pangolayout.html">PangoLayout</a></span> used to
+     render text in the entry, in widget coordinates. Useful if you want to
+     line up the text in an entry with some other text, e.g. when using the
+     entry to implement editable cells in a sheet widget.
+    </p>
+    <p>
+     Also useful to convert mouse events into coordinates inside the
+     <span dir="ltr"><a href="../pango/pango.pangolayout.html">PangoLayout</a></span>, e.g. to take some action if some
+     part of the entry text is clicked.
+    </p>
+    <p>
+     Note that as the user scrolls around in the entry the offsets will
+     change. Remember when using the PangoLayout functions you need to convert
+     to and from pixels using PANGO_PIXELS() or PANGO_SCALE.
+    </p>
+    <p>
+     The returned value is <span dir="ltr"><tt>array($x, $x)</tt></span>.
+    </p>
+
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkentry.method.get_layout.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkentry.method.get_max_length.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkEntry::get_layout</span> </td><td width="20%" align="center"><a href="gtk.gtkentry.html#idp63061344">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkEntry::get_max_length</span></td></tr></table></div></body></html>

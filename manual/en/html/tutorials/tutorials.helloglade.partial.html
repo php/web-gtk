@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>Loading a part of a .glade file</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="tutorials.helloglade.html" title="Hello Glade!"><link rel="previous" href="tutorials.helloglade.loading.html" title="Loading the file"><link rel="next" href="tutorials.changes.html" title="Changes since PHP-GTK 1"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Hello Glade!</th></tr><tr><td width="20%" align="left"><a href="tutorials.helloglade.loading.html">Prev</a> </td><th width="60%" align="center">Loading a part of a .glade file</th><td width="20%" align="right"> <a href="tutorials.changes.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="tutorials.helloglade.partial"></a><div class="titlepage"><div><h2 class="title" style="clear: all"><a name="tutorials.helloglade.partial"></a>Loading a part of a .glade file</h2></div></div><p>
+   In large projects, you might have many windows defined in your
+   <tt>.glade</tt> file,
+   and all are loaded when loading the
+   <tt>.glade</tt> file. That a) slows down the
+   start of your application and b) shows all windows immediately, if you
+   didn't set their visibility to hidden in Glade. Further, you may want to
+   <span dir="ltr"><a href="../glade/glade.gladexml.method.signal_autoconnect_instance.html">signal_autoconnect_instance()</a></span> 
+   only a part of the <tt>.glade</tt> file to one object,
+   while connecting another part to another object.
+  </p><p>
+   The solution to this problem is the second parameter of the
+   <span dir="ltr"><a href="../glade/glade.gladexml.html">GladeXML</a></span> constructor: Just pass the id
+   of the to-be root widget, and only this part of the
+   <tt>.glade</tt> file will be loaded.
+  </p><div class="example" align="left"><p><a name="idp44392656"></a><b>Example 4.6. Partially loading a .glade file</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//Loading a part of the glade file only
+
+//We want "btnClose" to be the root of the widget tree to load
+$glade = new GladeXML('helloglade.glade', 'btnClose');
+
+//That will work
+$btn = $glade-&gt;get_widget('btnClose');
+
+//This will fail, as the window isn't loaded:
+$window = $glade-&gt;get_widget('wndClose');
+//Output is NULL
+var_dump($window);
+?&gt;</pre></td></tr></table></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="tutorials.helloglade.loading.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="tutorials.changes.html">Next</a></td></tr><tr><td width="40%" align="left">Loading the file </td><td width="20%" align="center"><a href="tutorials.helloglade.html">Up</a></td><td width="40%" align="right"> Changes since PHP-GTK 1</td></tr></table></div></body></html>

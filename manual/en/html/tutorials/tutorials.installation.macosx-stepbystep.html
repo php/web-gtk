@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>Installation on Mac OS X - step by step</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="tutorials.installation.html" title="Installing PHP-GTK 2"><link rel="previous" href="tutorials.installation.macosx.html" title="Installation on Mac OS X"><link rel="next" href="tutorials.helloworld.html" title="Hello World (basic)"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Installing PHP-GTK 2</th></tr><tr><td width="20%" align="left"><a href="tutorials.installation.macosx.html">Prev</a> </td><th width="60%" align="center">Installation on Mac OS X - step by step</th><td width="20%" align="right"> <a href="tutorials.helloworld.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="tutorials.installation.macosx-stepbystep"></a><div class="titlepage"><div><h2 class="title" style="clear: all"><a name="tutorials.installation.macosx-stepbystep"></a>Installation on Mac OS X - step by step</h2></div></div><p>Written by Jonathan Richter</p><p>
+   In an attempt to get PHP-GTK2 to work on Mac OS X 10.4, I found
+   very little information and support on that subject.
+   After a lot of failures and errors I got it to work.
+  </p><p>
+   Below I'll write every step I took. I am not very comfortable with Terminal
+   and half of the time I have no clue what I am doing.
+   So you can use this information but totally on your own risk.
+   I just worked for me. I hope it will help anybody else too.
+  </p><div class="note" style="margin-left: 24px; margin-right: 24px; font-weight: bold;"><p>
+    please be adviced that doing all steps below takes several hours.
+   </p></div><p>
+   Resources I found helpful:
+   <div class="itemizedlist"><ul><li><p><a name="idp44002112"></a>
+      <a href="tutorials.installation.macosx.html" title="Installation on Mac OS X">The previous installation page</a>
+     </p></li><li><p><a name="idp44003504"></a>
+      <a href="http://www.macports.org/" target="_top">macports.org</a>
+     </p></li></ul></div>
+  </p><div class="sect2"><a name="idp44005152"></a><div class="titlepage"><div><h3 class="title"><a name="idp44005152"></a>Step 1 - Get Xcode</h3></div></div><p>
+    Get the newest Xcode (also called: Developer Tools) from Apple.
+    You really need this. Go to
+    <a href="https://connect.apple.com" target="_top">connect.apple.com</a>.
+    Sign in or sign up (for free). Go to Downloads.
+   </p><p>
+    On the right in the Downloads Box, click Developer Tools and download the newest
+    Xcode. In my case version 2.4.1, 923 MB big.
+    After downloading, use the installer and follow the instructions.
+   </p></div><div class="sect2"><a name="idp44007744"></a><div class="titlepage"><div><h3 class="title"><a name="idp44007744"></a>Step 2 - Get Macports</h3></div></div><p>
+    I started with using Fink, but halfway it failed by not having
+    a package that was needed (GTK 2.6 or higher).
+    I started all over using Macports.
+   </p><p>
+    Go to
+    <a href="http://trac.macosforge.org/projects/macports/wiki/InstallingMacPorts" target="_top">macosforge/InstallingMacPorts</a>.
+   </p><p>
+    You already did part of the first step by downloading Xcode.
+    I followed all instructions on that page and it worked fine.
+   </p><div class="note" style="margin-left: 24px; margin-right: 24px; font-weight: bold;"><p>
+     The newest version didn't have a normal Apple installer. So I downloaded this:
+     <a href="http://svn.macosforge.org/repository/macports/downloads/DarwinPorts-1.3.1/DarwinPorts-1.3.1-10.4.dmg" target="_top">DarwinPorts-1.3.1-10.4.dmg</a>
+    </p></div><p>
+    Install Macports by double-clicking the installer in the disk image.
+   </p></div><div class="sect2"><a name="idp44012784"></a><div class="titlepage"><div><h3 class="title"><a name="idp44012784"></a>Step 3 - Get GTK2 (also called GTK+)</h3></div></div><p>
+    In Terminal, type:
+    <b>sudo port install gtk2</b>
+   </p></div><div class="sect2"><a name="idp44014560"></a><div class="titlepage"><div><h3 class="title"><a name="idp44014560"></a>Step 4 - Get PHP5.x</h3></div></div><p>
+    I already had a standard OS X PHP 4.4.4 installation and a
+    PHP5 installation from <a href="http://www.entropy.ch" target="_top">Entropy.ch</a>,
+    but it didn't work out. I deleted my PHP5 installation from Entropy.
+   </p><div class="note" style="margin-left: 24px; margin-right: 24px; font-weight: bold;"><p>
+     If you want to run Apache 1 or 2 with PHP4 or 5, Entropy
+     is absolutely the best place to get it.
+    </p></div><p>
+    In Terminal, type:
+    <b>cd /</b> and
+    <b>sudo port install php5</b>
+   </p><p>
+    Take a coffee, this takes a while... about 2 hours on my machine.
+    (Macports installs everything in a folder called 
+    <tt>/opt</tt>. I put the "cd /" to place that folder
+    in the root.)
+   </p></div><div class="sect2"><a name="idp44020304"></a><div class="titlepage"><div><h3 class="title"><a name="idp44020304"></a>Step 5 - Prepare for PHP-GTK</h3></div></div><p>
+    On the other tutorial, you see a <span dir="ltr"><tt>--disable-libglade</tt></span> as
+    a parameter for installing PHP-GTK. I don't know why they wrote that.
+    Be very sure that you really don't want Glade. Read about it here:
+    <a href="http://glade.gnome.org" target="_top">glade.gnome.org</a>.
+   </p><p>
+    Check out the screenshots too. I installed without Glade but after
+    a day I did it all over to get Glade working too.
+    If you want to continue without Glade, skip the next step.
+   </p></div><div class="sect2"><a name="idp44023472"></a><div class="titlepage"><div><h3 class="title"><a name="idp44023472"></a>Step 6 - Get Glade</h3></div></div><p>
+    For some reason, I got errors doing this. Then I tried again the same
+    in Terminal, but now with X11 open in the background with no errors
+    this time. So, open X11 and hide it (apple-h).
+   </p><p>
+    In Terminal, type:
+    <table class="screen" dir="ltr"><tr><td><pre class="screen">
+cd /opt
+sudo port install libglade
+sudo port install glade
+    </pre></td></tr></table>
+     Take another coffee...
+   </p></div><div class="sect2"><a name="idp44025936"></a><div class="titlepage"><div><h3 class="title"><a name="idp44025936"></a>Step 7 - Getting PHP-GTK2</h3></div></div><div class="note" style="margin-left: 24px; margin-right: 24px; font-weight: bold;"><p>
+     Instead of using current CVS, you might want to use the latest
+     official version from the
+     <a href="http://gtk.php.net/download.php" target="_top">PHP-GTK2 download page</a>.
+    </p></div><p>
+    Leave X11 open to be on the safe side.
+    <b>phpize</b> and <b>php-config</b> should be
+    both in <tt>/opt/local/bin/</tt>.
+    Check that before you run this. In Terminal, type:
+    <table class="screen" dir="ltr"><tr><td><pre class="screen">
+sudo cvs -d :pserver:cvsread@cvs.php.net:/repository co php-gtk
+cd php-gtk
+sudo ./buildconf --with-phpize=/opt/local/bin/phpize
+sudo ./configure --with-php-config=/opt/local/bin/php-config
+sudo make
+sudo make install
+    </pre></td></tr></table>
+   </p><p>
+    After it is done, you will see in the output of Terminal a remark
+    about extensions being installed with a path that probably looks
+    like this:
+    <tt>/opt/local/lib/php/extensions/no-debug-non-zts-20060613</tt>.
+    Apple-c that path or write it down. You will need it later.
+   </p></div><div class="sect2"><a name="idp44032688"></a><div class="titlepage"><div><h3 class="title"><a name="idp44032688"></a>Step 8 - Make php.ini ready</h3></div></div><p>
+    In Finder, choose Go &gt; Go To Folder... (or press shift-apple-g)
+    and type <span dir="ltr"><tt>/opt/local/etc</tt></span>.
+   </p><p>
+    Find the file <tt>php.ini-recommended</tt> and copy it.
+    Rename the copy to <tt>php.ini</tt> and open it with
+    - preferably - BBedit.
+   </p><p>
+    Find the line <span dir="ltr"><tt>extension_dir = "./"</tt></span> and replace it with this:
+    <span dir="ltr"><tt>extension_dir = "/opt/local/lib/php/extensions/no-debug-non-zts-20060613"</tt></span>
+    (That path, you copied from the Terminal output in the previous step)
+   </p><p>
+    Find the block with all extensions and add this line after them:
+    <span dir="ltr"><tt>extension=php_gtk2.so</tt></span>
+   </p><p>
+    Save the file.
+   </p></div><div class="sect2"><a name="idp44039648"></a><div class="titlepage"><div><h3 class="title"><a name="idp44039648"></a>Step 9 - Testing</h3></div></div><p>
+    Start X11 and hide it (apple-h) if not already done.
+   </p><p>
+    Start Terminal and type:
+    <table class="screen" dir="ltr"><tr><td><pre class="screen">
+cd /opt/php-gtk/demos
+php phpgtk2-demo.php
+    </pre></td></tr></table>
+    The demo should open in a window in X11.
+   </p><p>
+    To work with Glade, start it in Terminal like this (with X11 open):
+    <b>/opt/local/bin/glade-2</b>
+   </p></div><div class="sect2"><a name="idp44042992"></a><div class="titlepage"><div><h3 class="title"><a name="idp44042992"></a>Step 10 - Making it look better</h3></div></div><p>
+    In my humble opinion: the interfaces in X11 look like crap
+    when you are used to working in OS X.
+    To get other themes, go to
+    <a href="http://art.gnome.org/themes/gtk2" target="_top">art.gnome.org</a>
+    to check them out. In order to use one of those, we need to do one
+    more step.
+   </p><p>
+    In Terminal, type:
+    <b>sudo port install gtk-theme-switch</b>
+   </p><p>
+    After that is ready, download a theme from the link above.
+    Installing it can be done in two ways:
+    <div class="orderedlist"><ol type="1"><li><p><a name="idp44047040"></a>
+       Move or copy the downloaded <tt>.tar.gz</tt>
+       (without unpacking!) into <tt>/opt/local/share/themes/</tt>
+      </p><p>
+       Start Glade by typing this in Terminal (with X11 open):
+       <b>/opt/local/bin/switch2</b>
+      </p><p>
+       Press the + sign and click the Install New Theme button.
+       Point to <tt>/opt/local/share/themes/&lt;your-new-theme-name&gt;.tar.gz</tt>
+      </p><p>
+       Click OK and now your new theme shows up in the list.
+      </p></li><li><p><a name="idp44051840"></a>
+       Unpack the <tt>&lt;your-new-theme-name&gt;.tar.gz</tt>
+       and move or copy the new theme folder to
+       <tt>/opt/local/share/themes/</tt>
+      </p><p>
+       Start Glade by typing this in Terminal (with X11 open):
+       <b>/opt/local/bin/switch2</b>
+      </p><p>
+       The name of the new theme should be in the list.
+      </p></li></ol></div>
+   </p></div><div class="sect2"><a name="idp44055872"></a><div class="titlepage"></div><p>
+    Again, I got it to work on my machines with above steps.
+    My configs: iMac G5 2.0 GHz/1 GB RAM/OS X 10.4.8 and
+    Mac mini G4 1.42 GHz/512 MB RAM/OS X 10.4.8.
+    Please, fellow Mac users, post here any remarks, tips, tricks,
+    etc. Let's get the PHP-GTK spirit to OS X too! Good hunting!
+   </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="tutorials.installation.macosx.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="tutorials.helloworld.html">Next</a></td></tr><tr><td width="40%" align="left">Installation on Mac OS X </td><td width="20%" align="center"><a href="tutorials.installation.html">Up</a></td><td width="40%" align="right"> Hello World (basic)</td></tr></table></div></body></html>

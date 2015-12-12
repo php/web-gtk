@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkEntry::set_activates_default</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkentry.html#idp63061344" title=""><link rel="previous" href="gtk.gtkentry.method.prepend_text.html" title="GtkEntry::prepend_text"><link rel="next" href="gtk.gtkentry.method.set_alignment.html" title="GtkEntry::set_alignment"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkentry.method.prepend_text.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkEntry::set_activates_default</span></th><td width="20%" align="right"> <a href="gtk.gtkentry.method.set_alignment.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkentry.method.set_activates_default"></a><h2><span dir="ltr">GtkEntry::set_activates_default</span></h2><p><div class="funcsynopsis" id="idp63151840"><p></p><a name="idp63151840"></a>void set_activates_default(bool <i><tt>setting</tt></i>);</div></p>
+    <p>
+     If setting is <span dir="ltr"><tt>true</tt></span>, pressing Enter in the entry will
+     activate the default widget for the window containing the entry.
+     This usually means that the dialog box containing the entry will be
+     closed, since the default widget is usually one of the dialog buttons.
+    </p>
+    <p>
+     (For experts: if setting is <span dir="ltr"><tt>true</tt></span>, the entry calls
+     <span dir="ltr"><a href="gtk.gtkwindow.method.activate_default.html">activate_default()</a></span>  on the window
+     containing the entry, in the default handler for the "activate" signal.)
+    </p>
+    <p>
+     See also:
+     <span dir="ltr"><a href="gtk.gtkentry.method.get_activates_default.html">get_activates_default()</a></span> 
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkentry.method.prepend_text.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkentry.method.set_alignment.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkEntry::prepend_text</span> </td><td width="20%" align="center"><a href="gtk.gtkentry.html#idp63061344">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkEntry::set_alignment</span></td></tr></table></div></body></html>

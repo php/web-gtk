@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GdkPixbuf::fill_area</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gdk.gdkpixbuf.html#idp51536736" title=""><link rel="previous" href="gdk.gdkpixbuf.method.fill.html" title="GdkPixbuf::fill"><link rel="next" href="gdk.gdkpixbuf.method.get_bits_per_sample.html" title="GdkPixbuf::get_bits_per_sample"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gdk.gdkpixbuf.method.fill.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GdkPixbuf::fill_area</span></th><td width="20%" align="right"> <a href="gdk.gdkpixbuf.method.get_bits_per_sample.html">Next</a></td></tr></table><hr></div><div><a name="gdk.gdkpixbuf.method.fill_area"></a><h2><span dir="ltr">GdkPixbuf::fill_area</span></h2><p><div class="funcsynopsis" id="idp51617456"><p></p><a name="idp51617456"></a> fill_area(int <i><tt>x</tt></i>, int <i><tt>y</tt></i>, int <i><tt>width</tt></i>, int <i><tt>height</tt></i>, int <i><tt>pixel or red</tt></i> [, int <i><tt>green</tt></i> [, int <i><tt>blue</tt></i> [, int <i><tt>alpha</tt></i>]]]);</div></p>
+    <p>
+     Fills the area specified by (<i><tt>x</tt></i>,
+     <i><tt>y</tt></i> - <i><tt>width</tt></i>,
+     <i><tt>height</tt></i>) with the specified color.
+    </p>
+    <p>
+     The color is either a <i>pixel specification</i> or
+     a tuple of red, green, blue and alpha values (ranging from 0 to 255).
+    </p>
+    <p>
+     A <i>pixel specification</i> is an integer with the bits
+     of red, green, blue and alpha shifted by 8. See the example how to create one.
+    </p>
+    <p>
+     An alpha value of <span dir="ltr"><tt>0</tt></span> means completely transparent, while
+     <span dir="ltr"><tt>255</tt></span> means totally opaque.
+    </p>
+    <div class="example" align="left"><p><a name="idp51634864"></a><b>Example 8. Filling an areas of a pixbuf with color</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//Create a new pixbuf of size 320x240
+$pixbuf = new GdkPixbuf(Gdk::COLORSPACE_RGB, true, 8, 320, 240);
+
+//fill area at (10,10) of size (20,50) with color
+//(rgba = 255, 255, 255, 255)
+//the alpha value of 255 makes it opaque
+$pixbuf-&gt;fill_area(10, 10, 20, 50, 255, 255, 255, 255);
+
+
+//Create a pixel specification:
+//First, we define the RGBA values we need
+$r = 255;
+$g = 128;
+$b = 0;
+$a = 128;
+
+//Now create the pixel
+$pixel = 0;
+$pixel += $r &lt;&lt; 24;
+$pixel += $g &lt;&lt; 16;
+$pixel += $b &lt;&lt; 8;
+$pixel += $a;
+
+//And fill another area with the pixel color
+$pixbuf-&gt;fill_area(50, 50, 30, 40, $pixel);
+
+
+//Display the pixbuf by using a GtkImage widget
+$wnd = new GtkWindow();
+$wnd-&gt;connect_simple('destroy', array('Gtk', 'main_quit'));
+$wnd-&gt;add(GtkImage::new_from_pixbuf($pixbuf));
+$wnd-&gt;show_all();
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gdk.gdkpixbuf.method.fill.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gdk.gdkpixbuf.method.get_bits_per_sample.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GdkPixbuf::fill</span> </td><td width="20%" align="center"><a href="gdk.gdkpixbuf.html#idp51536736">Up</a></td><td width="40%" align="right"> <span dir="ltr">GdkPixbuf::get_bits_per_sample</span></td></tr></table></div></body></html>

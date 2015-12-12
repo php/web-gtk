@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>AtkRole</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../atkenums.html#atk.atkenum" title="ATK Enums"><link rel="previous" href="atk.enum.relation.html" title="AtkRelation"><link rel="next" href="atk.enum.state.html" title="AtkState"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">ATK Enums</th></tr><tr><td width="20%" align="left"><a href="atk.enum.relation.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">AtkRole</span></th><td width="20%" align="right"> <a href="atk.enum.state.html">Next</a></td></tr></table><hr></div><a class="enum" name="atk.enum.role"></a><h1 class="title">AtkRole</h1><p>
+   <p>
+    Describes the role of an object.
+   </p>
+   <p>
+    These are the built-in enumerated roles that UI components 
+    can have in ATK. Other roles may be added at runtime, so 
+    an AtkRole &gt;= <span dir="ltr"><tt>Atk::ROLE_LAST_DEFINED</tt></span>
+    is not necessarily an error.
+   </p>
+  </p><table width="100%" cellpadding="2" cellspacing="1"><tr><td width="7%"><h3>Value</h3></td><td width="40%"><h3>Symbolic name</h3></td><td width="52%"><h3>Description</h3></td></tr><tr valign="top"><td>  0</td><td>Atk::ROLE_INVALID</td><td>
+    Invalid role
+   </td></tr><tr valign="top"><td>  1</td><td>Atk::ROLE_ACCEL_LABEL</td><td>
+    A label which represents an accelerator
+   </td></tr><tr valign="top"><td>  2</td><td>Atk::ROLE_ALERT</td><td>
+    An object which is an alert to the user
+   </td></tr><tr valign="top"><td>  3</td><td>Atk::ROLE_ANIMATION</td><td>
+    An object which is an animated image
+   </td></tr><tr valign="top"><td>  4</td><td>Atk::ROLE_ARROW</td><td>
+    An arrow in one of the four cardinal directions
+   </td></tr><tr valign="top"><td>  5</td><td>Atk::ROLE_CALENDAR</td><td>
+    An object that displays a calendar and allows the user to
+    select a date
+   </td></tr><tr valign="top"><td>  6</td><td>Atk::ROLE_CANVAS</td><td>
+    An object that can be drawn into and is used to trap events
+   </td></tr><tr valign="top"><td>  7</td><td>Atk::ROLE_CHECK_BOX</td><td>
+    A choice that can be checked or unchecked and provides a
+    separate indicator for the current state
+   </td></tr><tr valign="top"><td>  8</td><td>Atk::ROLE_CHECK_MENU_ITEM</td><td>
+    A menu item with a check box
+   </td></tr><tr valign="top"><td>  9</td><td>Atk::ROLE_COLOR_CHOOSER</td><td>
+    A specialized dialog that lets the user choose a color
+   </td></tr><tr valign="top"><td>  10</td><td>Atk::ROLE_COLUMN_HEADER</td><td>
+    The header for a column of data
+   </td></tr><tr valign="top"><td>  11</td><td>Atk::ROLE_COMBO_BOX</td><td>
+    A list of choices the user can select from
+   </td></tr><tr valign="top"><td>  12</td><td>Atk::ROLE_DATE_EDITOR</td><td>
+    An object whose purpose is to allow a user to edit a date
+   </td></tr><tr valign="top"><td>  13</td><td>Atk::ROLE_DESKTOP_ICON</td><td>
+    An inconifed internal frame within a DESKTOP_PANE
+   </td></tr><tr valign="top"><td>  14</td><td>Atk::ROLE_DESKTOP_FRAME</td><td>
+    A pane that supports internal frames and iconified versions 
+    of those internal frames
+   </td></tr><tr valign="top"><td>  15</td><td>Atk::ROLE_DIAL</td><td>
+    An object whose purpose is to allow a user to set a value
+   </td></tr><tr valign="top"><td>  16</td><td>Atk::ROLE_DIALOG</td><td>
+    A top level window with title bar and a border
+   </td></tr><tr valign="top"><td>  17</td><td>Atk::ROLE_DIRECTORY_PANE</td><td>
+    A pane that allows the user to navigate through and select 
+    the contents of a directory
+   </td></tr><tr valign="top"><td>  18</td><td>Atk::ROLE_DRAWING_AREA</td><td>
+    An object used for drawing custom user interface elements
+   </td></tr><tr valign="top"><td>  19</td><td>Atk::ROLE_FILE_CHOOSER</td><td>
+    A specialized dialog that lets the user choose a file
+   </td></tr><tr valign="top"><td>  20</td><td>Atk::ROLE_FILLER</td><td>
+    A object that fills up space in a user interface
+   </td></tr><tr valign="top"><td>  21</td><td>Atk::ROLE_FONT_CHOOSER</td><td>
+    A specialized dialog that lets the user choose a font
+   </td></tr><tr valign="top"><td>  22</td><td>Atk::ROLE_FRAME</td><td>
+    A top level window with a title bar, border, menubar, etc.
+   </td></tr><tr valign="top"><td>  23</td><td>Atk::ROLE_GLASS_PANE</td><td>
+    A pane that is guaranteed to be painted on top of all 
+    panes beneath it
+   </td></tr><tr valign="top"><td>  24</td><td>Atk::ROLE_HTML_CONTAINER</td><td>
+    A document container for HTML, whose children represent 
+    the document content
+   </td></tr><tr valign="top"><td>  25</td><td>Atk::ROLE_ICON</td><td>
+    A small fixed size picture, typically used to decorate components
+   </td></tr><tr valign="top"><td>  26</td><td>Atk::ROLE_IMAGE</td><td>
+    An object whose primary purpose is to display an image
+   </td></tr><tr valign="top"><td>  27</td><td>Atk::ROLE_INTERNAL_FRAME</td><td>
+    A frame-like object that is clipped by a desktop pane
+   </td></tr><tr valign="top"><td>  28</td><td>Atk::ROLE_LABEL</td><td>
+    An object used to present an icon or short string in an interface
+   </td></tr><tr valign="top"><td>  29</td><td>Atk::ROLE_LAYERED_PANE</td><td>
+    A specialized pane that allows its children to be drawn in 
+    layers, providing a form of stacking order
+   </td></tr><tr valign="top"><td>  30</td><td>Atk::ROLE_LIST</td><td>
+    An object that presents a list of objects to the user and 
+    allows the user to select one or more of them
+   </td></tr><tr valign="top"><td>  31</td><td>Atk::ROLE_LIST_ITEM</td><td>
+    An object that represents an element of a list
+   </td></tr><tr valign="top"><td>  32</td><td>Atk::ROLE_MENU</td><td>
+    An object usually found inside a menu bar that contains 
+    a list of actions the user can choose from
+   </td></tr><tr valign="top"><td>  33</td><td>Atk::ROLE_MENU_BAR</td><td>
+    An object usually drawn at the top of the primary dialog 
+    box of an application that contains a list of menus the user can choose from
+   </td></tr><tr valign="top"><td>  34</td><td>Atk::ROLE_MENU_ITEM</td><td>
+    An object usually contained in a menu that presents an 
+    action the user can choose
+   </td></tr><tr valign="top"><td>  35</td><td>Atk::ROLE_OPTION_PANE</td><td>
+    A specialized pane whose primary use is inside a DIALOG
+   </td></tr><tr valign="top"><td>  36</td><td>Atk::ROLE_PAGE_TAB</td><td>
+    An object that is a child of a page tab list
+   </td></tr><tr valign="top"><td>  37</td><td>Atk::ROLE_PAGE_TAB_LIST</td><td>
+    An object that presents a series of panels (or page tabs),
+    one at a time, through some mechanism provided by the object
+   </td></tr><tr valign="top"><td>  38</td><td>Atk::ROLE_PANEL</td><td>
+    A generic container that is often used to group objects
+   </td></tr><tr valign="top"><td>  39</td><td>Atk::ROLE_PASSWORD_TEXT</td><td>
+    A text object uses for passwords, or other places where 
+    the text content is not shown visibly to the user
+   </td></tr><tr valign="top"><td>  40</td><td>Atk::ROLE_POPUP_MENU</td><td>
+    A temporary window that is usually used to offer the 
+    user a list of choices, and then hides when the user selects one of those choices
+   </td></tr><tr valign="top"><td>  41</td><td>Atk::ROLE_PROGRESS_BAR</td><td>
+    An object used to indicate how much of a task has been completed
+   </td></tr><tr valign="top"><td>  42</td><td>Atk::ROLE_PUSH_BUTTON</td><td>
+    An object the user can manipulate to tell the application 
+    to do something
+   </td></tr><tr valign="top"><td>  43</td><td>Atk::ROLE_RADIO_BUTTON</td><td>
+    A specialized check box that will cause other radio buttons 
+    in the same group to become unchecked when this one is checked
+   </td></tr><tr valign="top"><td>  44</td><td>Atk::ROLE_RADIO_MENU_ITEM</td><td>
+    A check menu item which belongs to a group. At each instant 
+    exactly one of the radio menu items from a group is selected
+   </td></tr><tr valign="top"><td>  45</td><td>Atk::ROLE_ROOT_PANE</td><td>
+    A specialized pane that has a glass pane and a layered 
+    pane as its children
+   </td></tr><tr valign="top"><td>  46</td><td>Atk::ROLE_ROW_HEADER</td><td>
+    The header for a row of data
+   </td></tr><tr valign="top"><td>  47</td><td>Atk::ROLE_SCROLL_BAR</td><td>
+    An object usually used to allow a user to incrementally view 
+    a large amount of data.
+   </td></tr><tr valign="top"><td>  48</td><td>Atk::ROLE_SCROLL_PANE</td><td>
+    An object that allows a user to incrementally view a large 
+    amount of information
+   </td></tr><tr valign="top"><td>  49</td><td>Atk::ROLE_SEPARATOR</td><td>
+    An object usually contained in a menu to provide a visible and 
+    logical separation of the contents in a menu
+   </td></tr><tr valign="top"><td>  50</td><td>Atk::ROLE_SLIDER</td><td>
+    An object that allows the user to select from a bounded range
+   </td></tr><tr valign="top"><td>  51</td><td>Atk::ROLE_SPLIT_PANE</td><td>
+    A specialized panel that presents two other panels at the same time
+   </td></tr><tr valign="top"><td>  52</td><td>Atk::ROLE_SPIN_BUTTON</td><td>
+    An object used to get an integer or floating point number from the user
+   </td></tr><tr valign="top"><td>  53</td><td>Atk::ROLE_STATUSBAR</td><td>
+    An object which reports messages of minor importance to the user
+   </td></tr><tr valign="top"><td>  54</td><td>Atk::ROLE_TABLE</td><td>
+    An object used to represent information in terms of rows and columns
+   </td></tr><tr valign="top"><td>  55</td><td>Atk::ROLE_TABLE_CELL</td><td>
+    A cell in a table
+   </td></tr><tr valign="top"><td>  56</td><td>Atk::ROLE_TABLE_COLUMN_HEADER</td><td>
+    The header for a column of a table
+   </td></tr><tr valign="top"><td>  57</td><td>Atk::ROLE_TABLE_ROW_HEADER</td><td>
+    The header for a row of a table
+   </td></tr><tr valign="top"><td>  58</td><td>Atk::ROLE_TEAR_OFF_MENU_ITEM</td><td>
+    A menu item used to tear off and reattach its menu
+   </td></tr><tr valign="top"><td>  59</td><td>Atk::ROLE_TERMINAL</td><td>
+    An object that represents an accessible terminal
+   </td></tr><tr valign="top"><td>  60</td><td>Atk::ROLE_TEXT</td><td>
+    An object that presents text to the user
+   </td></tr><tr valign="top"><td>  61</td><td>Atk::ROLE_TOGGLE_BUTTON</td><td>
+    A specialized push button that can be checked or unchecked, 
+    but does not provide a separate indicator for the current state
+   </td></tr><tr valign="top"><td>  62</td><td>Atk::ROLE_TOOL_BAR</td><td>
+    A bar or palette usually composed of push buttons or 
+    toggle buttons
+   </td></tr><tr valign="top"><td>  63</td><td>Atk::ROLE_TOOL_TIP</td><td>
+    An object that provides information about another object
+   </td></tr><tr valign="top"><td>  64</td><td>Atk::ROLE_TREE</td><td>
+    An object used to represent hierarchical information 
+    to the user
+   </td></tr><tr valign="top"><td>  65</td><td>Atk::ROLE_TREE_TABLE</td><td>
+    An object capable of expanding and collapsing rows as well 
+    as showing multiple columns of data
+   </td></tr><tr valign="top"><td>  66</td><td>Atk::ROLE_UNKNOWN</td><td>
+    The object contains some Accessible information, but its 
+    role is not known
+   </td></tr><tr valign="top"><td>  67</td><td>Atk::ROLE_VIEWPORT</td><td>
+    An object usually used in a scroll pane
+   </td></tr><tr valign="top"><td>  68</td><td>Atk::ROLE_WINDOW</td><td>
+    A top level window with no title or border.
+   </td></tr><tr valign="top"><td>  69</td><td>Atk::ROLE_HEADER</td><td>
+    An object that serves as a document header.
+   </td></tr><tr valign="top"><td>  70</td><td>Atk::ROLE_FOOTER</td><td>
+    An object that serves as a document footer.
+   </td></tr><tr valign="top"><td>  71</td><td>Atk::ROLE_PARAGRAPH</td><td>
+    An object which is contains a paragraph of text content.
+   </td></tr><tr valign="top"><td>  72</td><td>Atk::ROLE_RULER</td><td>
+    An object which describes margins and tab stops, etc. 
+    for text objects which it controls 
+    (should have CONTROLLER_FOR relation to such).
+   </td></tr><tr valign="top"><td>  73</td><td>Atk::ROLE_APPLICATION</td><td>
+    The object is an application object, which may contain 
+    <span dir="ltr"><tt>Atk::ROLE_FRAME</tt></span> objects or other types of
+    accessibles.
+   </td></tr><tr valign="top"><td>  74</td><td>Atk::ROLE_AUTOCOMPLETE</td><td>
+    The object is a dialog or list containing items for insertion 
+    into an entry widget, for instance a list of words for 
+    completion of a text entry.
+   </td></tr><tr valign="top"><td>  75</td><td>Atk::ROLE_EDITBAR</td><td>
+    The object is an editable text object in a toolbar
+   </td></tr><tr valign="top"><td>  76</td><td>Atk::ROLE_EMBEDDED</td><td>
+    The object is an embedded container within a document or 
+    panel. This role is a grouping "hint" indicating 
+    that the contained objects share a context.
+   </td></tr><tr valign="top"><td>  77</td><td>Atk::ROLE_LAST_DEFINED</td><td>
+    not a valid role, used for finding end of enumeration
+   </td></tr></table><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="atk.enum.relation.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="atk.enum.state.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">AtkRelation</span> </td><td width="20%" align="center"><a href="../atkenums.html#atk.atkenum">Up</a></td><td width="40%" align="right"> <span dir="ltr">AtkState</span></td></tr></table></div></body></html>

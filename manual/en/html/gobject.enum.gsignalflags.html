@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GSignalFlags</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="stylesheet.css"><link rel="home" href="index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gobjectenums.html#gobjectenum" title="GObject Enums"><link rel="previous" href="gobject.enum.giocondition.html" title="GIOCondition"><link rel="next" href="gobject.enum.gparamflags.html" title="GParamFlags"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GObject Enums</th></tr><tr><td width="20%" align="left"><a href="gobject.enum.giocondition.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GSignalFlags</span></th><td width="20%" align="right"> <a href="gobject.enum.gparamflags.html">Next</a></td></tr></table><hr></div><a class="enum" name="gobject.enum.gsignalflags"></a><h1 class="title">GSignalFlags</h1><p>
+   <p>
+    The signal flags are used to specify a signal's behaviour,
+    the overall signal description outlines how the stages of a signal emission
+    occur
+   </p>
+  </p><table width="100%" cellpadding="2" cellspacing="1"><tr><td width="7%"><h3>Value</h3></td><td width="40%"><h3>Symbolic name</h3></td><td width="52%"><h3>Description</h3></td></tr><tr valign="top"><td>  1</td><td>Gobject::SIGNAL_RUN_FIRST</td><td>
+    Invoke the object method handler in the first emission stage
+   </td></tr><tr valign="top"><td>  2</td><td>Gobject::SIGNAL_RUN_LAST</td><td>
+    Invoke the object method handler in the third emission stage
+   </td></tr><tr valign="top"><td>  4</td><td>Gobject::SIGNAL_RUN_CLEANUP</td><td>
+    Invoke the object method handler in the last emission stage. 
+   </td></tr><tr valign="top"><td>  8</td><td>Gobject::SIGNAL_NO_RECURSE</td><td>
+    Signals being emitted for an object while currently being in emission for
+    the same object will not be emitted recursively, but instead cause the
+    first emission to be restarted. 
+   </td></tr><tr valign="top"><td>  16</td><td>Gobject::SIGNAL_DETAILED</td><td>
+    This signal supports "::detail" appendices to the signal name upon handler connections and emissions
+   </td></tr><tr valign="top"><td>  32</td><td>Gobject::SIGNAL_ACTION</td><td>
+    Action signals are signals that may freely be emitted on alive objects
+   </td></tr><tr valign="top"><td>  64</td><td>Gobject::SIGNAL_NO_HOOKS</td><td>
+    No emissions hooks are supported for this signal. 
+   </td></tr></table><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gobject.enum.giocondition.html">Prev</a> </td><td width="20%" align="center"><a href="index.html">Home</a></td><td width="40%" align="right"> <a href="gobject.enum.gparamflags.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GIOCondition</span> </td><td width="20%" align="center"><a href="gobjectenums.html#gobjectenum">Up</a></td><td width="40%" align="right"> <span dir="ltr">GParamFlags</span></td></tr></table></div></body></html>

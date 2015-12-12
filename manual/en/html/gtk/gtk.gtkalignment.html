@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkAlignment</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkadjustment.field.value.html" title="GtkAdjustment::value"><link rel="next" href="gtk.gtkalignment.constructor.html" title="GtkAlignment Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkadjustment.field.value.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkAlignment</span></th><td width="20%" align="right"> <a href="gtk.gtkalignment.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkalignment"></a><h2 class="title"><span dir="ltr">GtkAlignment</span></h2><p><blockquote>
+   A container that controls the alignment and size of it's child.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkbin.html">GtkBin</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkalignment.html">GtkAlignment</a></span><br></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    The <span dir="ltr"><a href="gtk.gtkalignment.html">GtkAlignment</a></span> container controls the alignment
+    and size of it's child, relative to it's own dimensions. However, if the
+    child has a size request from it's own child/children, it will take 
+    precedence. For example, a <span dir="ltr"><a href="gtk.gtkbutton.html">GtkButton</a></span> with a label
+    will never be scaled down to a size smaller than that of the label.
+   </p>
+   <p>
+    It can be used to define the relative alignment of the child 
+    <i>within</i> the container, through the 
+    <i><tt>xalign</tt></i> and <i><tt>yalign</tt></i> parameters.
+    Both can vary between 0 and 1, meaning left/top and right/bottom, respectively.
+    This is very useful, for instance in left- or right-aligning <span dir="ltr"><a href="gtk.gtklabel.html">GtkLabel</a></span>s.
+   </p>
+   <p>
+    Another use for <span dir="ltr"><a href="gtk.gtkalignment.html">GtkAlignment</a></span> (through 
+    <i><tt>xscale</tt></i> and <i><tt>yscale</tt></i>), is to 
+    indicate the ammount of extra free space in the container the child should
+    be extended to occupy. Note that this isn't the same as total size of the 
+    child widget.
+   </p>
+   <p>
+    <span dir="ltr"><a href="gtk.gtkalignment.html">GtkAlignment</a></span> also provides methods to specifically 
+    set (and retrieve the current) top, bottom, right and left padding of the widget.
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp55950720"><p></p><a name="idp55950720"></a><span dir="ltr"><a href="gtk.gtkalignment.constructor.html">GtkAlignment</a></span> ([double <i><tt>xalign = 0.5</tt></i> [, double <i><tt>yalign = 0.5</tt></i> [, double <i><tt>xscale = 1.0</tt></i> [, double <i><tt>yscale = 1.0</tt></i>]]]]);</div></p> --
+    Creates a container that controls the alignment and size of it's child.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkalignment.method.get_padding.html">get_padding()</a></span> </dt><dd> 
+    Gets the padding on the different sides of the widget. 
+   </dd><dt><span dir="ltr"><a href="gtk.gtkalignment.method.set.html">set()</a></span> </dt><dd> 
+    Sets new values for <span dir="ltr"><a href="gtk.gtkalignment.html">GtkAlignment</a></span>.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkalignment.method.set_padding.html">set_padding()</a></span> </dt><dd> 
+    Sets the padding on the different sides of the widget.
+   </dd></blockquote></div></p></div>
+
+  
+
+ 
+
+  
+
+  
+
+  
+
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkadjustment.field.value.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkalignment.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkAdjustment::value</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkAlignment</span> Constructor</td></tr></table></div></body></html>

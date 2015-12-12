@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkEditable::delete_text</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkeditable.html#idp62668240" title=""><link rel="previous" href="gtk.gtkeditable.method.delete_selection.html" title="GtkEditable::delete_selection"><link rel="next" href="gtk.gtkeditable.method.get_chars.html" title="GtkEditable::get_chars"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkeditable.method.delete_selection.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkEditable::delete_text</span></th><td width="20%" align="right"> <a href="gtk.gtkeditable.method.get_chars.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkeditable.method.delete_text"></a><h2><span dir="ltr">GtkEditable::delete_text</span></h2><p><div class="funcsynopsis" id="idp62768864"><p></p><a name="idp62768864"></a>void delete_text(int <i><tt>start_pos</tt></i>, int <i><tt>end_pos</tt></i>);</div></p>
+    <p>
+     Deletes a sequence of characters. The characters that are
+     deleted are those characters at positions from
+     <i><tt>start_pos</tt></i> up to, but not including 
+     <i><tt>end_pos</tt></i>. If <i><tt>end_pos</tt></i>
+     is negative, then the the characters deleted will be those
+     characters from <i><tt>start_pos</tt></i> to the end of the text.
+    </p>
+    <div class="example" align="left"><p><a name="idp62776720"></a><b>Example 53. Deleting all text from an entry</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+
+$editable-&gt;delete_text(0, -1);
+
+     </pre></td></tr></table></div>
+    <div class="example" align="left"><p><a name="idp62778576"></a><b>Example 54. Deleting all selected text from the editable</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+
+$bounds = $editable-&gt;get_selection_bounds();
+if ($bounds !== false) {
+    $editable-&gt;delete_text($bounds[0], $bounds[1]);
+}
+
+     </pre></td></tr></table></div>
+    <p>
+     See also:
+     <span dir="ltr"><a href="gtk.gtkeditable.method.delete_selection.html">delete_selection()</a></span> 
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkeditable.method.delete_selection.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkeditable.method.get_chars.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkEditable::delete_selection</span> </td><td width="20%" align="center"><a href="gtk.gtkeditable.html#idp62668240">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkEditable::get_chars</span></td></tr></table></div></body></html>

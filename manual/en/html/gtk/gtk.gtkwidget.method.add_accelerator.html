@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkWidget::add_accelerator</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkwidget.html#idp87479968" title=""><link rel="previous" href="gtk.gtkwidget.method.activate.html" title="GtkWidget::activate"><link rel="next" href="gtk.gtkwidget.method.add_events.html" title="GtkWidget::add_events"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkwidget.method.activate.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkWidget::add_accelerator</span></th><td width="20%" align="right"> <a href="gtk.gtkwidget.method.add_events.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkwidget.method.add_accelerator"></a><h2><span dir="ltr">GtkWidget::add_accelerator</span></h2><p><div class="funcsynopsis" id="idp87539248"><p></p><a name="idp87539248"></a>void add_accelerator(string <i><tt>signal</tt></i>, 
+      <span dir="ltr"><a href="gtk.gtkaccelgroup.html">GtkAccelGroup</a></span> <i><tt>group</tt></i>
+     , int <i><tt>accel_key</tt></i>, <span dir="ltr"><a href="../#">GdkModifyerType</a></span> <i><tt>modifiers</tt></i>, <span dir="ltr"><a href="gtk.enum.accelflags.html">GtkAccelFlags</a></span> <i><tt>flags</tt></i>);</div></p>
+    <p>
+     Adds an accelerator (shortcut key) for the widget, so that the
+     button/widget can be accessed by using the keyboard, without moving
+     the mouse or tabbing through widgets.
+    </p>
+    <p>
+     <i><tt>signal</tt></i> is the name of a signal that should
+     be invoked on the widget once the accelerator is pressed. For a button,
+     you most likely want to pass <span dir="ltr"><tt>clicked</tt></span> here.
+    </p>
+    <p>
+     <i><tt>group</tt></i> is a <span dir="ltr"><a href="gtk.gtkaccelgroup.html">GtkAccelGroup</a></span>
+     and should be the one set active for the window. Maybe you
+     need to create the group and add it to the window first via
+     <span dir="ltr"><a href="gtk.gtkwindow.method.add_accel_group.html">add_accel_group()</a></span>  to be
+     able to use it here.
+    </p>
+    <p>
+     <i><tt>accel_key</tt></i> defines the key to be pressed, see
+     <a href="../appendix.keysyms.html">Symbolic names for keys</a> to
+     find the right one.
+    </p>
+    <p>
+     <i><tt>modifiers</tt></i> tells which additional button
+     has to be pressed to emit the signal. Normally, you want to use
+     <span dir="ltr"><tt>Gdk::CONTROL_MASK</tt></span> (<span dir="ltr"><tt>Ctrl</tt></span> key)
+     or <span dir="ltr"><tt>Gdk::MOD1_MASK</tt></span> (<span dir="ltr"><tt>Alt</tt></span> key).
+    </p>
+
+    <div class="example" align="left"><p><a name="idp87558864"></a><b>Example 149. Adding a shortcut for a button</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+//Our window
+$wnd = new GtkWindow();
+//Accelerator group
+$group = new GtkAccelGroup();
+//Add group to window, making it active
+$wnd-&gt;add_accel_group($group);
+
+//"back" button
+$btn = GtkButton::new_from_stock(Gtk::STOCK_GO_BACK);
+$btn-&gt;add_accelerator(
+    'clicked', $group, Gdk::KEY_Left, Gdk::MOD1_MASK, 0
+);
+$wnd-&gt;add($btn);
+</pre></td></tr></table><p>
+      In this example, you can use the shortcut <span dir="ltr"><tt>Alt+Left</tt></span>
+      to activate the back-button.
+     </p></div>
+    <p>
+     See also:
+     <span dir="ltr"><a href="gtk.gtkwidget.method.remove_accelerator.html">remove_accelerator()</a></span> 
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkwidget.method.activate.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkwidget.method.add_events.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkWidget::activate</span> </td><td width="20%" align="center"><a href="gtk.gtkwidget.html#idp87479968">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkWidget::add_events</span></td></tr></table></div></body></html>

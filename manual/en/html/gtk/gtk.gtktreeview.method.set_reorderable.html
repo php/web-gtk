@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkTreeView::set_reorderable</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtktreeview.html#idp84779376" title=""><link rel="previous" href="gtk.gtktreeview.method.set_model.html" title="GtkTreeView::set_model"><link rel="next" href="gtk.gtktreeview.method.set_row_separator_func.html" title="GtkTreeView::set_row_separator_func"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtktreeview.method.set_model.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkTreeView::set_reorderable</span></th><td width="20%" align="right"> <a href="gtk.gtktreeview.method.set_row_separator_func.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtktreeview.method.set_reorderable"></a><h2><span dir="ltr">GtkTreeView::set_reorderable</span></h2><p><div class="funcsynopsis" id="idp85114288"><p></p><a name="idp85114288"></a>void set_reorderable(bool <i><tt>reorderable</tt></i>);</div></p>
+    <p>
+     This function is a convenience function to allow you to reorder models
+     that support the <span dir="ltr"><tt>GtkDragSourceIface</tt></span> and the
+     <span dir="ltr"><tt>GtkDragDestIface</tt></span>. Both
+     <span dir="ltr"><a href="gtk.gtktreestore.html">GtkTreeStore</a></span> and
+     <span dir="ltr"><a href="gtk.gtkliststore.html">GtkListStore</a></span> support these. If
+     <i><tt>reorderable</tt></i> is <span dir="ltr"><tt>true</tt></span>, then the
+     user can reorder the model by dragging and dropping rows. The developer
+     can listen to these changes by connecting to the model's
+     <span dir="ltr">"<a href="gtk.gtktreemodel.signal.row-inserted.html">row-inserted</a>"</span> and
+     <span dir="ltr">"<a href="gtk.gtktreemodel.signal.row-deleted.html">row-deleted</a>"</span> signals.
+    </p>
+    <p>
+     This function does not give you any degree of control over the order -
+     any reordering is allowed. If more control is needed, you should probably
+     handle drag and drop manually.
+    </p>
+    <p>
+     See also:
+     <span dir="ltr"><a href="gtk.gtktreeview.method.get_reorderable.html">get_reorderable()</a></span> 
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtktreeview.method.set_model.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtktreeview.method.set_row_separator_func.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkTreeView::set_model</span> </td><td width="20%" align="center"><a href="gtk.gtktreeview.html#idp84779376">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkTreeView::set_row_separator_func</span></td></tr></table></div></body></html>

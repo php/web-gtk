@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GdkGrabStatus</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gdkenums.html#gdk.gdkenum" title="GDK Enums"><link rel="previous" href="gdk.enum.gcvaluesmask.html" title="GdkGCValuesMask"><link rel="next" href="gdk.enum.gravity.html" title="GdkGravity"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GDK Enums</th></tr><tr><td width="20%" align="left"><a href="gdk.enum.gcvaluesmask.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GdkGrabStatus</span></th><td width="20%" align="right"> <a href="gdk.enum.gravity.html">Next</a></td></tr></table><hr></div><a class="enum" name="gdk.enum.grabstatus"></a><h1 class="title">GdkGrabStatus</h1><p>
+   <p>
+    Returned by pointer_grab
+    and keyboard_grab to indicate
+    success or the reason for the failure of the grab attempt.
+   </p>
+  </p><table width="100%" cellpadding="2" cellspacing="1"><tr><td width="7%"><h3>Value</h3></td><td width="40%"><h3>Symbolic name</h3></td><td width="52%"><h3>Description</h3></td></tr><tr valign="top"><td>  0</td><td>Gdk::GRAB_SUCCESS</td><td>
+     The resource was successfully grabbed.
+   </td></tr><tr valign="top"><td>  1</td><td>Gdk::GRAB_ALREADY_GRABBED</td><td>
+       The resource is actively grabbed by another client.
+   </td></tr><tr valign="top"><td>  2</td><td>Gdk::GRAB_INVALID_TIME</td><td>
+       The resource was grabbed more recently than the specified time.
+   </td></tr><tr valign="top"><td>  3</td><td>Gdk::GRAB_NOT_VIEWABLE</td><td>
+       The grab window or the confine_to window are not viewable.
+   </td></tr><tr valign="top"><td>  4</td><td>Gdk::GRAB_FROZEN</td><td>
+       The resource is frozen by an active grab of another client.
+   </td></tr></table><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gdk.enum.gcvaluesmask.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gdk.enum.gravity.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GdkGCValuesMask</span> </td><td width="20%" align="center"><a href="../gdkenums.html#gdk.gdkenum">Up</a></td><td width="40%" align="right"> <span dir="ltr">GdkGravity</span></td></tr></table></div></body></html>

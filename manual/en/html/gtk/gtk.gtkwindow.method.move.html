@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkWindow::move</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkwindow.html#idp90308480" title=""><link rel="previous" href="gtk.gtkwindow.method.maximize.html" title="GtkWindow::maximize"><link rel="next" href="gtk.gtkwindow.method.parse_geometry.html" title="GtkWindow::parse_geometry"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkwindow.method.maximize.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkWindow::move</span></th><td width="20%" align="right"> <a href="gtk.gtkwindow.method.parse_geometry.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkwindow.method.move"></a><h2><span dir="ltr">GtkWindow::move</span></h2><p><div class="funcsynopsis" id="idp90605120"><p></p><a name="idp90605120"></a>void move(int <i><tt>x</tt></i>, int <i><tt>y</tt></i>);</div></p>
+    <p>
+     Requests that the window manager move the window to the given location.
+    </p>
+    <p>
+     The the location referenced by <i><tt>x</tt></i> and
+     <i><tt>y</tt></i> depends upon the window's
+     <a href="gtk.gtkwindow.method.set_gravity.html">gravity</a>. By
+     default a window has
+     <a href="../gdk/gdk.enum.gravity.html">north west gravity</a>. This
+     means that the top left corner of the window will be placed
+     <i><tt>x</tt></i> pixels from the left edge of the screen and
+     <i><tt>y</tt></i> pixels from the top edge of the screen.
+    </p>
+    <p>
+     This method simply requests that the window be moved. Call it does not
+     necessarily mean that the window will be moved. To confirm that it has in
+     fact been moved use <span dir="ltr"><a href="gtk.gtkwindow.method.get_position.html">get_position()</a></span> .
+    </p>
+    <p>
+     To move the window to a relative positio, such as the center of the
+     screen, use <span dir="ltr"><a href="gtk.gtkwindow.method.set_position.html">set_position()</a></span> .
+    </p>
+    <p>
+     See also:
+     <span dir="ltr"><a href="gtk.gtkwindow.method.set_gravity.html">set_gravity()</a></span> 
+     <span dir="ltr"><a href="gtk.gtkwindow.method.get_position.html">get_position()</a></span> 
+     <span dir="ltr"><a href="gtk.gtkwindow.method.set_position.html">set_position()</a></span> 
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkwindow.method.maximize.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkwindow.method.parse_geometry.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkWindow::maximize</span> </td><td width="20%" align="center"><a href="gtk.gtkwindow.html#idp90308480">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkWindow::parse_geometry</span></td></tr></table></div></body></html>

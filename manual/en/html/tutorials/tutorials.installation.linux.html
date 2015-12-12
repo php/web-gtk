@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>Installation on Linux</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="tutorials.installation.html" title="Installing PHP-GTK 2"><link rel="previous" href="tutorials.installation.windows.html" title="Installation on Windows"><link rel="next" href="tutorials.installation.macosx.html" title="Installation on Mac OS X"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Installing PHP-GTK 2</th></tr><tr><td width="20%" align="left"><a href="tutorials.installation.windows.html">Prev</a> </td><th width="60%" align="center">Installation on Linux</th><td width="20%" align="right"> <a href="tutorials.installation.macosx.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="tutorials.installation.linux"></a><div class="titlepage"><div><h2 class="title" style="clear: all"><a name="tutorials.installation.linux"></a>Installation on Linux</h2></div></div><p>
+   The best way to install PHP-GTK 2 on Linux is to compile it. No binary or
+   source packages are available as yet for any distribution, so you can't use
+   your favorite package manager to install PHP-GTK 2! These instructions
+   should be valid for most distributions of Linux, as well as other POSIX
+   compliant systems.
+  </p><div class="note" style="margin-left: 24px; margin-right: 24px; font-weight: bold;">The methods listed here reportedly don't work on FreeBSD</div><p>
+   There are two ways to go about installing PHP-GTK 2 on your Linux system.
+   You can either choose to use your existing PHP installation, or decide to
+   install a separate one and dedicate it to PHP-GTK 2. The latter is a simpler
+   method and is recommended for users with little or no Linux experience.
+   In any case, you need Gtk+ version 2.6 upwards installed.
+  </p><div class="sect2"><a name="tutorials.installation.linux.newphp"></a><div class="titlepage"><div><h3 class="title"><a name="tutorials.installation.linux.newphp"></a>Installing PHP-GTK 2 along with a new PHP installation</h3></div></div><p>
+    Just follow these steps, and you should be okay! First thing you need 
+    is a fresh checkout of PHP. You can choose either the
+    <span dir="ltr"><tt>5_1</tt></span> or <span dir="ltr"><tt>5_2</tt></span> branches,
+    both work fine:
+
+    <table class="programlisting" dir="ltr"><tr><td><pre class="programlisting">
+$ cvs -d :pserver:cvsread@cvs.php.net:/repository login
+$ cvs -d :pserver:cvsread@cvs.php.net:/repository co -r PHP_5_2 php-src</pre></td></tr></table>
+
+     Now, you need to compile and install it:
+
+     <table class="programlisting" dir="ltr"><tr><td><pre class="programlisting">
+$ cd php-src
+$ ./buildconf
+$ ./configure --prefix=/opt/php5_2 --disable-cgi
+$ make
+$ su
+$ make install
+$ echo extension=php_gtk2.so &gt;&gt; /opt/php5_2/lib/php.ini
+$ /opt/php5_2/bin/php-config --extension-dir | xargs echo 'extension_dir=' &gt;&gt; /opt/php5_2/lib/php.ini</pre></td></tr></table>
+   </p><div class="note" style="margin-left: 24px; margin-right: 24px; font-weight: bold;"><p>
+     If the current CVS of PHP does not compile, try an
+     official release from the
+     <a href="http://www.php.net/downloads.php" target="_top">php downloads page</a>,
+     or a <a href="http://snaps.php.net/" target="_top">snapshot</a>.
+    </p></div><p>
+    Now, let's checkout and install PHP-GTK 2:
+    <table class="programlisting" dir="ltr"><tr><td><pre class="programlisting">
+$ cd ..
+$ cvs -d :pserver:cvsread@cvs.php.net:/repository co php-gtk
+$ cd php-gtk
+$ ./buildconf --with-phpize=/opt/php5_2/bin/phpize
+$ ./configure --with-php-config=/opt/php5_2/bin/php-config
+$ make
+$ make install</pre></td></tr></table>
+   </p><p>
+    You might want to create a link to the new php executable:
+
+    <table class="programlisting" dir="ltr"><tr><td><pre class="programlisting">
+$ ln -s /opt/php5_2/bin/php /usr/bin/php-gtk</pre></td></tr></table>
+
+    That's it, you're done!
+   </p></div><div class="sect2"><a name="tutorials.installation.linux.existingphp"></a><div class="titlepage"><div><h3 class="title"><a name="tutorials.installation.linux.existingphp"></a>Using an existing PHP installation</h3></div></div><p>
+    If you decide to 'add-on' PHP-GTK 2 to your existing PHP installation,
+    ensure that your version of PHP is at least 5.1 with CLI enabled.
+    PHP-GTK 2 will NOT work with any other versions of PHP.
+    You can check your PHP version by typing <b>php -v</b>
+    on the command line. Don't forget to check if the word
+    <span dir="ltr"><tt>cli</tt></span> appears in the output!
+   </p><p>
+    Now, checkout the latest CVS source of PHP-GTK 2, or download the Alpha
+    source tarball, as per instructions on the PHP-GTK 2
+    <a href="http://gtk.php.net/download.php" target="_top">download</a> page.
+    <span dir="ltr"><tt>cd</tt></span> into the checked out / extracted directory, and
+    execute the following:
+    <table class="programlisting" dir="ltr"><tr><td><pre class="programlisting">
+$ ./buildconf
+$ ./configure
+$ make
+$ make install</pre></td></tr></table>
+   </p><p>
+    This should just work for most people. However, if there are multiple
+    installations of PHP in your machine or you have installed PHP in some
+    exotic location, you might face trouble. Most of these cases can be solved
+    by specifying the exact locations of the <span dir="ltr"><tt>phpize</tt></span> and
+    <span dir="ltr"><tt>php-config</tt></span> files:
+    <table class="programlisting" dir="ltr"><tr><td><pre class="programlisting">
+$ ./buildconf --with-phpize=/path/to/phpize
+$ ./configure --with-php-config=/path/to/php-config</pre></td></tr></table>
+   </p></div><div class="sect2"><a name="tutorials.installation.linux.testing"></a><div class="titlepage"><div><h3 class="title"><a name="tutorials.installation.linux.testing"></a>Testing your installation</h3></div></div><p>
+    Before you can use PHP-GTK 2, you need to enable the extension in
+    your <tt>php.ini</tt>. Just add a
+    <table class="programlisting" dir="ltr"><tr><td><pre class="programlisting">
+extension=php_gtk2.so</pre></td></tr></table>
+     below all the other <span dir="ltr"><tt>extension=</tt></span> settings.
+   </p><p>
+    You can test whether your installation was successful by executing:
+
+    <table class="programlisting" dir="ltr"><tr><td><pre class="programlisting">
+$ php -m | grep php-gtk</pre></td></tr></table>
+
+    You should get a single line that reads <span dir="ltr"><tt>php-gtk</tt></span>.
+   </p><p>
+    Next, you can try out the demo applications in the
+    <tt>demos</tt> directory of the php-gtk sources,
+    e.g. <tt>demos/phpgtk2-demo.php</tt>.
+   </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="tutorials.installation.windows.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="tutorials.installation.macosx.html">Next</a></td></tr><tr><td width="40%" align="left">Installation on Windows </td><td width="20%" align="center"><a href="tutorials.installation.html">Up</a></td><td width="40%" align="right"> Installation on Mac OS X</td></tr></table></div></body></html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkDestDefaults</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkenums.html#gtk.gtkenum" title="GTK Enums"><link rel="previous" href="gtk.enum.deletetype.html" title="GtkDeleteType"><link rel="next" href="gtk.enum.dialogflags.html" title="GtkDialogFlags"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Enums</th></tr><tr><td width="20%" align="left"><a href="gtk.enum.deletetype.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkDestDefaults</span></th><td width="20%" align="right"> <a href="gtk.enum.dialogflags.html">Next</a></td></tr></table><hr></div><a class="enum" name="gtk.enum.destdefaults"></a><h1 class="title">GtkDestDefaults</h1><p>
+   <p>
+    The GtkDestDefaults enumeration specifies the various types of action 
+    that will be taken on behalf of the user for a drag destination site.
+   </p>
+  </p><table width="100%" cellpadding="2" cellspacing="1"><tr><td width="7%"><h3>Value</h3></td><td width="40%"><h3>Symbolic name</h3></td><td width="52%"><h3>Description</h3></td></tr><tr valign="top"><td>  1</td><td>Gtk::DEST_DEFAULT_MOTION</td><td>
+    If set for a widget, GTK+, during a drag over this widget will check 
+    if the drag matches this widget's list of possible targets and actions. 
+    GTK+ will then call gdk_drag_status() as appropriate.
+   </td></tr><tr valign="top"><td>  2</td><td>Gtk::DEST_DEFAULT_HIGHLIGHT</td><td>
+    If set for a widget, GTK+ will draw a highlight on this widget as long
+    as a drag is over this widget and the widget drag format and action 
+    are acceptable.
+   </td></tr><tr valign="top"><td>  4</td><td>Gtk::DEST_DEFAULT_DROP</td><td>
+    If set for a widget, when a drop occurs, GTK+ will will check if the 
+    drag matches this widget's list of possible targets and actions. 
+    If so, GTK+ will call gtk_drag_get_data() on behalf of the widget. 
+    Whether or not the drop is successful, GTK+ will call gtk_drag_finish(). 
+    If the action was a move, then if the drag was successful, then 
+    <span dir="ltr"><tt>true</tt></span> will be passed for the delete parameter to
+    gtk_drag_finish().
+   </td></tr><tr valign="top"><td>  7</td><td>Gtk::DEST_DEFAULT_ALL</td><td>
+    If set, specifies that all default actions should be taken.
+   </td></tr></table><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.enum.deletetype.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.enum.dialogflags.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkDeleteType</span> </td><td width="20%" align="center"><a href="../gtkenums.html#gtk.gtkenum">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkDialogFlags</span></td></tr></table></div></body></html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkFontSelection</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkfontbutton.signal.font-set.html" title="font-set"><link rel="next" href="gtk.gtkfontselection.constructor.html" title="GtkFontSelection Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkfontbutton.signal.font-set.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkFontSelection</span></th><td width="20%" align="right"> <a href="gtk.gtkfontselection.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkfontselection"></a><h2 class="title"><span dir="ltr">GtkFontSelection</span></h2><p><blockquote>
+   A widget for selecting a font from a list of available fonts.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkbox.html">GtkBox</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkvbox.html">GtkVBox</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkfontselection.html">GtkFontSelection</a></span><br></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    The GtkFontSelection widget lists the available fonts, styles and
+    sizes, allowing the user to select a font. It is used in the
+    <span dir="ltr"><a href="gtk.gtkfontselectiondialog.html">GtkFontSelectionDialog</a></span> widget to provide a
+    dialog box for selecting fonts.
+   </p>
+   <p>
+    To set the font which is initially selected, use
+    <span dir="ltr"><a href="gtk.gtkfontselection.method.set_font_name.html">set_font_name()</a></span> .
+   </p>
+   <p>
+    To get the selected font use
+    <span dir="ltr"><a href="gtk.gtkfontselection.method.get_font_name.html">get_font_name()</a></span> .
+   </p>
+   <p>
+    To change the text which is shown in the preview area, use
+    <span dir="ltr"><a href="gtk.gtkfontselection.method.set_preview_text.html">set_preview_text()</a></span> .
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp65894656"><p></p><a name="idp65894656"></a> <span dir="ltr"><a href="gtk.gtkfontselection.constructor.html">GtkFontSelection</a></span> ();</div></p> --
+    Creates a new font selection widget.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkfontselection.method.get_font.html">get_font()</a></span> </dt><dd> 
+    DEPRECATED Returns the selected font.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfontselection.method.get_font_name.html">get_font_name()</a></span> </dt><dd> 
+    Gets the currently-selected font name.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfontselection.method.get_preview_text.html">get_preview_text()</a></span> </dt><dd> 
+    Gets the text displayed in the preview area.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfontselection.method.set_font_name.html">set_font_name()</a></span> </dt><dd> 
+    Sets the currently-selected font.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfontselection.method.set_preview_text.html">set_preview_text()</a></span> </dt><dd> 
+    Sets the text displayed in the preview area.
+   </dd></blockquote></div><h3>Properties</h3><p>Use get_property and set_property methods to access these.</p><blockquote><dt><span dir="ltr"><a href="gtk.gtkfontselection.property.font.html">font</a></span>:</dt><dd> 
+    The GdkFont that is currently selected.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfontselection.property.font-name.html">font-name</a></span>:</dt><dd> 
+    The string that represents this font.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfontselection.property.preview-text.html">preview-text</a></span>:</dt><dd> 
+    The text to display in order to demonstrate the selected font.
+   </dd></blockquote></p></div>
+  
+ 
+  
+
+  
+
+  
+
+  
+
+  
+ 
+  
+
+  
+
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkfontbutton.signal.font-set.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkfontselection.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">font-set</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkFontSelection</span> Constructor</td></tr></table></div></body></html>

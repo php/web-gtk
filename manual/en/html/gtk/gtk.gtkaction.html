@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkAction</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkaccessible.method.connect_widget_destroyed.html" title="GtkAccessible::connect_widget_destroyed"><link rel="next" href="gtk.gtkaction.constructor.html" title="GtkAction Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkaccessible.method.connect_widget_destroyed.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkAction</span></th><td width="20%" align="right"> <a href="gtk.gtkaction.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkaction"></a><h2 class="title"><span dir="ltr">GtkAction</span></h2><p><blockquote>
+    An action which can be triggered by a menu or toolbar item.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkaction.html">GtkAction</a></span><br></div></blockquote></p><p><h3>Direct Subclasses</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="gtk.gtktoggleaction.html">GtkToggleAction</a></span></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    Actions are basically some operation that you want the user to perform.
+    Hence, actions are usually linked to some event that triggers it. Each 
+    action provides methods to create icons, menu items and toolbar items that 
+    represent itself.
+   </p>
+   <p>
+    <span dir="ltr"><a href="gtk.gtkaction.html">GtkAction</a></span> allows you to create such actions, use 
+    methods to represent it, and actually perform that action when the event 
+    occurs. The following may be associated with an action:
+     <div class="itemizedlist"><ul><li><a name="idp55155760"></a>A name (This is not transalated and is for internal use of the 
+      programmer)</li><li><a name="idp55156240"></a>A label (Translated and displayed on the screen)</li><li><a name="idp55156624"></a>An accelerator (The "shortcut-key" that triggers the action)
+      </li><li><a name="idp55157088"></a>Whether or not the label indicates a stock ID</li><li><a name="idp55157536"></a>A tooltip (Translated and displyed on mouse over)</li><li><a name="idp55157984"></a>A toolbar label (Translated and shorter than a label)
+      </li><li><a name="idp55158448"></a>The Callback (Function that specifies the action to be 
+      performed</li></ul></div>
+    The action will also have certain state information attached to it:
+     <div class="itemizedlist"><ul><li><a name="idp55159392"></a>Visible (Show or Hide the action)</li><li><a name="idp55159824"></a>Sensitive (Enable or Disable the action)</li></ul></div>
+   </p>
+   <p>
+    Each action may have one or more proxies, such as menu items, toolbar 
+    buttons or other such proxy widgets. Proxies basically mirror the state
+    of the action (text label, tooltip, icon, visible etc.) and should change 
+    when the action's state changes. When the proxy is activated, it should 
+    activate its action (through the associated callback).
+   </p>
+   <p>
+    See also:
+    <span dir="ltr"><a href="gtk.gtktoggleaction.html">GtkToggleAction</a></span> and
+    <span dir="ltr"><a href="gtk.gtkradioaction.html">GtkRadioAction</a></span>.
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp55163888"><p></p><a name="idp55163888"></a><span dir="ltr"><a href="gtk.gtkaction.constructor.html">GtkAction</a></span> (string <i><tt>name</tt></i>, string <i><tt>label</tt></i>, string <i><tt>tooltip</tt></i>, string <i><tt>stock_id</tt></i>);</div></p> --
+    Creates an action associated to the various parameters.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkaction.method.activate.html">activate()</a></span> </dt><dd> 
+    Emits "activate" signal on specified action.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaction.method.block_activate_from.html">block_activate_from()</a></span> </dt><dd> 
+    Disables calls to the <span dir="ltr"><a href="gtk.gtkaction.method.activate.html">activate()</a></span>  
+    method.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaction.method.connect_accelerator.html">connect_accelerator()</a></span> </dt><dd> 
+    Installs the accelerator for the specified action.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaction.method.connect_proxy.html">connect_proxy()</a></span> </dt><dd> 
+    Connects a widget to an action object as a proxy
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaction.method.create_icon.html">create_icon()</a></span> </dt><dd> 
+    Creates an icon associated with the specified action.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaction.method.create_menu_item.html">create_menu_item()</a></span> </dt><dd> 
+    Creates a menu item widget that proxies for the given action.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaction.method.create_tool_item.html">create_tool_item()</a></span> </dt><dd> 
+    Creates a toolbar item widget that proxies for the given action.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaction.method.disconnect_accelerator.html">disconnect_accelerator()</a></span> </dt><dd> 
+    Uninstalls the accelerator for the specified action.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaction.method.disconnect_proxy.html">disconnect_proxy()</a></span> </dt><dd> 
+    Disconnects a proxy widget from an action.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaction.method.get_accel_path.html">get_accel_path()</a></span> </dt><dd> 
+    Returns the accelerator path for the specified action
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaction.method.get_name.html">get_name()</a></span> </dt><dd> 
+    Returns the name of the specified action.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaction.method.get_sensitive.html">get_sensitive()</a></span> </dt><dd> 
+    Returns current sensitive state
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaction.method.get_visible.html">get_visible()</a></span> </dt><dd> 
+    Returns current state of visibility
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaction.method.is_sensitive.html">is_sensitive()</a></span> </dt><dd> 
+    Identifies if action is currently sensitive
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaction.method.is_visible.html">is_visible()</a></span> </dt><dd> 
+    Identifies if action is currently visible
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaction.method.set_accel_group.html">set_accel_group()</a></span> </dt><dd> 
+    Sets the <span dir="ltr"><a href="gtk.gtkaccelgroup.html">GtkAccelGroup</a></span> in which the accelerator for
+    this action will be installed.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaction.method.set_accel_path.html">set_accel_path()</a></span> </dt><dd> 
+    Sets the accel path for the specified action.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaction.method.set_sensitive.html">set_sensitive()</a></span> </dt><dd> 
+    Sets sensitive state for the action
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaction.method.set_visible.html">set_visible()</a></span> </dt><dd> 
+    Sets visible state for the action
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaction.method.unblock_activate_from.html">unblock_activate_from()</a></span> </dt><dd> 
+    Re-enables calls to the <span dir="ltr"><a href="gtk.gtkaction.method.activate.html">activate()</a></span> 
+   </dd></blockquote></div><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtkaction.signal.activate.html">activate</a>"</span></dt><dd> 
+    Emitted when the action is triggered (or activated!)
+   </dd></blockquote></p></div>
+
+  
+
+ 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ 
+
+  
+
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkaccessible.method.connect_widget_destroyed.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkaction.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkAccessible::connect_widget_destroyed</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkAction</span> Constructor</td></tr></table></div></body></html>

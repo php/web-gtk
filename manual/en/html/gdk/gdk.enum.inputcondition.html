@@ -1,0 +1,17 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GdkInputCondition</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gdkenums.html#gdk.gdkenum" title="GDK Enums"><link rel="previous" href="gdk.enum.imagetype.html" title="GdkImageType"><link rel="next" href="gdk.enum.inputsource.html" title="GdkinputSource"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GDK Enums</th></tr><tr><td width="20%" align="left"><a href="gdk.enum.imagetype.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GdkInputCondition</span></th><td width="20%" align="right"> <a href="gdk.enum.inputsource.html">Next</a></td></tr></table><hr></div><a class="enum" name="gdk.enum.inputcondition"></a><h1 class="title">GdkInputCondition</h1><p>
+   <p>
+    A set of bit flags used to specify conditions for which an input 
+    callback will be triggered. The three members of this enumeration 
+    correspond to the readfds, writefds, and exceptfds arguments to 
+    the select system call.
+   </p>
+  </p><table width="100%" cellpadding="2" cellspacing="1"><tr><td width="7%"><h3>Value</h3></td><td width="40%"><h3>Symbolic name</h3></td><td width="52%"><h3>Description</h3></td></tr><tr valign="top"><td>  0</td><td>Gdk::INPUT_READ</td><td>
+    The file descriptor has become available for reading. (Or, as is standard 
+    in Unix, a socket or pipe was closed at the other end; this is the case 
+    if a subsequent read on the file descriptor returns a count of zero.)
+   </td></tr><tr valign="top"><td>  1</td><td>Gdk::INPUT_WRITE</td><td>
+    The file descriptor has become available for writing.
+   </td></tr><tr valign="top"><td>  4</td><td>Gdk::INPUT_EXCEPTION</td><td>
+    An exception was raised on the file descriptor.
+   </td></tr></table><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gdk.enum.imagetype.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gdk.enum.inputsource.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GdkImageType</span> </td><td width="20%" align="center"><a href="../gdkenums.html#gdk.gdkenum">Up</a></td><td width="40%" align="right"> <span dir="ltr">GdkinputSource</span></td></tr></table></div></body></html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkComboBoxEntry</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkcombobox.method.set_wrap_width.html" title="GtkComboBox::set_wrap_width"><link rel="next" href="gtk.gtkcomboboxentry.constructor.html" title="GtkComboBoxEntry Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkcombobox.method.set_wrap_width.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkComboBoxEntry</span></th><td width="20%" align="right"> <a href="gtk.gtkcomboboxentry.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkcomboboxentry"></a><h2 class="title"><span dir="ltr">GtkComboBoxEntry</span></h2><div style="float:right; border:1px solid #000;"><img src="../images/reference/gtk/gtkcomboboxentry.png"></div><p><blockquote>
+   A text entry box with a prepopulated drop down list of values.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkbin.html">GtkBin</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcombobox.html">GtkComboBox</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcomboboxentry.html">GtkComboBoxEntry</a></span><br></div></blockquote></p><h3>Implemented Interfaces</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="gtk.gtkcelllayout.html">GtkCellLayout</a></span></div></blockquote><p><h3>Description</h3><blockquote>
+   <p>
+    This widget is similar to a <span dir="ltr"><a href="gtk.gtkcombobox.html">GtkComboBox</a></span> with
+    the exception that the user is allowed to enter a value that is not
+    present in the choice list. It displays the selected value in a
+    <span dir="ltr"><a href="gtk.gtkentry.html">GtkEntry</a></span> so that user can modify an
+    exisiting value, or enter a new one.
+   </p>
+   <p>
+    Like, the <span dir="ltr"><a href="gtk.gtkcombobox.html">GtkComboBox</a></span>, this widget may have
+    an underlying model, or use the convenient
+    new_text
+    constructor. If you use a model, your model must always have a
+    text column that can be set by the
+    <span dir="ltr"><a href="gtk.gtkcomboboxentry.method.set_text_column.html">set_text_column()</a></span> 
+    function.
+   </p>
+   <p>
+    You may retrieve the text from the entry via the
+    get_active_text
+    function.
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp61116912"><p></p><a name="idp61116912"></a> <span dir="ltr"><a href="gtk.gtkcomboboxentry.constructor.html">GtkComboBoxEntry</a></span> ([<span dir="ltr"><a href="gtk.gtktreemodel.html">GtkTreeModel</a></span><i><tt>model = null</tt></i>]);</div></p> --
+    Create a new <span dir="ltr"><a href="gtk.gtkcomboboxentry.html">GtkComboBoxEntry</a></span> widget.
+   <br><br><p><div class="funcsynopsis" id="idp61125120"><p></p><a name="idp61125120"></a> <span dir="ltr"><a href="gtk.gtkcomboboxentry.constructor.new_text.html">GtkComboBoxEntry::new_text</a></span> ();</div></p> --
+    Convenience constructor to create a
+    <span dir="ltr"><a href="gtk.gtkcomboboxentry.html">GtkComboBoxEntry</a></span> without creating a model.
+   <br><br><p><div class="funcsynopsis" id="idp61134368"><p></p><a name="idp61134368"></a> <span dir="ltr"><a href="gtk.gtkcomboboxentry.constructor.new_with_model.html">GtkComboBoxEntry::new_with_model</a></span> (<i><tt>model</tt></i>, <i><tt>text_column</tt></i>);</div></p> --
+
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkcomboboxentry.method.get_text_column.html">get_text_column()</a></span> </dt><dd> 
+    Return the column which the <span dir="ltr"><a href="gtk.gtkentry.html">GtkEntry</a></span> uses
+    to display the string choices.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcomboboxentry.method.set_text_column.html">set_text_column()</a></span> </dt><dd> 
+    Set the model column which the <span dir="ltr"><a href="gtk.gtkentry.html">GtkEntry</a></span>
+    must use to display the string choices.
+   </dd></blockquote></div></p></div>
+
+  
+
+  
+
+ 
+
+  
+
+  
+
+  
+
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkcombobox.method.set_wrap_width.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkcomboboxentry.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkComboBox::set_wrap_width</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkComboBoxEntry</span> Constructor</td></tr></table></div></body></html>

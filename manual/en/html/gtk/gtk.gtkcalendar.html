@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkCalendar</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkbuttonbox.method.set_layout.html" title="GtkButtonBox::set_layout"><link rel="next" href="gtk.gtkcalendar.constructor.html" title="GtkCalendar Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkbuttonbox.method.set_layout.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkCalendar</span></th><td width="20%" align="right"> <a href="gtk.gtkcalendar.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkcalendar"></a><h2 class="title"><span dir="ltr">GtkCalendar</span></h2><div style="float:right; border:1px solid #000;"><img src="../images/reference/gtk/gtkcalendar.png"></div><p><blockquote>
+   Displays a calendar and allows the user to select a date.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcalendar.html">GtkCalendar</a></span><br></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    A <span dir="ltr"><a href="gtk.gtkcalendar.html">GtkCalendar</a></span> is a widget that displays a
+    calendar as a grid, one month at a time, allowing the user to select a
+    particular date.
+   </p>
+   <p>
+    The month and year currently displayed can be modified using
+    <span dir="ltr"><a href="gtk.gtkcalendar.method.select_month.html">select_month()</a></span> . The exact
+    day to be selected may be modified using
+    <span dir="ltr"><a href="gtk.gtkcalendar.method.select_day.html">select_day()</a></span> .
+   </p>
+   <p>
+    You may place a visual mark on a particular day by using
+    <span dir="ltr"><a href="gtk.gtkcalendar.method.mark_day.html">mark_day()</a></span> . The marker
+    may be removed using
+    <span dir="ltr"><a href="gtk.gtkcalendar.method.unmark_day.html">unmark_day()</a></span> .
+   </p>
+   <p>
+    The visual style of the calendar may be modified comprehensively using
+    <span dir="ltr"><a href="gtk.gtkcalendar.method.set_display_options.html">set_display_options()</a></span> . Of course,
+    the whole purpose of creating the calendar itself is to retrieve the
+    input from the user! You may use
+    <span dir="ltr"><a href="gtk.gtkcalendar.method.get_date.html">get_date()</a></span>  to retrieve the date
+    selected by the user.
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp57097888"><p></p><a name="idp57097888"></a> <span dir="ltr"><a href="gtk.gtkcalendar.constructor.html">GtkCalendar</a></span> ();</div></p> --
+    Creates a calender widget.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkcalendar.method.clear_marks.html">clear_marks()</a></span> </dt><dd> 
+    Removes all visual markers.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcalendar.method.display_options.html">display_options()</a></span> </dt><dd> 
+    DEPRECATED. Sets display options for the calendar.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcalendar.method.freeze.html">freeze()</a></span> </dt><dd> 
+    Freezes the display prior to allow updates.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcalendar.method.get_date.html">get_date()</a></span> </dt><dd> 
+    Returns the currently selected date as an indexed array containing the year, the month and the day.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcalendar.method.get_display_options.html">get_display_options()</a></span> </dt><dd> 
+    Returns the current calendar display options.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcalendar.method.mark_day.html">mark_day()</a></span> </dt><dd> 
+    Places a visual marker on the given day.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcalendar.method.select_day.html">select_day()</a></span> </dt><dd> 
+    Determines the day to be selected.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcalendar.method.select_month.html">select_month()</a></span> </dt><dd> 
+    Determines the month and year to be selected.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcalendar.method.set_display_options.html">set_display_options()</a></span> </dt><dd> 
+    Sets the display options of the calendar.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcalendar.method.thaw.html">thaw()</a></span> </dt><dd> 
+    Thaws the display following freeze.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcalendar.method.unmark_day.html">unmark_day()</a></span> </dt><dd> 
+    Removes the visual marker set on a given day.
+   </dd></blockquote></div><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtkcalendar.signal.day-selected.html">day-selected</a>"</span></dt><dd> 
+    Emitted when the given day is selected.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkcalendar.signal.day-selected-double-click.html">day-selected-double-click</a>"</span></dt><dd> 
+    Emitted when the given day is clicked on twice.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkcalendar.signal.month-changed.html">month-changed</a>"</span></dt><dd> 
+    Emitted when the user attempts to change the current month.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkcalendar.signal.next-month.html">next-month</a>"</span></dt><dd> 
+    Emitted when the user chooses to go forward by one month.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkcalendar.signal.next-year.html">next-year</a>"</span></dt><dd> 
+    Emitted when the user chooses to go forward by one year.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkcalendar.signal.prev-month.html">prev-month</a>"</span></dt><dd> 
+    Emitted when the user chooses to go backward by one month.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkcalendar.signal.prev-year.html">prev-year</a>"</span></dt><dd> 
+    Emitted when the user chooses to go backward by one year.
+   </dd></blockquote></p></div>
+
+  
+
+ 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkbuttonbox.method.set_layout.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkcalendar.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkButtonBox::set_layout</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkCalendar</span> Constructor</td></tr></table></div></body></html>

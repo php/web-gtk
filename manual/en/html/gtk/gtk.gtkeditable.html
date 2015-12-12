@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkEditable</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkdrawingarea.method.size.html" title="GtkDrawingArea::size"><link rel="next" href="gtk.gtkeditable.method.copy_clipboard.html" title="GtkEditable::copy_clipboard"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkdrawingarea.method.size.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkEditable</span></th><td width="20%" align="right"> <a href="gtk.gtkeditable.method.copy_clipboard.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkeditable"></a><h2 class="title"><span dir="ltr">GtkEditable</span></h2><p><blockquote>
+   Interface for text-editing widgets.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   GInterface<br>
+`--
+   <span dir="ltr"><a href="gtk.gtkeditable.html">GtkEditable</a></span><br></div></blockquote></p><h3>Implemented by</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="gtk.gtkentry.html">GtkEntry</a></span>, <span dir="ltr"><a href="gtk.gtkoldeditable.html">GtkOldEditable</a></span>, <span dir="ltr"><a href="gtk.gtkspinbutton.html">GtkSpinButton</a></span>, <span dir="ltr"><a href="../sexy.sexyspellentry.html">SexySpellEntry</a></span></div></blockquote><p><h3>Description</h3><blockquote><strong>This is an interface and cannot be instantiated directly.</strong></blockquote><blockquote>
+   <p>
+    The GtkEditable interface is an interface which should be implemented
+    by text editing widgets, such as <span dir="ltr"><a href="gtk.gtkentry.html">GtkEntry</a></span> and
+    GtkText. It contains functions for generically
+    manipulating an editable widget, a large number of action signals used
+    for key bindings, and several signals that an application can connect
+    to to modify the behavior of a widget.
+   </p>
+   <p>
+    As an example of the latter usage, by connecting the following handler
+    to <span dir="ltr">"<a href="gtk.gtkeditable.signal.insert-text.html">insert-text</a>"</span>,
+    an application can convert all entry into a widget into uppercase.
+   </p>
+  </blockquote></p><p><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkeditable.method.copy_clipboard.html">copy_clipboard()</a></span> </dt><dd> 
+    Copy the current selection into clipboard.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkeditable.method.cut_clipboard.html">cut_clipboard()</a></span> </dt><dd> 
+    Copy the current selection into clipboard &amp; delete.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkeditable.method.delete_selection.html">delete_selection()</a></span> </dt><dd> 
+    Deletes the current contents of the selection.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkeditable.method.delete_text.html">delete_text()</a></span> </dt><dd> 
+    Deletes a sequence of characters.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkeditable.method.get_chars.html">get_chars()</a></span> </dt><dd> 
+    Retrieves a sequence of characters.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkeditable.method.get_editable.html">get_editable()</a></span> </dt><dd> 
+    If the text can be changed.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkeditable.method.get_position.html">get_position()</a></span> </dt><dd> 
+    Retrieves the current cursor position.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkeditable.method.get_selection_bounds.html">get_selection_bounds()</a></span> </dt><dd> 
+    Gets the current selection bounds.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkeditable.method.insert_text.html">insert_text()</a></span> </dt><dd> 
+    Inserts text at a given position.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkeditable.method.paste_clipboard.html">paste_clipboard()</a></span> </dt><dd> 
+    Paste the clipboard contents at the current cursor position.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkeditable.method.select_region.html">select_region()</a></span> </dt><dd> 
+    Selects a part of the text.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkeditable.method.set_editable.html">set_editable()</a></span> </dt><dd> 
+    If the user can edit the text in the editable widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkeditable.method.set_position.html">set_position()</a></span> </dt><dd> 
+    Sets the cursor position.
+   </dd></blockquote></div><h3>Properties</h3><p>Use get_property and set_property methods to access these.</p><blockquote><dt><span dir="ltr"><a href="gtk.gtkeditable.property.editable.html">editable</a></span>:</dt><dd> 
+    Whether or not the widget is editable by the user.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkeditable.property.selection_start.html">selection_start</a></span>:</dt><dd> 
+    The starting position of the selected characters in the widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkeditable.property.selection_end.html">selection_end</a></span>:</dt><dd> 
+    The end position of the selected characters in the widget.
+   </dd></blockquote><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtkeditable.signal.changed.html">changed</a>"</span></dt><dd> 
+    Indicates that the user has changed the contents of the widget.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkeditable.signal.delete-text.html">delete-text</a>"</span></dt><dd> 
+    Emitted when text is deleted from the widget by the user.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkeditable.signal.insert-text.html">insert-text</a>"</span></dt><dd> 
+    Emitted when text is inserted into the widget by the user.
+   </dd></blockquote></p></div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+ 
+  
+
+
+  
+
+  
+ 
+  
+
+  
+
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkdrawingarea.method.size.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkeditable.method.copy_clipboard.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkDrawingArea::size</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkEditable::copy_clipboard</span></td></tr></table></div></body></html>

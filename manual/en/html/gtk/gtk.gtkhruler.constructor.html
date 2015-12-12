@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkHRuler Constructor</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkhruler.html#idp66654848" title=""><link rel="previous" href="gtk.gtkhruler.html" title="GtkHRuler"><link rel="next" href="gtk.gtkhscale.html" title="GtkHScale"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkhruler.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkHRuler</span> Constructor</th><td width="20%" align="right"> <a href="gtk.gtkhscale.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkhruler.constructor"></a><h2><span dir="ltr">GtkHRuler</span> Constructor</h2><p><div class="funcsynopsis" id="idp66695360"><p></p><a name="idp66695360"></a> <span dir="ltr"><a href="gtk.gtkhruler.constructor.html">GtkHRuler</a></span> ();</div></p>
+    <p>
+     Creates a new horizontal ruler.
+    </p>
+    <div class="example" align="left"><p><a name="idp66698640"></a><b>Example 71. Creating a horizontal ruler</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+$ruler = new GtkHRuler();
+$lower = 0;
+$upper = 300;
+$position = 200;
+$max_size = 300;
+$ruler-&gt;set_range($lower, $upper, $position, $max_size);;
+
+//standard stuff for window creation
+$wnd = new GtkWindow();
+$wnd-&gt;set_border_width(5);
+$wnd-&gt;connect_simple('destroy', array('Gtk', 'main_quit'));
+$wnd-&gt;add($ruler);
+$wnd-&gt;show_all();
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkhruler.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkhscale.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkHRuler</span> </td><td width="20%" align="center"><a href="gtk.gtkhruler.html#idp66654848">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkHScale</span></td></tr></table></div></body></html>

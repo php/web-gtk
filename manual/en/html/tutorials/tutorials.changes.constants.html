@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GTK constants</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="tutorials.changes.html" title="Changes since PHP-GTK 1"><link rel="previous" href="tutorials.changes.references.html" title="Object References (the Ampersand &amp;)"><link rel="next" href="tutorials.changes.connect.html" title="Connecting Signals"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Changes since PHP-GTK 1</th></tr><tr><td width="20%" align="left"><a href="tutorials.changes.references.html">Prev</a> </td><th width="60%" align="center">GTK constants</th><td width="20%" align="right"> <a href="tutorials.changes.connect.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="tutorials.changes.constants"></a><div class="titlepage"><div><h2 class="title" style="clear: all"><a name="tutorials.changes.constants"></a>GTK constants</h2></div></div><p>
+   GTK+ uses a lot of constants. In PHP-GTK 1, they were defined in global
+   scope and you could access them via
+   <table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+echo GTK_WIN_POS_CENTER;
+</pre></td></tr></table>
+   If you execute that code with PHP-GTK 2, the following error will be thrown:
+  </p><table class="screen" dir="ltr"><tr><td><pre class="screen">
+PHP Notice:  Use of undefined constant GTK_WIN_POS_CENTER -
+assumed 'GTK_WIN_POS_CENTER' in /path/to/file.php on line 23
+</pre></td></tr></table><p>
+   The problem is that the original value is no longer used
+   (<span dir="ltr"><tt>GTK_WIN_POS_CENTER</tt></span> resolves to the integer
+   <span dir="ltr"><tt>1</tt></span> in PHP-GTK 1). The string literal itself,
+   <span dir="ltr"><tt>"GTK_WIN_POS_CENTER"</tt></span>, is all PHP-GTK 2 sees
+   - which is likely to break your code.
+  </p><p>
+   Static class constants are supported in PHP 5, so the decision was made
+   not to pollute the global namespace with PHP-GTK constants any more. They
+   are defined in the classes <span dir="ltr"><tt>Gtk</tt></span>, <span dir="ltr"><tt>Gdk</tt></span> and
+   others.
+  </p><p>
+   In short, all you have to do (in most cases) is replace the first underscore
+   <span dir="ltr"><tt>_</tt></span> with two colons: so that
+   <span dir="ltr"><tt>GTK_WIN_POS_CENTER</tt></span> under PHP-GTK 1 becomes
+   <span dir="ltr"><tt>Gtk::WIN_POS_CENTER</tt></span> under PHP-GTK 2. 
+  </p><p>
+   Also, note the new coding style. Only the first letter should be uppercased
+   in <span dir="ltr"><tt>Gtk</tt></span>, <span dir="ltr"><tt>Gdk</tt></span>, <span dir="ltr"><tt>Pango</tt></span>
+   and <span dir="ltr"><tt>Atk</tt></span> constants throughout the officially distributed
+   PHP-GTK 2 documentation and code, reflecting their new status as class
+   constants rather than globals.
+  </p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="tutorials.changes.references.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="tutorials.changes.connect.html">Next</a></td></tr><tr><td width="40%" align="left">Object References (the Ampersand &amp;) </td><td width="20%" align="center"><a href="tutorials.changes.html">Up</a></td><td width="40%" align="right"> Connecting Signals</td></tr></table></div></body></html>

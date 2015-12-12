@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkButtonBox</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkbutton.signal.released.html" title="released"><link rel="next" href="gtk.gtkbuttonbox.method.get_child_ipadding.html" title="GtkButtonBox::get_child_ipadding"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkbutton.signal.released.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkButtonBox</span></th><td width="20%" align="right"> <a href="gtk.gtkbuttonbox.method.get_child_ipadding.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkbuttonbox"></a><h2 class="title"><span dir="ltr">GtkButtonBox</span></h2><p><blockquote>
+   Base class for GtkHButtonBox and GtkVButtonBox.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkbox.html">GtkBox</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkbuttonbox.html">GtkButtonBox</a></span><br></div></blockquote></p><p><h3>Direct Subclasses</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="gtk.gtkhbuttonbox.html">GtkHButtonBox</a></span>, <span dir="ltr"><a href="gtk.gtkvbuttonbox.html">GtkVButtonBox</a></span></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    <span dir="ltr"><a href="gtk.gtkbuttonbox.html">GtkButtonBox</a></span> is a base class underlying
+    <span dir="ltr"><a href="gtk.gtkhbuttonbox.html">GtkHButtonBox</a></span> and 
+    <span dir="ltr"><a href="gtk.gtkvbuttonbox.html">GtkVButtonBox</a></span>, that provides some methods to control
+    the button layout within those widgets. One of this methods is 
+    <span dir="ltr"><a href="gtk.gtkbuttonbox.method.set_layout.html">set_layout()</a></span> , that applies one of 
+    the <span dir="ltr"><a href="gtk.enum.buttonboxstyle.html">GtkButtonBoxStyle</a></span> layouts to the button box. Another
+    one is <span dir="ltr"><a href="gtk.gtkbuttonbox.method.set_child_secondary.html">set_child_secondary()</a></span> , that 
+    causes the child to appear in a secondary group of the button box.
+   </p>
+   <p>
+    The main purpose of <span dir="ltr"><a href="gtk.gtkbuttonbox.html">GtkButtonBox</a></span> is to make sure the
+    children have all the same size. Therefore it ignores the homogeneous 
+    property which it inherited from GtkBox, and always behaves as if 
+    homogeneous was <span dir="ltr"><tt>true</tt></span>.
+   </p>	    
+  </blockquote></p><p><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkbuttonbox.method.get_child_ipadding.html">get_child_ipadding()</a></span> </dt><dd> 
+    DEPRECATED. Gets child's internal padding.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkbuttonbox.method.get_child_secondary.html">get_child_secondary()</a></span> </dt><dd> 
+    Gets whether the child should appear in a secondary group of children.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkbuttonbox.method.get_child_size.html">get_child_size()</a></span> </dt><dd> 
+    DEPRECATED. Returns the current width and height of all child widgets in a
+    button box.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkbuttonbox.method.get_layout.html">get_layout()</a></span> </dt><dd> 
+    Retrieves the method being used to arrange the buttons in a button box.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkbuttonbox.method.set_child_ipadding.html">set_child_ipadding()</a></span> </dt><dd> 
+    DEPRECATED. Changes the amount of internal padding used by all buttons in a
+    given button box.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkbuttonbox.method.set_child_secondary.html">set_child_secondary()</a></span> </dt><dd> 
+    Sets whether child should appear in a secondary group of children.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkbuttonbox.method.set_child_size.html">set_child_size()</a></span> </dt><dd> 
+    DEPRECATED. Sets a new default size for the children of a given button box.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkbuttonbox.method.set_layout.html">set_layout()</a></span> </dt><dd> 
+    Changes the way buttons are arranged in their container.
+   </dd></blockquote></div></p></div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkbutton.signal.released.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkbuttonbox.method.get_child_ipadding.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">released</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkButtonBox::get_child_ipadding</span></td></tr></table></div></body></html>

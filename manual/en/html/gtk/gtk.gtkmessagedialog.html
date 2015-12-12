@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkMessageDialog</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkmenutoolbutton.property.menu.html" title="GtkMenuToolButton::menu"><link rel="next" href="gtk.gtkmessagedialog.constructor.html" title="GtkMessageDialog Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkmenutoolbutton.property.menu.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkMessageDialog</span></th><td width="20%" align="right"> <a href="gtk.gtkmessagedialog.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkmessagedialog"></a><h2 class="title"><span dir="ltr">GtkMessageDialog</span></h2><div style="float:right;"><img src="../images/reference/gtk/gtkmessagedialog.png"></div><p><blockquote>
+   A convenient message window.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkbin.html">GtkBin</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwindow.html">GtkWindow</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkdialog.html">GtkDialog</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkmessagedialog.html">GtkMessageDialog</a></span><br></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    <span dir="ltr"><a href="gtk.gtkmessagedialog.html">GtkMessageDialog</a></span> presents a dialog with an image 
+    representing the type of message (Error, Question, etc.) alongside some
+    message text. It's simply a convenience widget; you could construct the
+    equivalent of <span dir="ltr"><a href="gtk.gtkmessagedialog.html">GtkMessageDialog</a></span> from 
+    <span dir="ltr"><a href="gtk.gtkdialog.html">GtkDialog</a></span> without too much effort, 
+    but <span dir="ltr"><a href="gtk.gtkmessagedialog.html">GtkMessageDialog</a></span> saves typing.
+   </p>
+   <p>
+    The easiest way to do a modal message dialog is to use 
+    <span dir="ltr"><a href="gtk.gtkdialog.method.run.html">run()</a></span> , though you can also pass in the
+    <span dir="ltr"><a href="gtk.enum.dialogflags.html">Gtk::DIALOG_MODAL</a></span> flag,
+    <span dir="ltr"><a href="gtk.gtkdialog.method.run.html">run()</a></span>  automatically makes the dialog
+    modal and waits for the user to respond to it. <span dir="ltr"><a href="gtk.gtkdialog.method.run.html">run()</a></span>  returns when any dialog button is clicked
+    or the dialog is closed.
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp71910720"><p></p><a name="idp71910720"></a> <span dir="ltr"><a href="gtk.gtkmessagedialog.constructor.html">GtkMessageDialog</a></span> (
+      <span dir="ltr"><a href="gtk.gtkwindow.html">GtkWindow</a></span> <i><tt>parent</tt></i>
+     , 
+      <span dir="ltr"><a href="gtk.enum.dialogflags.html">GtkDialogFlags</a></span> <i><tt>flags</tt></i>
+     , 
+      <span dir="ltr"><a href="gtk.enum.messagetype.html">GtkMessageType</a></span> <i><tt>type</tt></i>
+     , 
+      <span dir="ltr"><a href="gtk.enum.buttonstype.html">GtkButtonsType</a></span> <i><tt>buttons</tt></i>
+     , string <i><tt>message</tt></i>);</div></p> --
+    Creates a new message dialog.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkmessagedialog.method.set_markup.html">set_markup()</a></span> </dt><dd> 
+    Set pango-marked up text.
+   </dd></blockquote></div><h3>Fields</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkmessagedialog.field.image.html">image</a></span>:</dt><dd> 
+    The image icon widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkmessagedialog.field.label.html">label</a></span>:</dt><dd> 
+    The label containing the text.
+   </dd></blockquote></p></div>
+  
+ 
+
+  
+
+  
+
+  
+
+ 
+
+  
+
+  
+
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkmenutoolbutton.property.menu.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkmessagedialog.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkMenuToolButton::menu</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkMessageDialog</span> Constructor</td></tr></table></div></body></html>

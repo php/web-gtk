@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkTextBuffer::get_text</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtktextbuffer.html#idp78551152" title=""><link rel="previous" href="gtk.gtktextbuffer.method.get_tag_table.html" title="GtkTextBuffer::get_tag_table"><link rel="next" href="gtk.gtktextbuffer.method.insert.html" title="GtkTextBuffer::insert"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtktextbuffer.method.get_tag_table.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkTextBuffer::get_text</span></th><td width="20%" align="right"> <a href="gtk.gtktextbuffer.method.insert.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtktextbuffer.method.get_text"></a><h2><span dir="ltr">GtkTextBuffer::get_text</span></h2><p><div class="funcsynopsis" id="idp78754688"><p></p><a name="idp78754688"></a>string get_text(<span dir="ltr"><a href="gtk.gtktextiter.html">GtkTextIter</a></span> <i><tt>start</tt></i>, <span dir="ltr"><a href="gtk.gtktextiter.html">GtkTextIter</a></span> <i><tt>end</tt></i> [, boolean <i><tt>include_hidden_chars</tt></i>]);</div></p>
+    <p>
+    Returns the text in the specified range (<i><tt>start</tt></i>,
+    <i><tt>end</tt></i>). This method does not return characters
+    representing embedded images, so byte and character indexes
+    into the returned string do not correspond to byte and character
+    indexes into the buffer. Text marked with tags that set the
+    invisibility attribute are excluded if <i><tt>include_hidden_chars</tt></i>
+    is FALSE.
+    </p>
+	<p>Note: If you want to get the full text stored in the <span dir="ltr"><a href="gtk.gtktextbuffer.html">GtkTextBuffer</a></span>, use the <span dir="ltr"><a href="gtk.gtktextbuffer.method.get_start_iter.html">get_start_iter()</a></span>  and <span dir="ltr"><a href="gtk.gtktextbuffer.method.get_end_iter.html">get_end_iter()</a></span>  respectively.</p>
+    <p>
+     See also:
+     <span dir="ltr"><a href="gtk.gtktextbuffer.method.set_text.html">set_text()</a></span> 
+    </p>
+
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtktextbuffer.method.get_tag_table.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtktextbuffer.method.insert.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkTextBuffer::get_tag_table</span> </td><td width="20%" align="center"><a href="gtk.gtktextbuffer.html#idp78551152">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkTextBuffer::insert</span></td></tr></table></div></body></html>

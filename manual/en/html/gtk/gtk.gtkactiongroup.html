@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkActionGroup</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkaction.signal.activate.html" title="activate"><link rel="next" href="gtk.gtkactiongroup.constructor.html" title="GtkActionGroup Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkaction.signal.activate.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkActionGroup</span></th><td width="20%" align="right"> <a href="gtk.gtkactiongroup.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkactiongroup"></a><h2 class="title"><span dir="ltr">GtkActionGroup</span></h2><p><blockquote>
+   A group of action objects.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkactiongroup.html">GtkActionGroup</a></span><br></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    Actions are organised into groups in this manner. An action groups can be
+    understood as a map from action names to <span dir="ltr"><a href="gtk.gtkaction.html">GtkAction</a></span> 
+    objects.
+   </p>
+   <p>
+    All actions that you feel make sense under a partiular context may be 
+    grouped under a single action group. Of course, all actions cannot be 
+    grouped under a single name, you may use multiple action groups for a 
+    particular user interface. In fact, most nontrivial applications will 
+    make use of multiple action groups.
+   </p>
+   <p>
+    As an example, consider an application that edits multiple documents. One 
+    group may hold global actions such as new, about and quit; and another 
+    group can be used to hold actions that are specific to one document, like 
+    save, cut, copy and paste.
+  </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp55504720"><p></p><a name="idp55504720"></a> <span dir="ltr"><a href="gtk.gtkactiongroup.constructor.html">GtkActionGroup</a></span> (string <i><tt>name</tt></i>);</div></p> --
+     Creates a new action group.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkactiongroup.method.add_action.html">add_action()</a></span> </dt><dd> 
+     Adds an action to the action group.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkactiongroup.method.add_action_with_accel.html">add_action_with_accel()</a></span> </dt><dd> 
+     Adds an action to the action group and sets up its accelerator.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkactiongroup.method.get_action.html">get_action()</a></span> </dt><dd> 
+     Looks up an action in a group.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkactiongroup.method.get_name.html">get_name()</a></span> </dt><dd> 
+     Returns the name of the action group.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkactiongroup.method.get_sensitive.html">get_sensitive()</a></span> </dt><dd> 
+    FIXME
+   </dd><dt><span dir="ltr"><a href="gtk.gtkactiongroup.method.get_visible.html">get_visible()</a></span> </dt><dd> 
+    FIXME
+   </dd><dt><span dir="ltr"><a href="gtk.gtkactiongroup.method.remove_action.html">remove_action()</a></span> </dt><dd> 
+     Removes an action object from the action group.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkactiongroup.method.set_sensitive.html">set_sensitive()</a></span> </dt><dd> 
+    FIXME
+   </dd><dt><span dir="ltr"><a href="gtk.gtkactiongroup.method.set_translation_domain.html">set_translation_domain()</a></span> </dt><dd> 
+    FIXME
+   </dd><dt><span dir="ltr"><a href="gtk.gtkactiongroup.method.set_visible.html">set_visible()</a></span> </dt><dd> 
+    FIXME
+   </dd><dt><span dir="ltr"><a href="gtk.gtkactiongroup.method.translate_string.html">translate_string()</a></span> </dt><dd> 
+    FIXME
+   </dd></blockquote></div><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtkactiongroup.signal.connect-proxy.html">connect-proxy</a>"</span></dt><dd> 
+    FIXME
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkactiongroup.signal.disconnect-proxy.html">disconnect-proxy</a>"</span></dt><dd> 
+    FIXME
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkactiongroup.signal.post-activate.html">post-activate</a>"</span></dt><dd> 
+    FIXME
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkactiongroup.signal.pre-activate.html">pre-activate</a>"</span></dt><dd> 
+    FIXME
+   </dd></blockquote></p></div>
+
+  
+
+ 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ 
+
+  
+  
+  
+  
+  
+  
+  
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkaction.signal.activate.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkactiongroup.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">activate</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkActionGroup</span> Constructor</td></tr></table></div></body></html>

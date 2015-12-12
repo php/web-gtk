@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkToolButton</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtktoolbar.property.toolbar_style.html" title="GtkToolbar::toolbar-style"><link rel="next" href="gtk.gtktoolbutton.constructor.html" title="GtkToolButton Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtktoolbar.property.toolbar_style.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkToolButton</span></th><td width="20%" align="right"> <a href="gtk.gtktoolbutton.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtktoolbutton"></a><h2 class="title"><span dir="ltr">GtkToolButton</span></h2><p><blockquote>
+   A GtkToolItem that displays a button.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkbin.html">GtkBin</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtktoolitem.html">GtkToolItem</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtktoolbutton.html">GtkToolButton</a></span><br></div></blockquote></p><p><h3>Direct Subclasses</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="gtk.gtkmenutoolbutton.html">GtkMenuToolButton</a></span>, <span dir="ltr"><a href="gtk.gtktoggletoolbutton.html">GtkToggleToolButton</a></span></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    GtkToolButtons are <span dir="ltr"><a href="gtk.gtktoolitem.html">GtkToolItem</a></span>s containing buttons.
+   </p>
+   <p>
+    The label of a GtkToolButton is determined by the properties
+    label_widget,
+    label,
+    and stock_id.
+    If <span dir="ltr"><tt>label_widget</tt></span> is non-NULL, then that widget is used
+    as the label. Otherwise, if <span dir="ltr"><tt>label</tt></span> is non-NULL, that string
+    is used as the label. Otherwise, if <span dir="ltr"><tt>stock_id</tt></span> is non-NULL,
+    the label is determined by the stock item. Otherwise, the button does not
+    have a label.
+   </p>
+   <p>
+    The icon of a GtkToolButton is determined by the properties 
+    icon_widget and
+    stock_id.
+    If <span dir="ltr"><tt>icon_widget</tt></span> is non-NULL, then that widget is used
+    as the icon. Otherwise, if <span dir="ltr"><tt>stock_id</tt></span> is non-NULL, the
+    icon is determined by the stock item. Otherwise, the button does not have
+    a label.
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp82376160"><p></p><a name="idp82376160"></a> <span dir="ltr"><a href="gtk.gtktoolbutton.constructor.html">GtkToolButton</a></span> ([<span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span> <i><tt>icon_widget = null</tt></i> [, string <i><tt>label = null</tt></i>]]);</div></p> --
+    Creates a new tool button.
+   <br><br><p><div class="funcsynopsis" id="idp82382528"><p></p><a name="idp82382528"></a> <span dir="ltr"><a href="gtk.gtktoolbutton.constructor.new_from_stock.html">GtkToolButton::new_from_stock</a></span> (<span dir="ltr"><a href="gtk.enum.stockitems.html">GtkStockItems</a></span> <i><tt>stock_id</tt></i>);</div></p> --
+    Creates a new tool button based on a stock item.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtktoolbutton.method.get_icon_widget.html">get_icon_widget()</a></span> </dt><dd> 
+    Returns the icon widget used.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktoolbutton.method.get_label.html">get_label()</a></span> </dt><dd> 
+    Returns the buttons label.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktoolbutton.method.get_label_widget.html">get_label_widget()</a></span> </dt><dd> 
+    Returns the label widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktoolbutton.method.get_stock_id.html">get_stock_id()</a></span> </dt><dd> 
+    Returns the stock id.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktoolbutton.method.get_use_underline.html">get_use_underline()</a></span> </dt><dd> 
+    If an underscore indicates the mnemonic.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktoolbutton.method.set_icon_widget.html">set_icon_widget()</a></span> </dt><dd> 
+    Sets the widget to be used as icon.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktoolbutton.method.set_label.html">set_label()</a></span> </dt><dd> 
+    Sets label as the label used for the tool button.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktoolbutton.method.set_label_widget.html">set_label_widget()</a></span> </dt><dd> 
+    Sets the widget used as label.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktoolbutton.method.set_stock_id.html">set_stock_id()</a></span> </dt><dd> 
+    Set the stock item.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktoolbutton.method.set_use_underline.html">set_use_underline()</a></span> </dt><dd> 
+    Sets if an underscore is used as mnemonic indicator.
+   </dd></blockquote></div><h3>Properties</h3><p>Use get_property and set_property methods to access these.</p><blockquote><dt>icon-widget:</dt><dd> 
+    Icon widget to display in the item.
+   </dd><dt>label:</dt><dd> 
+    Text to show in the item.
+   </dd><dt>label-widget:</dt><dd> 
+    Widget to use as the item label.
+   </dd><dt>stock-id:</dt><dd> 
+    The stock icon displayed on the item.
+   </dd><dt>use-underline:</dt><dd> 
+    If an underscore indicates a mnemonic.
+   </dd></blockquote><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtktoolbutton.signal.clicked.html">clicked</a>"</span></dt><dd> 
+    The button has been clicked
+   </dd></blockquote></p></div>
+  
+
+  
+ 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+ 
+  
+
+  
+
+  
+
+  
+
+  
+ 
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtktoolbar.property.toolbar_style.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtktoolbutton.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkToolbar::toolbar-style</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkToolButton</span> Constructor</td></tr></table></div></body></html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkSizeGroup Constructor</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtksizegroup.html#idp76018192" title=""><link rel="previous" href="gtk.gtksizegroup.html" title="GtkSizeGroup"><link rel="next" href="gtk.gtksizegroup.method.add_widget.html" title="GtkSizeGroup::add_widget"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtksizegroup.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkSizeGroup</span> Constructor</th><td width="20%" align="right"> <a href="gtk.gtksizegroup.method.add_widget.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtksizegroup.constructor"></a><h2><span dir="ltr">GtkSizeGroup</span> Constructor</h2><p><div class="funcsynopsis" id="idp76019264"><p></p><a name="idp76019264"></a> <span dir="ltr"><a href="gtk.gtksizegroup.constructor.html">GtkSizeGroup</a></span> (<span dir="ltr"><a href="gtk.enum.sizegroupmode.html">GtkSizeGroupMode</a></span> <i><tt>mode</tt></i>);</div></p>
+    <p>
+     A GtkSizeGroup is not a widget taking up any space, rather
+     providing additional bindings between widgets.
+    </p>
+    <p>
+     At first, create your application as you would do normally:
+     Instantiate widgets, add them to containers and so. After that,
+     create a GtkSizeGroup and add widgets to it with
+     <span dir="ltr"><a href="gtk.gtksizegroup.method.add_widget.html">add_widget()</a></span>  and
+     the widgets will magically have the same size.
+    </p>
+    <div class="example" align="left"><p><a name="idp76024928"></a><b>Example 114. Using a GtkSizeGroup</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//we create two buttons:
+// one has two lines, being higher than the second
+$oh = new GtkButton("Oh!\nOh!");
+// the other has a longer text, making it wider
+// than the first
+$longer = new GtkButton('This is a longer text');
+
+$box = new GtkHBox();
+$box-&gt;pack_start($oh);
+$box-&gt;pack_start($longer);
+
+//but GtkSizeGroup saves the day:
+// both buttons get the same height and width!
+$group = new GtkSizeGroup(Gtk::SIZE_GROUP_BOTH);
+$group-&gt;add_widget($oh);
+$group-&gt;add_widget($longer);
+
+$wnd = new GtkWindow();
+$wnd-&gt;set_border_width(10);
+$wnd-&gt;connect_simple('destroy', array('gtk', 'main_quit'));
+$wnd-&gt;add($box);
+$wnd-&gt;show_all();
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtksizegroup.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtksizegroup.method.add_widget.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkSizeGroup</span> </td><td width="20%" align="center"><a href="gtk.gtksizegroup.html#idp76018192">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkSizeGroup::add_widget</span></td></tr></table></div></body></html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkTreeModel</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtktreedragsource.method.row_draggable.html" title="GtkTreeDragSource::row_draggable"><link rel="next" href="gtk.gtktreemodel.method.foreach.html" title="GtkTreeModel::foreach"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtktreedragsource.method.row_draggable.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkTreeModel</span></th><td width="20%" align="right"> <a href="gtk.gtktreemodel.method.foreach.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtktreemodel"></a><h2 class="title"><span dir="ltr">GtkTreeModel</span></h2><p><blockquote>
+   The tree interface used by <span dir="ltr"><a href="gtk.gtktreeview.html">GtkTreeView</a></span>.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   GInterface<br>
+`--
+   <span dir="ltr"><a href="gtk.gtktreemodel.html">GtkTreeModel</a></span><br></div></blockquote></p><h3>Implemented by</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="gtk.gtkliststore.html">GtkListStore</a></span>, <span dir="ltr"><a href="gtk.gtktreemodelfilter.html">GtkTreeModelFilter</a></span>, <span dir="ltr"><a href="gtk.gtktreemodelsort.html">GtkTreeModelSort</a></span>, <span dir="ltr"><a href="gtk.gtktreestore.html">GtkTreeStore</a></span></div></blockquote><p><h3>Description</h3><blockquote><strong>This is an interface and cannot be instantiated directly.</strong></blockquote><blockquote>
+   <p>
+    The GtkTreeModel interface defines a generic tree interface for 
+    use by the <span dir="ltr"><a href="gtk.gtktreeview.html">GtkTreeView</a></span> widget. It is an abstract 
+    interface, and is designed to be usable with any appropriate data 
+    structure. The programmer just has to implement this interface on their
+    own data type for it to be viewable by a <span dir="ltr"><a href="gtk.gtktreeview.html">GtkTreeView</a></span>
+    widget.
+   </p>
+  </blockquote></p><p><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtktreemodel.method.foreach.html">foreach()</a></span> </dt><dd> 
+    Loop through all rows.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreemodel.method.get_column_type.html">get_column_type()</a></span> </dt><dd> 
+    Returns the type of the column.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreemodel.method.get_flags.html">get_flags()</a></span> </dt><dd> 
+    Returns a set of flags supported by the interface.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreemodel.method.get_iter.html">get_iter()</a></span> </dt><dd> 
+    Returns an iter for the given GtkTreePath.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreemodel.method.get_iter_first.html">get_iter_first()</a></span> </dt><dd> 
+    Returns an iter to the first row.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreemodel.method.get_iter_root.html">get_iter_root()</a></span> </dt><dd> 
+    DEPRECATED. Alias for get_iter_first().
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreemodel.method.get_iter_from_string.html">get_iter_from_string()</a></span> </dt><dd> 
+    Convert the given string path to a valid path and return the iter.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreemodel.method.get_n_columns.html">get_n_columns()</a></span> </dt><dd> 
+    Returns the number of columns used by tree_model.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreemodel.method.get_path.html">get_path()</a></span> </dt><dd> 
+    Returns a path to the given iterator.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreemodel.method.get_string_from_iter.html">get_string_from_iter()</a></span> </dt><dd> 
+    Generates a string representation of the iter.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreemodel.method.get_value.html">get_value()</a></span> </dt><dd> 
+    Returns the value of a column of the given iter.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreemodel.method.iter_children.html">iter_children()</a></span> </dt><dd> 
+    Returns iter for the first child row.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreemodel.method.iter_has_child.html">iter_has_child()</a></span> </dt><dd> 
+    If an iterator has one or more children.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreemodel.method.iter_n_children.html">iter_n_children()</a></span> </dt><dd> 
+    Returns the number of childen <i><tt>iter</tt></i> has.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreemodel.method.iter_next.html">iter_next()</a></span> </dt><dd> 
+    Next iterator on the same level.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreemodel.method.iter_nth_child.html">iter_nth_child()</a></span> </dt><dd> 
+    FIXME: behavior needs to be changed
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreemodel.method.iter_parent.html">iter_parent()</a></span> </dt><dd> 
+    FIXME: behavior needs to be changed
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreemodel.method.ref_node.html">ref_node()</a></span> </dt><dd> 
+    FIXME
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreemodel.method.row_changed.html">row_changed()</a></span> </dt><dd> 
+    Emits the "row_changed" signal.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreemodel.method.row_deleted.html">row_deleted()</a></span> </dt><dd> 
+    Emits the "row_deleted" signal.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreemodel.method.row_has_child_toggled.html">row_has_child_toggled()</a></span> </dt><dd> 
+    Emits the "row_has_child_toggled" signal.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreemodel.method.row_inserted.html">row_inserted()</a></span> </dt><dd> 
+    Emits the "row_inserted" signal.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreemodel.method.unref_node.html">unref_node()</a></span> </dt><dd> 
+    FIXME
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreemodel.method.get.html">get()</a></span> </dt><dd> 
+
+   </dd></blockquote></div><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtktreemodel.signal.row-changed.html">row-changed</a>"</span></dt><dd> 
+    Row has been changed in the model.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtktreemodel.signal.row-deleted.html">row-deleted</a>"</span></dt><dd> 
+    Row has been deleted.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtktreemodel.signal.row-has-child-toggled.html">row-has-child-toggled</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtktreemodel.signal.row-inserted.html">row-inserted</a>"</span></dt><dd> 
+    The row has been inserted.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtktreemodel.signal.rows-reordered.html">rows-reordered</a>"</span></dt><dd> 
+    Rows have been reordered.
+   </dd></blockquote></p></div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ 
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtktreedragsource.method.row_draggable.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtktreemodel.method.foreach.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkTreeDragSource::row_draggable</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkTreeModel::foreach</span></td></tr></table></div></body></html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkLabel::set_mnemonic_widget</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtklabel.html#idp69134576" title=""><link rel="previous" href="gtk.gtklabel.method.set_max_width_chars.html" title="GtkLabel::set_max_width_chars"><link rel="next" href="gtk.gtklabel.method.set_pattern.html" title="GtkLabel::set_pattern"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtklabel.method.set_max_width_chars.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkLabel::set_mnemonic_widget</span></th><td width="20%" align="right"> <a href="gtk.gtklabel.method.set_pattern.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtklabel.method.set_mnemonic_widget"></a><h2><span dir="ltr">GtkLabel::set_mnemonic_widget</span></h2><p><div class="funcsynopsis" id="idp69413040"><p></p><a name="idp69413040"></a>void set_mnemonic_widget(GtkWidget <i><tt>widget</tt></i>);</div></p>
+    <p>
+     If the label has been set so that it has an mnemonic key (using 
+     <span dir="ltr"><a href="gtk.gtklabel.method.set_markup_with_mnemonic.html">set_markup_with_mnemonic()</a></span> ,
+     <span dir="ltr"><a href="gtk.gtklabel.method.set_text_with_mnemonic.html">set_text_with_mnemonic()</a></span>  or
+     the constructor)
+     the label can be associated with a widget that is the target of 
+     the mnemonic. When the label is inside a widget 
+     (like a <span dir="ltr"><a href="gtk.gtkbutton.html">GtkButton</a></span> or a
+     <span dir="ltr"><a href="gtk.gtknotebook.html">GtkNotebook</a></span> tab) it is automatically associated
+     with the correct widget, but sometimes (i.e. when the target is a
+     <span dir="ltr"><a href="gtk.gtkentry.html">GtkEntry</a></span> next to the label) you need to set it
+     explicitly using this function.
+    </p>
+    <p>
+     The target widget will be accelerated by emitting mnemonic_activate on it. The default
+     handler for this signal will activate the widget if there are no mnemonic
+     collisions and toggle focus between the colliding widgets otherwise.
+    </p>
+    <p>
+     <div class="example" align="left"><p><a name="idp69422192"></a><b>Example 90. Setting the Mnemonic Widget of a GtkLabel</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+// A callback for the button.
+function buttonActivated()
+{
+	echo "The button was activated\n";
+}
+
+// Create a window to hold the label.
+$window = new GtkWindow();
+
+// Set up the window to close cleanly.
+$window-&gt;connect_simple('destroy', array('Gtk', 'main_quit'));
+
+// Create a label.
+$label = new GtkLabel('_Exampel Label', true);
+
+// Create the button.
+$button = new GtkButton('Use the label mnemonic.');
+
+// Set up a mnemonic-activate callback for the button.
+$button-&gt;connect_simple('mnemonic-activate', 'buttonActivated');
+
+// Set the button as the label's mnemonic widget.
+$label-&gt;set_mnemonic_widget($button);
+
+// Create a box for the label and button.
+$vBox = new GtkVBox();
+
+// Add the label and button to the box.
+$vBox-&gt;pack_start($label);
+$vBox-&gt;pack_start($button);
+
+// Add the label to the window.
+$window-&gt;add($vBox);
+
+// Show the window and start the main loop.
+$window-&gt;show_all();
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+     This code will produce the window shown below. If the button is clicked
+     nothing will happen. However, if the user hits <span dir="ltr"><tt>Alt+e</tt></span>
+     the <span dir="ltr"><tt>buttonActivated</tt></span> <a href="../appendix.glossary.html#appendix.glossary.c.callback">callback</a> will be called.
+     <p><img src="../images/reference/gtk/gtklabel/set_mnemonic_widget.png"></p>
+    </p>
+    <p>
+     See also:
+     <span dir="ltr"><a href="gtk.gtklabel.method.get_mnemonic_widget.html">get_mnemonic_widget()</a></span> 
+    </p>
+
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtklabel.method.set_max_width_chars.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtklabel.method.set_pattern.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkLabel::set_max_width_chars</span> </td><td width="20%" align="center"><a href="gtk.gtklabel.html#idp69134576">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkLabel::set_pattern</span></td></tr></table></div></body></html>
