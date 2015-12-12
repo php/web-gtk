@@ -53,7 +53,7 @@ echo"<header class=\"w3-row \">
   <button class=\"w3-btn\">".$menu[2]."</button>
   <div class=\"w3-dropdown-content w3-border w3-black\">
   <a href=\"documentation.php?language=".$_SESSION['link']."\">$menu[1]</a>
-  <a href=\"documentation.php?language=".$_SESSION['link']."\">On-line</a>
+  <a href=\"manual/en/html/index.html\" target=\"_blank\">On-line</a>
   </div>
   </div>
   <a href=\"null.php?language=".$_SESSION['link']."\">$menu[3]</a>
