@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkComboBox::set_row_separator_func</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkcombobox.html#idp60617232" title=""><link rel="previous" href="gtk.gtkcombobox.method.set_model.html" title="GtkComboBox::set_model"><link rel="next" href="gtk.gtkcombobox.method.set_row_span_column.html" title="GtkComboBox::set_row_span_column"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkcombobox.method.set_model.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkComboBox::set_row_separator_func</span></th><td width="20%" align="right"> <a href="gtk.gtkcombobox.method.set_row_span_column.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkcombobox.method.set_row_separator_func"></a><h2><span dir="ltr">GtkComboBox::set_row_separator_func</span></h2><p><div class="funcsynopsis" id="idp60796928"><p></p><a name="idp60796928"></a>void set_row_separator_func(<i><tt>callback</tt></i>);</div></p>
+    <p>
+        <span dir="ltr"><tt>func</tt></span> : a function or null
+    </p>
+    <p>
+        <span dir="ltr"><tt>data</tt></span> : user data to pass to func
+    </p>
+    <p>
+        The <span dir="ltr"><a href="gtk.gtkcombobox.method.set_row_separator_func.html">set_row_separator_func()</a></span>  method sets
+        the row separator function to func, which is used to determine if a row should
+        be drawn as a separator. If func is null, no separators are drawn. This is the default value.
+    </p>
+    <p>
+        The signature of func is:
+    </p>
+    <p>
+        <span dir="ltr"><tt>def func(model, iter, user_data):</tt></span>
+    </p>
+    <p>
+        where model is the <span dir="ltr"><a href="gtk.gtktreemodel.html">GtkTreeModel</a></span> used by the combo box, iter is a
+        <span dir="ltr"><a href="gtk.gtktreeiter.html">GtkTreeIter</a></span> pointing at a row in model and user_data is data.
+        func returns <span dir="ltr"><tt>true</tt></span> if the row is a separator. A common way to implement func is
+        to have a boolean column in model, that indicates if the row is a separator.
+    </p>
+    <p>
+     See also:
+     get_row_separator_func
+    </p>
+
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkcombobox.method.set_model.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkcombobox.method.set_row_span_column.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkComboBox::set_model</span> </td><td width="20%" align="center"><a href="gtk.gtkcombobox.html#idp60617232">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkComboBox::set_row_span_column</span></td></tr></table></div></body></html>

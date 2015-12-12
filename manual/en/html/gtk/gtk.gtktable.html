@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkTable</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkstyle.field.ythickness.html" title="GtkStyle::ythickness"><link rel="next" href="gtk.gtktable.constructor.html" title="GtkTable Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkstyle.field.ythickness.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkTable</span></th><td width="20%" align="right"> <a href="gtk.gtktable.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtktable"></a><h2 class="title"><span dir="ltr">GtkTable</span></h2><p><blockquote>
+   Container that provides a two-dimensional grid for packing widgets.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtktable.html">GtkTable</a></span><br></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    <span dir="ltr"><a href="gtk.gtktable.html">GtkTable</a></span> is a container that provides a simple way
+    of aligning many widgets in a window, both horizontally and vertically. 
+    Although not as flexible as <span dir="ltr"><a href="gtk.gtkfixed.html">GtkFixed</a></span>, it's easier to
+    use and allows for relative positioning, by simply defining the number of 
+    rows and columns. The resulting cells have a structure similar to that of a
+    <span dir="ltr"><a href="gtk.gtkbox.html">GtkBox</a></span>, allowing a single child per cell, though
+    the child can span along multiple rows or columns.
+   </p>
+   <p>
+    Adding widgets to a <span dir="ltr"><a href="gtk.gtktable.html">GtkTable</a></span> is mainly done through
+    the <span dir="ltr"><a href="gtk.gtktable.method.attach.html">attach()</a></span>  method, that provides a 
+    great deal of control over the way the child should be placed within the 
+    table. The <span dir="ltr"><a href="gtk.gtktable.method.attach_defaults.html">attach_defaults()</a></span>  and 
+    <span dir="ltr"><a href="gtk.gtkcontainer.method.add.html">add()</a></span>  methods are of lesser 
+    interest. To remove a widget from the table, you can use
+    <span dir="ltr"><a href="gtk.gtkcontainer.method.remove.html">remove()</a></span> .
+   </p>
+   <p>
+    Accessing child widgets placed within a <span dir="ltr"><a href="gtk.gtktable.html">GtkTable</a></span> can
+    be done through the <span dir="ltr"><a href="gtk.gtkcontainer.method.get_children.html">get_children()</a></span>  
+    method, inherited from <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span>. It returns a
+    list of the container's children. 
+   </p>
+   <p>
+    See also:
+    <span dir="ltr"><a href="gtk.gtkvbox.html">GtkVBox</a></span>,
+    <span dir="ltr"><a href="gtk.gtkhbox.html">GtkHBox</a></span>,
+    <span dir="ltr"><a href="gtk.gtkfixed.html">GtkFixed</a></span>.
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp78181280"><p></p><a name="idp78181280"></a> <span dir="ltr"><a href="gtk.gtktable.constructor.html">GtkTable</a></span> ([int <i><tt>n_rows = 1</tt></i> [, int <i><tt>n_columns = 1</tt></i> [, bool <i><tt>homogeneous = false</tt></i>]]]);</div></p> --
+    Creates a grid for packing widgets in regular patterns.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtktable.method.attach.html">attach()</a></span> </dt><dd> 
+    Adds widgets to a GtkTable.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktable.method.attach_defaults.html">attach_defaults()</a></span> </dt><dd> 
+    Adds widgets to a GtkTable using default options.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktable.method.get_col_spacing.html">get_col_spacing()</a></span> </dt><dd> 
+    Gets the spacing after a given column.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktable.method.get_default_col_spacing.html">get_default_col_spacing()</a></span> </dt><dd> 
+    Gets the default column spacing for the table.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktable.method.get_default_row_spacing.html">get_default_row_spacing()</a></span> </dt><dd> 
+    Gets the default row spacing for the table.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktable.method.get_homogeneous.html">get_homogeneous()</a></span> </dt><dd> 
+    Returns the current value of the <i><tt>homogeneous</tt></i> property.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktable.method.get_row_spacing.html">get_row_spacing()</a></span> </dt><dd> 
+    Gets the amount of space below a given row.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktable.method.resize.html">resize()</a></span> </dt><dd> 
+    Changes the size of a GtkTable after its creation.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktable.method.set_col_spacing.html">set_col_spacing()</a></span> </dt><dd> 
+    Sets the space between a column and the adjacent columns.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktable.method.set_col_spacings.html">set_col_spacings()</a></span> </dt><dd> 
+    Sets the space between every column to the same given value.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktable.method.set_homogeneous.html">set_homogeneous()</a></span> </dt><dd> 
+    Changes the homogenous property of table cells.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktable.method.set_row_spacing.html">set_row_spacing()</a></span> </dt><dd> 
+    Sets the space between a row and the adjacent rows.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktable.method.set_row_spacings.html">set_row_spacings()</a></span> </dt><dd> 
+    Sets the space between every row to the same given value.
+   </dd></blockquote></div></p></div>
+
+  
+
+ 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkstyle.field.ythickness.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtktable.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkStyle::ythickness</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkTable</span> Constructor</td></tr></table></div></body></html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkStatusIcon::position_menu</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkstatusicon.html#idp76800160" title=""><link rel="previous" href="gtk.gtkstatusicon.method.get_visible.html" title="GtkStatusIcon::get_visible"><link rel="next" href="gtk.gtkstatusicon.method.set_blinking.html" title="GtkStatusIcon::set_blinking"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkstatusicon.method.get_visible.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkStatusIcon::position_menu</span></th><td width="20%" align="right"> <a href="gtk.gtkstatusicon.method.set_blinking.html">Next</a></td></tr></table><hr></div><div><a name="gtk.statusicon.method.position_menu"></a><h2><span dir="ltr">GtkStatusIcon::position_menu</span></h2><p><div class="funcsynopsis" id="idp76839712"><p></p><a name="idp76839712"></a>void position_menu([<span dir="ltr"><a href="gtk.gtkmenu.html">GtkMenu</a></span> <i><tt>menu</tt></i> [, <span dir="ltr"><a href="gtk.gtkstatusicon.html">GtkStatusIcon</a></span> <i><tt>statusicon</tt></i>]]);</div></p>
+    <p>
+     Use to position a menu over a <span dir="ltr"><a href="gtk.gtkstatusicon.html">GtkStatusIcon</a></span> object.
+     This function makes sure the supplied menu is displayed over the icon when
+     <span dir="ltr"><a href="gtk.gtkmenu.method.popup.html">popup()</a></span>  is called.
+    </p>
+    <p>
+     This method must be called statically.
+    </p>
+    <p>
+     <p><div class="informalexample" id="idp76847568"><p></p><a name="idp76847568"></a><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+$menu = new GtkMenu();
+$tray = new GtkStatusIcon();
+GtkStatusIcon::position_menu($menu, $tray);
+</pre></td></tr></table></div></p>
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkstatusicon.method.get_visible.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkstatusicon.method.set_blinking.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkStatusIcon::get_visible</span> </td><td width="20%" align="center"><a href="gtk.gtkstatusicon.html#idp76800160">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkStatusIcon::set_blinking</span></td></tr></table></div></body></html>

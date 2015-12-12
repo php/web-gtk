@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>The view: GtkTreeView, GtkTreeViewColumn, GtkCellRenderer</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="tutorials.treeview.html" title="GtkTreeView Tutorial (basic)"><link rel="previous" href="tutorials.treeview.model.html" title="The model: GtkTreeModel and GtkTreeStore"><link rel="next" href="tutorials.doccing.html" title="PHP-GTK 2 Documentation"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GtkTreeView Tutorial (basic)</th></tr><tr><td width="20%" align="left"><a href="tutorials.treeview.model.html">Prev</a> </td><th width="60%" align="center">The view: GtkTreeView, GtkTreeViewColumn, GtkCellRenderer</th><td width="20%" align="right"> <a href="tutorials.doccing.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="tutorials.treeview.view"></a><div class="titlepage"><div><h2 class="title" style="clear: all"><a name="tutorials.treeview.view"></a>The view: GtkTreeView, GtkTreeViewColumn, GtkCellRenderer</h2></div></div><p>
+   The GtkTreeView widget is the view in the Module/View/Controller
+   approach.  It takes care of displaying the data stored in a model
+   (<span dir="ltr"><a href="../gtk/gtk.gtktreestore.html">GtkTreeStore</a></span> or <span dir="ltr"><a href="../gtk/gtk.gtkliststore.html">GtkListStore</a></span>)
+   to the user. You can have several
+   GtkTreeViews for a single model, and changes to the model will be
+   displayed immediately in all of them.
+  </p><p>
+   To use GtkTreeView, you need to create the widget itself, then create
+   <span dir="ltr"><a href="../gtk/gtk.gtktreeviewcolumn.html">GtkTreeViewColumn</a></span>s for the columns to display and
+   <span dir="ltr"><a href="../gtk/gtk.gtkcellrenderer.html">GtkCellRenderer</a></span>s
+   to tell the columns how to display a cell in the column.
+  </p><div class="example" align="left"><p><a name="idp45084608"></a><b>Example 10.3. TreeView and Renderer</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">$view = new GtkTreeView($model);
+$renderer = new GtkCellRendererText();
+$column = new GtkTreeViewColumn("Folder", $renderer, "text", 1);
+$view-&gt;append_column($column);</pre></td></tr></table></div><p>
+   This code creates a new GtkTreeView and attaches it to a model.
+   Then it creates a text cell renderer and a column and adds those to
+   the view. "Folder" is the name of the column, displayed at the top
+   of the column.
+  </p><p>
+   There are several <span dir="ltr"><a href="../gtk/gtk.gtkcellrenderer.html">GtkCellRenderer</a></span>s in the Gtk+ library, and
+   you could write your own, if those are not enough.
+  </p><p>
+   The user's selections in a GtkTreeView (per view) are tracked
+   using the <span dir="ltr"><a href="../gtk/gtk.gtktreeselection.html">GtkTreeSelection</a></span> object.
+   If your code needs to notice when
+   the user changes the selection, connect to the GtkTreeSelection's
+   <span dir="ltr">"<a href="../gtk/gtk.gtktreeselection.signal.changed.html">changed</a>"</span> signal.
+   You can also have the selection object call a
+   function for each selected node, or programmatically change the
+   selection. See the API docs for details.
+  </p><div class="example" align="left"><p><a name="idp45089856"></a><b>Example 10.4. Selection Changed Signal</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">$selection = $view-&gt;get_selection();
+$selection-&gt;connect("changed", "display_selected_folder");</pre></td></tr></table></div><p>
+   This code connects the "changed" signal to a function
+   (<span dir="ltr"><tt>display_selected_folder()</tt></span>)
+   that displays the contents of a selected folder.
+  </p><p>
+   You need to tell the GtkTreeView explicitly that the user is
+   allowed to rearrange the folder tree using drag-and-drop. Fortunately,
+   after telling this once, the widget takes care of the rest.
+  </p><div class="example" align="left"><p><a name="idp45093536"></a><b>Example 10.5. Drag-and-Drop reordering</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">$view-&gt;set_reorderable(true);</pre></td></tr></table><p>
+    This is all it takes to make the widget drag-and-drop enabled.
+   </p></div><p>
+   The same thing can also be done by manually should you choose not to
+   enable drag-and-drop by removing the child node from the tree and inserting it
+   back in as a child of another node.
+  </p><div class="example" align="left"><p><a name="idp45096464"></a><b>Example 10.6. Manual reordering</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">$folder = $model-&gt;get_value($old_iter, 0);
+$model-&gt;remove($old_iter);
+$new_iter = $model-&gt;insert_before($new_parent, null);
+$model-&gt;set($new_iter, 0, $folder);
+$model-&gt;set($new_iter, 1, $folder['name']);</pre></td></tr></table></div><p>
+   This code moves a node from <span dir="ltr"><tt>old_iter</tt></span> to be the last child
+   of the <span dir="ltr"><tt>new_parent</tt></span> node.
+  </p><p>
+   At the time this tutorial was written/ported there was a bug in PHP-Gtk2 that
+   parameter order for <span dir="ltr"><a href="../gtk/gtk.gtktreestore.method.insert_before.html">insert_before()</a></span> 
+   and <span dir="ltr"><a href="../gtk/gtk.gtktreestore.method.insert_after.html">insert_after()</a></span>  has been switched. The
+   above code will not work (nor the example code below) without switching the
+   order of the parameters. In version <span dir="ltr"><tt>php-gtk-2.0.0 alpha</tt></span>,
+   the order is still <span dir="ltr"><tt>(sibling, parent)</tt></span> and it should be
+   <span dir="ltr"><tt>(parent, sibling)</tt></span>. This has already been changed in CVS.
+  </p><div class="example" align="left"><p><a name="idp45104992"></a><b>Example 10.7. Example source code</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+// This is an example for demonstrating use of the GtkTreeView widget.
+// The code in this example is not particularly good: it is written to
+// concentrate on widget usage demonstration, not for maintainability.
+
+$view = null;
+$choose_parent_view = null;
+$dialog = null;
+
+function move($old_iter = null, $new_parent, $model)
+{
+    if ($old_iter) {
+        $folder = $model-&gt;get_value($old_iter, 0);
+        $model-&gt;remove($old_iter);
+        $new_iter = $model-&gt;insert_before($new_parent, null);
+        $model-&gt;set($new_iter, 0, $folder);
+        $model-&gt;set($new_iter, 1, $folder['name']);
+    }
+}
+
+function dialog_ok($args)
+{
+    global $dialog, $choose_parent_view, $view;
+
+    $dialog-&gt;hide();
+
+    list($model, $parent_iter) = $choose_parent_view-&gt;get_selection()-&gt;get_selected();
+    list($model, $old_iter) = $view-&gt;get_selection()-&gt;get_selected();
+
+    if ($parent_iter &amp;&amp; $old_iter) {
+        move($old_iter, $parent_iter, $model);
+    }
+}
+
+function dialog_cancel($args)
+{
+    global $dialog;
+
+    $dialog-&gt;hide();
+}
+
+function choose_parent($args)
+{
+    global $dialog;
+
+    $dialog-&gt;show();
+}
+
+function move_to_bottom($args)
+{
+    global $view;
+
+    list ($model, $old_iter) = $view-&gt;get_selection()-&gt;get_selected();
+
+    if ($old_iter) {
+        move($old_iter, null, $model);
+    }
+}
+
+function quit($args)
+{
+    Gtk::main_quit();
+}
+
+function make_view($model)
+{
+    $view = new GtkTreeView($model);
+    $view-&gt;set_reorderable(true);
+    $renderer = new GtkCellRendererText();
+    $column = new GtkTreeViewColumn("Folder", $renderer, "text", 1);
+    $view-&gt;append_column($column);
+    $view-&gt;show();
+
+    $scrolled = new GtkScrolledWindow();
+    $scrolled-&gt;add($view);
+    $scrolled-&gt;show();
+
+    return array($view, $scrolled);
+}
+
+function make_buttons($list)
+{
+    $buttonbox = new GtkHBox();
+
+    foreach ($list as $label =&gt; $func) {
+        $button = new GtkButton();
+        $button-&gt;set_label($label);
+        $button-&gt;connect("clicked", $func);
+        $button-&gt;show();
+        $buttonbox-&gt;pack_start($button, false, false);
+    }
+
+    $buttonbox-&gt;show();
+
+    return $buttonbox;
+}
+
+$model = new GtkTreeStore(Gtk::TYPE_PHP_VALUE, Gtk::TYPE_STRING);
+
+for ($i=0; $i &lt; 100; $i++)
+{
+    $folder = array('name' =&gt; 'folder ' . $i, 'files' =&gt; array('foo', 'bar'));
+    $iter = $model-&gt;insert_before(null, null);
+    $model-&gt;set($iter, 0, $folder);
+    $model-&gt;set($iter, 1, $folder['name']);
+}
+
+list($view, $scrolled) = make_view($model);
+$view-&gt;set_reorderable(true);
+
+$buttons = array(
+    "Quit"           =&gt; "quit",
+    "Choose parent"  =&gt; "choose_parent",
+    "Move to bottom" =&gt; "move_to_bottom"
+);
+
+$buttonbox = make_buttons($buttons);
+
+$vbox = new GtkVBox();
+$vbox-&gt;pack_start($buttonbox, false, false);
+$vbox-&gt;pack_start($scrolled, true, true);
+$vbox-&gt;show();
+
+$win = new GtkWindow(Gtk::WINDOW_TOPLEVEL);
+$win-&gt;connect("delete_event", "quit");
+$win-&gt;add($vbox);
+$win-&gt;show();
+$win-&gt;resize(300, 500);
+
+list($choose_parent_view, $scrolled) = make_view($model);
+
+$buttons = array(
+    "OK"     =&gt; "dialog_ok",
+    "Cancel" =&gt; "dialog_cancel"
+);
+
+$buttonbox = make_buttons($buttons);
+
+$vbox = new GtkVBox();
+$vbox-&gt;pack_start($scrolled, true, true);
+$vbox-&gt;pack_start($buttonbox, false, false);
+$vbox-&gt;show();
+
+$dialog = new GtkWindow(Gtk::WINDOW_TOPLEVEL);
+$dialog-&gt;set_default_size(200, 400);
+$dialog-&gt;add($vbox);
+
+Gtk::main();
+?&gt;</pre></td></tr></table></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="tutorials.treeview.model.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="tutorials.doccing.html">Next</a></td></tr><tr><td width="40%" align="left">The model: GtkTreeModel and GtkTreeStore </td><td width="20%" align="center"><a href="tutorials.treeview.html">Up</a></td><td width="40%" align="right"> PHP-GTK 2 Documentation</td></tr></table></div></body></html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkStatusbar</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkspinbutton.signal.value-changed.html" title="value-changed"><link rel="next" href="gtk.gtkstatusbar.constructor.html" title="GtkStatusbar Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkspinbutton.signal.value-changed.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkStatusbar</span></th><td width="20%" align="right"> <a href="gtk.gtkstatusbar.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkstatusbar"></a><h2 class="title"><span dir="ltr">GtkStatusbar</span></h2><div style="float:right;"><img src="../images/reference/gtk/gtkstatusbar.png"></div><p><blockquote>
+   A widget for displaying status information.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkbox.html">GtkBox</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkhbox.html">GtkHBox</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkstatusbar.html">GtkStatusbar</a></span><br></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    A status bar is normally used to display messages about an applications 
+    status or some other attribute that changes over time. Typically a status
+    bar is shown at the bottom of an application's main window and notifies
+    the user when an important process has completed, such as transfering
+    files to a remote server. 
+   </p>
+   <p>
+    <span dir="ltr"><a href="gtk.gtkstatusbar.html">GtkStatusbar</a></span> maintains a stack of error messages.
+    The message on top of the stack is the message that will be shown. When
+    the top message is popped off the stack, the message below it will be
+    shown in the status bar. 
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp76559392"><p></p><a name="idp76559392"></a> <span dir="ltr"><a href="gtk.gtkstatusbar.constructor.html">GtkStatusbar</a></span> ();</div></p> --
+    Creates a new GtkStatusbar.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkstatusbar.method.get_context_id.html">get_context_id()</a></span> </dt><dd> 
+    Returns a unique identifier for a message based on the message context.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkstatusbar.method.get_has_resize_grip.html">get_has_resize_grip()</a></span> </dt><dd> 
+    Returns whether or not the statusbar has a resize grip.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkstatusbar.method.pop.html">pop()</a></span> </dt><dd> 
+    Pops the top message with the given context id off of the status bar's 
+    message stack.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkstatusbar.method.push.html">push()</a></span> </dt><dd> 
+    Adds a new message to the top of the message stack.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkstatusbar.method.set_has_resize_grip.html">set_has_resize_grip()</a></span> </dt><dd> 
+    Sets whether or not a resize grip should be shown in the status bar.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkstatusbar.method.remove_message.html">remove_message()</a></span> </dt><dd> 
+    Removes a message from the stack.
+   </dd></blockquote></div><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtkstatusbar.signal.text-popped.html">text-popped</a>"</span></dt><dd> 
+    Emitted when a message is popped from the message stack.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkstatusbar.signal.text-pushed.html">text-pushed</a>"</span></dt><dd> 
+    Emitted when a message is pushed onto the message stack.
+   </dd></blockquote></p></div>
+
+  
+
+ 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+ 
+
+  
+  
+  
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkspinbutton.signal.value-changed.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkstatusbar.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">value-changed</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkStatusbar</span> Constructor</td></tr></table></div></body></html>

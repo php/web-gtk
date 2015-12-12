@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkDrawingArea</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkdialog.field.vbox.html" title="GtkDialog::vbox"><link rel="next" href="gtk.gtkdrawingarea.constructor.html" title="GtkDrawingArea Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkdialog.field.vbox.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkDrawingArea</span></th><td width="20%" align="right"> <a href="gtk.gtkdrawingarea.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkdrawingarea"></a><h2 class="title"><span dir="ltr">GtkDrawingArea</span></h2><div style="float:right; border:1px solid #000;"><img src="../images/reference/gtk/gtkdrawingarea.png"></div><p><blockquote>
+   A widget for creating custom user interface elements.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkdrawingarea.html">GtkDrawingArea</a></span><br></div></blockquote></p><p><h3>Direct Subclasses</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="gtk.gtkcurve.html">GtkCurve</a></span></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    This widget is essentially a blank widget, on which you can draw by
+    accessing its <span dir="ltr"><tt>window</tt></span> field, which is a
+    GdkWindow. You may use the widget to paint custom patterns or for
+    interactive programs like <span dir="ltr"><tt>scribble</tt></span>.
+   </p>
+   <p>
+    There are three important signals of <span dir="ltr"><a href="gtk.gtkwindow.html">GtkWindow</a></span>
+    that are especially useful for this widget. The
+    realize signal is
+    used to take neccessary actions when the widget is instantiated on
+    a particular display. Use the
+    configure-event
+    signal to define what happens when the widget is changes size, and
+    finally, the 
+    expose-event signal
+    will allow you to handle redrawing the contents of the drawing
+    area.
+   </p>
+   <p>
+    An expose event also occurs when the drawing area first appears on
+    the screen, and also when the widget is covered by another window
+    and subsequently uncovered. You will most probably use
+    <span dir="ltr"><a href="../gdk/gdk.gdkwindow.html">GdkWindow</a></span>'s drawing methods to paint the
+    drawing area.
+   </p>
+   <p>
+    To receive mouse events on a drawing area, you have to enable them
+    by using <span dir="ltr"><a href="gtk.gtkwidget.method.add_events.html">add_events()</a></span> .
+   </p>
+   <div class="note" style="margin-left: 24px; margin-right: 24px; font-weight: bold;">
+    Avoid using the drawing area unless you really need the
+    flexibility and thereby the complexity that it brings along.
+    You'll be working on the Gdk layer rather than the Gtk layer when
+    using this widget. Most of the time, clever use of the
+    <span dir="ltr"><a href="gtk.gtkimage.html">GtkImage</a></span> widget can prove to be an easier
+    alternative to using a <span dir="ltr"><a href="gtk.gtkdrawingarea.html">GtkDrawingArea</a></span>.
+   </div>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp62691376"><p></p><a name="idp62691376"></a> <span dir="ltr"><a href="gtk.gtkdrawingarea.constructor.html">GtkDrawingArea</a></span> ();</div></p> --
+    Creates a new <span dir="ltr"><a href="gtk.gtkdrawingarea.html">GtkDrawingArea</a></span> widget.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkdrawingarea.method.size.html">size()</a></span> </dt><dd> 
+    DEPRECATED. Sets the size of the drawing area.
+   </dd></blockquote></div></p></div>
+
+  
+
+ 
+
+  
+
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkdialog.field.vbox.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkdrawingarea.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkDialog::vbox</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkDrawingArea</span> Constructor</td></tr></table></div></body></html>

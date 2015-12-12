@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GdkWindowHints</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gdkenums.html#gdk.gdkenum" title="GDK Enums"><link rel="previous" href="gdk.enum.windowclass.html" title="GdkWindowClass"><link rel="next" href="gdk.enum.wmdecoration.html" title="GdkWMDecoration"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GDK Enums</th></tr><tr><td width="20%" align="left"><a href="gdk.enum.windowclass.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GdkWindowHints</span></th><td width="20%" align="right"> <a href="gdk.enum.wmdecoration.html">Next</a></td></tr></table><hr></div><a class="enum" name="gdk.enum.windowhints"></a><h1 class="title">GdkWindowHints</h1><p>
+   <p>
+    Used to indicate which fields of a GdkGeometry struct 
+    should be paid attention to. Also, the presence/absence of 
+    <span dir="ltr"><tt>Gdk::HINT_POS</tt></span>, <span dir="ltr"><tt>Gdk::HINT_USER_POS</tt></span>, and 
+    <span dir="ltr"><tt>Gdk::HINT_USER_SIZE</tt></span> is significant, though they don't 
+    directly refer to GdkGeometry fields. <span dir="ltr"><tt>Gdk::HINT_USER_POS</tt></span> 
+    will be set automatically by <span dir="ltr"><a href="../gtk/gtk.gtkwindow.html">GtkWindow</a></span> if you call 
+    <span dir="ltr"><a href="../gtk/gtk.gtkwindow.method.move.html">move()</a></span> . <span dir="ltr"><tt>Gdk::HINT_USER_POS</tt></span> 
+    and <span dir="ltr"><tt>Gdk::HINT_USER_SIZE</tt></span> should be set if the user specified 
+    a size/position using a --geometry command-line argument; 
+    <span dir="ltr"><a href="../gtk/gtk.gtkwindow.method.parse_geometry.html">parse_geometry()</a></span>  automatically sets 
+    these flags.
+   </p>
+  </p><table width="100%" cellpadding="2" cellspacing="1"><tr><td width="7%"><h3>Value</h3></td><td width="40%"><h3>Symbolic name</h3></td><td width="52%"><h3>Description</h3></td></tr><tr valign="top"><td>  1</td><td>Gdk::HINT_POS</td><td>
+    Indicates that the program has positioned the window.
+   </td></tr><tr valign="top"><td>  2</td><td>Gdk::HINT_MIN_SIZE</td><td>
+    Min size fields are set.
+   </td></tr><tr valign="top"><td>  4</td><td>Gdk::HINT_MAX_SIZE</td><td>
+    Max size fields are set.
+   </td></tr><tr valign="top"><td>  8</td><td>Gdk::HINT_BASE_SIZE</td><td>
+    Base size fields are set.
+   </td></tr><tr valign="top"><td>  16</td><td>Gdk::HINT_ASPECT</td><td>
+    Aspect ratio fields are set.
+   </td></tr><tr valign="top"><td>  32</td><td>Gdk::HINT_RESIZE_INC</td><td>
+    Resize increment fields are set.
+   </td></tr><tr valign="top"><td>  64</td><td>Gdk::HINT_WIN_GRAVITY</td><td>
+    Window gravity field is set.
+   </td></tr><tr valign="top"><td>  128</td><td>Gdk::HINT_USER_POS</td><td>
+    Indicates that the window's position was explicitly set by the user.
+   </td></tr><tr valign="top"><td>  256</td><td>Gdk::HINT_USER_SIZE</td><td>
+    Indicates that the window's size was explicitly set by the user.
+   </td></tr></table><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gdk.enum.windowclass.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gdk.enum.wmdecoration.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GdkWindowClass</span> </td><td width="20%" align="center"><a href="../gdkenums.html#gdk.gdkenum">Up</a></td><td width="40%" align="right"> <span dir="ltr">GdkWMDecoration</span></td></tr></table></div></body></html>

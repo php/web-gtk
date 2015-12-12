@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>Boxes - GtkHBox and GtkVBox</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="tutorials.packing.html" title="Packing Widgets"><link rel="previous" href="tutorials.packing.basics.html" title="Packing basics"><link rel="next" href="tutorials.packing.table.html" title="Tabular layout with GtkTable"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Packing Widgets</th></tr><tr><td width="20%" align="left"><a href="tutorials.packing.basics.html">Prev</a> </td><th width="60%" align="center">Boxes - GtkHBox and GtkVBox</th><td width="20%" align="right"> <a href="tutorials.packing.table.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="tutorials.packing.box"></a><div class="titlepage"><div><h2 class="title" style="clear: all"><a name="tutorials.packing.box"></a>Boxes - GtkHBox and GtkVBox</h2></div></div><p>
+   The most simple, but most often used containers are the 
+   <span dir="ltr"><a href="../gtk/gtk.gtkbox.html">GtkBox</a></span>es: <span dir="ltr"><a href="../gtk/gtk.gtkhbox.html">GtkHBox</a></span> and 
+   <span dir="ltr"><a href="../gtk/gtk.gtkvbox.html">GtkVBox</a></span>. They allow to add widgets in a single
+   row, not more, and not less. <span dir="ltr"><a href="../gtk/gtk.gtkhbox.html">GtkHBox</a></span> arranges
+   them horizontally, while <span dir="ltr"><a href="../gtk/gtk.gtkvbox.html">GtkVBox</a></span> lines them up
+   vertically.
+  </p><p>
+   You add the widgets via <span dir="ltr"><a href="../gtk/gtk.gtkbox.method.pack_start.html">pack_start()</a></span> 
+   or <span dir="ltr"><a href="../gtk/gtk.gtkbox.method.pack_end.html">pack_end()</a></span> .
+   <span dir="ltr"><a href="../gtk/gtk.gtkbox.method.pack_start.html">pack_start()</a></span>  adds them one after the
+   other from the beginning (left to right resp. top to bottom), while
+   <span dir="ltr"><a href="../gtk/gtk.gtkbox.method.pack_end.html">pack_end()</a></span>  adds them from the end on
+   (right to left, or bottom to top).
+  </p><p>
+   You can influence the layout by adjusting the three optional parameters
+   of <span dir="ltr"><a href="../gtk/gtk.gtkbox.method.pack_start.html">pack_start()</a></span>  and
+   <span dir="ltr"><a href="../gtk/gtk.gtkbox.method.pack_end.html">pack_end()</a></span>  - see their documentation.
+  </p><div class="example" align="left"><p><a name="idp44635824"></a><b>Example 7.1. Simple dynamic layout with <span dir="ltr"><a href="../gtk/gtk.gtkvbox.html">GtkVBox</a></span></b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+$w = new GtkWindow();
+$w-&gt;set_title('GtkBox test');
+$w-&gt;connect_simple('destroy', array('gtk', 'main_quit'));
+
+$lbl = new GtkLabel('Your name:');
+$scrwnd = new GtkScrolledWindow();
+$txt = new GtkTextView();
+$scrwnd-&gt;add($txt);
+$btn = new GtkButton('Send');
+
+$vbox = new GtkVBox();
+$w-&gt;add($vbox);
+
+$vbox-&gt;pack_start($lbl, false);
+$vbox-&gt;pack_start($scrwnd, true, true);
+$vbox-&gt;pack_start($btn, false);
+
+$w-&gt;show_all();
+Gtk::main();
+?&gt;</pre></td></tr></table></div><p>
+   Start the demo and resize the window: The multiline text widget adjusts its
+   size to fill all the space in the window which is not needed for the label
+   or the button. Change the third parameter from <span dir="ltr"><tt>true</tt></span> to 
+   <span dir="ltr"><tt>false</tt></span> at the place where <tt>scrwnd</tt> is
+   packed - what happens?
+  </p><p>
+   A special version of <span dir="ltr"><a href="../gtk/gtk.gtkbox.html">GtkBox</a></span>es are
+   <span dir="ltr"><a href="../gtk/gtk.gtkhbuttonbox.html">GtkHButtonBox</a></span> and <span dir="ltr"><a href="../gtk/gtk.gtkvbuttonbox.html">GtkVButtonBox</a></span>:
+   They behave same as their box counterparts, but can contain 
+   <span dir="ltr"><a href="../gtk/gtk.gtkbutton.html">GtkButton</a></span>s only. To compensate this limitation,
+   they have some layout functions often needed for rows of buttons.
+  </p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="tutorials.packing.basics.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="tutorials.packing.table.html">Next</a></td></tr><tr><td width="40%" align="left">Packing basics </td><td width="20%" align="center"><a href="tutorials.packing.html">Up</a></td><td width="40%" align="right"> Tabular layout with GtkTable</td></tr></table></div></body></html>

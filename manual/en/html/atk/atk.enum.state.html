@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>AtkState</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../atkenums.html#atk.atkenum" title="ATK Enums"><link rel="previous" href="atk.enum.role.html" title="AtkRole"><link rel="next" href="atk.enum.textboundary.html" title="AtkTextBoundary"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">ATK Enums</th></tr><tr><td width="20%" align="left"><a href="atk.enum.role.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">AtkState</span></th><td width="20%" align="right"> <a href="atk.enum.textboundary.html">Next</a></td></tr></table><hr></div><a class="enum" name="atk.enum.state"></a><h1 class="title">AtkState</h1><p>
+   <p>
+    The possible types of states of an object
+   </p>
+  </p><table width="100%" cellpadding="2" cellspacing="1"><tr><td width="7%"><h3>Value</h3></td><td width="40%"><h3>Symbolic name</h3></td><td width="52%"><h3>Description</h3></td></tr><tr valign="top"><td>  0</td><td>Atk::STATE_INVALID</td><td>
+    Indicates an invalid state
+   </td></tr><tr valign="top"><td>  1</td><td>Atk::STATE_ACTIVE</td><td>
+    Indicates a window is currently the active window
+   </td></tr><tr valign="top"><td>  2</td><td>Atk::STATE_ARMED</td><td>
+    Indicates that the object is armed
+   </td></tr><tr valign="top"><td>  3</td><td>Atk::STATE_BUSY</td><td>
+    Indicates the current object is busy
+   </td></tr><tr valign="top"><td>  4</td><td>Atk::STATE_CHECKED</td><td>
+    Indicates this object is currently checked
+   </td></tr><tr valign="top"><td>  5</td><td>Atk::STATE_DEFUNCT</td><td>
+    Indicates the user interface object corresponding to this 
+    object no longer exists
+   </td></tr><tr valign="top"><td>  6</td><td>Atk::STATE_EDITABLE</td><td>
+    Indicates the user can change the contents of this object
+   </td></tr><tr valign="top"><td>  7</td><td>Atk::STATE_ENABLED</td><td>
+    Indicates that this object is enabled. An inconsistent 
+    <span dir="ltr"><a href="../gtk/gtk.gtktogglebutton.html">GtkToggleButton</a></span> is an example of an object which 
+    is sensitive but not enabled.
+   </td></tr><tr valign="top"><td>  8</td><td>Atk::STATE_EXPANDABLE</td><td>
+    Indicates this object allows progressive disclosure of its children
+   </td></tr><tr valign="top"><td>  9</td><td>Atk::STATE_EXPANDED</td><td>
+    Indicates this object its expanded
+   </td></tr><tr valign="top"><td>  10</td><td>Atk::STATE_FOCUSABLE</td><td>
+    Indicates this object can accept keyboard focus, which means all 
+    events resulting from typing on the keyboard will normally be 
+    passed to it when it has focus
+   </td></tr><tr valign="top"><td>  11</td><td>Atk::STATE_FOCUSED</td><td>
+    Indicates this object currently has the keyboard focus
+   </td></tr><tr valign="top"><td>  12</td><td>Atk::STATE_HORIZONTAL</td><td>
+    Indicates the orientation of this object is horizontal
+   </td></tr><tr valign="top"><td>  13</td><td>Atk::STATE_ICONIFIED</td><td>
+    Indicates this object is minimized and is represented only by an icon
+   </td></tr><tr valign="top"><td>  14</td><td>Atk::STATE_MODAL</td><td>
+    Indicates something must be done with this object before 
+    the user can interact with an object in a different window
+   </td></tr><tr valign="top"><td>  15</td><td>Atk::STATE_MULTI_LINE</td><td>
+    Indicates this (text) object can contain multiple lines of text
+   </td></tr><tr valign="top"><td>  16</td><td>Atk::STATE_MULTISELECTABLE</td><td>
+    Indicates this object allows more than one of its children to be selected at the same time
+   </td></tr><tr valign="top"><td>  17</td><td>Atk::STATE_OPAQUE</td><td>
+    Indicates this object paints every pixel within its rectangular region
+   </td></tr><tr valign="top"><td>  18</td><td>Atk::STATE_PRESSED</td><td>
+    Indicates this object is currently pressed
+   </td></tr><tr valign="top"><td>  19</td><td>Atk::STATE_RESIZABLE</td><td>
+    Indicates the size of this object is not fixed
+   </td></tr><tr valign="top"><td>  20</td><td>Atk::STATE_SELECTABLE</td><td>
+    Indicates this object is the child of an object that allows its 
+    children to be selected and that this child is one of those 
+    children that can be selected
+   </td></tr><tr valign="top"><td>  21</td><td>Atk::STATE_SELECTED</td><td>
+    Indicates this object is the child of an object that allows 
+    its children to be selected and that this child is one of 
+    those children that has been selected
+   </td></tr><tr valign="top"><td>  22</td><td>Atk::STATE_SENSITIVE</td><td>
+    Indicates this object is sensitive
+   </td></tr><tr valign="top"><td>  23</td><td>Atk::STATE_SHOWING</td><td>
+    Indicates this object, the object's parent, the object's 
+    parent's parent, and so on, are all visible
+   </td></tr><tr valign="top"><td>  24</td><td>Atk::STATE_SINGLE_LINE</td><td>
+    Indicates this (text) object can contain only a single line of text
+   </td></tr><tr valign="top"><td>  25</td><td>Atk::STATE_STALE</td><td>
+    Indicates that the index associated with this object has changed 
+    since the user accessed the object.
+   </td></tr><tr valign="top"><td>  26</td><td>Atk::STATE_TRANSIENT</td><td>
+    Indicates this object is transient
+   </td></tr><tr valign="top"><td>  27</td><td>Atk::STATE_VERTICAL</td><td>
+    Indicates the orientation of this object is vertical
+   </td></tr><tr valign="top"><td>  28</td><td>Atk::STATE_VISIBLE</td><td>
+    Indicates this object is visible
+   </td></tr><tr valign="top"><td>  29</td><td>Atk::STATE_MANAGES_DESCENDANTS</td><td>
+    Indicates that "active-descendant-changed" event is sent when 
+    children become 'active' (i.e. are selected or navigated to onscreen). 
+    Used to prevent need to enumerate all children in very large containers, 
+    like tables.
+   </td></tr><tr valign="top"><td>  30</td><td>Atk::STATE_INDETERMINATE</td><td>
+    Indicates that a check box is in a state other than checked or not checked.
+   </td></tr><tr valign="top"><td>  31</td><td>Atk::STATE_TRUNCATED</td><td>
+    Indicates that an object is truncated, e.g. a text value in a speradsheet cell.
+   </td></tr><tr valign="top"><td>  32</td><td>Atk::STATE_LAST_DEFINED</td><td>
+    Not a valid state, used for finding end of enumeration
+   </td></tr></table><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="atk.enum.role.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="atk.enum.textboundary.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">AtkRole</span> </td><td width="20%" align="center"><a href="../atkenums.html#atk.atkenum">Up</a></td><td width="40%" align="right"> <span dir="ltr">AtkTextBoundary</span></td></tr></table></div></body></html>

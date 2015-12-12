@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkRadioButton</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkradioaction.method.set_group.html" title="GtkRadioAction::set_group"><link rel="next" href="gtk.gtkradiobutton.constructor.html" title="GtkRadioButton Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkradioaction.method.set_group.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkRadioButton</span></th><td width="20%" align="right"> <a href="gtk.gtkradiobutton.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkradiobutton"></a><h2 class="title"><span dir="ltr">GtkRadioButton</span></h2><div style="float:right; border:1px solid #000;"><img src="../images/reference/gtk/gtkradiobutton.png"></div><p><blockquote>
+   A toggle button of which only one in a group may be active.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkbin.html">GtkBin</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkbutton.html">GtkButton</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtktogglebutton.html">GtkToggleButton</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcheckbutton.html">GtkCheckButton</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkradiobutton.html">GtkRadioButton</a></span><br></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    A single radio button performs the same basic function as a 
+    <span dir="ltr"><a href="gtk.gtkcheckbutton.html">GtkCheckButton</a></span>, as its position in the object
+    hierarchy reflects. It is only when multiple radio buttons are grouped
+    together that they become a different user interface component
+     in their own right.
+   </p>
+   <p>
+    Every radio button is a member of some group of radio buttons.
+    When one is selected, all other radio buttons in the same group
+    are deselected. A <span dir="ltr"><a href="gtk.gtkradiobutton.html">GtkRadioButton</a></span> is one
+    way of giving the user a choice from many options.
+   </p>
+   <p>
+    Radio button widgets are created with
+    <a href="gtk.gtkradiobutton.constructor.html">new GtkRadioButton()</a>,
+    passing <span dir="ltr"><tt>null</tt></span> as the argument if this is the first radio
+    button in a group.
+   </p>
+
+   <p>
+    To retrieve the group a GtkRadioButton is assigned to, use
+    <span dir="ltr"><a href="gtk.gtkradiobutton.method.get_group.html">get_group()</a></span> .
+   </p>
+   <p>
+    To remove a GtkRadioButton from one group and make it part of a new one,
+    use <span dir="ltr"><a href="gtk.gtkradiobutton.method.set_group.html">set_group()</a></span> .
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp74331472"><p></p><a name="idp74331472"></a> <span dir="ltr"><a href="gtk.gtkradiobutton.constructor.html">GtkRadioButton</a></span> ([<span dir="ltr"><a href="gtk.gtkradiobutton.html">GtkRadioButton</a></span> <i><tt>group</tt></i> [, string <i><tt>text</tt></i> [, bool <i><tt>use_underline</tt></i> = <span dir="ltr"><tt>true</tt></span>]]]);</div></p> --
+    Creates a new radio button.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkradiobutton.method.get_group.html">get_group()</a></span> </dt><dd> 
+    Returns the group members.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkradiobutton.method.group.html">group()</a></span> </dt><dd> 
+    DEPRECATED
+   </dd><dt><span dir="ltr"><a href="gtk.gtkradiobutton.method.set_group.html">set_group()</a></span> </dt><dd> 
+    Sets the group of the button.
+   </dd></blockquote></div><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtkradiobutton.signal.group-changed.html">group-changed</a>"</span></dt><dd> 
+    A widget has been added/removed from the group.
+   </dd></blockquote></p></div>
+  
+ 
+  
+
+  
+
+  
+ 
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkradioaction.method.set_group.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkradiobutton.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkRadioAction::set_group</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkRadioButton</span> Constructor</td></tr></table></div></body></html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkLabel::select_region</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtklabel.html#idp69134576" title=""><link rel="previous" href="gtk.gtklabel.method.parse_uline.html" title="GtkLabel::parse_uline"><link rel="next" href="gtk.gtklabel.method.set.html" title="GtkLabel::set"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtklabel.method.parse_uline.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkLabel::select_region</span></th><td width="20%" align="right"> <a href="gtk.gtklabel.method.set.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtklabel.method.select_region"></a><h2><span dir="ltr">GtkLabel::select_region</span></h2><p><div class="funcsynopsis" id="idp69268624"><p></p><a name="idp69268624"></a>void select_region(int <i><tt>start_offset</tt></i>, int <i><tt>end_offset</tt></i>);</div></p>
+    <p>
+     Selects a range of characters in the label, if the label is selectable.
+     If the label is not selectable, this function has no effect. 
+     If <i><tt>start_offset</tt></i> or
+     <i><tt>end_offset</tt></i> are <span dir="ltr"><tt>-1</tt></span>, then the end
+     of the label will be substituted.
+    </p>
+    <p>
+     <div class="example" align="left"><p><a name="idp69276048"></a><b>Example 80. Selecting a Region in a GtkLabel</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+// Create a window to hold the label.
+$window = new GtkWindow();
+// Set up the window to close cleanly.
+$window-&gt;connect_simple('destroy', array('Gtk', 'main_quit'));
+
+// Create a label
+$label = new GtkLabel('Example Label');
+
+// Make the label selectable.
+$label-&gt;set_selectable(true);
+
+// Select a region ("amp").
+$label-&gt;select_region(2, 5);
+
+// Add the label to the window.
+$window-&gt;add($label);
+
+// Show the window and start the main loop.
+$window-&gt;show_all();
+Gtk::main();
+?&gt;
+</pre></td></tr></table></div>
+     This example produces the following window:
+     <p><img src="../images/reference/gtk/gtklabel/select_region.png"></p>
+    </p>
+    <p>
+     See also:
+     <span dir="ltr"><a href="gtk.gtklabel.method.set_selectable.html">set_selectable()</a></span> ,
+     <span dir="ltr"><a href="gtk.gtklabel.method.get_selectable.html">get_selectable()</a></span> ,
+     <span dir="ltr"><a href="gtk.gtklabel.method.get_selection_bounds.html">get_selection_bounds()</a></span> ,
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtklabel.method.parse_uline.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtklabel.method.set.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkLabel::parse_uline</span> </td><td width="20%" align="center"><a href="gtk.gtklabel.html#idp69134576">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkLabel::set</span></td></tr></table></div></body></html>

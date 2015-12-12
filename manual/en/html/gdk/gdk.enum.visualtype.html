@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GdkVisualType</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gdkenums.html#gdk.gdkenum" title="GDK Enums"><link rel="previous" href="gdk.enum.visibilitystate.html" title="GdkVisibilityState"><link rel="next" href="gdk.enum.windowattributestype.html" title="GdkWindowAttributesType"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GDK Enums</th></tr><tr><td width="20%" align="left"><a href="gdk.enum.visibilitystate.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GdkVisualType</span></th><td width="20%" align="right"> <a href="gdk.enum.windowattributestype.html">Next</a></td></tr></table><hr></div><a class="enum" name="gdk.enum.visualtype"></a><h1 class="title">GdkVisualType</h1><p>
+   <p>
+    A set of values that describe the manner in which the pixel
+    values for a visual are converted into RGB values for display.
+   </p>
+  </p><table width="100%" cellpadding="2" cellspacing="1"><tr><td width="7%"><h3>Value</h3></td><td width="40%"><h3>Symbolic name</h3></td><td width="52%"><h3>Description</h3></td></tr><tr valign="top"><td>  0</td><td>Gdk::VISUAL_STATIC_GRAY</td><td>
+    Each pixel value indexes a grayscale value directly.
+   </td></tr><tr valign="top"><td>  1</td><td>Gdk::VISUAL_GRAYSCALE</td><td>
+    Each pixel is an index into a color map that maps pixel values 
+    into grayscale values. The color map can be changed by an application.
+   </td></tr><tr valign="top"><td>  2</td><td>Gdk::VISUAL_STATIC_COLOR</td><td>
+    Each pixel value is an index into a predefined, 
+    unmodifiable color map that maps pixel values into RGB values.
+   </td></tr><tr valign="top"><td>  3</td><td>Gdk::VISUAL_PSEUDO_COLOR</td><td>
+    Each pixel is an index into a color map that maps pixel values 
+    into rgb values. The color map can be changed by an application.
+   </td></tr><tr valign="top"><td>  4</td><td>Gdk::VISUAL_TRUE_COLOR</td><td>
+    Each pixel value directly contains red, green, and blue components. 
+    The <span dir="ltr"><tt>red_mask</tt></span>, <span dir="ltr"><tt>green_mask</tt></span>, 
+    and <span dir="ltr"><tt>blue_mask</tt></span> fields of the visual structure describe 
+    how the components are assembled into a pixel value.
+   </td></tr><tr valign="top"><td>  5</td><td>Gdk::VISUAL_DIRECT_COLOR</td><td>
+    Each pixel value contains red, green, and blue components as for 
+    <span dir="ltr"><tt>Gdk::TRUE_COLOR</tt></span>, but the components are mapped via a 
+    color table into the final output table instead of being converted directly.
+   </td></tr></table><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gdk.enum.visibilitystate.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gdk.enum.windowattributestype.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GdkVisibilityState</span> </td><td width="20%" align="center"><a href="../gdkenums.html#gdk.gdkenum">Up</a></td><td width="40%" align="right"> <span dir="ltr">GdkWindowAttributesType</span></td></tr></table></div></body></html>

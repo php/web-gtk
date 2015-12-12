@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkEntry Constructor</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkentry.html#idp63047664" title=""><link rel="previous" href="gtk.gtkentry.html" title="GtkEntry"><link rel="next" href="gtk.gtkentry.method.append_text.html" title="GtkEntry::append_text"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkentry.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkEntry</span> Constructor</th><td width="20%" align="right"> <a href="gtk.gtkentry.method.append_text.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkentry.constructor"></a><h2><span dir="ltr">GtkEntry</span> Constructor</h2><p><div class="funcsynopsis" id="idp63048736"><p></p><a name="idp63048736"></a> <span dir="ltr"><a href="gtk.gtkentry.constructor.html">GtkEntry</a></span> ([
+      string <i><tt>text</tt></i>
+      [, 
+      int <i><tt>max</tt></i>
+     ]]);</div></p>
+    <p>
+      Creates a widget that will hold a single line of text. You have the
+      freedom to either set the widget programatically through
+      <span dir="ltr"><a href="gtk.gtkentry.method.set_text.html">set_text()</a></span>  or have it entered
+      by the user.
+    </p>
+    <p>
+     If <i><tt>text</tt></i> is given, it will be set as the default
+     value for the widget. If <i><tt>max</tt></i> is given, it will be
+     set as the maximum allowed length of the widget's text value in
+     characters.
+    </p>
+    <div class="example" align="left"><p><a name="idp63057040"></a><b>Example 59. 
+      Retrieving text and echoing it using
+      <span dir="ltr"><a href="gtk.gtkentry.html">GtkEntry</a></span>
+      </b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//Function to retrieve text from GtkEntry and print it
+function get_input($entry) {
+    $input = $entry-&gt;get_text();
+    echo "$input\r\n";
+    $entry-&gt;grab_focus();
+    $entry-&gt;set_text("");
+}
+
+//Setting up the Window
+// Note the usage of connect_simple()
+// instead of deprecated connect_object()
+$window = new GtkWindow();
+$window-&gt;set_position(Gtk::WIN_POS_CENTER);
+$window-&gt;connect_simple('destroy', array('Gtk', 'main_quit'));
+
+//Adding a box to the Window to allow more than one Child
+$box = new GtkVBox();
+$window-&gt;add($box);
+
+//Adding the GtkEntry widget and connecting
+// it to the callback function: get_text()
+$entry = new GtkEntry();
+$entry-&gt;connect('activate', 'get_input');
+$box-&gt;add($entry);
+
+//Adding a GtkButton to the box and use connect_simple()
+// so that it will pass the GtkEntry to the callback
+// function when it is clicked
+$button = new GtkButton('Click Me to echo input!');
+$button-&gt;connect_simple('clicked', 'get_input', $entry);
+$box-&gt;add($button);
+
+//Display everything and start the main loop
+$window-&gt;show_all();
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkentry.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkentry.method.append_text.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkEntry</span> </td><td width="20%" align="center"><a href="gtk.gtkentry.html#idp63047664">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkEntry::append_text</span></td></tr></table></div></body></html>

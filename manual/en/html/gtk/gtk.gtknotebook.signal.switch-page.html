@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>switch-page</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtknotebook.html#idp72414304" title=""><link rel="previous" href="gtk.gtknotebook.signal.select-page.html" title="select-page"><link rel="next" href="gtk.gtkobject.html" title="GtkObject"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtknotebook.signal.select-page.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">switch-page</span></th><td width="20%" align="right"> <a href="gtk.gtkobject.html">Next</a></td></tr></table><hr></div><a name="gtk.gtknotebook.signal.switch-page"></a><h2><span dir="ltr">switch-page</span></h2><p>
+    <p>
+     Called when the page has been switched.
+    </p>
+    <div class="example" align="left"><p><a name="idp72446304"></a><b>Example 105. Listening to the switch-page signal</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//Create a new notebook
+$ntbk = new GtkNotebook();
+
+//Create a first page
+$ntbk-&gt;append_page(new GtkLabel('Page one'), new GtkLabel('1.'));
+
+$ntbk-&gt;append_page(
+    new GtkLabel('This is the second child'),
+    new GtkLabel('Second')
+);
+
+$ntbk-&gt;append_page(
+    new GtkLabel('Third page'),
+    new GtkLabel('3rd')
+);
+
+//the fourth tab has no user-defined label
+// get_tab_label_text() will return NULL in this case
+$ntbk-&gt;append_page(new GtkLabel('IV'));
+
+
+function onSwitchPage($ntbk, $pointer, $pageNum, $wnd)
+{
+    //the number of the newly selected tab is $pageNum
+    //use it to get the page child widget
+    $pageWidget = $ntbk-&gt;get_nth_page($pageNum);
+    //now we can use the page child to retrieve the tab label
+    $text = $ntbk-&gt;get_tab_label_text($pageWidget);
+    //show the selected tab's title in the window title
+    $wnd-&gt;set_title($text);
+}
+
+$wnd = new GtkWindow();
+//everytime the user switches the tab, call the onSwitchPage function
+$ntbk-&gt;connect('switch-page', 'onSwitchPage', $wnd);
+
+
+//The rest of the setup is standard
+$wnd-&gt;set_default_size(300, -1);
+$wnd-&gt;connect_simple('destroy', array('Gtk', 'main_quit'));
+$wnd-&gt;add($ntbk);
+$wnd-&gt;show_all();
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+   </p><p><b>Callback function</b></p><p><p><div class="funcsynopsis" id="idp72440560"><p></p><a name="idp72440560"></a>void callback(<span dir="ltr"><a href="gtk.gtknotebook.html">GtkNotebook</a></span> <i><tt>notebook</tt></i>, pointer <i><tt>pointer</tt></i>, int <i><tt>page_num</tt></i>);</div></p></p><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtknotebook.signal.select-page.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkobject.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">select-page</span> </td><td width="20%" align="center"><a href="gtk.gtknotebook.html#idp72414304">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkObject</span></td></tr></table></div></body></html>

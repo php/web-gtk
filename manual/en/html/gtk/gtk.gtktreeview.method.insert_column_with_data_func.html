@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkTreeView::insert_column_with_data_func</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtktreeview.html#idp84779376" title=""><link rel="previous" href="gtk.gtktreeview.method.insert_column.html" title="GtkTreeView::insert_column"><link rel="next" href="gtk.gtktreeview.method.move_column_after.html" title="GtkTreeView::move_column_after"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtktreeview.method.insert_column.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkTreeView::insert_column_with_data_func</span></th><td width="20%" align="right"> <a href="gtk.gtktreeview.method.move_column_after.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtktreeview.method.insert_column_with_data_func"></a><h2><span dir="ltr">GtkTreeView::insert_column_with_data_func</span></h2><p><div class="funcsynopsis" id="idp84973312"><p></p><a name="idp84973312"></a>int insert_column_with_data_func(int <i><tt>position</tt></i>, string <i><tt>title</tt></i>, <span dir="ltr"><a href="gtk.gtkcellrenderer.html">GtkCellRenderer</a></span> <i><tt>cellrenderer</tt></i>, callback <i><tt>callback</tt></i>);</div></p>
+    <p>
+     This method inserts a new column into a <span dir="ltr"><a href="gtk.gtktreeview.html">GtkTreeView</a></span>
+     at the given position with a given name. In contrast to
+     <span dir="ltr"><a href="gtk.gtktreeview.method.insert_column.html">insert_column()</a></span>  and
+     <span dir="ltr"><a href="gtk.gtktreeview.method.append_column.html">append_column()</a></span>  this method creates
+     the column object internally and allows you to specify a data function,
+     which is called everytime a cell in the model for this column changed and
+     needs to be rendered.
+    </p>
+    <p>
+     The provided callback function receives the following parameters to act on them:
+     <div class="itemizedlist"><ul><li><a name="idp84983536"></a><span dir="ltr"><a href="gtk.gtktreeviewcolumn.html">GtkTreeViewColumn</a></span> The column object created by the
+       <span dir="ltr"><a href="gtk.gtktreeview.method.insert_column_with_data_func.html">insert_column_with_data_func()</a></span> 
+       call.
+      </li><li><a name="idp84985408"></a><span dir="ltr"><a href="gtk.gtkcellrenderer.html">GtkCellRenderer</a></span> The cell renderer used to display
+       this cell.
+      </li><li><a name="idp84986288"></a><span dir="ltr"><a href="gtk.gtktreemodel.html">GtkTreeModel</a></span> The model rendered by the tree view.
+      </li><li><a name="idp84987152"></a><span dir="ltr"><a href="gtk.gtktreeiter.html">GtkTreeIter</a></span> The tree row affected by the change.
+      </li></ul></div>
+     Inside the data function you most propably want to change the
+     <span dir="ltr"><a href="gtk.gtkcellrenderer.html">GtkCellRenderer</a></span>, which is responsible for
+     displaying.
+    </p>
+    <div class="example" align="left"><p><a name="idp84988848"></a><b>Example 142. Using <span dir="ltr"><a href="gtk.gtktreeview.method.insert_column_with_data_func.html">insert_column_with_data_func()</a></span> </b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//Using GtkTreeView::insert_column_with_data_func()
+
+/*
+ * Creating a column with a data function callback
+ */
+$nameRenderer = new GtkCellRendererText();
+$view-&gt;insert_column_with_data_func(
+                                    0,
+                                    "Test suites",
+                                    $nameRenderer,
+                                    "showTestName"
+                                    );
+
+/*
+ * This data function column makes the cell renderer display the text from model
+ * column 0 in uppercase letters.
+ */
+function showTestName($column, $cell, $model, $iter)
+{
+    $cell-&gt;set_property(
+                        "text",
+                        strtoupper( $model-&gt;get_value($iter, 0))
+                        );
+}
+?&gt;
+</pre></td></tr></table></div>
+   
+
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtktreeview.method.insert_column.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtktreeview.method.move_column_after.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkTreeView::insert_column</span> </td><td width="20%" align="center"><a href="gtk.gtktreeview.html#idp84779376">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkTreeView::move_column_after</span></td></tr></table></div></body></html>

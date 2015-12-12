@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkAccelGroup</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkaboutdialog.method.set_website_label.html" title="GtkAboutDialog::set_website_label"><link rel="next" href="gtk.gtkaccelgroup.constructor.html" title="GtkAccelGroup Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkaboutdialog.method.set_website_label.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkAccelGroup</span></th><td width="20%" align="right"> <a href="gtk.gtkaccelgroup.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkaccelgroup"></a><h2 class="title"><span dir="ltr">GtkAccelGroup</span></h2><p><blockquote>
+   Groups of global keyboard accelerators for an entire GtkWindow
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkaccelgroup.html">GtkAccelGroup</a></span><br></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    A GtkAccelGroup represents a group of keyboard accelerators, typically
+    attached to a toplevel <span dir="ltr"><a href="gtk.gtkwindow.html">GtkWindow</a></span> (with
+    <span dir="ltr"><a href="gtk.gtkwindow.method.add_accel_group.html">add_accel_group()</a></span> ). Usually you won't
+    need to create a GtkAccelGroup directly; instead, when using
+    <span dir="ltr"><a href="gtk.gtkitemfactory.html">GtkItemFactory</a></span>, GTK+ automatically sets up the
+    accelerators for your menus in the item factory's GtkAccelGroup.
+   </p>
+   <p>
+    Note that accelerators are different from mnemonics. Accelerators are
+    shortcuts for activating a menu item; they appear alongside the menu item
+    they're a shortcut for. For example "<span dir="ltr"><tt>Ctrl+Q</tt></span>" might
+    appear alongside the "<span dir="ltr"><tt>Quit</tt></span>" menu item. Mnemonics are
+    shortcuts for GUI elements such as text entries or buttons; they appear as
+    underlined characters. See <span dir="ltr"><a href="gtk.gtklabel.html">GtkLabel</a></span>
+    constructor. Menu items can have
+    both accelerators and mnemonics, of course.
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp54958640"><p></p><a name="idp54958640"></a> <span dir="ltr"><a href="gtk.gtkaccelgroup.constructor.html">GtkAccelGroup</a></span> ();</div></p> --
+    Creates a new accelerator group.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkaccelgroup.method.disconnect_key.html">disconnect_key()</a></span> </dt><dd> 
+
+   </dd></blockquote></div><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtkaccelgroup.signal.accel-activate.html">accel-activate</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkaccelgroup.signal.accel-changed.html">accel-changed</a>"</span></dt><dd> 
+   </dd></blockquote></p></div>
+
+  
+
+ 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ 
+
+  
+
+  
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkaboutdialog.method.set_website_label.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkaccelgroup.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkAboutDialog::set_website_label</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkAccelGroup</span> Constructor</td></tr></table></div></body></html>

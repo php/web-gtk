@@ -1,0 +1,591 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkWindow</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkwidget.field.window.html" title="GtkWidget::window"><link rel="next" href="gtk.gtkwindow.constructor.html" title="GtkWindow Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkwidget.field.window.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkWindow</span></th><td width="20%" align="right"> <a href="gtk.gtkwindow.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkwindow"></a><h2 class="title"><span dir="ltr">GtkWindow</span></h2><p><blockquote>
+   A window which will likely contain the rest of the application.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkbin.html">GtkBin</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwindow.html">GtkWindow</a></span><br></div></blockquote></p><p><h3>Direct Subclasses</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="gtk.gtkdialog.html">GtkDialog</a></span>, <span dir="ltr"><a href="gtk.gtkplug.html">GtkPlug</a></span>, <span dir="ltr"><a href="../sexy.sexytooltip.html">SexyTooltip</a></span></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    A window is the framework that contains the application. It 
+    provides a context for the other widgets that make up the
+    application. 
+   </p>
+   <p>
+    As a subclass of <span dir="ltr"><a href="gtk.gtkbin.html">GtkBin</a></span> a window may
+    only have one child. To add more widgets to a window first
+    add a widget which can accept more than one child like a 
+    <span dir="ltr"><a href="gtk.gtkhbox.html">GtkHBox</a></span> or a <span dir="ltr"><a href="gtk.gtkvbox.html">GtkVBox</a></span>.
+    Then add the other widgets to the child container. Trying to 
+    add more than one child will produce a warning.
+   </p>
+   <p>
+    <div class="example" align="left"><p><a name="idp90293520"></a><b>Example 156. Adding too many children.</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+// Create a new window.
+$window = new GtkWindow();
+
+// Add two buttons.
+$window-&gt;add(new GtkButton('1'));
+$window-&gt;add(new GtkButton('2'));
+
+/*
+Spits out:
+Gtk-WARNING **: Attempting to add a widget with type GtkButton to 
+a GtkWindow, but as a GtkBin subclass a GtkWindow can only 
+contain one widget at a time; it already contains a widget 
+of type GtkButton
+*/
+?&gt;</pre></td></tr></table></div>
+   </p>
+   <p>
+    <span dir="ltr"><a href="gtk.gtkwindow.html">GtkWindow</a></span> is a top level widget. This 
+    means that it may not be added as a child of another widget.
+    Trying to do so will produce a Gtk-WARNING.
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp90299280"><p></p><a name="idp90299280"></a> <span dir="ltr"><a href="gtk.gtkwindow.constructor.html">GtkWindow</a></span> ([
+     <span dir="ltr"><a href="gtk.enum.windowtype.html">GtkWindowType</a></span>
+     <i><tt>
+      
+       type = <span dir="ltr"><a href="../#">Gtk::WINDOW_TOPLEVEL</a></span>
+      
+     </tt></i>
+    ]);</div></p> --
+    Creates a new GtkWindow instance.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkwindow.method.activate_default.html">activate_default()</a></span> </dt><dd> 
+    Send the activate signal to the default widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.activate_focus.html">activate_focus()</a></span> </dt><dd> 
+    Activates the widget with the focus.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.activate_key.html">activate_key()</a></span> </dt><dd> 
+    Activate a keyboard shortcut in the window by hand.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.add_accel_group.html">add_accel_group()</a></span> </dt><dd> 
+    Associates an accel group with the window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.add_mnemonic.html">add_mnemonic()</a></span> </dt><dd> 
+    Adds a mnemonic to the window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.begin_move_drag.html">begin_move_drag()</a></span> </dt><dd> 
+    Begins to move a window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.begin_resize_drag.html">begin_resize_drag()</a></span> </dt><dd> 
+    Begins resizing the window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.deiconify.html">deiconify()</a></span> </dt><dd> 
+    Deiconifies (unminimizes) the window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.fullscreen.html">fullscreen()</a></span> </dt><dd> 
+    Sets the window to fullscreen mode.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.get_accept_focus.html">get_accept_focus()</a></span> </dt><dd> 
+    If the window wants to be focusable or not.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.get_decorated.html">get_decorated()</a></span> </dt><dd> 
+    Returns whether or not the window decorations are currently shown.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.get_default_size.html">get_default_size()</a></span> </dt><dd> 
+    Returns the window's default size.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.get_destroy_with_parent.html">get_destroy_with_parent()</a></span> </dt><dd> 
+    Whether the window will be destroyed with its transient parent.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.get_focus.html">get_focus()</a></span> </dt><dd> 
+    Returns the widget that has the focus.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.get_focus_on_map.html">get_focus_on_map()</a></span> </dt><dd> 
+    If window should receive the input focus when mapped.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.get_frame_dimensions.html">get_frame_dimensions()</a></span> </dt><dd> 
+    Returns the dimensions of the frame window for the toplevel.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.get_gravity.html">get_gravity()</a></span> </dt><dd> 
+    Returns the window's gravity.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.get_has_frame.html">get_has_frame()</a></span> </dt><dd> 
+    Returns whether or not the window as a frame window outside its
+    <span dir="ltr"><a href="../gdk/gdk.gdkwindow.html">GdkWindow</a></span>.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.get_icon.html">get_icon()</a></span> </dt><dd> 
+    Returns the icon used to represent the window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.get_icon_list.html">get_icon_list()</a></span> </dt><dd> 
+    Returns the icons in the window's icon list.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.get_icon_name.html">get_icon_name()</a></span> </dt><dd> 
+    Returns the name of the themed icon for the window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.get_mnemonic_modifier.html">get_mnemonic_modifier()</a></span> </dt><dd> 
+    Returns the mnemonic modifier for the window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.get_modal.html">get_modal()</a></span> </dt><dd> 
+    If the window is modal or not.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.get_position.html">get_position()</a></span> </dt><dd> 
+    Returns the position of the window with respect to its gravity.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.get_resizable.html">get_resizable()</a></span> </dt><dd> 
+    If the window can be resized by the user.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.get_role.html">get_role()</a></span> </dt><dd> 
+    Returns the window's role.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.get_size.html">get_size()</a></span> </dt><dd> 
+    Returns the height and width of the window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.get_skip_pager_hint.html">get_skip_pager_hint()</a></span> </dt><dd> 
+    If a pager shall display the window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.get_skip_taskbar_hint.html">get_skip_taskbar_hint()</a></span> </dt><dd> 
+    If the window shall be hidden from the task bar.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.get_title.html">get_title()</a></span> </dt><dd> 
+    Returns the window title.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.get_transient_for.html">get_transient_for()</a></span> </dt><dd> 
+    Returns the transient parent for the window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.get_type_hint.html">get_type_hint()</a></span> </dt><dd> 
+    Returns the type hint for the window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.has_toplevel_focus.html">has_toplevel_focus()</a></span> </dt><dd> 
+    Returns whether or not input focus is within the window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.iconify.html">iconify()</a></span> </dt><dd> 
+    Minimizes the window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.is_active.html">is_active()</a></span> </dt><dd> 
+    Returns whether or not input focus is within the window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.maximize.html">maximize()</a></span> </dt><dd> 
+    Maximizes the window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.move.html">move()</a></span> </dt><dd> 
+    Requests that the window be moved to the given position.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.parse_geometry.html">parse_geometry()</a></span> </dt><dd> 
+    Parses an X Window System geometry string.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.present.html">present()</a></span> </dt><dd> 
+    Shows the window to the user.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.propagate_key_event.html">propagate_key_event()</a></span> </dt><dd> 
+    Passes a key press or release event to the focus chain until it is
+    handled.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.remove_accel_group.html">remove_accel_group()</a></span> </dt><dd> 
+    Disassociates an accelerator group from the window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.remove_mnemonic.html">remove_mnemonic()</a></span> </dt><dd> 
+    Removes a <a href="../appendix.glossary.html#appendix.glossary.m.mnemonic">mnemonic</a>
+    from the window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.reshow_with_initial_size.html">reshow_with_initial_size()</a></span> </dt><dd> 
+    Hides then reshows the window in its original position and with its
+    original size.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.resize.html">resize()</a></span> </dt><dd> 
+    Resizes the window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_accept_focus.html">set_accept_focus()</a></span> </dt><dd> 
+    Sets whether or not the window will accept input focus.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_auto_startup_notification.html">set_auto_startup_notification()</a></span> </dt><dd> 
+    Turns startup notification on or off.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_decorated.html">set_decorated()</a></span> </dt><dd> 
+    Turns the borders and title bar for the window on/off.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_default.html">set_default()</a></span> </dt><dd> 
+    Sets the given widget as the default for the window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_default_icon.html">set_default_icon()</a></span> </dt><dd> 
+    Sets a fallback icon for the window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_default_size.html">set_default_size()</a></span> </dt><dd> 
+    Sets the default size of the window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_destroy_with_parent.html">set_destroy_with_parent()</a></span> </dt><dd> 
+    Sets whether or not the window should be destroyed with its transient
+    parent.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_focus.html">set_focus()</a></span> </dt><dd> 
+    Sets the focus widget for the window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_focus_on_map.html">set_focus_on_map()</a></span> </dt><dd> 
+    Sets whether or not the window manager should give the window focus when
+    the window is mapped.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_frame_dimensions.html">set_frame_dimensions()</a></span> </dt><dd> 
+    Sets the size of the frame border.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_geometry_hints.html">set_geometry_hints()</a></span> </dt><dd> 
+    Sets hints about how the window can be resized by the user.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_gravity.html">set_gravity()</a></span> </dt><dd> 
+    Sets the window gravity.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_has_frame.html">set_has_frame()</a></span> </dt><dd> 
+    Sets whether or not the window will have a frame window around it.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_icon.html">set_icon()</a></span> </dt><dd> 
+    Sets the icon representing the window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_icon_from_file.html">set_icon_from_file()</a></span> </dt><dd> 
+    Sets the icon for the window from a file.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_icon_list.html">set_icon_list()</a></span> </dt><dd> 
+    Sets a list of icons for the window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_icon_name.html">set_icon_name()</a></span> </dt><dd> 
+    Sets the window icon from an named theme icon.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_keep_above.html">set_keep_above()</a></span> </dt><dd> 
+    Forces the window to remain on top of other windows on the screen.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_keep_below.html">set_keep_below()</a></span> </dt><dd> 
+    Forces the window to remain beneath other windows on the screen.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_mnemonic_modifier.html">set_mnemonic_modifier()</a></span> </dt><dd> 
+    Sets the mnemonic modifier for the window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_modal.html">set_modal()</a></span> </dt><dd> 
+    Sets whether or not the window is modal.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_policy.html">set_policy()</a></span> </dt><dd> 
+    DEPRECATED. Sets how the window handles size requests and user resize
+    attempts.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_position.html">set_position()</a></span> </dt><dd> 
+    Sets a new position constraint for the window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_resizable.html">set_resizable()</a></span> </dt><dd> 
+    Sets if the window may be resized by the user.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_role.html">set_role()</a></span> </dt><dd> 
+    Sets the role for the window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_screen.html">set_screen()</a></span> </dt><dd> 
+    Sets the screen on which the window is to be displayed.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_skip_pager_hint.html">set_skip_pager_hint()</a></span> </dt><dd> 
+    Hide the window from the pager or not.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_skip_taskbar_hint.html">set_skip_taskbar_hint()</a></span> </dt><dd> 
+    Set that the window shall be hidden from the task bar.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_title.html">set_title()</a></span> </dt><dd> 
+    Sets the window title
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_transient_for.html">set_transient_for()</a></span> </dt><dd> 
+    Sets the transient parent for the window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_type_hint.html">set_type_hint()</a></span> </dt><dd> 
+    Sets a type hint for the window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_wmclass.html">set_wmclass()</a></span> </dt><dd> 
+    Sets the window manager name and class hints for the window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.stick.html">stick()</a></span> </dt><dd> 
+    Show the window on all desktops.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.unfullscreen.html">unfullscreen()</a></span> </dt><dd> 
+    Returns the window to its original size and location.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.unmaximize.html">unmaximize()</a></span> </dt><dd> 
+    Returns the window to its original size and location.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.unstick.html">unstick()</a></span> </dt><dd> 
+    Don't show the window on all desktops.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.get_default_icon_list.html">get_default_icon_list()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.list_toplevels.html">list_toplevels()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_default_icon_from_file.html">set_default_icon_from_file()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_default_icon_list.html">set_default_icon_list()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.set_default_icon_name.html">set_default_icon_name()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.method.window_mnemonic_activate.html">window_mnemonic_activate()</a></span> </dt><dd> 
+
+   </dd></blockquote></div><h3>Fields</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkwindow.field.allow_grow.html">allow_grow</a></span>:</dt><dd> 
+    Whether or not the window is allowed to grow.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.field.allow_shrink.html">allow_shrink</a></span>:</dt><dd> 
+    Whether or not the window is allowed to shrink.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.field.configure_notify_received.html">configure_notify_received</a></span>:</dt><dd> 
+    Whether or not a window resize configuration event is currently
+    outstanding.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.field.configure_request_count.html">configure_request_count</a></span>:</dt><dd> 
+    The number of outstanding resize configuration requests.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.field.decorated.html">decorated</a></span>:</dt><dd> 
+    Whether or not the window is currently decorated.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.field.default_widget.html">default_widget</a></span>:</dt><dd> 
+    The widget which will be activated by default.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.field.destroy_with_parent.html">destroy_with_parent</a></span>:</dt><dd> 
+    Whether or not the window will be destroyed with its parent window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.field.focus_widget.html">focus_widget</a></span>:</dt><dd> 
+    The widget that currently has keyboard focus.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.field.frame.html">frame</a></span>:</dt><dd> 
+    The frame window surrounding the window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.field.frame_bottom.html">frame_bottom</a></span>:</dt><dd> 
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.field.frame_left.html">frame_left</a></span>:</dt><dd> 
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.field.frame_right.html">frame_right</a></span>:</dt><dd> 
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.field.frame_top.html">frame_top</a></span>:</dt><dd> 
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.field.gravity.html">gravity</a></span>:</dt><dd> 
+    The gravity of the window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.field.group.html">group</a></span>:</dt><dd> 
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.field.has_focus.html">has_focus</a></span>:</dt><dd> 
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.field.has_frame.html">has_frame</a></span>:</dt><dd> 
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.field.has_user_ref_count.html">has_user_ref_count</a></span>:</dt><dd> 
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.field.iconify_initially.html">iconify_initially</a></span>:</dt><dd> 
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.field.keys_changed_handler.html">keys_changed_handler</a></span>:</dt><dd> 
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.field.maximize_initially.html">maximize_initially</a></span>:</dt><dd> 
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.field.mnemonic_modifier.html">mnemonic_modifier</a></span>:</dt><dd> 
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.field.modal.html">modal</a></span>:</dt><dd> 
+    Whether or not the window is modal.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.field.need_default_position.html">need_default_position</a></span>:</dt><dd> 
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.field.need_default_size.html">need_default_size</a></span>:</dt><dd> 
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.field.position.html">position</a></span>:</dt><dd> 
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.field.stick_initially.html">stick_initially</a></span>:</dt><dd> 
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.field.title.html">title</a></span>:</dt><dd> 
+    The title of the window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.field.transient_parent.html">transient_parent</a></span>:</dt><dd> 
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.field.type.html">type</a></span>:</dt><dd> 
+    The window's type.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.field.type_hint.html">type_hint</a></span>:</dt><dd> 
+    A hint describing the window's type.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.field.wm_role.html">wm_role</a></span>:</dt><dd> 
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.field.wmclass_class.html">wmclass_class</a></span>:</dt><dd> 
+   </dd><dt><span dir="ltr"><a href="gtk.gtkwindow.field.wmclass_name.html">wmclass_name</a></span>:</dt><dd> 
+   </dd></blockquote><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtkwindow.signal.activate-default.html">activate-default</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwindow.signal.activate-focus.html">activate-focus</a>"</span></dt><dd> 
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwindow.signal.frame-event.html">frame-event</a>"</span></dt><dd> 
+    Emitted when an event other than key-press, key-release, or a change in
+    focus occurs on the window's frame.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwindow.signal.keys-changed.html">keys-changed</a>"</span></dt><dd> 
+    Emitted when a mnemonic accelerator is added, removed or changed or the
+    mnemonic modifier is set.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwindow.signal.move-focus.html">move-focus</a>"</span></dt><dd> 
+    Emitted when the user changes the window's focus widget.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkwindow.signal.set-focus.html">set-focus</a>"</span></dt><dd> 
+    Emitted when the window's focus widget is changed.
+   </dd></blockquote></p></div>
+
+  
+
+ 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+
+  
+
+ 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ 
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkwidget.field.window.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkwindow.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkWidget::window</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkWindow</span> Constructor</td></tr></table></div></body></html>

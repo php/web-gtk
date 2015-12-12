@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkHBox</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkhandlebox.property.snap-edge-set.html" title="GtkHandleBox::snap-edge-set"><link rel="next" href="gtk.gtkhbox.constructor.html" title="GtkHBox Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkhandlebox.property.snap-edge-set.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkHBox</span></th><td width="20%" align="right"> <a href="gtk.gtkhbox.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkhbox"></a><h2 class="title"><span dir="ltr">GtkHBox</span></h2><p><blockquote>
+   A horizontal box for organizing child widgets.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkbox.html">GtkBox</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkhbox.html">GtkHBox</a></span><br></div></blockquote></p><p><h3>Direct Subclasses</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="gtk.gtkcombo.html">GtkCombo</a></span>, <span dir="ltr"><a href="gtk.gtkfilechooserbutton.html">GtkFileChooserButton</a></span>, <span dir="ltr"><a href="gtk.gtkstatusbar.html">GtkStatusbar</a></span></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    The <span dir="ltr"><a href="gtk.gtkhbox.html">GtkHBox</a></span> container is designed to organize child
+    widgets along a single row, allocating the same height to all children.
+    This overrides any child requisition size, and child widgets that take up
+    less than the allocated space are horizontally centered by default within
+    that space.
+   </p>
+   <p>
+    Adding child widgets to a <span dir="ltr"><a href="gtk.gtkhbox.html">GtkHBox</a></span> is done by packing
+    methods that are either inherited from the <span dir="ltr"><a href="gtk.gtkbox.html">GtkBox</a></span>
+    class, such as <span dir="ltr"><a href="gtk.gtkbox.method.pack_start.html">pack_start()</a></span> , or by the
+    less flexible <span dir="ltr"><a href="gtk.gtkcontainer.method.add.html">add()</a></span> , common to all
+    container widgets.
+   </p>
+   <p>GtkHBox and GtkVBox, in combination, are the most commonly used
+    packing widgets.For sample code on how to use both, check the
+    <span dir="ltr"><a href="gtk.gtkvbox.html">GtkVBox</a></span> constructor entry.</p>
+   <p>
+    See also:
+    <span dir="ltr"><a href="gtk.gtkvbox.html">GtkVBox</a></span>, <span dir="ltr"><a href="gtk.gtktable.html">GtkTable</a></span>, <span dir="ltr"><a href="gtk.gtkbuttonbox.html">GtkButtonBox</a></span>,
+    <span dir="ltr"><a href="gtk.gtkbox.html">GtkBox</a></span>, <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span>.
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp66544224"><p></p><a name="idp66544224"></a> <span dir="ltr"><a href="gtk.gtkhbox.constructor.html">GtkHBox</a></span> ([bool <i><tt>homogeneous = false</tt></i> [, int <i><tt>spacing = 0</tt></i>]]);</div></p> --
+    Creates a container that arranges widgets horizontally.
+   </blockquote></div></p></div>
+
+  
+
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkhandlebox.property.snap-edge-set.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkhbox.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkHandleBox::snap-edge-set</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkHBox</span> Constructor</td></tr></table></div></body></html>

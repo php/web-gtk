@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkMenu::popup</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkmenu.html#idp71131520" title=""><link rel="previous" href="gtk.gtkmenu.method.popdown.html" title="GtkMenu::popdown"><link rel="next" href="gtk.gtkmenu.method.reorder_child.html" title="GtkMenu::reorder_child"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkmenu.method.popdown.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkMenu::popup</span></th><td width="20%" align="right"> <a href="gtk.gtkmenu.method.reorder_child.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkmenu.method.popup"></a><h2><span dir="ltr">GtkMenu::popup</span></h2><p><div class="funcsynopsis" id="idp71172800"><p></p><a name="idp71172800"></a>void popup([
+      <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span> 
+      <i><tt>parent_menu_shell</tt></i>
+      [, 
+      <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span> 
+      <i><tt>parent_menu_item</tt></i>
+      [, 
+      <span dir="ltr"><tt>GtkMenuPositionFunc</tt></span> 
+      <i><tt>pos_function</tt></i>
+     , int <i><tt>button</tt></i>, int <i><tt>activate_time</tt></i>]]]);</div></p>
+    <p>
+     The <span dir="ltr"><a href="gtk.gtkmenu.method.popup.html">popup()</a></span>  method looks fairly
+     intimidating at the outset, but is actually quite straightforward to
+     use.
+    </p>
+    <p>
+     The first thing to be aware of is that the 
+     <i><tt>parent_menu_shell</tt></i> and
+     <i><tt>parent_menu_item</tt></i> parameters would generally
+     only be used internally, to associate the popped-up menu with a given
+     <span dir="ltr"><a href="gtk.gtkmenushell.html">GtkMenuShell</a></span> descendant, or 
+     <span dir="ltr"><a href="gtk.gtkmenuitem.html">GtkMenuItem</a></span>, or both.  In a freestanding popup
+     menu, both parameters should be passed as <span dir="ltr"><tt>null</tt></span>.
+    </p>
+    <p>
+     The third parameter concerns the positioning of the popup menu, and
+     has as its default the position of the mouse pointer.  In order to
+     set a different position, you will need to set up a function that will
+     return an array of the co-ordinates, and call it from the 
+     <i><tt>pos_function</tt></i> parameter.
+     <p><div class="informalexample" id="idp71188752"><p></p><a name="idp71188752"></a><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+
+&lt;?php
+function position() {
+    $position = array(300, 200);
+    return $position;
+}
+
+$filemenu-&gt;popup(null, null, 'position', $event-&gt;button, $event-&gt;time);
+?&gt;
+
+      </pre></td></tr></table></div></p>
+    </p>
+    <p>
+     The fourth parameter refers to the mouse button emitting the
+     <span dir="ltr">"<a href="gtk.gtkwidget.signal.button-release-event.html">button-release-event</a>"</span> that
+     will be compared with the button emitting the 
+     <span dir="ltr">"<a href="gtk.gtkwidget.signal.button-press-event.html">button-press-event</a>"</span> in
+     order to set the timer in the final parameter.  This only works if
+     you happen to be triggering the popup function with a button press,
+     and the button pressed and button released are the same - in all other
+     situations, the time element is ignored.  However, setting the 
+     <i><tt>button</tt></i> parameter to <span dir="ltr"><tt>1</tt></span> or 
+     <span dir="ltr"><tt>3</tt></span> will speed up the deactivation when the left or
+     right mouse button is released respectively, regardless of the callback
+     event.
+    </p>
+    <p>
+     The final parameter, <i><tt>activate_time</tt></i>, sets the
+     time conditions for the menu's deactivation.  If you have used a button
+     press event and ensured that the initial press and later release have
+     the same valid integer value, then setting the timer to 
+     <span dir="ltr"><tt>0</tt></span> will make the menu disappear as soon as the user
+     releases the mouse-button that triggered it.  The safest setting for
+     this parameter is <span dir="ltr"><tt>$event-&gt;time</tt></span> -
+     this being a setting that all <span dir="ltr"><a href="../gdk/gdk.gdkevent.html">GdkEvent</a></span>
+     structures share; it causes the popup menu to react as you'd expect it
+     to, and won't spring any surprises if you duplicate or otherwise adapt
+     the original callback event.
+    </p>
+    <div class="example" align="left"><p><a name="idp71198528"></a><b>Example 100. A popup menu on right click</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//Popup menu example:
+// An empty window in which you can right-click
+// to show a popup menu
+
+//Setup this menu: Add two items that echo something
+// to the console when clicked
+$menu = new GtkMenu();
+
+$echo1 = new GtkMenuItem('Echo 1');
+$echo1-&gt;connect_simple('activate', 'doEcho', 'echo1');
+$menu-&gt;append($echo1);
+
+$echo2 = new GtkMenuItem('Echo 2');
+$echo2-&gt;connect_simple('activate', 'doEcho', 'echo2');
+$menu-&gt;append($echo2);
+
+//The menu is not shown, but this here is necessary
+// to let it show when using popup()
+$menu-&gt;show_all();
+
+
+//This funciton is used as a callback and just echoes the parameter
+function doEcho($message) {
+    echo $message . "\r\n";
+}
+
+//The function used as callback for the popup
+function doPopup($window, $event, $menu)
+{
+    //Check if it was the right mouse button (button 3)
+    if ($event-&gt;button == 3) {
+        //popup the menu
+        $menu-&gt;popup();
+    }
+}
+
+//Create a normal window
+$wnd = new GtkWindow();
+
+//Normally, the window doesn't receive the button press events.
+// As we need them here, we force the window to accept and
+// distribute them to our callbacks
+$wnd-&gt;set_events($wnd-&gt;get_events() | Gdk::BUTTON_PRESS_MASK);
+//Connect a callback to the butt press event
+$wnd-&gt;connect('button-press-event', 'doPopup', $menu);
+
+//Standard stuff
+$wnd-&gt;connect_simple('destroy', array('Gtk', 'main_quit'));
+$wnd-&gt;show_all();
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkmenu.method.popdown.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkmenu.method.reorder_child.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkMenu::popdown</span> </td><td width="20%" align="center"><a href="gtk.gtkmenu.html#idp71131520">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkMenu::reorder_child</span></td></tr></table></div></body></html>

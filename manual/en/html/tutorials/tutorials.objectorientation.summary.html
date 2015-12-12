@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>Summary</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="tutorials.objectorientation.html" title="Object Oriented Programming"><link rel="previous" href="tutorials.objectorientation.advanced.html" title="A little more complexity"><link rel="next" href="tutorials.signals.html" title="Signal Handling"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Object Oriented Programming</th></tr><tr><td width="20%" align="left"><a href="tutorials.objectorientation.advanced.html">Prev</a> </td><th width="60%" align="center">Summary</th><td width="20%" align="right"> <a href="tutorials.signals.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="tutorials.objectorientation.summary"></a><div class="titlepage"><div><h2 class="title" style="clear: all"><a name="tutorials.objectorientation.summary"></a>Summary</h2></div></div><p>
+   Hope this tutorial has been of some use in getting you started with the object
+   oriented style of programming in PHP-GTK 2. Before we wind up, a few more
+   pointers follow.</p><p>
+   <div class="itemizedlist"><ul><li><a name="idp44778272"></a>
+     If you are building an extremely large application, you may want
+     to split it into multiple classes: one class for each module. For most
+     applications however, a single class should suffice.
+    </li><li><a name="idp44778880"></a>
+     If you use multiple classes in your application, the question of accessing
+     objects from one class in another arises. In this case, try to design a
+     hierarchy: one master class with other classes extending it. If that is not
+     possible, use global variables instead (not recommended).
+    </li><li><a name="idp44779584"></a>
+     If more than one function in your class needs to access a widget, make it a
+     class property. However if only one function requires it, pass it as a
+     parameter instead.
+    </li><li><a name="idp44780176"></a>
+     Always try to extend your classes from the widget class that will form the
+     base of your class. Also remember that you need to construct that widget
+     explicitly using the <span dir="ltr"><tt>parent::__construct();</tt></span> statement.
+     You can access the methods of that widget via the <span dir="ltr"><tt>this</tt></span>
+     keyword.
+    </li><li><a name="idp44782096"></a>
+     Keep your functions as short as possible. The whole point of object
+     oriented programming is modularization. If a function is beginning to get
+     bulky, consider splitting it. A frequent occurrence of this case is when you
+     try to design your entire (complicated) layout in the constructor itself.
+     Split it into functions that create parts of the layout and assemble them
+     all in the constructor instead.
+    </li></ul></div>
+  </p><p>
+   Don't forget to have a look at the Gtk2_Components section in 
+   <a href="http://pear.php.net/" target="_top">PEAR</a>. 
+   All the packages there are made of high quality object-oriented code. 
+   Read their sources and emulate. All the best!
+  </p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="tutorials.objectorientation.advanced.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="tutorials.signals.html">Next</a></td></tr><tr><td width="40%" align="left">A little more complexity </td><td width="20%" align="center"><a href="tutorials.objectorientation.html">Up</a></td><td width="40%" align="right"> Signal Handling</td></tr></table></div></body></html>

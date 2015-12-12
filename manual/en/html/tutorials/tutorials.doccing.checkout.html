@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>Checking Out, Updating and Compiling</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="tutorials.doccing.html" title="PHP-GTK 2 Documentation"><link rel="previous" href="tutorials.doccing.html" title="PHP-GTK 2 Documentation"><link rel="next" href="tutorials.doccing.translating.html" title="Translating the Manual"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">PHP-GTK 2 Documentation</th></tr><tr><td width="20%" align="left"><a href="tutorials.doccing.html">Prev</a> </td><th width="60%" align="center">Checking Out, Updating and Compiling</th><td width="20%" align="right"> <a href="tutorials.doccing.translating.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="tutorials.doccing.checkout"></a><div class="titlepage"><div><h2 class="title" style="clear: all"><a name="tutorials.doccing.checkout"></a>Checking Out, Updating and Compiling</h2></div></div><div class="sect2"><a name="idp45182576"></a><div class="titlepage"><div><h3 class="title"><a name="idp45182576"></a>Setting up a Build Environment</h3></div></div><p>
+    There are now two different build systems for the php-gtk-doc module;
+    the standard one, used on the server and having several different build
+    options, and the alternative one, which currently offers only the English
+    version of the multiple HTML file build.
+   </p><p>
+    The chief advantage of the alternative build is that it makes it
+    possible to compile the PHP-GTK manual under Windows without installing
+    a Linux emulator such as <a href="http://www.cygwin.com/" target="_top">cygwin</a>.
+    You will, however, need to install several native versions of
+    <a href="http://unxutils.sourceforge.net/" target="_top">Unix tools</a> in order
+    to set up the build environment for it. Installing these simply means
+    unzipping them into your root directory, so this is an easy option if you
+    don't have good enough connectivity or are otherwise precluded from
+    installing cygwin on your local box.
+   </p><p>
+    Whichever build option you use, you will need to have
+    <b>xsltproc</b> installed to process the XSL stylesheets. On
+    a Linux system, you can install this with your package manager. If you are
+    working under the cygwin environment, you can add it via the cygwin install
+    mechanism. If you're using plain Windows, you can download the xsltproc
+    binaries (you'll need the iconv, zlib, libxml2 and libxslt packages) from
+    xmlsoft.org contributor Igor Zlatkovic's
+    <a href="http://www.zlatkovic.com/libxml.en.html" target="_top">project site</a>
+    and unzip them into your root directory.
+   </p><div class="note" style="margin-left: 24px; margin-right: 24px; font-weight: bold;"><p>
+     There are other XSLT processors around but, since we found xsltproc to be
+     by far the fastest of the available alternatives, the stylesheets used to
+     generate the PHP-GTK 2 manual now rely on it entirely.
+    </p></div></div><div class="sect2"><a name="idp45189696"></a><div class="titlepage"><div><h3 class="title"><a name="idp45189696"></a>Checking out</h3></div></div><p>
+    Before we can start changing or even compiling the manual, we need to get
+    a copy from SVN. To accomplish this, you will need an SVN client. On nearly
+    every Linux system, the command line <span dir="ltr"><tt>svn</tt></span> tool is
+    installed. This is also available via cygwin. Under Windows, there are
+    native point-and-click SVN clients available, such as
+    <a href="http://www.tortoisesvn.org/" target="_top">Tortoise SVN</a>.
+   </p><p>
+    To get a copy of the docs using the <span dir="ltr"><tt>svn</tt></span> command line
+    tool, type:
+    <b>svn checkout http://svn.php.net/repository/gtk/php-gtk-doc/trunk php-gtk-doc</b>
+   </p><p>
+    If you already have a copy, you can update it via:
+    <b>cvs -d :pserver:cvsread@cvs.php.net:/repository update -Pd php-gtk-doc</b>
+    (if you are inside the php-gtk-doc directory, you can (have to) omit the 
+    <span dir="ltr"><tt>php-gtk-doc</tt></span> part.
+   </p><p>
+    To obtain a copy of the docs module using TortoiseCVS: go to
+    <span dir="ltr"><tt>File/CVS checkout</tt></span> and fill out the form. The protocol
+    is the <span dir="ltr"><tt>Password server (:pserver)</tt></span> option; the server is
+    <span dir="ltr"><tt>cvs.php.net</tt></span>, and the repository folder is
+    <span dir="ltr"><tt>/repository</tt></span>. If you have a CVS account, please use your
+    own user name; otherwise, use <span dir="ltr"><tt>cvsread</tt></span>; and the module,
+    of course, is <span dir="ltr"><tt>php-gtk-doc</tt></span>. Under the current version
+    of TortoiseCVS, the line endings are converted to Windows by default; we
+    don't want this anywhere in the php.net repository, so if you're intending
+    to commit any of your changes you should go to <span dir="ltr"><tt>Options</tt></span>
+    and tick the box that says <span dir="ltr"><tt>Use UNIX line endings</tt></span>.
+   </p></div><div class="sect2"><a name="idp45203248"></a><div class="titlepage"><div><h3 class="title"><a name="idp45203248"></a>Compiling the Standard Build</h3></div></div><p>
+    From the commandline, move into the php-gtk-doc directory via the command
+    <b>cd php-gtk-doc</b>. Type <b>autoconf</b> to set
+    up the configuration file.
+   </p><p>
+    There is full internationalisation (i18n) support in this build system,
+    with the default configuration being English (en). If you are compiling
+    for any language other than English, you will need to supply the configure
+    line with the language code for that language, e.g.
+    <b>./configure --with-lang=de</b>. Note that this will only
+    work if the base files for the German translation happen to exist!
+   </p><p>
+    Another configure option you may need to use is
+    <b>--with-php=PATH</b>, where <span dir="ltr"><tt>PATH</tt></span> is the
+    full path to the PHP binary executable you intend to use. In most cases,
+    the PHP 4 or PHP 5 binary found automatically by autoconf will be fine
+    - but occasionally people have strange setups on their systems. You really
+    should be using CLI for building, by the way, but CGI will generally cope.
+   </p><p>
+    You can prevent the chunked builds (<span dir="ltr"><tt>html</tt></span>,
+    <span dir="ltr"><tt>phpweb</tt></span>, <span dir="ltr"><tt>test</tt></span>) from telling you
+    every time they write a file by using <b>--disable-output</b>.
+    In theory at least, this should speed up the build time for those versions.
+   </p><p>
+    There is one last configuration option, <b>--with-history</b>,
+    which you may or may not fall across. It's used to define the path to an
+    external directory containing only <span dir="ltr"><tt>manual/*</tt></span> (a snapshot
+    of <span dir="ltr"><tt>php-gtk-doc/manual</tt></span>). This is only used during the
+    <b>make updates</b> option, which is primarily there to
+    generate the updated documentation lists on the server. You won't need it.
+   </p><p>
+    Finally, there is a choice of output style. Choosing
+    <b>make bigmanual.html</b> will give you a single, huge HTML
+    file in less than five minutes; <b>make text</b> will do the
+    same, but will also produce a copy of the manual as a single text file
+    at the end of the build run. <b>make html</b> will eventually
+    produce multiple HTML files in split directories alongside a copy of the
+    <span dir="ltr"><tt>images</tt></span> directory; <b>make phpweb</b> will
+    result in a copy of the manual as it appears on gtk.php.net. By popular
+    demand, there is now also <b>make test id=ID</b>, where
+    <span dir="ltr"><tt>ID</tt></span> is the manual id for a component, e.g.
+    <span dir="ltr"><tt>tutorials.helloadvanced</tt></span>
+    or <span dir="ltr"><tt>gtk.gtkwindow</tt></span>. This will build the relevant file -
+    and anything below it in the hierarchy - into a toplevel directory named
+    <span dir="ltr"><tt>testbuild</tt></span> rather than into <span dir="ltr"><tt>build</tt></span>.
+   </p><p>
+    There are two output types you are very unlikely to need at all:
+    <b>make mtoc</b>, which generates a machine-readable table of
+    contents in XML, and <b>make updates</b>, which is used on the
+    build server to generate the manual updates list for the home page at
+    <a href="http://gtk.php.net/" target="_top">http://gtk.php.net/</a>.
+   </p><p>
+    Further output formats are likely to become available in the near future.
+   </p></div><div class="sect2"><a name="idp45229056"></a><div class="titlepage"><div><h3 class="title"><a name="idp45229056"></a>Compiling the Alternative Build</h3></div></div><p>
+    From the commandline, change into the php-gtk-doc directory via the command
+    <b>cd php-gtk-doc</b>. Now set up some basic
+    files: <b>./runfirst.sh</b> (or
+    <b>sh ./runfirst.sh</b> if you are working under Windows). The
+    <span dir="ltr"><tt>runfirst</tt></span>-script has only to be called again if
+    completely new files have been added to the manual, or if the build date
+    needs to be updated. So if you want to compile the manual on a daily basis,
+	you should do that every time.
+   </p><p>
+    Let's generate the manual itself: At first you must understand that
+    the php-gtk manual exists in different languages, in addition to
+    the different formats mentioned earlier. So when compiling, you
+    need to know which manual you want to compile. The language is
+    determined as two-letter code, such as <span dir="ltr"><tt>en</tt></span> for
+    English, <span dir="ltr"><tt>de</tt></span> for German and so on. The type
+    is one of <span dir="ltr"><tt>html</tt></span> for the normal html documentation
+    you can download from <a href="http://gtk.php.net/" target="_top">gtk.php.net</a>,
+    <span dir="ltr"><tt>phpweb</tt></span> to generate the files like the online docs 
+    at the PHP-GTK site, or <span dir="ltr"><tt>test</tt></span> if you want to
+    compile a part of the files only.
+   </p><p>
+    So we call <b>./gen_manual.sh &lt;language&gt; &lt;type&gt;</b>,
+    for example <b>./gen_manual.sh en html</b>. You will see
+    the lines flowing over the terminal; go somewhere and come back in ten
+    minutes - it will take some time. The files will be generated in the
+    build directory <tt>build/&lt;language&gt;/&lt;type&gt;/</tt>,
+    in our case <tt>build/en/html/</tt>
+   </p></div><div class="sect2"><a name="idp45242080"></a><div class="titlepage"><div><h3 class="title"><a name="idp45242080"></a>Livedocs</h3></div></div><p>
+    If you are an editor and just want to test if the section you just
+    wrote is correct and renders as intended in html, you can call
+    <b>./gen_manual.sh &lt;language&gt; test &lt;id&gt;</b>,
+    as in <b>./gen_manual.sh en test gtk.gtkiconview</b>.
+    This will enable a special mode in which the manual will be stripped
+    down to a minimal version containing only the most necessary things
+    to compile this special page (id). However, the script is not perfect
+    and can (currently) generate reference files only, and in this many
+    links just won't work.
+   </p><p>
+    If you have an Apache webserver with PHP installed, you can use livedocs:
+    Open the <tt>live.php</tt> in your browser (on the webserver,
+    not the local directory itself!) and browse through the manual - the pages
+    are created on demand, most times as fast as 1 to 2 seconds. 
+   </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="tutorials.doccing.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="tutorials.doccing.translating.html">Next</a></td></tr><tr><td width="40%" align="left">PHP-GTK 2 Documentation </td><td width="20%" align="center"><a href="tutorials.doccing.html">Up</a></td><td width="40%" align="right"> Translating the Manual</td></tr></table></div></body></html>

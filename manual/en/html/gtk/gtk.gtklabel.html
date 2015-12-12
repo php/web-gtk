@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkLabel</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkitemfactory.method.path_from_widget.html" title="GtkItemFactory::path_from_widget"><link rel="next" href="gtk.gtklabel.constructor.html" title="GtkLabel Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkitemfactory.method.path_from_widget.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkLabel</span></th><td width="20%" align="right"> <a href="gtk.gtklabel.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtklabel"></a><h2 class="title"><span dir="ltr">GtkLabel</span></h2><p><blockquote>
+   A widget that displays a small to medium amount of text.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkmisc.html">GtkMisc</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtklabel.html">GtkLabel</a></span><br></div></blockquote></p><p><h3>Direct Subclasses</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="gtk.gtkaccellabel.html">GtkAccelLabel</a></span>, <span dir="ltr"><a href="../sexy.sexyurllabel.html">SexyUrlLabel</a></span></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    The GtkLabel widget displays a small amount of text. 
+    As the name implies, most labels are used to label 
+    another widget such as a <span dir="ltr"><a href="gtk.gtkbutton.html">GtkButton</a></span>, 
+    a <span dir="ltr"><a href="gtk.gtkmenuitem.html">GtkMenuItem</a></span>, or a 
+    <span dir="ltr"><a href="gtk.gtkoptionmenu.html">GtkOptionMenu</a></span>.
+   </p>
+   <p>
+    You can have control over the way a GtkLabel will be displayed with 
+    some methods such as <span dir="ltr"><a href="gtk.gtklabel.method.set_justify.html">set_justify()</a></span> 
+	or <span dir="ltr"><a href="gtk.gtklabel.method.set_width_chars.html">set_width_chars()</a></span> . As a subclass
+    of <span dir="ltr"><a href="gtk.gtkmisc.html">GtkMisc</a></span>, you may specify alignment and padding
+    with <span dir="ltr"><a href="gtk.gtkmisc.method.set_alignment.html">set_alignment()</a></span>  and
+    <span dir="ltr"><a href="gtk.gtkmisc.method.set_padding.html">set_padding()</a></span> .  However,
+    <span dir="ltr"><a href="gtk.gtkmisc.method.set_padding.html">set_padding()</a></span>  only supports setting
+    padding for the right/left and top/bottom pairs.  If you need to specify
+    different values for left and right padding, you can insert the label
+    into a <span dir="ltr"><a href="gtk.gtkalignment.html">GtkAlignment</a></span> container.
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp69123392"><p></p><a name="idp69123392"></a> <span dir="ltr"><a href="gtk.gtklabel.constructor.html">GtkLabel</a></span> ([string <i><tt>string = null</tt></i> [, boolean <i><tt>parse_mnemonic = false</tt></i>]]);</div></p> --
+    Creates a new <span dir="ltr"><a href="gtk.gtklabel.html">GtkLabel</a></span>.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtklabel.method.get.html">get()</a></span> </dt><dd> 
+    DEPRECATED. Gets the string of the label.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.get_angle.html">get_angle()</a></span> </dt><dd> 
+    Gets the angle of rotation for the label.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.get_attributes.html">get_attributes()</a></span> </dt><dd> 
+    Returns the list of Pango attributes for the label.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.get_ellipsize.html">get_ellipsize()</a></span> </dt><dd> 
+    Returns the ellipsization mode is used to shorten the text.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.get_justify.html">get_justify()</a></span> </dt><dd> 
+    Returns the justification of the label.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.get_label.html">get_label()</a></span> </dt><dd> 
+    Fetches the text including any embedded underlines indicating mnemonics and Pango markup.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.get_layout.html">get_layout()</a></span> </dt><dd> 
+    Gets the <span dir="ltr"><a href="../pango/pango.pangolayout.html">PangoLayout</a></span> used to display the label.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.get_layout_offsets.html">get_layout_offsets()</a></span> </dt><dd> 
+    Obtains the coordinates where the label will draw the
+    <span dir="ltr"><a href="../pango/pango.pangolayout.html">PangoLayout</a></span>.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.get_line_wrap.html">get_line_wrap()</a></span> </dt><dd> 
+    Returns whether lines in the label are automatically wrapped.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.get_max_width_chars.html">get_max_width_chars()</a></span> </dt><dd> 
+    Returns the maximum width in characters.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.get_mnemonic_keyval.html">get_mnemonic_keyval()</a></span> </dt><dd> 
+    Returns the keyval of the mnemonic key if set.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.get_mnemonic_widget.html">get_mnemonic_widget()</a></span> </dt><dd> 
+    Retrieves the target of the mnemonic (keyboard shortcut) of this label.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.get_selectable.html">get_selectable()</a></span> </dt><dd> 
+    Checks it the user can select text in the label.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.get_selection_bounds.html">get_selection_bounds()</a></span> </dt><dd> 
+    Gets the selected range of characters in the label.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.get_single_line_mode.html">get_single_line_mode()</a></span> </dt><dd> 
+    Returns if the label displays only one line.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.get_text.html">get_text()</a></span> </dt><dd> 
+    Fetches the text from a label widget, as displayed on the screen.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.get_use_markup.html">get_use_markup()</a></span> </dt><dd> 
+    Returns whether the label's text is interpreted as marked up with the
+    Pango text markup language.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.get_use_underline.html">get_use_underline()</a></span> </dt><dd> 
+    Returns whether an embedded underline in the label indicates a mnemonic.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.get_width_chars.html">get_width_chars()</a></span> </dt><dd> 
+    Retrieves the desired width of the label, in characters.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.parse_uline.html">parse_uline()</a></span> </dt><dd> 
+    DEPRECATED. Parses the given string for underscores and converts the next 
+    character to an underlined character.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.select_region.html">select_region()</a></span> </dt><dd> 
+    Selects a range of characters in the label, if the label is selectable.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.set.html">set()</a></span> </dt><dd> 
+    DEPRECATED. Alias for <span dir="ltr"><a href="gtk.gtklabel.method.set_text.html">set_text()</a></span> .
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.set_angle.html">set_angle()</a></span> </dt><dd> 
+    Sets the angle of rotation for the label.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.set_attributes.html">set_attributes()</a></span> </dt><dd> 
+    Sets a list of Pango attributes for the label.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.set_ellipsize.html">set_ellipsize()</a></span> </dt><dd> 
+    Sets the ellipsization mode used to make the text fit the width.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.set_justify.html">set_justify()</a></span> </dt><dd> 
+    Sets the alignment of the lines in the text of the label relative to each
+    other.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.set_label.html">set_label()</a></span> </dt><dd> 
+    Sets the text of the label incl. Pango markup.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.set_line_wrap.html">set_line_wrap()</a></span> </dt><dd> 
+    Toggles line wrapping within the GtkLabel widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.set_markup.html">set_markup()</a></span> </dt><dd> 
+    Set the label text with a Pango marked up string.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.set_markup_with_mnemonic.html">set_markup_with_mnemonic()</a></span> </dt><dd> 
+    Set the label text and mnemonic with a Pango marked up string.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.set_max_width_chars.html">set_max_width_chars()</a></span> </dt><dd> 
+    Sets the desired maximum width in characters.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.set_mnemonic_widget.html">set_mnemonic_widget()</a></span> </dt><dd> 
+    Sets the widget that will be activated if the user presses the mnemonic
+    key for the label.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.set_pattern.html">set_pattern()</a></span> </dt><dd> 
+    The pattern of underlines you want under the existing text within the
+    GtkLabel widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.set_selectable.html">set_selectable()</a></span> </dt><dd> 
+    Sets whether or not the text of the label is selectable.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.set_single_line_mode.html">set_single_line_mode()</a></span> </dt><dd> 
+    Sets whether the label is in single line mode.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.set_text.html">set_text()</a></span> </dt><dd> 
+    Sets the text within the label.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.set_text_with_mnemonic.html">set_text_with_mnemonic()</a></span> </dt><dd> 
+    Sets the label's text and parses underscores to a mnemonic.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.set_use_markup.html">set_use_markup()</a></span> </dt><dd> 
+    Sets whether the text of the label contains markup in Pango's 
+    text markup language.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.set_use_underline.html">set_use_underline()</a></span> </dt><dd> 
+    If an underline shall be used for the mnemonic accelerator key.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.method.set_width_chars.html">set_width_chars()</a></span> </dt><dd> 
+    Sets the desired width of the label, in characters.
+   </dd></blockquote></div><h3>Properties</h3><p>Use get_property and set_property methods to access these.</p><blockquote><dt><span dir="ltr"><a href="gtk.gtklabel.property.angle.html">angle</a></span>:</dt><dd> 
+    The display angle of the text.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.property.attributes.html">attributes</a></span>:</dt><dd> 
+    A list of Pango attributes applied to the label.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.property.cursor_position.html">curosr-position</a></span>:</dt><dd> 
+    The current position of the cursor.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.property.ellipsize.html">ellipsize</a></span>:</dt><dd> 
+    The ellipsization mode of the label.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.property.justify.html">justify</a></span>:</dt><dd> 
+    The justification mode of the label.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.property.label.html">label</a></span>:</dt><dd> 
+    The text to be shown by the label.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.property.max_width_chars.html">max-width-chars</a></span>:</dt><dd> 
+    The maximum width of the widget in characters.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.property.mnemonic_keyval.html">mnemonic-keyval</a></span>:</dt><dd> 
+    The mnemonic accelerator key for this label.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.property.mnemonic_widget.html">mnemonic-widget</a></span>:</dt><dd> 
+    The widget to be activated when the label's mnemonic key is pressed.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.property.pattern.html">pattern</a></span>:</dt><dd> 
+    A string of '_' characters indicating which characters in the label to 
+    underline.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.property.selectable.html">selectable</a></span>:</dt><dd> 
+    Whether or not the text of the label is selectable.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.property.selection_bound.html">selection-bound</a></span>:</dt><dd> 
+    The position of the selection bound.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.property.single_line_mode.html">single-line-mode</a></span>:</dt><dd> 
+    Whether or not the label is in single line mode.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.property.use_markup.html">use_markup</a></span>:</dt><dd> 
+    Whether or not the label should be processed for Pango markup.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.property.use_underline.html">use_underline</a></span>:</dt><dd> 
+    Whether or not the label contains an underline for a mnemonic.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.property.width_chars.html">width-chars</a></span>:</dt><dd> 
+    The width of the widget in characters.
+   </dd><dt><span dir="ltr"><a href="gtk.gtklabel.property.wrap.html">wrap</a></span>:</dt><dd> 
+    Whether or not a long string of text may wrap to the next line.
+   </dd></blockquote><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtklabel.signal.copy-clipboard.html">copy-clipboard</a>"</span></dt><dd> 
+    Emitted when all or part of the label's text is copied to the clipboard.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtklabel.signal.move-cursor.html">move-cursor</a>"</span></dt><dd> 
+    Emitted when the cursor is moved within the label.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtklabel.signal.populate-popup.html">populate-popup</a>"</span></dt><dd> 
+    Emitted when a context menu for the label is popped up.
+   </dd></blockquote></p></div>
+
+  
+
+ 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ 
+
+  
+  
+  
+  
+  
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkitemfactory.method.path_from_widget.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtklabel.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkItemFactory::path_from_widget</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkLabel</span> Constructor</td></tr></table></div></body></html>

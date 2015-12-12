@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkDrawingArea Constructor</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkdrawingarea.html#idp62690352" title=""><link rel="previous" href="gtk.gtkdrawingarea.html" title="GtkDrawingArea"><link rel="next" href="gtk.gtkdrawingarea.method.size.html" title="GtkDrawingArea::size"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkdrawingarea.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkDrawingArea</span> Constructor</th><td width="20%" align="right"> <a href="gtk.gtkdrawingarea.method.size.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkdrawingarea.constructor"></a><h2><span dir="ltr">GtkDrawingArea</span> Constructor</h2><p><div class="funcsynopsis" id="idp62691376"><p></p><a name="idp62691376"></a> <span dir="ltr"><a href="gtk.gtkdrawingarea.constructor.html">GtkDrawingArea</a></span> ();</div></p>
+    <p>
+     Use the constructor to create a new empty, drawing area widget.
+    </p>
+    <p>
+     In the example, we use the
+     <span dir="ltr">"<a href="gtk.gtkwidget.signal.expose-event.html">expose-event</a>"</span> to draw a
+     simple checkerboard. A word of caution, this example is not
+     intented to illustrate a real-world use of this widget, because
+     the same effect can be brought in a much easier manner using a
+     <span dir="ltr"><a href="gtk.gtkimage.html">GtkImage</a></span>. What is important to understand
+     is the underlying concept of how the widget works.
+    </p>
+    <div class="example" align="left"><p><a name="idp62696944"></a><b>Example 52. Simple checkerboard using a GtkDrawingArea</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+
+/* Define some constants */
+define("SIZE", 10);
+define("SPACING", 2);
+
+/* The drawing area's Expose Event Callback */
+function doExpose($widget, $event)
+{
+    /* Red and White colors for the squares */
+    $color1 = new GdkColor(30000, 0, 30000);
+    $color2 = new GdkColor(65535, 65535, 65535);
+
+    /* A graphics context for the red box */
+    $gc1 = new GdkGC($widget-&gt;window);
+    $gc1-&gt;set_rgb_fg_color($color1);
+
+    /* A graphics context for the white box */
+    $gc2 = new GdkGC($widget-&gt;window);
+    $gc2-&gt;set_rgb_fg_color($color2);
+
+    /* Values to start painting with */
+    $xcount = 0;
+    $x = SPACING;
+
+    /* Traverse columns */
+    while ($x &lt; $widget-&gt;allocation-&gt;width)
+    {
+        $y = SPACING;
+        $ycount = $xcount % 2;
+
+        /* Traverse rows */
+        while ($y &lt; $widget-&gt;allocation-&gt;height)
+        {
+            /* Even number mean paint red box, else white box */
+            if ($ycount % 2) {
+                $gc = $gc1;
+            } else {
+                $gc = $gc2;
+            }
+
+            /* Paint a rectangle measuring SIZExSIZE */
+            $widget-&gt;window-&gt;draw_rectangle($gc, true, $x, $y, SIZE, SIZE);
+
+            /* Next row */
+            $y += SIZE + SPACING;
+            ++$ycount;
+        }
+
+        /* Next column */
+        $x += SIZE + SPACING;
+        ++$xcount;
+    }
+
+    /* Job's done, no more painting! */
+    return true;
+}
+
+/* Create the Window and Drawing area objects */
+$win = new GtkWindow();
+$dra = new GtkDrawingArea();
+
+/* Connect callbacks and start */
+$dra-&gt;connect('expose-event', 'doExpose');
+$win-&gt;connect_simple('destroy', array('Gtk', 'main_quit'));
+
+$win-&gt;set_title('Drawing Area Demo');
+$win-&gt;add($dra);
+$win-&gt;set_size_request(250,250);
+$win-&gt;show_all();
+
+Gtk::main();
+
+?&gt;
+</pre></td></tr></table></div>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkdrawingarea.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkdrawingarea.method.size.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkDrawingArea</span> </td><td width="20%" align="center"><a href="gtk.gtkdrawingarea.html#idp62690352">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkDrawingArea::size</span></td></tr></table></div></body></html>

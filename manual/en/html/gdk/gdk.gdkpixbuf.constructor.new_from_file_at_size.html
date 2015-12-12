@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GdkPixbuf Constructor</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gdk.gdkpixbuf.html#idp51481792" title=""><link rel="previous" href="gdk.gdkpixbuf.constructor.new_from_file.html" title="GdkPixbuf Constructor"><link rel="next" href="gdk.gdkpixbuf.constructor.new_from_xpm_data.html" title="GdkPixbuf Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gdk.gdkpixbuf.constructor.new_from_file.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GdkPixbuf</span> Constructor</th><td width="20%" align="right"> <a href="gdk.gdkpixbuf.constructor.new_from_xpm_data.html">Next</a></td></tr></table><hr></div><div><a name="gdk.gdkpixbuf.constructor.new_from_file_at_size"></a><h2><span dir="ltr">GdkPixbuf</span> Constructor</h2><p><div class="funcsynopsis" id="idp51511888"><p></p><a name="idp51511888"></a><span dir="ltr"><a href="gdk.gdkpixbuf.constructor.new_from_file_at_size.html">GdkPixbuf::new_from_file_at_size</a></span> (string <i><tt>filename</tt></i>, int <i><tt>width</tt></i>, int <i><tt>height</tt></i>);</div></p>
+    <p>
+     Loads the given image into the pixbuf object and scales it to the given
+     size, respecting the aspect ratio. If an error occurs, an exception of type
+     <span dir="ltr"><tt>PhpGtkGErrorException</tt></span> is thrown.
+    </p>
+    <div class="example" align="left"><p><a name="idp51518384"></a><b>Example 5. Loading and scaling an image file</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//Examle: Loading an image file and scaling it to the given size
+try {
+    $pixbuf = GdkPixbuf::new_from_file_at_size('test.png', 320, 240);
+    echo 'Size: ' . $pixbuf-&gt;get_width() . 'x' . $pixbuf-&gt;get_height() . "\n";
+} catch (Exception $e) {
+    //Here we catch errors that could occur
+    echo "An error occured:\n";
+    echo $e-&gt;getMessage() . "\n";
+}
+?&gt;</pre></td></tr></table></div>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gdk.gdkpixbuf.constructor.new_from_file.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gdk.gdkpixbuf.constructor.new_from_xpm_data.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GdkPixbuf</span> Constructor </td><td width="20%" align="center"><a href="gdk.gdkpixbuf.html#idp51481792">Up</a></td><td width="40%" align="right"> <span dir="ltr">GdkPixbuf</span> Constructor</td></tr></table></div></body></html>

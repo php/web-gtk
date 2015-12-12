@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GTK, Pango &amp; Friends</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="tutorials.html" title="PHP-GTK 2 Tutorials"><link rel="previous" href="tutorials.changes.deprecated.html" title="Deprecated Widgets"><link rel="next" href="tutorials.packing.html" title="Packing Widgets"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">PHP-GTK 2 Tutorials</th></tr><tr><td width="20%" align="left"><a href="tutorials.changes.deprecated.html">Prev</a> </td><th width="60%" align="center">GTK, Pango &amp; Friends</th><td width="20%" align="right"> <a href="tutorials.packing.html">Next</a></td></tr></table><hr></div><div id="tutorials.gtkpangoco" class="chapter"><div class="titlepage"><div><h2 class="title"><a name="tutorials.gtkpangoco" id="tutorials.gtkpangoco-title"></a>GTK, Pango &amp; Friends</h2></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><a href="tutorials.gtkpangoco.html#idp44544928"></a></dt></dl></div>
+ 
+
+ <div class="sect1"><a name="idp44544928"></a><div class="titlepage"></div><p>
+   When programming PHP-GTK applications and surfing through the manual, you
+   will find some rather cryptic acronyms. Here is an overview of the more
+   important ones.
+  </p><div class="sect2"><a name="idp44545760"></a><div class="titlepage"><div><h3 class="title"><a name="idp44545760"></a>PHP</h3></div></div><p>
+    PHP - PHP: Hypertext Processor - is a widely-used general-purpose scripting
+    language that is designed for Web development and can be embedded into HTML.
+   </p></div><div class="sect2"><a name="idp44547088"></a><div class="titlepage"><div><h3 class="title"><a name="idp44547088"></a>GTK</h3></div></div><p>
+    GTK - the GIMP Tool Kit - is a library designed for creating graphical
+    user interfaces. It runs on most UNIX-like platforms, on Windows, and on
+    framebuffer devices.
+   </p><p>
+    The GTK library itself contains widgets, that is, GUI components, such
+    as <span dir="ltr"><a href="../gtk/gtk.gtkbutton.html">GtkButton</a></span> or <span dir="ltr"><a href="../gtk/gtk.gtktextview.html">GtkTextView</a></span>.
+   </p><p>
+    GTK depends on several other libraries, among them GDK, Pango, ATK and
+    GLib. The combined package is referred to as GTK+.
+   </p></div><div class="sect2"><a name="idp44592848"></a><div class="titlepage"><div><h3 class="title"><a name="idp44592848"></a>GDK</h3></div></div><p>
+    GDK - the GIMP Drawing Kit - is the abstraction layer that allows GTK+ to
+    support multiple windowing systems. GDK provides drawing and window system
+    facilities for X11, Windows, and the Linux framebuffer device.
+   </p></div><div class="sect2"><a name="idp44594240"></a><div class="titlepage"><div><h3 class="title"><a name="idp44594240"></a>Pango</h3></div></div><p>
+    Pango is a library for internationalized text handling. It centers around
+    the <span dir="ltr"><a href="../pango/pango.pangolayout.html">PangoLayout</a></span> object, which represents a
+    paragraph of text. Pango provides the engine for
+    <span dir="ltr"><a href="../gtk/gtk.gtktextview.html">GtkTextView</a></span>, <span dir="ltr"><a href="../gtk/gtk.gtklabel.html">GtkLabel</a></span>,
+    <span dir="ltr"><a href="../gtk/gtk.gtkentry.html">GtkEntry</a></span>, and other GTK+ widgets that display text.
+   </p></div><div class="sect2"><a name="idp44597120"></a><div class="titlepage"><div><h3 class="title"><a name="idp44597120"></a>ATK</h3></div></div><p>
+    ATK is the Accessibility Tool Kit. It provides a set of generic interfaces
+    allowing accessibility technologies to interact with a graphical user
+    interface. For example, a screen reader could use ATK to discover the text
+    in an interface and read it to blind users.
+   </p><p>
+    Thanks to the ATK framework, GTK+ widgets have built-in support for
+    accessibility.
+   </p></div></div>
+</div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="tutorials.changes.deprecated.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="tutorials.packing.html">Next</a></td></tr><tr><td width="40%" align="left">Deprecated Widgets </td><td width="20%" align="center"><a href="tutorials.html">Up</a></td><td width="40%" align="right"> Packing Widgets</td></tr></table></div></body></html>

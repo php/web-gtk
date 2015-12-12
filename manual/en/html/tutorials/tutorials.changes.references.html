@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>Object References (the Ampersand &amp;)</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="tutorials.changes.html" title="Changes since PHP-GTK 1"><link rel="previous" href="tutorials.changes.loadmodule.html" title="Loading the php_gtk Module"><link rel="next" href="tutorials.changes.constants.html" title="GTK constants"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Changes since PHP-GTK 1</th></tr><tr><td width="20%" align="left"><a href="tutorials.changes.loadmodule.html">Prev</a> </td><th width="60%" align="center">Object References (the Ampersand &amp;)</th><td width="20%" align="right"> <a href="tutorials.changes.constants.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="tutorials.changes.references"></a><div class="titlepage"><div><h2 class="title" style="clear: all"><a name="tutorials.changes.references"></a>Object References (the Ampersand &amp;)</h2></div></div><p>
+   Support for object orientation was completely new to PHP 4, and was therefore
+   not very sophisticated in comparison to the OO support in other languages, such
+   as Java. When assigning variables, it was absolutely necessary not to make copies
+   of GTK objects, but to pass references.
+   <table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+//PHP 4: copy as default behavior
+$a = new GtkLabel();
+$a-&gt;set_text('1');
+$b = $a;
+$b-&gt;set_text('2');
+echo $a-&gt;get();//still 1
+</pre></td></tr></table>
+    So to not make a copy, you had to use the ampersand &amp; when assigning variables:
+   <table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+//PHP 4: making references
+$a = new GtkLabel();
+$a-&gt;set_text('1');
+$b = &amp;$a;
+$b-&gt;set_text('2');
+echo $a-&gt;get();//is 2 now
+</pre></td></tr></table>
+   However, a copy of the object <i>still</i> was made: on construction.
+   To be totally correct, especially with GTK widgets, you had to do:
+   <table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+//PHP 4: reference on instantiation
+$a = &amp;new GtkLabel();
+</pre></td></tr></table>
+  </p><p>
+   With PHP 5, things have changed: pass-by-reference is the default behavior now - one
+   doesn't need the ampersand any more! The following script works under PHP 5 with
+   PHP-GTK 2, without any problems:
+   <table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//PHP5: no Ampersand any more
+$a = new GtkLabel();
+$a-&gt;set_text('1');
+$b = $a;
+$b-&gt;set_text('2');
+echo $a-&gt;get_text();//is 2
+?&gt;</pre></td></tr></table>
+  </p><p>
+   The same applies for callbacks: no ampersand any more!
+   Whereas you had to do the following under PHP 4 and GTK 1:
+   <table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+$window-&gt;connect_object('destroy', array(&amp;$object, 'function'));
+</pre></td></tr></table>
+   you simply leave out the &amp; with PHP 5 and GTK 2:
+   <table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+$window-&gt;connect_simple('destroy', array($object, 'function'));
+</pre></td></tr></table>
+  </p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="tutorials.changes.loadmodule.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="tutorials.changes.constants.html">Next</a></td></tr><tr><td width="40%" align="left">Loading the php_gtk Module </td><td width="20%" align="center"><a href="tutorials.changes.html">Up</a></td><td width="40%" align="right"> GTK constants</td></tr></table></div></body></html>

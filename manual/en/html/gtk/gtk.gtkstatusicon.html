@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkStatusIcon</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkstatusbar.signal.text-pushed.html" title="text-pushed"><link rel="next" href="gtk.statusicon.constructor.html" title="GtkStatusIcon Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkstatusbar.signal.text-pushed.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkStatusIcon</span></th><td width="20%" align="right"> <a href="gtk.statusicon.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkstatusicon"></a><h2 class="title"><span dir="ltr">GtkStatusIcon</span></h2><div style="float:right; border:1px solid #000;"><img src="../images/reference/gtk/gtkstatusicon.png"></div><p><blockquote>
+   <span dir="ltr"><a href="gtk.gtkstatusicon.html">GtkStatusIcon</a></span> is used for displaying an icon in the
+   system tray.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkstatusicon.html">GtkStatusIcon</a></span><br></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    <span dir="ltr"><a href="gtk.gtkstatusicon.html">GtkStatusIcon</a></span> is used for displaying an icon in the
+    system tray. The system tray is generally used to indicate some special
+    state that a user would be interested in.
+   </p>
+   <p>
+    A <span dir="ltr"><a href="gtk.gtkstatusicon.html">GtkStatusIcon</a></span> object can be assigned
+    a tooltip, handle <span dir="ltr">"<a href="gtk.gtkstatusicon.signal.activate.html">activate</a>"</span>
+    and <span dir="ltr">"<a href="gtk.gtkstatusicon.signal.popup-menu.html">popup-menu</a>"</span> signals,
+    set to blink, and set invisible. All of these states and settings can help
+    the user more easily identify the type of notification being displayed to
+    them.
+   </p>
+   <div class="note" style="margin-left: 24px; margin-right: 24px; font-weight: bold;"><span dir="ltr"><a href="gtk.gtkstatusicon.html">GtkStatusIcon</a></span> is a <span dir="ltr"><a href="../gobject.html">GObject</a></span>,
+    NOT a <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span>.
+   </div>
+   <p>
+    <div class="example" align="left"><p><a name="idp76761136"></a><b>Example 116. Simple Tray Application</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+
+  class TrayApplication {
+   /**
+    * Application Tray Menu
+    *
+    * @var GtkMenu
+    */
+   protected $_menu;
+   /**
+    * Application Tray Icon
+    *
+    * @var GtkStatusIcon
+    */
+   protected $_tray;
+   /**
+    * Application Constructor
+    *
+    * @param string $tooltip Tooltip to display for GtkStatusIcon object
+    * @return void
+    */
+    public function __construct($tooltip) {
+      $this-&gt;_menu = new GtkMenu();
+      $this-&gt;_tray = new GtkStatusIcon();
+      $this-&gt;_tray-&gt;set_tooltip($tooltip);
+      $this-&gt;_tray-&gt;set_from_stock(Gtk::STOCK_EXECUTE);
+      $this-&gt;_tray-&gt;connect('popup-menu', array($this, 'onMenu'));
+
+      $quit = new GtkMenuItem('Quit');
+      $quit-&gt;connect('activate', array($this, 'onQuit'));
+      $this-&gt;_menu-&gt;append($quit);
+      $this-&gt;_menu-&gt;show_all();
+
+      $this-&gt;_tray-&gt;set_visible(true);
+      $this-&gt;_tray-&gt;set_blinking(false);
+
+      GtkStatusIcon::position_menu($this-&gt;_menu, $this-&gt;_tray);
+
+      Gtk::main();
+    }
+    /**
+     * Application Destructor
+     *
+     * @return void
+     */
+    public function __destruct() {
+      Gtk::main_quit();
+    }
+    /**
+     * Event handler for onQuit
+     *
+     * @return void
+     */
+    public function onQuit() {
+      $this-&gt;__destruct();
+    }
+    /**
+     * Event handler for onMenu
+     *
+     * @return void
+     */
+    public function onMenu() {
+      $this-&gt;_menu-&gt;popup();
+    }
+  }
+
+  $app = new TrayApplication('GtkStatusIcon object');
+
+?&gt;</pre></td></tr></table></div>
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp76765920"><p></p><a name="idp76765920"></a> <span dir="ltr"><a href="gtk.statusicon.constructor.html">GtkStatusIcon</a></span> ();</div></p> --
+    Creates a new object.
+   <br><br><p><div class="funcsynopsis" id="idp76772336"><p></p><a name="idp76772336"></a> <span dir="ltr"><a href="gtk.statusicon.constructor.new_from_file.html">GtkStatusIcon::new_from_file</a></span> (string <i><tt>filepath</tt></i>);</div></p> --
+    Creates a new object using the supplied filepath.
+   <br><br><p><div class="funcsynopsis" id="idp76781344"><p></p><a name="idp76781344"></a> <span dir="ltr"><a href="gtk.statusicon.constructor.new_from_pixbuf.html">GtkStatusIcon::new_from_pixbuf</a></span> (<span dir="ltr"><a href="../gdk/gdk.gdkpixbuf.html">GdkPixbuf</a></span> <i><tt>pixbuf</tt></i>);</div></p> --
+    Creates a new object using the supplied <span dir="ltr"><a href="../gdk/gdk.gdkpixbuf.html">GdkPixbuf</a></span>.
+   <br><br><p><div class="funcsynopsis" id="idp76791536"><p></p><a name="idp76791536"></a> <span dir="ltr"><a href="gtk.statusicon.constructor.new_from_stock.html">GtkStatusIcon::new_from_stock</a></span> (<span dir="ltr"><a href="gtk.enum.stockitems.html">GtkStockItems</a></span> <i><tt>stock_id</tt></i>);</div></p> --
+    Creates a new object using the supplied stock_id.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkstatusicon.method.is_embedded.html">is_embedded()</a></span> </dt><dd> 
+    Get embedded state of the object.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkstatusicon.method.get_blinking.html">get_blinking()</a></span> </dt><dd> 
+    Get blinking state of the object.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkstatusicon.method.get_pixbuf.html">get_pixbuf()</a></span> </dt><dd> 
+    Get <span dir="ltr"><a href="../gdk/gdk.gdkpixbuf.html">GdkPixbuf</a></span> icon image of the object.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkstatusicon.method.get_size.html">get_size()</a></span> </dt><dd> 
+    Get image size of the object.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkstatusicon.method.get_visible.html">get_visible()</a></span> </dt><dd> 
+    Get visibility state of the object.
+   </dd><dt><span dir="ltr"><a href="gtk.statusicon.method.position_menu.html">position_menu()</a></span> </dt><dd> 
+    Use to position a popup menu over the object.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkstatusicon.method.set_blinking.html">set_blinking()</a></span> </dt><dd> 
+    Set blinking state of the object.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkstatusicon.method.set_from_file.html">set_from_file()</a></span> </dt><dd> 
+    Set icon image of the object using the supplied filepath.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkstatusicon.method.set_from_pixbuf.html">set_from_pixbuf()</a></span> </dt><dd> 
+    Set icon image of the object using the supplied <span dir="ltr"><a href="../gdk/gdk.gdkpixbuf.html">GdkPixbuf</a></span>.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkstatusicon.method.set_from_stock.html">set_from_stock()</a></span> </dt><dd> 
+    Set icon image of the object using the supplied stock_id.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkstatusicon.method.set_tooltip.html">set_tooltip()</a></span> </dt><dd> 
+    Set tooltip text of the object.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkstatusicon.method.set_visible.html">set_visible()</a></span> </dt><dd> 
+    Set visibility state of the object.
+   </dd></blockquote></div><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtkstatusicon.signal.activate.html">activate</a>"</span></dt><dd> 
+    Signal emitted on a left mouse button click.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkstatusicon.signal.popup-menu.html">popup-menu</a>"</span></dt><dd> 
+    Signal emitted on a right mouse button click.
+   </dd></blockquote></p></div>
+
+  
+
+  
+
+  
+
+  
+
+ 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ 
+  
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkstatusbar.signal.text-pushed.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.statusicon.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">text-pushed</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkStatusIcon</span> Constructor</td></tr></table></div></body></html>

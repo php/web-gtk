@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>change-value</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkrange.html#idp74701760" title=""><link rel="previous" href="gtk.gtkrange.signal.adjust-bounds.html" title="adjust-bounds"><link rel="next" href="gtk.gtkrange.signal.move-slider.html" title="move-slider"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkrange.signal.adjust-bounds.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">change-value</span></th><td width="20%" align="right"> <a href="gtk.gtkrange.signal.move-slider.html">Next</a></td></tr></table><hr></div><a name="gtk.gtkrange.signal.change-value"></a><h2><span dir="ltr">change-value</span></h2><p>
+    <p>
+     The <span dir="ltr"><tt>change-value</tt></span> signal is emitted when a scroll
+     action is performed on a range. It allows an application to determine
+     the type of scroll event that occurred and the resultant new value.
+     The application can handle the event itself and return
+     <span dir="ltr"><tt>true</tt></span> to prevent further processing. Or, by returning
+     <span dir="ltr"><tt>false</tt></span>, it can pass the event to other handlers until
+     the default GTK+ handler is reached.
+    </p>
+    <p>
+     The value parameter is unrounded. An application that overrides the
+     <span dir="ltr"><tt>change-value</tt></span> signal is responsible for clamping the
+     value to the desired number of decimal digits; the default GTK+ handler
+     clamps the value based on
+     round_digits.
+    </p>
+    <p>
+     It is not possible to use delayed update policies in an overridden
+     <span dir="ltr"><tt>change-value</tt></span> handler.
+    </p>
+   </p><p><b>Callback function</b></p><p><p><div class="funcsynopsis" id="idp74709472"><p></p><a name="idp74709472"></a>bool callback(<span dir="ltr"><a href="gtk.gtkrange.html">GtkRange</a></span> <i><tt>range</tt></i>, <span dir="ltr"><a href="gtk.enum.scrolltype.html">GtkScrollType</a></span> <i><tt>scrolltype</tt></i>, double <i><tt>value</tt></i>);</div></p></p><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkrange.signal.adjust-bounds.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkrange.signal.move-slider.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">adjust-bounds</span> </td><td width="20%" align="center"><a href="gtk.gtkrange.html#idp74701760">Up</a></td><td width="40%" align="right"> <span dir="ltr">move-slider</span></td></tr></table></div></body></html>

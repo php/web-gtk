@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkObjectFlags</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkenums.html#gtk.gtkenum" title="GTK Enums"><link rel="previous" href="gtk.enum.movementstep.html" title="GtkMovementStep"><link rel="next" href="gtk.enum.orientation.html" title="GtkOrientation"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Enums</th></tr><tr><td width="20%" align="left"><a href="gtk.enum.movementstep.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkObjectFlags</span></th><td width="20%" align="right"> <a href="gtk.enum.orientation.html">Next</a></td></tr></table><hr></div><a class="enum" name="gtk.enum.objectflags"></a><h1 class="title">GtkObjectFlags</h1><p>
+   <p>
+    Gives information about the state of the object.
+   </p>
+  </p><table width="100%" cellpadding="2" cellspacing="1"><tr><td width="7%"><h3>Value</h3></td><td width="40%"><h3>Symbolic name</h3></td><td width="52%"><h3>Description</h3></td></tr><tr valign="top"><td>  2</td><td>Gtk::IN_DESTRUCTION</td><td>
+    The object is currently being destroyed. This is used internally 
+    by GTK+ to prevent reinvocations during destruction.
+   </td></tr><tr valign="top"><td>  2</td><td>Gtk::FLOATING</td><td>
+    The object is orphaned. Objects that take strong hold of an object 
+    may <span dir="ltr"><a href="gtk.gtkobject.method.sink.html">sink()</a></span>  it, after obtaining their 
+    own references, if they believe they are nearly primary ownership of 
+    the object. GTK_CONNECTED: signals are connected to this object.
+   </td></tr><tr valign="top"><td>  2</td><td>Gtk::RESERVED_1</td><td>
+    Reserved for future use.
+   </td></tr><tr valign="top"><td>  2</td><td>Gtk::RESERVED_2</td><td>
+    Reserved for future use.
+   </td></tr></table><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.enum.movementstep.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.enum.orientation.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkMovementStep</span> </td><td width="20%" align="center"><a href="../gtkenums.html#gtk.gtkenum">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkOrientation</span></td></tr></table></div></body></html>

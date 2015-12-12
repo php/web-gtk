@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkTreeStore::insert_before</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtktreestore.html#idp84319200" title=""><link rel="previous" href="gtk.gtktreestore.method.insert_after.html" title="GtkTreeStore::insert_after"><link rel="next" href="gtk.gtktreestore.method.is_ancestor.html" title="GtkTreeStore::is_ancestor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtktreestore.method.insert_after.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkTreeStore::insert_before</span></th><td width="20%" align="right"> <a href="gtk.gtktreestore.method.is_ancestor.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtktreestore.method.insert_before"></a><h2><span dir="ltr">GtkTreeStore::insert_before</span></h2><p><div class="funcsynopsis" id="idp84389200"><p></p><a name="idp84389200"></a><span dir="ltr"><a href="gtk.gtktreeiter.html">GtkTreeIter</a></span> insert_before([<span dir="ltr"><a href="gtk.gtktreeiter.html">GtkTreeIter</a></span> <i><tt>sibling</tt></i> [, <span dir="ltr"><a href="gtk.gtktreeiter.html">GtkTreeIter</a></span> <i><tt>parent</tt></i> [, array <i><tt>items</tt></i>]]]);</div></p>
+    <p>
+     Inserts a new row before <i><tt>sibling</tt></i>. If sibling is
+     <span dir="ltr"><tt>null</tt></span>, then the row will be appended to parent's
+     children. If <i><tt>parent</tt></i> and
+     <i><tt>sibling</tt></i> are <span dir="ltr"><tt>null</tt></span>, then the row
+     will be appended to the toplevel. If both <i><tt>sibling</tt></i>
+     and <i><tt>parent</tt></i> are set, then
+     <i><tt>parent</tt></i> must be the parent of
+     <i><tt>sibling</tt></i>. When <i><tt>sibling</tt></i> is
+     set, <i><tt>parent</tt></i> is optional.
+    </p>
+    <p>
+     <i><tt>items</tt></i> can be an array of values for the column.
+    </p>
+    <div class="example" align="left"><p><a name="idp84405280"></a><b>Example 134. Filling a GtkTreeStore with insert_before</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//new model with just one column of type string
+$store = new GtkTreeStore(Gtk::TYPE_STRING);
+
+//insert a new row without a parent (root row)
+$root = $store-&gt;insert_after();
+$store-&gt;set($root, 0, 'root');
+
+//insert root2 before $root
+$root2 = $store-&gt;insert_before($root);
+$store-&gt;set($root2, 0, 'root2');
+
+//insert this child as child of root row
+$child1 = $store-&gt;insert_before(null, $root, array('child1'));
+
+//insert this child before $child1
+$child2 = $store-&gt;insert_before($child1, $root, array('child2'));
+
+
+//Display the store
+$wnd  = new GtkWindow();
+$view = new GtkTreeView($store);
+$view-&gt;append_column(
+    new GtkTreeViewColumn('String column', new GtkCellRendererText(), 'text', 0)
+);
+$wnd-&gt;add($view);
+$wnd-&gt;connect_simple('destroy', array('gtk', 'main_quit'));
+$wnd-&gt;show_all();
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+    <p>
+     See also:
+      <span dir="ltr"><a href="gtk.gtktreestore.method.insert.html">insert()</a></span> ,
+      <span dir="ltr"><a href="gtk.gtktreestore.method.insert_after.html">insert_after()</a></span> ,
+      <span dir="ltr"><a href="gtk.gtktreestore.method.append.html">append()</a></span> ,
+      <span dir="ltr"><a href="gtk.gtktreestore.method.prepend.html">prepend()</a></span> 
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtktreestore.method.insert_after.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtktreestore.method.is_ancestor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkTreeStore::insert_after</span> </td><td width="20%" align="center"><a href="gtk.gtktreestore.html#idp84319200">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkTreeStore::is_ancestor</span></td></tr></table></div></body></html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkImageMenuItem Constructor</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkimagemenuitem.html#idp68532816" title=""><link rel="previous" href="gtk.gtkimagemenuitem.html" title="GtkImageMenuItem"><link rel="next" href="gtk.gtkimagemenuitem.method.get_image.html" title="GtkImageMenuItem::get_image"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkimagemenuitem.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkImageMenuItem</span> Constructor</th><td width="20%" align="right"> <a href="gtk.gtkimagemenuitem.method.get_image.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkimagemenuitem.constructor"></a><h2><span dir="ltr">GtkImageMenuItem</span> Constructor</h2><p><div class="funcsynopsis" id="idp68533616"><p></p><a name="idp68533616"></a> <span dir="ltr"><a href="gtk.gtkimagemenuitem.constructor.html">GtkImageMenuItem</a></span> ([string <i><tt>label</tt></i>]);</div></p>
+    <p>
+     Use the constructor to generate a new menu item with an icon. You may
+     pass a string as the label, or a
+     <a href="gtk.enum.stockitems.html">stock id</a>, if you want to use
+     the existing stock icons.
+    </p>
+    <p>
+     You may even precede a character of the label with an
+     <span dir="ltr"><tt>_</tt></span> to indicate the mnemonic for the menu item.
+    </p>
+    <div class="example" align="left"><p><a name="idp68539792"></a><b>Example 76. Creating image menu items</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//Example: using GtkSeparatorMenuItems to
+// separate menu items
+
+//Create a menu bar
+$mbar  = new GtkMenuBar();
+//Add a menu item
+$file  = new GtkMenuItem('_File');
+//with a submenu
+$fmenu = new GtkMenu();
+$file-&gt;set_submenu($fmenu);
+$mbar-&gt;add($file);
+
+//Now, we create a "normal" file menu:
+// New, Open, Save, Save As, Quit
+//To make it visually appealing, we separate
+// the items with GtkSeparatorMenuItems
+$fmenu-&gt;add(new GtkImageMenuItem(Gtk::STOCK_NEW));
+$fmenu-&gt;add(new GtkImageMenuItem(Gtk::STOCK_OPEN));
+
+$fmenu-&gt;add(new GtkSeparatorMenuItem());
+
+$fmenu-&gt;add(new GtkImageMenuItem(Gtk::STOCK_SAVE));
+$fmenu-&gt;add(new GtkImageMenuItem(Gtk::STOCK_SAVE_AS));
+
+$fmenu-&gt;add(new GtkSeparatorMenuItem());
+
+$fmenu-&gt;add(new GtkImageMenuItem(Gtk::STOCK_QUIT));
+
+
+//standard stuff
+$wnd = new GtkWindow();
+$wnd-&gt;connect_simple('destroy', array('gtk', 'main_quit'));
+$wnd-&gt;add($mbar);
+$wnd-&gt;show_all();
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkimagemenuitem.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkimagemenuitem.method.get_image.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkImageMenuItem</span> </td><td width="20%" align="center"><a href="gtk.gtkimagemenuitem.html#idp68532816">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkImageMenuItem::get_image</span></td></tr></table></div></body></html>

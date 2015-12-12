@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkFixed</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkfileselection.field.selection_text.html" title="GtkFileSelection::selection_text"><link rel="next" href="gtk.gtkfixed.constructor.html" title="GtkFixed Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkfileselection.field.selection_text.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkFixed</span></th><td width="20%" align="right"> <a href="gtk.gtkfixed.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkfixed"></a><h2 class="title"><span dir="ltr">GtkFixed</span></h2><p><blockquote>
+   A container that allows for precise placement of widgets.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkfixed.html">GtkFixed</a></span><br></div></blockquote></p><p><h3>Direct Subclasses</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="gtk.gtkiconlist.html">GtkIconList</a></span></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    A <span dir="ltr"><a href="gtk.gtkfixed.html">GtkFixed</a></span> container performs no automatic layout
+    management, as it is left to the programmer to provide the placement and
+    size of all child widgets, in pixels, through the 
+    <span dir="ltr"><a href="gtk.gtkfixed.method.put.html">put()</a></span>  and 
+    <span dir="ltr"><a href="gtk.gtkfixed.method.move.html">move()</a></span>  methods. The 
+    <span dir="ltr"><a href="gtk.gtkcontainer.method.add.html">add()</a></span>  method should not be used 
+    with GtkFixed.
+   </p>
+   <p>
+    Although this container allows for a fine grain of control over the exact
+    layout of a program, it is should not be used for most applications. One 
+    reason for this recommendation is that it requires great care and effort to
+    prevent display bugs (such as truncated text or overlapping widgets), and
+    makes it troublesome to add or remove widgets, as probably many others will
+    have to be rearranged. It has some other limitations, particularly when it
+    comes to tranlating text and handling right-to-left languages. It is also
+    harder to maintain layout consistency, especially in applications with 
+    complex and/or multiple windows.
+   </p>
+   <p>
+    See also:<span dir="ltr"><a href="gtk.gtktable.html">GtkTable</a></span>, <span dir="ltr"><a href="gtk.gtkbox.html">GtkBox</a></span>.
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp65571632"><p></p><a name="idp65571632"></a> <span dir="ltr"><a href="gtk.gtkfixed.constructor.html">GtkFixed</a></span> ();</div></p> --
+    Creates a new GtkFixed container.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkfixed.method.get_has_window.html">get_has_window()</a></span> </dt><dd> 
+    Gets whether the GtkFixed has its own GdkWindow.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfixed.method.move.html">move()</a></span> </dt><dd> 
+    Moves child to new position.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfixed.method.put.html">put()</a></span> </dt><dd> 
+    Sets initial position of child.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfixed.method.set_has_window.html">set_has_window()</a></span> </dt><dd> 
+    Defines whether a separate window should be created.
+   </dd></blockquote></div></p></div>
+
+  
+
+ 
+
+  
+
+  
+
+  
+
+  
+
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkfileselection.field.selection_text.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkfixed.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkFileSelection::selection_text</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkFixed</span> Constructor</td></tr></table></div></body></html>

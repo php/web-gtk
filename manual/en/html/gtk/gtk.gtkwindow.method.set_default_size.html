@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkWindow::set_default_size</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkwindow.html#idp90308480" title=""><link rel="previous" href="gtk.gtkwindow.method.set_default_icon.html" title="GtkWindow::set_default_icon"><link rel="next" href="gtk.gtkwindow.method.set_destroy_with_parent.html" title="GtkWindow::set_destroy_with_parent"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkwindow.method.set_default_icon.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkWindow::set_default_size</span></th><td width="20%" align="right"> <a href="gtk.gtkwindow.method.set_destroy_with_parent.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkwindow.method.set_default_size"></a><h2><span dir="ltr">GtkWindow::set_default_size</span></h2><p><div class="funcsynopsis" id="idp90746320"><p></p><a name="idp90746320"></a>void set_default_size(int <i><tt>width</tt></i>, int <i><tt>height</tt></i>);</div></p>
+    <p>
+     Sets the default size of the window to <i><tt>width</tt></i>
+     pixels wide by <i><tt>height</tt></i> pixels high. Setting either
+     parameter to <span dir="ltr"><tt>-1</tt></span> will use the "natural" size for the
+     window. The "natural" size is the size of the window after its child
+     widget has been added and shown and before any other sizing has been
+     done.
+    </p>
+    <p>
+     Using <span dir="ltr"><a href="gtk.gtkwindow.method.set_default_size.html">set_default_size()</a></span>  simply sets
+     the size of the window. It does not set any restrictions on whether or
+     not the user can resize the window later. This method acts as if the user
+     had resized the window. Unlike
+     <span dir="ltr"><a href="gtk.gtkwidget.method.set_size_request.html">set_size_request()</a></span> , the user may
+     shrink the window below the height and width passed to this function.
+    </p>
+    <p>
+     This method respects any
+     <a href="gtk.gtkwindow.method.set_geometry_hints.html">geometry hints</a>
+     that have been set for the window. If the height and width given do not
+     match the geomety hints, the window will be clamped to the nearest
+     acceptable dimensions.
+    </p>
+    <p>
+     Windows may not have a size smaller than <span dir="ltr"><tt>1</tt></span> pixel
+     wide by <span dir="ltr"><tt>1</tt></span> pixel high. If <span dir="ltr"><tt>0</tt></span> is
+     passed for either argument, the value will be changed to
+     <span dir="ltr"><tt>1</tt></span>.
+    </p>
+    <p>
+     See also:
+     <span dir="ltr"><a href="gtk.gtkwindow.method.get_default_size.html">get_default_size()</a></span> 
+     <span dir="ltr"><a href="gtk.gtkwidget.method.set_size_request.html">set_size_request()</a></span> 
+    </p>
+
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkwindow.method.set_default_icon.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkwindow.method.set_destroy_with_parent.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkWindow::set_default_icon</span> </td><td width="20%" align="center"><a href="gtk.gtkwindow.html#idp90308480">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkWindow::set_destroy_with_parent</span></td></tr></table></div></body></html>

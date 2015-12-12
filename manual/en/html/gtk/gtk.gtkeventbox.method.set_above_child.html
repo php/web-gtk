@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkEventBox::set_above_child</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkeventbox.html#idp63973216" title=""><link rel="previous" href="gtk.gtkeventbox.method.get_visible_window.html" title="GtkEventBox::get_visible_window"><link rel="next" href="gtk.gtkeventbox.method.set_visible_window.html" title="GtkEventBox::set_visible_window"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkeventbox.method.get_visible_window.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkEventBox::set_above_child</span></th><td width="20%" align="right"> <a href="gtk.gtkeventbox.method.set_visible_window.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkeventbox.method.set_above_child"></a><h2><span dir="ltr">GtkEventBox::set_above_child</span></h2><p><div class="funcsynopsis" id="idp63990448"><p></p><a name="idp63990448"></a>void set_above_child(bool <i><tt>above_child</tt></i>);</div></p>
+    <p>
+     You may use this method if you wish to position your event box above
+     the window of its child, as opposed to below it. As mentioned before,
+     if the window is above, all events received inside the event box will
+     go to the event box itself. However is the window is positioned below,
+     events in the window of the child will first go to that widget and then
+     to its parents.
+    </p>
+    <p>
+     The default keeps the window below the child. You may pass
+     <span dir="ltr"><tt>true</tt></span> as a parameter to this method to position the
+     window above the child.
+    </p>
+    <p>
+     See also:
+     <span dir="ltr"><a href="gtk.gtkeventbox.method.get_above_child.html">get_above_child()</a></span> 
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkeventbox.method.get_visible_window.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkeventbox.method.set_visible_window.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkEventBox::get_visible_window</span> </td><td width="20%" align="center"><a href="gtk.gtkeventbox.html#idp63973216">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkEventBox::set_visible_window</span></td></tr></table></div></body></html>

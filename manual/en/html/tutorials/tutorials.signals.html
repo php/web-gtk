@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>Signal Handling</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="tutorials.html" title="PHP-GTK 2 Tutorials"><link rel="previous" href="tutorials.objectorientation.summary.html" title="Summary"><link rel="next" href="tutorials.signals.signals.html" title="Signals"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">PHP-GTK 2 Tutorials</th></tr><tr><td width="20%" align="left"><a href="tutorials.objectorientation.summary.html">Prev</a> </td><th width="60%" align="center">Signal Handling</th><td width="20%" align="right"> <a href="tutorials.signals.signals.html">Next</a></td></tr></table><hr></div><div id="tutorials.signals" class="chapter"><div class="titlepage"><div><h2 class="title"><a name="tutorials.signals" id="tutorials.signals-title"></a>Signal Handling</h2></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><a href="tutorials.signals.html#tutorials.signals.introduction">Introduction</a></dt><dt><a href="tutorials.signals.signals.html">Signals</a></dt><dt><a href="tutorials.signals.callbacks.html">Callbacks and Signal Handlers</a></dt><dt><a href="tutorials.signals.connecting.html">Connecting the two</a></dt><dt><a href="tutorials.signals.events.html">Events</a></dt><dt><a href="tutorials.signals.summary.html">Summary</a></dt></dl></div>
+ 
+
+ <div class="sect1"><a name="tutorials.signals.introduction"></a><div class="titlepage"><div><h2 class="title" style="clear: all"><a name="tutorials.signals.introduction"></a>Introduction</h2></div></div><p>
+   This tutorial will deal with the concept of signal handling in PHP-GTK 2 which
+   is an important and fundamental, since this is what makes your application
+   "tick"!.
+  </p><p>
+   You might have noticed that at the end of every PHP-GTK 2 program we write
+   this statement:
+   <table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+Gtk::main();
+</pre></td></tr></table>
+   What this means is that an infinite loop is started which waits for 
+   something to occur. Obviously you do not want to just create, display widgets
+   and quit! This loop is what keeps that from happening and is the key to keep
+   your application running. Conversely, the statement:
+   <table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+Gtk::main_quit();
+</pre></td></tr></table>
+   exits from that loop. We use this whenever we really want to stop our
+   application.
+  </p><p>
+    First, it will be useful to define some terms that we will use frequently.
+  </p><p>
+   <div class="itemizedlist"><ul><li><a name="idp44869504"></a>
+     Action: This is something that occurs. For example, the user clicking on a
+     button counts as an action.
+    </li><li><a name="idp44870016"></a>
+     Signal: This is a notification generated whenever an event occurs. This is 
+     the way your application knows that an action has just occurred.
+    </li><li><a name="idp44870576"></a>
+     Callback: A function or method that is invoked by some other piece of code.
+    </li><li><a name="idp44871056"></a>
+     Signal Handler: A callback that is invoked in response to a signal being
+     emitted. Here is where you place the code that will handle the signal.
+    </li><li><a name="idp44871616"></a>
+     Events: These are a continuous stream of impulses that communicate low-level
+     changes the environment of the underlying windowing system.
+    </li></ul></div>
+  </p><p>
+   Signal handling basically consists of connecting a signal to its signal 
+   handler, and of course, writing the signal handler itself. The job of 
+   generating the signal whenever an action occurs is taken care by PHP-GTK 2.
+   Another thing to note is that signal generation does not guarantee that the
+   user has performed some action. It is possible to manually generate a 
+   signal, and PHP-GTK 2 generates signals internally all the time. 
+  </p><p>
+   A common instance of a signal being internally generated and used is when
+   <span dir="ltr"><a href="../gtk/gtk.gtkadjustment.html">GtkAdjustment</a></span> emits the 
+   <span dir="ltr">"<a href="../gtk/gtk.gtkadjustment.signal.value-changed.html">value-changed</a>"</span> for a
+   <span dir="ltr"><a href="../gtk/gtk.gtkprogressbar.html">GtkProgressBar</a></span> to use it. Hence, some signals have a
+   default handler already inbuilt, which will be executed whether or not you
+   manually connect a signal handler to that signal.
+  </p><p>
+   Most of the times however, if you want something to happen when a 
+   signal is generated, you need to create a signal handler for it.
+  </p></div>
+
+ 
+
+   
+
+ 
+
+ 
+
+ 
+
+</div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="tutorials.objectorientation.summary.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="tutorials.signals.signals.html">Next</a></td></tr><tr><td width="40%" align="left">Summary </td><td width="20%" align="center"><a href="tutorials.html">Up</a></td><td width="40%" align="right"> Signals</td></tr></table></div></body></html>

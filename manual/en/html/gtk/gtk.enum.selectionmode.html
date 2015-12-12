@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkSelectionMode</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkenums.html#gtk.gtkenum" title="GTK Enums"><link rel="previous" href="gtk.enum.scrolltype.html" title="GtkScrollType"><link rel="next" href="gtk.enum.shadowtype.html" title="GtkShadowType"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Enums</th></tr><tr><td width="20%" align="left"><a href="gtk.enum.scrolltype.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkSelectionMode</span></th><td width="20%" align="right"> <a href="gtk.enum.shadowtype.html">Next</a></td></tr></table><hr></div><a class="enum" name="gtk.enum.selectionmode"></a><h1 class="title">GtkSelectionMode</h1><p>
+   <p>
+    Used to control what selections users are allowed to make.
+   </p>
+   <p>
+    Used by methods of the <span dir="ltr"><a href="gtk.gtktreeselection.html">GtkTreeSelection</a></span> class;
+    <span dir="ltr"><a href="gtk.gtktreeselection.method.set_mode.html">set_mode()</a></span>  and
+    <span dir="ltr"><a href="gtk.gtktreeselection.method.get_mode.html">get_mode()</a></span> .
+   </p>
+  </p><table width="100%" cellpadding="2" cellspacing="1"><tr><td width="7%"><h3>Value</h3></td><td width="40%"><h3>Symbolic name</h3></td><td width="52%"><h3>Description</h3></td></tr><tr valign="top"><td>  0</td><td>Gtk::SELECTION_NONE</td><td>
+    No selection is possible.
+   </td></tr><tr valign="top"><td>  1</td><td>Gtk::SELECTION_SINGLE</td><td>
+    Zero or one element may be selected.
+   </td></tr><tr valign="top"><td>  2</td><td>Gtk::SELECTION_BROWSE</td><td>
+    Exactly one element is selected. In some circumstances, such as initially or
+    during a search operation, it's possible for no element to be selected with
+    <span dir="ltr"><tt>Gtk::SELECTION_BROWSE</tt></span>. What is really enforced is that
+    the user can't deselect a currently selected element except by selecting
+    another element.
+   </td></tr><tr valign="top"><td>  3</td><td>Gtk::SELECTION_MULTIPLE</td><td>
+    Any number of elements may be selected. Clicks toggle the state 
+    of an item. Any number of elements may be selected. Click-drag 
+    selects a range of elements; the Ctrl key may be used to enlarge 
+    the selection, and Shift key to select between the focus and 
+    the child pointed to.
+   </td></tr></table><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.enum.scrolltype.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.enum.shadowtype.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkScrollType</span> </td><td width="20%" align="center"><a href="../gtkenums.html#gtk.gtkenum">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkShadowType</span></td></tr></table></div></body></html>

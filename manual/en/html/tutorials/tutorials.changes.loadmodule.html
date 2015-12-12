@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>Loading the php_gtk Module</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="tutorials.changes.html" title="Changes since PHP-GTK 1"><link rel="previous" href="tutorials.changes.html" title="Changes since PHP-GTK 1"><link rel="next" href="tutorials.changes.references.html" title="Object References (the Ampersand &amp;)"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Changes since PHP-GTK 1</th></tr><tr><td width="20%" align="left"><a href="tutorials.changes.html">Prev</a> </td><th width="60%" align="center">Loading the php_gtk Module</th><td width="20%" align="right"> <a href="tutorials.changes.references.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="tutorials.changes.loadmodule"></a><div class="titlepage"><div><h2 class="title" style="clear: all"><a name="tutorials.changes.loadmodule"></a>Loading the php_gtk Module</h2></div></div><p>
+   In PHP-GTK 1, you never knew if the php-gtk module had been loaded
+   into PHP automatically via <tt>php.ini</tt>, or if it
+   was a bad setup (many of them!), and you had to load the module yourself:
+   <table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+if (!class_exists("gtk")) {
+    dl( "php_gtk." . PHP_SHLIB_SUFFIX);
+}
+?&gt;</pre></td></tr></table>
+  </p><p>
+   In PHP 5, loading modules via <span dir="ltr"><tt>dl()</tt></span> is deprecated. That
+   means it still works, but people are encouraged not to do that any more.
+   So you can assume that PHP-GTK is already loaded, or, if you want to catch
+   all possible errors, check for the existance of the PHP-GTK module and throw
+   an error if it's not there:
+   <table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+if (!extension_loaded('php-gtk')) {
+    echo "The PHP-Gtk2 module is not available!\r\n";
+    exit(1);
+}
+//..continue with your program
+?&gt;</pre></td></tr></table>
+  </p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="tutorials.changes.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="tutorials.changes.references.html">Next</a></td></tr><tr><td width="40%" align="left">Changes since PHP-GTK 1 </td><td width="20%" align="center"><a href="tutorials.changes.html">Up</a></td><td width="40%" align="right"> Object References (the Ampersand &amp;)</td></tr></table></div></body></html>

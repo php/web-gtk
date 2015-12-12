@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkComboBox</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkcombo.field.list.html" title="GtkCombo::list"><link rel="next" href="gtk.gtkcombobox.constructor.html" title="GtkComboBox Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkcombo.field.list.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkComboBox</span></th><td width="20%" align="right"> <a href="gtk.gtkcombobox.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkcombobox"></a><h2 class="title"><span dir="ltr">GtkComboBox</span></h2><p><blockquote>
+   A widget used to choose from a list of items.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkbin.html">GtkBin</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcombobox.html">GtkComboBox</a></span><br></div></blockquote></p><p><h3>Direct Subclasses</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="gtk.gtkcomboboxentry.html">GtkComboBoxEntry</a></span></div></blockquote></p><h3>Implemented Interfaces</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="gtk.gtkcelllayout.html">GtkCellLayout</a></span></div></blockquote><p><h3>Description</h3><blockquote>
+   <p>
+    The <span dir="ltr"><a href="gtk.gtkcombobox.html">GtkComboBox</a></span> is a replacement for the 
+    <span dir="ltr"><a href="gtk.gtkoptionmenu.html">GtkOptionMenu</a></span> and <span dir="ltr"><a href="gtk.gtkcombo.html">GtkCombo</a></span>
+    widgets, providing a solution that allows the user to choose from a list of
+    options.
+   </p>
+   <p>
+    A GtkComboBox implements the <span dir="ltr"><a href="gtk.gtkcelllayout.html">GtkCellLayout</a></span> interface,
+    that provides a number of useful methods for managing the contents, adopting
+    a model-view pattern. The 
+    constructor can be associated with 
+    an optional <span dir="ltr"><a href="gtk.gtktreemodel.html">GtkTreeModel</a></span>, which can otherwise be 
+    added later with the <span dir="ltr"><a href="gtk.gtkcombobox.method.set_model.html">set_model()</a></span>  
+    method.
+   </p>
+   <p>
+    Alternatively, the new_text 
+    function creates a simple GtkComboBox and associated
+    <span dir="ltr"><a href="gtk.gtkliststore.html">GtkListStore</a></span> model. A 
+    <span dir="ltr"><a href="gtk.gtkcellrenderertext.html">GtkCellRendererText</a></span> is also created and packed in the
+    new combo box. In this simple combo box each list item is a text string that
+    can be selected. The convenience methods
+    <span dir="ltr"><a href="gtk.gtkcombobox.method.append_text.html">append_text()</a></span> ,
+    <span dir="ltr"><a href="gtk.gtkcombobox.method.prepend_text.html">prepend_text()</a></span> ,
+    <span dir="ltr"><a href="gtk.gtkcombobox.method.insert_text.html">insert_text()</a></span>  and
+    <span dir="ltr"><a href="gtk.gtkcombobox.method.remove_text.html">remove_text()</a></span>  can be used
+    to manage the contents of the GtkComboBox.
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp60593568"><p></p><a name="idp60593568"></a> <span dir="ltr"><a href="gtk.gtkcombobox.constructor.html">GtkComboBox</a></span> (<span dir="ltr"><a href="gtk.gtktreemodel.html">GtkTreeModel</a></span> <i><tt>model</tt></i>);</div></p> --
+    Creates a new <span dir="ltr"><a href="gtk.gtkcombobox.html">GtkComboBox</a></span>
+   <br><br><p><div class="funcsynopsis" id="idp60603680"><p></p><a name="idp60603680"></a> <span dir="ltr"><a href="gtk.gtkcombobox.constructor.new_text.html">GtkComboBox::new_text</a></span> ();</div></p> --
+    Constructs a new text combo box
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkcombobox.method.append_text.html">append_text()</a></span> </dt><dd> 
+    Appends the string specified by text to the list of strings.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcombobox.method.get_active.html">get_active()</a></span> </dt><dd> 
+    Returns the index in the model of the currently active item.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcombobox.method.get_active_iter.html">get_active_iter()</a></span> </dt><dd> 
+        Returns the current item.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcombobox.method.get_active_text.html">get_active_text()</a></span> </dt><dd> 
+       Returns the current string.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcombobox.method.get_column_span_column.html">get_column_span_column()</a></span> </dt><dd> 
+        Returns the value of the "column-span-column" property.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcombobox.method.get_focus_on_click.html">get_focus_on_click()</a></span> </dt><dd> 
+        Returns the value of the "focus-on-click" property.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcombobox.method.get_model.html">get_model()</a></span> </dt><dd> 
+        Returns the value of the "model" property.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcombobox.method.get_popup_accessible.html">get_popup_accessible()</a></span> </dt><dd> 
+        Gets the object corresponding to the popup.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcombobox.method.get_row_span_column.html">get_row_span_column()</a></span> </dt><dd> 
+        Returns the value of the "row-span-column" property.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcombobox.method.get_wrap_width.html">get_wrap_width()</a></span> </dt><dd> 
+        Returns the value of the "wrap-width" property.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcombobox.method.insert_text.html">insert_text()</a></span> </dt><dd> 
+    Inserts a string in the combo box.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcombobox.method.popdown.html">popdown()</a></span> </dt><dd> 
+        Hides the menu or dropdown list of the combo box.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcombobox.method.popup.html">popup()</a></span> </dt><dd> 
+        Pops up the menu or dropdown list.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcombobox.method.prepend_text.html">prepend_text()</a></span> </dt><dd> 
+    Prepends the string specified by text to the list of strings.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcombobox.method.remove_text.html">remove_text()</a></span> </dt><dd> 
+        Removes the string at the index.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcombobox.method.set_active.html">set_active()</a></span> </dt><dd> 
+    Sets the active item of the combo_box.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcombobox.method.set_active_iter.html">set_active_iter()</a></span> </dt><dd> 
+    Sets the current active item.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcombobox.method.set_add_tearoffs.html">set_add_tearoffs()</a></span> </dt><dd> 
+    Sets the "add-tearoffs" property.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcombobox.method.set_column_span_column.html">set_column_span_column()</a></span> </dt><dd> 
+        Sets the "column-span-column" property.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcombobox.method.set_focus_on_click.html">set_focus_on_click()</a></span> </dt><dd> 
+        Sets the value of the "focus-on-click" property.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcombobox.method.set_model.html">set_model()</a></span> </dt><dd> 
+        Sets the model used by the combo box.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcombobox.method.set_row_separator_func.html">set_row_separator_func()</a></span> </dt><dd> 
+        Sets the row separator function.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcombobox.method.set_row_span_column.html">set_row_span_column()</a></span> </dt><dd> 
+        Sets the "row-span-column" property.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcombobox.method.set_wrap_width.html">set_wrap_width()</a></span> </dt><dd> 
+        Sets the wrap width property of the combo box.
+   </dd></blockquote></div><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtkcombobox.signal.changed.html">changed</a>"</span></dt><dd> 
+       The "changed" signal is emitted when a new item in the combo box is selected.
+   </dd></blockquote></p></div>
+
+  
+
+  
+ 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ 
+  
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkcombo.field.list.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkcombobox.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkCombo::list</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkComboBox</span> Constructor</td></tr></table></div></body></html>

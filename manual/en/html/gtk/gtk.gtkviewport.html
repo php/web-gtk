@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkViewport</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkvbuttonbox.method.set_spacing_default.html" title="GtkVButtonBox::set_spacing_default"><link rel="next" href="gtk.gtkviewport.constructor.html" title="GtkViewport Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkvbuttonbox.method.set_spacing_default.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkViewport</span></th><td width="20%" align="right"> <a href="gtk.gtkviewport.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkviewport"></a><h2 class="title"><span dir="ltr">GtkViewport</span></h2><p><blockquote>
+   A container for adding scrolling capabilities to widgets without native
+   scrolling support.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkbin.html">GtkBin</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkviewport.html">GtkViewport</a></span><br></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    A GtkViewport provides scrolling capabilities to widgets that
+    don't support native scrolling. E.g., a <span dir="ltr"><a href="gtk.gtklabel.html">GtkLabel</a></span>
+    or a <span dir="ltr"><a href="gtk.gtkvbox.html">GtkVBox</a></span> could be packed into a
+    <span dir="ltr"><a href="gtk.gtkscrolledwindow.html">GtkScrolledWindow</a></span>, but since the classes
+    don't support the
+    <span dir="ltr">"<a href="gtk.gtkviewport.signal.set-scroll-adjustments.html">set-scroll-adjustments</a>"</span>
+    signal, using the scrollbars wouldn't work.
+   </p>
+   <p>
+    A viewport also takes care to show only a certain part of
+    the widget, hiding the rest of it that is not in the visible area.
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp87200896"><p></p><a name="idp87200896"></a> <span dir="ltr"><a href="gtk.gtkviewport.constructor.html">GtkViewport</a></span> ([<span dir="ltr"><a href="gtk.gtkadjustment.html">GtkAdjustment</a></span> <i><tt>hadjustment = null</tt></i> [, <span dir="ltr"><a href="gtk.gtkadjustment.html">GtkAdjustment</a></span> <i><tt>vadjustment = null</tt></i>]]);</div></p> --
+    Creates a new viewport.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkviewport.method.get_hadjustment.html">get_hadjustment()</a></span> </dt><dd> 
+    Returns the horizontal adjustment.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkviewport.method.get_shadow_type.html">get_shadow_type()</a></span> </dt><dd> 
+    Returns the shadow type.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkviewport.method.get_vadjustment.html">get_vadjustment()</a></span> </dt><dd> 
+    Returns the vertical adjustment.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkviewport.method.set_hadjustment.html">set_hadjustment()</a></span> </dt><dd> 
+    Sets the horizontal adjustment.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkviewport.method.set_shadow_type.html">set_shadow_type()</a></span> </dt><dd> 
+    Sets the shadow type.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkviewport.method.set_vadjustment.html">set_vadjustment()</a></span> </dt><dd> 
+    Sets the vertical adjustment.
+   </dd></blockquote></div><h3>Properties</h3><p>Use get_property and set_property methods to access these.</p><blockquote><dt><span dir="ltr"><a href="gtk.gtkviewport.property.hadjustment.html">hadjustment</a></span>:</dt><dd> 
+    Horizontal adjustment.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkviewport.property.shadow-type.html">shadow-type</a></span>:</dt><dd> 
+    Shadow type.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkviewport.property.vadjustment.html">vadjustment</a></span>:</dt><dd> 
+    Vertical adjustment
+   </dd></blockquote><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtkviewport.signal.set-scroll-adjustments.html">set-scroll-adjustments</a>"</span></dt><dd> 
+    One or both adjustments are changed.
+   </dd></blockquote></p></div>
+  
+ 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+ 
+  
+
+  
+
+  
+
+ 
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkvbuttonbox.method.set_spacing_default.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkviewport.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkVButtonBox::set_spacing_default</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkViewport</span> Constructor</td></tr></table></div></body></html>

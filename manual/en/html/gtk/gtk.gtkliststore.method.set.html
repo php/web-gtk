@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkListStore::set</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkliststore.html#idp70841216" title=""><link rel="previous" href="gtk.gtkliststore.method.remove.html" title="GtkListStore::remove"><link rel="next" href="gtk.gtkliststore.method.swap.html" title="GtkListStore::swap"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkliststore.method.remove.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkListStore::set</span></th><td width="20%" align="right"> <a href="gtk.gtkliststore.method.swap.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkliststore.method.set"></a><h2><span dir="ltr">GtkListStore::set</span></h2><p><div class="funcsynopsis" id="idp70937184"><p></p><a name="idp70937184"></a>void set(
+      <span dir="ltr"><a href="gtk.gtktreeiter.html">GtkTreeIter</a></span> <i><tt>iter</tt></i>
+     , <i><tt>column</tt></i>, <i><tt>value</tt></i> [, <i><tt>column</tt></i> [, <i><tt>value</tt></i>]]);</div></p>
+    <p>
+     Change the data of certain columns of the row given by
+     <i><tt>iter</tt></i>.
+    </p>
+    <p>
+     The second parameter is the number of the column which data
+     shall be changed, and the third parameter is the actual data.
+     You can change more than one column by adding more column 
+     number/data pairs to the method.
+    </p>
+    <div class="example" align="left"><p><a name="idp70946432"></a><b>Example 98. Inserting some rows into a list store</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//Create new list store with string and number columns
+$store = new GtkListStore(Gobject::TYPE_STRING, Gobject::TYPE_LONG);
+
+//at first, get an iterator for a new row
+$iterator = $store-&gt;append();
+//now use that to set the name at that row (column 0)
+$store-&gt;set($iterator, 0, 'Tokio');
+//same row: set the inhabitants into column 1
+$store-&gt;set($iterator, 1, 34100000);
+
+//You can set a whole row at once:
+$iterator = $store-&gt;append();
+//we add the data "Mexico city" at column 0 and 
+// "22 million" at column 1 at the row $iterator
+$store-&gt;set($iterator, 0, 'Mexico city', 1, 22650000);
+
+//Even faster: don't even create an iterator variable
+$store-&gt;set($store-&gt;append(), 0, 'Seoul', 1, 22250000);
+?&gt;
+</pre></td></tr></table></div>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkliststore.method.remove.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkliststore.method.swap.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkListStore::remove</span> </td><td width="20%" align="center"><a href="gtk.gtkliststore.html#idp70841216">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkListStore::swap</span></td></tr></table></div></body></html>

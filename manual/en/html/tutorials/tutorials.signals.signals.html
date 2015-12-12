@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>Signals</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="tutorials.signals.html" title="Signal Handling"><link rel="previous" href="tutorials.signals.html" title="Signal Handling"><link rel="next" href="tutorials.signals.callbacks.html" title="Callbacks and Signal Handlers"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Signal Handling</th></tr><tr><td width="20%" align="left"><a href="tutorials.signals.html">Prev</a> </td><th width="60%" align="center">Signals</th><td width="20%" align="right"> <a href="tutorials.signals.callbacks.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="tutorials.signals.signals"></a><div class="titlepage"><div><h2 class="title" style="clear: all"><a name="tutorials.signals.signals"></a>Signals</h2></div></div><div class="note" style="margin-left: 24px; margin-right: 24px; font-weight: bold;">
+   Signals are notifications emitted by widgets in response to some action
+   taking place.
+  </div><p>
+   As discussed before, it is essential for any application to respond to
+   some action that is triggered either by the user or automatically. Signals
+   help the program in knowing when a particular action has taken place so that
+   you can act on it.
+  </p><p>
+   Every widget has a set of signals associated with it. This means that, the
+   widget is capable of emitting any of those signals depending on the action
+   it receives. Also remember that signals are inherited across classes, and
+   hence the child class always derives all of the signals of its parent and
+   may add a few of its own.
+  </p><p>
+   An important concept to know here is that it is possible to emit a signal
+   without the user performing an action at all. Most widgets have functions 
+   that will emit a particular signal when you use them, irrespective of 
+   whether the user has actually performed an action or not. An example of 
+   such a function is the <span dir="ltr"><a href="../gtk/gtk.gtkbutton.method.clicked.html">clicked()</a></span>  method
+   of <span dir="ltr"><a href="../gtk/gtk.gtkbutton.html">GtkButton</a></span>, which will emit the
+   <span dir="ltr"><tt>clicked</tt></span> signal for the button.
+  </p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="tutorials.signals.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="tutorials.signals.callbacks.html">Next</a></td></tr><tr><td width="40%" align="left">Signal Handling </td><td width="20%" align="center"><a href="tutorials.signals.html">Up</a></td><td width="40%" align="right"> Callbacks and Signal Handlers</td></tr></table></div></body></html>

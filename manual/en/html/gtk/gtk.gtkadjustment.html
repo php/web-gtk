@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkAdjustment</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkactiongroup.signal.pre-activate.html" title="pre-activate"><link rel="next" href="gtk.gtkadjustment.constructor.html" title="GtkAdjustment Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkactiongroup.signal.pre-activate.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkAdjustment</span></th><td width="20%" align="right"> <a href="gtk.gtkadjustment.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkadjustment"></a><h2 class="title"><span dir="ltr">GtkAdjustment</span></h2><p><blockquote>
+   A GtkObject representing an adjustable bounded value
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkadjustment.html">GtkAdjustment</a></span><br></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    The GtkAdjustment object represents a value which has an associated lower
+    and upper bound, together with step and page increments, and a page size.
+    It is used within several GTK+ widgets, including
+    <span dir="ltr"><a href="gtk.gtkspinbutton.html">GtkSpinButton</a></span>, <span dir="ltr"><a href="gtk.gtkviewport.html">GtkViewport</a></span>,
+    and <span dir="ltr"><a href="gtk.gtkrange.html">GtkRange</a></span> (which is a base class for
+    <span dir="ltr"><a href="gtk.gtkhscrollbar.html">GtkHScrollbar</a></span>, <span dir="ltr"><a href="gtk.gtkvscrollbar.html">GtkVScrollbar</a></span>,
+    <span dir="ltr"><a href="gtk.gtkhscale.html">GtkHScale</a></span>, and <span dir="ltr"><a href="gtk.gtkvscale.html">GtkVScale</a></span>).
+   </p>
+   <p>
+    The GtkAdjustment object does not update the value itself. Instead it is
+    left up to the owner of the GtkAdjustment to control the value.
+   </p>
+   <p>
+    The owner of the GtkAdjustment typically calls the
+    <span dir="ltr"><a href="gtk.gtkadjustment.method.value_changed.html">value_changed()</a></span>  and
+    <span dir="ltr"><a href="gtk.gtkadjustment.method.changed.html">changed()</a></span>  functions after
+    changing the value and its bounds. This results in the emission of the
+    <span dir="ltr">"<a href="gtk.gtkadjustment.signal.value-changed.html">value-changed</a>"</span> or
+    <span dir="ltr">"<a href="gtk.gtkadjustment.signal.changed.html">changed</a>"</span> signal respectively.
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp55728704"><p></p><a name="idp55728704"></a> <span dir="ltr"><a href="gtk.gtkadjustment.constructor.html">GtkAdjustment</a></span> (double <i><tt>value</tt></i>, double <i><tt>lower</tt></i>, double <i><tt>upper</tt></i>, double <i><tt>step_increment</tt></i>, double <i><tt>page_increment</tt></i>, double <i><tt>page_size</tt></i>);</div></p> --
+    Creates a new GtkAdjustment.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkadjustment.method.changed.html">changed()</a></span> </dt><dd> 
+    Emits a "changed" signal.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkadjustment.method.clamp_page.html">clamp_page()</a></span> </dt><dd> 
+    Ensure that the value is in a certain range.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkadjustment.method.get_value.html">get_value()</a></span> </dt><dd> 
+    Gets the current value of the adjustment.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkadjustment.method.set_value.html">set_value()</a></span> </dt><dd> 
+    Set the value.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkadjustment.method.value_changed.html">value_changed()</a></span> </dt><dd> 
+    Emits a <span dir="ltr">"<a href="gtk.gtkadjustment.signal.value-changed.html">value-changed</a>"</span>
+    signal.
+   </dd></blockquote></div><h3>Fields</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkadjustment.field.lower.html">lower</a></span>:</dt><dd> 
+    The minimum value of the adjustment.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkadjustment.field.page_increment.html">page_increment</a></span>:</dt><dd> 
+    The page increment of the adjustment.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkadjustment.field.page_size.html">page_size</a></span>:</dt><dd> 
+    The page size of the adjustment.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkadjustment.field.step_increment.html">step_increment</a></span>:</dt><dd> 
+    The step increment of the adjustment.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkadjustment.field.upper.html">upper</a></span>:</dt><dd> 
+    The maximum value of the adjustment.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkadjustment.field.value.html">value</a></span>:</dt><dd> 
+    The value of the adjustment.
+   </dd></blockquote><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtkadjustment.signal.changed.html">changed</a>"</span></dt><dd> 
+    One or more fields have changed.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkadjustment.signal.value-changed.html">value-changed</a>"</span></dt><dd> 
+    The value field has been changed.
+   </dd></blockquote></p></div>
+
+  
+ 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ 
+
+  
+
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkactiongroup.signal.pre-activate.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkadjustment.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">pre-activate</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkAdjustment</span> Constructor</td></tr></table></div></body></html>

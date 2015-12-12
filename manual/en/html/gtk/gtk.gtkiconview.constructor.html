@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkIconView Constructor</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkiconview.html#idp67468912" title=""><link rel="previous" href="gtk.gtkiconview.html" title="GtkIconView"><link rel="next" href="gtk.gtkiconview.method.get_column_spacing.html" title="GtkIconView::get_column_spacing"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkiconview.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkIconView</span> Constructor</th><td width="20%" align="right"> <a href="gtk.gtkiconview.method.get_column_spacing.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkiconview.constructor"></a><h2><span dir="ltr">GtkIconView</span> Constructor</h2><p><div class="funcsynopsis" id="idp67469936"><p></p><a name="idp67469936"></a> <span dir="ltr"><a href="gtk.gtkiconview.constructor.html">GtkIconView</a></span> ();</div></p>
+    <p>
+     Creates a new <span dir="ltr"><a href="gtk.gtkiconview.html">GtkIconView</a></span> instance. To make it 
+     actually display something, you need to add a data model (e.g. a 
+     <span dir="ltr"><a href="gtk.gtkliststore.html">GtkListStore</a></span>) and some scroll bars.
+    </p>
+    <div class="example" align="left"><p><a name="idp67474544"></a><b>Example 74. <span dir="ltr"><a href="gtk.gtkiconview.html">GtkIconView</a></span> filled with stock icons</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//GtkIconView example
+$wnd = new GtkWindow();
+$wnd-&gt;set_title('GtkIconView');
+$wnd-&gt;set_default_size(400, 400);
+$wnd-&gt;connect_simple('destroy', array('Gtk', 'main_quit'));
+
+$iv = new GtkIconView();
+
+$model = new GtkListStore(GdkPixbuf::gtype, Gtk::TYPE_STRING);
+$iv-&gt;set_model($model);
+
+//fill the model with some nice icons
+$ids = Gtk::stock_list_ids();
+sort($ids);
+foreach ($ids as $id) {
+    $pixbuf = $iv-&gt;render_icon($id, Gtk::ICON_SIZE_DIALOG);
+    $model-&gt;set($model-&gt;append(), 0, $pixbuf, 1, $id);
+}
+
+$iv-&gt;set_pixbuf_column(0);
+$iv-&gt;set_text_column(1);
+
+//number of columns in view, not model
+$iv-&gt;set_columns(0);
+$iv-&gt;set_item_width(100);
+
+//make it scrollable
+$scrollwin = new GtkScrolledWindow();
+$scrollwin-&gt;set_policy(
+    Gtk::POLICY_AUTOMATIC,
+    Gtk::POLICY_AUTOMATIC
+);
+$scrollwin-&gt;add($iv);
+
+$wnd-&gt;add($scrollwin);
+$wnd-&gt;show_all();
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkiconview.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkiconview.method.get_column_spacing.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkIconView</span> </td><td width="20%" align="center"><a href="gtk.gtkiconview.html#idp67468912">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkIconView::get_column_spacing</span></td></tr></table></div></body></html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkFileChooserButton Constructor</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkfilechooserbutton.html#idp64947552" title=""><link rel="previous" href="gtk.gtkfilechooserbutton.html" title="GtkFileChooserButton"><link rel="next" href="gtk.gtkfilechooserbutton.constructor.new_with_backend.html" title="GtkFileChooserButton Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkfilechooserbutton.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkFileChooserButton</span> Constructor</th><td width="20%" align="right"> <a href="gtk.gtkfilechooserbutton.constructor.new_with_backend.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkfilechooserbutton.constructor"></a><h2><span dir="ltr">GtkFileChooserButton</span> Constructor</h2><p><div class="funcsynopsis" id="idp64948400"><p></p><a name="idp64948400"></a> <span dir="ltr"><a href="gtk.gtkfilechooserbutton.constructor.html">GtkFileChooserButton</a></span> (string <i><tt>title</tt></i>, <span dir="ltr"><a href="gtk.enum.filechooseraction.html">GtkFileChooserAction</a></span> <i><tt>action</tt></i>);</div></p>
+    <p>
+     Use this constructor to create a new file-selecting button widget.
+    </p>
+    <div class="example" align="left"><p><a name="idp64953888"></a><b>Example 63. Using a GtkFileChooser button.</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//Creating and initialising a new window
+// to add the FileChooser to
+$window = new GtkWindow();
+
+//Quit the main loop when window is destroyed
+$window-&gt;connect_simple(
+    'destroy',
+    array('Gtk', 'main_quit')
+);
+
+//Setting parameters of the window
+$window-&gt;set_title('GtkFileChooser Demo');
+$window-&gt;set_default_size(250,60);
+$window-&gt;set_border_width(10);
+
+/*
+* Creating a new file chooser button
+* Note that the second parameter dictates what action
+* will be performed when the open button of the
+* GtkFileChooserDialog widget is clicked
+*/
+$thebutton = new GtkFileChooserButton(
+    'Select the File',
+    Gtk::FILE_CHOOSER_ACTION_OPEN
+);
+
+//Creating a label and a quit button
+$thelabel = new GtkLabel('Click to select a file: ');
+$toquit = new GtkButton('_Quit');
+$toquit-&gt;connect_simple(
+    'clicked',
+    array($window, 'destroy')
+);
+
+//Creating a layout to add the elements
+$thehbox = new GtkHBox();
+$thevbox = new GtkVBox();
+
+//Adding the elements to the layout
+$thehbox-&gt;pack_start($thelabel);
+$thehbox-&gt;pack_start($thebutton);
+$thevbox-&gt;pack_start($thehbox);
+$thevbox-&gt;pack_start($toquit);
+
+//Displaying the window and starting the main loop
+$window-&gt;add($thevbox);
+$window-&gt;show_all();
+Gtk::main();
+?&gt;
+</pre></td></tr></table></div>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkfilechooserbutton.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkfilechooserbutton.constructor.new_with_backend.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkFileChooserButton</span> </td><td width="20%" align="center"><a href="gtk.gtkfilechooserbutton.html#idp64947552">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkFileChooserButton</span> Constructor</td></tr></table></div></body></html>

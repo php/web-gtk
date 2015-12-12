@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkSizeGroup</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtksettings.method.set_string_property.html" title="GtkSettings::set_string_property"><link rel="next" href="gtk.gtksizegroup.constructor.html" title="GtkSizeGroup Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtksettings.method.set_string_property.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkSizeGroup</span></th><td width="20%" align="right"> <a href="gtk.gtksizegroup.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtksizegroup"></a><h2 class="title"><span dir="ltr">GtkSizeGroup</span></h2><div style="float:right; border:1px solid #000;"><img src="../images/reference/gtk/gtksizegroup.png"></div><p><blockquote>
+   An object for forcing a group of widgets to request the same size.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtksizegroup.html">GtkSizeGroup</a></span><br></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    <span dir="ltr"><a href="gtk.gtksizegroup.html">GtkSizeGroup</a></span> provides a mechanism for grouping
+    a number of widgets together so they all request the same amount of space.
+    This is typically useful when you want a column of widgets to have
+    the same size, but you can't use a <span dir="ltr"><a href="gtk.gtktable.html">GtkTable</a></span> widget.
+   </p>
+   <p>
+    In detail, the size requested for each widget in a GtkSizeGroup is the
+    maximum of the sizes that would have been requested for each widget in
+    the size group if they were not in the size group. The mode of the size
+    group (see <span dir="ltr"><a href="gtk.gtksizegroup.method.set_mode.html">set_mode()</a></span> ) determines
+    whether this applies to the horizontal size, the vertical size, or
+    both sizes.
+   </p>
+   <p>
+    Note that size groups only affect the amount of space requested, not the
+    size that the widgets finally receive. If you want the widgets in a
+    GtkSizeGroup to actually be the same size, you need to pack them in such
+    a way that they get the size they request and not more. For example, if
+    you are packing your widgets into a table, you would not include the
+    <span dir="ltr"><a href="gtk.enum.attachoptions.html">Gtk::FILL</a></span> flag.
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp76019264"><p></p><a name="idp76019264"></a> <span dir="ltr"><a href="gtk.gtksizegroup.constructor.html">GtkSizeGroup</a></span> (<span dir="ltr"><a href="gtk.enum.sizegroupmode.html">GtkSizeGroupMode</a></span> <i><tt>mode</tt></i>);</div></p> --
+    Creates a new size group.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtksizegroup.method.add_widget.html">add_widget()</a></span> </dt><dd> 
+    Adds a widget to the group.
+   </dd><dt><span dir="ltr"><a href="gtk.gtksizegroup.method.get_mode.html">get_mode()</a></span> </dt><dd> 
+    Gets the current mode of the size group.
+   </dd><dt><span dir="ltr"><a href="gtk.gtksizegroup.method.remove_widget.html">remove_widget()</a></span> </dt><dd> 
+    Removes a widget from the group.
+   </dd><dt><span dir="ltr"><a href="gtk.gtksizegroup.method.set_mode.html">set_mode()</a></span> </dt><dd> 
+    Sets the group's mode.
+   </dd></blockquote></div></p></div>
+  
+ 
+  
+
+  
+
+  
+
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtksettings.method.set_string_property.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtksizegroup.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkSettings::set_string_property</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkSizeGroup</span> Constructor</td></tr></table></div></body></html>

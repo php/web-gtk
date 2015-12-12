@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>Packing basics</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="tutorials.packing.html" title="Packing Widgets"><link rel="previous" href="tutorials.packing.html" title="Packing Widgets"><link rel="next" href="tutorials.packing.box.html" title="Boxes - GtkHBox and GtkVBox"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Packing Widgets</th></tr><tr><td width="20%" align="left"><a href="tutorials.packing.html">Prev</a> </td><th width="60%" align="center">Packing basics</th><td width="20%" align="right"> <a href="tutorials.packing.box.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="tutorials.packing.basics"></a><div class="titlepage"><div><h2 class="title" style="clear: all"><a name="tutorials.packing.basics"></a>Packing basics</h2></div></div><p>
+   There are different types of widgets in Gtk, depending on how
+   many children they can contain:
+  </p><div class="itemizedlist"><ul><li><a name="idp44561248"></a>no children - normal widgets</li><li><a name="idp44561632"></a>exactly one child widget: bin</li><li><a name="idp44562064"></a>two or more child widgets: container</li></ul></div><p>
+   The base widget you will begin your programs with (in most
+   cases) is the <span dir="ltr"><a href="../gtk/gtk.gtkwindow.html">GtkWindow</a></span>, a bin. That
+   means it can have only one child. So what now - one widget is a
+   bit sparse for an application. The solution are the containers,
+   of which you choose one and add that to the window. To that
+   container, you can either add some widgets or even more containers.
+   That gives you the ability to nest containers and get exactly that
+   layout you have in your mind.
+  </p><p>
+   The different containers like <span dir="ltr"><a href="../gtk/gtk.gtkhbox.html">GtkHBox</a></span>, 
+   <span dir="ltr"><a href="../gtk/gtk.gtkvbox.html">GtkVBox</a></span>, <span dir="ltr"><a href="../gtk/gtk.gtktable.html">GtkTable</a></span> and
+   <span dir="ltr"><a href="../gtk/gtk.gtkfixed.html">GtkFixed</a></span> behave different in the way they layout
+   and arrange widgets. Each one suits a certain purpose and need to be
+   combined to achieve advanced layouts.
+  </p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="tutorials.packing.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="tutorials.packing.box.html">Next</a></td></tr><tr><td width="40%" align="left">Packing Widgets </td><td width="20%" align="center"><a href="tutorials.packing.html">Up</a></td><td width="40%" align="right"> Boxes - GtkHBox and GtkVBox</td></tr></table></div></body></html>

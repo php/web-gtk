@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>Glossary</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="stylesheet.css"><link rel="home" href="index.html" title="PHP-GTK 2 Manual"><link rel="up" href="appendix.html" title="Appendix"><link rel="previous" href="appendix.keysyms.html" title="Appendix D. Symbolic names for keys in PHP-GTK 2"><link rel="next" href="classindex.html" title="Index: Classes"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Appendix</th></tr><tr><td width="20%" align="left"><a href="appendix.keysyms.html">Prev</a> </td><th width="60%" align="center">Glossary</th><td width="20%" align="right"> <a href="classindex.html">Next</a></td></tr></table><hr></div><div class="glossary" id="appendix.glossary"><div class="titlepage"><div><h2 class="title"><a name="appendix.glossary" id="appendix.glossary-title"></a>Glossary</h2></div></div><p>
+  Terms relating to PHP-GTK 2.
+ </p><div class="glossdiv"><h3 class="title">A</h3><dl><dt><a id="appendix.glossary.a.accelerator"></a>Accelerator</dt><dd><p>
+     An accelerator is a keyboard key marked with a function name (for example,
+     <span dir="ltr"><tt>Help</tt></span> or <span dir="ltr"><tt>Delete</tt></span>), a function key
+     (<span dir="ltr"><tt>F1</tt></span>, <span dir="ltr"><tt>F2</tt></span>), or the combination of a
+     control key (<span dir="ltr"><tt>[Ctrl]</tt></span>, <span dir="ltr"><tt>[Shift]</tt></span>,
+     <span dir="ltr"><tt>[Alt]</tt></span>) with a programmer-defined key. The difference
+     between a keyboard accelerator and a mnemonic is that an accelerator is
+     available throughout the application, whereas a mnemonic is specific to
+     a currently-visible widget.
+    </p><p>See also: <a href="appendix.glossary.html#appendix.glossary.m.mnemonic">Mnemonic</a>, <a href="appendix.glossary.html#appendix.glossary.m.modifier">Modifier</a>.</p></dd><dt><a id="appendix.glossary.a.atom"></a>Atom</dt><dd><p>
+     An atom consists of a unique numeric ID corresponding to a string name.
+     In GTK+, atoms are stored in a GdkAtom structure
+     and are used mostly in selection. They can turn up anywhere GTK+ needs
+     to avoid the overhead of passing arbitrary length strings.
+    </p></dd></dl></div><div class="glossdiv"><h3 class="title">C</h3><dl><dt><a id="appendix.glossary.c.callback"></a>Callback</dt><dd><p>
+     A callback is a function or method that is invoked whenever a
+     predetermined condition is met. Signal handlers, particularly, are
+     frequently referred to as 'callbacks'.
+    </p><p>See also: <a href="appendix.glossary.html#appendix.glossary.s.signalhandler">Signal handler</a>.</p></dd><dt><a id="appendix.glossary.c.clipmask"></a>Clip mask</dt><dd><p>
+     A clip mask or clipping region is a specified bitmap or list of
+     rectangles. It is used to restrict output from a graphics routine to a
+     particular region of the destination window.
+    </p></dd><dt><a id="appendix.glossary.c.colormap"></a>Colormap</dt><dd><p>
+     A colormap is a portable mechanism allowing pixel values to be mapped to
+     RGB colors for display. In GTK+, the colormap is stored in a
+     <span dir="ltr"><a href="gdk/gdk.gdkcolormap.html">GdkColormap</a></span> structure.
+    </p><p>
+     More than one colormap may be installed at any given time, allowing the
+     windows associated with those maps to display with true colors. The
+     system colormap in most cases is a limited resource that should be
+     conserved by selecting RGB values from the predefined color database,
+     i.e. <span dir="ltr"><tt>rgb.txt</tt></span>.
+    </p></dd></dl></div><div class="glossdiv"><h3 class="title">D</h3><dl><dt><a id="appendix.glossary.d.deprecated"></a>Deprecated</dt><dd><p>
+     Any method, class or variable marked as 'deprecated' may not be available
+     in future releases of GTK+, and so should not be used in new code.
+     Usually, deprecated functionality has already been replaced with something
+     better.
+    </p><p>
+     For a list of deprecated items in PHP-GTK 2 and their replacements, see
+     the <a href="tutorials/tutorials.changes.deprecated.html" title="Deprecated Widgets">Deprecated Widgets</a>
+     page.
+    </p></dd><dt><a id="appendix.glossary.d.drawable"></a>Drawable</dt><dd><p>
+     Either windows or pixmaps can be used as destinations in graphics
+     operations. These are collectively known as drawables. In GTK+, they are
+     a specific type: <span dir="ltr"><a href="gdk/gdk.gdkdrawable.html">GdkDrawable</a></span>.
+    </p></dd></dl></div><div class="glossdiv"><h3 class="title">E</h3><dl><dt><a id="appendix.glossary.e.events"></a>Events</dt><dd><p>
+     Events are the way an application interacts with the user; this is why
+     GUI coding is known as 'event-driven programming'. A pointer movement,
+     the mouse entering or leaving a widget's focus area, a key or button
+     press, all qualify as events. The programmer ultimately has control over
+     which events are known to any given widget and, usually over the way the
+     event is handled (if at all). The default behaviour of an unhandled event
+     is to propagate up through the widget's ancestry.
+    </p><p>
+     GTK+ event data is stored in a <span dir="ltr"><a href="gdk/gdk.gdkevent.html">GdkEvent</a></span>
+     structure, and controlled via a <span dir="ltr"><a href="gdk/gdk.enum.eventmask.html">GdkEventMask</a></span>.
+    </p></dd></dl></div><div class="glossdiv"><h3 class="title">F</h3><dl><dt><a id="appendix.glossary.f.focus"></a>Focus</dt><dd><p>
+     When a widget has focus, it receives input from the keyboard. You can
+     usually use that input to shift focus to a neighbouring widget, as when
+     - for example - using the keyboard to scroll through the items listed in
+     a dropdown menu.
+    </p><p>See also: <a href="appendix.glossary.html#appendix.glossary.g.grab">Grab</a>.</p></dd></dl></div><div class="glossdiv"><h3 class="title">G</h3><dl><dt><a id="appendix.glossary.g.grab"></a>Grab</dt><dd><p>
+     Widgets can grab the pointer and keyboard away from other widgets. This
+     essentially means that the widget becomes "modal"; input goes only to that
+     widget, and the focus can't be changed to another widget. A typical reason
+     to grab input is to create a modal dialog; if a window has active grab,
+     interaction with other windows is blocked.
+    </p><p>See also: <a href="appendix.glossary.html#appendix.glossary.f.focus">Focus</a>.</p></dd><dt><a id="appendix.glossary.g.gc"></a>GC</dt><dd><p>
+     GC is short for graphics context.
+    </p><p>See also: <a href="appendix.glossary.html#appendix.glossary.g.graphicscontext">Graphics context</a>.</p></dd><dt><a id="appendix.glossary.g.graphicscontext"></a>Graphics context</dt><dd><p>
+     Meta information pertaining to graphics output, such as foreground pixel,
+     background pixel, line width, clipmask etc, is stored in a graphics
+     context (GC). Everything drawn to a window or pixmap is modified
+     according to the information stored in the <span dir="ltr"><a href="gdk/gdk.gdkgc.html">GdkGC</a></span>
+     that is being used.
+    </p><p>See also: <a href="appendix.glossary.html#appendix.glossary.c.clipmask">Clip mask</a>.</p></dd><dt><a id="appendix.glossary.g.gravity"></a>Gravity</dt><dd><p>
+     Gravity referes to how an object is relatively positioned when objects 
+     surrounding it are added and removed. An object with left gravity will
+     stay to the left of objects added in the same location. An object with 
+     right gravity will stay to the right of objects added in the same 
+     location. Gravity is normally associated with 
+     <span dir="ltr"><a href="gtk/gtk.gtktextmark.html">GtkTextMark</a></span> objects.
+    </p><p>
+     When used in relation to text, gravity direction is logical direction. 
+     Left gravity is toward the beginning of the buffer and right gravity is
+     toward the end of the buffer. When a language like Hebrew is used, left
+     gravity is actually gravity which keeps the object on the right of newly
+     added objects.
+    </p></dd></dl></div><div class="glossdiv"><h3 class="title">H</h3><dl><dt><a id="appendix.glossary.h.hints"></a>Hints</dt><dd><p>
+     Certain properties, such as the preferred type of a window, are referred
+     to as 'hints', because the window manager makes no guarantee that it will
+     honor them. See <span dir="ltr"><a href="gtk/gtk.gtkwindow.field.type_hint.html">type_hint</a></span>.
+    </p></dd></dl></div><div class="glossdiv"><h3 class="title">K</h3><dl><dt><a id="appendix.glossary.k.keysyms"></a>Keysyms</dt><dd><p>
+     A keysym is a <i>portable</i> representation of the symbol
+     on the cap of a keyboard key. A key may have several associated keysyms,
+     all of which correspond to the key when various modifier keys are used.
+     There is a list of the keysyms used in PHP-GTK 2
+     <a href="appendix.keysyms.html">here</a>.
+    </p><p>See also: <a href="appendix.glossary.html#appendix.glossary.m.modifier">Modifier</a>.</p></dd></dl></div><div class="glossdiv"><h3 class="title">M</h3><dl><dt><a id="appendix.glossary.m.mnemonic"></a>Mnemonic</dt><dd><p>
+     A mnemonic is an application-specific keyboard shortcut consisting of the
+     [Alt] key plus one programmer-defined keyboard character. A mnemonic is
+     indicated by an underlined letter in the label of the menu item, button
+     or other GUI component for which it is defined. Its corresponding
+     keyboard shortcut is only available to the user while that label is
+     visible.
+    </p><p>See also: <a href="appendix.glossary.html#appendix.glossary.a.accelerator">Accelerator</a>, <a href="appendix.glossary.html#appendix.glossary.u.underline">Underline</a>.</p></dd><dt><a id="appendix.glossary.m.modifier"></a>Modifier</dt><dd><p>
+     A keyboard modifier is a key that can be used in combination with other
+     keys to alter the meaning of those keys. Typical modifier keys would be
+     <span dir="ltr"><tt>[Shift]</tt></span>, <span dir="ltr"><tt>[Ctrl]</tt></span> and
+     <span dir="ltr"><tt>[Alt]</tt></span>.
+    </p><p>
+     Modifiers can also be related to the mouse, so that the left, right and
+     centre mouse buttons can be programmed to respond in a different way
+     from one another within an application. For example, a left-button click
+     might only interact with the menu bar, whereas a right-button click might
+     display a popup menu in the vicinity of the pointer.
+    </p><p>See also: <a href="appendix.glossary.html#appendix.glossary.a.accelerator">Accelerator</a>.</p></dd></dl></div><div class="glossdiv"><h3 class="title">S</h3><dl><dt><a id="appendix.glossary.s.signal"></a>Signal</dt><dd><p>
+     A signal is a notification that is generated whenever an event occurs. In
+     order for it to have any effect, it needs to be connected to a callback
+     function (also known as a signal handler).
+    </p><p>See also: <a href="appendix.glossary.html#appendix.glossary.c.callback">Callback</a>, <a href="appendix.glossary.html#appendix.glossary.s.signalhandler">Signal handler</a>.</p></dd><dt><a id="appendix.glossary.s.signalhandler"></a>Signal handler</dt><dd><p>
+     A callback function that is invoked in response to a signal.
+    </p><p>See also: <a href="appendix.glossary.html#appendix.glossary.c.callback">Callback</a>, <a href="appendix.glossary.html#appendix.glossary.s.signal">Signal</a>.</p></dd></dl></div><div class="glossdiv"><h3 class="title">U</h3><dl><dt><a id="appendix.glossary.u.underline"></a>Underline</dt><dd><p>
+     An underline is used in the label of a widget such as a button or a menu
+     item to indicate the presence and value of a mnemonic. In PHP-GTK 2,
+     mnemonic support is enabled by default, so that a menu item with the label
+     text <span dir="ltr"><tt>_Save</tt></span> will automatically have <span dir="ltr"><tt>s</tt></span>
+     as its keyboard shortcut. You can switch off this default behaviour when
+     constructing simple widgets such as <span dir="ltr"><a href="gtk/gtk.gtkbutton.html">GtkButton</a></span> and
+     <span dir="ltr"><a href="gtk/gtk.gtkmenuitem.html">GtkMenuItem</a></span>, or alternatively use a double
+     underscore <span dir="ltr"><tt>__</tt></span> in order to display a single one where
+     mnemonic support is present.
+    </p><p>See also: <a href="appendix.glossary.html#appendix.glossary.a.accelerator">Accelerator</a>, <a href="appendix.glossary.html#appendix.glossary.m.mnemonic">Mnemonic</a>.</p></dd></dl></div><div class="glossdiv"><h3 class="title">V</h3><dl><dt><a id="appendix.glossary.v.visual"></a>Visual</dt><dd><p>
+     The specifications for color handling for a drawable, including visual
+     class, depth, RGB/pixel, etc., are collectively referred to as a visual
+     and - in GTK+ - are stored in a <span dir="ltr"><a href="gdk/gdk.gdkvisual.html">GdkVisual</a></span>. The
+     visual accounts for the differences between various types of hardware
+     in determining the way pixel values are translated into visible colors.
+     A screen may support only one type of visual.
+    </p><p>See also: <a href="appendix.glossary.html#appendix.glossary.c.colormap">Colormap</a>, <a href="appendix.glossary.html#appendix.glossary.d.drawable">Drawable</a>.</p></dd></dl></div><div class="glossdiv"><h3 class="title">X</h3><dl><dt><a id="appendix.glossary.x.xwindow"></a>XWindow</dt><dd><p>
+     FIXME
+    </p></dd></dl></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="appendix.keysyms.html">Prev</a> </td><td width="20%" align="center"><a href="index.html">Home</a></td><td width="40%" align="right"> <a href="classindex.html">Next</a></td></tr><tr><td width="40%" align="left">Appendix D. Symbolic names for keys in PHP-GTK 2 </td><td width="20%" align="center"><a href="appendix.html">Up</a></td><td width="40%" align="right"> Index: Classes</td></tr></table></div></body></html>

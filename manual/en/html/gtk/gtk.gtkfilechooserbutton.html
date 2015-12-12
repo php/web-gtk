@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkFileChooserButton</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkfilechooser.method.unselect_uri.html" title="GtkFileChooser::unselect_uri"><link rel="next" href="gtk.gtkfilechooserbutton.constructor.html" title="GtkFileChooserButton Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkfilechooser.method.unselect_uri.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkFileChooserButton</span></th><td width="20%" align="right"> <a href="gtk.gtkfilechooserbutton.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkfilechooserbutton"></a><h2 class="title"><span dir="ltr">GtkFileChooserButton</span></h2><div style="float:right; border:1px solid #000;"><img src="../images/reference/gtk/gtkfilechooserbutton.png"></div><p><blockquote>
+    A button that launches a file chooser dialog.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkbox.html">GtkBox</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkhbox.html">GtkHBox</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkfilechooserbutton.html">GtkFileChooserButton</a></span><br></div></blockquote></p><h3>Implemented Interfaces</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="gtk.gtkfilechooser.html">GtkFileChooser</a></span></div></blockquote><p><h3>Description</h3><blockquote>
+   <p>
+    The <span dir="ltr"><a href="gtk.gtkfilechooserbutton.html">GtkFileChooserButton</a></span> is very similar in
+    functionality to a <span dir="ltr"><a href="gtk.gtkcolorbutton.html">GtkColorButton</a></span>. It is a
+    special kind of button that allows the user to select a file.
+   </p>
+   <p>
+    The button contains an area that displays the file name of the current
+    file selected and also displays a button that allows the user to launch
+    a file selection dialog. After the dialog is launched, the button is
+    immediately associated to the new file selected by the user.
+   </p>
+   <p>
+    <div class="note" style="margin-left: 24px; margin-right: 24px; font-weight: bold;"><span dir="ltr"><a href="gtk.gtkfilechooserbutton.html">GtkFileChooserButton</a></span> is only for selecting files or
+     folders. It cannot be used for saving files.
+    </div>
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp64948400"><p></p><a name="idp64948400"></a> <span dir="ltr"><a href="gtk.gtkfilechooserbutton.constructor.html">GtkFileChooserButton</a></span> (string <i><tt>title</tt></i>, <span dir="ltr"><a href="gtk.enum.filechooseraction.html">GtkFileChooserAction</a></span> <i><tt>action</tt></i>);</div></p> --
+    Creates a new <span dir="ltr"><a href="gtk.gtkfilechooserbutton.html">GtkFileChooserButton</a></span>
+   <br><br><p><div class="funcsynopsis" id="idp64958208"><p></p><a name="idp64958208"></a> <span dir="ltr"><a href="gtk.gtkfilechooserbutton.constructor.new_with_backend.html">GtkFileChooserButton::new_with_backend</a></span> (<i><tt>title</tt></i>, <i><tt>action</tt></i>, <i><tt>backend</tt></i>);</div></p> --
+
+   <br><br><p><div class="funcsynopsis" id="idp64964464"><p></p><a name="idp64964464"></a> <span dir="ltr"><a href="gtk.gtkfilechooserbutton.constructor.new_with_dialog.html">GtkFileChooserButton::new_with_dialog</a></span> (<span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><i><tt>dialog</tt></i>);</div></p> --
+
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkfilechooserbutton.method.get_title.html">get_title()</a></span> </dt><dd> 
+    Returns the title of the file chooser dialog.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooserbutton.method.get_width_chars.html">get_width_chars()</a></span> </dt><dd> 
+    Returns the width of the button.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooserbutton.method.set_title.html">set_title()</a></span> </dt><dd> 
+    Sets the title of the file chooser dialog.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkfilechooserbutton.method.set_width_chars.html">set_width_chars()</a></span> </dt><dd> 
+    Sets the width between the button and its label.
+   </dd></blockquote></div></p></div>
+
+  
+
+ 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkfilechooser.method.unselect_uri.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkfilechooserbutton.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkFileChooser::unselect_uri</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkFileChooserButton</span> Constructor</td></tr></table></div></body></html>

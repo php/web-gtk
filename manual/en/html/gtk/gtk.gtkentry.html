@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkEntry</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkeditable.property.selection_end.html" title="GtkEditable::selection_end"><link rel="next" href="gtk.gtkentry.constructor.html" title="GtkEntry Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkeditable.property.selection_end.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkEntry</span></th><td width="20%" align="right"> <a href="gtk.gtkentry.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkentry"></a><h2 class="title"><span dir="ltr">GtkEntry</span></h2><p><blockquote>
+   A single line text entry field.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkentry.html">GtkEntry</a></span><br></div></blockquote></p><p><h3>Direct Subclasses</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="gtk.gtkspinbutton.html">GtkSpinButton</a></span>, <span dir="ltr"><a href="../sexy.sexyiconentry.html">SexyIconEntry</a></span>, <span dir="ltr"><a href="../sexy.sexyspellentry.html">SexySpellEntry</a></span></div></blockquote></p><h3>Implemented Interfaces</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="gtk.gtkeditable.html">GtkEditable</a></span>, <span dir="ltr"><a href="gtk.gtkcelleditable.html">GtkCellEditable</a></span></div></blockquote><p><h3>Description</h3><blockquote>
+   <p>
+    <span dir="ltr"><a href="gtk.gtkentry.html">GtkEntry</a></span> is a single line text entry widget.
+    It is generally used when input is required from the user. A fairly
+    large set of key bindings are supported by default and have the
+    potential to be edited by the user. If the entered text is longer
+    than the allocation of the widget, the widget will scroll so that the
+    cursor position is visible.
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp63048736"><p></p><a name="idp63048736"></a> <span dir="ltr"><a href="gtk.gtkentry.constructor.html">GtkEntry</a></span> ([
+      string <i><tt>text</tt></i>
+      [, 
+      int <i><tt>max</tt></i>
+     ]]);</div></p> --
+    Creates a single line text entry widget.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkentry.method.append_text.html">append_text()</a></span> </dt><dd> 
+    DEPRECATED. Appends
+    text to the current text of the widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkentry.method.get_activates_default.html">get_activates_default()</a></span> </dt><dd> 
+    Returns whether or not the entry activates the default widget for the 
+    window.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkentry.method.get_alignment.html">get_alignment()</a></span> </dt><dd> 
+    Returns the alignment value of the entry.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkentry.method.get_completion.html">get_completion()</a></span> </dt><dd> 
+    Returns the completion object currently used.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkentry.method.get_has_frame.html">get_has_frame()</a></span> </dt><dd> 
+    If the entry has a beveled border.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkentry.method.get_layout.html">get_layout()</a></span> </dt><dd> 
+    Returns the PangoLayout used to display the text.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkentry.method.get_layout_offsets.html">get_layout_offsets()</a></span> </dt><dd> 
+    Returns the position
+   </dd><dt><span dir="ltr"><a href="gtk.gtkentry.method.get_max_length.html">get_max_length()</a></span> </dt><dd> 
+    Retrieves the maximum allowed length of text.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkentry.method.get_text.html">get_text()</a></span> </dt><dd> 
+    Retrieves the contents of the <span dir="ltr"><a href="gtk.gtkentry.html">GtkEntry</a></span> widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkentry.method.get_visibility.html">get_visibility()</a></span> </dt><dd> 
+    If the text is visible or hidden by stars.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkentry.method.get_width_chars.html">get_width_chars()</a></span> </dt><dd> 
+    Returns the number of chars to request space for.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkentry.method.prepend_text.html">prepend_text()</a></span> </dt><dd> 
+    DEPRECATED Prepends the given text to the contents of the widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkentry.method.set_activates_default.html">set_activates_default()</a></span> </dt><dd> 
+    Sets if pressing Enter activates the default widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkentry.method.set_alignment.html">set_alignment()</a></span> </dt><dd> 
+    Sets the alignment for the contents.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkentry.method.set_completion.html">set_completion()</a></span> </dt><dd> 
+    Sets the entry completion.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkentry.method.set_has_frame.html">set_has_frame()</a></span> </dt><dd> 
+    Sets whether the entry has a beveled frame around it.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkentry.method.set_max_length.html">set_max_length()</a></span> </dt><dd> 
+    Set the maximum length for the contents.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkentry.method.set_text.html">set_text()</a></span> </dt><dd> 
+    Sets the text.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkentry.method.set_visibility.html">set_visibility()</a></span> </dt><dd> 
+    Sets if the text or an asterik * is shown.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkentry.method.set_width_chars.html">set_width_chars()</a></span> </dt><dd> 
+    Sets the size of the entry in chars.
+   </dd></blockquote></div><h3>Properties</h3><p>Use get_property and set_property methods to access these.</p><blockquote><dt><span dir="ltr"><a href="gtk.gtkentry.property.activates-default.html">activates-default</a></span>:</dt><dd> 
+    Whether to activate the default widget when Enter is pressed.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkentry.property.cursor-position.html">cursor-position</a></span>:</dt><dd> 
+    The current position of the insertion cursor in chars.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkentry.property.editable.html">editable</a></span>:</dt><dd> 
+    Whether the entry contents can be edited.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkentry.property.has-frame.html">has-frame</a></span>:</dt><dd> 
+    Outside bevel from entry.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkentry.property.invisible-char.html">invisible-char</a></span>:</dt><dd> 
+    The character to use when masking entry contents.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkentry.property.max-length.html">max-length</a></span>:</dt><dd> 
+    Maximum number of characters for this entry.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkentry.property.scroll-offset.html">scroll-offset</a></span>:</dt><dd> 
+    Number of pixels of the entry scrolled off the screen to the left.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkentry.property.selection-bound.html">selection-bound</a></span>:</dt><dd> 
+    Position of the opposite end of the selection cursor.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkentry.property.text.html">text</a></span>:</dt><dd> 
+    The contents of the entry.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkentry.property.visibility.html">visibility</a></span>:</dt><dd> 
+    If the text is shown or just asteriks *.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkentry.property.width-chars.html">width-chars</a></span>:</dt><dd> 
+   Number of characters to leave space for in the entry.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkentry.property.xalign.html">xalign</a></span>:</dt><dd> 
+    The horizontal alignment, from 0 to 1.
+   </dd></blockquote><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtkentry.signal.activate.html">activate</a>"</span></dt><dd> 
+    The widget is activated.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkentry.signal.backspace.html">backspace</a>"</span></dt><dd> 
+    The Backspace key is pressed.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkentry.signal.copy-clipboard.html">copy-clipboard</a>"</span></dt><dd> 
+    The selection is copied to the clipboad.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkentry.signal.cut-clipboard.html">cut-clipboard</a>"</span></dt><dd> 
+    The selection is cut into the clipboad.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkentry.signal.delete-from-cursor.html">delete-from-cursor</a>"</span></dt><dd> 
+    Some text is deleted from the entry.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkentry.signal.insert-at-cursor.html">insert-at-cursor</a>"</span></dt><dd> 
+    Text is inserted.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkentry.signal.move-cursor.html">move-cursor</a>"</span></dt><dd> 
+    The caret is moved.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkentry.signal.paste-clipboard.html">paste-clipboard</a>"</span></dt><dd> 
+    Text is pasted from the clipboard.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkentry.signal.populate-popup.html">populate-popup</a>"</span></dt><dd> 
+    The context menu needs to be populated.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkentry.signal.toggle-overwrite.html">toggle-overwrite</a>"</span></dt><dd> 
+    Toggles the internal overwrite_mode attribute.
+   </dd></blockquote></p></div>
+  
+ 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+ 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+ 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkeditable.property.selection_end.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkentry.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkEditable::selection_end</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkEntry</span> Constructor</td></tr></table></div></body></html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkProgressBar Constructor</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkprogressbar.html#idp74022912" title=""><link rel="previous" href="gtk.gtkprogressbar.html" title="GtkProgressBar"><link rel="next" href="gtk.gtkprogressbar.method.get_ellipsize.html" title="GtkProgressBar::get_ellipsize"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkprogressbar.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkProgressBar</span> Constructor</th><td width="20%" align="right"> <a href="gtk.gtkprogressbar.method.get_ellipsize.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkprogressbar.constructor"></a><h2><span dir="ltr">GtkProgressBar</span> Constructor</h2><p><div class="funcsynopsis" id="idp74023984"><p></p><a name="idp74023984"></a> <span dir="ltr"><a href="gtk.gtkprogressbar.constructor.html">GtkProgressBar</a></span> ([<span dir="ltr"><a href="gtk.gtkadjustment.html">GtkAdjustment</a></span> <i><tt>adjustment</tt></i>]);</div></p>
+    <p>
+     Creates a new progress bar.
+    </p>
+    <div class="note" style="margin-left: 24px; margin-right: 24px; font-weight: bold;"><p>
+      Using the optional parameter is deprecated.
+     </p></div>
+    <div class="example" align="left"><p><a name="idp74028976"></a><b>Example 106. Using a GtkProgressBar</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//Example for the two progress bar modes:
+// continuous and pulsing
+
+$window = new GtkWindow();
+$window-&gt;connect_simple('destroy', array('Gtk', 'main_quit'));
+$vbox = new GtkVBox();
+
+$vbox-&gt;pack_start(new GtkLabel('Normal:'), false);
+
+//Create a new continuous progress bar
+$normal = new GtkProgressBar();
+//Add it to the vbox
+$vbox-&gt;pack_start($normal);
+
+
+$vbox-&gt;pack_start(new GtkLabel('Pulsing:'), false);
+
+//Create a pulsing progress bar
+$pulsing = new GtkProgressBar();
+//Set the step size the pulse should go on each update
+$pulsing-&gt;set_pulse_step(0.1);
+//Add it to the vbox
+$vbox-&gt;pack_start($pulsing);
+
+
+function update(GtkProgressBar $normal, GtkProgressBar $pulsing) {
+    //Since the "pulsing" mode doesn't have any fixed values,
+    // all we need to call is this method.
+    $pulsing-&gt;pulse();
+
+    //The normal mode needs a certain value to be set.
+    // Here we add 10% to the current value, resetting
+    // it to 0 when it reaches 110% (so that we get a nice
+    // animation)
+    $normal-&gt;set_fraction(
+        (($normal-&gt;get_fraction() * 10 + 1) % 11) / 10
+    );
+    //Setting the text to the current percentage
+    $normal-&gt;set_text(
+        ($normal-&gt;get_fraction() * 100) . '%'
+    );
+
+    //Keep the timeout running. When not returning true,
+    //it stops.
+    return true;
+}
+
+//A timeout to be called every 200 milliseconds that updates
+// the progress bar
+Gtk::timeout_add(200, 'update', $normal, $pulsing);
+
+
+//add the progress bar to the window
+$window-&gt;add($vbox);
+
+$window-&gt;show_all();
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkprogressbar.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkprogressbar.method.get_ellipsize.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkProgressBar</span> </td><td width="20%" align="center"><a href="gtk.gtkprogressbar.html#idp74022912">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkProgressBar::get_ellipsize</span></td></tr></table></div></body></html>

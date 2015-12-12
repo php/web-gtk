@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkRange</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkradiotoolbutton.method.set_group.html" title="GtkRadioToolButton::set_group"><link rel="next" href="gtk.gtkrange.method.get_adjustment.html" title="GtkRange::get_adjustment"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkradiotoolbutton.method.set_group.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkRange</span></th><td width="20%" align="right"> <a href="gtk.gtkrange.method.get_adjustment.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkrange"></a><h2 class="title"><span dir="ltr">GtkRange</span></h2><p><blockquote>
+   A base class for widgets that visualize an adjustment.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkrange.html">GtkRange</a></span><br></div></blockquote></p><p><h3>Direct Subclasses</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="gtk.gtkscale.html">GtkScale</a></span>, <span dir="ltr"><a href="gtk.gtkscrollbar.html">GtkScrollbar</a></span></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    A base class for widgets that visualize an adjustment.
+    It provides the base functionality for <span dir="ltr"><a href="gtk.gtkscrollbar.html">GtkScrollbar</a></span>
+    and <span dir="ltr"><a href="gtk.gtkscale.html">GtkScale</a></span>.
+   </p>
+  </blockquote></p><p><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkrange.method.get_adjustment.html">get_adjustment()</a></span> </dt><dd> 
+    Returns the adjustment.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkrange.method.get_inverted.html">get_inverted()</a></span> </dt><dd> 
+    If the range is inverted.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkrange.method.get_update_policy.html">get_update_policy()</a></span> </dt><dd> 
+    Returns the setting when updates signals are sent.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkrange.method.get_value.html">get_value()</a></span> </dt><dd> 
+    Returns the current adjustment value.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkrange.method.set_adjustment.html">set_adjustment()</a></span> </dt><dd> 
+    Sets the adjustment.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkrange.method.set_increments.html">set_increments()</a></span> </dt><dd> 
+    Sets the step and page sizes for the range.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkrange.method.set_inverted.html">set_inverted()</a></span> </dt><dd> 
+    Sets the inverted setting.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkrange.method.set_range.html">set_range()</a></span> </dt><dd> 
+    Sets the minimum and maximum values.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkrange.method.set_update_policy.html">set_update_policy()</a></span> </dt><dd> 
+    Sets the update policy.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkrange.method.set_value.html">set_value()</a></span> </dt><dd> 
+    Sets the current value.
+   </dd></blockquote></div><h3>Properties</h3><p>Use get_property and set_property methods to access these.</p><blockquote><dt><span dir="ltr"><a href="gtk.gtkrange.property.adjustment.html">adjustment</a></span>:</dt><dd> 
+    "model" for the range object.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkrange.property.inverted.html">inverted</a></span>:</dt><dd> 
+    Invert direction slider.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkrange.property.update-policy.html">update-policy</a></span>:</dt><dd> 
+    How the range should be updated.
+   </dd></blockquote><h3>Style Properties</h3><p>Can be set with rc files/strings only.</p><blockquote><dt><span dir="ltr"><a href="gtk.gtkrange.property.arrow-displacement-x.html">arrow-displacement-x</a></span>:</dt><dd> 
+    How far to move the x direction when the button is depressed.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkrange.property.arrow-displacement-y.html">arrow-displacement-y</a></span>:</dt><dd> 
+    How far to move the y direction when the button is depressed.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkrange.property.slider-width.html">slider-width</a></span>:</dt><dd> 
+    Width of scrollbar or scale thumb.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkrange.property.stepper-size.html">stepper-size</a></span>:</dt><dd> 
+    Length of step buttons at ends.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkrange.property.stepper-spacing.html">stepper-spacing</a></span>:</dt><dd> 
+    Spacing between step buttons and thumb.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkrange.property.trough-border.html">trough-border</a></span>:</dt><dd> 
+    Spacing between thumb/steppers and outer trough bevel.
+   </dd></blockquote><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtkrange.signal.adjust-bounds.html">adjust-bounds</a>"</span></dt><dd> 
+    The range's minimum/maximum values have changed.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkrange.signal.change-value.html">change-value</a>"</span></dt><dd> 
+    Check value before it is set.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkrange.signal.move-slider.html">move-slider</a>"</span></dt><dd> 
+    Virtual function that moves the slider.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkrange.signal.value-changed.html">value-changed</a>"</span></dt><dd> 
+    Emitted when the range value changes.
+   </dd></blockquote></p></div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+ 
+  
+
+  
+
+  
+ 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+ 
+  
+
+  
+
+  
+
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkradiotoolbutton.method.set_group.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkrange.method.get_adjustment.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkRadioToolButton::set_group</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkRange::get_adjustment</span></td></tr></table></div></body></html>

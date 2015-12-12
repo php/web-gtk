@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GdkModifierType</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gdkenums.html#gdk.gdkenum" title="GDK Enums"><link rel="previous" href="gdk.enum.linestyle.html" title="GdkLineStyle"><link rel="next" href="gdk.enum.inputmode.html" title="GdkInputMode"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GDK Enums</th></tr><tr><td width="20%" align="left"><a href="gdk.enum.linestyle.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GdkModifierType</span></th><td width="20%" align="right"> <a href="gdk.enum.inputmode.html">Next</a></td></tr></table><hr></div><a class="enum" name="gdk.enum.modifiertype"></a><h1 class="title">GdkModifierType</h1><p>
+   <p>
+    A set of bit-flags to indicate the state of modifier keys and mouse 
+    buttons in various event types. Typical modifier keys are Shift, 
+    Control, Meta, Super, Hyper, Alt, Compose, Apple, CapsLock or ShiftLock.
+   </p>
+   <p>
+    Like the X Window System, GDK supports 8 modifier keys and 5 mouse buttons.
+   </p>
+  </p><table width="100%" cellpadding="2" cellspacing="1"><tr><td width="7%"><h3>Value</h3></td><td width="40%"><h3>Symbolic name</h3></td><td width="52%"><h3>Description</h3></td></tr><tr valign="top"><td>  1</td><td>Gdk::SHIFT_MASK</td><td>
+    The Shift key.
+   </td></tr><tr valign="top"><td>  2</td><td>Gdk::LOCK_MASK</td><td>
+    A Lock key (depending on the modifier mapping of the X server this may 
+    either be CapsLock or ShiftLock).
+   </td></tr><tr valign="top"><td>  4</td><td>Gdk::CONTROL_MASK</td><td>
+    The Control key.
+   </td></tr><tr valign="top"><td>  8</td><td>Gdk::MOD1_MASK</td><td>
+    The fourth modifier key (it depends on the modifier mapping of 
+    the X server which key is interpreted as this modifier, but normally 
+    it is the Alt key).
+   </td></tr><tr valign="top"><td>  16</td><td>Gdk::MOD2_MASK</td><td>
+    The fifth modifier key (it depends on the modifier mapping of 
+    the X server which key is interpreted as this modifier).
+   </td></tr><tr valign="top"><td>  32</td><td>Gdk::MOD3_MASK</td><td>
+    The sixth modifier key (it depends on the modifier mapping of 
+    the X server which key is interpreted as this modifier).
+   </td></tr><tr valign="top"><td>  64</td><td>Gdk::MOD4_MASK</td><td>
+    The seventh modifier key (it depends on the modifier mapping of 
+    the X server which key is interpreted as this modifier).
+   </td></tr><tr valign="top"><td>  128</td><td>Gdk::MOD5_MASK</td><td>
+    The eighth modifier key (it depends on the modifier mapping of 
+    the X server which key is interpreted as this modifier).
+   </td></tr><tr valign="top"><td>  256</td><td>Gdk::BUTTON1_MASK</td><td>
+    The first mouse button.
+   </td></tr><tr valign="top"><td>  512</td><td>Gdk::BUTTON2_MASK</td><td>
+    The second mouse button.
+   </td></tr><tr valign="top"><td>  1024</td><td>Gdk::BUTTON3_MASK</td><td>
+    The third mouse button.
+   </td></tr><tr valign="top"><td>  2048</td><td>Gdk::BUTTON4_MASK</td><td>
+    The fourth mouse button.
+   </td></tr><tr valign="top"><td>  4096</td><td>Gdk::BUTTON5_MASK</td><td>
+    The fifth mouse button.
+   </td></tr><tr valign="top"><td>  1073741824</td><td>Gdk::RELEASE_MASK</td><td>
+    Not used in GDK itself. GTK+ uses it to differentiate between 
+    (keyval, modifiers) pairs from key press and release events.
+   </td></tr><tr valign="top"><td>  1073750015</td><td>Gdk::MODIFIER_MASK</td><td>
+    
+   </td></tr></table><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gdk.enum.linestyle.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gdk.enum.inputmode.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GdkLineStyle</span> </td><td width="20%" align="center"><a href="../gdkenums.html#gdk.gdkenum">Up</a></td><td width="40%" align="right"> <span dir="ltr">GdkInputMode</span></td></tr></table></div></body></html>

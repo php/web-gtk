@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkHSeparator Constructor</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkhseparator.html#idp66766768" title=""><link rel="previous" href="gtk.gtkhseparator.html" title="GtkHSeparator"><link rel="next" href="gtk.gtkiconfactory.html" title="GtkIconFactory"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkhseparator.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkHSeparator</span> Constructor</th><td width="20%" align="right"> <a href="gtk.gtkiconfactory.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkhseparator.constructor"></a><h2><span dir="ltr">GtkHSeparator</span> Constructor</h2><p><div class="funcsynopsis" id="idp66767776"><p></p><a name="idp66767776"></a> <span dir="ltr"><a href="gtk.gtkhseparator.constructor.html">GtkHSeparator</a></span> ();</div></p>
+    <p>
+     Constructing a GtkHSeparator and adding it to a widget amounts to the
+     same thing as drawing a horizontal line across that widget. 
+     Use the container's packing methods (for example, 
+     <span dir="ltr"><a href="gtk.gtkbox.method.pack_start.html">pack_start()</a></span> ) to organise spacing 
+     around the separators. Check the script below for some examples.
+    </p>
+    <p>
+     <div class="example" align="left"><p><a name="idp66813216"></a><b>Example 73. Usage demonstration for GtkHSeparator and GtkVSeparator</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//The GtkBoxes we'll be using to arrange our demonstration
+$vbox = new GtkVBox();
+$hbox = new GtkHBox();
+
+//Labels that will identify each portion of the window
+$label_top = new GtkLabel('Top');
+$label_br = new GtkLabel('Bottom right');
+$label_bl = new GtkLabel('Bottom left');
+
+//Our separators
+$vsep = new GtkVSeparator();
+$hsep = new GtkHSeparator();
+
+//Let's colour our separators. This is, of course, optional
+$green = new GdkColor(0, 65000, 0);
+$red = new GdkColor(65000,0,0);
+$style_1 = new GtkStyle();
+$style_2 = new GtkStyle();
+$style_1-&gt;bg[GTK::STATE_NORMAL] = $red;
+$style_2-&gt;bg[GTK::STATE_NORMAL] = $green;
+$hsep-&gt;set_style($style_1);
+$vsep-&gt;set_style($style_2);
+
+//Let's assemble our widgets
+$vbox-&gt;pack_start($label_top);
+//Here we're adding the horizontal separator, the "false, false, 3" means we
+//don't want it to extend or fill, and that it should have a padding of 3 px.
+//Check pack_start() in the manual for more info
+$vbox-&gt;pack_start($hsep, false, false, 3);
+$vbox-&gt;pack_start($hbox);
+$hbox-&gt;pack_start($label_br);
+//Same thing for the vertical separator. Note that you don't have to define 
+//this extra arguments, they're just here because I like it better this way =)
+$hbox-&gt;pack_start($vsep, false, false, 3);
+$hbox-&gt;pack_start($label_bl, true, true);
+
+//Preparing the window
+$win = new GtkWindow();
+$win-&gt;set_position(Gtk::WIN_POS_CENTER);
+$win-&gt;set_title('Separator demo');
+$win-&gt;set_default_size(200, 100);
+//Adding the GtkVBox to the window
+$win-&gt;add($vbox);
+//Connecting the destroy signal
+$win-&gt;connect_simple('destroy', array('Gtk','main_quit'));
+//Showing the window's content
+$win-&gt;show_all();
+//Main loop
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkhseparator.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkiconfactory.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkHSeparator</span> </td><td width="20%" align="center"><a href="gtk.gtkhseparator.html#idp66766768">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkIconFactory</span></td></tr></table></div></body></html>

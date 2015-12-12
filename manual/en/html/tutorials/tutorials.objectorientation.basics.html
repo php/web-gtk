@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>Basic Object Orientation</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="tutorials.objectorientation.html" title="Object Oriented Programming"><link rel="previous" href="tutorials.objectorientation.html" title="Object Oriented Programming"><link rel="next" href="tutorials.objectorientation.advanced.html" title="A little more complexity"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Object Oriented Programming</th></tr><tr><td width="20%" align="left"><a href="tutorials.objectorientation.html">Prev</a> </td><th width="60%" align="center">Basic Object Orientation</th><td width="20%" align="right"> <a href="tutorials.objectorientation.advanced.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="tutorials.objectorientation.basics"></a><div class="titlepage"><div><h2 class="title" style="clear: all"><a name="tutorials.objectorientation.basics"></a>Basic Object Orientation</h2></div></div><p>
+   I'm going to assume that you are already familiar with object oriented
+   programming, if you're not, I suggest you get familiar with it before
+   proceeding with this tutorial. You may also want to look in the PHP5
+   manual's section on object orientation so that all this makes more sense to
+   you.
+  </p><p>
+   We'll begin with "porting" the simple Hello World! program to an object
+   oriented nature, so that you can grasp the concept quickly. The first thing
+   you have to do is to create a class. The most easy way to make your class 
+   is to extend one of the PHP-GTK 2 classes. Now, most applications have a 
+   <span dir="ltr"><a href="../gtk/gtk.gtkwindow.html">GtkWindow</a></span> as their top level widget. So does our 
+   Hello World program. So what we're going to do is to create a class that 
+   <span dir="ltr"><tt>extends</tt></span> <span dir="ltr"><a href="../gtk/gtk.gtkwindow.html">GtkWindow</a></span>, so that it
+   makes our job easier:
+   <table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+&lt;?php
+
+class Hello extends GtkWindow
+{
+    // code goes here.
+}
+
+?&gt;</pre></td></tr></table>
+   Now we need to design the constructor of our class (a function that is
+   called when an object of our class is created). Let's think about what we
+   need to put in the constructor. Since the constructor is the first thing to
+   be called when an object of our class is created, we must put all the design
+   aspects of our program in the constructor. That means that the constructor
+   is the place where we create all the widgets that we require, design our
+   layout (see <a href="tutorials.packing.html" title="Packing Widgets">Packing Widgets</a>) and
+   finalize how our application should look.
+  </p><p>
+   Now, our class extends <span dir="ltr"><a href="../gtk/gtk.gtkwindow.html">GtkWindow</a></span>, but that doesn't
+   mean that <span dir="ltr"><a href="../gtk/gtk.gtkwindow.html">GtkWindow</a></span>'s constructor is called
+   automatically. This is the default behavior of PHP5 and hence we must call
+   <span dir="ltr"><a href="../gtk/gtk.gtkwindow.html">GtkWindow</a></span>'s constructor explicitly, using the 
+   <span dir="ltr"><tt>parent</tt></span> keyword:
+   <table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+class Hello extends GtkWindow
+{
+    function __construct()
+    {
+        parent::__construct();
+    }
+}
+</pre></td></tr></table>
+   This means that a GtkWindow will be created (with no parameters passed to
+   its constructor) whenever an object of our class "Hello" is created. Now the
+   question of how to access the newly created window arises. The
+   <span dir="ltr"><tt>this</tt></span> keyword comes to our help! Using that keyword we can
+   modify all aspects of our newly created window:
+   <table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+function __construct()
+{
+    parent::__construct();
+    $this-&gt;set_title('Hello World!');
+    $this-&gt;connect_simple('destroy', array('gtk', 'main_quit'));
+}
+</pre></td></tr></table>
+  </p><p>
+    Since this is a very simple program, we can finish all our tasks in the
+    constructor itself. We simply put the code that we put in our procedural
+    program into the constructor here. So we have the final program:
+    <div class="example" align="left"><p><a name="idp44724416"></a><b>Example 8.1. Hello World - The Object Oriented Style</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+
+class Hello extends GtkWindow
+{
+    function __construct()
+    {
+        parent::__construct();
+        $this-&gt;set_title('Hello World');
+        $this-&gt;connect_simple('destroy', array('gtk', 'main_quit'));
+
+        $label = new GtkLabel("Just wanted to say\r\n'Hello World!'");
+
+        $this-&gt;add($label);
+        $this-&gt;show_all();
+    }
+}
+
+new Hello();
+Gtk::main();
+
+?&gt;
+</pre></td></tr></table></div>
+    Although this is hardly a great example to show the way to program in an
+    object-oriented manner, it should help most of you get started. We'll look
+    into some of the more advanced concepts now.
+  </p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="tutorials.objectorientation.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="tutorials.objectorientation.advanced.html">Next</a></td></tr><tr><td width="40%" align="left">Object Oriented Programming </td><td width="20%" align="center"><a href="tutorials.objectorientation.html">Up</a></td><td width="40%" align="right"> A little more complexity</td></tr></table></div></body></html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkTreeModelSort</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtktreemodelrowiterator.html" title="GtkTreeModelRowIterator"><link rel="next" href="gtk.gtktreemodelsort.constructor.html" title="GtkTreeModelSort Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtktreemodelrowiterator.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkTreeModelSort</span></th><td width="20%" align="right"> <a href="gtk.gtktreemodelsort.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtktreemodelsort"></a><h2 class="title"><span dir="ltr">GtkTreeModelSort</span></h2><p><blockquote>
+   A GtkTreeModel wrapper that sorts the underlying model.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtktreemodelsort.html">GtkTreeModelSort</a></span><br></div></blockquote></p><h3>Implemented Interfaces</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="gtk.gtktreemodel.html">GtkTreeModel</a></span>, <span dir="ltr"><a href="gtk.gtktreesortable.html">GtkTreeSortable</a></span></div></blockquote><p><h3>Description</h3><blockquote>
+   <p>
+    The GtkTreeModelSort is a model which sorts a given submodel.
+    It does not hold any data itself, but rather is created with a child
+    model and proxies its data. It has identical column types to this
+    child model, and the changes in the child are propagated. The primary
+    purpose of this model is to provide a way to sort a different model
+    without modifying it.
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp83727648"><p></p><a name="idp83727648"></a> <span dir="ltr"><a href="gtk.gtktreemodelsort.constructor.html">GtkTreeModelSort</a></span> (<span dir="ltr"><a href="gtk.gtktreemodel.html">GtkTreeModel</a></span> <i><tt>model</tt></i>);</div></p> --
+    Creates a new sortable tree model based on another one.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtktreemodelsort.method.clear_cache.html">clear_cache()</a></span> </dt><dd> 
+    Clears any cached iterators.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreemodelsort.method.convert_child_iter_to_iter.html">convert_child_iter_to_iter()</a></span> </dt><dd> 
+    Converts an iterator of the child model to a local one.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreemodelsort.method.convert_child_path_to_path.html">convert_child_path_to_path()</a></span> </dt><dd> 
+    Converts a path in the child model to a local path.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreemodelsort.method.convert_iter_to_child_iter.html">convert_iter_to_child_iter()</a></span> </dt><dd> 
+    Converts a local iterator to an iterator in the child model.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreemodelsort.method.convert_path_to_child_path.html">convert_path_to_child_path()</a></span> </dt><dd> 
+    Converts a local path into a path of the child model.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreemodelsort.method.get_model.html">get_model()</a></span> </dt><dd> 
+    Returns the child model.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreemodelsort.method.iter_is_valid.html">iter_is_valid()</a></span> </dt><dd> 
+    Checks if the given iter is valid.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktreemodelsort.method.reset_default_sort_func.html">reset_default_sort_func()</a></span> </dt><dd> 
+    Restores the default (unsorted) state.
+   </dd></blockquote></div></p></div>
+  
+ 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+ 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtktreemodelrowiterator.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtktreemodelsort.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkTreeModelRowIterator</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkTreeModelSort</span> Constructor</td></tr></table></div></body></html>

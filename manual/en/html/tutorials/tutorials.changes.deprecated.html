@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>Deprecated Widgets</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="tutorials.changes.html" title="Changes since PHP-GTK 1"><link rel="previous" href="tutorials.changes.connect.html" title="Connecting Signals"><link rel="next" href="tutorials.gtkpangoco.html" title="GTK, Pango &amp; Friends"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Changes since PHP-GTK 1</th></tr><tr><td width="20%" align="left"><a href="tutorials.changes.connect.html">Prev</a> </td><th width="60%" align="center">Deprecated Widgets</th><td width="20%" align="right"> <a href="tutorials.gtkpangoco.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="tutorials.changes.deprecated"></a><div class="titlepage"><div><h2 class="title" style="clear: all"><a name="tutorials.changes.deprecated"></a>Deprecated Widgets</h2></div></div><p>
+   GTK 2 has a lot of new widget classes. Most of the new classes do something
+   better or a different way than an old class; and so the old widgets were
+   deprecated in favor of the new one.
+  </p><p>
+   To keep backward compatibility (BC), the old widgets can
+   still be used, but are likely to be removed in GTK 3 or so. That means
+   that you don't have to rewrite your old programs totally, but still can
+   use them without too much changes. However, you really shouldn't use any
+   of the deprecated widgets in newly written code. Don't do it.
+  </p><p>
+   <div class="itemizedlist"><p><b>List of deprecated widgets</b></p><ul><li><a name="idp44497504"></a><span dir="ltr"><a href="../gtk/gtk.gtkclist.html">GtkCList</a></span> and <span dir="ltr"><a href="../gtk/gtk.gtklist.html">GtkList</a></span> =&gt;
+     <span dir="ltr"><a href="../gtk/gtk.gtktreeview.html">GtkTreeView</a></span> with <span dir="ltr"><a href="../gtk/gtk.gtkliststore.html">GtkListStore</a></span></li><li><a name="idp44500496"></a><span dir="ltr"><a href="../gtk/gtk.gtkctree.html">GtkCTree</a></span> =&gt;
+     <span dir="ltr"><a href="../gtk/gtk.gtktreeview.html">GtkTreeView</a></span> with <span dir="ltr"><a href="../gtk/gtk.gtktreestore.html">GtkTreeStore</a></span></li><li><a name="idp44502032"></a><span dir="ltr"><a href="../gtk/gtk.gtkcombo.html">GtkCombo</a></span> and <span dir="ltr"><a href="../gtk/gtk.gtkoptionmenu.html">GtkOptionMenu</a></span> =&gt;
+     <span dir="ltr"><a href="../gtk/gtk.gtkcombobox.html">GtkComboBox</a></span> with <span dir="ltr"><a href="../gtk/gtk.gtktreemodel.html">GtkTreeModel</a></span></li><li><a name="idp44503952"></a><span dir="ltr"><a href="../gtk/gtk.gtkitemfactory.html">GtkItemFactory</a></span> =&gt;
+     <span dir="ltr"><a href="../gtk/gtk.gtkuimanager.html">GtkUIManager</a></span></li><li><a name="idp44505104"></a><span dir="ltr"><a href="../gtk/gtk.gtkoldeditable.html">GtkOldEditable</a></span> =&gt;
+     <span dir="ltr"><a href="../gtk/gtk.gtkeditable.html">GtkEditable</a></span></li><li><a name="idp44506256"></a><span dir="ltr"><a href="../gtk/gtk.gtkpixmap.html">GtkPixmap</a></span> and <span dir="ltr"><a href="../gtk/gtk.gtkpreview.html">GtkPreview</a></span> =&gt;
+     <span dir="ltr"><a href="../gtk/gtk.gtkimage.html">GtkImage</a></span> with <span dir="ltr"><a href="../gdk/gdk.gdkpixbuf.html">GdkPixbuf</a></span></li><li><a name="idp44508176"></a><span dir="ltr"><tt>GtkText</tt></span> =&gt;
+     <span dir="ltr"><a href="../gtk/gtk.gtktextview.html">GtkTextView</a></span> with <span dir="ltr"><a href="../gtk/gtk.gtktextbuffer.html">GtkTextBuffer</a></span></li></ul></div>
+   </p><p>
+   <div class="itemizedlist"><p><b>List of Deprecated Methods</b></p><ul><li><a name="idp44511104"></a><span dir="ltr"><a href="../gtk/gtk.gtkwindow.method.set_policy.html">set_policy()</a></span>  =&gt; 
+     set_resizable</li></ul></div>
+  </p><p>
+   The list may not be complete. If you find a deprecated widget that is not
+   listed here, please write to
+   <a href="mailto:php-gtk-doc@lists.php.net" target="_top">php-gtk-doc</a>.
+  </p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="tutorials.changes.connect.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="tutorials.gtkpangoco.html">Next</a></td></tr><tr><td width="40%" align="left">Connecting Signals </td><td width="20%" align="center"><a href="tutorials.changes.html">Up</a></td><td width="40%" align="right"> GTK, Pango &amp; Friends</td></tr></table></div></body></html>

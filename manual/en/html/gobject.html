@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GObject</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="stylesheet.css"><link rel="home" href="index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gobjectclasses.html" title="GObject"><link rel="previous" href="gobjectclasses.html" title="GObject"><link rel="next" href="gobject.constructor.html" title="GObject Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GObject</th></tr><tr><td width="20%" align="left"><a href="gobjectclasses.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GObject</span></th><td width="20%" align="right"> <a href="gobject.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gobject"></a><h2 class="title"><span dir="ltr">GObject</span></h2><p><blockquote>
+   Base class for nearly all classes in PHP-Gtk.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="gobject.html">GObject</a></span><br></div></blockquote></p><p><h3>Direct Subclasses</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="atk/atk.atkhyperlink.html">AtkHyperlink</a></span>, <span dir="ltr"><a href="atk/atk.atkobject.html">AtkObject</a></span>, <span dir="ltr"><a href="atk/atk.atkobjectfactory.html">AtkObjectFactory</a></span>, <span dir="ltr"><a href="atk/atk.atkregistry.html">AtkRegistry</a></span>, <span dir="ltr"><a href="atk/atk.atkrelation.html">AtkRelation</a></span>, <span dir="ltr"><a href="atk/atk.atkrelationset.html">AtkRelationSet</a></span>, <span dir="ltr"><a href="atk/atk.atkstateset.html">AtkStateSet</a></span>, <span dir="ltr"><a href="atk/atk.atkutil.html">AtkUtil</a></span>, <span dir="ltr"><a href="gdk/gdk.gdkcolormap.html">GdkColormap</a></span>, <span dir="ltr"><a href="gdk/gdk.gdkdevice.html">GdkDevice</a></span>, <span dir="ltr"><a href="gdk/gdk.gdkdisplay.html">GdkDisplay</a></span>, <span dir="ltr"><a href="gdk/gdk.gdkdisplaymanager.html">GdkDisplayManager</a></span>, <span dir="ltr"><a href="gdk/gdk.gdkdragcontext.html">GdkDragContext</a></span>, <span dir="ltr"><a href="gdk/gdk.gdkdrawable.html">GdkDrawable</a></span>, <span dir="ltr"><a href="gdk/gdk.gdkgc.html">GdkGC</a></span>, <span dir="ltr"><a href="gdk/gdk.gdkimage.html">GdkImage</a></span>, <span dir="ltr"><a href="gdk/gdk.gdkkeymap.html">GdkKeymap</a></span>, <span dir="ltr"><a href="gdk/gdk.gdkpixbuf.html">GdkPixbuf</a></span>, <span dir="ltr"><a href="gdk/gdk.gdkpixbufanimation.html">GdkPixbufAnimation</a></span>, <span dir="ltr"><a href="gdk/gdk.gdkpixbufanimationiter.html">GdkPixbufAnimationIter</a></span>, <span dir="ltr"><a href="gdk/gdk.gdkpixbufloader.html">GdkPixbufLoader</a></span>, <span dir="ltr"><a href="gdk/gdk.gdkscreen.html">GdkScreen</a></span>, <span dir="ltr"><a href="gdk/gdk.gdkvisual.html">GdkVisual</a></span>, <span dir="ltr"><a href="gtk/gtk.gtkaccelgroup.html">GtkAccelGroup</a></span>, <span dir="ltr"><a href="gtk/gtk.gtkaction.html">GtkAction</a></span>, <span dir="ltr"><a href="gtk/gtk.gtkactiongroup.html">GtkActionGroup</a></span>, <span dir="ltr"><a href="gtk/gtk.gtkclipboard.html">GtkClipboard</a></span>, <span dir="ltr"><a href="gtk/gtk.gtkentrycompletion.html">GtkEntryCompletion</a></span>, <span dir="ltr"><a href="gtk/gtk.gtkiconfactory.html">GtkIconFactory</a></span>, <span dir="ltr"><a href="gtk/gtk.gtkicontheme.html">GtkIconTheme</a></span>, <span dir="ltr"><a href="gtk/gtk.gtkliststore.html">GtkListStore</a></span>, <span dir="ltr"><a href="gtk/gtk.gtkobject.html">GtkObject</a></span>, <span dir="ltr"><a href="gtk/gtk.gtkrcstyle.html">GtkRcStyle</a></span>, <span dir="ltr"><a href="gtk/gtk.gtksettings.html">GtkSettings</a></span>, <span dir="ltr"><a href="gtk/gtk.gtksizegroup.html">GtkSizeGroup</a></span>, <span dir="ltr"><a href="gtk/gtk.gtkstatusicon.html">GtkStatusIcon</a></span>, <span dir="ltr"><a href="gtk/gtk.gtkstyle.html">GtkStyle</a></span>, <span dir="ltr"><a href="gtk/gtk.gtktextbuffer.html">GtkTextBuffer</a></span>, <span dir="ltr"><a href="gtk/gtk.gtktextchildanchor.html">GtkTextChildAnchor</a></span>, <span dir="ltr"><a href="gtk/gtk.gtktextmark.html">GtkTextMark</a></span>, <span dir="ltr"><a href="gtk/gtk.gtktexttag.html">GtkTextTag</a></span>, <span dir="ltr"><a href="gtk/gtk.gtktexttagtable.html">GtkTextTagTable</a></span>, <span dir="ltr"><a href="gtk/gtk.gtktreemodelfilter.html">GtkTreeModelFilter</a></span>, <span dir="ltr"><a href="gtk/gtk.gtktreemodelsort.html">GtkTreeModelSort</a></span>, <span dir="ltr"><a href="gtk/gtk.gtktreeselection.html">GtkTreeSelection</a></span>, <span dir="ltr"><a href="gtk/gtk.gtktreestore.html">GtkTreeStore</a></span>, <span dir="ltr"><a href="gtk/gtk.gtkuimanager.html">GtkUIManager</a></span>, <span dir="ltr"><a href="gtk/gtk.gtkwindowgroup.html">GtkWindowGroup</a></span>, <span dir="ltr"><a href="pango/pango.pangocontext.html">PangoContext</a></span>, <span dir="ltr"><a href="pango/pango.pangofont.html">PangoFont</a></span>, <span dir="ltr"><a href="pango/pango.pangofontface.html">PangoFontFace</a></span>, <span dir="ltr"><a href="pango/pango.pangofontfamily.html">PangoFontFamily</a></span>, <span dir="ltr"><a href="pango/pango.pangofontmap.html">PangoFontMap</a></span>, <span dir="ltr"><a href="pango/pango.pangofontset.html">PangoFontset</a></span>, <span dir="ltr"><a href="pango/pango.pangolayout.html">PangoLayout</a></span>, <span dir="ltr"><a href="glade/glade.gladexml.html">GladeXML</a></span>, <span dir="ltr"><a href="sourceview/sourceview.gtksourcelanguage.html">GtkSourceLanguage</a></span>, <span dir="ltr"><a href="sourceview/sourceview.gtksourcelanguagesmanager.html">GtkSourceLanguagesManager</a></span>, <span dir="ltr"><a href="gtk/gtk.gtkspell.html">GtkSpell</a></span></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    <span dir="ltr"><tt>GObject</tt></span> is the base class of nearly all
+    classes in Gtk. It provides methods to work with signals
+    and properties.
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp46479216"><p></p><a name="idp46479216"></a> <span dir="ltr"><a href="gobject.constructor.html">GObject</a></span> ([
+     <i><tt>
+      
+       <font color="red">&lt;paramdef&gt;<span dir="ltr"><a href="#">string</a></span> <i><tt>gtype</tt></i>&lt;/paramdef&gt;</font>
+       <font color="red">&lt;paramdef&gt;<span dir="ltr"><a href="#">array</a></span> <i><tt>properties</tt></i>&lt;/paramdef&gt;</font>
+      
+     </tt></i>
+    ]);</div></p> --
+    Creates a new GObject instance.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gobject.method.__tostring.html">__toString()</a></span> </dt><dd> 
+    Creates a string representation of a GObject
+   </dd><dt><span dir="ltr"><a href="gobject.method.block.html">block()</a></span> </dt><dd> 
+    Temporarily blocks the signal handler.
+   </dd><dt><span dir="ltr"><a href="gobject.method.connect.html">connect()</a></span> </dt><dd> 
+    Connects a signal to a callback.
+   </dd><dt><span dir="ltr"><a href="gobject.method.connect_after.html">connect_after()</a></span> </dt><dd> 
+    Connects a signal to a callback, called after all normal signal handlers.
+   </dd><dt><span dir="ltr"><a href="gobject.method.connect_object.html">connect_object()</a></span> </dt><dd> 
+    DEPRECATED Alias of connect_simple.
+   </dd><dt><span dir="ltr"><a href="gobject.method.connect_object_after.html">connect_object_after()</a></span> </dt><dd> 
+    DEPRECATED Alias of connect_simple_after.
+   </dd><dt><span dir="ltr"><a href="gobject.method.connect_simple.html">connect_simple()</a></span> </dt><dd> 
+    Connects a signal to a callback, omitting the first parameter.
+   </dd><dt><span dir="ltr"><a href="gobject.method.connect_simple_after.html">connect_simple_after()</a></span> </dt><dd> 
+    Connects a signal to a callback, omitting the first parameter - called after all normal signal handlers.
+   </dd><dt><span dir="ltr"><a href="gobject.method.disconnect.html">disconnect()</a></span> </dt><dd> 
+    Disconnects a signal handler.
+   </dd><dt><span dir="ltr"><a href="gobject.method.emit.html">emit()</a></span> </dt><dd> 
+    Emits a signal on an object.  Additional values may be passed with the emit
+    call, these values will then be sent to any connected handlers.
+   </dd><dt><span dir="ltr"><a href="gobject.method.freeze_notify.html">freeze_notify()</a></span> </dt><dd> 
+    Increments the freeze notify count
+   </dd><dt><span dir="ltr"><a href="gobject.method.get_data.html">get_data()</a></span> </dt><dd> 
+    Returns the value of user-defined field.
+   </dd><dt><span dir="ltr"><a href="gobject.method.get_property.html">get_property()</a></span> </dt><dd> 
+    Returns the value of an object property.
+   </dd><dt><span dir="ltr"><a href="gobject.method.is_connected.html">is_connected()</a></span> </dt><dd> 
+    Checks if a signal handler is connected.
+   </dd><dt><span dir="ltr"><a href="gobject.method.list_properties.html">list_properties()</a></span> </dt><dd> 
+    Lists all properties of a given class.
+   </dd><dt><span dir="ltr"><a href="gobject.method.notify.html">notify()</a></span> </dt><dd> 
+    Emits the "notify" signal for the given property.
+   </dd><dt><span dir="ltr"><a href="gobject.method.register_type.html">register_type()</a></span> </dt><dd> 
+    Register a custom Gtype
+   </dd><dt><span dir="ltr"><a href="gobject.method.set_data.html">set_data()</a></span> </dt><dd> 
+    Sets a user-defined field.
+   </dd><dt><span dir="ltr"><a href="gobject.method.set_property.html">set_property()</a></span> </dt><dd> 
+    Sets a property on the object.
+   </dd><dt><span dir="ltr"><a href="gobject.method.signal_list_ids.html">signal_list_ids()</a></span> </dt><dd> 
+    Lists all signals of a given class.
+   </dd><dt><span dir="ltr"><a href="gobject.method.signal_list_names.html">signal_list_names()</a></span> </dt><dd> 
+    Lists all signal names of a given class.
+   </dd><dt><span dir="ltr"><a href="gobject.method.signal_query.html">signal_query()</a></span> </dt><dd> 
+    Provides additional information about a signal.
+   </dd><dt><span dir="ltr"><a href="gobject.method.stop_emission.html">stop_emission()</a></span> </dt><dd> 
+    Stops emission of a signal that is currently being emitted
+   </dd><dt><span dir="ltr"><a href="gobject.method.thaw_notify.html">thaw_notify()</a></span> </dt><dd> 
+    Decrements the freeze notify count
+   </dd><dt><span dir="ltr"><a href="gobject.method.unblock.html">unblock()</a></span> </dt><dd> 
+    Unblocks a blocked signal handler.
+   </dd></blockquote></div></p></div>
+
+  
+
+ 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gobjectclasses.html">Prev</a> </td><td width="20%" align="center"><a href="index.html">Home</a></td><td width="40%" align="right"> <a href="gobject.constructor.html">Next</a></td></tr><tr><td width="40%" align="left">GObject </td><td width="20%" align="center"><a href="gobjectclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GObject</span> Constructor</td></tr></table></div></body></html>

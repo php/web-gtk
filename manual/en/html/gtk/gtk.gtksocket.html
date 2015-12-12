@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkSocket</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtksizegroup.method.set_mode.html" title="GtkSizeGroup::set_mode"><link rel="next" href="gtk.gtksocket.constructor.html" title="GtkSocket Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtksizegroup.method.set_mode.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkSocket</span></th><td width="20%" align="right"> <a href="gtk.gtksocket.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtksocket"></a><h2 class="title"><span dir="ltr">GtkSocket</span></h2><p><blockquote>
+   A container for showing a toplevel window from another process.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtksocket.html">GtkSocket</a></span><br></div></blockquote></p><p><h3>Description</h3><blockquote>
+    <p>
+      Together with <span dir="ltr"><a href="gtk.gtkplug.html">GtkPlug</a></span>, GtkSocket provides the
+      ability to embed widgets from one process into another process in a
+      fashion that is transparent to the user. One process creates a GtkSocket
+      widget and, passes the that widget's window ID to the other process, which
+      then creates a <span dir="ltr"><a href="gtk.gtkplug.html">GtkPlug</a></span> with that window ID. Any
+      widgets contained in the <span dir="ltr"><a href="gtk.gtkplug.html">GtkPlug</a></span> then will appear
+      inside the first applications window.
+    </p>
+    <p>
+      The socket's window ID is obtained by using <span dir="ltr"><a href="gtk.gtksocket.method.get_id.html">get_id()</a></span> . Before using this function, the
+      socket must have been realized and added to its parent.
+    </p>
+    <p>
+      When the embedded window has been destroyed, then it will destroy the
+      socket as well. You should always, therefore, be prepared for your sockets
+      to be destroyed at any time when the main event loop is running.
+    </p>
+    <p>
+      The communication between a GtkSocket and a <span dir="ltr"><a href="gtk.gtkplug.html">GtkPlug</a></span>
+      follows the <a href="http://standards.freedesktop.org/xembed-spec/xembed-spec-latest.html" target="_top">XEmbed</a>
+      protocol. This protocol has also been implemented in other toolkits.
+    </p>
+    <p>
+      A socket can also be used to swallow arbitrary pre-existing top-level
+      windows using <span dir="ltr"><a href="gtk.gtksocket.method.steal.html">steal()</a></span> , though the
+      integration when this is done will not be as close as between a
+      <span dir="ltr"><a href="gtk.gtkplug.html">GtkPlug</a></span> and a GtkSocket.
+    </p>
+    <p>
+      The <span dir="ltr"><a href="gtk.gtkplug.html">GtkPlug</a></span> and GtkSocket widgets are currently not
+      available on all platforms.
+    </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp76116720"><p></p><a name="idp76116720"></a> <span dir="ltr"><a href="gtk.gtksocket.constructor.html">GtkSocket</a></span> ();</div></p> --
+    Create a <span dir="ltr"><a href="gtk.gtksocket.html">GtkSocket</a></span>
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtksocket.method.add_id.html">add_id()</a></span> </dt><dd> 
+    Adds a client such as a <span dir="ltr"><a href="gtk.gtkplug.html">GtkPlug</a></span>.
+   </dd><dt><span dir="ltr"><a href="gtk.gtksocket.method.get_id.html">get_id()</a></span> </dt><dd> 
+    Retrieve the window ID for the socket.
+   </dd><dt><span dir="ltr"><a href="gtk.gtksocket.method.steal.html">steal()</a></span> </dt><dd> 
+    DEPRECATED. Reparents a pre-existing toplevel window into a GtkSocket
+   </dd></blockquote></div><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtksocket.signal.plug-added.html">plug-added</a>"</span></dt><dd> 
+    This signal is emitted when a client is successfully added to the socket.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtksocket.signal.plug-removed.html">plug-removed</a>"</span></dt><dd> 
+    This signal is emitted when a client is removed from the socket.
+   </dd></blockquote></p></div>
+
+  
+
+ 
+
+  
+
+  
+
+  
+
+ 
+
+  
+  
+  
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtksizegroup.method.set_mode.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtksocket.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkSizeGroup::set_mode</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkSocket</span> Constructor</td></tr></table></div></body></html>

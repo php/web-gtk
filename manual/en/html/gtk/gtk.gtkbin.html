@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkBin</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkaspectframe.method.set.html" title="GtkAspectFrame::set"><link rel="next" href="gtk.gtkbin.method.get_child.html" title="GtkBin::get_child"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkaspectframe.method.set.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkBin</span></th><td width="20%" align="right"> <a href="gtk.gtkbin.method.get_child.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkbin"></a><h2 class="title"><span dir="ltr">GtkBin</span></h2><p><blockquote>
+    A container widget with only one child.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkbin.html">GtkBin</a></span><br></div></blockquote></p><p><h3>Direct Subclasses</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="gtk.gtkalignment.html">GtkAlignment</a></span>, <span dir="ltr"><a href="gtk.gtkbutton.html">GtkButton</a></span>, <span dir="ltr"><a href="gtk.gtkcombobox.html">GtkComboBox</a></span>, <span dir="ltr"><a href="gtk.gtkeventbox.html">GtkEventBox</a></span>, <span dir="ltr"><a href="gtk.gtkexpander.html">GtkExpander</a></span>, <span dir="ltr"><a href="gtk.gtkframe.html">GtkFrame</a></span>, <span dir="ltr"><a href="gtk.gtkhandlebox.html">GtkHandleBox</a></span>, <span dir="ltr"><a href="gtk.gtkitem.html">GtkItem</a></span>, <span dir="ltr"><a href="gtk.gtkscrolledwindow.html">GtkScrolledWindow</a></span>, <span dir="ltr"><a href="gtk.gtktoolitem.html">GtkToolItem</a></span>, <span dir="ltr"><a href="gtk.gtkviewport.html">GtkViewport</a></span>, <span dir="ltr"><a href="gtk.gtkwindow.html">GtkWindow</a></span>, <span dir="ltr"><a href="gtk.gtkhtmlembedded.html">GtkHTMLEmbedded</a></span>, <span dir="ltr"><a href="../mozembed/mozembed.gtkmozembed.html">GtkMozEmbed</a></span></div></blockquote></p><p><h3>Description</h3><blockquote>
+    <p>
+      The <span dir="ltr"><a href="gtk.gtkbin.html">GtkBin</a></span> widget is a container that is
+      capable of holding only one child. It is not very useful on its own,
+      but is often used for deriving subclasses, since it provides code for
+      needed for handling a single widget child. All widgets derived from
+      <span dir="ltr"><a href="gtk.gtkbin.html">GtkBin</a></span> therefore can only contain one
+      immediate child, although this child may itself contain multiple
+      widgets.
+    </p>
+    <p>
+      Since <span dir="ltr"><a href="gtk.gtkbin.html">GtkBin</a></span> is an abstract base class, there
+      is no constructor for it. However, many useful widgets are subclasses
+      of <span dir="ltr"><a href="gtk.gtkbin.html">GtkBin</a></span>, including
+      <span dir="ltr"><a href="gtk.gtkbutton.html">GtkButton</a></span>, <span dir="ltr"><a href="gtk.gtkframe.html">GtkFrame</a></span>,
+      <span dir="ltr"><a href="gtk.gtkhandlebox.html">GtkHandleBox</a></span> and
+      <span dir="ltr"><a href="gtk.gtkwindow.html">GtkWindow</a></span>. You can use
+      <span dir="ltr"><a href="gtk.gtkbin.method.get_child.html">get_child()</a></span>  to get the child
+      object.
+    </p>
+  </blockquote></p><p><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkbin.method.get_child.html">get_child()</a></span> </dt><dd> 
+    Returns the child of the <span dir="ltr"><a href="gtk.gtkbin.html">GtkBin</a></span>.
+   </dd></blockquote></div><h3>Fields</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkbin.field.child.html">child</a></span>:</dt><dd> 
+    The child widget
+   </dd></blockquote></p></div>
+
+  
+
+ 
+
+  
+
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkaspectframe.method.set.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkbin.method.get_child.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkAspectFrame::set</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkBin::get_child</span></td></tr></table></div></body></html>

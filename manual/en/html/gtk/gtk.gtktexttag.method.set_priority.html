@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkTextTag::set_priority</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtktexttag.html#idp80370272" title=""><link rel="previous" href="gtk.gtktexttag.method.get_priority.html" title="GtkTextTag::get_priority"><link rel="next" href="gtk.gtktexttag.signal.event.html" title="event"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtktexttag.method.get_priority.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkTextTag::set_priority</span></th><td width="20%" align="right"> <a href="gtk.gtktexttag.signal.event.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtktexttag.method.set_priority"></a><h2><span dir="ltr">GtkTextTag::set_priority</span></h2><p><div class="funcsynopsis" id="idp80385104"><p></p><a name="idp80385104"></a>void set_priority(int <i><tt>priority</tt></i>);</div></p>
+    <p>
+     Sets the priority of the tag to <i><tt>priority</tt></i>. Valid
+     <i><tt>priority</tt></i> values are <span dir="ltr"><tt>0</tt></span> through
+     one less than the number of tags in the 
+     <span dir="ltr"><a href="gtk.gtktexttagtable.html">GtkTextTagTable</a></span>.
+    </p>
+    <p>
+     Priorities are used to resolve conflicts when two tags attempt to set the
+     same attribute across the same range of text. The values of the tag with
+     the higher priority will take precedence over the values of the tag with
+     the lower priority.
+    </p>
+    <p>
+     Priorities are unique for all tags in a given
+     <span dir="ltr"><a href="gtk.gtktexttagtable.html">GtkTextTagTable</a></span>. By default, priorties are
+     assigned in the order the tags are added to the table. If the priority of
+     a tag is changed, all other tags' priorities are adjusted.
+    </p>
+    <p>
+     See also:
+     <span dir="ltr"><a href="gtk.gtktexttag.method.get_priority.html">get_priority()</a></span> 
+    </p>
+
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtktexttag.method.get_priority.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtktexttag.signal.event.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkTextTag::get_priority</span> </td><td width="20%" align="center"><a href="gtk.gtktexttag.html#idp80370272">Up</a></td><td width="40%" align="right"> <span dir="ltr">event</span></td></tr></table></div></body></html>

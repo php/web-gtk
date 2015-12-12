@@ -1,0 +1,17 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GObject::thaw_notify</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="stylesheet.css"><link rel="home" href="index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gobject.html#idp46487392" title=""><link rel="previous" href="gobject.method.stop_emission.html" title="GObject::stop_emission"><link rel="next" href="gobject.method.unblock.html" title="GObject::unblock"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gobject.method.stop_emission.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GObject::thaw_notify</span></th><td width="20%" align="right"> <a href="gobject.method.unblock.html">Next</a></td></tr></table><hr></div><div><a name="gobject.method.thaw_notify"></a><h2><span dir="ltr">GObject::thaw_notify</span></h2><p><div class="funcsynopsis" id="idp46723696"><p></p><a name="idp46723696"></a>void thaw_notify</div></p>
+    <p>
+     Reverts the effect of a previous call to <span dir="ltr"><a href="gobject.method.freeze_notify.html">freeze_notify()</a></span> . The freeze count is decreased on
+     object and when it reaches zero, all queued "notify" signals are emitted.
+     It is an error to call this function when the freeze count is zero
+    </p>
+    <p>
+     If multiple calls to <span dir="ltr"><a href="gobject.method.freeze_notify.html">freeze_notify()</a></span> 
+     were made, and equal number of calls must be made to unfreeze.
+    </p>
+    <p>
+     See also:
+     <span dir="ltr"><a href="gobject.method.notify.html">notify()</a></span> ,
+     <span dir="ltr"><a href="gobject.method.freeze_notify.html">freeze_notify()</a></span> 
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gobject.method.stop_emission.html">Prev</a> </td><td width="20%" align="center"><a href="index.html">Home</a></td><td width="40%" align="right"> <a href="gobject.method.unblock.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GObject::stop_emission</span> </td><td width="20%" align="center"><a href="gobject.html#idp46487392">Up</a></td><td width="40%" align="right"> <span dir="ltr">GObject::unblock</span></td></tr></table></div></body></html>

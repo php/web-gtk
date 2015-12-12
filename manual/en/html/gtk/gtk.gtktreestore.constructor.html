@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkTreeStore Constructor</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtktreestore.html#idp84227584" title=""><link rel="previous" href="gtk.gtktreestore.html" title="GtkTreeStore"><link rel="next" href="gtk.gtktreestore.method.append.html" title="GtkTreeStore::append"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtktreestore.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkTreeStore</span> Constructor</th><td width="20%" align="right"> <a href="gtk.gtktreestore.method.append.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtktreestore.constructor"></a><h2><span dir="ltr">GtkTreeStore</span> Constructor</h2><p><div class="funcsynopsis" id="idp84307776"><p></p><a name="idp84307776"></a> <span dir="ltr"><a href="gtk.gtktreestore.constructor.html">GtkTreeStore</a></span> (<span dir="ltr"><a href="../#">GtkType</a></span> <i><tt>type_column_0</tt></i> [, <span dir="ltr"><a href="../#">GtkType</a></span> <i><tt>type_column_1</tt></i> [, <span dir="ltr"><a href="../#">GtkType</a></span> <i><tt>type_column_2</tt></i>, ...]]);</div></p>
+    <p>
+     Create a new tree store with a number of columns. For each colum, the
+     type has to be specified by choosing one of the <span dir="ltr"><a href="../#">GtkType</a></span>s.
+    </p>
+    <div class="example" align="left"><p><a name="idp84315408"></a><b>Example 130. Creating and filling a GtkTreeStore</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+/*
+* GtkTreeStore example: Regions and the population
+*  of some european states
+* Create a tree store with string and long columns
+*/
+$store = new GtkTreeStore(Gtk::TYPE_STRING, Gtk::TYPE_LONG);
+
+//append a row to the root (NULL for parent)
+$nothern = $store-&gt;append(null, array('Northern europe', 0));
+$western = $store-&gt;append(null, array('Western europe', 0));
+$central = $store-&gt;append(null, array('Central europe', 0));
+
+//append a row as a child to another row: $central as parent
+$store-&gt;append($central, array('Germany', 83251851));
+//$western as parent
+$store-&gt;append($western, array('France', 59765983));
+$store-&gt;append($western, array('Netherlands', 16318199));
+$store-&gt;append($nothern, array('Norway', 4525116));
+
+
+//display it
+$wnd = new GtkWindow();
+$wnd-&gt;set_title('GtkTreeStore example');
+$wnd-&gt;connect_simple('destroy', array('gtk', 'main_quit'));
+
+//create the view with the tree store set as model
+$view = new GtkTreeView($store);
+
+//cell renderer, which actually displays the text
+$cell_renderer = new GtkCellRendererText();
+//append one column to the view which displays the tree store column 0
+$view-&gt;append_column(new GtkTreeViewColumn('Country', $cell_renderer, 'text', 0));
+//display column 1 from the tree store
+$view-&gt;append_column(new GtkTreeViewColumn('Population', $cell_renderer, 'text', 1));
+//show all children at once
+$view-&gt;expand_all();
+
+$wnd-&gt;add($view);
+$wnd-&gt;show_all();
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtktreestore.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtktreestore.method.append.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkTreeStore</span> </td><td width="20%" align="center"><a href="gtk.gtktreestore.html#idp84227584">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkTreeStore::append</span></td></tr></table></div></body></html>

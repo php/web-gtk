@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GdkPixbuf</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gdkclasses.html" title="GDK Classes"><link rel="previous" href="gdk.gdkkeymap.signal.keys-changed.html" title="keys-changed"><link rel="next" href="gdk.gdkpixbuf.constructor.html" title="GdkPixbuf Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GDK Classes</th></tr><tr><td width="20%" align="left"><a href="gdk.gdkkeymap.signal.keys-changed.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GdkPixbuf</span></th><td width="20%" align="right"> <a href="gdk.gdkpixbuf.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gdk.gdkpixbuf"></a><h2 class="title"><span dir="ltr">GdkPixbuf</span></h2><p><blockquote>
+   An object holding information about images in memory.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gdk.gdkpixbuf.html">GdkPixbuf</a></span><br></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    A GdkPixbuf is an object that holds information about a whole image
+    (all the color values [red/green/blue/alpha] for every single pixel)
+    in memory.
+   </p>
+   <p>
+    Pixbufs can be created by loading an image file via
+    <a href="gdk.gdkpixbuf.constructor.new_from_file.html">GdkPixbuf::new_from_file</a>,
+    by using a given GD image object as source
+    (<a href="gdk.gdkpixbuf.constructor.new_from_file.html">GdkPixbuf::new_from_gd</a>)
+    or just using the normal constructor, creating an empty image.
+   </p>
+   <p>
+    A GdkPixbuf itself just <i>contains</i> the information, it does
+    <i>not</i> display it in any way. To display an image in your application,
+    you most likely want to use a <span dir="ltr"><a href="../gtk/gtk.gtkimage.html">GtkImage</a></span> which uses a
+    GdkPixbuf as source.
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp51482864"><p></p><a name="idp51482864"></a> <span dir="ltr"><a href="gdk.gdkpixbuf.constructor.html">GdkPixbuf</a></span> (<span dir="ltr"><a href="../#">GdkColorspace</a></span> <i><tt>colorspace</tt></i>, bool <i><tt>has_alpha</tt></i>, int <i><tt>bits_per_sample</tt></i>, int <i><tt>width</tt></i>, int <i><tt>height</tt></i>);</div></p> --
+    Creates an empty image with the desired size.
+   <br><br><p><div class="funcsynopsis" id="idp51496864"><p></p><a name="idp51496864"></a><span dir="ltr"><a href="gdk.gdkpixbuf.constructor.new_from_file.html">GdkPixbuf::new_from_file</a></span> (string <i><tt>filename</tt></i>);</div></p> --
+    Creates a pixbuf based on an image file.
+   <br><br><p><div class="funcsynopsis" id="idp51511888"><p></p><a name="idp51511888"></a><span dir="ltr"><a href="gdk.gdkpixbuf.constructor.new_from_file_at_size.html">GdkPixbuf::new_from_file_at_size</a></span> (string <i><tt>filename</tt></i>, int <i><tt>width</tt></i>, int <i><tt>height</tt></i>);</div></p> --
+    Load an image file and scales it to the given size.
+   <br><br><p><div class="funcsynopsis" id="idp51522784"><p></p><a name="idp51522784"></a> <span dir="ltr"><a href="gdk.gdkpixbuf.constructor.new_from_xpm_data.html">GdkPixbuf::new_from_xpm_data</a></span> ( <i><tt>data</tt></i>);</div></p> --
+
+   <br><br><p><div class="funcsynopsis" id="idp51527024"><p></p><a name="idp51527024"></a> <span dir="ltr"><a href="gdk.gdkpixbuf.constructor.new_from_gd.html">GdkPixbuf::new_from_gd</a></span> ( <i><tt>gd_image</tt></i>);</div></p> --
+    Create a pixbuf based on a GD image object
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gdk.gdkpixbuf.method.add_alpha.html">add_alpha()</a></span> </dt><dd> 
+FIXME: Method parameters need to be fixed in the source.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkpixbuf.method.composite.html">composite()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gdk.gdkpixbuf.method.composite_color.html">composite_color()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gdk.gdkpixbuf.method.composite_color_simple.html">composite_color_simple()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gdk.gdkpixbuf.method.copy.html">copy()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gdk.gdkpixbuf.method.copy_area.html">copy_area()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gdk.gdkpixbuf.method.fill.html">fill()</a></span> </dt><dd> 
+    Fill the whole image with a color.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkpixbuf.method.fill_area.html">fill_area()</a></span> </dt><dd> 
+    Fills a given area with a color.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkpixbuf.method.get_bits_per_sample.html">get_bits_per_sample()</a></span> </dt><dd> 
+    Returns the number of bits per color value.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkpixbuf.method.get_colorspace.html">get_colorspace()</a></span> </dt><dd> 
+    Returns the color space of the pixbuf.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkpixbuf.method.get_from_drawable.html">get_from_drawable()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gdk.gdkpixbuf.method.get_from_image.html">get_from_image()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gdk.gdkpixbuf.method.get_has_alpha.html">get_has_alpha()</a></span> </dt><dd> 
+    If the image has an alpha channel.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkpixbuf.method.get_height.html">get_height()</a></span> </dt><dd> 
+    Returns the height of the image.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkpixbuf.method.get_n_channels.html">get_n_channels()</a></span> </dt><dd> 
+    Queries the number of channels of a pixbuf.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkpixbuf.method.get_option.html">get_option()</a></span> </dt><dd> 
+    Look up a key in the option list.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkpixbuf.method.get_pixel.html">get_pixel()</a></span> </dt><dd> 
+    Returns the color of a single pixel
+   </dd><dt><span dir="ltr"><a href="gdk.gdkpixbuf.method.get_pixels.html">get_pixels()</a></span> </dt><dd> 
+    Returns the bytes of the image in memory 
+   </dd><dt><span dir="ltr"><a href="gdk.gdkpixbuf.method.get_rowstride.html">get_rowstride()</a></span> </dt><dd> 
+    Returns the number of bytes between rows.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkpixbuf.method.get_width.html">get_width()</a></span> </dt><dd> 
+    Returns the width of the image.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkpixbuf.method.put_pixel.html">put_pixel()</a></span> </dt><dd> 
+    Fill a given pixel with a color.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkpixbuf.method.render_pixmap_and_mask.html">render_pixmap_and_mask()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gdk.gdkpixbuf.method.render_to_drawable.html">render_to_drawable()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gdk.gdkpixbuf.method.render_to_drawable_alpha.html">render_to_drawable_alpha()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gdk.gdkpixbuf.method.saturate_and_pixelate.html">saturate_and_pixelate()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gdk.gdkpixbuf.method.save.html">save()</a></span> </dt><dd> 
+    Save the pixbuf into a file.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkpixbuf.method.scale.html">scale()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gdk.gdkpixbuf.method.scale_simple.html">scale_simple()</a></span> </dt><dd> 
+    Scales the image to a given size.
+   </dd><dt><span dir="ltr"><a href="gdk.gdkpixbuf.method.subpixbuf.html">subpixbuf()</a></span> </dt><dd> 
+
+   </dd></blockquote></div><h3>Fields</h3><blockquote><dt><span dir="ltr"><a href="gdk.gdkpixbuf.field.pixel_array.html">pixel_array</a></span>:</dt><dd> 
+   </dd></blockquote></p></div>
+
+  
+
+  
+
+  
+
+  
+
+  
+ 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gdk.gdkkeymap.signal.keys-changed.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gdk.gdkpixbuf.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">keys-changed</span> </td><td width="20%" align="center"><a href="../gdkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GdkPixbuf</span> Constructor</td></tr></table></div></body></html>

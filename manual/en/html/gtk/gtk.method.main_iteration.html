@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>main_iteration</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.functions.html" title="Gtk"><link rel="previous" href="gtk.method.main_do_event.html" title="main_do_event"><link rel="next" href="gtk.method.main_iteration_do.html" title="main_iteration_do"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Gtk</th></tr><tr><td width="20%" align="left"><a href="gtk.method.main_do_event.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">main_iteration</span></th><td width="20%" align="right"> <a href="gtk.method.main_iteration_do.html">Next</a></td></tr></table><hr></div><div><a name="gtk.method.main_iteration"></a><h2><span dir="ltr">main_iteration</span></h2><p><div class="funcsynopsis" id="idp53942256"><p></p><a name="idp53942256"></a>bool main_iteration();</div></p>
+    <p>
+     Runs a single iteration of the mainloop. If no events are waiting to be
+     processed GTK+ will block until the next event is noticed.
+     If you don't want to block look at
+     <span dir="ltr"><a href="gtk.method.main_iteration_do.html">main_iteration_do()</a></span>  or check if any
+     events are pending with <span dir="ltr"><a href="gtk.method.events_pending.html">events_pending()</a></span> 
+     first.
+    </p>
+    <p>
+     If you ever change the UI and go on with time consuming processing, you
+     should update the UI (e.g. the progress bar) yourself by using the
+     following lines of code:
+    </p>
+    <p><div class="informalexample" id="idp53948256"><p></p><a name="idp53948256"></a><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+while (Gtk::events_pending()) {
+    Gtk::main_iteration();
+}
+</pre></td></tr></table></div></p>
+    <p>
+     Returns <span dir="ltr"><tt>true</tt></span> if
+     <span dir="ltr"><a href="gtk.method.main_quit.html">main_quit()</a></span>  has been called for the
+     innermost mainloop.
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.method.main_do_event.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.method.main_iteration_do.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">main_do_event</span> </td><td width="20%" align="center"><a href="gtk.functions.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">main_iteration_do</span></td></tr></table></div></body></html>

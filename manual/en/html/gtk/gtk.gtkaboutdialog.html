@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkAboutDialog</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.method.true.html" title="true"><link rel="next" href="gtk.gtkaboutdialog.constructor.html" title="GtkAboutDialog Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.method.true.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkAboutDialog</span></th><td width="20%" align="right"> <a href="gtk.gtkaboutdialog.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkaboutdialog"></a><h2 class="title"><span dir="ltr">GtkAboutDialog</span></h2><div style="float:right; border:1px solid #000;"><img src="../images/reference/gtk/gtkaboutdialog.png"></div><p><blockquote>
+   Display information about an application.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkbin.html">GtkBin</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwindow.html">GtkWindow</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkdialog.html">GtkDialog</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkaboutdialog.html">GtkAboutDialog</a></span><br></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    The GtkAboutDialog widget offers a simple way to display information 
+    about a program, such as its logo, name, copyright, website and 
+    license. It is also possible to give credits to the authors, 
+    the documentation team, translators and artists who have worked on the 
+    program. An about dialog is typically opened when the user 
+    selects the <span dir="ltr"><tt>About</tt></span> option from the Help menu. All parts
+    of the dialog are optional.
+   </p>
+  <p>
+    About dialog often contain links and email addresses.
+    GtkAboutDialog  supports this by offering global
+    hooks, which are called when the user clicks on a link or email address, see
+    <span dir="ltr"><a href="gtk.gtkaboutdialog.method.set_email_hook.html">set_email_hook()</a></span>  and <span dir="ltr"><a href="gtk.gtkaboutdialog.method.set_url_hook.html">set_url_hook()</a></span> . Email addresses in the
+    authors, documenters and artists properties are recognized by looking for
+    &lt;user@host&gt;, URLs are recognized by looking for http://url, with url
+    extending to the next space, tab or line break.
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp54545872"><p></p><a name="idp54545872"></a> <span dir="ltr"><a href="gtk.gtkaboutdialog.constructor.html">GtkAboutDialog</a></span> ();</div></p> --
+    Constructs a new about dialog.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkaboutdialog.method.get_artists.html">get_artists()</a></span> </dt><dd> 
+    Returns artists credits as an array.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaboutdialog.method.get_authors.html">get_authors()</a></span> </dt><dd> 
+    Returns authors credits as an array.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaboutdialog.method.get_comments.html">get_comments()</a></span> </dt><dd> 
+    Returns the comments string.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaboutdialog.method.get_copyright.html">get_copyright()</a></span> </dt><dd> 
+    Returns the copyright string.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaboutdialog.method.get_documenters.html">get_documenters()</a></span> </dt><dd> 
+    Returns documenter credits as an array.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaboutdialog.method.get_license.html">get_license()</a></span> </dt><dd> 
+    Returns the license information.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaboutdialog.method.get_logo.html">get_logo()</a></span> </dt><dd> 
+    Returns the pixbuf displayed as logo in the about dialog.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaboutdialog.method.get_logo_icon_name.html">get_logo_icon_name()</a></span> </dt><dd> 
+    Returns the icon name.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaboutdialog.method.get_translator_credits.html">get_translator_credits()</a></span> </dt><dd> 
+    Returns the translator credits string.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaboutdialog.method.get_version.html">get_version()</a></span> </dt><dd> 
+    Returns the version string.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaboutdialog.method.get_website.html">get_website()</a></span> </dt><dd> 
+    Returns the website URL.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaboutdialog.method.get_website_label.html">get_website_label()</a></span> </dt><dd> 
+    Returns the label used for the website link.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaboutdialog.method.set_artists.html">set_artists()</a></span> </dt><dd> 
+   Sets the strings which are displayed in the artists tab of the secondary credits dialog.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaboutdialog.method.set_authors.html">set_authors()</a></span> </dt><dd> 
+    Sets the strings which are displayed in the authors tab of 
+    the secondary credits dialog.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaboutdialog.method.set_comments.html">set_comments()</a></span> </dt><dd> 
+    Sets the comments string to display.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaboutdialog.method.set_copyright.html">set_copyright()</a></span> </dt><dd> 
+    Set the copyright text.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaboutdialog.method.set_documenters.html">set_documenters()</a></span> </dt><dd> 
+    Sets the strings which are displayed in the documenters tab of the secondary credits dialog.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaboutdialog.method.set_email_hook.html">set_email_hook()</a></span> </dt><dd> 
+    Sets a global callback to be called when a user activates an email link in
+    the dialog.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaboutdialog.method.set_license.html">set_license()</a></span> </dt><dd> 
+    Set the license text.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaboutdialog.method.set_logo.html">set_logo()</a></span> </dt><dd> 
+    Set the program logo
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaboutdialog.method.set_logo_icon_name.html">set_logo_icon_name()</a></span> </dt><dd> 
+    Set logo to be displayed, by name.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaboutdialog.method.set_translator_credits.html">set_translator_credits()</a></span> </dt><dd> 
+    Sets the translator credits string.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaboutdialog.method.set_url_hook.html">set_url_hook()</a></span> </dt><dd> 
+    Sets a global callback for all URL links in the dialog.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaboutdialog.method.set_version.html">set_version()</a></span> </dt><dd> 
+    Set the version of your program
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaboutdialog.method.set_website.html">set_website()</a></span> </dt><dd> 
+    Set the program's website.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaboutdialog.method.set_website_label.html">set_website_label()</a></span> </dt><dd> 
+    Sets the label to be used for the website link.
+   </dd></blockquote></div></p></div>
+
+  
+
+ 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.method.true.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkaboutdialog.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">true</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkAboutDialog</span> Constructor</td></tr></table></div></body></html>

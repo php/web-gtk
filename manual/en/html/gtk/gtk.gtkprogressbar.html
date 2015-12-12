@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkProgressBar</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkprogress.property.text-yalign.html" title="GtkProgress::text-yalign"><link rel="next" href="gtk.gtkprogressbar.constructor.html" title="GtkProgressBar Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkprogress.property.text-yalign.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkProgressBar</span></th><td width="20%" align="right"> <a href="gtk.gtkprogressbar.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkprogressbar"></a><h2 class="title"><span dir="ltr">GtkProgressBar</span></h2><div style="float:right; border:1px solid #000;"><img src="../images/reference/gtk/gtkprogressbar.png"></div><p><blockquote>
+   A widget for displaying incremental or continuous progress.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkprogress.html">GtkProgress</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkprogressbar.html">GtkProgressBar</a></span><br></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    The GtkProgressBar is typically used to display the progress of a long
+    running operation. It provides a visual clue that processing is underway.
+    The GtkProgressBar can be used in two different modes: percentage mode
+    and activity mode.
+   </p>
+   <p>
+    When an application can determine how much work needs to take place
+    (e.g. read a fixed number of bytes from a file) and can monitor its
+    progress, it can use the GtkProgressBar in percentage mode and the user
+    sees a growing bar indicating the percentage of the work that has been
+    completed. In this mode, the application is required to call
+    <span dir="ltr"><a href="gtk.gtkprogressbar.method.set_fraction.html">set_fraction()</a></span>  periodically
+    to update the progress bar.
+   </p>
+   <p>
+    When an application has no accurate way of knowing the amount of work
+    to do, it can use the GtkProgressBar in activity mode, which shows
+    activity by a block moving back and forth within the progress area.
+    In this mode, the application is required to call
+    <span dir="ltr"><a href="gtk.gtkprogressbar.method.pulse.html">pulse()</a></span>  perodically to update
+    the progress bar.
+   </p>
+   <p>
+    There is quite a bit of flexibility provided to control the appearance
+    of the GtkProgressBar. Functions are provided to control the orientation
+    of the bar, optional text can be displayed along with the bar,
+    and the step size used in activity mode can be set.
+   </p>
+   <div class="note" style="margin-left: 24px; margin-right: 24px; font-weight: bold;"><p>
+     The progress bar is <i>not</i> updated after calling
+     <span dir="ltr"><a href="gtk.gtkprogressbar.method.pulse.html">pulse()</a></span>  or
+     <span dir="ltr"><a href="gtk.gtkprogressbar.method.set_fraction.html">set_fraction()</a></span> , but in the
+     main loop. This means that, in a long running operation, you need
+     to let the UI update itself by using
+     <span dir="ltr"><a href="gtk.method.main_iteration.html">main_iteration()</a></span> .
+    </p></div>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp74023984"><p></p><a name="idp74023984"></a> <span dir="ltr"><a href="gtk.gtkprogressbar.constructor.html">GtkProgressBar</a></span> ([<span dir="ltr"><a href="gtk.gtkadjustment.html">GtkAdjustment</a></span> <i><tt>adjustment</tt></i>]);</div></p> --
+    Creates a new progress bar.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkprogressbar.method.get_ellipsize.html">get_ellipsize()</a></span> </dt><dd> 
+    Returns the ellipsize mode used.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkprogressbar.method.get_fraction.html">get_fraction()</a></span> </dt><dd> 
+    Returns the current fraction value.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkprogressbar.method.get_orientation.html">get_orientation()</a></span> </dt><dd> 
+    Returns the orientation.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkprogressbar.method.get_pulse_step.html">get_pulse_step()</a></span> </dt><dd> 
+    Retutns the pulse step size.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkprogressbar.method.get_text.html">get_text()</a></span> </dt><dd> 
+    Returns the text on the bar.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkprogressbar.method.pulse.html">pulse()</a></span> </dt><dd> 
+    Indicates that some progress is made, but you don't know how much.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkprogressbar.method.set_ellipsize.html">set_ellipsize()</a></span> </dt><dd> 
+    Sets the mode used to ellipsize the text.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkprogressbar.method.set_fraction.html">set_fraction()</a></span> </dt><dd> 
+    Set the current percentage value.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkprogressbar.method.set_orientation.html">set_orientation()</a></span> </dt><dd> 
+    Switches to a different orientation.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkprogressbar.method.set_pulse_step.html">set_pulse_step()</a></span> </dt><dd> 
+    Sets the size of the bouncing block.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkprogressbar.method.set_text.html">set_text()</a></span> </dt><dd> 
+    Sets the displayed text.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkprogressbar.method.set_activity_blocks.html">set_activity_blocks()</a></span> </dt><dd> 
+    DEPRECATED
+   </dd><dt><span dir="ltr"><a href="gtk.gtkprogressbar.method.set_activity_step.html">set_activity_step()</a></span> </dt><dd> 
+    DEPRECATED
+   </dd><dt><span dir="ltr"><a href="gtk.gtkprogressbar.method.set_bar_style.html">set_bar_style()</a></span> </dt><dd> 
+    DEPRECATED
+   </dd><dt><span dir="ltr"><a href="gtk.gtkprogressbar.method.set_discrete_blocks.html">set_discrete_blocks()</a></span> </dt><dd> 
+    DEPRECATED
+   </dd></blockquote></div></p></div>
+
+  
+ 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkprogress.property.text-yalign.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkprogressbar.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkProgress::text-yalign</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkProgressBar</span> Constructor</td></tr></table></div></body></html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkTextBuffer::create_mark</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtktextbuffer.html#idp78551152" title=""><link rel="previous" href="gtk.gtktextbuffer.method.create_child_anchor.html" title="GtkTextBuffer::create_child_anchor"><link rel="next" href="gtk.gtktextbuffer.method.cut_clipboard.html" title="GtkTextBuffer::cut_clipboard"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtktextbuffer.method.create_child_anchor.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkTextBuffer::create_mark</span></th><td width="20%" align="right"> <a href="gtk.gtktextbuffer.method.cut_clipboard.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtktextbuffer.method.create_mark"></a><h2><span dir="ltr">GtkTextBuffer::create_mark</span></h2><p><div class="funcsynopsis" id="idp78603456"><p></p><a name="idp78603456"></a>GtkTextMark create_mark(string <i><tt>name</tt></i>, <span dir="ltr"><a href="gtk.gtktextiter.html">GtkTextIter</a></span> <i><tt>location</tt></i>, boolean <i><tt>left_gravity</tt></i>);</div></p>
+    <p>
+    Creates a mark with the name specified by <i><tt>name</tt></i>
+    at the position specified by <i><tt>location</tt></i>.
+    If <i><tt>name</tt></i> is NULL, the mark is anonymous;
+    otherwise, the mark can be retrieved by name using the
+    <span dir="ltr"><a href="gtk.gtktextbuffer.method.get_mark.html">get_mark()</a></span>  method.
+    If a mark has <i><tt>left_gravity</tt></i>, and text
+    is inserted at the mark's current location, the mark will
+    be moved to the left of the newly-inserted text.
+    </p>
+    <p>
+    This method emits the mark_set
+    signal as notification of the mark's initial placement.
+    </p>
+    <p>
+     See also:
+     <span dir="ltr"><a href="gtk.gtktextbuffer.method.delete_mark.html">delete_mark()</a></span> , 
+     <span dir="ltr"><a href="gtk.gtktextbuffer.method.get_mark.html">get_mark()</a></span> , 
+     <span dir="ltr"><a href="gtk.gtktextbuffer.method.move_mark.html">move_mark()</a></span> 
+    </p>
+
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtktextbuffer.method.create_child_anchor.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtktextbuffer.method.cut_clipboard.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkTextBuffer::create_child_anchor</span> </td><td width="20%" align="center"><a href="gtk.gtktextbuffer.html#idp78551152">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkTextBuffer::cut_clipboard</span></td></tr></table></div></body></html>

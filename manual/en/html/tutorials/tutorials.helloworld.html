@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>Hello World (basic)</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="tutorials.html" title="PHP-GTK 2 Tutorials"><link rel="previous" href="tutorials.installation.macosx-stepbystep.html" title="Installation on Mac OS X - step by step"><link rel="next" href="tutorials.helloadvanced.html" title="Hello World (advanced)"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">PHP-GTK 2 Tutorials</th></tr><tr><td width="20%" align="left"><a href="tutorials.installation.macosx-stepbystep.html">Prev</a> </td><th width="60%" align="center">Hello World (basic)</th><td width="20%" align="right"> <a href="tutorials.helloadvanced.html">Next</a></td></tr></table><hr></div><div id="tutorials.helloworld" class="chapter"><div class="titlepage"><div><h2 class="title"><a name="tutorials.helloworld" id="tutorials.helloworld-title"></a>Hello World (basic)</h2></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><a href="tutorials.helloworld.html#tutorials.helloworld.futherreading">Further reading</a></dt></dl></div>
+ 
+
+  <p>
+   When you begin to learn a programming language, the first program you
+   often write is a 'hello world' program. So, just to fit in with everyone
+   else, the first tutorial in this manual just happens to be a
+   'hello world' tutorial!
+  </p>
+  <p>
+   Throughout the tutorials we expect a reasonable grasp of PHP itself.
+   The tutorials are designed to give the user an idea of how to use PHP-GTK,
+   and the ideas and techniques behind it.
+  </p>
+  <p>
+   In this tutorial we will create a simple window with the text
+   "Hello World!" in it.
+  </p>
+  <p>
+   We will start by listing the program and will then explain each line of
+   the program, giving an overview of a very basic PHP-GTK application.
+  </p>
+
+
+  <div class="example" align="left"><p><a name="idp44146768"></a><b>Example 2.1. A simple Hello World script</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+if (!class_exists('gtk')) {
+    die("Please load the php-gtk2 module in your php.ini\r\n");
+}
+
+$wnd = new GtkWindow();
+$wnd-&gt;set_title('Hello world');
+$wnd-&gt;connect_simple('destroy', array('gtk', 'main_quit'));
+
+$lblHello = new GtkLabel("Just wanted to say\r\n'Hello world!'");
+$wnd-&gt;add($lblHello);
+
+$wnd-&gt;show_all();
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+
+  <div class="note" style="margin-left: 24px; margin-right: 24px; font-weight: bold;"><p>
+    If you get an error
+    <span dir="ltr"><tt>Fatal error: Call to undefined function: connect_simple()</tt></span>,
+    then you are using PHP-Gtk1 and not PHP-Gtk2. This is the wrong manual then.
+   </p></div>
+
+  <p>
+   Now copy the code into a text editor and save it as
+   <tt>hello.phpw</tt>. Then open a console and start it via
+   <b>php hello.phpw</b>. A window with title "Hello world" should
+   open and contain nothing but the text "Just wanted to say 'Hello world!'".
+  </p>
+
+
+  <div class="example" align="left"><p><a name="idp44195920"></a><b>Example 2.2. Checking if PHP-GTK is available</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">if (!class_exists('gtk')) {
+    die("Please load the php-gtk2 module in your php.ini\r\n");
+}</pre></td></tr></table></div>
+
+  <p>
+   Here we make sure that PHP-GTK is available by checking if the class
+   <span dir="ltr"><tt>gtk</tt></span> exists. Unlike PHP 4 and PHP-GTK 1, you should not
+   try to load the PHP-GTK module via
+   <a href="http://www.php.net/dl" target="_top">dl()</a>. This has been deprecated in
+   PHP 5, and should not be used in newly written code. So all we can do is
+   print out a message, that the module is not available and should be enabled
+   by the user.
+  </p>
+
+
+  <div class="example" align="left"><p><a name="idp44199728"></a><b>Example 2.3. Create a window</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">$wnd = new GtkWindow();</pre></td></tr></table></div>
+
+  <p>
+   Creating a new <a href="../gtk/gtk.gtkwindow.html">window</a> widget is as easy as instantiating a new object: Variable
+   <span dir="ltr"><tt>$wnd</tt></span> gets the new object assigned. If you already
+   programmed with PHP 4 and PHP-GTK 1, you will miss the ampersand
+   <span dir="ltr"><tt>&amp;</tt></span> before <span dir="ltr"><tt>new</tt></span>. That was required
+   in PHP 4, but may not be used any more in PHP 5, as references are created
+   automatically.
+  </p>
+
+
+  <div class="example" align="left"><p><a name="idp44204576"></a><b>Example 2.4. Set the window title</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">$wnd-&gt;set_title('Hello world');</pre></td></tr></table></div>
+
+  <p>
+   To make it easier to identify the window in the task bar, we set the title:
+   Just a normal call to an object method.
+  </p>
+
+
+  <div class="example" align="left"><p><a name="idp44206848"></a><b>Example 2.5. Enable a clean shutdown</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">$wnd-&gt;connect_simple('destroy', array('gtk', 'main_quit'));</pre></td></tr></table></div>
+
+  <p>
+   That is the first interesting piece of code: The
+   <span dir="ltr">"<a href="../gtk/gtk.gtkobject.signal.destroy.html">destroy</a>"</span> signal gets connected to the
+   static <a href="../gtk/gtk.method.main_quit.html">Gtk::main_quit</a> method.
+   It basically tells GTK to quit the main loop when the window gets 
+   closed/destroyed. (The main loop is explained some paragraphs below.)
+  </p>
+
+
+  <div class="example" align="left"><p><a name="idp44210336"></a><b>Example 2.6. Create a label to display text</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">$lblHello = new GtkLabel("Just wanted to say\r\n'Hello world!'");</pre></td></tr></table></div>
+
+  <p>
+   As done before, we create a new widget. This time we want to display a
+   small amount of text, and <span dir="ltr"><a href="../gtk/gtk.gtklabel.html">GtkLabel</a></span> is perfect at
+   this task.
+  </p>
+
+
+  <div class="example" align="left"><p><a name="idp44213056"></a><b>Example 2.7. Add the label to the window</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">$wnd-&gt;add($lblHello);</pre></td></tr></table></div>
+
+  <p>
+   Now we tell the window, that the label shall be added directly on it.
+  </p>
+
+
+  <div class="example" align="left"><p><a name="idp44215168"></a><b>Example 2.8. Make the window visible</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">$wnd-&gt;show_all();</pre></td></tr></table></div>
+
+  <p>
+   Until now, you will see nothing on your screen. To make the window visible,
+   you will need to call the <span dir="ltr"><a href="../gtk/gtk.gtkwidget.method.show.html">show()</a></span> .
+   That would make the window visible, but not the label - we would have to
+   call <span dir="ltr"><a href="../gtk/gtk.gtkwidget.method.show.html">show()</a></span>  on the label, too.
+   That is inconvenient if you have multiple widgets like buttons, checkboxes
+   and other on the window: <span dir="ltr"><a href="../gtk/gtk.gtkwidget.method.show_all.html">show_all()</a></span> 
+   takes care of making the window and all child widgets visible.
+  </p>
+
+
+  <div class="example" align="left"><p><a name="idp44220112"></a><b>Example 2.9. Start the main loop</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">Gtk::main();</pre></td></tr></table></div>
+
+  <p>
+   After everything is set up, we need to make sure that the window stays
+   open and responds to user interactions. A normal PHP script would end and
+   stop at this point, but we want to keep it running: For that, the GTK main
+   loop needs to be started. It takes care of keeping the application running
+   and waiting for user events. If events occur, it delegates them to the
+   corresponding callbacks.
+  </p>
+
+
+ <div class="sect1"><a name="tutorials.helloworld.futherreading"></a><div class="titlepage"><div><h2 class="title" style="clear: all"><a name="tutorials.helloworld.futherreading"></a>Further reading</h2></div></div><p>
+   Now that you have created your first PHP-GTK 2 application, you probably want
+   to create more complex layouts. To lean the basics, have a look at the
+   <a href="tutorials.packing.html" title="Packing Widgets">Packing tutorial</a>.
+  </p></div>
+
+</div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="tutorials.installation.macosx-stepbystep.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="tutorials.helloadvanced.html">Next</a></td></tr><tr><td width="40%" align="left">Installation on Mac OS X - step by step </td><td width="20%" align="center"><a href="tutorials.html">Up</a></td><td width="40%" align="right"> Hello World (advanced)</td></tr></table></div></body></html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkWidget::event</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkwidget.html#idp87479968" title=""><link rel="previous" href="gtk.gtkwidget.method.ensure_style.html" title="GtkWidget::ensure_style"><link rel="next" href="gtk.gtkwidget.method.freeze_child_notify.html" title="GtkWidget::freeze_child_notify"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkwidget.method.ensure_style.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkWidget::event</span></th><td width="20%" align="right"> <a href="gtk.gtkwidget.method.freeze_child_notify.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkwidget.method.event"></a><h2><span dir="ltr">GtkWidget::event</span></h2><p><div class="funcsynopsis" id="idp87752576"><p></p><a name="idp87752576"></a>bool event(<span dir="ltr"><a href="../gdk/gdk.gdkevent.html">GdkEvent</a></span> <i><tt>event</tt></i>);</div></p>
+    <p>
+     Rarely-used function. This function is used to emit the event signals
+     on a widget (those signals should never be emitted without using this
+     function to do so). If you want to synthesize an event though, don't
+     use this function; instead, use
+     <span dir="ltr"><a href="gtk.method.main_do_event.html">main_do_event()</a></span>  so the event will behave
+     as if it were in the event queue. Don't synthesize expose events;
+     instead, use <span dir="ltr"><a href="../gdk/gdk.gdkwindow.method.invalidate_rect.html">invalidate_rect()</a></span> 
+     to invalidate a region of the window.
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkwidget.method.ensure_style.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkwidget.method.freeze_child_notify.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkWidget::ensure_style</span> </td><td width="20%" align="center"><a href="gtk.gtkwidget.html#idp87479968">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkWidget::freeze_child_notify</span></td></tr></table></div></body></html>

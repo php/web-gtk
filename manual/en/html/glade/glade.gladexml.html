@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GladeXML</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gladeclasses.html" title="Glade Classes"><link rel="previous" href="glade.glade.method.get_widget_tree.html" title="Glade::get_widget_tree"><link rel="next" href="glade.gladexml.constructor.html" title="GladeXML Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Glade Classes</th></tr><tr><td width="20%" align="left"><a href="glade.glade.method.get_widget_tree.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GladeXML</span></th><td width="20%" align="right"> <a href="glade.gladexml.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="glade.gladexml"></a><h2 class="title"><span dir="ltr">GladeXML</span></h2><p><blockquote>
+   Represents an instantiation of an XML interface description.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="glade.gladexml.html">GladeXML</a></span><br></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    <span dir="ltr"><tt>Glade</tt></span> is an user builder for Gtk+. You can rapidly
+    create user interfaces in a WYSIWYG fashion using the tool, which
+    generates an XML representation of that interface in the form of a
+    <span dir="ltr"><tt>.glade</tt></span>
+   </p>
+   <p>
+    This object represents an instantiation of that <span dir="ltr"><tt>.glade</tt></span>.
+    You can use this object in your program to individually handle your
+    widgets.
+   </p>
+   <p>
+    It is also possible to describe signal handlers using Glade. If you have
+    done so, you may use the
+    <span dir="ltr"><a href="glade.gladexml.method.signal_autoconnect.html">signal_autoconnect()</a></span>  method to
+    automatically connect all the widgets to their respective handlers. If
+    your handlers are part of classes, then use the
+    <span dir="ltr"><a href="glade.gladexml.method.signal_autoconnect_instance.html">signal_autoconnect_instance()</a></span>  method.
+   </p>
+   <p>
+    Do have a look at
+    <a href="../tutorials/tutorials.helloglade.html" title="Hello Glade!">Glade Tutorial</a> for more on
+    how to use the Glade extension.
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp94097376"><p></p><a name="idp94097376"></a><span dir="ltr"><a href="glade.gladexml.constructor.html">GladeXML</a></span> (<i><tt>filename</tt></i> [, <i><tt>root</tt></i> [, <i><tt>domain</tt></i>]]);</div></p> --
+    Creates a new GladeXML instance from a file.
+   <br><br><p><div class="funcsynopsis" id="idp94103920"><p></p><a name="idp94103920"></a><span dir="ltr"><a href="glade.gladexml.constructor.new_from_buffer.html">GladeXML::new_from_buffer</a></span> (<i><tt>buffer</tt></i> [, <i><tt>root</tt></i> [, <i><tt>domain</tt></i>]]);</div></p> --
+    Creates a new GladeXML instance from a string.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="glade.gladexml.method.get_widget.html">get_widget()</a></span> </dt><dd> 
+    Returns a <span dir="ltr"><a href="../gtk/gtk.gtkwidget.html">GtkWidget</a></span> object corresponding to the
+    given name.
+   </dd><dt><span dir="ltr"><a href="glade.gladexml.method.get_widget_prefix.html">get_widget_prefix()</a></span> </dt><dd> 
+    Returns a set of widgets whose names begin with the provided string.
+   </dd><dt><span dir="ltr"><a href="glade.gladexml.method.relative_file.html">relative_file()</a></span> </dt><dd> 
+    Resolves relative pathnames specified by a file.
+   </dd><dt><span dir="ltr"><a href="glade.gladexml.method.signal_autoconnect.html">signal_autoconnect()</a></span> </dt><dd> 
+    Automatically connects all specified signal handlers to their corresponding
+    functions.
+   </dd><dt><span dir="ltr"><a href="glade.gladexml.method.signal_autoconnect_instance.html">signal_autoconnect_instance()</a></span> </dt><dd> 
+    Automatically connects all specified signal handlers to their corresponding
+    methods of a class.
+   </dd><dt><span dir="ltr"><a href="glade.gladexml.method.signal_connect.html">signal_connect()</a></span> </dt><dd> 
+    
+   </dd></blockquote></div></p></div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+<div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="glade.glade.method.get_widget_tree.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="glade.gladexml.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">Glade::get_widget_tree</span> </td><td width="20%" align="center"><a href="../gladeclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GladeXML</span> Constructor</td></tr></table></div></body></html>

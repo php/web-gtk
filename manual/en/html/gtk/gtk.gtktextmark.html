@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkTextMark</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtktextiter.method.toggles_tag.html" title="GtkTextIter::toggles_tag"><link rel="next" href="gtk.gtktextmark.method.get_buffer.html" title="GtkTextMark::get_buffer"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtktextiter.method.toggles_tag.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkTextMark</span></th><td width="20%" align="right"> <a href="gtk.gtktextmark.method.get_buffer.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtktextmark"></a><h2 class="title"><span dir="ltr">GtkTextMark</span></h2><p><blockquote>
+   A position in a GtkTextBuffer which persists across buffer modifications.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtktextmark.html">GtkTextMark</a></span><br></div></blockquote></p><p><h3>Direct Subclasses</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="../sourceview/sourceview.gtksourcemarker.html">GtkSourceMarker</a></span></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    A <span dir="ltr"><a href="gtk.gtktextmark.html">GtkTextMark</a></span> is used to identify a location within
+    a <span dir="ltr"><a href="gtk.gtktextbuffer.html">GtkTextBuffer</a></span>. Unlike a
+    <span dir="ltr"><a href="gtk.gtktextiter.html">GtkTextIter</a></span>, a <span dir="ltr"><a href="gtk.gtktextmark.html">GtkTextMark</a></span>
+    will persist across buffer modifications. 
+   </p>
+   <p>
+    A <span dir="ltr"><a href="gtk.gtktextmark.html">GtkTextMark</a></span> cannot be instantiated directly with
+    the <span dir="ltr"><tt>new</tt></span> operator. Instead it must be created using
+    <span dir="ltr"><a href="gtk.gtktextbuffer.method.create_mark.html">create_mark()</a></span> .
+   </p>
+   <p>
+    By default, every buffer automatically creates two
+    <span dir="ltr"><a href="gtk.gtktextmark.html">GtkTextMark</a></span>s named <span dir="ltr"><tt>insert</tt></span> and
+    <span dir="ltr"><tt>selection_boud</tt></span>. They point to the insertion point
+    (cursor) and the selection boundry which is not the insertion point,
+    respectively. Moving these two marks to two different places in the buffer
+    will select the range of text between them. Both marks have right <a href="../appendix.glossary.html#appendix.glossary.g.gravity">gravity</a>.
+   </p>
+  </blockquote></p><p><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtktextmark.method.get_buffer.html">get_buffer()</a></span> </dt><dd> 
+    Returns the <span dir="ltr"><a href="gtk.gtktextbuffer.html">GtkTextBuffer</a></span> that the mark belongs to.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextmark.method.get_deleted.html">get_deleted()</a></span> </dt><dd> 
+    Returns whether or not the mark has been deleted from its
+    <span dir="ltr"><a href="gtk.gtktextbuffer.html">GtkTextBuffer</a></span>.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextmark.method.get_left_gravity.html">get_left_gravity()</a></span> </dt><dd> 
+    Returns whether or not the mark has left <a href="../appendix.glossary.html#appendix.glossary.g.gravity">gravity</a>.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextmark.method.get_name.html">get_name()</a></span> </dt><dd> 
+    Returns the name of the mark, or <span dir="ltr"><tt>null</tt></span> if the mark is
+    anonymous.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextmark.method.get_visible.html">get_visible()</a></span> </dt><dd> 
+    Returns whether or not a cursor is shown for the mark.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktextmark.method.set_visible.html">set_visible()</a></span> </dt><dd> 
+    Sets whether or not a cursor should be shown for the mark.
+   </dd></blockquote></div></p></div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtktextiter.method.toggles_tag.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtktextmark.method.get_buffer.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkTextIter::toggles_tag</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkTextMark::get_buffer</span></td></tr></table></div></body></html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>A little more complexity</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="tutorials.objectorientation.html" title="Object Oriented Programming"><link rel="previous" href="tutorials.objectorientation.basics.html" title="Basic Object Orientation"><link rel="next" href="tutorials.objectorientation.summary.html" title="Summary"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Object Oriented Programming</th></tr><tr><td width="20%" align="left"><a href="tutorials.objectorientation.basics.html">Prev</a> </td><th width="60%" align="center">A little more complexity</th><td width="20%" align="right"> <a href="tutorials.objectorientation.summary.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="tutorials.objectorientation.advanced"></a><div class="titlepage"><div><h2 class="title" style="clear: all"><a name="tutorials.objectorientation.advanced"></a>A little more complexity</h2></div></div><p>
+   We haven't used most of PHP5 powerful object oriented features so far.  Let's
+   make an application that opens a text file and displays its contents to you: 
+   a simple notepad-kind-of application. Please note that is a very very simple
+   application meant for educational purposes and has no practical functionality!
+   Here is the code, read it, and don't be intimidated by its size. A detailed 
+   explanation follows the code:
+   <div class="example" align="left"><p><a name="idp44729472"></a><b>Example 8.2. A simple notepad</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+
+class Notepad extends GtkWindow
+{
+    protected $currentFile;
+    protected $buffer;
+    protected $status;
+    protected $context;
+    protected $lastid;
+
+    function __construct($fileName = null)
+    {
+        parent::__construct();
+                
+        $mainBox  = new GtkVBox();
+        $textBuff = new GtkTextBuffer();
+        $textView = new GtkTextView($textBuff);
+        $statusBar= new GtkStatusBar();
+
+        $mainBox-&gt;pack_start($this-&gt;buildMenu(), false, false);
+        $mainBox-&gt;pack_start($textView, true, true);
+        $mainBox-&gt;pack_start($statusBar, false, false);
+
+        $this-&gt;currentFile = $fileName;
+        $this-&gt;buffer = $textBuff;
+        $this-&gt;status = $statusBar;
+
+        $this-&gt;connect_simple('destroy', array($this, 'quit'));
+        $this-&gt;set_title('Simple Notepad');
+        $this-&gt;maximize();
+        $this-&gt;add($mainBox);
+        $this-&gt;show_all();
+
+        $this-&gt;loadFile();
+    }
+
+    function buildMenu()
+    {
+        $menuBar  = new GtkMenuBar();
+        $fileMenu = new GtkMenu();
+        $menuName = new GtkMenuItem('_File');
+        
+        $quit = new GtkImageMenuItem('gtk-quit');
+        $quit-&gt;connect_simple('activate', array($this, 'quit'));
+        $quit-&gt;connect_simple('enter_notify_event', 
+                                array($this, 'updateStatus'), 1);
+        $quit-&gt;connect_simple('leave_notify_event', 
+                                array($this, 'updateStatus'), 0);
+        
+        $fileMenu-&gt;append($quit);
+        $menuName-&gt;set_submenu($fileMenu);
+        $menuBar-&gt;add($menuName);
+
+        return $menuBar;
+    }
+   
+    function loadFile()
+    {
+        if($this-&gt;currentFile != null) {
+            $contents = file_get_contents($this-&gt;currentFile);
+            $this-&gt;buffer-&gt;set_text($contents);
+        }
+    }
+
+    function updateStatus($enter)
+    {
+        if($enter) {
+            $id = $this-&gt;status-&gt;get_context_id("Message");
+            $lastMsg = $this-&gt;status-&gt;push($id, "Quits the Application");
+            $this-&gt;context = $id;
+            $this-&gt;lastid = $lastMsg;
+        } else {
+            $this-&gt;status-&gt;remove($this-&gt;context, $this-&gt;lastid);
+        }
+    }
+    
+    function quit()
+    {
+        Gtk::main_quit();
+    }
+
+}
+
+new Notepad('simple.phpw');
+Gtk::main();
+
+?&gt;
+</pre></td></tr></table></div>
+  </p><div class="sect2"><a name="tutorials.objectorientation.advanced.construct"></a><div class="titlepage"><div><h3 class="title"><a name="tutorials.objectorientation.advanced.construct"></a>The Constructor</h3></div></div><p>
+    The class structure is similar to what we have seen before, except the
+    addition of some class properties and functions. Let's first have a look at
+    the constructor. The constructor takes a single optional argument that
+    defaults to <span dir="ltr"><tt>null</tt></span>. That parameter is (path of) the
+    file name that we wish to open. If you don't pass a parameter to the
+    constructor, it will simply open nothing.
+   </p><p>
+    OK, so we first construct the parent (a GtkWindow) and then create some
+    widgets that we will use. A <span dir="ltr"><a href="../gtk/gtk.gtkvbox.html">GtkVBox</a></span> for our layout, a
+    <span dir="ltr"><a href="../gtk/gtk.gtktextbuffer.html">GtkTextBuffer</a></span> and a
+    <span dir="ltr"><a href="../gtk/gtk.gtktextview.html">GtkTextView</a></span> to display the contents of the file and a
+    GtkStatusBar to display some messages. We setup the
+    layout and add the respective widgets to the VBox.
+   </p><p>
+    Next we set the class properties:
+    <table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+$this-&gt;currentFile = $fileName;
+$this-&gt;buffer = $textBuff;
+$this-&gt;status = $statusBar;
+ </pre></td></tr></table>
+    These three lines set the values for the class properties. Class
+    properties are an essential part of all object-oriented PHP-GTK 2
+    applications. They are useful because you may need to access a particular
+    widget in a function that it was not created in. When we create a widget, the
+    object's scope is only within the function it was created in. For example,
+    we created the status bar in the constructor of our class, but we obviously
+    need to access it elsewhere (when we need to put some messages on it). But
+    since the variable <span dir="ltr"><tt>$statusBar</tt></span> can be accessed only within
+    the constructor, we assign a class property (called
+    <span dir="ltr"><tt>status</tt></span>) to it. Now we can access the status bar in any
+    function within the class by using <span dir="ltr"><tt>$this-&gt;status</tt></span>.
+   </p><p>
+    Simply extend this concept to other widgets too. Basically, you need to
+    assign class properties to widgets that you think will need the entire class
+    as its scope. Actually, class properties can also be used efficiently to
+    store any data that you may need across the entire class. One example of
+    this in our applications is the <span dir="ltr"><tt>currentFile</tt></span> property.
+    This will simply store the path of the current file opened, or
+    <span dir="ltr"><tt>null</tt></span> if none is. We can then find out the name of the
+    current file opened in any function of the class. Class properties have 
+    other uses too, one such use I can think of is a flag. For our notepad
+    application, you may want to add a class property called 
+    <span dir="ltr"><tt>saved</tt></span> which will have Boolean values to indicate 
+    whether the current file has been saved to disk or not.
+   </p><p>
+    Note that all the class properties have been defined as
+    <span dir="ltr"><tt>protected</tt></span>. This is simply a good object oriented
+    practice. We don't want them to be public but we also want any classes that
+    extends ours to be able to access them.
+   </p><p>
+    And finally, we set the title of the window, maximize it, add the layout and
+    display all the widgets. And then we call the <span dir="ltr"><tt>loadFile()</tt></span>
+    function to display the contents of our file in the text buffer that we had
+    created.
+   </p></div><div class="sect2"><a name="tutorials.objectorientation.advanced.buildmenu"></a><div class="titlepage"><div><h3 class="title"><a name="tutorials.objectorientation.advanced.buildmenu"></a>The buildMenu() function</h3></div></div><p>
+    Note how we had called this function from the constructor:
+    <table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+$mainBox-&gt;pack_start($this-&gt;buildMenu(), false, false);
+ </pre></td></tr></table>
+    We do that because we want to want to split our class into as many modules
+    as possible. Instead of building our entire layout in the constructor
+    itself, it is better to split the layout into major parts and dedicate a
+    function for each part. Here we have a function to build the menu bar, but
+    not for the text view or status bar because they take only 2 lines each to
+    construct!
+   </p><p>
+    In this function, we just create our menu bar, add a simple file menu with a
+    single "Quit" button to it. Let's have a look at these lines:
+    <table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+$quit-&gt;connect_simple('activate', array($this, 'quit'));
+$quit-&gt;connect_simple('enter_notify_event', array($this, 'updateStatus'), 1);
+$quit-&gt;connect_simple('leave_notify_event', array($this, 'updateStatus'), 0);
+ </pre></td></tr></table>
+    Here we connect the <span dir="ltr"><tt>activate</tt></span>,
+    <span dir="ltr"><tt>enter-notify-event</tt></span> and
+    <span dir="ltr"><tt>leave-notify-event</tt></span> to
+    their respective handlers. Look at the second parameter to the
+    <span dir="ltr"><tt>connect_simple()</tt></span> functions. It is an array with two
+    elements. The first element is the special <span dir="ltr"><tt>$this</tt></span> variable
+    and the second element is a string. If you had read the 
+    <a href="tutorials.helloworld.html" title="Hello World (basic)">Hello World</a> tutorial, you would
+    have come across a line like this:
+    <table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+$wnd-&gt;connect_simple('destroy', array('gtk', 'main_quit'));
+ </pre></td></tr></table>
+    Compare the usages and it should dawn on you that whenever you want to
+    connect a signal to callback function which is in a class, you must specify
+    the callback as an array, the first element of which points to the class,
+    and the second element of which is the name of the callback. Hence, we
+    connect the various events of our quit button to <span dir="ltr"><tt>this</tt></span>
+    classes' <span dir="ltr"><tt>quit()</tt></span> and <span dir="ltr"><tt>updateStatus()</tt></span>
+    functions.
+   </p><p>
+    Sometimes, it is possible to pass parameters to functions in order to use
+    those objects in the function. As a rule of thumb, if you have more than one
+    function that uses a particular object, it is better to dedicate a class
+    property to it; but if there is only a single function that requires the
+    object, it is better to pass the object as a parameter instead. A common
+    occurrence of this situation is while connecting signals to callbacks. Have a
+    look at the tutorial on signals and callbacks for more on this and how to
+    pass custom parameters to the callbacks.
+   </p><p>
+    Getting back to the function, we return the <span dir="ltr"><tt>top-most</tt></span>
+    widget in our menu: the menu bar, after adding the sub-menu to it. The
+    constructor then receives this object and adds it to the main VBox.
+   </p></div><div class="sect2"><a name="tutorials.objectorientation.advanced.loadfile"></a><div class="titlepage"><div><h3 class="title"><a name="tutorials.objectorientation.advanced.loadfile"></a>The loadFile() function</h3></div></div><p>
+    This function's purpose is to load the contents of the file to be opened and
+    display them in the text view. Fairly straight-forward, we first check
+    whether the class property <span dir="ltr"><tt>currentFile</tt></span> is not null, and
+    then use <span dir="ltr"><a href="../gtk/gtk.gtktextbuffer.method.set_text.html">set_text()</a></span>  on the
+    <span dir="ltr"><tt>buffer</tt></span> class property.
+   </p></div><div class="sect2"><a name="tutorials.objectorientation.advanced.updatestatus"></a><div class="titlepage"><div><h3 class="title"><a name="tutorials.objectorientation.advanced.updatestatus"></a>The updateStatus() function</h3></div></div><p>
+    This function serves as the callback for the
+    <span dir="ltr"><tt>enter-notify-event</tt></span> and
+    <span dir="ltr"><tt>leave-notify-event</tt></span> signals. Here we access the status bar
+    via the <span dir="ltr"><tt>status</tt></span> class property and add/remove a message
+    depending on whether mouse is entering or leaving the Quit menu button.
+   </p></div><div class="sect2"><a name="tutorials.objectorientation.advanced.quit"></a><div class="titlepage"><div><h3 class="title"><a name="tutorials.objectorientation.advanced.quit"></a>The quit() function</h3></div></div><p>
+    This is the most simple function of all, only a single that quits the GTK
+    main loop. You may wonder why we have a one-line function called 'quit' when
+    we could have connected the signals directly to <span dir="ltr"><tt>main_quit</tt></span> 
+    like:
+    <table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+$this-&gt;connect_simple('destroy', array('Gtk', 'main_quit'));
+ </pre></td></tr></table>
+    The reason for that is, in applications, you would most probably want to do
+    some cleanup before the application quits, and this function is your chance
+    to do it. For our simple notepad application, an addition that is possible
+    here is to check for the <span dir="ltr"><tt>saved</tt></span> flag (again, a class
+    property) and prompt the user to save the file if it is not.
+   </p></div><div class="sect2"><a name="tutorials.objectorientation.advanced.instantiate"></a><div class="titlepage"></div><p>
+    The last two lines:
+    <table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+new Notepad('simple.phpw');
+Gtk::main();
+ </pre></td></tr></table>
+    instantiates an object of our class (and thereby opens the simple.phpw file
+    located in the same directory) and starts the main GTK loop. You can also
+    shift <span dir="ltr"><tt>Gtk::main()</tt></span> to the constructor of our class.
+   </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="tutorials.objectorientation.basics.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="tutorials.objectorientation.summary.html">Next</a></td></tr><tr><td width="40%" align="left">Basic Object Orientation </td><td width="20%" align="center"><a href="tutorials.objectorientation.html">Up</a></td><td width="40%" align="right"> Summary</td></tr></table></div></body></html>

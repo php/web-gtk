@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkImage</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkiconview.signal.unselect-all.html" title="unselect-all"><link rel="next" href="gtk.gtkimage.constructor.html" title="GtkImage Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkiconview.signal.unselect-all.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkImage</span></th><td width="20%" align="right"> <a href="gtk.gtkimage.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkimage"></a><h2 class="title"><span dir="ltr">GtkImage</span></h2><p><blockquote>
+   A widget displaying an image
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkmisc.html">GtkMisc</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkimage.html">GtkImage</a></span><br></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    The GtkImage widget displays an image. Various kinds of object can be
+    displayed as an image; most typically, you would load a
+    <span dir="ltr"><a href="../gdk/gdk.gdkpixbuf.html">GdkPixbuf</a></span> ("pixel buffer") from a file, and then
+    display that. There's a convenience function to do this,
+    <span dir="ltr"><a href="gtk.gtkimage.constructor.new_from_file.html">GtkImage::new_from_file()</a></span> , used as
+    follows:
+    <table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+$img = GtkImage::new_from_file('/path/to/the/image.png');
+</pre></td></tr></table>
+   </p>
+   <p>
+    If the file isn't loaded successfully, the image will contain a
+    "broken image" icon similar to that used in many web browsers.
+    If you want to handle errors in loading the file yourself, for example
+    by displaying an error message, then load the image with
+    <span dir="ltr"><a href="../gdk/gdk.gdkpixbuf.constructor.new_from_file.html">GdkPixbuf::new_from_file()</a></span> , then
+    create the GtkImage with
+    <span dir="ltr"><a href="gtk.gtkimage.constructor.new_from_pixbuf.html">GtkImage::new_from_pixbuf()</a></span> .
+   </p>
+   <p>
+    The image file may contain an animation, if so the GtkImage will display
+    an animation (<span dir="ltr"><a href="../gdk/gdk.gdkpixbufanimation.html">GdkPixbufAnimation</a></span>) instead of a
+    static image.
+   </p>
+   <p>
+    GtkImage is a subclass of <span dir="ltr"><a href="gtk.gtkmisc.html">GtkMisc</a></span>, which implies
+    that you can align it (center, left, right) and add padding to it,
+    using <span dir="ltr"><a href="gtk.gtkmisc.html">GtkMisc</a></span> methods.
+   </p>
+   <p>
+    GtkImage is a "no window" widget (has no <span dir="ltr"><a href="../gdk/gdk.gdkwindow.html">GdkWindow</a></span>
+    of its own), so by default does not receive events. If you want to receive
+    events on the image, such as button clicks, place the image inside a
+    <span dir="ltr"><a href="gtk.gtkeventbox.html">GtkEventBox</a></span>, then connect to the event signals on
+    the event box.
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp68141968"><p></p><a name="idp68141968"></a> <span dir="ltr"><a href="gtk.gtkimage.constructor.html">GtkImage</a></span> ();</div></p> --
+    Creates a new GtkImage.
+   <br><br><p><div class="funcsynopsis" id="idp68147504"><p></p><a name="idp68147504"></a> <span dir="ltr"><a href="gtk.gtkimage.constructor.new_from_animation.html">GtkImage::new_from_animation</a></span> (<span dir="ltr"><a href="../gdk/gdk.gdkpixbufanimation.html">GdkPixbufAnimation</a></span><i><tt>animation</tt></i>);</div></p> --
+    Creates a GtkImage displaying the given animation.
+   <br><br><p><div class="funcsynopsis" id="idp68154080"><p></p><a name="idp68154080"></a> <span dir="ltr"><a href="gtk.gtkimage.constructor.new_from_file.html">GtkImage::new_from_file</a></span> (<i><tt>filename</tt></i>);</div></p> --
+    Creates a new GtkImage displaying a file.
+   <br><br><p><div class="funcsynopsis" id="idp68165040"><p></p><a name="idp68165040"></a> <span dir="ltr"><a href="gtk.gtkimage.constructor.new_from_icon_set.html">GtkImage::new_from_icon_set</a></span> (<span dir="ltr"><a href="gtk.gtkiconset.html">GtkIconSet</a></span> <i><tt>iconset</tt></i>, <span dir="ltr"><a href="gtk.enum.iconsize.html">GtkIconSize</a></span> <i><tt>size</tt></i>);</div></p> --
+    Creates a GtkImage displaying an icon set.
+   <br><br><p><div class="funcsynopsis" id="idp68176832"><p></p><a name="idp68176832"></a> <span dir="ltr"><a href="gtk.gtkimage.constructor.new_from_image.html">GtkImage::new_from_image</a></span> (<span dir="ltr"><a href="../gdk/gdk.gdkimage.html">GdkImage</a></span> <i><tt>image</tt></i>, <i><tt>mask</tt></i>);</div></p> --
+    Creates a GtkImage widget displaying a image with a mask.
+   <br><br><p><div class="funcsynopsis" id="idp68184832"><p></p><a name="idp68184832"></a> <span dir="ltr"><a href="gtk.gtkimage.constructor.new_from_pixbuf.html">GtkImage::new_from_pixbuf</a></span> (<span dir="ltr"><a href="../gdk/gdk.gdkpixbuf.html">GdkPixbuf</a></span> <i><tt>pixbuf</tt></i>);</div></p> --
+    Creates a new GtkImage displaying pixbuf.
+   <br><br><p><div class="funcsynopsis" id="idp68192032"><p></p><a name="idp68192032"></a> <span dir="ltr"><a href="gtk.gtkimage.constructor.new_from_pixmap.html">GtkImage::new_from_pixmap</a></span> (<span dir="ltr"><a href="../gdk/gdk.gdkpixmap.html">GdkPixmap</a></span> <i><tt>pixmap</tt></i>, <i><tt>mask</tt></i>);</div></p> --
+    Creates a GtkImage widget displaying pixmap with a mask.
+   <br><br><p><div class="funcsynopsis" id="idp68199280"><p></p><a name="idp68199280"></a> <span dir="ltr"><a href="gtk.gtkimage.constructor.new_from_stock.html">GtkImage::new_from_stock</a></span> (<span dir="ltr"><a href="gtk.enum.stockitems.html">GtkStockItems</a></span> <i><tt>stock_id</tt></i>, <span dir="ltr"><a href="gtk.enum.iconsize.html">GtkIconSize</a></span> <i><tt>size</tt></i>);</div></p> --
+    Creates a GtkImage displaying a stock icon.
+   <br><br><p><div class="funcsynopsis" id="idp68211600"><p></p><a name="idp68211600"></a> <span dir="ltr"><a href="gtk.gtkimage.constructor.new_from_icon_name.html">GtkImage::new_from_icon_name</a></span> (<i><tt>icon_name</tt></i>, <i><tt>size</tt></i>);</div></p> --
+
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkimage.method.get_animation.html">get_animation()</a></span> </dt><dd> 
+    Gets the GdkPixbufAnimation being displayed by the GtkImage.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkimage.method.get_pixbuf.html">get_pixbuf()</a></span> </dt><dd> 
+    Gets the GdkPixbuf being displayed by the GtkImage.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkimage.method.get_pixel_size.html">get_pixel_size()</a></span> </dt><dd> 
+    Gets the pixel size used for named icons.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkimage.method.get_storage_type.html">get_storage_type()</a></span> </dt><dd> 
+    Gets the type of representation being used by the GtkImage to store image
+    data.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkimage.method.set.html">set()</a></span> </dt><dd> 
+    Sets the image.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkimage.method.set_from_animation.html">set_from_animation()</a></span> </dt><dd> 
+    See <span dir="ltr"><a href="gtk.gtkimage.constructor.new_from_animation.html">GtkImage::new_from_animation()</a></span> .
+   </dd><dt><span dir="ltr"><a href="gtk.gtkimage.method.set_from_file.html">set_from_file()</a></span> </dt><dd> 
+    See <span dir="ltr"><a href="gtk.gtkimage.constructor.new_from_file.html">GtkImage::new_from_file()</a></span> .
+   </dd><dt><span dir="ltr"><a href="gtk.gtkimage.method.set_from_icon_name.html">set_from_icon_name()</a></span> </dt><dd> 
+    See <span dir="ltr"><a href="gtk.gtkimage.constructor.new_from_stock.html">GtkImage::new_from_stock()</a></span> .
+   </dd><dt><span dir="ltr"><a href="gtk.gtkimage.method.set_from_icon_set.html">set_from_icon_set()</a></span> </dt><dd> 
+    See <span dir="ltr"><a href="gtk.gtkimage.constructor.new_from_icon_set.html">GtkImage::new_from_icon_set()</a></span> .
+   </dd><dt><span dir="ltr"><a href="gtk.gtkimage.method.set_from_image.html">set_from_image()</a></span> </dt><dd> 
+    See <span dir="ltr"><a href="gtk.gtkimage.constructor.new_from_image.html">GtkImage::new_from_image()</a></span> .
+   </dd><dt><span dir="ltr"><a href="gtk.gtkimage.method.set_from_pixbuf.html">set_from_pixbuf()</a></span> </dt><dd> 
+    See <span dir="ltr"><a href="gtk.gtkimage.constructor.new_from_pixbuf.html">GtkImage::new_from_pixbuf()</a></span> .
+   </dd><dt><span dir="ltr"><a href="gtk.gtkimage.method.set_from_pixmap.html">set_from_pixmap()</a></span> </dt><dd> 
+    See <span dir="ltr"><a href="gtk.gtkimage.constructor.new_from_pixmap.html">GtkImage::new_from_pixmap()</a></span> .
+   </dd><dt><span dir="ltr"><a href="gtk.gtkimage.method.set_from_stock.html">set_from_stock()</a></span> </dt><dd> 
+    See <span dir="ltr"><a href="gtk.gtkimage.constructor.new_from_stock.html">GtkImage::new_from_stock()</a></span> .
+   </dd><dt><span dir="ltr"><a href="gtk.gtkimage.method.set_pixel_size.html">set_pixel_size()</a></span> </dt><dd> 
+    Sets the pixel size to use for named icons.
+   </dd></blockquote></div></p></div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+ 
+
+  
+
+  
+
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkiconview.signal.unselect-all.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkimage.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">unselect-all</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkImage</span> Constructor</td></tr></table></div></body></html>

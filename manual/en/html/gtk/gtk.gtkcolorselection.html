@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkColorSelection</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkcolorbutton.signal.color-set.html" title="color-set"><link rel="next" href="gtk.gtkcolorselection.constructor.html" title="GtkColorSelection Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkcolorbutton.signal.color-set.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkColorSelection</span></th><td width="20%" align="right"> <a href="gtk.gtkcolorselection.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkcolorselection"></a><h2 class="title"><span dir="ltr">GtkColorSelection</span></h2><div style="float:right; border:1px solid #000;"><img src="../images/reference/gtk/gtkcolorselection.png"></div><p><blockquote>
+   Widget that is used to select a color.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkbox.html">GtkBox</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkvbox.html">GtkVBox</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcolorselection.html">GtkColorSelection</a></span><br></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <span dir="ltr"><a href="gtk.gtkcolorselection.html">GtkColorSelection</a></span> is a widget that is used to 
+   select a color. The widget provides a very user friendly interface that 
+   includes a 'color wheel' in addition to a number of sliders and entry 
+   boxes for color parameters such as <span dir="ltr"><tt>hue</tt></span>,
+   <span dir="ltr"><tt>saturation</tt></span>, <span dir="ltr"><tt>RGB</tt></span>, and
+   <span dir="ltr"><tt>opacity</tt></span>. The widget is used in the ready-made color
+   selection dialog box, <span dir="ltr"><a href="gtk.gtkcolorselectiondialog.html">GtkColorSelectionDialog</a></span>.
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp60084928"><p></p><a name="idp60084928"></a> <span dir="ltr"><a href="gtk.gtkcolorselection.constructor.html">GtkColorSelection</a></span> ();</div></p> --
+    Creates a new <span dir="ltr"><a href="gtk.gtkcolorselection.html">GtkColorSelection</a></span>
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkcolorselection.method.get_color.html">get_color()</a></span> </dt><dd> 
+    DEPRECATED. Returns the color currently selected in the 
+    <span dir="ltr"><a href="gtk.gtkcolorselection.html">GtkColorSelection</a></span> widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcolorselection.method.get_current_alpha.html">get_current_alpha()</a></span> </dt><dd> 
+    Returns the current alpha value on the
+    <span dir="ltr"><a href="gtk.gtkcolorselection.html">GtkColorSelection</a></span> widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcolorselection.method.get_current_color.html">get_current_color()</a></span> </dt><dd> 
+    Returns the current color selected on the 
+    <span dir="ltr"><a href="gtk.gtkcolorselection.html">GtkColorSelection</a></span> widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcolorselection.method.get_has_opacity_control.html">get_has_opacity_control()</a></span> </dt><dd> 
+    Determines whether the GtkColorSelection has opacity control enabled.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcolorselection.method.get_has_palette.html">get_has_palette()</a></span> </dt><dd> 
+    Determines if the widget has a palette.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcolorselection.method.get_previous_alpha.html">get_previous_alpha()</a></span> </dt><dd> 
+    Returns the previous alpha value on the 
+    <span dir="ltr"><a href="gtk.gtkcolorselection.html">GtkColorSelection</a></span> widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcolorselection.method.get_previous_color.html">get_previous_color()</a></span> </dt><dd> 
+    Returns the previous color selected on the 
+    widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcolorselection.method.is_adjusting.html">is_adjusting()</a></span> </dt><dd> 
+    Gets the current state of the specified 
+    <span dir="ltr"><a href="gtk.gtkcolorselection.html">GtkColorSelection</a></span>
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcolorselection.method.set_color.html">set_color()</a></span> </dt><dd> 
+    DEPRECATED. Sets the color currently selected in the 
+    <span dir="ltr"><a href="gtk.gtkcolorselection.html">GtkColorSelection</a></span> widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcolorselection.method.set_current_alpha.html">set_current_alpha()</a></span> </dt><dd> 
+    Sets the current alpha value on the 
+    <span dir="ltr"><a href="gtk.gtkcolorselection.html">GtkColorSelection</a></span> widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcolorselection.method.set_current_color.html">set_current_color()</a></span> </dt><dd> 
+    Sets the current color selected on the 
+    <span dir="ltr"><a href="gtk.gtkcolorselection.html">GtkColorSelection</a></span> widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcolorselection.method.set_has_opacity_control.html">set_has_opacity_control()</a></span> </dt><dd> 
+    Sets whether the opacity control is visible for the widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcolorselection.method.set_has_palette.html">set_has_palette()</a></span> </dt><dd> 
+    Sets whether the palette for the 
+    <span dir="ltr"><a href="gtk.gtkcolorselection.html">GtkColorSelection</a></span> widget is visible or not. 
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcolorselection.method.set_previous_alpha.html">set_previous_alpha()</a></span> </dt><dd> 
+    Sets the previous value on alpha on the widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcolorselection.method.set_previous_color.html">set_previous_color()</a></span> </dt><dd> 
+    Sets the previous color selected on the widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcolorselection.method.set_update_policy.html">set_update_policy()</a></span> </dt><dd> 
+    DEPRECATED. Sets the policy controlling when the 
+    <span dir="ltr">"<a href="gtk.gtkcolorselection.signal.color-changed.html">color-changed</a>"</span> signal 
+    is emitted.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcolorselection.method.palette_to_string.html">palette_to_string()</a></span> </dt><dd> 
+
+   </dd></blockquote></div><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtkcolorselection.signal.color-changed.html">color-changed</a>"</span></dt><dd> 
+    Emitted when the color changes in the widget according to its update policy.
+   </dd></blockquote></p></div>
+
+  
+
+ 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ 
+
+  
+
+  
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkcolorbutton.signal.color-set.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkcolorselection.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">color-set</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkColorSelection</span> Constructor</td></tr></table></div></body></html>

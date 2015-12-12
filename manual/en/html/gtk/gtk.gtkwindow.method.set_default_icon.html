@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkWindow::set_default_icon</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkwindow.html#idp90308480" title=""><link rel="previous" href="gtk.gtkwindow.method.set_default.html" title="GtkWindow::set_default"><link rel="next" href="gtk.gtkwindow.method.set_default_size.html" title="GtkWindow::set_default_size"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkwindow.method.set_default.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkWindow::set_default_icon</span></th><td width="20%" align="right"> <a href="gtk.gtkwindow.method.set_default_size.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkwindow.method.set_default_icon"></a><h2><span dir="ltr">GtkWindow::set_default_icon</span></h2><p><div class="funcsynopsis" id="idp90733744"><p></p><a name="idp90733744"></a>void set_default_icon(
+      <span dir="ltr"><a href="../gdk/gdk.gdkpixbuf.html">GdkPixbuf</a></span> <i><tt>icon</tt></i>
+     );</div></p>
+    <p>
+     Sets an icon to be used when an icon has not been set using <span dir="ltr"><a href="gtk.gtkwindow.method.set_icon.html">set_icon()</a></span> . The <i><tt>icon</tt></i>
+     passed in must be a <span dir="ltr"><a href="../gdk/gdk.gdkpixbuf.html">GdkPixbuf</a></span> object.
+    </p>
+    <p>
+     See <span dir="ltr"><a href="gtk.gtkwindow.method.set_icon.html">set_icon()</a></span>  for a description of
+     what the icon is used for.
+    </p>
+    <p>
+     You might call this method if your application allows the icon for the
+     window to be changed at run time. Setting a default icon allows the
+     window to maintain a unique identity even if the icon set at run time
+     cannot be found or could not be loaded properly for some reason. 
+    </p>
+    <p>
+     See also:
+     <span dir="ltr"><a href="gtk.gtkwindow.method.set_icon.html">set_icon()</a></span> 
+     new_from_file
+    </p>
+    <p>
+     This method must be called statically.
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkwindow.method.set_default.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkwindow.method.set_default_size.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkWindow::set_default</span> </td><td width="20%" align="center"><a href="gtk.gtkwindow.html#idp90308480">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkWindow::set_default_size</span></td></tr></table></div></body></html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>popup-context-menu</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtktoolbar.html#idp82014992" title=""><link rel="previous" href="gtk.gtktoolbar.signal.orientation-changed.html" title="orientation-changed"><link rel="next" href="gtk.gtktoolbar.signal.style-changed.html" title="style-changed"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtktoolbar.signal.orientation-changed.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">popup-context-menu</span></th><td width="20%" align="right"> <a href="gtk.gtktoolbar.signal.style-changed.html">Next</a></td></tr></table><hr></div><a name="gtk.gtktoolbar.signal.popup-context-menu"></a><h2><span dir="ltr">popup-context-menu</span></h2><p>
+    <p>
+     This signal is emitted when the user right-clicked the toolbar
+     or used the key bound to display the popup menu.
+    </p>
+    <p>
+     You should use this if you want to display a popup menu for the toolbar.
+     If the signal was triggered by the keyboard, <i><tt>button</tt></i>
+     is <span dir="ltr"><tt>-1</tt></span>.
+    </p>
+    <div class="note" style="margin-left: 24px; margin-right: 24px; font-weight: bold;"><p>
+      The signal is emitted only if the right-click happens on the toolbar,
+      not on a tool item.
+     </p></div>
+    <div class="example" align="left"><p><a name="idp82046832"></a><b>Example 125. Adding a popup menu to the toolbar</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//Popup menu for the toolbar
+//You need to make the window wider to get the context menu
+//The context menu is not shown when right-clicking on the items
+
+//Create a new toolbar widget
+$tb = new GtkToolbar();
+//Let the toolbar take the space it needs
+$tb-&gt;set_show_arrow(false);
+
+//Add some dummy symbols
+foreach (array(Gtk::STOCK_NEW, Gtk::STOCK_OPEN, Gtk::STOCK_SAVE) as $id) {
+    $item = GtkToolButton::new_from_stock($id);
+    $tb-&gt;insert($item, -1);
+}
+
+
+//Create the menu
+$menu = new GtkMenu();
+$styles = array(
+  array('_Icons only', Gtk::TOOLBAR_ICONS),
+  array('_Text only', Gtk::TOOLBAR_TEXT),
+  array('Icons _and text', Gtk::TOOLBAR_BOTH)
+);
+foreach ($styles as &amp;$style) {
+    $item = new GtkMenuItem($style[0], true);
+    $item-&gt;connect_simple('activate', array($tb, 'set_style'), $style[1]);
+    $menu-&gt;append($item);
+}
+
+//Connect the callback and pass $menu as optional parameter
+$tb-&gt;connect('popup-context-menu', 'onPopup', $menu);
+
+function onPopup($tb, $x, $y, $button, $menu) {
+    //set all items to visible
+    $menu-&gt;show_all();
+    $menu-&gt;popup();
+}
+
+//Standard window that has the toolbar as only child
+$window = new GtkWindow();
+$window-&gt;add($tb);
+$window-&gt;connect_simple('destroy', array('Gtk', 'main_quit'));
+$window-&gt;show_all();
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+   </p><p><b>Callback function</b></p><p><p><div class="funcsynopsis" id="idp82037264"><p></p><a name="idp82037264"></a>bool callback(<span dir="ltr"><a href="gtk.gtktoolbar.html">GtkToolbar</a></span> <i><tt>toolbar</tt></i>, int <i><tt>x</tt></i>, int <i><tt>y</tt></i>, int <i><tt>button</tt></i>);</div></p></p><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtktoolbar.signal.orientation-changed.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtktoolbar.signal.style-changed.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">orientation-changed</span> </td><td width="20%" align="center"><a href="gtk.gtktoolbar.html#idp82014992">Up</a></td><td width="40%" align="right"> <span dir="ltr">style-changed</span></td></tr></table></div></body></html>

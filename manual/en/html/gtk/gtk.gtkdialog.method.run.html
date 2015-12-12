@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkDialog::run</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkdialog.html#idp62461072" title=""><link rel="previous" href="gtk.gtkdialog.method.response.html" title="GtkDialog::response"><link rel="next" href="gtk.gtkdialog.method.set_default_response.html" title="GtkDialog::set_default_response"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkdialog.method.response.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkDialog::run</span></th><td width="20%" align="right"> <a href="gtk.gtkdialog.method.set_default_response.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkdialog.method.run"></a><h2><span dir="ltr">GtkDialog::run</span></h2><p><div class="funcsynopsis" id="idp62503360"><p></p><a name="idp62503360"></a>int run();</div></p>
+    <p>
+     This is the method that allows you to analyze the response generated
+     by the dialog. When you call this method on a
+     <span dir="ltr"><a href="gtk.gtkdialog.html">GtkDialog</a></span>, the main GTK loop is blocked until
+     the dialog is either destroyed or emits a response signal.
+    </p>
+    <p>
+     The dialog is also automatically set as the modal type, and the show
+     method is also called automatically. However, you need to show any
+     child widgets yourself.
+    </p>
+    <p>
+     It is highly recommended to generate a response signal to exit from
+     the run loop. If you destroy the dialog when the loop is being run,
+     then your post-run code will not know whether the dialog was actually
+     destroyed or not.
+    </p>
+    <p>
+     The function will return the response ID as soon as one is generated
+     and exit itself. Note that you need to destroy the dialog manually when 
+     you have processed the response. 
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkdialog.method.response.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkdialog.method.set_default_response.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkDialog::response</span> </td><td width="20%" align="center"><a href="gtk.gtkdialog.html#idp62461072">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkDialog::set_default_response</span></td></tr></table></div></body></html>

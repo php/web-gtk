@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkIconFactory</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkhseparator.constructor.html" title="GtkHSeparator Constructor"><link rel="next" href="gtk.gtkiconfactory.constructor.html" title="GtkIconFactory Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkhseparator.constructor.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkIconFactory</span></th><td width="20%" align="right"> <a href="gtk.gtkiconfactory.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkiconfactory"></a><h2 class="title"><span dir="ltr">GtkIconFactory</span></h2><p><blockquote>
+   A collection of a set of variants for a particular icon.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkiconfactory.html">GtkIconFactory</a></span><br></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    An icon factory helps you to manage a collection of GtkIconSets; and a
+    GtkIconSet manages a set of variants for a particular icon, that is, variants
+    for different sizes and widget states. Icons in an icon factory are named by
+    a Stock ID, which a simple string identifying the icon.
+   </p>
+   <p>
+    Each <span dir="ltr"><a href="gtk.gtkstyle.html">GtkStyle</a></span> has a list of
+    <span dir="ltr"><a href="gtk.gtkiconfactory.html">GtkIconFactory</a></span>s derived from the current theme; those
+    icon factories are consulted first when searching for an icon. If the theme
+    doesn't set a particular icon, PHP-GTK 2 looks for it in a list of default
+    icon factories, which are maintained by 
+    <span dir="ltr"><a href="gtk.gtkiconfactory.method.add_default.html">add_default()</a></span>  and 
+    <span dir="ltr"><a href="gtk.gtkiconfactory.method.remove_default.html">remove_default()</a></span> .
+   </p>
+   <p>
+    Applications with icons must add a default icon factory to their icons,
+    which will allow themes to override the icons for the application.
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp66843616"><p></p><a name="idp66843616"></a> <span dir="ltr"><a href="gtk.gtkiconfactory.constructor.html">GtkIconFactory</a></span> ();</div></p> --
+    Creates a new <span dir="ltr"><a href="gtk.gtkiconfactory.html">GtkIconFactory</a></span> to manage icon sets.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkiconfactory.method.add.html">add()</a></span> </dt><dd> 
+    Adds a new <span dir="ltr"><a href="gtk.gtkiconset.html">GtkIconSet</a></span> to the icon factory.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconfactory.method.add_default.html">add_default()</a></span> </dt><dd> 
+    Adds the icon factory to list of default factories.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconfactory.method.lookup.html">lookup()</a></span> </dt><dd> 
+    Searches for a <span dir="ltr"><a href="gtk.gtkiconset.html">GtkIconSet</a></span> in current icon factory.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconfactory.method.lookup_default.html">lookup_default()</a></span> </dt><dd> 
+    Searches for a <span dir="ltr"><a href="gtk.gtkiconset.html">GtkIconSet</a></span> in default icon factories.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkiconfactory.method.remove_default.html">remove_default()</a></span> </dt><dd> 
+    Removes an icon factory from the list of default factories.
+   </dd></blockquote></div></p></div>
+
+  
+
+ 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkhseparator.constructor.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkiconfactory.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkHSeparator</span> Constructor </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkIconFactory</span> Constructor</td></tr></table></div></body></html>

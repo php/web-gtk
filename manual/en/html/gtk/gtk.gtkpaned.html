@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkPaned</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkoptionmenu.signal.changed.html" title="changed"><link rel="next" href="gtk.gtkpaned.method.add1.html" title="GtkPaned::add1"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkoptionmenu.signal.changed.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkPaned</span></th><td width="20%" align="right"> <a href="gtk.gtkpaned.method.add1.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkpaned"></a><h2 class="title"><span dir="ltr">GtkPaned</span></h2><p><blockquote>
+   A base class for GtkHPaned and GtkVPaned.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkpaned.html">GtkPaned</a></span><br></div></blockquote></p><p><h3>Direct Subclasses</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="gtk.gtkhpaned.html">GtkHPaned</a></span>, <span dir="ltr"><a href="gtk.gtkvpaned.html">GtkVPaned</a></span></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    GtkPaned is the base class for widgets with two panes, arranged either
+    horizontally (<span dir="ltr"><a href="gtk.gtkhpaned.html">GtkHPaned</a></span>) or vertically
+    (<span dir="ltr"><a href="gtk.gtkvpaned.html">GtkVPaned</a></span>).
+    Child widgets are added to the panes of the widget with
+    <span dir="ltr"><a href="gtk.gtkpaned.method.pack1.html">pack1()</a></span>  and
+    <span dir="ltr"><a href="gtk.gtkpaned.method.pack2.html">pack2()</a></span> . The division beween the two
+    children is set by default from the size requests of the children, but it
+    can be adjusted by the user. 
+   </p>
+   <p>
+    A paned widget draws a separator between the two child widgets and a small
+    handle that the user can drag to adjust the division. It does not draw any
+    relief around the children or around the separator. (The space in which
+    the separator is called the gutter.) Often, it is useful to put each child
+    inside a GtkFrame with the shadow type set to
+    <span dir="ltr"><a href="gtk.enum.shadowtype.html">Gtk::SHADOW_IN</a></span> so that the
+    gutter appears as a ridge.
+   </p>
+   <p>
+    Each child has two options that can be set, resize and shrink. If resize is
+    <span dir="ltr"><tt>true</tt></span>, then when the GtkPaned is resized, that child will
+    expand or shrink along with the paned widget. If shrink is
+    <span dir="ltr"><tt>true</tt></span>, then when that child can be made smaller than its
+    requisition by the user. Setting shrink to <span dir="ltr"><tt>false</tt></span> allows
+    the application to set a minimum size. If resize is <span dir="ltr"><tt>false</tt></span>
+    for both children, then this is treated as if resize is true for both
+    children.
+   </p>
+   <p>
+    The application can set the position of the slider as if it were set
+    by the user, by calling <span dir="ltr"><a href="gtk.gtkpaned.method.set_position.html">set_position()</a></span> .
+   </p>
+  </blockquote></p><p><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkpaned.method.add1.html">add1()</a></span> </dt><dd> 
+    Adds a child to the top or left pane.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkpaned.method.add2.html">add2()</a></span> </dt><dd> 
+    Adds a child to the bottom or right pane.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkpaned.method.compute_position.html">compute_position()</a></span> </dt><dd> 
+    Calculates the position of the separator.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkpaned.method.get_child1.html">get_child1()</a></span> </dt><dd> 
+    Obtains the first child of the paned widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkpaned.method.get_child2.html">get_child2()</a></span> </dt><dd> 
+    Obtains the second child of the paned widget.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkpaned.method.get_position.html">get_position()</a></span> </dt><dd> 
+    Obtains the position of the divider between the two panes.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkpaned.method.pack1.html">pack1()</a></span> </dt><dd> 
+    Adds a child to the top or left pane.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkpaned.method.pack2.html">pack2()</a></span> </dt><dd> 
+    Adds a child to the bottom or right pane.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkpaned.method.set_position.html">set_position()</a></span> </dt><dd> 
+    Sets the position of the divider between the two panes.
+   </dd></blockquote></div><h3>Properties</h3><p>Use get_property and set_property methods to access these.</p><blockquote><dt><span dir="ltr"><a href="gtk.gtkpaned.property.max-position.html">max-position</a></span>:</dt><dd> 
+    The largest possible value for the position property.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkpaned.property.min-position.html">min-position</a></span>:</dt><dd> 
+    The smallest possible value for the position property.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkpaned.property.position.html">position</a></span>:</dt><dd> 
+    Position of paned separator in pixels.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkpaned.property.position-set.html">position-set</a></span>:</dt><dd> 
+    If the Position property should be used.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkpaned.property.resize.html">resize</a></span>:</dt><dd> 
+    Child property: Whether the child expands and shrinks.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkpaned.property.shrink.html">shrink</a></span>:</dt><dd> 
+    Child property: Whether the child can be made smaller
+    than its requisition.
+   </dd></blockquote><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtkpaned.signal.accept-position.html">accept-position</a>"</span></dt><dd> 
+    Set gutter position and activate the child widget.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkpaned.signal.cancel-position.html">cancel-position</a>"</span></dt><dd> 
+    Cancels gutter positioning.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkpaned.signal.cycle-child-focus.html">cycle-child-focus</a>"</span></dt><dd> 
+    Cycles the focus between children.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkpaned.signal.cycle-handle-focus.html">cycle-handle-focus</a>"</span></dt><dd> 
+    Cycles the focus between children.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkpaned.signal.move-handle.html">move-handle</a>"</span></dt><dd> 
+    Moves the gutter.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkpaned.signal.toggle-handle-focus.html">toggle-handle-focus</a>"</span></dt><dd> 
+    Focus shall be transferred to the gutter.
+   </dd></blockquote></p></div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+ 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+ 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkoptionmenu.signal.changed.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkpaned.method.add1.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">changed</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkPaned::add1</span></td></tr></table></div></body></html>

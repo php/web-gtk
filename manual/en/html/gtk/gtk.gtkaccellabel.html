@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkAccelLabel</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkaccelgroup.signal.accel-changed.html" title="accel-changed"><link rel="next" href="gtk.gtkaccellabel.constructor.html" title="GtkAccelLabel Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkaccelgroup.signal.accel-changed.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkAccelLabel</span></th><td width="20%" align="right"> <a href="gtk.gtkaccellabel.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkaccellabel"></a><h2 class="title"><span dir="ltr">GtkAccelLabel</span></h2><div style="float:right; border:1px solid #000;"><img src="../images/reference/gtk/gtkaccellabel.png"></div><p><blockquote>
+   A label which displays an accelerator key on the right of the text
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkmisc.html">GtkMisc</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtklabel.html">GtkLabel</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkaccellabel.html">GtkAccelLabel</a></span><br></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    The GtkAccelLabel widget is a subclass of <span dir="ltr"><a href="gtk.gtklabel.html">GtkLabel</a></span>
+    that also displays an accelerator key on the right of the label text,
+    e.g. '<span dir="ltr"><tt>Ctl+S</tt></span>'. It is commonly used in menus to show the
+    keyboard short-cuts for commands. 
+   </p>
+   <p>
+    The accelerator key to display is not set explicitly. Instead, the
+    GtkAccelLabel displays the accelerators which have been added to a
+    particular widget. This widget is set by calling
+    <span dir="ltr"><a href="gtk.gtkaccellabel.method.set_accel_widget.html">set_accel_widget()</a></span> .
+   </p>
+   <p>
+    For example, a <span dir="ltr"><a href="gtk.gtkmenuitem.html">GtkMenuItem</a></span> widget may have an
+    accelerator added to emit the "activate" signal when the
+    '<span dir="ltr"><tt>Ctl+S</tt></span>' key combination is pressed. A GtkAccelLabel is
+    created and added to the <span dir="ltr"><a href="gtk.gtkmenuitem.html">GtkMenuItem</a></span>, and
+    <span dir="ltr"><a href="gtk.gtkaccellabel.method.set_accel_widget.html">set_accel_widget()</a></span>  is called
+    with the GtkMenuItem as the second argument.
+    The GtkAccelLabel will now display '<span dir="ltr"><tt>Ctl+S</tt></span>' after its
+    label.
+   </p>
+   <p>
+    A GtkAccelLabel will only display accelerators which have 
+    <span dir="ltr"><tt>Gtk::ACCEL_VISIBLE</tt></span> set (see
+    <span dir="ltr"><a href="gtk.enum.accelflags.html">GtkAccelFlags</a></span>). A GtkAccelLabel can display multiple
+    accelerators and even signal names, though it is almost always used to
+    display just one accelerator key.
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp55037648"><p></p><a name="idp55037648"></a> <span dir="ltr"><a href="gtk.gtkaccellabel.constructor.html">GtkAccelLabel</a></span> (string <i><tt>label</tt></i>);</div></p> --
+    Creates a new GtkAccelLabel.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkaccellabel.method.accelerator_width.html">accelerator_width()</a></span> </dt><dd> 
+    DEPRECATED.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaccellabel.method.get_accel_widget.html">get_accel_widget()</a></span> </dt><dd> 
+    Fetches the widget monitored by this accelerator label.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaccellabel.method.get_accel_width.html">get_accel_width()</a></span> </dt><dd> 
+    Returns the width needed to display the accelerator key(s).
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaccellabel.method.refetch.html">refetch()</a></span> </dt><dd> 
+    Recreates the string representing the accelerator keys.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkaccellabel.method.set_accel_widget.html">set_accel_widget()</a></span> </dt><dd> 
+    Sets the widget to be monitored by this accelerator label.
+   </dd></blockquote></div></p></div>
+
+  
+
+ 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkaccelgroup.signal.accel-changed.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkaccellabel.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">accel-changed</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkAccelLabel</span> Constructor</td></tr></table></div></body></html>

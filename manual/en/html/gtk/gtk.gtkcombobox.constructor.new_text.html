@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkComboBox Constructor</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkcombobox.html#idp60592560" title=""><link rel="previous" href="gtk.gtkcombobox.constructor.html" title="GtkComboBox Constructor"><link rel="next" href="gtk.gtkcombobox.method.append_text.html" title="GtkComboBox::append_text"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkcombobox.constructor.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkComboBox</span> Constructor</th><td width="20%" align="right"> <a href="gtk.gtkcombobox.method.append_text.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkcombobox.constructor.new_text"></a><h2><span dir="ltr">GtkComboBox</span> Constructor</h2><p><div class="funcsynopsis" id="idp60603680"><p></p><a name="idp60603680"></a> <span dir="ltr"><a href="gtk.gtkcombobox.constructor.new_text.html">GtkComboBox::new_text</a></span> ();</div></p>
+    <p>
+        The new_text function is a convenience function that
+        constructs a new text combo box, which is a <span dir="ltr"><a href="gtk.gtkcombobox.html">GtkComboBox</a></span> just displaying
+        strings. If you use this function to create a text combo box, you should only manipulate
+        its data source with the following convenience methods:
+        <span dir="ltr"><a href="gtk.gtkcombobox.method.append_text.html">append_text()</a></span> ,
+        <span dir="ltr"><a href="gtk.gtkcombobox.method.prepend_text.html">prepend_text()</a></span> ,
+        <span dir="ltr"><a href="gtk.gtkcombobox.method.insert_text.html">insert_text()</a></span>  and
+        <span dir="ltr"><a href="gtk.gtkcombobox.method.remove_text.html">remove_text()</a></span> 
+    </p>
+    <p>
+     <div class="example" align="left"><p><a name="idp60612784"></a><b>Example 50. Creating a Text GtkComboBox</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+// Create a new window.
+$window = new GtkWindow();
+
+// Set the window up to close cleanly.
+$window-&gt;connect_simple('destroy', array('Gtk', 'main_quit'));
+
+// Create a text combobox.
+$combo = GtkComboBox::new_text();
+
+// Add some values.
+$combo-&gt;append_text('New Jersey');
+$combo-&gt;append_text('New Mexico');
+$combo-&gt;append_text('New York');
+
+// Add the combobox to the window.
+$window-&gt;add($combo);
+
+// Show the window and its contents.
+$window-&gt;show_all();
+
+// Start the main loop.
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+    </p>
+    <p>
+     This method must be called statically.
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkcombobox.constructor.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkcombobox.method.append_text.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkComboBox</span> Constructor </td><td width="20%" align="center"><a href="gtk.gtkcombobox.html#idp60592560">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkComboBox::append_text</span></td></tr></table></div></body></html>

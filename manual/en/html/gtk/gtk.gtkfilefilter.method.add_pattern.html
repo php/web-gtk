@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkFileFilter::add_pattern</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkfilefilter.html#idp65158928" title=""><link rel="previous" href="gtk.gtkfilefilter.method.add_mime_type.html" title="GtkFileFilter::add_mime_type"><link rel="next" href="gtk.gtkfilefilter.method.add_pixbuf_formats.html" title="GtkFileFilter::add_pixbuf_formats"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkfilefilter.method.add_mime_type.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkFileFilter::add_pattern</span></th><td width="20%" align="right"> <a href="gtk.gtkfilefilter.method.add_pixbuf_formats.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkfilefilter.method.add_pattern"></a><h2><span dir="ltr">GtkFileFilter::add_pattern</span></h2><p><div class="funcsynopsis" id="idp65182704"><p></p><a name="idp65182704"></a>void add_pattern(string <i><tt>pattern</tt></i>);</div></p>
+    <p>
+     Use the method when you want to restrict the files to be displayed on
+     the basis of their names. The pattern that you pass as an argument
+     should a shell style <span dir="ltr"><tt>glob</tt></span>, that is, a minimalist
+     regular expression that specifies what range of names you wish to
+     match.
+    </p>
+    <p>
+     For example,
+     <table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+     
+        $x = new GtkFileFilter();
+        $x-&gt;add_pattern("*conf");
+     
+     </pre></td></tr></table>
+     will list allow the file filter to display only those files that end
+     with <span dir="ltr"><tt>conf</tt></span>.
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkfilefilter.method.add_mime_type.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkfilefilter.method.add_pixbuf_formats.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkFileFilter::add_mime_type</span> </td><td width="20%" align="center"><a href="gtk.gtkfilefilter.html#idp65158928">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkFileFilter::add_pixbuf_formats</span></td></tr></table></div></body></html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>Installation on Mac OS X</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="tutorials.installation.html" title="Installing PHP-GTK 2"><link rel="previous" href="tutorials.installation.linux.html" title="Installation on Linux"><link rel="next" href="tutorials.installation.macosx-stepbystep.html" title="Installation on Mac OS X - step by step"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Installing PHP-GTK 2</th></tr><tr><td width="20%" align="left"><a href="tutorials.installation.linux.html">Prev</a> </td><th width="60%" align="center">Installation on Mac OS X</th><td width="20%" align="right"> <a href="tutorials.installation.macosx-stepbystep.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="tutorials.installation.macosx"></a><div class="titlepage"><div><h2 class="title" style="clear: all"><a name="tutorials.installation.macosx"></a>Installation on Mac OS X</h2></div></div><p>
+   You need to make sure you have the Apple Developer Tools, BSD Subsystem,
+   and an installation of X before you try installing PHP-GTK 2. Although
+   the BSD subsystem is installed by default on Mac OS X, you need select
+   the Developer Tools and X Server manually. Although you can use any X
+   server, the easiest would be to use the one Apple provides by default on
+   it's Mac OS X installer.
+  </p><p>
+   Get <a href="http://www.macports.org/" target="_top">MacPorts</a> (previously knows as
+   DarwinPorts) or <a href="http://fink.sourceforge.net/" target="_top">Fink</a> and install it. You
+   can use either to install a version of X (if you decided not to use
+   Apple's default distribution), and Gtk+ itself. Both Fink and MacPorts
+   provide versions 2.6 and above of Gtk+. Also make sure you have a version
+   of PHP that is atleast 5.2, MacPorts provides a package. Type
+   <span dir="ltr"><tt>php -v</tt></span> on your Terminal to find out your version.
+   If you want to manually compile PHP you can do so:
+
+   <table class="programlisting" dir="ltr"><tr><td><pre class="programlisting">
+$ cvs -d :pserver:cvsread@cvs.php.net:/repository co -r PHP_5_2 php-src
+$ cd php-src
+$ ./buildconf
+$ ./configure --disable-cgi
+$ make
+$ sudo make install</pre></td></tr></table>
+   Although you may install it anywhere, <tt>/usr/local/</tt> is
+   usually considered a good place. MacPorts installs PHP into
+   <tt>/opt/local/</tt>.
+  </p><p>
+   Now get the latest checkout of PHP-GTK and compile it:
+
+   <table class="programlisting" dir="ltr"><tr><td><pre class="programlisting">
+$ cd..
+$ cvs -d :pserver:cvsread@cvs.php.net:/repository co php-gtk
+$ cd php-gtk
+$ ./buildconf --with-phpize=/usr/local/bin/phpize
+$ ./configure --with-php-config=/usr/local/bin/php-config \
+            --disable-libglade
+$ make
+$ sudo make install</pre></td></tr></table>
+   Remember to replace <tt>/usr/local/</tt> with the actual directory
+   in which you installed PHP. For example, if you installed PHP 5.2 using
+   MacPorts, you would enter <tt>/opt/local/</tt> instead.
+  </p><p>
+   Finally, copy over the <tt>php.ini-recommended</tt> file
+   to <tt>/usr/local/lib/php.ini</tt> and change the value of
+   <span dir="ltr"><tt>extension_dir</tt></span> to the directory where
+   <span dir="ltr"><tt>php_gtk2.so</tt></span> resides. This is usually something like:
+   <span dir="ltr"><tt>/usr/local/lib/php/extensions/no-debug-non-zts-some-date</tt></span>.
+   You may want to create a new symbolic link in <tt>/usr/bin/</tt>
+   that points to <tt>/usr/local/bin/php</tt>. Again, the directory
+   may be <tt>/opt/local/</tt> instead of
+   <tt>/usr/local/</tt> depending on where your installation of PHP
+   resides.
+  </p><p>
+   Now continue with
+   <a href="tutorials.installation.linux.html#tutorials.installation.linux.testing" title="Testing your installation">Testing
+   your installation</a>.
+  </p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="tutorials.installation.linux.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="tutorials.installation.macosx-stepbystep.html">Next</a></td></tr><tr><td width="40%" align="left">Installation on Linux </td><td width="20%" align="center"><a href="tutorials.installation.html">Up</a></td><td width="40%" align="right"> Installation on Mac OS X - step by step</td></tr></table></div></body></html>

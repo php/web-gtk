@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkFileFilter::add_custom</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkfilefilter.html#idp65158928" title=""><link rel="previous" href="gtk.gtkfilefilter.constructor.html" title="GtkFileFilter Constructor"><link rel="next" href="gtk.gtkfilefilter.method.add_mime_type.html" title="GtkFileFilter::add_mime_type"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkfilefilter.constructor.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkFileFilter::add_custom</span></th><td width="20%" align="right"> <a href="gtk.gtkfilefilter.method.add_mime_type.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkfilefilter.method.add_custom"></a><h2><span dir="ltr">GtkFileFilter::add_custom</span></h2><p><div class="funcsynopsis" id="idp65160000"><p></p><a name="idp65160000"></a>void add_custom(<span dir="ltr"><a href="gtk.enum.filefilterflags.html">GtkFileFilterFlags</a></span> <i><tt>flags</tt></i>, <i><tt>callback</tt></i> [, <i><tt>user_param</tt></i>]);</div></p>
+    <p>
+     Sometimes is filtering by mime type or file name pattern
+     not enough, and you need to define your own method that
+     checks a file for validity. <i>add_custom</i> allows
+     exactly this.
+    </p>
+    <p>
+     The callback function referred in the <i><tt>callback</tt></i> parameter
+     needs by default one parameter; it's an array of four values containing
+     either <span dir="ltr"><tt>null</tt></span> or a string - depending on the settings
+     in <i><tt>flags</tt></i>. The first element is the file name, second
+     is the URI of the file. Third array element is the "display name" that is
+     displayed in the file chooser, and the fourth element is the mime type of
+     the file.
+    </p>
+    <table class="screen" dir="ltr"><tr><td><pre class="screen">array(4) {
+  [0]=&gt;
+  string(48) "/data/cvs/phpgtk2/test/window_set_icon_list.phpw"
+  [1]=&gt;
+  string(55) "file:///data/cvs/phpgtk2/test/window_set_icon_list.phpw"
+  [2]=&gt;
+  string(25) "window_set_icon_list.phpw"
+  [3]=&gt;
+  string(17) "application/x-php"
+}</pre></td></tr></table>
+    <p>
+     You may pass any number of user defined parameters after the
+     <i><tt>callback</tt></i> parameter; they get also passed to
+     the callback function.
+    </p>
+    <p>
+     Your callback needs to return <span dir="ltr"><tt>true</tt></span> if the file matches
+     your filter and shall be displayed, <span dir="ltr"><tt>false</tt></span> if not.
+    </p>
+    <div class="example" align="left"><p><a name="idp65173456"></a><b>Example 65. Filtering files by characters</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+/**
+*   Our file check function. It returns
+*   true whenever a file matches our requirements.
+*/
+function fileCheck($info, $char) {
+    $display_name = $info[2];
+    return strpos($display_name, $char) !== false;
+}
+
+//Create a new file filter
+$filterA = new GtkFileFilter();
+//Set a name so we can recognize it in the file dialog
+$filterA-&gt;set_name('My first custom filter "a"');
+/**
+*   Add our filter:
+*   - first the information we need about the files
+*   - second the callback function's name
+*   - the third parameter is normally not needed;
+*       here it's a user-defined parameter that lets us
+*       customize the filter function a bit.
+*/
+$filterA-&gt;add_custom(
+    Gtk::FILE_FILTER_DISPLAY_NAME | Gtk::FILE_FILTER_MIME_TYPE,
+    'fileCheck',
+    'a'
+);
+
+//Add a second one with different filter parameter
+$filterB = new GtkFileFilter();
+$filterB-&gt;set_name('My first custom filter "b"');
+$filterB-&gt;add_custom(
+    Gtk::FILE_FILTER_DISPLAY_NAME | Gtk::FILE_FILTER_MIME_TYPE,
+    'fileCheck', 'b'
+);
+
+//Now add those filters to the file dialog
+$filedlg = new GtkFileChooserDialog('custom filter demo');
+$filedlg-&gt;add_filter($filterA);
+$filedlg-&gt;add_filter($filterB);
+
+$filedlg-&gt;run();
+
+?&gt;</pre></td></tr></table></div>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkfilefilter.constructor.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkfilefilter.method.add_mime_type.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkFileFilter</span> Constructor </td><td width="20%" align="center"><a href="gtk.gtkfilefilter.html#idp65158928">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkFileFilter::add_mime_type</span></td></tr></table></div></body></html>

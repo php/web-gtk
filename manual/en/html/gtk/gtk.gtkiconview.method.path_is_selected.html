@@ -1,0 +1,16 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkIconView::path_is_selected</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkiconview.html#idp67478624" title=""><link rel="previous" href="gtk.gtkiconview.method.item_activated.html" title="GtkIconView::item_activated"><link rel="next" href="gtk.gtkiconview.method.select_all.html" title="GtkIconView::select_all"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkiconview.method.item_activated.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkIconView::path_is_selected</span></th><td width="20%" align="right"> <a href="gtk.gtkiconview.method.select_all.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkiconview.method.path_is_selected"></a><h2><span dir="ltr">GtkIconView::path_is_selected</span></h2><p><div class="funcsynopsis" id="idp67582240"><p></p><a name="idp67582240"></a>bool path_is_selected(GtkTreePath <i><tt>path</tt></i>);</div></p>
+    <p>
+     Checks if an item with a certain path is selected.
+    </p>
+    <p>
+     A tree path is a string of numbers and colons, e.g. 
+     <span dir="ltr"><tt>0:1:0</tt></span> which would point to the first child
+     of the second child of the first item in a tree.
+     As we won't have trees here, a simple 
+     <p><div class="informalexample" id="idp67587504"><p></p><a name="idp67587504"></a><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+       $iconview-&gt;path_is_selected(15);
+      </pre></td></tr></table></div></p>
+     is enough to check if the fifteenth item is selected.
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkiconview.method.item_activated.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkiconview.method.select_all.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkIconView::item_activated</span> </td><td width="20%" align="center"><a href="gtk.gtkiconview.html#idp67478624">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkIconView::select_all</span></td></tr></table></div></body></html>

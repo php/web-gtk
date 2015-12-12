@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkWindow::set_icon</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkwindow.html#idp90308480" title=""><link rel="previous" href="gtk.gtkwindow.method.set_has_frame.html" title="GtkWindow::set_has_frame"><link rel="next" href="gtk.gtkwindow.method.set_icon_from_file.html" title="GtkWindow::set_icon_from_file"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkwindow.method.set_has_frame.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkWindow::set_icon</span></th><td width="20%" align="right"> <a href="gtk.gtkwindow.method.set_icon_from_file.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkwindow.method.set_icon"></a><h2><span dir="ltr">GtkWindow::set_icon</span></h2><p><div class="funcsynopsis" id="idp90847488"><p></p><a name="idp90847488"></a>void set_icon(
+      
+       <span dir="ltr"><a href="../gdk/gdk.gdkpixbuf.html">GdkPixbuf</a></span> <i><tt>icon</tt></i>
+      
+     ]);</div></p>
+    <p>
+     Sets <i><tt>icon</tt></i> as the icon for the window. The icon
+     will be used when the window is minimized and may also be used in the
+     task manager or window frame.
+    </p>
+    <p>
+     The image should be set in its original size. Scaling will be done
+     automatically before the icon is shown.
+    </p>
+    <p>
+     If the image for the icon exists in multiple sizes, use <span dir="ltr"><a href="gtk.gtkwindow.method.set_icon_list.html">set_icon_list()</a></span> . The most appropriate size
+     image from the list will be used in each instance where the icon is
+     shown.
+    </p>
+    <div class="example" align="left"><p><a name="idp90855168"></a><b>Example 160. Using a stock icon as window icon</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">
+$wnd = new GtkWindow();
+$pixbuf = $wnd-&gt;render_icon(
+    Gtk::STOCK_FIND,
+    Gtk::ICON_SIZE_DIALOG
+);
+$wnd-&gt;set_icon($pixbuf);
+</pre></td></tr></table><p>
+      This example uses <span dir="ltr"><a href="gtk.gtkwidget.method.render_icon.html">render_icon()</a></span> 
+      to create a <span dir="ltr"><a href="../gdk/gdk.gdkpixbuf.html">GdkPixbuf</a></span> from a
+      <span dir="ltr"><a href="gtk.enum.stockitems.html">GtkStockItems</a></span> enum, together with a
+      <span dir="ltr"><a href="gtk.enum.iconsize.html">GtkIconSize</a></span> size definition.
+     </p></div>
+
+    <p>
+     See also:
+     <span dir="ltr"><a href="gtk.gtkwindow.method.get_icon.html">get_icon()</a></span> ,
+     <span dir="ltr"><a href="gtk.gtkwindow.method.set_icon_list.html">set_icon_list()</a></span> 
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkwindow.method.set_has_frame.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkwindow.method.set_icon_from_file.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkWindow::set_has_frame</span> </td><td width="20%" align="center"><a href="gtk.gtkwindow.html#idp90308480">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkWindow::set_icon_from_file</span></td></tr></table></div></body></html>

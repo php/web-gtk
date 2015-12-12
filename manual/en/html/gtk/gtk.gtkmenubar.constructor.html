@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkMenuBar Constructor</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkmenubar.html#idp71400144" title=""><link rel="previous" href="gtk.gtkmenubar.html" title="GtkMenuBar"><link rel="next" href="gtk.gtkmenuitem.html" title="GtkMenuItem"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkmenubar.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkMenuBar</span> Constructor</th><td width="20%" align="right"> <a href="gtk.gtkmenuitem.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkmenubar.constructor"></a><h2><span dir="ltr">GtkMenuBar</span> Constructor</h2><p><div class="funcsynopsis" id="idp71401104"><p></p><a name="idp71401104"></a> <span dir="ltr"><a href="gtk.gtkmenubar.constructor.html">GtkMenuBar</a></span> ();</div></p>
+    <p>
+     Use the constructor to create a new <span dir="ltr"><a href="gtk.gtkmenubar.html">GtkMenuBar</a></span>
+     widget and then add <span dir="ltr"><a href="gtk.gtkmenuitem.html">GtkMenuItem</a></span>s to it.
+    </p>
+    <div class="note" style="margin-left: 24px; margin-right: 24px; font-weight: bold;">
+     This widget is a subclass of <span dir="ltr"><a href="gtk.gtkmenushell.html">GtkMenuShell</a></span>,
+     hence all methods that can be applied to
+     <span dir="ltr"><a href="gtk.gtkmenushell.html">GtkMenuShell</a></span> may be used here.
+    </div>
+    <div class="example" align="left"><p><a name="idp71406960"></a><b>Example 101. Creating a simple menu bar</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//Create a simple menu bar
+$menubar = new GtkMenuBar();
+
+//Add File menu item with a dropdown menu
+$file = new GtkMenuItem('_File');
+$menubar-&gt;append($file);
+
+//Quit item
+$quit = new GtkMenuItem('_Quit');
+
+//This menu will popup when the File menu is activated
+$mnuFile = new GtkMenu();
+//Add the Quit item to the File popup menu
+$mnuFile-&gt;append($quit);
+
+//Set the popupmenu of the File menu item
+$file-&gt;set_submenu($mnuFile);
+
+
+//another menu item
+$edit = new GtkMenuItem('_Edit');
+$menubar-&gt;append($edit);
+
+
+//Add the menu bar to the window
+$wnd = new GtkWindow();
+$wnd-&gt;add($menubar);
+
+$wnd-&gt;connect_simple('destroy', array('Gtk', 'main_quit'));
+$wnd-&gt;show_all();
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkmenubar.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkmenuitem.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkMenuBar</span> </td><td width="20%" align="center"><a href="gtk.gtkmenubar.html#idp71400144">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkMenuItem</span></td></tr></table></div></body></html>

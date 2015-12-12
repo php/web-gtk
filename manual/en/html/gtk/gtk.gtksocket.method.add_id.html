@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkSocket::add_id</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtksocket.html#idp76121120" title=""><link rel="previous" href="gtk.gtksocket.constructor.html" title="GtkSocket Constructor"><link rel="next" href="gtk.gtksocket.method.get_id.html" title="GtkSocket::get_id"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtksocket.constructor.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkSocket::add_id</span></th><td width="20%" align="right"> <a href="gtk.gtksocket.method.get_id.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtksocket.method.add_id"></a><h2><span dir="ltr">GtkSocket::add_id</span></h2><p><div class="funcsynopsis" id="idp76122080"><p></p><a name="idp76122080"></a>void add_id(<i><tt>window_id</tt></i>);</div></p>
+    <p>
+      This method adds an <a href="http://standards.freedesktop.org/xembed-spec/xembed-spec-latest.html" target="_top">XEmbed</a>
+      client specified by <span dir="ltr"><tt>window_id</tt></span> to the
+      <span dir="ltr"><a href="gtk.gtksocket.html">GtkSocket</a></span>. The client may be in the same process or
+      in a different process.
+    </p>
+    <p>
+      You can embed a <span dir="ltr"><a href="gtk.gtkplug.html">GtkPlug</a></span> in a
+      <span dir="ltr"><a href="gtk.gtksocket.html">GtkSocket</a></span> using one of two methods.
+    </p>
+    <p>
+      Create the <span dir="ltr"><a href="gtk.gtkplug.html">GtkPlug</a></span>, then call <span dir="ltr"><a href="gtk.gtkplug.method.get_id.html">get_id()</a></span>  to get the window ID of the plug, and
+      finally pass that to <span dir="ltr"><a href="gtk.gtksocket.method.add_id.html">add_id()</a></span> 
+    </p>
+    <p>
+      Call the <span dir="ltr"><a href="gtk.gtksocket.method.get_id.html">get_id()</a></span>  method to get the
+      window ID for the socket, then create the <span dir="ltr"><a href="gtk.gtkplug.html">GtkPlug</a></span>
+      passing in that ID. The <span dir="ltr"><a href="gtk.gtksocket.html">GtkSocket</a></span> must have already
+      be added into a toplevel window before you can make this call.
+     See also:
+     <span dir="ltr"><a href="gtk.gtksocket.method.get_id.html">get_id()</a></span> 
+    </p>
+
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtksocket.constructor.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtksocket.method.get_id.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkSocket</span> Constructor </td><td width="20%" align="center"><a href="gtk.gtksocket.html#idp76121120">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkSocket::get_id</span></td></tr></table></div></body></html>

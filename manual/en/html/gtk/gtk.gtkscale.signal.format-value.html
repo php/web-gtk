@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>format-value</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkscale.html#idp75131888" title=""><link rel="previous" href="gtk.gtkscale.method.set_value_pos.html" title="GtkScale::set_value_pos"><link rel="next" href="gtk.gtkscrollbar.html" title="GtkScrollbar"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkscale.method.set_value_pos.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">format-value</span></th><td width="20%" align="right"> <a href="gtk.gtkscrollbar.html">Next</a></td></tr></table><hr></div><a name="gtk.gtkscale.signal.format-value"></a><h2><span dir="ltr">format-value</span></h2><p>
+    <p>
+     Signal which allows the display value of the scale to be changed. 
+    </p>
+    <p>
+     A signal handler can be connected to this signal to allow the display
+     value of the scale to be changed from the default. The callback will be
+     passed both the scale and the current value. The callback should return a
+     string representing the value as it is to be displayed.
+    </p>
+    <p>
+     <div class="example" align="left"><p><a name="idp75138976"></a><b>Example 110. Formatting the Value of a Scale</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+// Callback to format the value of the scale.
+function format_value($scale, $value)
+{
+	return 'Value: ' . $value;
+}
+
+// Create a window.
+$window = new GtkWindow();
+
+// Set it up to close cleanly.
+$window-&gt;connect_simple('destroy', array('Gtk', 'main_quit'));
+
+// Create a scale.
+$scale = new GtkHScale(new GtkAdjustment(5, 0, 10));
+
+// Create a signal handler for the format-value signal.
+$scale-&gt;connect('format-value', 'format_value');
+
+// Add the scale to the window.
+$window-&gt;add($scale);
+
+// Show the window.
+$window-&gt;show_all();
+
+// Start the main loop.
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+     This code will produce the window shown below.
+     <p><img src="../images/reference/gtk/gtkscale/format-value.png"></p> 
+    </p>
+   </p><p><b>Callback function</b></p><p><p><div class="funcsynopsis" id="idp75133376"><p></p><a name="idp75133376"></a>callback callback(GtkScale <i><tt>scale</tt></i>, double <i><tt>value</tt></i>);</div></p></p><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkscale.method.set_value_pos.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkscrollbar.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkScale::set_value_pos</span> </td><td width="20%" align="center"><a href="gtk.gtkscale.html#idp75131888">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkScrollbar</span></td></tr></table></div></body></html>

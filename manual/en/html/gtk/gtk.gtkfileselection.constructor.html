@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkFileSelection Constructor</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkfileselection.html#idp65322176" title=""><link rel="previous" href="gtk.gtkfileselection.html" title="GtkFileSelection"><link rel="next" href="gtk.gtkfileselection.method.complete.html" title="GtkFileSelection::complete"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkfileselection.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkFileSelection</span> Constructor</th><td width="20%" align="right"> <a href="gtk.gtkfileselection.method.complete.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkfileselection.constructor"></a><h2><span dir="ltr">GtkFileSelection</span> Constructor</h2><p><div class="funcsynopsis" id="idp65323184"><p></p><a name="idp65323184"></a> <span dir="ltr"><a href="gtk.gtkfileselection.constructor.html">GtkFileSelection</a></span> ([string <i><tt>title = null</tt></i>]);</div></p>
+    <p>
+     Use the constructor to create a prompt for the user to select a file or
+     directory. By default, a <span dir="ltr"><a href="gtk.gtktreeview.html">GtkTreeView</a></span> of the
+     application's current working directory and its file listing will be
+     displayed. Operation buttons and the drop-down history of directories
+     are also visible.
+    </p>
+    <div class="example" align="left"><p><a name="idp65328256"></a><b>Example 67. An example for a GtkFileSelection prompt.</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//Creating and initialising the file selection prompt
+$filePrompt = new GtkFileSelection('GtkFileSelection Demo');
+$filePrompt-&gt;connect_simple(
+    'destroy',
+    array('Gtk', 'main_quit')
+);
+
+//Adding a quit button that destroys the prompt
+$filePrompt-&gt;cancel_button-&gt;set_label('Quit');
+$filePrompt-&gt;cancel_button-&gt;connect_simple(
+    'clicked',
+    array($filePrompt, 'destroy')
+);
+
+//Add an OK button that displays the file selected on click
+$filePrompt-&gt;ok_button-&gt;set_label('Show the file');
+$filePrompt-&gt;ok_button-&gt;connect('clicked', 'showFile');
+
+//Callback function that displays the file name
+function showFile($okbutton)
+{
+    $filePrompt = $okbutton-&gt;get_toplevel();
+    $fileName = $filePrompt-&gt;get_filename();
+    $message = new GtkMessageDialog(
+        null,
+        0,
+        Gtk::MESSAGE_INFO,
+        Gtk::BUTTONS_OK,
+        'You selected: ' . $fileName
+    );
+    $message-&gt;run();
+    $message-&gt;destroy();
+}
+
+//Show the prompt and start the main loop
+$filePrompt-&gt;show();
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkfileselection.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkfileselection.method.complete.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkFileSelection</span> </td><td width="20%" align="center"><a href="gtk.gtkfileselection.html#idp65322176">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkFileSelection::complete</span></td></tr></table></div></body></html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>Writing Documentation</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="tutorials.doccing.html" title="PHP-GTK 2 Documentation"><link rel="previous" href="tutorials.doccing.translating.html" title="Translating the Manual"><link rel="next" href="tutorials.doccing.standards.html" title="Coding standards"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">PHP-GTK 2 Documentation</th></tr><tr><td width="20%" align="left"><a href="tutorials.doccing.translating.html">Prev</a> </td><th width="60%" align="center">Writing Documentation</th><td width="20%" align="right"> <a href="tutorials.doccing.standards.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="tutorials.doccing.writing"></a><div class="titlepage"><div><h2 class="title" style="clear: all"><a name="tutorials.doccing.writing"></a>Writing Documentation</h2></div></div><p>
+   This chapter deals with actually contributing to PHP-GTK 2 documentation. If
+   you have further questions, feel free to ask them on the
+   <a href="mailto:php-gtk-doc@lists.php.net" target="_top">php-gtk-doc mailing list</a>.
+  </p><p>
+   If you have written some documentation, you probably want it to go
+   into the official manual. Please send your files by mail to the php-gtk-doc
+   mailing list mentioned above, or to one of the contributors listed
+   on the <a href="../appendix.doccredits.html">documentation credits</a> page.
+   They will put your work in the official sources on the CVS server.
+   If you contribute to the docs regularly, you can get a CVS account. Ask
+   about it at the documentation mailing list.
+  </p><p>
+   If you have a CVS account: <i>always</i> compile the manual
+   before committing changes! If there is an error in the xml, the nightly manual
+   generation will break and people will complain.
+  </p><div class="sect2"><a name="idp45269552"></a><div class="titlepage"><div><h3 class="title"><a name="idp45269552"></a>Finding something to do</h3></div></div><p>
+    The manual sources consist of over 300 single files, and so chances are
+    high that there are white spots in the docs. If you already have
+    noticed what's missing when browsing the manual, go ahead and fill the
+    white spot which interests you at most. If you don't know any empty 
+    places, search the manual files for <span dir="ltr"><tt>FIXME</tt></span> and
+    <span dir="ltr"><tt>TODO</tt></span> comments and start there.
+   </p></div><div class="sect2"><a name="tutorials.doccing.writing.dirstructure"></a><div class="titlepage"><div><h3 class="title"><a name="tutorials.doccing.writing.dirstructure"></a>Directory and file structure</h3></div></div><p>
+    As you might have noticed already, the manual sources are in the 
+    <tt>manual/</tt> directory, which contains folders for each
+    language. Have a look at <tt>manual/en/reference/</tt> - 
+    you will find folders for <span dir="ltr"><tt>gtk</tt></span>, <span dir="ltr"><tt>gdk</tt></span>.
+    Every class has it's own <span dir="ltr"><tt>xml</tt></span> file in one of the folders
+    - that allows multiple people to work on different parts of manual at the
+    same time, and it allows slower machines to open a manual file.
+   </p><p>
+    You probably won't need to add any files, because the skeleton for the
+    class docs should exist at least. If you have to add a new file,
+    be sure it's registered in <tt>manual/reference.xml</tt>
+    - it won't be included in the manual otherwise.
+   </p><p>
+    Class images have its own directory, <tt>images/</tt>. The 
+    directory structure is about the same as the one for the xml files;
+    for example the image for <span dir="ltr"><a href="../gtk/gtk.gtkaboutdialog.html">GtkAboutDialog</a></span> is at
+    <tt>images/reference/gtk/gtkaboutdialog.png</tt>. If you
+    create new images, make sure they are small. A file with 30kb is too
+    expensive, if you add all the image sizes up. Also make sure you use
+    <span dir="ltr"><tt>.png</tt></span> files, and reduce the color palette to a fixed
+    size to keep file size low.
+   </p><p>
+    Executable examples have their own directory <tt>examples/</tt>
+    with a structure similar to the images and the xml doc files, with the 
+    exception that every single class has its own directory. The file are
+    named after the function/method they give an example for:
+    <span dir="ltr"><a href="../gtk/gtk.gtkaboutdialog.method.set_logo.html">set_logo()</a></span>  function of
+    <span dir="ltr"><a href="../gtk/gtk.gtkaboutdialog.html">GtkAboutDialog</a></span> has to go into
+    <tt>examples/reference/gtk/gtkaboutdialog/set_logo.phpw</tt>.
+    Notice the file extension. The filename of the default constructor
+    is <tt>constructor.phpw</tt>.
+   </p></div><div class="sect2"><a name="tutorials.doccing.writing.basics"></a><div class="titlepage"><div><h3 class="title"><a name="tutorials.doccing.writing.basics"></a>Basics</h3></div></div><p>
+    One word first: Write the documentation with any program you
+    want to. I prefer the KDE text editor <span dir="ltr"><tt>Kate</tt></span>,
+    but a <span dir="ltr"><tt>vi</tt></span>, <span dir="ltr"><tt>emacs</tt></span> or even
+    <span dir="ltr"><tt>Notepad</tt></span> will do the job.
+    Note: If you use non-ASCII characters, you need to save the file
+    as <span dir="ltr"><tt>UTF-8</tt></span>.
+   </p><p>
+    The docs consist of structured text: You tell that a text is
+    in a paragraph, that the <i>word</i> shall get
+    special emphasis or that <span dir="ltr"><tt>another word</tt></span> is to
+    be taken literal. If you have written HTML pages, you will know
+    the concept. 
+   </p><p>
+    You might wonder why the docs don't use HTML tags:
+    It's because DocBook just describes the text structure, it doesn't
+    format it. HTML tries to separate layout (CSS) and content (XHTML)
+    as well, but DocBook can be used to produce not only HTML, but PDFs
+    and real books, too. There are many special elements in a book: Chapters,
+    sections, examples, and in a programming manual like this you have
+    methods, parameters, properties, signals and so on.
+    Each element has its own tag. This seems quite confusing when you start
+    with docbook, but it has its benefits: Complete control over the output.
+   </p><p>
+    The most basic element is <span dir="ltr"><tt>&lt;para&gt;</tt></span>, used to separate
+    text into paragraphs. Paragraphs contain other tags like links, filenames,
+    tables and so on. There is a special paragraph type
+    <span dir="ltr"><tt>&lt;simpara&gt;</tt></span> for paragraphs without any other tag
+    inside.
+   </p><p>
+    The next important tags are the links. Have a look at
+    <a href="tutorials.doccing.writing.html#tutorials.doccing.writing.linking" title="Linking">their section</a>.
+   </p><p>
+    You can <i>emphasise</i> words or groups of words via
+    <span dir="ltr"><tt>&lt;emphasis&gt;</tt></span>, or define <span dir="ltr"><tt>literals</tt></span>
+    with <span dir="ltr"><tt>&lt;literal&gt;</tt></span>. <tt>Filenames</tt> can
+    be expressed with <span dir="ltr"><tt>&lt;filename&gt;</tt></span>, 
+    <tt>variables</tt> with <span dir="ltr"><tt>&lt;varname&gt;</tt></span>.
+    There are many more small tags, but listing them here would make a
+    whole manual.
+   </p><p>
+    If you want to list items, use the <span dir="ltr"><tt>&lt;itemizedlist&gt;</tt></span>
+    (unordered) or <span dir="ltr"><tt>&lt;orderedlist&gt;</tt></span> (ordered) tags.
+    The list items in it have to be surrounded with a 
+    <span dir="ltr"><tt>&lt;listitem&gt;</tt></span> tag.
+    <p><div class="informalexample" id="idp45306976"><p></p><a name="idp45306976"></a><table class="programlisting" dir="ltr"><tr><td><pre class="xml">
+&lt;itemizedlist&gt;
+ &lt;listitem&gt;First item&lt;/listitem&gt;
+ &lt;listitem&gt;Second item&lt;/listitem&gt;
+&lt;/itemizedlist&gt;
+</pre></td></tr></table></div></p>
+    <span dir="ltr"><tt>&lt;listitem&gt;</tt></span>s themselves can contain 
+    <span dir="ltr"><tt>&lt;para&gt;</tt></span> and other tags.
+   </p><p>
+    Most times the skeleton of the class docs already exist, and you
+    will only have to fill the description with content and the tags
+    mentioned above. The tags which need to be filled are:
+    <span dir="ltr"><tt>&lt;shortdesc&gt;</tt></span> for a short description of
+    a class/function/signal/property (only one single paragraph, preferably
+    no tags in it) and <span dir="ltr"><tt>&lt;desc&gt;</tt></span>
+    with a full description of the class (use many paragraphs).
+   </p><p>
+    If you are uncertain how to do something or if the tag you have chosen
+    is correct, have a look at the other, already written files - they are
+    the best examples.
+   </p></div><div class="sect2"><a name="tutorials.doccing.writing.linking"></a><div class="titlepage"><div><h3 class="title"><a name="tutorials.doccing.writing.linking"></a>Linking</h3></div></div><p>
+    The manual lives through the links which interconnect the pages, allowing
+    one to jump to other relevant sections with one click. Whenever you make a
+    reference to some other class or a similar function, link it. It saves
+    people a lot of time searching.
+   </p><p>
+    The manual knows four types of links between pages:
+   </p><div class="itemizedlist"><ul><li><p><a name="idp45315728"></a>
+      <i>Class links</i> link to the overview page of a certain
+      class. For example, you would use:
+      <p><div class="informalexample" id="idp45316752"><p></p><a name="idp45316752"></a><table class="programlisting" dir="ltr"><tr><td><pre class="xml">
+&lt;classname&gt;GtkAboutDialog&lt;/classname&gt;
+</pre></td></tr></table></div></p>
+      to link to the GtkAboutDialog overview page. It will look like this:
+      <span dir="ltr"><a href="../gtk/gtk.gtkaboutdialog.html">GtkAboutDialog</a></span>.
+     </p></li><li><p><a name="idp45318992"></a>
+      <i>Method/function links</i> connect to a method or
+      function of a certain class. The function name will automatically
+      be completed with <span dir="ltr"><tt>()</tt></span>. Use
+      <p><div class="informalexample" id="idp45320640"><p></p><a name="idp45320640"></a><table class="programlisting" dir="ltr"><tr><td><pre class="xml">
+&lt;function class="GtkAboutDialog"&gt;set_logo&lt;/function&gt;
+</pre></td></tr></table></div></p>
+      to accomplish the task. The manual will show:
+      <span dir="ltr"><a href="../gtk/gtk.gtkaboutdialog.method.set_logo.html">set_logo()</a></span> .
+      The <span dir="ltr"><tt>class</tt></span> parameter is not necessary
+      if you link to the current class; but add it nevertheless
+      - it means less effort when copying something to a different
+      part of the manual.
+     </p></li><li><p><a name="idp45324208"></a>
+      <i>Links to signals</i> are created in this way:
+      <p><div class="informalexample" id="idp45325184"><p></p><a name="idp45325184"></a><table class="programlisting" dir="ltr"><tr><td><pre class="xml">
+&lt;signalname class="GtkDialog"&gt;close&lt;/signalname&gt;
+</pre></td></tr></table></div></p>
+      This will compiled to: <span dir="ltr">"<a href="../gtk/gtk.gtkdialog.signal.close.html">close</a>"</span>.
+     </p></li><li><p><a name="idp45327552"></a>
+      <i>Enumerator links</i> are also very simple:
+      <p><div class="informalexample" id="idp45328528"><p></p><a name="idp45328528"></a><table class="programlisting" dir="ltr"><tr><td><pre class="xml">
+&lt;enumname&gt;GtkButtonBoxStyle&lt;/enumname&gt;
+</pre></td></tr></table></div></p>
+      This will result in: <span dir="ltr"><a href="../gtk/gtk.enum.buttonboxstyle.html">GtkButtonBoxStyle</a></span>.
+      You can also link to an enumeration or flag using one of its option fields:
+      <p><div class="informalexample" id="idp45330448"><p></p><a name="idp45330448"></a><table class="programlisting" dir="ltr"><tr><td><pre class="xml">
+&lt;optionname enum="GtkIconLookupFlags"&gt;Gtk::ICON_LOOKUP_FORCE_SVG&lt;/optionname&gt;
+</pre></td></tr></table></div></p>
+      This will compile to:
+      <span dir="ltr"><a href="../gtk/gtk.enum.iconlookupflags.html">Gtk::ICON_LOOKUP_FORCE_SVG</a></span>.
+     </p></li><li><p><a name="idp45332864"></a>
+      <i>Property links</i> are a simple:
+      <p><div class="informalexample" id="idp45333824"><p></p><a name="idp45333824"></a><table class="programlisting" dir="ltr"><tr><td><pre class="xml">
+&lt;fieldname class="GtkDialog"&gt;action_area&lt;/fieldname&gt;
+</pre></td></tr></table></div></p>
+      This will result in: <span dir="ltr"><a href="../gtk/gtk.gtkdialog.field.action_area.html">action_area</a></span>.
+     </p></li><li><p><a name="idp45336192"></a>
+      <i>Free manual links</i> are necessary if you want to link
+      a certain word in the text, or link to a tutorial section. You need to
+      provide the ID of the section to be linked, and are free to choose a
+      title:
+      <p><div class="informalexample" id="idp45337344"><p></p><a name="idp45337344"></a><table class="programlisting" dir="ltr"><tr><td><pre class="xml">
+The &lt;link linkend="tutorials.doccing"&gt;documentation tutorial&lt;/link&gt;
+shows you how to compile the manual.
+</pre></td></tr></table></div></p>
+      See the result: 
+      The <a href="tutorials.doccing.html" title="PHP-GTK 2 Documentation">documentation tutorial</a> 
+      shows you how to compile the manual.
+     </p></li><li><p><a name="idp45339984"></a>
+      <i>URL links</i> leave the scope of the manual; you can
+      write a plain link to any HTTP, FTP or email address you want:
+      <p><div class="informalexample" id="idp45341040"><p></p><a name="idp45341040"></a><table class="programlisting" dir="ltr"><tr><td><pre class="xml">
+&lt;ulink url="mailto:php-gtk-doc@lists.php.net"&gt;documentation mailing list&lt;/ulink&gt;
+</pre></td></tr></table></div></p>
+      which will look like:
+      <a href="mailto:php-gtk-doc@lists.php.net" target="_top">documentation mailing 
+      list</a>.
+      If the link is one commonly used in the manual, you can use one of
+      the many XML entities listed in <span dir="ltr"><tt>manual/global.ents</tt></span>
+      to achieve a similar effect:
+      <p><div class="informalexample" id="idp45344064"><p></p><a name="idp45344064"></a><table class="programlisting" dir="ltr"><tr><td><pre class="xml">
+&amp;link.phpgtkdoc;
+</pre></td></tr></table></div></p>
+      will result in: <a href="mailto:php-gtk-doc@lists.php.net" target="_top"><span dir="ltr">php-gtk-doc@lists.php.net</span></a>, and
+      <p><div class="informalexample" id="idp45346288"><p></p><a name="idp45346288"></a><table class="programlisting" dir="ltr"><tr><td><pre class="xml">
+&lt;ulink url="mailto:&amp;email.phpgtkdoc;"&gt;documentation mailing list&lt;/ulink&gt;
+</pre></td></tr></table></div></p>
+      will give you:
+      <a href="mailto:php-gtk-doc@lists.php.net" target="_top">documentation mailing list</a>.
+     </p></li></ul></div></div><div class="sect2"><a name="tutorials.doccing.writing.examples"></a><div class="titlepage"><div><h3 class="title"><a name="tutorials.doccing.writing.examples"></a>Code examples and images</h3></div></div><p>
+    The PHP-GTK 2 documentation, unlike the previous version created for
+    PHP-GTK 1, supports images and external code examples.
+   </p><p>
+    There are three types of images: class images, normal images
+    which create their own paragraph, and inline images which flow
+    with the text.
+   </p><p>
+    <i>Class images</i> are shown at the class overview
+    page, on the right side of the description. Just add a
+    <p><div class="informalexample" id="idp45352000"><p></p><a name="idp45352000"></a><table class="programlisting" dir="ltr"><tr><td><pre class="xml">
+&lt;classimage fileref="&amp;directory.images;/reference/gtk/gtkiconview.constructor.png"/&gt;
+</pre></td></tr></table></div></p>
+    Note the <span dir="ltr"><tt>&amp;directory.images;</tt></span> base
+    directory; it will be replaced with the correct images directory
+    at compile time.
+   </p><p>
+    Normal images are included in a paragraph via
+    <p><div class="informalexample" id="idp45354672"><p></p><a name="idp45354672"></a><table class="programlisting" dir="ltr"><tr><td><pre class="xml">
+&lt;graphic fileref="&amp;directory.images;/path/to/the/file.png"/&gt;
+</pre></td></tr></table></div></p>
+    and inline images with
+    <p><div class="informalexample" id="idp45356192"><p></p><a name="idp45356192"></a><table class="programlisting" dir="ltr"><tr><td><pre class="xml">
+&lt;inlinegraphic fileref="&amp;directory.images;/path/to/the/file.png"/&gt;
+</pre></td></tr></table></div></p>
+   </p><p>
+    Code examples can be separated from the manual file, too. This is
+    especially useful for readers who want to run the examples themselves: no
+    need to copy and paste the code, just execute it in the example code
+    directory. Furthermore, it's easier to test the examples when writing
+    and editing the manual.
+   </p><div class="note" style="margin-left: 24px; margin-right: 24px; font-weight: bold;"><p>
+     Examples may get their own file <i>only</i> if they
+     are a complete, executable program - code snippets have to be inline.
+    </p></div><p>
+     Detached examples can be included in this way:
+     <p><div class="informalexample" id="idp45359968"><p></p><a name="idp45359968"></a><table class="programlisting" dir="ltr"><tr><td><pre class="xml">
+    &lt;example&gt;
+     &lt;title&gt;Simple GtkAboutDialog&lt;/title&gt;
+     &lt;programlisting role="php"&gt;
+      &lt;xi:include xmlns:xi="http://www.w3.org/2001/XInclude" 
+          href="../&amp;directory.examples;/reference/gtk/gtkaboutdialog/constructor.phpw"
+             parse="text"&gt;
+       &lt;xi:fallback&gt;FIXME: MISSING XINCLUDE CONTENT&lt;/xi:fallback&gt;
+      &lt;/xi:include&gt;
+     &lt;/programlisting&gt;
+    &lt;/example&gt;
+</pre></td></tr></table></div></p>
+   </p><p>
+    Examples for code snippets have to be inline as in:
+    <p><div class="informalexample" id="idp45362656"><p></p><a name="idp45362656"></a><table class="programlisting" dir="ltr"><tr><td><pre class="xml">
+    &lt;informalexample&gt;
+     &lt;programlisting role="php"&gt;&lt;![CDATA[
+//some php code here
+]]&gt;&lt;/programlisting&gt;
+    &lt;/informalexample&gt;
+</pre></td></tr></table></div></p>
+    The <span dir="ltr"><tt>CDATA</tt></span> section is useful because it allows you to
+    directly include code, without having to escape it. The 
+    &lt;?php and ?&gt; tags aren't required in code snippets. Note that
+    <span dir="ltr"><tt>CDATA</tt></span> opens a new document inside the current
+    document, alas requiring new indention. Don't be afraid of breaking your
+    indenting scheme inside CDATA sections.
+   </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="tutorials.doccing.translating.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="tutorials.doccing.standards.html">Next</a></td></tr><tr><td width="40%" align="left">Translating the Manual </td><td width="20%" align="center"><a href="tutorials.doccing.html">Up</a></td><td width="40%" align="right"> Coding standards</td></tr></table></div></body></html>

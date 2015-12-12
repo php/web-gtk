@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkContainer</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkcomboboxentry.method.set_text_column.html" title="GtkComboBoxEntry::set_text_column"><link rel="next" href="gtk.gtkcontainer.method.add.html" title="GtkContainer::add"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkcomboboxentry.method.set_text_column.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkContainer</span></th><td width="20%" align="right"> <a href="gtk.gtkcontainer.method.add.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkcontainer"></a><h2 class="title"><span dir="ltr">GtkContainer</span></h2><p><blockquote>
+   An abstract class to be extended by widgets that hold one or more other
+   widgets.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span><br></div></blockquote></p><p><h3>Direct Subclasses</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="gtk.gtkbin.html">GtkBin</a></span>, <span dir="ltr"><a href="gtk.gtkbox.html">GtkBox</a></span>, <span dir="ltr"><a href="gtk.gtkclist.html">GtkCList</a></span>, <span dir="ltr"><a href="gtk.gtkfixed.html">GtkFixed</a></span>, <span dir="ltr"><a href="gtk.gtkiconview.html">GtkIconView</a></span>, <span dir="ltr"><a href="gtk.gtklayout.html">GtkLayout</a></span>, <span dir="ltr"><a href="gtk.gtklist.html">GtkList</a></span>, <span dir="ltr"><a href="gtk.gtkmenushell.html">GtkMenuShell</a></span>, <span dir="ltr"><a href="gtk.gtknotebook.html">GtkNotebook</a></span>, <span dir="ltr"><a href="gtk.gtkpaned.html">GtkPaned</a></span>, <span dir="ltr"><a href="gtk.gtksocket.html">GtkSocket</a></span>, <span dir="ltr"><a href="gtk.gtktable.html">GtkTable</a></span>, <span dir="ltr"><a href="gtk.gtktextview.html">GtkTextView</a></span>, <span dir="ltr"><a href="gtk.gtktoolbar.html">GtkToolbar</a></span>, <span dir="ltr"><a href="gtk.gtktreeview.html">GtkTreeView</a></span>, <span dir="ltr"><a href="gtk.gtksheet.html">GtkSheet</a></span>, <span dir="ltr"><a href="gtk.gtkscintilla.html">GtkScintilla</a></span></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    An abstract class to be extended by widget that hole one or more other
+    widgets.
+   </p>
+   <p>
+    Containers (widgets that extend from <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span>)
+    provide a context for the widgets they contain. Containers manage the
+    location, re-sizing and order of their children.
+   </p>
+   <p>
+    Containers can be broken down into two groups: bins (containers that
+    extend from <span dir="ltr"><a href="gtk.gtkbin.html">GtkBin</a></span>) and multi-child containers.
+    Bins may only have one child and in general provide some additional set of
+    functionality or display enhancement for their child widget. Multi-child
+    containers, on the other hand, normally do not provide any additional
+    functionality and instead focus on organizing a set of widgets.
+   </p>
+  </blockquote></p><p><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkcontainer.method.add.html">add()</a></span> </dt><dd> 
+    Adds the given widget to the container.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcontainer.method.check_resize.html">check_resize()</a></span> </dt><dd> 
+    Emits the "check-resize" signal on the container.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcontainer.method.child_type.html">child_type()</a></span> </dt><dd> 
+    Returns the type of the children supported by the container.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcontainer.method.children.html">children()</a></span> </dt><dd> 
+    DEPRECATED
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcontainer.method.get_border_width.html">get_border_width()</a></span> </dt><dd> 
+    Returns border width.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcontainer.method.get_children.html">get_children()</a></span> </dt><dd> 
+    Returns an array of all children
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcontainer.method.get_focus_chain.html">get_focus_chain()</a></span> </dt><dd> 
+    Returns the focus order.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcontainer.method.get_focus_hadjustment.html">get_focus_hadjustment()</a></span> </dt><dd> 
+    Retrieves the horizontal focus adjustment.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcontainer.method.get_focus_vadjustment.html">get_focus_vadjustment()</a></span> </dt><dd> 
+    Retrieves the vertical focus adjustment.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcontainer.method.get_resize_mode.html">get_resize_mode()</a></span> </dt><dd> 
+    Returns the resize mode.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcontainer.method.propagate_expose.html">propagate_expose()</a></span> </dt><dd> 
+    Sends an expose event to a child.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcontainer.method.remove.html">remove()</a></span> </dt><dd> 
+    Removes a widget from the container.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcontainer.method.resize_children.html">resize_children()</a></span> </dt><dd> 
+    Recalculates its and the children's sizes.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcontainer.method.set_border_width.html">set_border_width()</a></span> </dt><dd> 
+    Sets the border around the container.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcontainer.method.set_focus_chain.html">set_focus_chain()</a></span> </dt><dd> 
+    Overrides the automatically computed focus chain.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcontainer.method.set_focus_child.html">set_focus_child()</a></span> </dt><dd> 
+    Emits the "set-focus-child" signal.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcontainer.method.set_focus_hadjustment.html">set_focus_hadjustment()</a></span> </dt><dd> 
+    Sets the horizontal adjustment.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcontainer.method.set_focus_vadjustment.html">set_focus_vadjustment()</a></span> </dt><dd> 
+    Sets the vertical adjustment.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcontainer.method.set_reallocate_redraws.html">set_reallocate_redraws()</a></span> </dt><dd> 
+    Sets the reallocate_redraws flag.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcontainer.method.set_resize_mode.html">set_resize_mode()</a></span> </dt><dd> 
+    Sets the resize mode for the container.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcontainer.method.unset_focus_chain.html">unset_focus_chain()</a></span> </dt><dd> 
+    Removes a focus chain explicitly set.
+   </dd></blockquote></div><h3>Properties</h3><p>Use get_property and set_property methods to access these.</p><blockquote><dt><span dir="ltr"><a href="gtk.gtkcontainer.prop.border-width.html">border-width</a></span>:</dt><dd> 
+    Border around the container
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcontainer.prop.child.html">child</a></span>:</dt><dd> 
+    Add a new child to the container.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcontainer.prop.resize-mode.html">resize-mode</a></span>:</dt><dd> 
+    How resize events are handled.
+   </dd></blockquote><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtkcontainer.signal.add.html">add</a>"</span></dt><dd> 
+    Emitted when a child is added to the container with the add
+    method.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkcontainer.signal.check-resize.html">check-resize</a>"</span></dt><dd> 
+    Recalculation of children is requested.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkcontainer.signal.remove.html">remove</a>"</span></dt><dd> 
+    Widget is removed from container.
+   </dd><dt><span dir="ltr">"<a href="gtk.gtkcontainer.signal.set-focus-child.html">set-focus-child</a>"</span></dt><dd> 
+    Focus changes.
+   </dd></blockquote></p></div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+ 
+  
+
+  
+
+  
+ 
+  
+
+  
+
+  
+
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkcomboboxentry.method.set_text_column.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkcontainer.method.add.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkComboBoxEntry::set_text_column</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkContainer::add</span></td></tr></table></div></body></html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>Summary</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="tutorials.signals.html" title="Signal Handling"><link rel="previous" href="tutorials.signals.events.html" title="Events"><link rel="next" href="tutorials.treeview.html" title="GtkTreeView Tutorial (basic)"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Signal Handling</th></tr><tr><td width="20%" align="left"><a href="tutorials.signals.events.html">Prev</a> </td><th width="60%" align="center">Summary</th><td width="20%" align="right"> <a href="tutorials.treeview.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="tutorials.signals.summary"></a><div class="titlepage"><div><h2 class="title" style="clear: all"><a name="tutorials.signals.summary"></a>Summary</h2></div></div><p>
+   We'll wind up this tutorial with a final summary of things that you learnt.
+  </p><p>
+   <div class="itemizedlist"><ul><li><a name="idp44950624"></a>
+     Signal handling is basically connecting a signal to its signal handler
+     and writing the signal handler itself.
+    </li><li><a name="idp44951152"></a>
+     You may connect multiple signals to a single signal handler and a single 
+     signal to multiple signal handler. Just remember that the signal handlers
+     are executed in the order in which they were connected.
+    </li><li><a name="idp44951776"></a>
+     You may pass your own parameters to signal handlers by specifying them 
+     in the arguments to the connect_* functions. Also remember that your 
+     signal handlers must be designed to receive the exact number of 
+     parameters that you specify while connecting the signal to it.
+    </li><li><a name="idp44952464"></a>
+     While referring to callbacks that are in an object-oriented context,
+     remember that the second argument must be an array, the first element of
+     which must point to the class that the callback belongs to, and the second
+     element of which must be the name of the callback itself.
+    </li><li><a name="idp44953168"></a>
+     Remember the difference between and event and a signal. Also remember that
+     you may indirectly handle events with their corresponding signals.
+    </li></ul></div>
+  </p><p>
+   Hope this tutorial cleared up things a bit. The only way you'll learn is by
+   practicing, so, fire up your favorite text editor, and start typing! All the
+   Best!
+  </p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="tutorials.signals.events.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="tutorials.treeview.html">Next</a></td></tr><tr><td width="40%" align="left">Events </td><td width="20%" align="center"><a href="tutorials.signals.html">Up</a></td><td width="40%" align="right"> GtkTreeView Tutorial (basic)</td></tr></table></div></body></html>

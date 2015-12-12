@@ -1,0 +1,150 @@
+/* 
+ * $Id$
+ */
+
+/* Let no border around the body appear, and set
+   it to display on a white background */
+body, html {
+    background-color: white;
+    color: black;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Font settings for page elements */
+body, ul, td, th, p, h1, h2, h3, h4, dt, small, .small,
+.tableTitle, .tableExtras, input, textarea, select {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+code, pre, tt {
+    font-family: Courier, "Courier New", monospace;
+}
+
+/* Default font size for elements */
+body {
+    font-size: .85em;
+}
+
+li {
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+
+em {
+    font-style: italic;
+    font-weight: bold;
+}
+
+acronym {
+    border-bottom: 1px dashed #00CC00;
+    cursor: help;
+}
+
+.newsDate {
+    background-color: inherit;
+    color: #6666CC;
+    font-size: .80em;
+    font-style: italic;
+}
+
+.sidebar {
+    font-size: .95em;
+    padding: 5px;
+}
+
+.sidebar p {
+    text-align: left !important;
+}
+
+a.menuWhite {
+    background-color: inherit;
+    color: white;
+    font-size: .80em;
+    text-decoration: none;
+}
+
+a.menuBlack {
+    background-color: inherit;
+    color: black;
+    font-size: .80em;
+    text-decoration: none;
+}
+
+pre, code {
+    font-size: .80em;
+}
+
+pre.code {
+    background-color: #F0F0F0;
+    color: inherit;
+}
+
+/* General header styles */
+h1, h2, h3, h4, dt {
+    color: #000066;
+    background-color: inherit;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 1.30em;
+}
+
+h2 {
+    font-size: 1.25em;
+}
+
+h3, dt {
+    font-size: 1.10em;
+}
+
+h4 {
+    font-size: .90em;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+blockquote {
+    margin-left: 12px;
+}
+
+small, a.small, input.small, select.small, textarea.small {
+    font-size: .80em;
+}
+
+a.small {
+    text-decoration: none;
+}
+
+.tableTitle {
+    font-weight: bold;
+}
+
+.tableExtras {
+    background-color: inherit;
+    color: white;
+    font-size: .85em;
+}
+
+.programlisting {
+    background-color: #E0E0E0;
+    color: inherit;
+    display: block;
+    width: 100%;
+}
+
+hr {
+    background-color: inherit;
+    border: 0px;
+    color: black;
+    height: 1px;
+}
+
+/*
+ * Local variables:
+ * tab-width: 4
+ * c-basic-offset: 4
+ * End:
+ * vim: expandtab sw=4 ts=4 fdm=marker
+ */

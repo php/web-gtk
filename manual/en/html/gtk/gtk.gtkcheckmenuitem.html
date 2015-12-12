@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkCheckMenuItem</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtkcheckbutton.constructor.html" title="GtkCheckButton Constructor"><link rel="next" href="gtk.gtkcheckmenuitem.constructor.html" title="GtkCheckMenuItem Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtkcheckbutton.constructor.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkCheckMenuItem</span></th><td width="20%" align="right"> <a href="gtk.gtkcheckmenuitem.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtkcheckmenuitem"></a><h2 class="title"><span dir="ltr">GtkCheckMenuItem</span></h2><p><blockquote>
+   A check box menu item.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkbin.html">GtkBin</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkitem.html">GtkItem</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkmenuitem.html">GtkMenuItem</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcheckmenuitem.html">GtkCheckMenuItem</a></span><br></div></blockquote></p><p><h3>Direct Subclasses</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="gtk.gtkradiomenuitem.html">GtkRadioMenuItem</a></span></div></blockquote></p><p><h3>Description</h3><blockquote>
+
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp58503072"><p></p><a name="idp58503072"></a> <span dir="ltr"><a href="gtk.gtkcheckmenuitem.constructor.html">GtkCheckMenuItem</a></span> (string <i><tt>label</tt></i>, boolean <i><tt>use_underline</tt></i>);</div></p> --
+    Creates a new check menu item.
+   <br><br><p><div class="funcsynopsis" id="idp58576304"><p></p><a name="idp58576304"></a> <span dir="ltr"><a href="gtk.gtkcheckmenuitem.constructor.new_with_label.html">GtkCheckMenuItem::new_with_label</a></span> (string <i><tt>label</tt></i>);</div></p> --
+
+   <br><br><p><div class="funcsynopsis" id="idp58580704"><p></p><a name="idp58580704"></a> <span dir="ltr"><a href="gtk.gtkcheckmenuitem.constructor.new_with_mnemonic.html">GtkCheckMenuItem::new_with_mnemonic</a></span> (string <i><tt>label</tt></i>);</div></p> --
+
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkcheckmenuitem.method.get_active.html">get_active()</a></span> </dt><dd> 
+    Returns whether the check menu item is active.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcheckmenuitem.method.get_draw_as_radio.html">get_draw_as_radio()</a></span> </dt><dd> 
+    Returns <span dir="ltr"><tt>TRUE</tt></span> if the check menu item is drawn
+    as a radio menu item.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcheckmenuitem.method.get_inconsistent.html">get_inconsistent()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcheckmenuitem.method.set_active.html">set_active()</a></span> </dt><dd> 
+    Changes the state of the menu item's check box,
+    setting the state
+    property according to the value of <i><tt>is_active</tt></i>
+    parameter.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcheckmenuitem.method.set_draw_as_radio.html">set_draw_as_radio()</a></span> </dt><dd> 
+    It sets the check menu item to be displayed as a radio menu item
+    if the value of <i><tt>draw_as_radio</tt></i> is
+    <span dir="ltr"><tt>TRUE</tt></span>.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcheckmenuitem.method.set_inconsistent.html">set_inconsistent()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcheckmenuitem.method.set_show_toggle.html">set_show_toggle()</a></span> </dt><dd> 
+
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcheckmenuitem.method.toggled.html">toggled()</a></span> </dt><dd> 
+    The <span dir="ltr"><a href="gtk.gtkcheckmenuitem.method.toggled.html">toggled()</a></span> 
+    method emits the
+    <span dir="ltr">"<a href="gtk.gtkcheckmenuitem.signal.toggled.html">toggled</a>"</span>.
+    signal on the check menu item.
+   </dd></blockquote></div><h3>Fields</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtkcheckmenuitem.field.active.html">active</a></span>:</dt><dd> 
+     Represents the current state of the menu item.
+   </dd><dt><span dir="ltr"><a href="gtk.gtkcheckmenuitem.field.draw-as-radio.html">draw-as-radio</a></span>:</dt><dd> 
+    <span dir="ltr"><tt>TRUE</tt></span> if the check menu item is shown
+    as a radio menu item.
+   </dd></blockquote><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtkcheckmenuitem.signal.toggled.html">toggled</a>"</span></dt><dd> 
+    The <span dir="ltr">"<a href="gtk.gtkcheckmenuitem.signal.toggled.html">toggled</a>"</span> signal
+    is emitted when the check menu item changes state.
+   </dd></blockquote></p></div>
+
+  
+
+  
+
+  
+
+ 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ 
+
+  
+
+  
+
+ 
+
+  
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkcheckbutton.constructor.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkcheckmenuitem.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkCheckButton</span> Constructor </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkCheckMenuItem</span> Constructor</td></tr></table></div></body></html>

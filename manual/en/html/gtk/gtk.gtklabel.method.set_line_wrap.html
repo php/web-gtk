@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkLabel::set_line_wrap</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtklabel.html#idp69134576" title=""><link rel="previous" href="gtk.gtklabel.method.set_label.html" title="GtkLabel::set_label"><link rel="next" href="gtk.gtklabel.method.set_markup.html" title="GtkLabel::set_markup"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtklabel.method.set_label.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkLabel::set_line_wrap</span></th><td width="20%" align="right"> <a href="gtk.gtklabel.method.set_markup.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtklabel.method.set_line_wrap"></a><h2><span dir="ltr">GtkLabel::set_line_wrap</span></h2><p><div class="funcsynopsis" id="idp69364336"><p></p><a name="idp69364336"></a>void set_line_wrap(bool <i><tt>wrap</tt></i>);</div></p>
+    <p>
+     Toggles line wrapping within the GtkLabel widget. <span dir="ltr"><tt>true</tt></span>
+     makes it break lines if text exceeds the widget's size. 
+     <span dir="ltr"><tt>false</tt></span> lets the text get cut off by the edge of the
+     widget if it exceeds the widget size.
+    </p>
+    <p>
+     <div class="example" align="left"><p><a name="idp69370064"></a><b>Example 86. Allowing GtkLabel Text to Wrap Lines</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+// Create a window to hold the label.
+$window = new GtkWindow();
+
+// Set up the window to close cleanly.
+$window-&gt;connect_simple('destroy', array('Gtk', 'main_quit'));
+
+// Create a label with a long line of text.
+$label = new GtkLabel('This long line of text will wrap onto three lines.');
+
+// Set the label's size.
+$label-&gt;set_size_request(100, 100);
+
+// Allow the label to wrap.
+$label-&gt;set_line_wrap(true);
+
+// Add the label to the window.
+$window-&gt;add($label);
+
+// Show the window and start the main loop.
+$window-&gt;show_all();
+Gtk::main();
+?&gt;</pre></td></tr></table></div>
+     This code will produce the window shown below.
+     <p><img src="../images/reference/gtk/gtklabel/set_line_wrap.png"></p> 
+    </p>
+    <p>
+     See also:
+     <span dir="ltr"><a href="gtk.gtklabel.method.get_line_wrap.html">get_line_wrap()</a></span> 
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtklabel.method.set_label.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtklabel.method.set_markup.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkLabel::set_label</span> </td><td width="20%" align="center"><a href="gtk.gtklabel.html#idp69134576">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkLabel::set_markup</span></td></tr></table></div></body></html>

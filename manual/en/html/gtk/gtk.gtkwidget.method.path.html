@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkWidget::path</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkwidget.html#idp87479968" title=""><link rel="previous" href="gtk.gtkwidget.method.modify_text.html" title="GtkWidget::modify_text"><link rel="next" href="gtk.gtkwidget.method.pop_colormap.html" title="GtkWidget::pop_colormap"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkwidget.method.modify_text.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkWidget::path</span></th><td width="20%" align="right"> <a href="gtk.gtkwidget.method.pop_colormap.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkwidget.method.path"></a><h2><span dir="ltr">GtkWidget::path</span></h2><p><div class="funcsynopsis" id="idp88062432"><p></p><a name="idp88062432"></a>string path();</div></p>
+    <p>
+     Obtains the full path to the widget. The path is simply the name
+     of a widget and all its parents in the container hierarchy, separated
+     by periods. The name of a widget comes from
+     <span dir="ltr"><a href="gtk.gtkwidget.method.get_name.html">get_name()</a></span> .
+     Paths are used to apply styles to a widget in <tt>gtkrc</tt>
+     configuration files.
+     Widget names are the type of the widget by default (e.g. "GtkButton")
+     or can be set to an application-specific value with
+     <span dir="ltr"><a href="gtk.gtkwidget.method.set_name.html">set_name()</a></span> . By setting the name
+     of a widget, you allow users or theme authors to apply styles to that
+     specific widget in their gtkrc file.
+    </p>
+    <div class="example" align="left"><p><a name="idp88068848"></a><b>Example 153. Getting a widget's path</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//Create our widgets
+$wnd   = new GtkWindow();
+$box   = new GtkVBox();
+$frame = new GtkFrame('Frame');
+$btn   = new GtkButton('Button');
+
+//Pack them into each other
+$wnd  -&gt;add($box);
+$box  -&gt;add($frame);
+$frame-&gt;add($btn);
+
+//Give some a custom name
+$wnd-&gt;set_name('My window');
+$btn-&gt;set_name('demo button');
+
+//And now echo the class path of the button,
+// and the normal path
+echo 'class_path: "' . $btn-&gt;class_path() . "\"\n";
+echo 'path:       "' . $btn-&gt;path() . "\"\n";
+
+/* Returns:
+class_path: "GtkWindow.GtkVBox.GtkFrame.GtkButton"
+path:       "My window.GtkVBox.GtkFrame.demo button"
+*/
+?&gt;</pre></td></tr></table></div>
+    <p>
+     See also:
+     <span dir="ltr"><a href="gtk.gtkwidget.method.path.html">path()</a></span> 
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkwidget.method.modify_text.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkwidget.method.pop_colormap.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkWidget::modify_text</span> </td><td width="20%" align="center"><a href="gtk.gtkwidget.html#idp87479968">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkWidget::pop_colormap</span></td></tr></table></div></body></html>

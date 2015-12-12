@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>Tabular layout with GtkTable</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="tutorials.packing.html" title="Packing Widgets"><link rel="previous" href="tutorials.packing.box.html" title="Boxes - GtkHBox and GtkVBox"><link rel="next" href="tutorials.packing.fixed.html" title="Fixed layout"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Packing Widgets</th></tr><tr><td width="20%" align="left"><a href="tutorials.packing.box.html">Prev</a> </td><th width="60%" align="center">Tabular layout with GtkTable</th><td width="20%" align="right"> <a href="tutorials.packing.fixed.html">Next</a></td></tr></table><hr></div><div class="sect1"><a name="tutorials.packing.table"></a><div class="titlepage"><div><h2 class="title" style="clear: all"><a name="tutorials.packing.table"></a>Tabular layout with GtkTable</h2></div></div><p>
+   While it's very easy to create dynamic layouts with 
+   <span dir="ltr"><a href="../gtk/gtk.gtkbox.html">GtkBox</a></span>es, it's very hard to layout widgets
+   so that e.g. the labels on the left of the interaction widgets have the 
+   same width, regardless of their content. If you need tabular layouts,
+   <span dir="ltr"><a href="../gtk/gtk.gtktable.html">GtkTable</a></span> is the right choice. Widgets can
+   span several columns and rows, and can have different padding margins.
+  </p><div class="example" align="left"><p><a name="idp44646000"></a><b>Example 7.2. Tabular layout</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+$w = new GtkWindow();
+$w-&gt;set_title('GtkTable test');
+$w-&gt;connect_simple('destroy', array('gtk', 'main_quit'));
+
+$lbl1   = new GtkLabel('Email address:');
+$lbl2   = new GtkLabel('Id:');
+$lbl3   = new GtkLabel('Name:');
+$align3 = new GtkAlignment(0.0, 0.5, 0, 0);
+$align3-&gt;add($lbl3);
+$txt1   = new GtkEntry();
+$txt2   = new GtkEntry();
+$txt3   = new GtkEntry();
+
+$table  = new GtkTable(2, 2);
+$table-&gt;attach($lbl1  , 0, 1, 0, 1, 0);
+$table-&gt;attach($lbl2  , 0, 1, 1, 2, 0);
+$table-&gt;attach($align3, 0, 1, 2, 3, Gtk::FILL);
+$table-&gt;attach($txt1  , 1, 2, 0, 1);
+$table-&gt;attach($txt2  , 1, 2, 1, 2);
+$table-&gt;attach($txt3  , 1, 2, 2, 3);
+
+$w-&gt;add($table);
+$w-&gt;show_all();
+Gtk::main();
+?&gt;</pre></td></tr></table></div><p>
+   When running the example, you see that the <span dir="ltr"><tt>Id</tt></span> label
+   is centered horizontally. By default, widgets are filled in both 
+   directions and take all the available space, which is ok for most
+   widgets. For <span dir="ltr"><a href="../gtk/gtk.gtklabel.html">GtkLabel</a></span> however, it's not optimal:
+   Labels should be aligned at one side. As the 
+   <span dir="ltr"><a href="../gtk/gtk.gtklabel.method.set_justify.html">set_justify()</a></span>  function justifies
+   the text for multiline labels only, we need to use a
+   <span dir="ltr"><a href="../gtk/gtk.gtkalignment.html">GtkAlignment</a></span> to align the label properly - label
+   <span dir="ltr"><tt>Name</tt></span> shows the result.
+  </p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="tutorials.packing.box.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="tutorials.packing.fixed.html">Next</a></td></tr><tr><td width="40%" align="left">Boxes - GtkHBox and GtkVBox </td><td width="20%" align="center"><a href="tutorials.packing.html">Up</a></td><td width="40%" align="right"> Fixed layout</td></tr></table></div></body></html>

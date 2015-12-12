@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkNotebook::prepend_page</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtknotebook.html#idp72099120" title=""><link rel="previous" href="gtk.gtknotebook.method.popup_enable.html" title="GtkNotebook::popup_enable"><link rel="next" href="gtk.gtknotebook.method.prepend_page_menu.html" title="GtkNotebook::prepend_page_menu"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtknotebook.method.popup_enable.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkNotebook::prepend_page</span></th><td width="20%" align="right"> <a href="gtk.gtknotebook.method.prepend_page_menu.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtknotebook.method.prepend_page"></a><h2><span dir="ltr">GtkNotebook::prepend_page</span></h2><p><div class="funcsynopsis" id="idp72253376"><p></p><a name="idp72253376"></a>int prepend_page(<span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span> <i><tt>child</tt></i> [, <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span> <i><tt>tab_label = null</tt></i>]);</div></p>
+    <p>
+     Prepends a page to the notebook. The widget passed as
+     <i><tt>child</tt></i> will be visible when the page is active,
+     the <i><tt>tab_label</tt></i> will be shown in the tab bar.
+    </p>
+    <p>
+     If you omit the second <i><tt>tab_label</tt></i> parameter, the
+     default one "page N" (label) will be used.
+    </p>
+    <p>
+     The method returns the index (starting from <span dir="ltr"><tt>0</tt></span>) of the
+     appended page in the notebook, or <span dir="ltr"><tt>-1</tt></span> if the method
+     fails.
+    </p>
+    <p>
+     See also:
+     <span dir="ltr"><a href="gtk.gtknotebook.method.append_page.html">append_page()</a></span> ,
+     <span dir="ltr"><a href="gtk.gtknotebook.method.insert_page.html">insert_page()</a></span> ,
+     <span dir="ltr"><a href="gtk.gtknotebook.method.remove_page.html">remove_page()</a></span> 
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtknotebook.method.popup_enable.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtknotebook.method.prepend_page_menu.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkNotebook::popup_enable</span> </td><td width="20%" align="center"><a href="gtk.gtknotebook.html#idp72099120">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkNotebook::prepend_page_menu</span></td></tr></table></div></body></html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkToggleButton</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="../gtkclasses.html" title="GTK Classes"><link rel="previous" href="gtk.gtktoggleaction.signal.toggled.html" title="toggled"><link rel="next" href="gtk.gtktogglebutton.constructor.html" title="GtkToggleButton Constructor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">GTK Classes</th></tr><tr><td width="20%" align="left"><a href="gtk.gtktoggleaction.signal.toggled.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkToggleButton</span></th><td width="20%" align="right"> <a href="gtk.gtktogglebutton.constructor.html">Next</a></td></tr></table><hr></div><div class="classentry"><a name="gtk.gtktogglebutton"></a><h2 class="title"><span dir="ltr">GtkToggleButton</span></h2><div style="float:right;"><img src="../images/reference/gtk/gtktogglebutton.png"></div><p><blockquote>
+   Button that retains its state.
+  </blockquote></p><p><h3>Object Hierarchy</h3><blockquote><div class="literallayout">
+   <span dir="ltr"><a href="../gobject.html">GObject</a></span><br>
+`--
+   <span dir="ltr"><a href="gtk.gtkobject.html">GtkObject</a></span><br>
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkwidget.html">GtkWidget</a></span><br>
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkcontainer.html">GtkContainer</a></span><br>
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkbin.html">GtkBin</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtkbutton.html">GtkButton</a></span><br>
+           
+   
+           
+   
+           
+   
+           
+   
+           
+   
+`--
+   <span dir="ltr"><a href="gtk.gtktogglebutton.html">GtkToggleButton</a></span><br></div></blockquote></p><p><h3>Direct Subclasses</h3><blockquote><div class="literallayout"><span dir="ltr"><a href="gtk.gtkcheckbutton.html">GtkCheckButton</a></span></div></blockquote></p><p><h3>Description</h3><blockquote>
+   <p>
+    A <span dir="ltr"><a href="gtk.gtktogglebutton.html">GtkToggleButton</a></span> is a 
+    <span dir="ltr"><a href="gtk.gtkbutton.html">GtkButton</a></span> which will remain 'pressed-in' when
+    clicked. Clicking again will cause the toggle button to return to its
+    normal state.
+   </p>
+   <p>
+    The state of a <span dir="ltr"><a href="gtk.gtktogglebutton.html">GtkToggleButton</a></span> can be set 
+    specifically using <span dir="ltr"><a href="gtk.gtktogglebutton.method.set_active.html">set_active()</a></span> ,
+    and retrieved using <span dir="ltr"><a href="gtk.gtktogglebutton.method.get_active.html">get_active()</a></span> .
+   </p>
+   <p>
+    To simply switch the state of a toggle button, use
+    <span dir="ltr"><a href="gtk.gtktogglebutton.method.toggled.html">toggled()</a></span> .
+   </p>
+  </blockquote></p><p><div name=""><h3>Constructors</h3><blockquote><p><div class="funcsynopsis" id="idp81514736"><p></p><a name="idp81514736"></a> <span dir="ltr"><a href="gtk.gtktogglebutton.constructor.html">GtkToggleButton</a></span> ([string <i><tt>label</tt></i> [, boolean <i><tt>use_underline</tt></i> = true]]);</div></p> --
+    Creates a new toggle button.
+   </blockquote></div><div><h3>Methods</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtktogglebutton.method.get_active.html">get_active()</a></span> </dt><dd> 
+    If the toggle button is pressed.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktogglebutton.method.get_inconsistent.html">get_inconsistent()</a></span> </dt><dd> 
+    If the button is set to an inconsistent state.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktogglebutton.method.get_mode.html">get_mode()</a></span> </dt><dd> 
+    Whether the button is displayed as a separate indicator and label.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktogglebutton.method.set_active.html">set_active()</a></span> </dt><dd> 
+    Sets the active state.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktogglebutton.method.set_inconsistent.html">set_inconsistent()</a></span> </dt><dd> 
+    Set the button to the inconsistent state.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktogglebutton.method.set_mode.html">set_mode()</a></span> </dt><dd> 
+    Sets whether the button is displayed as a separate indicator and label.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktogglebutton.method.toggled.html">toggled()</a></span> </dt><dd> 
+    Toggle the button's state.
+   </dd></blockquote></div><h3>Fields</h3><blockquote><dt><span dir="ltr"><a href="gtk.gtktogglebutton.field.active.html">active</a></span>:</dt><dd> 
+    If the toggle button should be pressed in or not.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktogglebutton.field.draw_indicator.html">draw_indicator</a></span>:</dt><dd> 
+    If the toggle part of the button is displayed.
+   </dd><dt><span dir="ltr"><a href="gtk.gtktogglebutton.field.inconsistent.html">inconsistent</a></span>:</dt><dd> 
+    If the toggle button is in an "in between" state.
+   </dd></blockquote><h3>Signals</h3><blockquote><dt><span dir="ltr">"<a href="gtk.gtktogglebutton.signal.toggled.html">toggled</a>"</span></dt><dd> 
+    The button's active state has changed.
+   </dd></blockquote></p></div>
+  
+ 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+ 
+  
+
+  
+
+  
+ 
+  
+ <div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtktoggleaction.signal.toggled.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtktogglebutton.constructor.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">toggled</span> </td><td width="20%" align="center"><a href="../gtkclasses.html">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkToggleButton</span> Constructor</td></tr></table></div></body></html>

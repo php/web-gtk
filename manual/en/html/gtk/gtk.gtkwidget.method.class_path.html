@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkWidget::class_path</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtkwidget.html#idp87479968" title=""><link rel="previous" href="gtk.gtkwidget.method.child_notify.html" title="GtkWidget::child_notify"><link rel="next" href="gtk.gtkwidget.method.create_pango_context.html" title="GtkWidget::create_pango_context"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtkwidget.method.child_notify.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkWidget::class_path</span></th><td width="20%" align="right"> <a href="gtk.gtkwidget.method.create_pango_context.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtkwidget.method.class_path"></a><h2><span dir="ltr">GtkWidget::class_path</span></h2><p><div class="funcsynopsis" id="idp87599136"><p></p><a name="idp87599136"></a>string class_path();</div></p>
+    <p>
+     Returns the path of the widget through the packaging
+     hierarchy, from the root parent to the widget itself.
+     The single class names are separated by dots.
+    </p>
+    <p>
+     It is the same as <span dir="ltr"><a href="gtk.gtkwidget.method.path.html">path()</a></span> ,
+     just that always the class names, not widget names are used.
+    </p>
+    <div class="example" align="left"><p><a name="idp87604016"></a><b>Example 151. Getting a widget's path</b></p><table class="programlisting" dir="ltr"><tr><td><pre class="phpcode">&lt;?php
+//Create our widgets
+$wnd   = new GtkWindow();
+$box   = new GtkVBox();
+$frame = new GtkFrame('Frame');
+$btn   = new GtkButton('Button');
+
+//Pack them into each other
+$wnd  -&gt;add($box);
+$box  -&gt;add($frame);
+$frame-&gt;add($btn);
+
+//Give some a custom name
+$wnd-&gt;set_name('My window');
+$btn-&gt;set_name('demo button');
+
+//And now echo the class path of the button,
+// and the normal path
+echo 'class_path: "' . $btn-&gt;class_path() . "\"\n";
+echo 'path:       "' . $btn-&gt;path() . "\"\n";
+
+/* Returns:
+class_path: "GtkWindow.GtkVBox.GtkFrame.GtkButton"
+path:       "My window.GtkVBox.GtkFrame.demo button"
+*/
+?&gt;</pre></td></tr></table></div>
+    <p>
+     See also:
+     <span dir="ltr"><a href="gtk.gtkwidget.method.path.html">path()</a></span> 
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtkwidget.method.child_notify.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtkwidget.method.create_pango_context.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkWidget::child_notify</span> </td><td width="20%" align="center"><a href="gtk.gtkwidget.html#idp87479968">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkWidget::create_pango_context</span></td></tr></table></div></body></html>

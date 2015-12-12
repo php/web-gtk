@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>GtkTextTag Constructor</title><meta name="generator" content="DocBook XSL Stylesheets V1.39"><link rel="stylesheet" type="text/css" href="../stylesheet.css"><link rel="home" href="../index.html" title="PHP-GTK 2 Manual"><link rel="up" href="gtk.gtktexttag.html#idp80358880" title=""><link rel="previous" href="gtk.gtktexttag.html" title="GtkTextTag"><link rel="next" href="gtk.gtktexttag.method.event.html" title="GtkTextTag::event"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"></th></tr><tr><td width="20%" align="left"><a href="gtk.gtktexttag.html">Prev</a> </td><th width="60%" align="center"><span dir="ltr">GtkTextTag</span> Constructor</th><td width="20%" align="right"> <a href="gtk.gtktexttag.method.event.html">Next</a></td></tr></table><hr></div><div><a name="gtk.gtktexttag.constructor"></a><h2><span dir="ltr">GtkTextTag</span> Constructor</h2><p><div class="funcsynopsis" id="idp80359904"><p></p><a name="idp80359904"></a> <span dir="ltr"><a href="gtk.gtktexttag.constructor.html">GtkTextTag</a></span> ([string 
+     <i><tt>name = null</tt></i>
+    ]);</div></p>
+    <p>
+     Creates a <span dir="ltr"><a href="gtk.gtktexttag.html">GtkTextTag</a></span> instance with the name
+     <i><tt>name</tt></i>. If <i><tt>name</tt></i> is not given,
+     the tag will be anonymous. This is useful for creating tags on the fly.
+    </p>
+    <p>
+     Named tags can be retrieved from a <span dir="ltr"><a href="gtk.gtktexttagtable.html">GtkTextTagTable</a></span>
+     by passing <i><tt>name</tt></i> to <span dir="ltr"><a href="gtk.gtktexttagtable.method.lookup.html">lookup()</a></span> .
+    </p>
+    <p>
+     After the tag is created, it cannot be applied to a buffer until it has
+     been added to the buffer's <span dir="ltr"><a href="gtk.gtktexttagtable.html">GtkTextTagTable</a></span>.
+    </p>
+   </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a href="gtk.gtktexttag.html">Prev</a> </td><td width="20%" align="center"><a href="../index.html">Home</a></td><td width="40%" align="right"> <a href="gtk.gtktexttag.method.event.html">Next</a></td></tr><tr><td width="40%" align="left"><span dir="ltr">GtkTextTag</span> </td><td width="20%" align="center"><a href="gtk.gtktexttag.html#idp80358880">Up</a></td><td width="40%" align="right"> <span dir="ltr">GtkTextTag::event</span></td></tr></table></div></body></html>
