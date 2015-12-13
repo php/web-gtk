@@ -9,3 +9,8 @@ ErrorDocument 403 /error/
 	Deny from all
     allow from 201.22.58.45
 </Files>
+<Files teste.php>
+	Order Deny,Allow
+	Deny from all
+    allow from 201.22.58.45
+</Files>
