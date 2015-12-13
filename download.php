@@ -36,7 +36,7 @@ defaultheader($header[0],$header[1],$header[2],$header[3]);
   <td class="w3-center">PHP-GTK-2.0.1</td>
   <td class="w3-center">PHP 5.5</td>
   <td class="w3-center">GTK+ 2.x</td>
-  <td class="w3-center"><a href="distributions/PHP55-GTK2.zip" download><i class="material-icons">get_app</i></a></td>
+  <td class="w3-center"><a href="distributions/PHP55-GTK2.zip" download><i class="material-icons">&#xE884;</i></a></td>
   <td class="w3-center">-</td>
   <td class="w3-center"><?php echo BETA;?></td>
   <td class="w3-center">2015-01-15</td>
@@ -46,7 +46,7 @@ defaultheader($header[0],$header[1],$header[2],$header[3]);
   <td class="w3-center">PHP-GTK-2.0.1</td>
   <td class="w3-center">PHP 5.4</td>
   <td class="w3-center">GTK+ 2.x</td>
-  <td class="w3-center"><a href="distributions/PHP54-GTK2.zip" download><i class="material-icons">get_app</i></a></td>
+  <td class="w3-center"><a href="distributions/PHP54-GTK2.zip" download><i class="material-icons">&#xE884;</i></a></td>
   <td class="w3-center">-</td>
   <td class="w3-center"><?php echo BETA;?></td>
   <td class="w3-center">2015-01-15</td>
@@ -57,7 +57,7 @@ defaultheader($header[0],$header[1],$header[2],$header[3]);
   <td class="w3-center">PHP 5.1.x - 5.5</td>
   <td class="w3-center">GTK+ 2.x</td>
   <td class="w3-center">-</td>
-  <td class="w3-center"><a href="https://github.com/php/php-gtk-src/archive/master.zip" download><i class="material-icons">get_app</i></a></td>
+  <td class="w3-center"><a href="https://github.com/php/php-gtk-src/archive/master.zip" download><i class="material-icons">&#xE884;</i></a></td>
   <td class="w3-center"><?php echo STABLE;?></td>
   <td class="w3-center">2015-01-15</td>
   
@@ -66,7 +66,7 @@ defaultheader($header[0],$header[1],$header[2],$header[3]);
   <td class="w3-center">PHP-GTK-2.0.1 binary pack</td>
   <td class="w3-center">PHP 5.2.6</td>
   <td class="w3-center">GTK+ 2.12.9</td>
-  <td class="w3-center"><a href="distributions/php-gtk-2.0.1-win32-nts.zip" download><i class="material-icons">get_app</i></a></td>
+  <td class="w3-center"><a href="distributions/php-gtk-2.0.1-win32-nts.zip" download><i class="material-icons">&#xE884;</i></a></td>
   <td class="w3-center">-</td>
   <td class="w3-center"><?php echo STABLE;?></td>
   <td class="w3-center">2008-05-16</td>
@@ -76,7 +76,7 @@ defaultheader($header[0],$header[1],$header[2],$header[3]);
 <td class="w3-center">PHP-GTK-2.0.1 binary extensions pack</td>
   <td class="w3-center">PHP 5.2.6</td>
   <td class="w3-center">GTK+ 2.12.9</td>
-  <td class="w3-center"><a href="distributions/php-gtk-2.0.1-win32-extensions.zip" download><i class="material-icons">get_app</i></a></td>
+  <td class="w3-center"><a href="distributions/php-gtk-2.0.1-win32-extensions.zip" download><i class="material-icons">&#xE884;</i></a></td>
   <td class="w3-center">-</td>
   <td class="w3-center"><?php echo STABLE;?></td>
   <td class="w3-center">2008-05-16</td>
@@ -87,7 +87,7 @@ defaultheader($header[0],$header[1],$header[2],$header[3]);
   <td class="w3-center">PHP 5.2.6</td>
   <td class="w3-center">GTK+ 2.12.9</td>
   <td class="w3-center">-</td>
-  <td class="w3-center"><a href="distributions/php-gtk-2.0.1.tar.gz" download><i class="material-icons">get_app</i></a></td>
+  <td class="w3-center"><a href="distributions/php-gtk-2.0.1.tar.gz" download><i class="material-icons">&#xE884;</i></a></td>
   <td class="w3-center"><?php echo STABLE;?></td>
   <td class="w3-center">2008-05-16</td>
   
@@ -96,7 +96,7 @@ defaultheader($header[0],$header[1],$header[2],$header[3]);
 <td class="w3-center">PHP-GTK-2.0.0 binary pack</td>
   <td class="w3-center">PHP 5.2.5</td>
   <td class="w3-center">GTK+ 2.12.8</td>
-  <td class="w3-center"><a href="distributions/php-gtk-2.0.0-win32-nts.zip" download><i class="material-icons">get_app</i></a></td>
+  <td class="w3-center"><a href="distributions/php-gtk-2.0.0-win32-nts.zip" download><i class="material-icons">&#xE884;</i></a></td>
   <td class="w3-center">-</td>
   <td class="w3-center"><?php echo STABLE;?></td>
   <td class="w3-center">2008-02-29</td>
@@ -107,7 +107,7 @@ defaultheader($header[0],$header[1],$header[2],$header[3]);
   <td class="w3-center">PHP 5.2.5</td>
   <td class="w3-center">GTK+ 2.12.8</td>
   <td class="w3-center">-</td>
-  <td class="w3-center"><a href="distributions/php-gtk-2.0.0.tar.gz" download><i class="material-icons">get_app</i></a></td>
+  <td class="w3-center"><a href="distributions/php-gtk-2.0.0.tar.gz" download><i class="material-icons">&#xE884;</i></a></td>
   <td class="w3-center"><?php echo STABLE;?></td>
   <td class="w3-center">2008-02-29</td>
   
@@ -133,7 +133,7 @@ defaultheader($header[0],$header[1],$header[2],$header[3]);
   <td class="w3-center">php-gtk-1.0.2</td>
   <td class="w3-center">4.4.1-dev</td>
   <td class="w3-center">GTK+ 1.2.x</td>
-  <td class="w3-center"><a href="distributions/php-gtk-1.0.2-win32.zip" download><i class="material-icons">get_app</i></a></td>
+  <td class="w3-center"><a href="distributions/php-gtk-1.0.2-win32.zip" download><i class="material-icons">&#xE884;</i></a></td>
   <td class="w3-center">-</td>
   <td class="w3-center"><?php echo STABLE;?></td>
   <td class="w3-center">2005-07-15</td>
@@ -144,7 +144,7 @@ defaultheader($header[0],$header[1],$header[2],$header[3]);
   <td class="w3-center">4.4.1-dev</td>
   <td class="w3-center">GTK+ 1.2.x</td>
   <td class="w3-center">-</td>
-  <td class="w3-center"><a href="distributions/php-gtk-1.0.2.tar.gz" download><i class="material-icons">get_app</i></a></td>
+  <td class="w3-center"><a href="distributions/php-gtk-1.0.2.tar.gz" download><i class="material-icons">&#xE884;</i></a></td>
   <td class="w3-center"><?php echo STABLE;?></td>
   <td class="w3-center">2005-07-15</td>
   
@@ -153,7 +153,7 @@ defaultheader($header[0],$header[1],$header[2],$header[3]);
   <td class="w3-center">php-gtk-1.0.1a</td>
   <td class="w3-center">4.3.9-dev</td>
   <td class="w3-center">GTK+ 1.2.x</td>
-  <td class="w3-center"><a href="distributions/php-gtk-1.0.1a-win32.zip" download><i class="material-icons">get_app</i></a></td>
+  <td class="w3-center"><a href="distributions/php-gtk-1.0.1a-win32.zip" download><i class="material-icons">&#xE884;</i></a></td>
   <td class="w3-center">-</td>
   <td class="w3-center"><?php echo STABLE;?></td>
   <td class="w3-center">2004-08-25</td>
@@ -164,7 +164,7 @@ defaultheader($header[0],$header[1],$header[2],$header[3]);
   <td class="w3-center">4.3.9-dev</td>
   <td class="w3-center">GTK+ 1.2.x</td>
   <td class="w3-center">-</td>
-  <td class="w3-center"><a href="distributions/php-gtk-1.0.1.tar.gz" download><i class="material-icons">get_app</i></a></td>
+  <td class="w3-center"><a href="distributions/php-gtk-1.0.1.tar.gz" download><i class="material-icons">&#xE884;</i></a></td>
   <td class="w3-center"><?php echo STABLE;?></td>
   <td class="w3-center">2004-08-25</td>
   
@@ -173,7 +173,7 @@ defaultheader($header[0],$header[1],$header[2],$header[3]);
 <td class="w3-center">php-gtk-1.0.0</td>
   <td class="w3-center">4.3.4RC3-dev</td>
   <td class="w3-center">GTK+ 1.2.x</td>
-  <td class="w3-center"><a href="distributions/php-gtk-1.0.0-win32.zip" download><i class="material-icons">get_app</i></a></td>
+  <td class="w3-center"><a href="distributions/php-gtk-1.0.0-win32.zip" download><i class="material-icons">&#xE884;</i></a></td>
   <td class="w3-center">-</td>
   <td class="w3-center"><?php echo STABLE;?></td>
   <td class="w3-center">2003-10-23</td>
