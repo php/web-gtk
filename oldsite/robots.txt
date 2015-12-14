@@ -1,5 +1,0 @@
-User-agent: Googlebot
-Disallow: */main/allrecentchanges$
-Disallow: */search*
-Disallow: *recentchanges*
-Disallow: *action=*
