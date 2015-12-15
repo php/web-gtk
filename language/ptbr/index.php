@@ -1,5 +1,5 @@
 <?php
-define('DEFAULTHEADER', '"pt-BR":"PHP-GTK":"PHP-GTK é uma extensão para a linguagem de programação PHP que implementa o binding da linguagem para o GTK+.":"PHP-GTK,PHP,GTK"');
+define('DEFAULTHEADER', '"pt-BR":PHP-GTK:"PHP-GTK é uma extensão para a linguagem de programação PHP que implementa o binding da linguagem para o GTK+.":"PHP-GTK,PHP,GTK"');
 define('DEFAULTHEADER1',"Criando aplicativos de desktop em PHP com PHP-GTK");
 define('DEFAULTHEADER2',"Você pode enviar quaisquer perguntas sérias sobre PHP-GTK para php-gtk-dev@lists.php.net, mas as perguntas sobre o MANUAL PHP-GTK você deve enviá-las para  php-gtk-doc@lists.php.net.
 <br>Agora, se você tem qualquer pergunta ou sugestão para nosso website você pode contatar php-gtk-webmaster@lists.php.net. Obrigado!");

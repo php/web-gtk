@@ -1,5 +1,5 @@
 <?php
-define('DEFAULTHEADER', '"pt-BR":"PHP-GTK - Downloads":"Baixe e experimente o php-gtk no seu desktop":"PHP-GTK,PHP,GTK,DOWNLOAD"');
+define('DEFAULTHEADER', '"pt-BR":PHP-GTK - Downloads:"Baixe e experimente o php-gtk no seu desktop":"PHP-GTK,PHP,GTK,DOWNLOAD"');
 define('DEFAULTHEADER1',"Criando aplicativos de desktop em PHP com PHP-GTK");
 define('DEFAULTHEADER2',"Você pode enviar quaisquer perguntas sérias sobre PHP-GTK para php-gtk-dev@lists.php.net, mas as perguntas sobre o MANUAL PHP-GTK você deve enviá-las para  php-gtk-doc@lists.php.net.
 <br>Agora, se você tem qualquer pergunta ou sugestão para nosso website você pode contatar php-gtk-webmaster@lists.php.net. Obrigado!");

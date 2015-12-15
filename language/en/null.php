@@ -1,5 +1,5 @@
 <?php
-define('DEFAULTHEADER', '"en":"PHP-GTK - Section not created":"Section not created":"PHP-GTK,PHP,GTK"');
+define('DEFAULTHEADER', '"en":PHP-GTK - Section not created:"Section not created":"PHP-GTK,PHP,GTK"');
 define('DEFAULTHEADER1',"Building Desktop Applications in PHP with PHP-GTK");
 define('DEFAULTHEADER2',"You can to send any serious questions about PHP-GTK to php-gtk-dev@lists.php.net, but the questions about PHP-GTK MANUAL you must send them to php-gtk-doc@lists.php.net.
 <br/>Now, if you have any question or suggestion for our website you can send them to php-gtk-webmaster@lists.php.net. Thank you!");
