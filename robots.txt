@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /manual/en
+Disallow: /include
+Allow: /manual/en/html
+Allow: /
