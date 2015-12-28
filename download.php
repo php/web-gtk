@@ -35,7 +35,7 @@ defaultheader($header[0],$header[1],$header[2],$header[3]);
 <tr class="w3-center">
   <td class="w3-center">PHP-GTK-2.0.1</td>
   <td class="w3-center">PHP 5.5</td>
-  <td class="w3-center">GTK+ 2.x</td>
+  <td class="w3-center">GTK+ 2.24.10</td>
   <td class="w3-center"><a href="distributions/PHP55-GTK2.zip" download><i class="material-icons">&#xE884;</i></a></td>
   <td class="w3-center">-</td>
   <td class="w3-center"><?php echo BETA;?></td>
@@ -45,7 +45,7 @@ defaultheader($header[0],$header[1],$header[2],$header[3]);
 <tr>
   <td class="w3-center">PHP-GTK-2.0.1</td>
   <td class="w3-center">PHP 5.4</td>
-  <td class="w3-center">GTK+ 2.x</td>
+  <td class="w3-center">GTK+ 2.24.10</td>
   <td class="w3-center"><a href="distributions/PHP54-GTK2.zip" download><i class="material-icons">&#xE884;</i></a></td>
   <td class="w3-center">-</td>
   <td class="w3-center"><?php echo BETA;?></td>
