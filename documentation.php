@@ -26,19 +26,19 @@ defaultheader($header[0],$header[1],$header[2],$header[3]);
 </thead>   
 <tr>
   <td class="w3-center"><?php echo TD1;?></td>
-  <td class="w3-center"><a href="manual/en/bigmanualhtml.zip" download><i class="material-icons">get_app</i> English</a></td>
+  <td class="w3-center"><a href="manual/en/bigmanualhtml.zip" download><i class="material-icons">&#xE884;</i> English</a></td>
 </tr>
 <tr>
   <td class="w3-center"><?php echo TD2;?></td>
-  <td class="w3-center"><a href="manual/en/manualhtml.zip" download><i class="material-icons">get_app</i> English</a></td>
+  <td class="w3-center"><a href="manual/en/manualhtml.zip" download><i class="material-icons">&#xE884;</i> English</a></td>
 </tr>
 <tr>
   <td class="w3-center"><?php echo TD3;?></td>
-  <td class="w3-center"><a href="manual/en/manual.txt" download><i class="material-icons">get_app</i> English</a></td>
+  <td class="w3-center"><a href="manual/en/manual.txt" download><i class="material-icons">&#xE884;</i> English</a></td>
 </tr>
 <tr>
   <td class="w3-center"><?php echo TD4;?></td>
-  <td class="w3-center"><a href="manual/en/manual.pdf" download><i class="material-icons">get_app</i> English</a></td>
+  <td class="w3-center"><a href="manual/en/manual.pdf" download><i class="material-icons">&#xE884;</i> English</a></td>
 </tr>
 </table>
 <br/>
