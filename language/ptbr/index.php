@@ -14,7 +14,7 @@ define('TEXT2','O PHP-GTK foi criado em março de 2001, por Andrei Zmievski, um 
 define('TEXT3','O PHP-GTK é uma "language binding", ou seja, é uma ligação entre duas linguagens já existentes, a linguagem PHP e a biblioteca GTK. Logo, o PHP-GTK é o próprio PHP, com mais recursos. O PHP-GTK é a primeira extensão da linguagem PHP que permite escrever aplicações client-side com GUI (Graphical User Interface). Foi escrita, em parte, para provar que o PHP é uma linguagem completa e de grandes propósitos. O casamento do PHP com o GTK nos gera uma ferramenta independente de plataforma que roda tanto em ambientes Linux quanto Windows.');
 define('TEXT4','Utilizando PHP-GTK, você criará uma aplicação que possui conectividade com o servidor (banco de dados, acesso à arquivos etc.), como todos os outros programas escritos em PHP, mas que, pelo fato de rodar na máquina cliente, também tem total acesso aos recursos desta (executar aplicações, escrever arquivos e acessar dispositivos locais). Para tanto, o PHP-GTK precisa ser instalado em cada máquina-cliente que executará uma aplicação PHP-GTK.<b> Fonte: http://www.php-gtk.com.br/home</b>');
 define('FOOTER','Se você tiver problemas ou dúvidas, o seu primeiro ponto de contato deve ser o <a href="manual/en/html/index.html" target="_blank">manual</a> e a <a href="null.php?language=pt-BR">lista de discussão php-gtk-geral</a>');
-define('COPYRIGHT','Direitos autorais © 2001-2015 Equipe PHP-GTK. Todos os direitos reservados.*Último update:  Domingo Dezembro 06 06:40:12 2015 UTC');
+define('COPYRIGHT','Direitos autorais © 2001-2016 Equipe PHP-GTK. Todos os direitos reservados.*Último update:  Segunda Julho 21 00:00:00 2016 UTC');
 define('LANGUAGE',"Idioma");
 
 ?>

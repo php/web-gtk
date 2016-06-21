@@ -14,6 +14,6 @@ define('TD2','Muitos arquivos HTML');
 define('TD3','TXT');
 define('TD4','PDF');
 define('FOOTER','Se você tiver problemas ou dúvidas, o seu primeiro ponto de contato deve ser o <a href="manual/en/html/index.html" target="_blank">manual</a> e a <a href="null.php?language=pt-BR">lista de discussão php-gtk-geral</a>');
-define('COPYRIGHT','Direitos autorais © 2001-2015 Equipe PHP-GTK. Todos os direitos reservados.*Último update:  Sábado Dezembro 12 04:58:12 2015 UTC');
+define('COPYRIGHT','Direitos autorais © 2001-2016 Equipe PHP-GTK. Todos os direitos reservados.*Último update:  Segunda Julho 21 00:00:00 2016 UTC');
 define('LANGUAGE',"Idioma");
 ?>
