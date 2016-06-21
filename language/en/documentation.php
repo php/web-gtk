@@ -1,8 +1,8 @@
 <?php
 define('DEFAULTHEADER', '"en":PHP-GTK - Documentation:"PHP-GTK Documentation":"PHP-GTK,PHP,GTK,DOCUMENTATION"');
 define('DEFAULTHEADER1',"Building Desktop Applications in PHP with PHP-GTK");
-define('DEFAULTHEADER2',"You can to send any serious questions about PHP-GTK to php-gtk-dev@lists.php.net, but the questions about PHP-GTK MANUAL you must send them to php-gtk-doc@lists.php.net.
-<br/>Now, if you have any question or suggestion for our website you can send them to php-gtk-webmaster@lists.php.net. Thank you!");
+define('DEFAULTHEADER2',"You can send any serious questions about PHP-GTK to php-gtk-dev@lists.php.net, but the questions about PHP-GTK MANUAL should be sent to php-gtk-doc@lists.php.net.
+<br/>If you have any question or suggestion for our website you can send them to php-gtk-webmaster@lists.php.net. Thank you!");
 define('DEFAULTMENU','Home:Download:Documentation:Applications:FAQ:Changelog:Resources:Wiki:Screenshots');
 define('DEFAULTMENULEFT','News:Roadmap:To help<br>the project');
 define('WELCOME','Help us create the PHP-GTK documentation: php-gtk-doc@lists.php.net');
