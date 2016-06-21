@@ -1,0 +1,8 @@
+DirectoryIndex index.php
+# protect phpinfo
+<Files info.php>
+	Order Deny,Allow
+	Deny from all
+    allow from 201.22.58.45
+</Files>
+
