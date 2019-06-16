@@ -3,6 +3,6 @@ DirectoryIndex index.php
 <Files info.php>
 	Order Deny,Allow
 	Deny from all
-    allow from 201.22.58.45
+    allow from 168.194.162.149
 </Files>
 
