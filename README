@@ -6,10 +6,10 @@ Pull Requests
 PHP-GTK3 website accepts pull requests via github.
 Discussions are done on github, but
 depending on the topic can also be relayed to the official PHP-GTK3 website developer
-mailinglist php-gtk-webmaster@lists.php.net .
+mailinglist php-gtk-webmaster@lists.php.net.
 
-We do not merge pull requests directly on github. All PRs will be
-pulled and pushed through: git@github.com:php/web-gtk.git or
+All PRs will be pulled and pushed through: 
+git@github.com:php/web-gtk.git or
 https://github.com/php/web-gtk.git
 
 Development Branch
