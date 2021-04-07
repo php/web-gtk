@@ -1,19 +1,12 @@
 The PHP-GTK3 website
 ===================
-This is the github mirror of the official PHP-GTK3 repository located at
-http://git.php.net/?p=web/gtk.git;a=summary .
 
 Pull Requests
 =============
 PHP-GTK3 website accepts pull requests via github.
 Discussions are done on github, but
 depending on the topic can also be relayed to the official PHP-GTK3 website developer
-mailinglist php-gtk-webmaster@lists.php.net .
-
-We do not merge pull requests directly on github. All PRs will be
-pulled and pushed through: git@git.php.net:/web/gtk.git or
-https://git.php.net/repository/web/gtk.git or
-https://git.php.net/push/web/gtk.git
+mailinglist php-gtk-webmaster@lists.php.net.
 
 Development Branch
 ==================
@@ -27,9 +20,9 @@ This is the git repo for the official gtk.php.net website.
  
 To setup a local mirror of the website:
  
-$ git clone git@git.php.net:/web/gtk.git
+$ git clone git@github.com:php/web-gtk.git
 or
-$ git clone https://git.php.net/repository/web/gtk.git
+$ git clone https://github.com/php/web-gtk.git
 cd gtk
 php -S localhost:8080
  
