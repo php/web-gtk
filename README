@@ -8,10 +8,6 @@ Discussions are done on github, but
 depending on the topic can also be relayed to the official PHP-GTK3 website developer
 mailinglist php-gtk-webmaster@lists.php.net.
 
-All PRs will be pulled and pushed through: 
-git@github.com:php/web-gtk.git or
-https://github.com/php/web-gtk.git
-
 Development Branch
 ==================
 Branch development of PHP-GTK3 website is dev-php-website.
