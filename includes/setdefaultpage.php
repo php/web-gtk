@@ -39,11 +39,11 @@ function defaulttop() {
 $menu=explode(":",DEFAULTMENU);
 echo"<header class=\"w3-row \">
 <div class=\"w3-container w3-default-blue \">
-<header class=\"w3-container w3-default-blue w3-half w3-animate-opacity \">
+<header class=\"w3-container w3-default-blue w3-half \">
 <img  src=\"images/logo_phpgtk.png\" height=\"69\" width=\"167\" alt=\"Logo PHP-GTK\" />
 <h6 >".DEFAULTHEADER1."</h6>
 </header>
-<article class=\"w3-container w3-default-blue w3-half w3-animate-opacity\"><p>".DEFAULTHEADER2."</p>
+<article class=\"w3-container w3-default-blue w3-half\"><p>".DEFAULTHEADER2."</p>
 </article>
 </div>
 <div class=\"w3-topnav w3-medium w3-black \">
@@ -85,7 +85,7 @@ echo"
 
 function defaultfooter() {
 $copyright=explode("*",COPYRIGHT);
-echo "<footer class=\"w3-container w3-default-blue w3-small w3-animate-opacity \">
+echo "<footer class=\"w3-container w3-default-blue w3-small \">
 <div class=\"w3-left\">$copyright[0]</div>
  <div class=\"w3-right\">$copyright[1]</div>
 </footer>
