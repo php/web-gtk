@@ -43,7 +43,11 @@ echo"<header class=\"w3-row \">
 <img  src=\"images/logo_phpgtk.png\" height=\"69\" width=\"167\" alt=\"Logo PHP-GTK\" />
 <h6 >".DEFAULTHEADER1."</h6>
 </header>
-<article class=\"w3-container w3-default-blue w3-half\"><p>".DEFAULTHEADER2."</p>
+<article class=\"w3-container w3-default-blue w3-half\">
+  <p>
+    The PHP-GTK project is no longer under active development, and the related
+    mailing lists and other online services are no longer active.
+  </p>
 </article>
 </div>
 <div class=\"w3-topnav w3-medium w3-black \">
